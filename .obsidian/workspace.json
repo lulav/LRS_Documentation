@@ -1,0 +1,148 @@
+{
+  "main": {
+    "id": "469e6788e58e6792",
+    "type": "split",
+    "children": [
+      {
+        "id": "04aa598d4b50ad07",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "2b7791327409471d",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "# ROS2-FPrime Bridge.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "df33f70f2daca9ce",
+    "type": "split",
+    "children": [
+      {
+        "id": "990367b906e989bf",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "e6d771116a324203",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "8b100efcf85f488e",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "26e599db9f1fb367",
+            "type": "leaf",
+            "state": {
+              "type": "starred",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "f73a25bc8264f926",
+    "type": "split",
+    "children": [
+      {
+        "id": "e60754ef6cce465a",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "cab29ea54d54aded",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "# ROS2-FPrime Bridge.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "3237bd72fd51afe6",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "# ROS2-FPrime Bridge.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "1bb88c32161617ea",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "1081522315a1d920",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "# ROS2-FPrime Bridge.md"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "active": "2b7791327409471d",
+  "lastOpenFiles": [
+    "# Schema and code generation.md",
+    "# ROS2-FPrime Bridge.md",
+    "png/design.png.md",
+    "common/autogen/README.md",
+    "README.md",
+    "Pasted image 20221211150422.png"
+  ]
+}

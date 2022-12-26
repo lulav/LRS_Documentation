@@ -58,3 +58,23 @@ sequenceDiagram
         User->Report: view report
     end
 ```
+
+
+Initial phase: ?!?!?!?!?!?!?!?!?!?!?!?!?!?!?!?!?!?!?!?!?!?
+
+- Configure all project in citrus ui
+- install CiTROS-CLI on user side / as Github extension? 
+- parse all code (in users folder / github repository)
+- Send all the code METADATA to CiTROS
+- build the user Docekr with citros agent + initial launch file
+- upload the docker image to repo
+- Configure tests in the Citros UI
+
+On merge phase: (code changed) (CI pipeline)
+
+- parse all code  
+- Send all the code metadata to CiTROS (Upsert)
+- build the user Docekr with citros agent + initial launch file
+- upload the docker image to repo
+- send **signal** to Citros to start testing the preconfigured tests.
+
