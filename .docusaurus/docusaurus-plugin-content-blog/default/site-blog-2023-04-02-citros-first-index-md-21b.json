@@ -1,0 +1,18 @@
+{
+  "permalink": "/blog/2023/04/02/citros-first",
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/blog/2023-04-02-citros-first/index.md",
+  "source": "@site/blog/2023-04-02-citros-first/index.md",
+  "title": "citros-first",
+  "description": "---",
+  "date": "2023-04-02T00:00:00.000Z",
+  "formattedDate": "April 2, 2023",
+  "tags": [],
+  "readingTime": 0.27,
+  "hasTruncateMarker": false,
+  "authors": [],
+  "frontMatter": {},
+  "nextItem": {
+    "title": "Welcome",
+    "permalink": "/blog/welcome"
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "unversionedId": "test1/test copy",
+  "id": "test1/test copy",
+  "title": "test copy",
+  "description": "",
+  "source": "@site/docs/test1/test copy.md",
+  "sourceDirName": "test1",
+  "slug": "/test1/test copy",
+  "permalink": "/docs/test1/test copy",
+  "draft": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/test1/test copy.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 3,
+  "frontMatter": {
+    "sidebar_label": "Hi!",
+    "sidebar_position": 3
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Translate your site",
+    "permalink": "/docs/tutorial-extras/translate-your-site"
+  },
+  "next": {
+    "title": "Hi!",
+    "permalink": "/docs/test1/test"
+  }
+}

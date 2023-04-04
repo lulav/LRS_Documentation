@@ -4,16 +4,16 @@
     "type": "split",
     "children": [
       {
-        "id": "04aa598d4b50ad07",
+        "id": "76d15de0a8c721d5",
         "type": "tabs",
         "children": [
           {
-            "id": "2b7791327409471d",
+            "id": "61c26acc14d2e917",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "# ROS2-FPrime Bridge.md",
+                "file": "docs/intro.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "# ROS2-FPrime Bridge.md",
+                "file": "docs/intro.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "# ROS2-FPrime Bridge.md",
+                "file": "docs/intro.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "# ROS2-FPrime Bridge.md"
+                "file": "docs/intro.md"
               }
             }
           }
@@ -136,13 +136,35 @@
     "width": 300,
     "collapsed": true
   },
-  "active": "2b7791327409471d",
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false
+    }
+  },
+  "active": "61c26acc14d2e917",
   "lastOpenFiles": [
+    "docs/tutorial-extras/manage-docs-versions.md",
+    "docs/tutorial-extras/translate-your-site.md",
+    "blog/2021-08-26-welcome/index.md",
+    "blog/2021-08-26-welcome/docusaurus-plushie-banner.jpeg",
+    "blog/2019-05-28-first-blog-post.md",
+    "blog/2019-05-29-long-blog-post.md",
+    "docs/tutorial-basics/congratulations.md",
+    "docs/tutorial-basics/create-a-blog-post.md",
+    "docs/tutorial-basics/create-a-document.md",
+    "docs/tutorial-basics/create-a-page.md",
+    "docs/tutorial-basics/deploy-your-site.md",
+    "docs/intro.md",
+    "README.md",
     "# Schema and code generation.md",
     "# ROS2-FPrime Bridge.md",
     "png/design.png.md",
     "common/autogen/README.md",
-    "README.md",
     "Pasted image 20221211150422.png"
   ]
 }
