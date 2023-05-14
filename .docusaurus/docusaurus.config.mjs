@@ -7,7 +7,7 @@ export default {
   "title": "CITROS",
   "tagline": "CITROS is cool",
   "favicon": "img/favicon.ico",
-  "url": "https://citros.io",
+  "url": "https://citros.local",
   "baseUrl": "/",
   "organizationName": "citros",
   "projectName": "citros",
@@ -327,6 +327,13 @@ export default {
         }
       ]
     },
+    "mermaid": {
+      "theme": {
+        "dark": "dark",
+        "light": "default"
+      },
+      "options": {}
+    },
     "colorMode": {
       "defaultMode": "light",
       "disableSwitch": false,
@@ -343,13 +350,6 @@ export default {
     "tableOfContents": {
       "minHeadingLevel": 2,
       "maxHeadingLevel": 3
-    },
-    "mermaid": {
-      "theme": {
-        "dark": "dark",
-        "light": "default"
-      },
-      "options": {}
     }
   },
   "baseUrlIssueBanner": true,
