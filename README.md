@@ -39,3 +39,41 @@ $ GIT_USER=<Your GitHub username> yarn deploy
 ```
 
 If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.
+
+
+
+
+# docker:
+```bash
+docker build --target development -t docs:dev .
+docker run -p 3000:3000 docs:dev
+
+
+docker build -t docusaurus:latest .
+docker run --rm -p 3000:80 docusaurus:latest
+```
+
+
+
+```bash
+# if building from linux machine
+# docker build . docker-doc
+docker build -t citros-doc . 
+# *** when building from MAC M1 chip add FROM --platform=linux/amd64 ***
+docker buildx build --platform linux/amd64 -t citros-doc .   
+
+
+#run: 
+docker run --rm -p 3000:80 citros-doc
+# upload to google artifact registry
+
+docker tag citros-doc registry.citros.local/citros/citros-doc
+docker push registry.citros.local/citros/citros-doc
+
+docker tag citros-doc localhost:5001/citros/citros-doc
+docker push localhost:5001/citros/citros-doc
+
+docker tag citros-doc us-central1-docker.pkg.dev/citros/citros-docker/citros-doc
+docker push us-central1-docker.pkg.dev/citros/citros-docker/citros-doc
+
+``` 
