@@ -67,8 +67,8 @@ docker buildx build --platform linux/amd64 -t citros-doc .
 docker run --rm -p 3000:80 citros-doc
 # upload to google artifact registry
 
-docker tag citros-doc registry.local:32000/citros/citros-doc
-docker push registry.local:32000/citros/citros-doc
+docker tag citros-doc registry.local:32000/citros/citros-docker/citros-doc
+docker push registry.local:32000/citros/citros-docker/citros-doc
 
 docker tag citros-doc us-central1-docker.pkg.dev/citros/citros-docker/citros-doc
 docker push us-central1-docker.pkg.dev/citros/citros-docker/citros-doc

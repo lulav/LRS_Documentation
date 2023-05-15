@@ -7,8 +7,8 @@ export default {
   "title": "CITROS",
   "tagline": "CITROS is cool",
   "favicon": "img/favicon.ico",
-  "url": "https://citros.io",
-  "baseUrl": "/",
+  "url": "http://localhost:3000",
+  "baseUrl": "/doc/",
   "organizationName": "citros",
   "projectName": "citros",
   "onBrokenLinks": "throw",
@@ -32,7 +32,7 @@ export default {
       "classic",
       {
         "docs": {
-          "sidebarPath": "/workspaces/citros_doc/sidebars.js",
+          "sidebarPath": "/Users/vovacooper/dev/citros/citros/citros_doc/sidebars.js",
           "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/"
         },
         "blog": {
@@ -40,7 +40,7 @@ export default {
           "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/"
         },
         "theme": {
-          "customCss": "/workspaces/citros_doc/src/css/custom.css"
+          "customCss": "/Users/vovacooper/dev/citros/citros/citros_doc/src/css/custom.css"
         }
       }
     ]
@@ -327,13 +327,6 @@ export default {
         }
       ]
     },
-    "mermaid": {
-      "theme": {
-        "dark": "dark",
-        "light": "default"
-      },
-      "options": {}
-    },
     "colorMode": {
       "defaultMode": "light",
       "disableSwitch": false,
@@ -350,6 +343,13 @@ export default {
     "tableOfContents": {
       "minHeadingLevel": 2,
       "maxHeadingLevel": 3
+    },
+    "mermaid": {
+      "theme": {
+        "dark": "dark",
+        "light": "default"
+      },
+      "options": {}
     }
   },
   "baseUrlIssueBanner": true,

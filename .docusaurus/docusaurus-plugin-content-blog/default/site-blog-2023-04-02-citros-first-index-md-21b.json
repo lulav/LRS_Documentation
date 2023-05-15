@@ -1,5 +1,5 @@
 {
-  "permalink": "/blog/2023/04/02/citros-first",
+  "permalink": "/doc/blog/2023/04/02/citros-first",
   "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/blog/2023-04-02-citros-first/index.md",
   "source": "@site/blog/2023-04-02-citros-first/index.md",
   "title": "citros-first",
@@ -13,6 +13,6 @@
   "frontMatter": {},
   "nextItem": {
     "title": "Welcome",
-    "permalink": "/blog/welcome"
+    "permalink": "/doc/blog/welcome"
   }
 }
