@@ -7,7 +7,7 @@ export default {
   "title": "CITROS",
   "tagline": "CITROS is cool",
   "favicon": "img/favicon.ico",
-  "url": "https://citros.local",
+  "url": "https://citros.io",
   "baseUrl": "/",
   "organizationName": "citros",
   "projectName": "citros",
@@ -32,7 +32,7 @@ export default {
       "classic",
       {
         "docs": {
-          "sidebarPath": "/Users/vovacooper/dev/citros/citros/citros_doc/sidebars.js",
+          "sidebarPath": "/workspaces/citros_doc/sidebars.js",
           "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/"
         },
         "blog": {
@@ -40,7 +40,7 @@ export default {
           "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/"
         },
         "theme": {
-          "customCss": "/Users/vovacooper/dev/citros/citros/citros_doc/src/css/custom.css"
+          "customCss": "/workspaces/citros_doc/src/css/custom.css"
         }
       }
     ]
