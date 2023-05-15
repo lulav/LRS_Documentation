@@ -1,0 +1,15 @@
+{
+  "title": "Data access",
+  "slug": "/category/data-access-1",
+  "permalink": "/docs-data-analysis/category/data-access-1",
+  "navigation": {
+    "previous": {
+      "title": "Modules",
+      "permalink": "/docs-data-analysis/category/modules-1"
+    },
+    "next": {
+      "title": "Documentation",
+      "permalink": "/docs-data-analysis/modules/data-access/data_access_description"
+    }
+  }
+}

@@ -13,75 +13,79 @@
             {
               "id": "intro",
               "path": "/docs/intro",
-              "sidebar": "tutorialSidebar"
-            },
-            {
-              "id": "tests1/test",
-              "path": "/docs/tests1/test",
-              "sidebar": "tutorialSidebar"
-            },
-            {
-              "id": "tests1/test2",
-              "path": "/docs/tests1/test2",
-              "sidebar": "tutorialSidebar"
-            },
-            {
-              "id": "tutorial-basics/congratulations",
-              "path": "/docs/tutorial-basics/congratulations",
-              "sidebar": "tutorialSidebar"
-            },
-            {
-              "id": "tutorial-basics/create-a-blog-post",
-              "path": "/docs/tutorial-basics/create-a-blog-post",
-              "sidebar": "tutorialSidebar"
-            },
-            {
-              "id": "tutorial-basics/create-a-document",
-              "path": "/docs/tutorial-basics/create-a-document",
-              "sidebar": "tutorialSidebar"
-            },
-            {
-              "id": "tutorial-basics/create-a-page",
-              "path": "/docs/tutorial-basics/create-a-page",
-              "sidebar": "tutorialSidebar"
-            },
-            {
-              "id": "tutorial-basics/deploy-your-site",
-              "path": "/docs/tutorial-basics/deploy-your-site",
-              "sidebar": "tutorialSidebar"
-            },
-            {
-              "id": "tutorial-basics/markdown-features",
-              "path": "/docs/tutorial-basics/markdown-features",
-              "sidebar": "tutorialSidebar"
-            },
-            {
-              "id": "tutorial-extras/manage-docs-versions",
-              "path": "/docs/tutorial-extras/manage-docs-versions",
-              "sidebar": "tutorialSidebar"
-            },
-            {
-              "id": "tutorial-extras/translate-your-site",
-              "path": "/docs/tutorial-extras/translate-your-site",
-              "sidebar": "tutorialSidebar"
-            },
-            {
-              "id": "/category/tutorial---basics",
-              "path": "/docs/category/tutorial---basics",
-              "sidebar": "tutorialSidebar"
-            },
-            {
-              "id": "/category/tutorial---extras",
-              "path": "/docs/category/tutorial---extras",
-              "sidebar": "tutorialSidebar"
+              "sidebar": "gettingStartedSidebar"
             }
           ],
           "draftIds": [],
           "sidebars": {
-            "tutorialSidebar": {
+            "gettingStartedSidebar": {
               "link": {
                 "path": "/docs/intro",
-                "label": "intro"
+                "label": "Getting started"
+              }
+            }
+          }
+        }
+      ],
+      "breadcrumbs": true
+    },
+    "docs-data-analysis": {
+      "path": "/docs-data-analysis",
+      "versions": [
+        {
+          "name": "current",
+          "label": "Next",
+          "isLast": true,
+          "path": "/docs-data-analysis",
+          "mainDocId": "intro",
+          "docs": [
+            {
+              "id": "intro",
+              "path": "/docs-data-analysis/intro",
+              "sidebar": "dataAnalysisdSidebar"
+            },
+            {
+              "id": "modules/data-access/data_access_description",
+              "path": "/docs-data-analysis/modules/data-access/data_access_description",
+              "sidebar": "dataAnalysisdSidebar"
+            },
+            {
+              "id": "modules/data-access/data_access_examples",
+              "path": "/docs-data-analysis/modules/data-access/data_access_examples",
+              "sidebar": "dataAnalysisdSidebar"
+            },
+            {
+              "id": "modules/error-analysis/error_analysis_description",
+              "path": "/docs-data-analysis/modules/error-analysis/error_analysis_description",
+              "sidebar": "dataAnalysisdSidebar"
+            },
+            {
+              "id": "modules/error-analysis/error_analysis_examples",
+              "path": "/docs-data-analysis/modules/error-analysis/error_analysis_examples",
+              "sidebar": "dataAnalysisdSidebar"
+            },
+            {
+              "id": "/category/modules",
+              "path": "/docs-data-analysis/category/modules",
+              "sidebar": "dataAnalysisdSidebar"
+            },
+            {
+              "id": "/category/data-access",
+              "path": "/docs-data-analysis/category/data-access",
+              "sidebar": "dataAnalysisdSidebar"
+            },
+            {
+              "id": "/category/error-analysis",
+              "path": "/docs-data-analysis/category/error-analysis",
+              "sidebar": "dataAnalysisdSidebar"
+            }
+          ],
+          "draftIds": [],
+          "sidebars": {
+            "dataAnalysisdSidebar": {
+              "link": {
+                "path": "/docs-data-analysis/intro",
+                "label": "Tutorial intro"
               }
             }
           }

@@ -1,0 +1,28 @@
+{
+  "unversionedId": "modules/data-access/data_access_description",
+  "id": "modules/data-access/data_access_description",
+  "title": "data_access_description",
+  "description": "Documentation",
+  "source": "@site/docs-data-analysis/modules/data-access/data_access_description.md",
+  "sourceDirName": "modules/data-access",
+  "slug": "/modules/data-access/data_access_description",
+  "permalink": "/docs-data-analysis/modules/data-access/data_access_description",
+  "draft": false,
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "toc_max_heading_level": 3,
+    "sidebar_label": "Documentation",
+    "description": "Documentation",
+    "hide_title": true
+  },
+  "sidebar": "dataAnalysisdSidebar",
+  "previous": {
+    "title": "Data access",
+    "permalink": "/docs-data-analysis/category/data-access"
+  },
+  "next": {
+    "title": "Examples",
+    "permalink": "/docs-data-analysis/modules/data-access/data_access_examples"
+  }
+}

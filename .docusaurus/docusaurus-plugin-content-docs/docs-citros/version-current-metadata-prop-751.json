@@ -1,0 +1,52 @@
+{
+  "pluginId": "docs-citros",
+  "version": "current",
+  "label": "Next",
+  "banner": null,
+  "badge": false,
+  "noIndex": false,
+  "className": "docs-version-current",
+  "isLast": true,
+  "docsSidebars": {
+    "gettingStartedSidebar": [
+      {
+        "type": "link",
+        "label": "Citros guide book",
+        "href": "/docs-citros/intro",
+        "docId": "intro"
+      }
+    ],
+    "citrosdSidebar": [
+      {
+        "type": "link",
+        "label": "Citros guide book",
+        "href": "/docs-citros/intro",
+        "docId": "intro"
+      }
+    ],
+    "clidSidebar": [
+      {
+        "type": "link",
+        "label": "Citros guide book",
+        "href": "/docs-citros/intro",
+        "docId": "intro"
+      }
+    ],
+    "dataAnalysisdSidebar": [
+      {
+        "type": "link",
+        "label": "Citros guide book",
+        "href": "/docs-citros/intro",
+        "docId": "intro"
+      }
+    ]
+  },
+  "docs": {
+    "intro": {
+      "id": "intro",
+      "title": "About Citros",
+      "description": "",
+      "sidebar": "dataAnalysisdSidebar"
+    }
+  }
+}

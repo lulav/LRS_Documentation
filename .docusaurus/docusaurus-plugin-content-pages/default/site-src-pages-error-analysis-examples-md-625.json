@@ -1,0 +1,10 @@
+{
+  "type": "mdx",
+  "permalink": "/error_analysis_examples",
+  "source": "@site/src/pages/error_analysis_examples.md",
+  "title": "Error analysis",
+  "description": "1. Query data",
+  "frontMatter": {
+    "toc_max_heading_level": 4
+  }
+}

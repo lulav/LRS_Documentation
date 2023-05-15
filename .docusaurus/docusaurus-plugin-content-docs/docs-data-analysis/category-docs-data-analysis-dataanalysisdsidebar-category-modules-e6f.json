@@ -1,0 +1,15 @@
+{
+  "title": "Modules",
+  "slug": "/category/modules",
+  "permalink": "/docs-data-analysis/category/modules",
+  "navigation": {
+    "previous": {
+      "title": "Tutorial intro",
+      "permalink": "/docs-data-analysis/intro"
+    },
+    "next": {
+      "title": "Data access",
+      "permalink": "/docs-data-analysis/category/data-access"
+    }
+  }
+}

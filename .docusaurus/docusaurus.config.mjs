@@ -32,6 +32,7 @@ export default {
       "classic",
       {
         "docs": {
+          "path": "docs",
           "sidebarPath": "/workspaces/citros_doc/sidebars.js",
           "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/"
         },
@@ -42,6 +43,17 @@ export default {
         "theme": {
           "customCss": "/workspaces/citros_doc/src/css/custom.css"
         }
+      }
+    ]
+  ],
+  "plugins": [
+    [
+      "@docusaurus/plugin-content-docs",
+      {
+        "id": "docs-data-analysis",
+        "path": "docs-data-analysis",
+        "routeBasePath": "docs-data-analysis",
+        "sidebarPath": "/workspaces/citros_doc/sidebars-data-analysis.js"
       }
     ]
   ],
@@ -61,9 +73,16 @@ export default {
       "items": [
         {
           "type": "docSidebar",
-          "sidebarId": "tutorialSidebar",
+          "sidebarId": "gettingStartedSidebar",
+          "label": "Getting started",
           "position": "left",
-          "label": "Tutorial"
+          "activeBaseRegex": "/docs/"
+        },
+        {
+          "to": "/docs-data-analysis/intro",
+          "label": "Data analysis",
+          "position": "left",
+          "activeBaseRegex": "/docs-data-analysis/"
         },
         {
           "to": "/blog",
@@ -327,13 +346,6 @@ export default {
         }
       ]
     },
-    "mermaid": {
-      "theme": {
-        "dark": "dark",
-        "light": "default"
-      },
-      "options": {}
-    },
     "colorMode": {
       "defaultMode": "light",
       "disableSwitch": false,
@@ -350,6 +362,13 @@ export default {
     "tableOfContents": {
       "minHeadingLevel": 2,
       "maxHeadingLevel": 3
+    },
+    "mermaid": {
+      "theme": {
+        "dark": "dark",
+        "light": "default"
+      },
+      "options": {}
     }
   },
   "baseUrlIssueBanner": true,
@@ -358,7 +377,6 @@ export default {
     "static"
   ],
   "customFields": {},
-  "plugins": [],
   "scripts": [],
   "headTags": [],
   "clientModules": [],

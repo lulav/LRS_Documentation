@@ -1,0 +1,103 @@
+{
+  "pluginId": "docs-data-analysis",
+  "version": "current",
+  "label": "Next",
+  "banner": null,
+  "badge": false,
+  "noIndex": false,
+  "className": "docs-version-current",
+  "isLast": true,
+  "docsSidebars": {
+    "dataAnalysisdSidebar": [
+      {
+        "type": "link",
+        "label": "Tutorial intro",
+        "href": "/docs-data-analysis/intro",
+        "docId": "intro"
+      },
+      {
+        "type": "category",
+        "label": "Modules",
+        "collapsible": true,
+        "collapsed": true,
+        "items": [
+          {
+            "type": "category",
+            "label": "Data access",
+            "collapsible": true,
+            "collapsed": true,
+            "items": [
+              {
+                "type": "link",
+                "label": "Documentation",
+                "href": "/docs-data-analysis/modules/data-access/data_access_description",
+                "docId": "modules/data-access/data_access_description"
+              },
+              {
+                "type": "link",
+                "label": "Examples",
+                "href": "/docs-data-analysis/modules/data-access/data_access_examples",
+                "docId": "modules/data-access/data_access_examples"
+              }
+            ],
+            "href": "/docs-data-analysis/category/data-access"
+          },
+          {
+            "type": "category",
+            "label": "Error analysis",
+            "collapsible": true,
+            "collapsed": true,
+            "items": [
+              {
+                "type": "link",
+                "label": "Documentation",
+                "href": "/docs-data-analysis/modules/error-analysis/error_analysis_description",
+                "docId": "modules/error-analysis/error_analysis_description"
+              },
+              {
+                "type": "link",
+                "label": "Examples",
+                "href": "/docs-data-analysis/modules/error-analysis/error_analysis_examples",
+                "docId": "modules/error-analysis/error_analysis_examples"
+              }
+            ],
+            "href": "/docs-data-analysis/category/error-analysis"
+          }
+        ],
+        "href": "/docs-data-analysis/category/modules"
+      }
+    ]
+  },
+  "docs": {
+    "intro": {
+      "id": "intro",
+      "title": "Tutorial intro",
+      "description": "Data access",
+      "sidebar": "dataAnalysisdSidebar"
+    },
+    "modules/data-access/data_access_description": {
+      "id": "modules/data-access/data_access_description",
+      "title": "data_access_description",
+      "description": "Documentation",
+      "sidebar": "dataAnalysisdSidebar"
+    },
+    "modules/data-access/data_access_examples": {
+      "id": "modules/data-access/data_access_examples",
+      "title": "data_access_examples",
+      "description": "Examples of the data_access module",
+      "sidebar": "dataAnalysisdSidebar"
+    },
+    "modules/error-analysis/error_analysis_description": {
+      "id": "modules/error-analysis/error_analysis_description",
+      "title": "error_analysis_description",
+      "description": "Documentation",
+      "sidebar": "dataAnalysisdSidebar"
+    },
+    "modules/error-analysis/error_analysis_examples": {
+      "id": "modules/error-analysis/error_analysis_examples",
+      "title": "Error analysis",
+      "description": "Examples of the error_analysis module",
+      "sidebar": "dataAnalysisdSidebar"
+    }
+  }
+}

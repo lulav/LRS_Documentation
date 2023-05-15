@@ -1,0 +1,10 @@
+{
+  "type": "mdx",
+  "permalink": "/data_access_description",
+  "source": "@site/src/pages/data_access_description.md",
+  "title": "Module citros_data_analysis.data_access {#citros_data_analysis.data_access}",
+  "description": "citrosdataanalysis.data_access}",
+  "frontMatter": {
+    "toc_max_heading_level": 3
+  }
+}

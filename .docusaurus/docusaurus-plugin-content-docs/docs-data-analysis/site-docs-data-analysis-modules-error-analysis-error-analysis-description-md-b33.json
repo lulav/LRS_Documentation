@@ -1,0 +1,28 @@
+{
+  "unversionedId": "modules/error-analysis/error_analysis_description",
+  "id": "modules/error-analysis/error_analysis_description",
+  "title": "error_analysis_description",
+  "description": "Documentation",
+  "source": "@site/docs-data-analysis/modules/error-analysis/error_analysis_description.md",
+  "sourceDirName": "modules/error-analysis",
+  "slug": "/modules/error-analysis/error_analysis_description",
+  "permalink": "/docs-data-analysis/modules/error-analysis/error_analysis_description",
+  "draft": false,
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "toc_max_heading_level": 3,
+    "sidebar_label": "Documentation",
+    "description": "Documentation",
+    "hide_title": true
+  },
+  "sidebar": "dataAnalysisdSidebar",
+  "previous": {
+    "title": "Error analysis",
+    "permalink": "/docs-data-analysis/category/error-analysis"
+  },
+  "next": {
+    "title": "Examples",
+    "permalink": "/docs-data-analysis/modules/error-analysis/error_analysis_examples"
+  }
+}

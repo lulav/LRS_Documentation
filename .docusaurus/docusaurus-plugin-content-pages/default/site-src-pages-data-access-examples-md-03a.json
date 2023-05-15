@@ -1,0 +1,9 @@
+{
+  "type": "mdx",
+  "permalink": "/data_access_examples",
+  "source": "@site/src/pages/data_access_examples.md",
+  "description": ".github/workflows/gcr.yml",
+  "frontMatter": {
+    "toc_max_heading_level": 4
+  }
+}

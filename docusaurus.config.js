@@ -44,6 +44,8 @@ const config = {
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         docs: {
+          //routeBasePath: 'docs',
+          path: 'docs',
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
@@ -61,6 +63,18 @@ const config = {
           customCss: require.resolve('./src/css/custom.css'),
         },
       }),
+    ],
+  ],
+
+  plugins: [
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'docs-data-analysis',
+        path: 'docs-data-analysis',
+        routeBasePath: 'docs-data-analysis',
+        sidebarPath: require.resolve('./sidebars-data-analysis.js'),
+      }, 
     ],
   ],
 
@@ -86,10 +100,18 @@ const config = {
         },
         items: [
           {
+            //to: '/docs/intro',    // ./docs/Intro.md
             type: 'docSidebar',
-            sidebarId: 'tutorialSidebar',
+            sidebarId: 'gettingStartedSidebar',
+            label: 'Getting started',
             position: 'left',
-            label: 'Tutorial',
+            activeBaseRegex: `/docs/`,
+          },
+          {
+            to: '/docs-data-analysis/intro',    // ./docs-api/Intro.md
+            label: 'Data analysis',
+            position: 'left',
+            activeBaseRegex: `/docs-data-analysis/`,
           },
           { to: '/blog', label: 'Blog', position: 'left' },
 

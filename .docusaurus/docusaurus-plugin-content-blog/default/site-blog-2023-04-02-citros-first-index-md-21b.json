@@ -1,16 +1,44 @@
 {
-  "permalink": "/blog/2023/04/02/citros-first",
+  "permalink": "/blog/first-blog-post",
   "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/blog/2023-04-02-citros-first/index.md",
   "source": "@site/blog/2023-04-02-citros-first/index.md",
-  "title": "citros-first",
-  "description": "---",
+  "title": "First Blog Post",
+  "description": "Congratulations, you have made your first post!",
   "date": "2023-04-02T00:00:00.000Z",
   "formattedDate": "April 2, 2023",
-  "tags": [],
-  "readingTime": 0.27,
+  "tags": [
+    {
+      "label": "greetings",
+      "permalink": "/blog/tags/greetings"
+    }
+  ],
+  "readingTime": 0.1,
   "hasTruncateMarker": false,
-  "authors": [],
-  "frontMatter": {},
+  "authors": [
+    {
+      "name": "Vladimir Kouperman",
+      "title": "CITROS maintainer",
+      "url": "https://github.com/vovacooper",
+      "key": "vovacooper"
+    },
+    {
+      "name": "Lidia Yalyalieva",
+      "title": "data scientis",
+      "url": "https://github.com/Yalyalieva",
+      "key": "lidia"
+    }
+  ],
+  "frontMatter": {
+    "slug": "first-blog-post",
+    "title": "First Blog Post",
+    "authors": [
+      "vovacooper",
+      "lidia"
+    ],
+    "tags": [
+      "greetings"
+    ]
+  },
   "nextItem": {
     "title": "Welcome",
     "permalink": "/blog/welcome"

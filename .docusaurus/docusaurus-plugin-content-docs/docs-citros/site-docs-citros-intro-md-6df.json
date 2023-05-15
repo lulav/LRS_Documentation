@@ -1,0 +1,19 @@
+{
+  "unversionedId": "intro",
+  "id": "intro",
+  "title": "About Citros",
+  "description": "",
+  "source": "@site/docs-citros/intro.md",
+  "sourceDirName": ".",
+  "slug": "/intro",
+  "permalink": "/docs-citros/intro",
+  "draft": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 1,
+  "frontMatter": {
+    "sidebar_position": 1,
+    "sidebar_label": "Citros guide book"
+  },
+  "sidebar": "dataAnalysisdSidebar"
+}
