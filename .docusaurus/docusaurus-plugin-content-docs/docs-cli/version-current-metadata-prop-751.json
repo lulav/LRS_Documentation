@@ -12,40 +12,40 @@
       {
         "type": "link",
         "label": "CLI",
-        "href": "/docs-cli/intro",
-        "docId": "intro"
+        "href": "/docs-cli/",
+        "docId": "index"
       }
     ],
     "citrosdSidebar": [
       {
         "type": "link",
         "label": "CLI",
-        "href": "/docs-cli/intro",
-        "docId": "intro"
+        "href": "/docs-cli/",
+        "docId": "index"
       }
     ],
     "clidSidebar": [
       {
         "type": "link",
         "label": "CLI",
-        "href": "/docs-cli/intro",
-        "docId": "intro"
+        "href": "/docs-cli/",
+        "docId": "index"
       }
     ],
     "dataAnalysisdSidebar": [
       {
         "type": "link",
         "label": "CLI",
-        "href": "/docs-cli/intro",
-        "docId": "intro"
+        "href": "/docs-cli/",
+        "docId": "index"
       }
     ]
   },
   "docs": {
-    "intro": {
-      "id": "intro",
-      "title": "CLI",
-      "description": "",
+    "index": {
+      "id": "index",
+      "title": "index",
+      "description": "Command line interface",
       "sidebar": "dataAnalysisdSidebar"
     }
   }

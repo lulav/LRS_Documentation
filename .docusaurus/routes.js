@@ -39,7 +39,7 @@ export default [
   },
   {
     path: '/blog',
-    component: ComponentCreator('/blog', 'a61'),
+    component: ComponentCreator('/blog', '4c1'),
     exact: true
   },
   {
@@ -48,58 +48,18 @@ export default [
     exact: true
   },
   {
-    path: '/blog/first-blog-post',
-    component: ComponentCreator('/blog/first-blog-post', '175'),
-    exact: true
-  },
-  {
-    path: '/blog/first-blog-post-example',
-    component: ComponentCreator('/blog/first-blog-post-example', 'd4c'),
-    exact: true
-  },
-  {
-    path: '/blog/long-blog-post',
-    component: ComponentCreator('/blog/long-blog-post', '07b'),
-    exact: true
-  },
-  {
-    path: '/blog/mdx-blog-post',
-    component: ComponentCreator('/blog/mdx-blog-post', '123'),
-    exact: true
-  },
-  {
     path: '/blog/tags',
     component: ComponentCreator('/blog/tags', 'de3'),
     exact: true
   },
   {
-    path: '/blog/tags/docusaurus',
-    component: ComponentCreator('/blog/tags/docusaurus', '696'),
-    exact: true
-  },
-  {
-    path: '/blog/tags/facebook',
-    component: ComponentCreator('/blog/tags/facebook', 'cb6'),
-    exact: true
-  },
-  {
     path: '/blog/tags/greetings',
-    component: ComponentCreator('/blog/tags/greetings', '788'),
-    exact: true
-  },
-  {
-    path: '/blog/tags/hello',
-    component: ComponentCreator('/blog/tags/hello', '49b'),
-    exact: true
-  },
-  {
-    path: '/blog/tags/hola',
-    component: ComponentCreator('/blog/tags/hola', '576'),
+    component: ComponentCreator('/blog/tags/greetings', '027'),
     exact: true
   },
   {
     path: '/blog/welcome',
-    component: ComponentCreator('/blog/welcome', 'be5'),
+    component: ComponentCreator('/blog/welcome', 'a08'),
     exact: true
   },
   {
@@ -109,65 +69,143 @@ export default [
   },
   {
     path: '/docs',
-    component: ComponentCreator('/docs', 'ea4'),
+    component: ComponentCreator('/docs', 'e68'),
     routes: [
       {
-        path: '/docs/intro',
-        component: ComponentCreator('/docs/intro', '553'),
+        path: '/docs/',
+        component: ComponentCreator('/docs/', 'b8b'),
         exact: true,
-        sidebar: "gettingStartedSidebar"
+        sidebar: "dataAnalysisdSidebar"
+      },
+      {
+        path: '/docs/new_page',
+        component: ComponentCreator('/docs/new_page', '5d3'),
+        exact: true,
+        sidebar: "dataAnalysisdSidebar"
+      }
+    ]
+  },
+  {
+    path: '/docs-citros',
+    component: ComponentCreator('/docs-citros', 'cda'),
+    routes: [
+      {
+        path: '/docs-citros/',
+        component: ComponentCreator('/docs-citros/', 'aa8'),
+        exact: true,
+        sidebar: "dataAnalysisdSidebar"
+      },
+      {
+        path: '/docs-citros/run_in_cloud',
+        component: ComponentCreator('/docs-citros/run_in_cloud', '448'),
+        exact: true,
+        sidebar: "dataAnalysisdSidebar"
+      },
+      {
+        path: '/docs-citros/run_locally',
+        component: ComponentCreator('/docs-citros/run_locally', 'c08'),
+        exact: true,
+        sidebar: "dataAnalysisdSidebar"
+      },
+      {
+        path: '/docs-citros/simulation_run',
+        component: ComponentCreator('/docs-citros/simulation_run', 'f76'),
+        exact: true,
+        sidebar: "dataAnalysisdSidebar"
+      }
+    ]
+  },
+  {
+    path: '/docs-cli',
+    component: ComponentCreator('/docs-cli', 'e3e'),
+    routes: [
+      {
+        path: '/docs-cli/',
+        component: ComponentCreator('/docs-cli/', '62e'),
+        exact: true,
+        sidebar: "dataAnalysisdSidebar"
       }
     ]
   },
   {
     path: '/docs-data-analysis',
-    component: ComponentCreator('/docs-data-analysis', '41e'),
+    component: ComponentCreator('/docs-data-analysis', 'fb2'),
     routes: [
       {
+        path: '/docs-data-analysis/',
+        component: ComponentCreator('/docs-data-analysis/', '6c2'),
+        exact: true,
+        sidebar: "dataAnalysisdSidebar"
+      },
+      {
         path: '/docs-data-analysis/category/data-access',
-        component: ComponentCreator('/docs-data-analysis/category/data-access', 'f0f'),
+        component: ComponentCreator('/docs-data-analysis/category/data-access', '2bd'),
+        exact: true,
+        sidebar: "gettingStartedSidebar"
+      },
+      {
+        path: '/docs-data-analysis/category/data-access-1',
+        component: ComponentCreator('/docs-data-analysis/category/data-access-1', 'b20'),
+        exact: true,
+        sidebar: "citrosdSidebar"
+      },
+      {
+        path: '/docs-data-analysis/category/data-access-2',
+        component: ComponentCreator('/docs-data-analysis/category/data-access-2', '10a'),
+        exact: true,
+        sidebar: "clidSidebar"
+      },
+      {
+        path: '/docs-data-analysis/category/data-access-3',
+        component: ComponentCreator('/docs-data-analysis/category/data-access-3', '700'),
         exact: true,
         sidebar: "dataAnalysisdSidebar"
       },
       {
         path: '/docs-data-analysis/category/error-analysis',
-        component: ComponentCreator('/docs-data-analysis/category/error-analysis', 'a23'),
+        component: ComponentCreator('/docs-data-analysis/category/error-analysis', 'bfe'),
+        exact: true,
+        sidebar: "gettingStartedSidebar"
+      },
+      {
+        path: '/docs-data-analysis/category/error-analysis-1',
+        component: ComponentCreator('/docs-data-analysis/category/error-analysis-1', '927'),
+        exact: true,
+        sidebar: "citrosdSidebar"
+      },
+      {
+        path: '/docs-data-analysis/category/error-analysis-2',
+        component: ComponentCreator('/docs-data-analysis/category/error-analysis-2', 'afe'),
+        exact: true,
+        sidebar: "clidSidebar"
+      },
+      {
+        path: '/docs-data-analysis/category/error-analysis-3',
+        component: ComponentCreator('/docs-data-analysis/category/error-analysis-3', '7cf'),
         exact: true,
         sidebar: "dataAnalysisdSidebar"
       },
       {
-        path: '/docs-data-analysis/category/modules',
-        component: ComponentCreator('/docs-data-analysis/category/modules', 'f01'),
+        path: '/docs-data-analysis/data-access/data_access_description',
+        component: ComponentCreator('/docs-data-analysis/data-access/data_access_description', 'e80'),
         exact: true,
         sidebar: "dataAnalysisdSidebar"
       },
       {
-        path: '/docs-data-analysis/intro',
-        component: ComponentCreator('/docs-data-analysis/intro', '146'),
+        path: '/docs-data-analysis/data-access/data_access_examples',
+        component: ComponentCreator('/docs-data-analysis/data-access/data_access_examples', '47d'),
         exact: true,
         sidebar: "dataAnalysisdSidebar"
       },
       {
-        path: '/docs-data-analysis/modules/data-access/data_access_description',
-        component: ComponentCreator('/docs-data-analysis/modules/data-access/data_access_description', '8cf'),
+        path: '/docs-data-analysis/error-analysis/error_analysis_description',
+        component: ComponentCreator('/docs-data-analysis/error-analysis/error_analysis_description', '8de'),
         exact: true,
         sidebar: "dataAnalysisdSidebar"
       },
       {
-        path: '/docs-data-analysis/modules/data-access/data_access_examples',
-        component: ComponentCreator('/docs-data-analysis/modules/data-access/data_access_examples', '030'),
-        exact: true,
-        sidebar: "dataAnalysisdSidebar"
-      },
-      {
-        path: '/docs-data-analysis/modules/error-analysis/error_analysis_description',
-        component: ComponentCreator('/docs-data-analysis/modules/error-analysis/error_analysis_description', 'e59'),
-        exact: true,
-        sidebar: "dataAnalysisdSidebar"
-      },
-      {
-        path: '/docs-data-analysis/modules/error-analysis/error_analysis_examples',
-        component: ComponentCreator('/docs-data-analysis/modules/error-analysis/error_analysis_examples', '740'),
+        path: '/docs-data-analysis/error-analysis/error_analysis_examples',
+        component: ComponentCreator('/docs-data-analysis/error-analysis/error_analysis_examples', 'd81'),
         exact: true,
         sidebar: "dataAnalysisdSidebar"
       }

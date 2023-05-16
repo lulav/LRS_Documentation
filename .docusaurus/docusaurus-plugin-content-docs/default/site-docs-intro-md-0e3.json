@@ -1,20 +1,24 @@
 {
   "unversionedId": "intro",
   "id": "intro",
-  "title": "Getting started",
-  "description": "",
+  "title": "intro",
+  "description": "Citros",
   "source": "@site/docs/intro.md",
   "sourceDirName": ".",
   "slug": "/intro",
   "permalink": "/docs/intro",
   "draft": false,
-  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/intro.md",
   "tags": [],
   "version": "current",
   "sidebarPosition": 1,
   "frontMatter": {
     "sidebar_position": 1,
-    "sidebar_label": "Getting started"
+    "sidebar_label": "Getting started",
+    "hide_title": true
   },
-  "sidebar": "gettingStartedSidebar"
+  "sidebar": "dataAnalysisdSidebar",
+  "next": {
+    "title": "label",
+    "permalink": "/docs/new_page"
+  }
 }

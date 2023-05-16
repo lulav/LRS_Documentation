@@ -5,11 +5,11 @@
   "navigation": {
     "previous": {
       "title": "Examples",
-      "permalink": "/docs-data-analysis/modules/data-access/data_access_examples"
+      "permalink": "/docs-data-analysis/data-access/data_access_examples"
     },
     "next": {
       "title": "Documentation",
-      "permalink": "/docs-data-analysis/modules/error-analysis/error_analysis_description"
+      "permalink": "/docs-data-analysis/error-analysis/error_analysis_description"
     }
   }
 }

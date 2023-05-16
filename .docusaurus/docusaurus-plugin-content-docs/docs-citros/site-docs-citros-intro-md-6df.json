@@ -1,8 +1,8 @@
 {
   "unversionedId": "intro",
   "id": "intro",
-  "title": "About Citros",
-  "description": "",
+  "title": "intro",
+  "description": "About Citros",
   "source": "@site/docs-citros/intro.md",
   "sourceDirName": ".",
   "slug": "/intro",
@@ -13,7 +13,12 @@
   "sidebarPosition": 1,
   "frontMatter": {
     "sidebar_position": 1,
-    "sidebar_label": "Citros guide book"
+    "sidebar_label": "Citros guide book",
+    "hide_title": true
   },
-  "sidebar": "dataAnalysisdSidebar"
+  "sidebar": "dataAnalysisdSidebar",
+  "next": {
+    "title": "Simulation run",
+    "permalink": "/docs-citros/simulation_run"
+  }
 }

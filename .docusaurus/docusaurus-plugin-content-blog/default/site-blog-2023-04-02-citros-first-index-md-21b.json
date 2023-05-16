@@ -1,9 +1,8 @@
 {
   "permalink": "/blog/first-blog-post",
-  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/blog/2023-04-02-citros-first/index.md",
   "source": "@site/blog/2023-04-02-citros-first/index.md",
   "title": "First Blog Post",
-  "description": "Congratulations, you have made your first post!",
+  "description": "Citros logo",
   "date": "2023-04-02T00:00:00.000Z",
   "formattedDate": "April 2, 2023",
   "tags": [
@@ -12,7 +11,7 @@
       "permalink": "/blog/tags/greetings"
     }
   ],
-  "readingTime": 0.1,
+  "readingTime": 0.01,
   "hasTruncateMarker": false,
   "authors": [
     {

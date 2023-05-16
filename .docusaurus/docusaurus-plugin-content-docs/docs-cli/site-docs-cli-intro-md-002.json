@@ -13,7 +13,8 @@
   "sidebarPosition": 1,
   "frontMatter": {
     "sidebar_position": 1,
-    "sidebar_label": "CLI"
+    "sidebar_label": "CLI",
+    "hide_title": true
   },
   "sidebar": "dataAnalysisdSidebar"
 }

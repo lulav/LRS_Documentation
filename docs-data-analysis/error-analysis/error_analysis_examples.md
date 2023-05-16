@@ -145,7 +145,7 @@ F = dataset.to_pandas()
 </details>
 
 ### Bin data
-Let's choose one of the parameter, say 'data.time', devide it into `n_bins` intervals and assign index to each of the interval. Then let's group values of the 'x' vector from the [previous example](#citrosdata-object) according to this binning and calculate the mean values of 'x' for the each group. This procedure may be done by function [**bin_data()**](error_analysis_description#citros_data_analysis.error_analysis.CitrosData.bin_data). To see the histogram and control number of counts falling in each bin, pass `show_fig` = True:
+Let's choose one of the parameter, say 'data.time', divide it into `n_bins` intervals and assign index to each of the interval. Then let's group values of the 'x' vector from the [previous example](#citrosdata-object) according to this binning and calculate the mean values of 'x' for the each group. This procedure may be done by function [**bin_data()**](error_analysis_description#citros_data_analysis.error_analysis.CitrosData.bin_data). To see the histogram and control number of counts falling in each bin, pass `show_fig` = True:
 
 ```python
 db_bin = dataset.bin_data(n_bins = 50,

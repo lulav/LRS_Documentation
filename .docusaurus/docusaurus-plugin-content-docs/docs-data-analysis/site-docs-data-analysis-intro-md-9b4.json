@@ -1,7 +1,7 @@
 {
   "unversionedId": "intro",
   "id": "intro",
-  "title": "Tutorial intro",
+  "title": "Package overview",
   "description": "Data access",
   "source": "@site/docs-data-analysis/intro.md",
   "sourceDirName": ".",
@@ -13,11 +13,12 @@
   "sidebarPosition": 1,
   "frontMatter": {
     "sidebar_position": 1,
-    "sidebar_label": "Tutorial intro"
+    "sidebar_label": "Package overview",
+    "hide_title": true
   },
   "sidebar": "dataAnalysisdSidebar",
   "next": {
-    "title": "Modules",
-    "permalink": "/docs-data-analysis/category/modules"
+    "title": "Data access",
+    "permalink": "/docs-data-analysis/category/data-access-3"
   }
 }

@@ -921,6 +921,7 @@ def plot_graph(
     x_label,
     y_label,
     *args,
+    ax=None,
     **kwargs
 )
 ```
@@ -944,6 +945,19 @@ are the labels of columns of the table <code>df</code>.
 
 **```y_label```** :&ensp;<code>str</code>
 :   Label of the column to plot along y-axis.
+
+
+**```ax```** :&ensp;<code>matplotlib.axes.Axes</code>
+:   Figure axis to plot on. If not specified, the new pair of fig, ax will be created.
+
+#### Returns
+
+**```fig```** :&ensp;<code>matplotlib.figure.Figure</code>
+:   Created figure if <code>ax</code> was not passed.
+
+
+**```ax```** :&ensp;<code>matplotlib.axes.Axes</code>
+:   Created ax if <code>ax</code> is not passed.
 
 #### Other Parameters
 

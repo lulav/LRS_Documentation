@@ -1,15 +1,15 @@
 {
   "title": "Data access",
-  "slug": "/category/data-access",
-  "permalink": "/docs-data-analysis/category/data-access",
+  "slug": "/category/data-access-3",
+  "permalink": "/docs-data-analysis/category/data-access-3",
   "navigation": {
     "previous": {
-      "title": "Modules",
-      "permalink": "/docs-data-analysis/category/modules"
+      "title": "Package overview",
+      "permalink": "/docs-data-analysis/"
     },
     "next": {
       "title": "Documentation",
-      "permalink": "/docs-data-analysis/modules/data-access/data_access_description"
+      "permalink": "/docs-data-analysis/data-access/data_access_description"
     }
   }
 }

@@ -1,0 +1,28 @@
+{
+  "unversionedId": "run_locally",
+  "id": "run_locally",
+  "title": "run_locally",
+  "description": "New heading",
+  "source": "@site/docs-citros/run_locally.md",
+  "sourceDirName": ".",
+  "slug": "/run_locally",
+  "permalink": "/docs-citros/run_locally",
+  "draft": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 3,
+  "frontMatter": {
+    "sidebar_position": 3,
+    "sidebar_label": "Run locally",
+    "hide_title": true
+  },
+  "sidebar": "dataAnalysisdSidebar",
+  "previous": {
+    "title": "Simulation run",
+    "permalink": "/docs-citros/simulation_run"
+  },
+  "next": {
+    "title": "Run in cloud",
+    "permalink": "/docs-citros/run_in_cloud"
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "unversionedId": "new_page",
+  "id": "new_page",
+  "title": "new_page",
+  "description": "New heading",
+  "source": "@site/docs/new_page.md",
+  "sourceDirName": ".",
+  "slug": "/new_page",
+  "permalink": "/docs/new_page",
+  "draft": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 1,
+  "frontMatter": {
+    "sidebar_position": 1,
+    "sidebar_label": "New page",
+    "hide_title": true
+  },
+  "sidebar": "dataAnalysisdSidebar",
+  "previous": {
+    "title": "Getting started",
+    "permalink": "/docs/"
+  }
+}

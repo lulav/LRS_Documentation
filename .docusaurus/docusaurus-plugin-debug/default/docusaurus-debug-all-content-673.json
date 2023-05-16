@@ -11,8 +11,6 @@
           "className": "docs-version-current",
           "path": "/docs",
           "tagsPath": "/docs/tags",
-          "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs",
-          "editUrlLocalized": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/i18n/en/docusaurus-plugin-content-docs/current",
           "isLast": true,
           "routePriority": -1,
           "sidebarFilePath": "/workspaces/citros_doc/sidebars.js",
@@ -20,24 +18,52 @@
           "contentPathLocalized": "/workspaces/citros_doc/i18n/en/docusaurus-plugin-content-docs/current",
           "docs": [
             {
-              "unversionedId": "intro",
-              "id": "intro",
-              "title": "Getting started",
-              "description": "",
-              "source": "@site/docs/intro.md",
+              "unversionedId": "index",
+              "id": "index",
+              "title": "index",
+              "description": "Citros",
+              "source": "@site/docs/index.md",
               "sourceDirName": ".",
-              "slug": "/intro",
-              "permalink": "/docs/intro",
+              "slug": "/",
+              "permalink": "/docs/",
               "draft": false,
-              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/intro.md",
               "tags": [],
               "version": "current",
               "sidebarPosition": 1,
               "frontMatter": {
                 "sidebar_position": 1,
-                "sidebar_label": "Getting started"
+                "sidebar_label": "Getting started",
+                "hide_title": true
               },
-              "sidebar": "gettingStartedSidebar"
+              "sidebar": "dataAnalysisdSidebar",
+              "next": {
+                "title": "New page",
+                "permalink": "/docs/new_page"
+              }
+            },
+            {
+              "unversionedId": "new_page",
+              "id": "new_page",
+              "title": "new_page",
+              "description": "New heading",
+              "source": "@site/docs/new_page.md",
+              "sourceDirName": ".",
+              "slug": "/new_page",
+              "permalink": "/docs/new_page",
+              "draft": false,
+              "tags": [],
+              "version": "current",
+              "sidebarPosition": 1,
+              "frontMatter": {
+                "sidebar_position": 1,
+                "sidebar_label": "New page",
+                "hide_title": true
+              },
+              "sidebar": "dataAnalysisdSidebar",
+              "previous": {
+                "title": "Getting started",
+                "permalink": "/docs/"
+              }
             }
           ],
           "drafts": [],
@@ -45,8 +71,337 @@
             "gettingStartedSidebar": [
               {
                 "type": "doc",
-                "id": "intro",
+                "id": "index",
                 "label": "Getting started"
+              },
+              {
+                "type": "doc",
+                "id": "new_page",
+                "label": "New page"
+              }
+            ],
+            "citrosdSidebar": [
+              {
+                "type": "doc",
+                "id": "index",
+                "label": "Getting started"
+              },
+              {
+                "type": "doc",
+                "id": "new_page",
+                "label": "New page"
+              }
+            ],
+            "clidSidebar": [
+              {
+                "type": "doc",
+                "id": "index",
+                "label": "Getting started"
+              },
+              {
+                "type": "doc",
+                "id": "new_page",
+                "label": "New page"
+              }
+            ],
+            "dataAnalysisdSidebar": [
+              {
+                "type": "doc",
+                "id": "index",
+                "label": "Getting started"
+              },
+              {
+                "type": "doc",
+                "id": "new_page",
+                "label": "New page"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "docs-citros": {
+      "loadedVersions": [
+        {
+          "versionName": "current",
+          "label": "Next",
+          "banner": null,
+          "badge": false,
+          "noIndex": false,
+          "className": "docs-version-current",
+          "path": "/docs-citros",
+          "tagsPath": "/docs-citros/tags",
+          "isLast": true,
+          "routePriority": -1,
+          "sidebarFilePath": "/workspaces/citros_doc/sidebars.js",
+          "contentPath": "/workspaces/citros_doc/docs-citros",
+          "contentPathLocalized": "/workspaces/citros_doc/i18n/en/docusaurus-plugin-content-docs-docs-citros/current",
+          "docs": [
+            {
+              "unversionedId": "index",
+              "id": "index",
+              "title": "index",
+              "description": "About Citros",
+              "source": "@site/docs-citros/index.md",
+              "sourceDirName": ".",
+              "slug": "/",
+              "permalink": "/docs-citros/",
+              "draft": false,
+              "tags": [],
+              "version": "current",
+              "sidebarPosition": 1,
+              "frontMatter": {
+                "sidebar_position": 1,
+                "sidebar_label": "Citros guide book",
+                "hide_title": true
+              },
+              "sidebar": "dataAnalysisdSidebar",
+              "next": {
+                "title": "Simulation run",
+                "permalink": "/docs-citros/simulation_run"
+              }
+            },
+            {
+              "unversionedId": "run_in_cloud",
+              "id": "run_in_cloud",
+              "title": "run_in_cloud",
+              "description": "New heading",
+              "source": "@site/docs-citros/run_in_cloud.md",
+              "sourceDirName": ".",
+              "slug": "/run_in_cloud",
+              "permalink": "/docs-citros/run_in_cloud",
+              "draft": false,
+              "tags": [],
+              "version": "current",
+              "sidebarPosition": 4,
+              "frontMatter": {
+                "sidebar_position": 4,
+                "sidebar_label": "Run in cloud",
+                "hide_title": true
+              },
+              "sidebar": "dataAnalysisdSidebar",
+              "previous": {
+                "title": "Run locally",
+                "permalink": "/docs-citros/run_locally"
+              }
+            },
+            {
+              "unversionedId": "run_locally",
+              "id": "run_locally",
+              "title": "run_locally",
+              "description": "New heading",
+              "source": "@site/docs-citros/run_locally.md",
+              "sourceDirName": ".",
+              "slug": "/run_locally",
+              "permalink": "/docs-citros/run_locally",
+              "draft": false,
+              "tags": [],
+              "version": "current",
+              "sidebarPosition": 3,
+              "frontMatter": {
+                "sidebar_position": 3,
+                "sidebar_label": "Run locally",
+                "hide_title": true
+              },
+              "sidebar": "dataAnalysisdSidebar",
+              "previous": {
+                "title": "Simulation run",
+                "permalink": "/docs-citros/simulation_run"
+              },
+              "next": {
+                "title": "Run in cloud",
+                "permalink": "/docs-citros/run_in_cloud"
+              }
+            },
+            {
+              "unversionedId": "simulation_run",
+              "id": "simulation_run",
+              "title": "simulation_run",
+              "description": "New heading",
+              "source": "@site/docs-citros/simulation_run.md",
+              "sourceDirName": ".",
+              "slug": "/simulation_run",
+              "permalink": "/docs-citros/simulation_run",
+              "draft": false,
+              "tags": [],
+              "version": "current",
+              "sidebarPosition": 2,
+              "frontMatter": {
+                "sidebar_position": 2,
+                "sidebar_label": "Simulation run",
+                "hide_title": true
+              },
+              "sidebar": "dataAnalysisdSidebar",
+              "previous": {
+                "title": "Citros guide book",
+                "permalink": "/docs-citros/"
+              },
+              "next": {
+                "title": "Run locally",
+                "permalink": "/docs-citros/run_locally"
+              }
+            }
+          ],
+          "drafts": [],
+          "sidebars": {
+            "gettingStartedSidebar": [
+              {
+                "type": "doc",
+                "id": "index",
+                "label": "Citros guide book"
+              },
+              {
+                "type": "doc",
+                "id": "simulation_run",
+                "label": "Simulation run"
+              },
+              {
+                "type": "doc",
+                "id": "run_locally",
+                "label": "Run locally"
+              },
+              {
+                "type": "doc",
+                "id": "run_in_cloud",
+                "label": "Run in cloud"
+              }
+            ],
+            "citrosdSidebar": [
+              {
+                "type": "doc",
+                "id": "index",
+                "label": "Citros guide book"
+              },
+              {
+                "type": "doc",
+                "id": "simulation_run",
+                "label": "Simulation run"
+              },
+              {
+                "type": "doc",
+                "id": "run_locally",
+                "label": "Run locally"
+              },
+              {
+                "type": "doc",
+                "id": "run_in_cloud",
+                "label": "Run in cloud"
+              }
+            ],
+            "clidSidebar": [
+              {
+                "type": "doc",
+                "id": "index",
+                "label": "Citros guide book"
+              },
+              {
+                "type": "doc",
+                "id": "simulation_run",
+                "label": "Simulation run"
+              },
+              {
+                "type": "doc",
+                "id": "run_locally",
+                "label": "Run locally"
+              },
+              {
+                "type": "doc",
+                "id": "run_in_cloud",
+                "label": "Run in cloud"
+              }
+            ],
+            "dataAnalysisdSidebar": [
+              {
+                "type": "doc",
+                "id": "index",
+                "label": "Citros guide book"
+              },
+              {
+                "type": "doc",
+                "id": "simulation_run",
+                "label": "Simulation run"
+              },
+              {
+                "type": "doc",
+                "id": "run_locally",
+                "label": "Run locally"
+              },
+              {
+                "type": "doc",
+                "id": "run_in_cloud",
+                "label": "Run in cloud"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "docs-cli": {
+      "loadedVersions": [
+        {
+          "versionName": "current",
+          "label": "Next",
+          "banner": null,
+          "badge": false,
+          "noIndex": false,
+          "className": "docs-version-current",
+          "path": "/docs-cli",
+          "tagsPath": "/docs-cli/tags",
+          "isLast": true,
+          "routePriority": -1,
+          "sidebarFilePath": "/workspaces/citros_doc/sidebars.js",
+          "contentPath": "/workspaces/citros_doc/docs-cli",
+          "contentPathLocalized": "/workspaces/citros_doc/i18n/en/docusaurus-plugin-content-docs-docs-cli/current",
+          "docs": [
+            {
+              "unversionedId": "index",
+              "id": "index",
+              "title": "index",
+              "description": "Command line interface",
+              "source": "@site/docs-cli/index.md",
+              "sourceDirName": ".",
+              "slug": "/",
+              "permalink": "/docs-cli/",
+              "draft": false,
+              "tags": [],
+              "version": "current",
+              "sidebarPosition": 1,
+              "frontMatter": {
+                "sidebar_position": 1,
+                "sidebar_label": "CLI",
+                "hide_title": true
+              },
+              "sidebar": "dataAnalysisdSidebar"
+            }
+          ],
+          "drafts": [],
+          "sidebars": {
+            "gettingStartedSidebar": [
+              {
+                "type": "doc",
+                "id": "index",
+                "label": "CLI"
+              }
+            ],
+            "citrosdSidebar": [
+              {
+                "type": "doc",
+                "id": "index",
+                "label": "CLI"
+              }
+            ],
+            "clidSidebar": [
+              {
+                "type": "doc",
+                "id": "index",
+                "label": "CLI"
+              }
+            ],
+            "dataAnalysisdSidebar": [
+              {
+                "type": "doc",
+                "id": "index",
+                "label": "CLI"
               }
             ]
           }
@@ -66,42 +421,19 @@
           "tagsPath": "/docs-data-analysis/tags",
           "isLast": true,
           "routePriority": -1,
-          "sidebarFilePath": "/workspaces/citros_doc/sidebars-data-analysis.js",
+          "sidebarFilePath": "/workspaces/citros_doc/sidebars.js",
           "contentPath": "/workspaces/citros_doc/docs-data-analysis",
           "contentPathLocalized": "/workspaces/citros_doc/i18n/en/docusaurus-plugin-content-docs-docs-data-analysis/current",
           "docs": [
             {
-              "unversionedId": "intro",
-              "id": "intro",
-              "title": "Tutorial intro",
-              "description": "Data access",
-              "source": "@site/docs-data-analysis/intro.md",
-              "sourceDirName": ".",
-              "slug": "/intro",
-              "permalink": "/docs-data-analysis/intro",
-              "draft": false,
-              "tags": [],
-              "version": "current",
-              "sidebarPosition": 1,
-              "frontMatter": {
-                "sidebar_position": 1,
-                "sidebar_label": "Tutorial intro"
-              },
-              "sidebar": "dataAnalysisdSidebar",
-              "next": {
-                "title": "Modules",
-                "permalink": "/docs-data-analysis/category/modules"
-              }
-            },
-            {
-              "unversionedId": "modules/data-access/data_access_description",
-              "id": "modules/data-access/data_access_description",
+              "unversionedId": "data-access/data_access_description",
+              "id": "data-access/data_access_description",
               "title": "data_access_description",
               "description": "Documentation",
-              "source": "@site/docs-data-analysis/modules/data-access/data_access_description.md",
-              "sourceDirName": "modules/data-access",
-              "slug": "/modules/data-access/data_access_description",
-              "permalink": "/docs-data-analysis/modules/data-access/data_access_description",
+              "source": "@site/docs-data-analysis/data-access/data_access_description.md",
+              "sourceDirName": "data-access",
+              "slug": "/data-access/data_access_description",
+              "permalink": "/docs-data-analysis/data-access/data_access_description",
               "draft": false,
               "tags": [],
               "version": "current",
@@ -114,22 +446,22 @@
               "sidebar": "dataAnalysisdSidebar",
               "previous": {
                 "title": "Data access",
-                "permalink": "/docs-data-analysis/category/data-access"
+                "permalink": "/docs-data-analysis/category/data-access-3"
               },
               "next": {
                 "title": "Examples",
-                "permalink": "/docs-data-analysis/modules/data-access/data_access_examples"
+                "permalink": "/docs-data-analysis/data-access/data_access_examples"
               }
             },
             {
-              "unversionedId": "modules/data-access/data_access_examples",
-              "id": "modules/data-access/data_access_examples",
+              "unversionedId": "data-access/data_access_examples",
+              "id": "data-access/data_access_examples",
               "title": "data_access_examples",
               "description": "Examples of the data_access module",
-              "source": "@site/docs-data-analysis/modules/data-access/data_access_examples.md",
-              "sourceDirName": "modules/data-access",
-              "slug": "/modules/data-access/data_access_examples",
-              "permalink": "/docs-data-analysis/modules/data-access/data_access_examples",
+              "source": "@site/docs-data-analysis/data-access/data_access_examples.md",
+              "sourceDirName": "data-access",
+              "slug": "/data-access/data_access_examples",
+              "permalink": "/docs-data-analysis/data-access/data_access_examples",
               "draft": false,
               "tags": [],
               "version": "current",
@@ -142,22 +474,22 @@
               "sidebar": "dataAnalysisdSidebar",
               "previous": {
                 "title": "Documentation",
-                "permalink": "/docs-data-analysis/modules/data-access/data_access_description"
+                "permalink": "/docs-data-analysis/data-access/data_access_description"
               },
               "next": {
                 "title": "Error analysis",
-                "permalink": "/docs-data-analysis/category/error-analysis"
+                "permalink": "/docs-data-analysis/category/error-analysis-3"
               }
             },
             {
-              "unversionedId": "modules/error-analysis/error_analysis_description",
-              "id": "modules/error-analysis/error_analysis_description",
+              "unversionedId": "error-analysis/error_analysis_description",
+              "id": "error-analysis/error_analysis_description",
               "title": "error_analysis_description",
               "description": "Documentation",
-              "source": "@site/docs-data-analysis/modules/error-analysis/error_analysis_description.md",
-              "sourceDirName": "modules/error-analysis",
-              "slug": "/modules/error-analysis/error_analysis_description",
-              "permalink": "/docs-data-analysis/modules/error-analysis/error_analysis_description",
+              "source": "@site/docs-data-analysis/error-analysis/error_analysis_description.md",
+              "sourceDirName": "error-analysis",
+              "slug": "/error-analysis/error_analysis_description",
+              "permalink": "/docs-data-analysis/error-analysis/error_analysis_description",
               "draft": false,
               "tags": [],
               "version": "current",
@@ -170,22 +502,22 @@
               "sidebar": "dataAnalysisdSidebar",
               "previous": {
                 "title": "Error analysis",
-                "permalink": "/docs-data-analysis/category/error-analysis"
+                "permalink": "/docs-data-analysis/category/error-analysis-3"
               },
               "next": {
                 "title": "Examples",
-                "permalink": "/docs-data-analysis/modules/error-analysis/error_analysis_examples"
+                "permalink": "/docs-data-analysis/error-analysis/error_analysis_examples"
               }
             },
             {
-              "unversionedId": "modules/error-analysis/error_analysis_examples",
-              "id": "modules/error-analysis/error_analysis_examples",
+              "unversionedId": "error-analysis/error_analysis_examples",
+              "id": "error-analysis/error_analysis_examples",
               "title": "Error analysis",
               "description": "Examples of the error_analysis module",
-              "source": "@site/docs-data-analysis/modules/error-analysis/error_analysis_examples.md",
-              "sourceDirName": "modules/error-analysis",
-              "slug": "/modules/error-analysis/error_analysis_examples",
-              "permalink": "/docs-data-analysis/modules/error-analysis/error_analysis_examples",
+              "source": "@site/docs-data-analysis/error-analysis/error_analysis_examples.md",
+              "sourceDirName": "error-analysis",
+              "slug": "/error-analysis/error_analysis_examples",
+              "permalink": "/docs-data-analysis/error-analysis/error_analysis_examples",
               "draft": false,
               "tags": [],
               "version": "current",
@@ -198,75 +530,245 @@
               "sidebar": "dataAnalysisdSidebar",
               "previous": {
                 "title": "Documentation",
-                "permalink": "/docs-data-analysis/modules/error-analysis/error_analysis_description"
+                "permalink": "/docs-data-analysis/error-analysis/error_analysis_description"
+              }
+            },
+            {
+              "unversionedId": "index",
+              "id": "index",
+              "title": "index",
+              "description": "Package overview",
+              "source": "@site/docs-data-analysis/index.md",
+              "sourceDirName": ".",
+              "slug": "/",
+              "permalink": "/docs-data-analysis/",
+              "draft": false,
+              "tags": [],
+              "version": "current",
+              "sidebarPosition": 1,
+              "frontMatter": {
+                "sidebar_position": 1,
+                "sidebar_label": "Package overview",
+                "hide_title": true
+              },
+              "sidebar": "dataAnalysisdSidebar",
+              "next": {
+                "title": "Data access",
+                "permalink": "/docs-data-analysis/category/data-access-3"
               }
             }
           ],
           "drafts": [],
           "sidebars": {
-            "dataAnalysisdSidebar": [
+            "gettingStartedSidebar": [
               {
                 "type": "doc",
-                "id": "intro",
-                "label": "Tutorial intro"
+                "id": "index",
+                "label": "Package overview"
               },
               {
                 "type": "category",
-                "label": "Modules",
+                "label": "Data access",
                 "collapsible": true,
                 "collapsed": true,
                 "items": [
                   {
-                    "type": "category",
-                    "label": "Data access",
-                    "collapsible": true,
-                    "collapsed": true,
-                    "items": [
-                      {
-                        "type": "doc",
-                        "id": "modules/data-access/data_access_description",
-                        "label": "Documentation"
-                      },
-                      {
-                        "type": "doc",
-                        "id": "modules/data-access/data_access_examples",
-                        "label": "Examples"
-                      }
-                    ],
-                    "link": {
-                      "type": "generated-index",
-                      "slug": "/category/data-access",
-                      "permalink": "/docs-data-analysis/category/data-access"
-                    }
+                    "type": "doc",
+                    "id": "data-access/data_access_description",
+                    "label": "Documentation"
                   },
                   {
-                    "type": "category",
-                    "label": "Error analysis",
-                    "collapsible": true,
-                    "collapsed": true,
-                    "items": [
-                      {
-                        "type": "doc",
-                        "id": "modules/error-analysis/error_analysis_description",
-                        "label": "Documentation"
-                      },
-                      {
-                        "type": "doc",
-                        "id": "modules/error-analysis/error_analysis_examples",
-                        "label": "Examples"
-                      }
-                    ],
-                    "link": {
-                      "type": "generated-index",
-                      "slug": "/category/error-analysis",
-                      "permalink": "/docs-data-analysis/category/error-analysis"
-                    }
+                    "type": "doc",
+                    "id": "data-access/data_access_examples",
+                    "label": "Examples"
                   }
                 ],
                 "link": {
                   "type": "generated-index",
-                  "slug": "/category/modules",
-                  "permalink": "/docs-data-analysis/category/modules"
+                  "slug": "/category/data-access",
+                  "permalink": "/docs-data-analysis/category/data-access"
+                }
+              },
+              {
+                "type": "category",
+                "label": "Error analysis",
+                "collapsible": true,
+                "collapsed": true,
+                "items": [
+                  {
+                    "type": "doc",
+                    "id": "error-analysis/error_analysis_description",
+                    "label": "Documentation"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "error-analysis/error_analysis_examples",
+                    "label": "Examples"
+                  }
+                ],
+                "link": {
+                  "type": "generated-index",
+                  "slug": "/category/error-analysis",
+                  "permalink": "/docs-data-analysis/category/error-analysis"
+                }
+              }
+            ],
+            "citrosdSidebar": [
+              {
+                "type": "doc",
+                "id": "index",
+                "label": "Package overview"
+              },
+              {
+                "type": "category",
+                "label": "Data access",
+                "collapsible": true,
+                "collapsed": true,
+                "items": [
+                  {
+                    "type": "doc",
+                    "id": "data-access/data_access_description",
+                    "label": "Documentation"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "data-access/data_access_examples",
+                    "label": "Examples"
+                  }
+                ],
+                "link": {
+                  "type": "generated-index",
+                  "slug": "/category/data-access-1",
+                  "permalink": "/docs-data-analysis/category/data-access-1"
+                }
+              },
+              {
+                "type": "category",
+                "label": "Error analysis",
+                "collapsible": true,
+                "collapsed": true,
+                "items": [
+                  {
+                    "type": "doc",
+                    "id": "error-analysis/error_analysis_description",
+                    "label": "Documentation"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "error-analysis/error_analysis_examples",
+                    "label": "Examples"
+                  }
+                ],
+                "link": {
+                  "type": "generated-index",
+                  "slug": "/category/error-analysis-1",
+                  "permalink": "/docs-data-analysis/category/error-analysis-1"
+                }
+              }
+            ],
+            "clidSidebar": [
+              {
+                "type": "doc",
+                "id": "index",
+                "label": "Package overview"
+              },
+              {
+                "type": "category",
+                "label": "Data access",
+                "collapsible": true,
+                "collapsed": true,
+                "items": [
+                  {
+                    "type": "doc",
+                    "id": "data-access/data_access_description",
+                    "label": "Documentation"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "data-access/data_access_examples",
+                    "label": "Examples"
+                  }
+                ],
+                "link": {
+                  "type": "generated-index",
+                  "slug": "/category/data-access-2",
+                  "permalink": "/docs-data-analysis/category/data-access-2"
+                }
+              },
+              {
+                "type": "category",
+                "label": "Error analysis",
+                "collapsible": true,
+                "collapsed": true,
+                "items": [
+                  {
+                    "type": "doc",
+                    "id": "error-analysis/error_analysis_description",
+                    "label": "Documentation"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "error-analysis/error_analysis_examples",
+                    "label": "Examples"
+                  }
+                ],
+                "link": {
+                  "type": "generated-index",
+                  "slug": "/category/error-analysis-2",
+                  "permalink": "/docs-data-analysis/category/error-analysis-2"
+                }
+              }
+            ],
+            "dataAnalysisdSidebar": [
+              {
+                "type": "doc",
+                "id": "index",
+                "label": "Package overview"
+              },
+              {
+                "type": "category",
+                "label": "Data access",
+                "collapsible": true,
+                "collapsed": true,
+                "items": [
+                  {
+                    "type": "doc",
+                    "id": "data-access/data_access_description",
+                    "label": "Documentation"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "data-access/data_access_examples",
+                    "label": "Examples"
+                  }
+                ],
+                "link": {
+                  "type": "generated-index",
+                  "slug": "/category/data-access-3",
+                  "permalink": "/docs-data-analysis/category/data-access-3"
+                }
+              },
+              {
+                "type": "category",
+                "label": "Error analysis",
+                "collapsible": true,
+                "collapsed": true,
+                "items": [
+                  {
+                    "type": "doc",
+                    "id": "error-analysis/error_analysis_description",
+                    "label": "Documentation"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "error-analysis/error_analysis_examples",
+                    "label": "Examples"
+                  }
+                ],
+                "link": {
+                  "type": "generated-index",
+                  "slug": "/category/error-analysis-3",
+                  "permalink": "/docs-data-analysis/category/error-analysis-3"
                 }
               }
             ]
@@ -280,288 +782,45 @@
       "blogSidebarTitle": "Recent posts",
       "blogPosts": [
         {
-          "id": "first-blog-post",
+          "id": "welcome",
           "metadata": {
-            "permalink": "/blog/first-blog-post",
-            "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/blog/2023-04-02-citros-first/index.md",
-            "source": "@site/blog/2023-04-02-citros-first/index.md",
-            "title": "First Blog Post",
-            "description": "Congratulations, you have made your first post!",
-            "date": "2023-04-02T00:00:00.000Z",
-            "formattedDate": "April 2, 2023",
+            "permalink": "/blog/welcome",
+            "source": "@site/blog/2023-05-16-welcome/index.md",
+            "title": "Welcome",
+            "description": "Citros logo",
+            "date": "2023-05-16T00:00:00.000Z",
+            "formattedDate": "May 16, 2023",
             "tags": [
               {
                 "label": "greetings",
                 "permalink": "/blog/tags/greetings"
               }
             ],
-            "readingTime": 0.1,
+            "readingTime": 0.01,
             "hasTruncateMarker": false,
-            "authors": [
-              {
-                "name": "Vladimir Kouperman",
-                "title": "CITROS maintainer",
-                "url": "https://github.com/vovacooper",
-                "key": "vovacooper"
-              },
-              {
-                "name": "Lidia Yalyalieva",
-                "title": "data scientis",
-                "url": "https://github.com/Yalyalieva",
-                "key": "lidia"
-              }
-            ],
-            "frontMatter": {
-              "slug": "first-blog-post",
-              "title": "First Blog Post",
-              "authors": [
-                "vovacooper",
-                "lidia"
-              ],
-              "tags": [
-                "greetings"
-              ]
-            },
-            "nextItem": {
-              "title": "Welcome",
-              "permalink": "/blog/welcome"
-            }
-          },
-          "content": "Congratulations, you have made your first post!\r\n\r\nFeel free to play around and edit this post as much you like."
-        },
-        {
-          "id": "welcome",
-          "metadata": {
-            "permalink": "/blog/welcome",
-            "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/blog/2021-08-26-welcome/index.md",
-            "source": "@site/blog/2021-08-26-welcome/index.md",
-            "title": "Welcome",
-            "description": "Docusaurus blogging features are powered by the blog plugin.",
-            "date": "2021-08-26T00:00:00.000Z",
-            "formattedDate": "August 26, 2021",
-            "tags": [
-              {
-                "label": "facebook",
-                "permalink": "/blog/tags/facebook"
-              },
-              {
-                "label": "hello",
-                "permalink": "/blog/tags/hello"
-              },
-              {
-                "label": "docusaurus",
-                "permalink": "/blog/tags/docusaurus"
-              }
-            ],
-            "readingTime": 0.405,
-            "hasTruncateMarker": false,
-            "authors": [
-              {
-                "name": "Sébastien Lorber",
-                "title": "Docusaurus maintainer",
-                "url": "https://sebastienlorber.com",
-                "imageURL": "https://github.com/slorber.png",
-                "key": "slorber"
-              },
-              {
-                "name": "Yangshun Tay",
-                "title": "Front End Engineer @ Facebook",
-                "url": "https://github.com/yangshun",
-                "imageURL": "https://github.com/yangshun.png",
-                "key": "yangshun"
-              }
-            ],
+            "authors": [],
             "frontMatter": {
               "slug": "welcome",
               "title": "Welcome",
-              "authors": [
-                "slorber",
-                "yangshun"
-              ],
               "tags": [
-                "facebook",
-                "hello",
-                "docusaurus"
+                "greetings"
               ]
-            },
-            "prevItem": {
-              "title": "First Blog Post",
-              "permalink": "/blog/first-blog-post"
-            },
-            "nextItem": {
-              "title": "MDX Blog Post",
-              "permalink": "/blog/mdx-blog-post"
             }
           },
-          "content": "[Docusaurus blogging features](https://docusaurus.io/docs/blog) are powered by the [blog plugin](https://docusaurus.io/docs/api/plugins/@docusaurus/plugin-content-blog).\r\n\r\nSimply add Markdown files (or folders) to the `blog` directory.\r\n\r\nRegular blog authors can be added to `authors.yml`.\r\n\r\nThe blog post date can be extracted from filenames, such as:\r\n\r\n- `2019-05-30-welcome.md`\r\n- `2019-05-30-welcome/index.md`\r\n\r\nA blog post folder can be convenient to co-locate blog post images:\r\n\r\n![Docusaurus Plushie](./docusaurus-plushie-banner.jpeg)\r\n\r\nThe blog supports tags as well!\r\n\r\n**And if you don't want a blog**: just delete this directory, and use `blog: false` in your Docusaurus config."
-        },
-        {
-          "id": "mdx-blog-post",
-          "metadata": {
-            "permalink": "/blog/mdx-blog-post",
-            "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/blog/2021-08-01-mdx-blog-post.mdx",
-            "source": "@site/blog/2021-08-01-mdx-blog-post.mdx",
-            "title": "MDX Blog Post",
-            "description": "Blog posts support Docusaurus Markdown features, such as MDX.",
-            "date": "2021-08-01T00:00:00.000Z",
-            "formattedDate": "August 1, 2021",
-            "tags": [
-              {
-                "label": "docusaurus",
-                "permalink": "/blog/tags/docusaurus"
-              }
-            ],
-            "readingTime": 0.175,
-            "hasTruncateMarker": false,
-            "authors": [
-              {
-                "name": "Vladimir Kouperman",
-                "title": "CITROS maintainer",
-                "url": "https://github.com/vovacooper",
-                "key": "vovacooper"
-              }
-            ],
-            "frontMatter": {
-              "slug": "mdx-blog-post",
-              "title": "MDX Blog Post",
-              "authors": [
-                "vovacooper"
-              ],
-              "tags": [
-                "docusaurus"
-              ]
-            },
-            "prevItem": {
-              "title": "Welcome",
-              "permalink": "/blog/welcome"
-            },
-            "nextItem": {
-              "title": "Long Blog Post",
-              "permalink": "/blog/long-blog-post"
-            }
-          },
-          "content": "Blog posts support [Docusaurus Markdown features](https://docusaurus.io/docs/markdown-features), such as [MDX](https://mdxjs.com/).\r\n\r\n:::tip\r\n\r\nUse the power of React to create interactive blog posts.\r\n\r\n```js\r\n<button onClick={() => alert('button clicked!')}>Click me!</button>\r\n```\r\n\r\n<button onClick={() => alert('button clicked!')}>Click me!</button>\r\n\r\n:::"
-        },
-        {
-          "id": "long-blog-post",
-          "metadata": {
-            "permalink": "/blog/long-blog-post",
-            "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/blog/2019-05-29-long-blog-post.md",
-            "source": "@site/blog/2019-05-29-long-blog-post.md",
-            "title": "Long Blog Post",
-            "description": "This is the summary of a very long blog post,",
-            "date": "2019-05-29T00:00:00.000Z",
-            "formattedDate": "May 29, 2019",
-            "tags": [
-              {
-                "label": "hello",
-                "permalink": "/blog/tags/hello"
-              },
-              {
-                "label": "docusaurus",
-                "permalink": "/blog/tags/docusaurus"
-              }
-            ],
-            "readingTime": 2.05,
-            "hasTruncateMarker": true,
-            "authors": [
-              {
-                "name": "Endilie Yacop Sucipto",
-                "title": "Maintainer of Docusaurus",
-                "url": "https://github.com/endiliey",
-                "imageURL": "https://github.com/endiliey.png",
-                "key": "endi"
-              }
-            ],
-            "frontMatter": {
-              "slug": "long-blog-post",
-              "title": "Long Blog Post",
-              "authors": "endi",
-              "tags": [
-                "hello",
-                "docusaurus"
-              ]
-            },
-            "prevItem": {
-              "title": "MDX Blog Post",
-              "permalink": "/blog/mdx-blog-post"
-            },
-            "nextItem": {
-              "title": "First Blog Post",
-              "permalink": "/blog/first-blog-post-example"
-            }
-          },
-          "content": "This is the summary of a very long blog post,\r\n\r\nUse a `<!--` `truncate` `-->` comment to limit blog post size in the list view.\r\n\r\n<!--truncate-->\r\n\r\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet\r\n\r\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet\r\n\r\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet\r\n\r\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet\r\n\r\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet\r\n\r\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet\r\n\r\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet\r\n\r\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet\r\n\r\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet\r\n\r\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet\r\n\r\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet\r\n\r\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet\r\n\r\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet\r\n\r\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet\r\n\r\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet\r\n\r\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet"
-        },
-        {
-          "id": "first-blog-post-example",
-          "metadata": {
-            "permalink": "/blog/first-blog-post-example",
-            "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/blog/2019-05-28-first-blog-post.md",
-            "source": "@site/blog/2019-05-28-first-blog-post.md",
-            "title": "First Blog Post",
-            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet",
-            "date": "2019-05-28T00:00:00.000Z",
-            "formattedDate": "May 28, 2019",
-            "tags": [
-              {
-                "label": "hola",
-                "permalink": "/blog/tags/hola"
-              },
-              {
-                "label": "docusaurus",
-                "permalink": "/blog/tags/docusaurus"
-              }
-            ],
-            "readingTime": 0.12,
-            "hasTruncateMarker": false,
-            "authors": [
-              {
-                "name": "Gao Wei",
-                "title": "Docusaurus Core Team",
-                "url": "https://github.com/wgao19",
-                "image_url": "https://github.com/wgao19.png",
-                "imageURL": "https://github.com/wgao19.png"
-              }
-            ],
-            "frontMatter": {
-              "slug": "first-blog-post-example",
-              "title": "First Blog Post",
-              "authors": {
-                "name": "Gao Wei",
-                "title": "Docusaurus Core Team",
-                "url": "https://github.com/wgao19",
-                "image_url": "https://github.com/wgao19.png",
-                "imageURL": "https://github.com/wgao19.png"
-              },
-              "tags": [
-                "hola",
-                "docusaurus"
-              ]
-            },
-            "prevItem": {
-              "title": "Long Blog Post",
-              "permalink": "/blog/long-blog-post"
-            }
-          },
-          "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet"
+          "content": "![Citros logo](/img/citros_trn.png)"
         }
       ],
       "blogListPaginated": [
         {
           "items": [
-            "first-blog-post",
-            "welcome",
-            "mdx-blog-post",
-            "long-blog-post",
-            "first-blog-post-example"
+            "welcome"
           ],
           "metadata": {
             "permalink": "/blog",
             "page": 1,
             "postsPerPage": 10,
             "totalPages": 1,
-            "totalCount": 5,
+            "totalCount": 1,
             "blogDescription": "Blog",
             "blogTitle": "Blog"
           }
@@ -571,116 +830,16 @@
         "/blog/tags/greetings": {
           "label": "greetings",
           "items": [
-            "first-blog-post"
-          ],
-          "permalink": "/blog/tags/greetings",
-          "pages": [
-            {
-              "items": [
-                "first-blog-post"
-              ],
-              "metadata": {
-                "permalink": "/blog/tags/greetings",
-                "page": 1,
-                "postsPerPage": 10,
-                "totalPages": 1,
-                "totalCount": 1,
-                "blogDescription": "Blog",
-                "blogTitle": "Blog"
-              }
-            }
-          ]
-        },
-        "/blog/tags/facebook": {
-          "label": "facebook",
-          "items": [
             "welcome"
           ],
-          "permalink": "/blog/tags/facebook",
+          "permalink": "/blog/tags/greetings",
           "pages": [
             {
               "items": [
                 "welcome"
               ],
               "metadata": {
-                "permalink": "/blog/tags/facebook",
-                "page": 1,
-                "postsPerPage": 10,
-                "totalPages": 1,
-                "totalCount": 1,
-                "blogDescription": "Blog",
-                "blogTitle": "Blog"
-              }
-            }
-          ]
-        },
-        "/blog/tags/hello": {
-          "label": "hello",
-          "items": [
-            "welcome",
-            "long-blog-post"
-          ],
-          "permalink": "/blog/tags/hello",
-          "pages": [
-            {
-              "items": [
-                "welcome",
-                "long-blog-post"
-              ],
-              "metadata": {
-                "permalink": "/blog/tags/hello",
-                "page": 1,
-                "postsPerPage": 10,
-                "totalPages": 1,
-                "totalCount": 2,
-                "blogDescription": "Blog",
-                "blogTitle": "Blog"
-              }
-            }
-          ]
-        },
-        "/blog/tags/docusaurus": {
-          "label": "docusaurus",
-          "items": [
-            "welcome",
-            "mdx-blog-post",
-            "long-blog-post",
-            "first-blog-post-example"
-          ],
-          "permalink": "/blog/tags/docusaurus",
-          "pages": [
-            {
-              "items": [
-                "welcome",
-                "mdx-blog-post",
-                "long-blog-post",
-                "first-blog-post-example"
-              ],
-              "metadata": {
-                "permalink": "/blog/tags/docusaurus",
-                "page": 1,
-                "postsPerPage": 10,
-                "totalPages": 1,
-                "totalCount": 4,
-                "blogDescription": "Blog",
-                "blogTitle": "Blog"
-              }
-            }
-          ]
-        },
-        "/blog/tags/hola": {
-          "label": "hola",
-          "items": [
-            "first-blog-post-example"
-          ],
-          "permalink": "/blog/tags/hola",
-          "pages": [
-            {
-              "items": [
-                "first-blog-post-example"
-              ],
-              "metadata": {
-                "permalink": "/blog/tags/hola",
+                "permalink": "/blog/tags/greetings",
                 "page": 1,
                 "postsPerPage": 10,
                 "totalPages": 1,

@@ -12,40 +12,130 @@
       {
         "type": "link",
         "label": "Citros guide book",
-        "href": "/docs-citros/intro",
-        "docId": "intro"
+        "href": "/docs-citros/",
+        "docId": "index"
+      },
+      {
+        "type": "link",
+        "label": "Simulation run",
+        "href": "/docs-citros/simulation_run",
+        "docId": "simulation_run"
+      },
+      {
+        "type": "link",
+        "label": "Run locally",
+        "href": "/docs-citros/run_locally",
+        "docId": "run_locally"
+      },
+      {
+        "type": "link",
+        "label": "Run in cloud",
+        "href": "/docs-citros/run_in_cloud",
+        "docId": "run_in_cloud"
       }
     ],
     "citrosdSidebar": [
       {
         "type": "link",
         "label": "Citros guide book",
-        "href": "/docs-citros/intro",
-        "docId": "intro"
+        "href": "/docs-citros/",
+        "docId": "index"
+      },
+      {
+        "type": "link",
+        "label": "Simulation run",
+        "href": "/docs-citros/simulation_run",
+        "docId": "simulation_run"
+      },
+      {
+        "type": "link",
+        "label": "Run locally",
+        "href": "/docs-citros/run_locally",
+        "docId": "run_locally"
+      },
+      {
+        "type": "link",
+        "label": "Run in cloud",
+        "href": "/docs-citros/run_in_cloud",
+        "docId": "run_in_cloud"
       }
     ],
     "clidSidebar": [
       {
         "type": "link",
         "label": "Citros guide book",
-        "href": "/docs-citros/intro",
-        "docId": "intro"
+        "href": "/docs-citros/",
+        "docId": "index"
+      },
+      {
+        "type": "link",
+        "label": "Simulation run",
+        "href": "/docs-citros/simulation_run",
+        "docId": "simulation_run"
+      },
+      {
+        "type": "link",
+        "label": "Run locally",
+        "href": "/docs-citros/run_locally",
+        "docId": "run_locally"
+      },
+      {
+        "type": "link",
+        "label": "Run in cloud",
+        "href": "/docs-citros/run_in_cloud",
+        "docId": "run_in_cloud"
       }
     ],
     "dataAnalysisdSidebar": [
       {
         "type": "link",
         "label": "Citros guide book",
-        "href": "/docs-citros/intro",
-        "docId": "intro"
+        "href": "/docs-citros/",
+        "docId": "index"
+      },
+      {
+        "type": "link",
+        "label": "Simulation run",
+        "href": "/docs-citros/simulation_run",
+        "docId": "simulation_run"
+      },
+      {
+        "type": "link",
+        "label": "Run locally",
+        "href": "/docs-citros/run_locally",
+        "docId": "run_locally"
+      },
+      {
+        "type": "link",
+        "label": "Run in cloud",
+        "href": "/docs-citros/run_in_cloud",
+        "docId": "run_in_cloud"
       }
     ]
   },
   "docs": {
-    "intro": {
-      "id": "intro",
-      "title": "About Citros",
-      "description": "",
+    "index": {
+      "id": "index",
+      "title": "index",
+      "description": "About Citros",
+      "sidebar": "dataAnalysisdSidebar"
+    },
+    "run_in_cloud": {
+      "id": "run_in_cloud",
+      "title": "run_in_cloud",
+      "description": "New heading",
+      "sidebar": "dataAnalysisdSidebar"
+    },
+    "run_locally": {
+      "id": "run_locally",
+      "title": "run_locally",
+      "description": "New heading",
+      "sidebar": "dataAnalysisdSidebar"
+    },
+    "simulation_run": {
+      "id": "simulation_run",
+      "title": "simulation_run",
+      "description": "New heading",
       "sidebar": "dataAnalysisdSidebar"
     }
   }
