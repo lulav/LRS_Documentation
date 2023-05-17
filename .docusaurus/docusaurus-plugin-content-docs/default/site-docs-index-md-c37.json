@@ -6,7 +6,7 @@
   "source": "@site/docs/index.md",
   "sourceDirName": ".",
   "slug": "/",
-  "permalink": "/docs/",
+  "permalink": "/doc/docs/",
   "draft": false,
   "tags": [],
   "version": "current",
@@ -19,6 +19,6 @@
   "sidebar": "dataAnalysisdSidebar",
   "next": {
     "title": "New page",
-    "permalink": "/docs/new_page"
+    "permalink": "/doc/docs/new_page"
   }
 }

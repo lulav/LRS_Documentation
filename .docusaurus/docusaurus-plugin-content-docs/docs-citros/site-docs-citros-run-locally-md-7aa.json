@@ -6,7 +6,7 @@
   "source": "@site/docs-citros/run_locally.md",
   "sourceDirName": ".",
   "slug": "/run_locally",
-  "permalink": "/docs-citros/run_locally",
+  "permalink": "/doc/docs-citros/run_locally",
   "draft": false,
   "tags": [],
   "version": "current",
@@ -19,10 +19,10 @@
   "sidebar": "dataAnalysisdSidebar",
   "previous": {
     "title": "Simulation run",
-    "permalink": "/docs-citros/simulation_run"
+    "permalink": "/doc/docs-citros/simulation_run"
   },
   "next": {
     "title": "Run in cloud",
-    "permalink": "/docs-citros/run_in_cloud"
+    "permalink": "/doc/docs-citros/run_in_cloud"
   }
 }

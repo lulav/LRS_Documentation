@@ -6,7 +6,7 @@
   "source": "@site/docs-citros/index.md",
   "sourceDirName": ".",
   "slug": "/",
-  "permalink": "/docs-citros/",
+  "permalink": "/doc/docs-citros/",
   "draft": false,
   "tags": [],
   "version": "current",
@@ -19,6 +19,6 @@
   "sidebar": "dataAnalysisdSidebar",
   "next": {
     "title": "Simulation run",
-    "permalink": "/docs-citros/simulation_run"
+    "permalink": "/doc/docs-citros/simulation_run"
   }
 }

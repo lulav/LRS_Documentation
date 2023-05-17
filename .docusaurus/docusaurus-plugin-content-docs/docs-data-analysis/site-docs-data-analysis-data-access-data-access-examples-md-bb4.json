@@ -6,7 +6,7 @@
   "source": "@site/docs-data-analysis/data-access/data_access_examples.md",
   "sourceDirName": "data-access",
   "slug": "/data-access/data_access_examples",
-  "permalink": "/docs-data-analysis/data-access/data_access_examples",
+  "permalink": "/doc/docs-data-analysis/data-access/data_access_examples",
   "draft": false,
   "tags": [],
   "version": "current",
@@ -21,10 +21,10 @@
   "sidebar": "dataAnalysisdSidebar",
   "previous": {
     "title": "Data access",
-    "permalink": "/docs-data-analysis/category/data-access-3"
+    "permalink": "/doc/docs-data-analysis/category/data-access-3"
   },
   "next": {
     "title": "Documentation",
-    "permalink": "/docs-data-analysis/data-access/data_access_description"
+    "permalink": "/doc/docs-data-analysis/data-access/data_access_description"
   }
 }

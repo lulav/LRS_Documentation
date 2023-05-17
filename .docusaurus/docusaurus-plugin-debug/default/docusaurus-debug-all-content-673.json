@@ -9,8 +9,8 @@
           "badge": false,
           "noIndex": false,
           "className": "docs-version-current",
-          "path": "/docs",
-          "tagsPath": "/docs/tags",
+          "path": "/doc/docs",
+          "tagsPath": "/doc/docs/tags",
           "isLast": true,
           "routePriority": -1,
           "sidebarFilePath": "/Users/vovacooper/dev/citros/citros/citros_doc/sidebars.js",
@@ -25,7 +25,7 @@
               "source": "@site/docs/index.md",
               "sourceDirName": ".",
               "slug": "/",
-              "permalink": "/docs/",
+              "permalink": "/doc/docs/",
               "draft": false,
               "tags": [],
               "version": "current",
@@ -38,7 +38,7 @@
               "sidebar": "dataAnalysisdSidebar",
               "next": {
                 "title": "New page",
-                "permalink": "/docs/new_page"
+                "permalink": "/doc/docs/new_page"
               }
             },
             {
@@ -49,7 +49,7 @@
               "source": "@site/docs/new_page.md",
               "sourceDirName": ".",
               "slug": "/new_page",
-              "permalink": "/docs/new_page",
+              "permalink": "/doc/docs/new_page",
               "draft": false,
               "tags": [],
               "version": "current",
@@ -62,7 +62,7 @@
               "sidebar": "dataAnalysisdSidebar",
               "previous": {
                 "title": "Getting started",
-                "permalink": "/docs/"
+                "permalink": "/doc/docs/"
               }
             }
           ],
@@ -129,13 +129,13 @@
           "badge": false,
           "noIndex": false,
           "className": "docs-version-current",
-          "path": "/docs-citros",
-          "tagsPath": "/docs-citros/tags",
+          "path": "/doc/docs-citros",
+          "tagsPath": "/doc/docs-citros/tags",
           "isLast": true,
           "routePriority": -1,
-          "sidebarFilePath": "/workspaces/citros_doc/sidebars.js",
-          "contentPath": "/workspaces/citros_doc/docs-citros",
-          "contentPathLocalized": "/workspaces/citros_doc/i18n/en/docusaurus-plugin-content-docs-docs-citros/current",
+          "sidebarFilePath": "/Users/vovacooper/dev/citros/citros/citros_doc/sidebars.js",
+          "contentPath": "/Users/vovacooper/dev/citros/citros/citros_doc/docs-citros",
+          "contentPathLocalized": "/Users/vovacooper/dev/citros/citros/citros_doc/i18n/en/docusaurus-plugin-content-docs-docs-citros/current",
           "docs": [
             {
               "unversionedId": "index",
@@ -145,7 +145,7 @@
               "source": "@site/docs-citros/index.md",
               "sourceDirName": ".",
               "slug": "/",
-              "permalink": "/docs-citros/",
+              "permalink": "/doc/docs-citros/",
               "draft": false,
               "tags": [],
               "version": "current",
@@ -158,7 +158,7 @@
               "sidebar": "dataAnalysisdSidebar",
               "next": {
                 "title": "Simulation run",
-                "permalink": "/docs-citros/simulation_run"
+                "permalink": "/doc/docs-citros/simulation_run"
               }
             },
             {
@@ -169,7 +169,7 @@
               "source": "@site/docs-citros/run_in_cloud.md",
               "sourceDirName": ".",
               "slug": "/run_in_cloud",
-              "permalink": "/docs-citros/run_in_cloud",
+              "permalink": "/doc/docs-citros/run_in_cloud",
               "draft": false,
               "tags": [],
               "version": "current",
@@ -182,7 +182,7 @@
               "sidebar": "dataAnalysisdSidebar",
               "previous": {
                 "title": "Run locally",
-                "permalink": "/docs-citros/run_locally"
+                "permalink": "/doc/docs-citros/run_locally"
               }
             },
             {
@@ -193,7 +193,7 @@
               "source": "@site/docs-citros/run_locally.md",
               "sourceDirName": ".",
               "slug": "/run_locally",
-              "permalink": "/docs-citros/run_locally",
+              "permalink": "/doc/docs-citros/run_locally",
               "draft": false,
               "tags": [],
               "version": "current",
@@ -206,11 +206,11 @@
               "sidebar": "dataAnalysisdSidebar",
               "previous": {
                 "title": "Simulation run",
-                "permalink": "/docs-citros/simulation_run"
+                "permalink": "/doc/docs-citros/simulation_run"
               },
               "next": {
                 "title": "Run in cloud",
-                "permalink": "/docs-citros/run_in_cloud"
+                "permalink": "/doc/docs-citros/run_in_cloud"
               }
             },
             {
@@ -221,7 +221,7 @@
               "source": "@site/docs-citros/simulation_run.md",
               "sourceDirName": ".",
               "slug": "/simulation_run",
-              "permalink": "/docs-citros/simulation_run",
+              "permalink": "/doc/docs-citros/simulation_run",
               "draft": false,
               "tags": [],
               "version": "current",
@@ -234,11 +234,11 @@
               "sidebar": "dataAnalysisdSidebar",
               "previous": {
                 "title": "Citros guide book",
-                "permalink": "/docs-citros/"
+                "permalink": "/doc/docs-citros/"
               },
               "next": {
                 "title": "Run locally",
-                "permalink": "/docs-citros/run_locally"
+                "permalink": "/doc/docs-citros/run_locally"
               }
             }
           ],
@@ -345,13 +345,13 @@
           "badge": false,
           "noIndex": false,
           "className": "docs-version-current",
-          "path": "/docs-cli",
-          "tagsPath": "/docs-cli/tags",
+          "path": "/doc/docs-cli",
+          "tagsPath": "/doc/docs-cli/tags",
           "isLast": true,
           "routePriority": -1,
-          "sidebarFilePath": "/workspaces/citros_doc/sidebars.js",
-          "contentPath": "/workspaces/citros_doc/docs-cli",
-          "contentPathLocalized": "/workspaces/citros_doc/i18n/en/docusaurus-plugin-content-docs-docs-cli/current",
+          "sidebarFilePath": "/Users/vovacooper/dev/citros/citros/citros_doc/sidebars.js",
+          "contentPath": "/Users/vovacooper/dev/citros/citros/citros_doc/docs-cli",
+          "contentPathLocalized": "/Users/vovacooper/dev/citros/citros/citros_doc/i18n/en/docusaurus-plugin-content-docs-docs-cli/current",
           "docs": [
             {
               "unversionedId": "index",
@@ -361,7 +361,7 @@
               "source": "@site/docs-cli/index.md",
               "sourceDirName": ".",
               "slug": "/",
-              "permalink": "/docs-cli/",
+              "permalink": "/doc/docs-cli/",
               "draft": false,
               "tags": [],
               "version": "current",
@@ -417,13 +417,13 @@
           "badge": false,
           "noIndex": false,
           "className": "docs-version-current",
-          "path": "/docs-data-analysis",
-          "tagsPath": "/docs-data-analysis/tags",
+          "path": "/doc/docs-data-analysis",
+          "tagsPath": "/doc/docs-data-analysis/tags",
           "isLast": true,
           "routePriority": -1,
-          "sidebarFilePath": "/workspaces/citros_doc/sidebars.js",
-          "contentPath": "/workspaces/citros_doc/docs-data-analysis",
-          "contentPathLocalized": "/workspaces/citros_doc/i18n/en/docusaurus-plugin-content-docs-docs-data-analysis/current",
+          "sidebarFilePath": "/Users/vovacooper/dev/citros/citros/citros_doc/sidebars.js",
+          "contentPath": "/Users/vovacooper/dev/citros/citros/citros_doc/docs-data-analysis",
+          "contentPathLocalized": "/Users/vovacooper/dev/citros/citros/citros_doc/i18n/en/docusaurus-plugin-content-docs-docs-data-analysis/current",
           "docs": [
             {
               "unversionedId": "data-access/data_access_description",
@@ -433,7 +433,7 @@
               "source": "@site/docs-data-analysis/data-access/data_access_description.md",
               "sourceDirName": "data-access",
               "slug": "/data-access/data_access_description",
-              "permalink": "/docs-data-analysis/data-access/data_access_description",
+              "permalink": "/doc/docs-data-analysis/data-access/data_access_description",
               "draft": false,
               "tags": [],
               "version": "current",
@@ -446,11 +446,11 @@
               "sidebar": "dataAnalysisdSidebar",
               "previous": {
                 "title": "Examples",
-                "permalink": "/docs-data-analysis/data-access/data_access_examples"
+                "permalink": "/doc/docs-data-analysis/data-access/data_access_examples"
               },
               "next": {
                 "title": "Error analysis",
-                "permalink": "/docs-data-analysis/category/error-analysis-3"
+                "permalink": "/doc/docs-data-analysis/category/error-analysis-3"
               }
             },
             {
@@ -461,7 +461,7 @@
               "source": "@site/docs-data-analysis/data-access/data_access_examples.md",
               "sourceDirName": "data-access",
               "slug": "/data-access/data_access_examples",
-              "permalink": "/docs-data-analysis/data-access/data_access_examples",
+              "permalink": "/doc/docs-data-analysis/data-access/data_access_examples",
               "draft": false,
               "tags": [],
               "version": "current",
@@ -476,11 +476,11 @@
               "sidebar": "dataAnalysisdSidebar",
               "previous": {
                 "title": "Data access",
-                "permalink": "/docs-data-analysis/category/data-access-3"
+                "permalink": "/doc/docs-data-analysis/category/data-access-3"
               },
               "next": {
                 "title": "Documentation",
-                "permalink": "/docs-data-analysis/data-access/data_access_description"
+                "permalink": "/doc/docs-data-analysis/data-access/data_access_description"
               }
             },
             {
@@ -491,7 +491,7 @@
               "source": "@site/docs-data-analysis/error-analysis/error_analysis_description.md",
               "sourceDirName": "error-analysis",
               "slug": "/error-analysis/error_analysis_description",
-              "permalink": "/docs-data-analysis/error-analysis/error_analysis_description",
+              "permalink": "/doc/docs-data-analysis/error-analysis/error_analysis_description",
               "draft": false,
               "tags": [],
               "version": "current",
@@ -504,7 +504,7 @@
               "sidebar": "dataAnalysisdSidebar",
               "previous": {
                 "title": "Examples",
-                "permalink": "/docs-data-analysis/error-analysis/error_analysis_examples"
+                "permalink": "/doc/docs-data-analysis/error-analysis/error_analysis_examples"
               }
             },
             {
@@ -515,7 +515,7 @@
               "source": "@site/docs-data-analysis/error-analysis/error_analysis_examples.md",
               "sourceDirName": "error-analysis",
               "slug": "/error-analysis/error_analysis_examples",
-              "permalink": "/docs-data-analysis/error-analysis/error_analysis_examples",
+              "permalink": "/doc/docs-data-analysis/error-analysis/error_analysis_examples",
               "draft": false,
               "tags": [],
               "version": "current",
@@ -530,11 +530,11 @@
               "sidebar": "dataAnalysisdSidebar",
               "previous": {
                 "title": "Error analysis",
-                "permalink": "/docs-data-analysis/category/error-analysis-3"
+                "permalink": "/doc/docs-data-analysis/category/error-analysis-3"
               },
               "next": {
                 "title": "Documentation",
-                "permalink": "/docs-data-analysis/error-analysis/error_analysis_description"
+                "permalink": "/doc/docs-data-analysis/error-analysis/error_analysis_description"
               }
             },
             {
@@ -545,7 +545,7 @@
               "source": "@site/docs-data-analysis/index.md",
               "sourceDirName": ".",
               "slug": "/",
-              "permalink": "/docs-data-analysis/",
+              "permalink": "/doc/docs-data-analysis/",
               "draft": false,
               "tags": [],
               "version": "current",
@@ -558,7 +558,7 @@
               "sidebar": "dataAnalysisdSidebar",
               "next": {
                 "title": "Data access",
-                "permalink": "/docs-data-analysis/category/data-access-3"
+                "permalink": "/doc/docs-data-analysis/category/data-access-3"
               }
             }
           ],
@@ -590,7 +590,7 @@
                 "link": {
                   "type": "generated-index",
                   "slug": "/category/data-access",
-                  "permalink": "/docs-data-analysis/category/data-access"
+                  "permalink": "/doc/docs-data-analysis/category/data-access"
                 }
               },
               {
@@ -613,7 +613,7 @@
                 "link": {
                   "type": "generated-index",
                   "slug": "/category/error-analysis",
-                  "permalink": "/docs-data-analysis/category/error-analysis"
+                  "permalink": "/doc/docs-data-analysis/category/error-analysis"
                 }
               }
             ],
@@ -643,7 +643,7 @@
                 "link": {
                   "type": "generated-index",
                   "slug": "/category/data-access-1",
-                  "permalink": "/docs-data-analysis/category/data-access-1"
+                  "permalink": "/doc/docs-data-analysis/category/data-access-1"
                 }
               },
               {
@@ -666,7 +666,7 @@
                 "link": {
                   "type": "generated-index",
                   "slug": "/category/error-analysis-1",
-                  "permalink": "/docs-data-analysis/category/error-analysis-1"
+                  "permalink": "/doc/docs-data-analysis/category/error-analysis-1"
                 }
               }
             ],
@@ -696,7 +696,7 @@
                 "link": {
                   "type": "generated-index",
                   "slug": "/category/data-access-2",
-                  "permalink": "/docs-data-analysis/category/data-access-2"
+                  "permalink": "/doc/docs-data-analysis/category/data-access-2"
                 }
               },
               {
@@ -719,7 +719,7 @@
                 "link": {
                   "type": "generated-index",
                   "slug": "/category/error-analysis-2",
-                  "permalink": "/docs-data-analysis/category/error-analysis-2"
+                  "permalink": "/doc/docs-data-analysis/category/error-analysis-2"
                 }
               }
             ],
@@ -749,7 +749,7 @@
                 "link": {
                   "type": "generated-index",
                   "slug": "/category/data-access-3",
-                  "permalink": "/docs-data-analysis/category/data-access-3"
+                  "permalink": "/doc/docs-data-analysis/category/data-access-3"
                 }
               },
               {
@@ -772,7 +772,7 @@
                 "link": {
                   "type": "generated-index",
                   "slug": "/category/error-analysis-3",
-                  "permalink": "/docs-data-analysis/category/error-analysis-3"
+                  "permalink": "/doc/docs-data-analysis/category/error-analysis-3"
                 }
               }
             ]
@@ -788,7 +788,7 @@
         {
           "id": "welcome",
           "metadata": {
-            "permalink": "/blog/welcome",
+            "permalink": "/doc/blog/welcome",
             "source": "@site/blog/2023-05-16-welcome/index.md",
             "title": "Welcome",
             "description": "Citros logo",
@@ -797,7 +797,7 @@
             "tags": [
               {
                 "label": "greetings",
-                "permalink": "/blog/tags/greetings"
+                "permalink": "/doc/blog/tags/greetings"
               }
             ],
             "readingTime": 0.01,
@@ -831,19 +831,19 @@
         }
       ],
       "blogTags": {
-        "/blog/tags/greetings": {
+        "/doc/blog/tags/greetings": {
           "label": "greetings",
           "items": [
             "welcome"
           ],
-          "permalink": "/blog/tags/greetings",
+          "permalink": "/doc/blog/tags/greetings",
           "pages": [
             {
               "items": [
                 "welcome"
               ],
               "metadata": {
-                "permalink": "/blog/tags/greetings",
+                "permalink": "/doc/blog/tags/greetings",
                 "page": 1,
                 "postsPerPage": 10,
                 "totalPages": 1,

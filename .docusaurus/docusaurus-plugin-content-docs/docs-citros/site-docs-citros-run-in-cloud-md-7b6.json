@@ -6,7 +6,7 @@
   "source": "@site/docs-citros/run_in_cloud.md",
   "sourceDirName": ".",
   "slug": "/run_in_cloud",
-  "permalink": "/docs-citros/run_in_cloud",
+  "permalink": "/doc/docs-citros/run_in_cloud",
   "draft": false,
   "tags": [],
   "version": "current",
@@ -19,6 +19,6 @@
   "sidebar": "dataAnalysisdSidebar",
   "previous": {
     "title": "Run locally",
-    "permalink": "/docs-citros/run_locally"
+    "permalink": "/doc/docs-citros/run_locally"
   }
 }

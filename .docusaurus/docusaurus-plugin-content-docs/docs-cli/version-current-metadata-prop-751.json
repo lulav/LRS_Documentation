@@ -12,7 +12,7 @@
       {
         "type": "link",
         "label": "CLI",
-        "href": "/docs-cli/",
+        "href": "/doc/docs-cli/",
         "docId": "index"
       }
     ],
@@ -20,7 +20,7 @@
       {
         "type": "link",
         "label": "CLI",
-        "href": "/docs-cli/",
+        "href": "/doc/docs-cli/",
         "docId": "index"
       }
     ],
@@ -28,7 +28,7 @@
       {
         "type": "link",
         "label": "CLI",
-        "href": "/docs-cli/",
+        "href": "/doc/docs-cli/",
         "docId": "index"
       }
     ],
@@ -36,7 +36,7 @@
       {
         "type": "link",
         "label": "CLI",
-        "href": "/docs-cli/",
+        "href": "/doc/docs-cli/",
         "docId": "index"
       }
     ]

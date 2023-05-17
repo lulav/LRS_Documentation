@@ -6,7 +6,7 @@
   "source": "@site/docs-citros/simulation_run.md",
   "sourceDirName": ".",
   "slug": "/simulation_run",
-  "permalink": "/docs-citros/simulation_run",
+  "permalink": "/doc/docs-citros/simulation_run",
   "draft": false,
   "tags": [],
   "version": "current",
@@ -19,10 +19,10 @@
   "sidebar": "dataAnalysisdSidebar",
   "previous": {
     "title": "Citros guide book",
-    "permalink": "/docs-citros/"
+    "permalink": "/doc/docs-citros/"
   },
   "next": {
     "title": "Run locally",
-    "permalink": "/docs-citros/run_locally"
+    "permalink": "/doc/docs-citros/run_locally"
   }
 }

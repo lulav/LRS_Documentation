@@ -7,17 +7,17 @@
           "name": "current",
           "label": "Next",
           "isLast": true,
-          "path": "/docs",
+          "path": "/doc/docs",
           "mainDocId": "index",
           "docs": [
             {
               "id": "index",
-              "path": "/docs/",
+              "path": "/doc/docs/",
               "sidebar": "dataAnalysisdSidebar"
             },
             {
               "id": "new_page",
-              "path": "/docs/new_page",
+              "path": "/doc/docs/new_page",
               "sidebar": "dataAnalysisdSidebar"
             }
           ],
@@ -25,88 +25,26 @@
           "sidebars": {
             "gettingStartedSidebar": {
               "link": {
-                "path": "/docs/",
+                "path": "/doc/docs/",
                 "label": "Getting started"
               }
             },
             "citrosdSidebar": {
               "link": {
-                "path": "/docs/",
+                "path": "/doc/docs/",
                 "label": "Getting started"
               }
             },
             "clidSidebar": {
               "link": {
-                "path": "/docs/",
+                "path": "/doc/docs/",
                 "label": "Getting started"
               }
             },
             "dataAnalysisdSidebar": {
               "link": {
-                "path": "/docs/",
+                "path": "/doc/docs/",
                 "label": "Getting started"
-              }
-            }
-          }
-        }
-      ],
-      "breadcrumbs": true
-    },
-    "docs-citros": {
-      "path": "/docs-citros",
-      "versions": [
-        {
-          "name": "current",
-          "label": "Next",
-          "isLast": true,
-          "path": "/docs-citros",
-          "mainDocId": "index",
-          "docs": [
-            {
-              "id": "index",
-              "path": "/docs-citros/",
-              "sidebar": "dataAnalysisdSidebar"
-            },
-            {
-              "id": "run_in_cloud",
-              "path": "/docs-citros/run_in_cloud",
-              "sidebar": "dataAnalysisdSidebar"
-            },
-            {
-              "id": "run_locally",
-              "path": "/docs-citros/run_locally",
-              "sidebar": "dataAnalysisdSidebar"
-            },
-            {
-              "id": "simulation_run",
-              "path": "/docs-citros/simulation_run",
-              "sidebar": "dataAnalysisdSidebar"
-            }
-          ],
-          "draftIds": [],
-          "sidebars": {
-            "gettingStartedSidebar": {
-              "link": {
-                "path": "/docs-citros/",
-                "label": "Citros guide book"
-              }
-            },
-            "citrosdSidebar": {
-              "link": {
-                "path": "/docs-citros/",
-                "label": "Citros guide book"
-              }
-            },
-            "clidSidebar": {
-              "link": {
-                "path": "/docs-citros/",
-                "label": "Citros guide book"
-              }
-            },
-            "dataAnalysisdSidebar": {
-              "link": {
-                "path": "/docs-citros/",
-                "label": "Citros guide book"
               }
             }
           }
@@ -115,78 +53,78 @@
       "breadcrumbs": true
     },
     "docs-data-analysis": {
-      "path": "/docs-data-analysis",
+      "path": "/doc/docs-data-analysis",
       "versions": [
         {
           "name": "current",
           "label": "Next",
           "isLast": true,
-          "path": "/docs-data-analysis",
+          "path": "/doc/docs-data-analysis",
           "mainDocId": "index",
           "docs": [
             {
               "id": "data-access/data_access_description",
-              "path": "/docs-data-analysis/data-access/data_access_description",
+              "path": "/doc/docs-data-analysis/data-access/data_access_description",
               "sidebar": "dataAnalysisdSidebar"
             },
             {
               "id": "data-access/data_access_examples",
-              "path": "/docs-data-analysis/data-access/data_access_examples",
+              "path": "/doc/docs-data-analysis/data-access/data_access_examples",
               "sidebar": "dataAnalysisdSidebar"
             },
             {
               "id": "error-analysis/error_analysis_description",
-              "path": "/docs-data-analysis/error-analysis/error_analysis_description",
+              "path": "/doc/docs-data-analysis/error-analysis/error_analysis_description",
               "sidebar": "dataAnalysisdSidebar"
             },
             {
               "id": "error-analysis/error_analysis_examples",
-              "path": "/docs-data-analysis/error-analysis/error_analysis_examples",
+              "path": "/doc/docs-data-analysis/error-analysis/error_analysis_examples",
               "sidebar": "dataAnalysisdSidebar"
             },
             {
               "id": "index",
-              "path": "/docs-data-analysis/",
+              "path": "/doc/docs-data-analysis/",
               "sidebar": "dataAnalysisdSidebar"
             },
             {
               "id": "/category/data-access",
-              "path": "/docs-data-analysis/category/data-access",
+              "path": "/doc/docs-data-analysis/category/data-access",
               "sidebar": "gettingStartedSidebar"
             },
             {
               "id": "/category/error-analysis",
-              "path": "/docs-data-analysis/category/error-analysis",
+              "path": "/doc/docs-data-analysis/category/error-analysis",
               "sidebar": "gettingStartedSidebar"
             },
             {
               "id": "/category/data-access-1",
-              "path": "/docs-data-analysis/category/data-access-1",
+              "path": "/doc/docs-data-analysis/category/data-access-1",
               "sidebar": "citrosdSidebar"
             },
             {
               "id": "/category/error-analysis-1",
-              "path": "/docs-data-analysis/category/error-analysis-1",
+              "path": "/doc/docs-data-analysis/category/error-analysis-1",
               "sidebar": "citrosdSidebar"
             },
             {
               "id": "/category/data-access-2",
-              "path": "/docs-data-analysis/category/data-access-2",
+              "path": "/doc/docs-data-analysis/category/data-access-2",
               "sidebar": "clidSidebar"
             },
             {
               "id": "/category/error-analysis-2",
-              "path": "/docs-data-analysis/category/error-analysis-2",
+              "path": "/doc/docs-data-analysis/category/error-analysis-2",
               "sidebar": "clidSidebar"
             },
             {
               "id": "/category/data-access-3",
-              "path": "/docs-data-analysis/category/data-access-3",
+              "path": "/doc/docs-data-analysis/category/data-access-3",
               "sidebar": "dataAnalysisdSidebar"
             },
             {
               "id": "/category/error-analysis-3",
-              "path": "/docs-data-analysis/category/error-analysis-3",
+              "path": "/doc/docs-data-analysis/category/error-analysis-3",
               "sidebar": "dataAnalysisdSidebar"
             }
           ],
@@ -194,25 +132,25 @@
           "sidebars": {
             "gettingStartedSidebar": {
               "link": {
-                "path": "/docs-data-analysis/",
+                "path": "/doc/docs-data-analysis/",
                 "label": "Package overview"
               }
             },
             "citrosdSidebar": {
               "link": {
-                "path": "/docs-data-analysis/",
+                "path": "/doc/docs-data-analysis/",
                 "label": "Package overview"
               }
             },
             "clidSidebar": {
               "link": {
-                "path": "/docs-data-analysis/",
+                "path": "/doc/docs-data-analysis/",
                 "label": "Package overview"
               }
             },
             "dataAnalysisdSidebar": {
               "link": {
-                "path": "/docs-data-analysis/",
+                "path": "/doc/docs-data-analysis/",
                 "label": "Package overview"
               }
             }
@@ -222,18 +160,18 @@
       "breadcrumbs": true
     },
     "docs-cli": {
-      "path": "/docs-cli",
+      "path": "/doc/docs-cli",
       "versions": [
         {
           "name": "current",
           "label": "Next",
           "isLast": true,
-          "path": "/docs-cli",
+          "path": "/doc/docs-cli",
           "mainDocId": "index",
           "docs": [
             {
               "id": "index",
-              "path": "/docs-cli/",
+              "path": "/doc/docs-cli/",
               "sidebar": "dataAnalysisdSidebar"
             }
           ],
@@ -241,26 +179,88 @@
           "sidebars": {
             "gettingStartedSidebar": {
               "link": {
-                "path": "/docs-cli/",
+                "path": "/doc/docs-cli/",
                 "label": "CLI"
               }
             },
             "citrosdSidebar": {
               "link": {
-                "path": "/docs-cli/",
+                "path": "/doc/docs-cli/",
                 "label": "CLI"
               }
             },
             "clidSidebar": {
               "link": {
-                "path": "/docs-cli/",
+                "path": "/doc/docs-cli/",
                 "label": "CLI"
               }
             },
             "dataAnalysisdSidebar": {
               "link": {
-                "path": "/docs-cli/",
+                "path": "/doc/docs-cli/",
                 "label": "CLI"
+              }
+            }
+          }
+        }
+      ],
+      "breadcrumbs": true
+    },
+    "docs-citros": {
+      "path": "/doc/docs-citros",
+      "versions": [
+        {
+          "name": "current",
+          "label": "Next",
+          "isLast": true,
+          "path": "/doc/docs-citros",
+          "mainDocId": "index",
+          "docs": [
+            {
+              "id": "index",
+              "path": "/doc/docs-citros/",
+              "sidebar": "dataAnalysisdSidebar"
+            },
+            {
+              "id": "run_in_cloud",
+              "path": "/doc/docs-citros/run_in_cloud",
+              "sidebar": "dataAnalysisdSidebar"
+            },
+            {
+              "id": "run_locally",
+              "path": "/doc/docs-citros/run_locally",
+              "sidebar": "dataAnalysisdSidebar"
+            },
+            {
+              "id": "simulation_run",
+              "path": "/doc/docs-citros/simulation_run",
+              "sidebar": "dataAnalysisdSidebar"
+            }
+          ],
+          "draftIds": [],
+          "sidebars": {
+            "gettingStartedSidebar": {
+              "link": {
+                "path": "/doc/docs-citros/",
+                "label": "Citros guide book"
+              }
+            },
+            "citrosdSidebar": {
+              "link": {
+                "path": "/doc/docs-citros/",
+                "label": "Citros guide book"
+              }
+            },
+            "clidSidebar": {
+              "link": {
+                "path": "/doc/docs-citros/",
+                "label": "Citros guide book"
+              }
+            },
+            "dataAnalysisdSidebar": {
+              "link": {
+                "path": "/doc/docs-citros/",
+                "label": "Citros guide book"
               }
             }
           }

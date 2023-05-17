@@ -6,7 +6,7 @@
   "source": "@site/docs-data-analysis/error-analysis/error_analysis_description.md",
   "sourceDirName": "error-analysis",
   "slug": "/error-analysis/error_analysis_description",
-  "permalink": "/docs-data-analysis/error-analysis/error_analysis_description",
+  "permalink": "/doc/docs-data-analysis/error-analysis/error_analysis_description",
   "draft": false,
   "tags": [],
   "version": "current",
@@ -19,6 +19,6 @@
   "sidebar": "dataAnalysisdSidebar",
   "previous": {
     "title": "Examples",
-    "permalink": "/docs-data-analysis/error-analysis/error_analysis_examples"
+    "permalink": "/doc/docs-data-analysis/error-analysis/error_analysis_examples"
   }
 }

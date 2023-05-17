@@ -6,7 +6,7 @@
   "source": "@site/docs-cli/index.md",
   "sourceDirName": ".",
   "slug": "/",
-  "permalink": "/docs-cli/",
+  "permalink": "/doc/docs-cli/",
   "draft": false,
   "tags": [],
   "version": "current",

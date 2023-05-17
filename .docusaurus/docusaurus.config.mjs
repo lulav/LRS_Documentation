@@ -33,7 +33,7 @@ export default {
       {
         "docs": {
           "path": "docs",
-          "sidebarPath": "/workspaces/citros_doc/sidebars.js"
+          "sidebarPath": "/Users/vovacooper/dev/citros/citros/citros_doc/sidebars.js"
         },
         "blog": {
           "showReadingTime": true
@@ -51,7 +51,7 @@ export default {
         "id": "docs-citros",
         "path": "docs-citros",
         "routeBasePath": "docs-citros",
-        "sidebarPath": "/workspaces/citros_doc/sidebars.js"
+        "sidebarPath": "/Users/vovacooper/dev/citros/citros/citros_doc/sidebars.js"
       }
     ],
     [
@@ -60,7 +60,7 @@ export default {
         "id": "docs-cli",
         "path": "docs-cli",
         "routeBasePath": "docs-cli",
-        "sidebarPath": "/workspaces/citros_doc/sidebars.js"
+        "sidebarPath": "/Users/vovacooper/dev/citros/citros/citros_doc/sidebars.js"
       }
     ],
     [
@@ -69,7 +69,7 @@ export default {
         "id": "docs-data-analysis",
         "path": "docs-data-analysis",
         "routeBasePath": "docs-data-analysis",
-        "sidebarPath": "/workspaces/citros_doc/sidebars.js"
+        "sidebarPath": "/Users/vovacooper/dev/citros/citros/citros_doc/sidebars.js"
       }
     ]
   ],

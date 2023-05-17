@@ -12,25 +12,25 @@
       {
         "type": "link",
         "label": "Citros guide book",
-        "href": "/docs-citros/",
+        "href": "/doc/docs-citros/",
         "docId": "index"
       },
       {
         "type": "link",
         "label": "Simulation run",
-        "href": "/docs-citros/simulation_run",
+        "href": "/doc/docs-citros/simulation_run",
         "docId": "simulation_run"
       },
       {
         "type": "link",
         "label": "Run locally",
-        "href": "/docs-citros/run_locally",
+        "href": "/doc/docs-citros/run_locally",
         "docId": "run_locally"
       },
       {
         "type": "link",
         "label": "Run in cloud",
-        "href": "/docs-citros/run_in_cloud",
+        "href": "/doc/docs-citros/run_in_cloud",
         "docId": "run_in_cloud"
       }
     ],
@@ -38,25 +38,25 @@
       {
         "type": "link",
         "label": "Citros guide book",
-        "href": "/docs-citros/",
+        "href": "/doc/docs-citros/",
         "docId": "index"
       },
       {
         "type": "link",
         "label": "Simulation run",
-        "href": "/docs-citros/simulation_run",
+        "href": "/doc/docs-citros/simulation_run",
         "docId": "simulation_run"
       },
       {
         "type": "link",
         "label": "Run locally",
-        "href": "/docs-citros/run_locally",
+        "href": "/doc/docs-citros/run_locally",
         "docId": "run_locally"
       },
       {
         "type": "link",
         "label": "Run in cloud",
-        "href": "/docs-citros/run_in_cloud",
+        "href": "/doc/docs-citros/run_in_cloud",
         "docId": "run_in_cloud"
       }
     ],
@@ -64,25 +64,25 @@
       {
         "type": "link",
         "label": "Citros guide book",
-        "href": "/docs-citros/",
+        "href": "/doc/docs-citros/",
         "docId": "index"
       },
       {
         "type": "link",
         "label": "Simulation run",
-        "href": "/docs-citros/simulation_run",
+        "href": "/doc/docs-citros/simulation_run",
         "docId": "simulation_run"
       },
       {
         "type": "link",
         "label": "Run locally",
-        "href": "/docs-citros/run_locally",
+        "href": "/doc/docs-citros/run_locally",
         "docId": "run_locally"
       },
       {
         "type": "link",
         "label": "Run in cloud",
-        "href": "/docs-citros/run_in_cloud",
+        "href": "/doc/docs-citros/run_in_cloud",
         "docId": "run_in_cloud"
       }
     ],
@@ -90,25 +90,25 @@
       {
         "type": "link",
         "label": "Citros guide book",
-        "href": "/docs-citros/",
+        "href": "/doc/docs-citros/",
         "docId": "index"
       },
       {
         "type": "link",
         "label": "Simulation run",
-        "href": "/docs-citros/simulation_run",
+        "href": "/doc/docs-citros/simulation_run",
         "docId": "simulation_run"
       },
       {
         "type": "link",
         "label": "Run locally",
-        "href": "/docs-citros/run_locally",
+        "href": "/doc/docs-citros/run_locally",
         "docId": "run_locally"
       },
       {
         "type": "link",
         "label": "Run in cloud",
-        "href": "/docs-citros/run_in_cloud",
+        "href": "/doc/docs-citros/run_in_cloud",
         "docId": "run_in_cloud"
       }
     ]

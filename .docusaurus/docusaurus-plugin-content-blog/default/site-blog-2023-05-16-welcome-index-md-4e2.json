@@ -1,5 +1,5 @@
 {
-  "permalink": "/blog/welcome",
+  "permalink": "/doc/blog/welcome",
   "source": "@site/blog/2023-05-16-welcome/index.md",
   "title": "Welcome",
   "description": "Citros logo",
@@ -8,7 +8,7 @@
   "tags": [
     {
       "label": "greetings",
-      "permalink": "/blog/tags/greetings"
+      "permalink": "/doc/blog/tags/greetings"
     }
   ],
   "readingTime": 0.01,

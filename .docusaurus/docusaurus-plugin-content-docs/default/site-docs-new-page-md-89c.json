@@ -6,7 +6,7 @@
   "source": "@site/docs/new_page.md",
   "sourceDirName": ".",
   "slug": "/new_page",
-  "permalink": "/docs/new_page",
+  "permalink": "/doc/docs/new_page",
   "draft": false,
   "tags": [],
   "version": "current",
@@ -19,6 +19,6 @@
   "sidebar": "dataAnalysisdSidebar",
   "previous": {
     "title": "Getting started",
-    "permalink": "/docs/"
+    "permalink": "/doc/docs/"
   }
 }

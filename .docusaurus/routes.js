@@ -38,8 +38,8 @@ export default [
     exact: true
   },
   {
-    path: '/blog',
-    component: ComponentCreator('/blog', '4c1'),
+    path: '/doc/blog',
+    component: ComponentCreator('/doc/blog', 'a10'),
     exact: true
   },
   {
@@ -48,164 +48,164 @@ export default [
     exact: true
   },
   {
-    path: '/blog/tags',
-    component: ComponentCreator('/blog/tags', 'de3'),
+    path: '/doc/blog/tags',
+    component: ComponentCreator('/doc/blog/tags', '076'),
     exact: true
   },
   {
-    path: '/blog/tags/greetings',
-    component: ComponentCreator('/blog/tags/greetings', '027'),
+    path: '/doc/blog/tags/greetings',
+    component: ComponentCreator('/doc/blog/tags/greetings', '662'),
     exact: true
   },
   {
-    path: '/blog/welcome',
-    component: ComponentCreator('/blog/welcome', 'a08'),
+    path: '/doc/blog/welcome',
+    component: ComponentCreator('/doc/blog/welcome', '60e'),
     exact: true
   },
   {
-    path: '/markdown-page',
-    component: ComponentCreator('/markdown-page', '883'),
+    path: '/doc/markdown-page',
+    component: ComponentCreator('/doc/markdown-page', 'e5e'),
     exact: true
   },
   {
-    path: '/docs',
-    component: ComponentCreator('/docs', 'e68'),
+    path: '/doc/docs',
+    component: ComponentCreator('/doc/docs', '953'),
     routes: [
       {
-        path: '/docs/',
-        component: ComponentCreator('/docs/', 'b8b'),
+        path: '/doc/docs/',
+        component: ComponentCreator('/doc/docs/', '0fc'),
         exact: true,
         sidebar: "dataAnalysisdSidebar"
       },
       {
-        path: '/docs/new_page',
-        component: ComponentCreator('/docs/new_page', '5d3'),
+        path: '/doc/docs/new_page',
+        component: ComponentCreator('/doc/docs/new_page', '73b'),
         exact: true,
         sidebar: "dataAnalysisdSidebar"
       }
     ]
   },
   {
-    path: '/docs-citros',
-    component: ComponentCreator('/docs-citros', 'cda'),
+    path: '/doc/docs-citros',
+    component: ComponentCreator('/doc/docs-citros', 'fba'),
     routes: [
       {
-        path: '/docs-citros/',
-        component: ComponentCreator('/docs-citros/', 'aa8'),
+        path: '/doc/docs-citros/',
+        component: ComponentCreator('/doc/docs-citros/', '991'),
         exact: true,
         sidebar: "dataAnalysisdSidebar"
       },
       {
-        path: '/docs-citros/run_in_cloud',
-        component: ComponentCreator('/docs-citros/run_in_cloud', '448'),
+        path: '/doc/docs-citros/run_in_cloud',
+        component: ComponentCreator('/doc/docs-citros/run_in_cloud', '94a'),
         exact: true,
         sidebar: "dataAnalysisdSidebar"
       },
       {
-        path: '/docs-citros/run_locally',
-        component: ComponentCreator('/docs-citros/run_locally', 'c08'),
+        path: '/doc/docs-citros/run_locally',
+        component: ComponentCreator('/doc/docs-citros/run_locally', '564'),
         exact: true,
         sidebar: "dataAnalysisdSidebar"
       },
       {
-        path: '/docs-citros/simulation_run',
-        component: ComponentCreator('/docs-citros/simulation_run', 'f76'),
+        path: '/doc/docs-citros/simulation_run',
+        component: ComponentCreator('/doc/docs-citros/simulation_run', '6c8'),
         exact: true,
         sidebar: "dataAnalysisdSidebar"
       }
     ]
   },
   {
-    path: '/docs-cli',
-    component: ComponentCreator('/docs-cli', 'e3e'),
+    path: '/doc/docs-cli',
+    component: ComponentCreator('/doc/docs-cli', '909'),
     routes: [
       {
-        path: '/docs-cli/',
-        component: ComponentCreator('/docs-cli/', '62e'),
+        path: '/doc/docs-cli/',
+        component: ComponentCreator('/doc/docs-cli/', 'b08'),
         exact: true,
         sidebar: "dataAnalysisdSidebar"
       }
     ]
   },
   {
-    path: '/docs-data-analysis',
-    component: ComponentCreator('/docs-data-analysis', 'fb2'),
+    path: '/doc/docs-data-analysis',
+    component: ComponentCreator('/doc/docs-data-analysis', '977'),
     routes: [
       {
-        path: '/docs-data-analysis/',
-        component: ComponentCreator('/docs-data-analysis/', '6c2'),
+        path: '/doc/docs-data-analysis/',
+        component: ComponentCreator('/doc/docs-data-analysis/', '002'),
         exact: true,
         sidebar: "dataAnalysisdSidebar"
       },
       {
-        path: '/docs-data-analysis/category/data-access',
-        component: ComponentCreator('/docs-data-analysis/category/data-access', '2bd'),
+        path: '/doc/docs-data-analysis/category/data-access',
+        component: ComponentCreator('/doc/docs-data-analysis/category/data-access', 'b3e'),
         exact: true,
         sidebar: "gettingStartedSidebar"
       },
       {
-        path: '/docs-data-analysis/category/data-access-1',
-        component: ComponentCreator('/docs-data-analysis/category/data-access-1', 'b20'),
+        path: '/doc/docs-data-analysis/category/data-access-1',
+        component: ComponentCreator('/doc/docs-data-analysis/category/data-access-1', '50c'),
         exact: true,
         sidebar: "citrosdSidebar"
       },
       {
-        path: '/docs-data-analysis/category/data-access-2',
-        component: ComponentCreator('/docs-data-analysis/category/data-access-2', '10a'),
+        path: '/doc/docs-data-analysis/category/data-access-2',
+        component: ComponentCreator('/doc/docs-data-analysis/category/data-access-2', '3d2'),
         exact: true,
         sidebar: "clidSidebar"
       },
       {
-        path: '/docs-data-analysis/category/data-access-3',
-        component: ComponentCreator('/docs-data-analysis/category/data-access-3', '700'),
+        path: '/doc/docs-data-analysis/category/data-access-3',
+        component: ComponentCreator('/doc/docs-data-analysis/category/data-access-3', '636'),
         exact: true,
         sidebar: "dataAnalysisdSidebar"
       },
       {
-        path: '/docs-data-analysis/category/error-analysis',
-        component: ComponentCreator('/docs-data-analysis/category/error-analysis', 'bfe'),
+        path: '/doc/docs-data-analysis/category/error-analysis',
+        component: ComponentCreator('/doc/docs-data-analysis/category/error-analysis', '068'),
         exact: true,
         sidebar: "gettingStartedSidebar"
       },
       {
-        path: '/docs-data-analysis/category/error-analysis-1',
-        component: ComponentCreator('/docs-data-analysis/category/error-analysis-1', '927'),
+        path: '/doc/docs-data-analysis/category/error-analysis-1',
+        component: ComponentCreator('/doc/docs-data-analysis/category/error-analysis-1', '2fa'),
         exact: true,
         sidebar: "citrosdSidebar"
       },
       {
-        path: '/docs-data-analysis/category/error-analysis-2',
-        component: ComponentCreator('/docs-data-analysis/category/error-analysis-2', 'afe'),
+        path: '/doc/docs-data-analysis/category/error-analysis-2',
+        component: ComponentCreator('/doc/docs-data-analysis/category/error-analysis-2', '600'),
         exact: true,
         sidebar: "clidSidebar"
       },
       {
-        path: '/docs-data-analysis/category/error-analysis-3',
-        component: ComponentCreator('/docs-data-analysis/category/error-analysis-3', '7cf'),
+        path: '/doc/docs-data-analysis/category/error-analysis-3',
+        component: ComponentCreator('/doc/docs-data-analysis/category/error-analysis-3', '97a'),
         exact: true,
         sidebar: "dataAnalysisdSidebar"
       },
       {
-        path: '/docs-data-analysis/data-access/data_access_description',
-        component: ComponentCreator('/docs-data-analysis/data-access/data_access_description', 'e80'),
+        path: '/doc/docs-data-analysis/data-access/data_access_description',
+        component: ComponentCreator('/doc/docs-data-analysis/data-access/data_access_description', '16e'),
         exact: true,
         sidebar: "dataAnalysisdSidebar"
       },
       {
-        path: '/docs-data-analysis/data-access/data_access_examples',
-        component: ComponentCreator('/docs-data-analysis/data-access/data_access_examples', '47d'),
+        path: '/doc/docs-data-analysis/data-access/data_access_examples',
+        component: ComponentCreator('/doc/docs-data-analysis/data-access/data_access_examples', 'aed'),
         exact: true,
         sidebar: "dataAnalysisdSidebar"
       },
       {
-        path: '/docs-data-analysis/error-analysis/error_analysis_description',
-        component: ComponentCreator('/docs-data-analysis/error-analysis/error_analysis_description', '8de'),
+        path: '/doc/docs-data-analysis/error-analysis/error_analysis_description',
+        component: ComponentCreator('/doc/docs-data-analysis/error-analysis/error_analysis_description', '3b7'),
         exact: true,
         sidebar: "dataAnalysisdSidebar"
       },
       {
-        path: '/docs-data-analysis/error-analysis/error_analysis_examples',
-        component: ComponentCreator('/docs-data-analysis/error-analysis/error_analysis_examples', 'd81'),
+        path: '/doc/docs-data-analysis/error-analysis/error_analysis_examples',
+        component: ComponentCreator('/doc/docs-data-analysis/error-analysis/error_analysis_examples', '054'),
         exact: true,
         sidebar: "dataAnalysisdSidebar"
       }

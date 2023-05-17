@@ -12,13 +12,13 @@
       {
         "type": "link",
         "label": "Getting started",
-        "href": "/docs/",
+        "href": "/doc/docs/",
         "docId": "index"
       },
       {
         "type": "link",
         "label": "New page",
-        "href": "/docs/new_page",
+        "href": "/doc/docs/new_page",
         "docId": "new_page"
       }
     ],
@@ -26,13 +26,13 @@
       {
         "type": "link",
         "label": "Getting started",
-        "href": "/docs/",
+        "href": "/doc/docs/",
         "docId": "index"
       },
       {
         "type": "link",
         "label": "New page",
-        "href": "/docs/new_page",
+        "href": "/doc/docs/new_page",
         "docId": "new_page"
       }
     ],
@@ -40,13 +40,13 @@
       {
         "type": "link",
         "label": "Getting started",
-        "href": "/docs/",
+        "href": "/doc/docs/",
         "docId": "index"
       },
       {
         "type": "link",
         "label": "New page",
-        "href": "/docs/new_page",
+        "href": "/doc/docs/new_page",
         "docId": "new_page"
       }
     ],
@@ -54,13 +54,13 @@
       {
         "type": "link",
         "label": "Getting started",
-        "href": "/docs/",
+        "href": "/doc/docs/",
         "docId": "index"
       },
       {
         "type": "link",
         "label": "New page",
-        "href": "/docs/new_page",
+        "href": "/doc/docs/new_page",
         "docId": "new_page"
       }
     ]
