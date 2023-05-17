@@ -5,7 +5,7 @@
  */
 export default {
   "title": "CITROS",
-  "tagline": "CITROS is cool",
+  "tagline": "The starting point for your next robotic project",
   "favicon": "img/favicon.ico",
   "url": "http://localhost:3000",
   "baseUrl": "/doc/",
@@ -32,16 +32,44 @@ export default {
       "classic",
       {
         "docs": {
-          "sidebarPath": "/Users/vovacooper/dev/citros/citros/citros_doc/sidebars.js",
-          "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/"
+          "path": "docs",
+          "sidebarPath": "/workspaces/citros_doc/sidebars.js"
         },
         "blog": {
-          "showReadingTime": true,
-          "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/"
+          "showReadingTime": true
         },
         "theme": {
           "customCss": "/Users/vovacooper/dev/citros/citros/citros_doc/src/css/custom.css"
         }
+      }
+    ]
+  ],
+  "plugins": [
+    [
+      "@docusaurus/plugin-content-docs",
+      {
+        "id": "docs-citros",
+        "path": "docs-citros",
+        "routeBasePath": "docs-citros",
+        "sidebarPath": "/workspaces/citros_doc/sidebars.js"
+      }
+    ],
+    [
+      "@docusaurus/plugin-content-docs",
+      {
+        "id": "docs-cli",
+        "path": "docs-cli",
+        "routeBasePath": "docs-cli",
+        "sidebarPath": "/workspaces/citros_doc/sidebars.js"
+      }
+    ],
+    [
+      "@docusaurus/plugin-content-docs",
+      {
+        "id": "docs-data-analysis",
+        "path": "docs-data-analysis",
+        "routeBasePath": "docs-data-analysis",
+        "sidebarPath": "/workspaces/citros_doc/sidebars.js"
       }
     ]
   ],
@@ -61,9 +89,28 @@ export default {
       "items": [
         {
           "type": "docSidebar",
-          "sidebarId": "tutorialSidebar",
+          "sidebarId": "gettingStartedSidebar",
+          "label": "Getting started",
           "position": "left",
-          "label": "Tutorial"
+          "activeBaseRegex": "/docs/"
+        },
+        {
+          "to": "/docs-citros",
+          "label": "Citros",
+          "position": "left",
+          "activeBaseRegex": "/docs-citros/"
+        },
+        {
+          "to": "/docs-cli",
+          "label": "CLI",
+          "position": "left",
+          "activeBaseRegex": "/docs-cli/"
+        },
+        {
+          "to": "/docs-data-analysis",
+          "label": "Data analysis",
+          "position": "left",
+          "activeBaseRegex": "/docs-data-analysis/"
         },
         {
           "to": "/blog",
@@ -71,9 +118,16 @@ export default {
           "position": "left"
         },
         {
-          "href": "https://github.com/lulav-citrpos",
-          "label": "GitHub",
-          "position": "right"
+          "type": "docsVersionDropdown",
+          "position": "right",
+          "dropdownItemsAfter": [
+            {
+              "to": "/versions",
+              "label": "All versions"
+            }
+          ],
+          "dropdownActiveClassDisabled": true,
+          "dropdownItemsBefore": []
         }
       ],
       "hideOnScroll": false
@@ -82,28 +136,23 @@ export default {
       "style": "dark",
       "links": [
         {
-          "title": "Docs",
+          "title": "Tutorials",
           "items": [
             {
-              "label": "Tutorial",
-              "to": "/docs/intro"
-            }
-          ]
-        },
-        {
-          "title": "Community",
-          "items": [
-            {
-              "label": "Stack Overflow",
-              "href": "https://stackoverflow.com/questions/tagged/docusaurus"
+              "label": "Getting started",
+              "to": "/docs"
             },
             {
-              "label": "Discord",
-              "href": "https://discordapp.com/invite/docusaurus"
+              "label": "Citros",
+              "to": "/docs-citros"
             },
             {
-              "label": "Twitter",
-              "href": "https://twitter.com/docusaurus"
+              "label": "CLI",
+              "to": "/docs-cli"
+            },
+            {
+              "label": "Data analysis",
+              "to": "/docs-data-analysis"
             }
           ]
         },
@@ -113,10 +162,6 @@ export default {
             {
               "label": "Blog",
               "to": "/blog"
-            },
-            {
-              "label": "GitHub",
-              "href": "https://github.com/facebook/docusaurus"
             }
           ]
         }
@@ -358,7 +403,6 @@ export default {
     "static"
   ],
   "customFields": {},
-  "plugins": [],
   "scripts": [],
   "headTags": [],
   "clientModules": [],

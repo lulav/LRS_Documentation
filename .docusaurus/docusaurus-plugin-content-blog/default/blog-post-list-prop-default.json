@@ -2,24 +2,8 @@
   "title": "Recent posts",
   "items": [
     {
-      "title": "citros-first",
-      "permalink": "/doc/blog/2023/04/02/citros-first"
-    },
-    {
       "title": "Welcome",
-      "permalink": "/doc/blog/welcome"
-    },
-    {
-      "title": "MDX Blog Post",
-      "permalink": "/doc/blog/mdx-blog-post"
-    },
-    {
-      "title": "Long Blog Post",
-      "permalink": "/doc/blog/long-blog-post"
-    },
-    {
-      "title": "First Blog Post",
-      "permalink": "/doc/blog/first-blog-post"
+      "permalink": "/blog/welcome"
     }
   ]
 }

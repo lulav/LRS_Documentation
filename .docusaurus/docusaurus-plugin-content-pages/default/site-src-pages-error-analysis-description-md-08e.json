@@ -1,0 +1,10 @@
+{
+  "type": "mdx",
+  "permalink": "/error_analysis_description",
+  "source": "@site/src/pages/error_analysis_description.md",
+  "title": "Module citros_data_analysis.error_analysis {#citros_data_analysis.error_analysis}",
+  "description": "citrosdataanalysis.error_analysis}",
+  "frontMatter": {
+    "toc_max_heading_level": 3
+  }
+}

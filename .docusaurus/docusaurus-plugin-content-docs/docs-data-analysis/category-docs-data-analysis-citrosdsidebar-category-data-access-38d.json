@@ -1,0 +1,15 @@
+{
+  "title": "Data access",
+  "slug": "/category/data-access-1",
+  "permalink": "/docs-data-analysis/category/data-access-1",
+  "navigation": {
+    "previous": {
+      "title": "Package overview",
+      "permalink": "/docs-data-analysis/"
+    },
+    "next": {
+      "title": "Examples",
+      "permalink": "/docs-data-analysis/data-access/data_access_examples"
+    }
+  }
+}

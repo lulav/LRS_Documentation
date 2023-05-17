@@ -1,0 +1,24 @@
+{
+  "unversionedId": "intro",
+  "id": "intro",
+  "title": "Package overview",
+  "description": "Data access",
+  "source": "@site/docs-data-analysis/intro.md",
+  "sourceDirName": ".",
+  "slug": "/intro",
+  "permalink": "/docs-data-analysis/intro",
+  "draft": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 1,
+  "frontMatter": {
+    "sidebar_position": 1,
+    "sidebar_label": "Package overview",
+    "hide_title": true
+  },
+  "sidebar": "dataAnalysisdSidebar",
+  "next": {
+    "title": "Data access",
+    "permalink": "/docs-data-analysis/category/data-access-3"
+  }
+}

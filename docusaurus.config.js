@@ -7,7 +7,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'CITROS',
-  tagline: 'CITROS is cool',
+  tagline: 'The starting point for your next robotic project',
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
@@ -45,23 +45,55 @@ const config = {
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         docs: {
+          //routeBasePath: 'docs',
+          path: 'docs',
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+          //editUrl:
+          //  'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
         },
         blog: {
           showReadingTime: true,
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+          //editUrl:
+          //  'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
         },
       }),
+    ],
+  ],
+
+  plugins: [
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'docs-citros',
+        path: 'docs-citros',
+        routeBasePath: 'docs-citros',
+        sidebarPath: require.resolve('./sidebars.js'),
+      }, 
+    ],
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'docs-cli',
+        path: 'docs-cli',
+        routeBasePath: 'docs-cli',
+        sidebarPath: require.resolve('./sidebars.js'),
+      }, 
+    ],
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'docs-data-analysis',
+        path: 'docs-data-analysis',
+        routeBasePath: 'docs-data-analysis',
+        sidebarPath: require.resolve('./sidebars.js'),
+      }, 
     ],
   ],
 
@@ -87,18 +119,37 @@ const config = {
         },
         items: [
           {
+            //to: '/docs/intro',    // ./docs/Intro.md
             type: 'docSidebar',
-            sidebarId: 'tutorialSidebar',
+            sidebarId: 'gettingStartedSidebar',
+            label: 'Getting started',
             position: 'left',
-            label: 'Tutorial',
+            activeBaseRegex: `/docs/`,
           },
-          { to: '/blog', label: 'Blog', position: 'left' },
-
-          
           {
-            href: 'https://github.com/lulav-citrpos',
-            label: 'GitHub',
+            to: '/docs-citros',    // ./docs-api/Intro.md
+            label: 'Citros',
+            position: 'left',
+            activeBaseRegex: `/docs-citros/`,
+          },
+          {
+            to: '/docs-cli',    // ./docs-api/Intro.md
+            label: 'CLI',
+            position: 'left',
+            activeBaseRegex: `/docs-cli/`,
+          },
+          {
+            to: '/docs-data-analysis',    // ./docs-api/Intro.md
+            label: 'Data analysis',
+            position: 'left',
+            activeBaseRegex: `/docs-data-analysis/`,
+          },
+          {to: '/blog', label: 'Blog', position: 'left' },
+          {
+            type: 'docsVersionDropdown',
             position: 'right',
+            dropdownItemsAfter: [{to: '/versions', label: 'All versions'}],
+            dropdownActiveClassDisabled: true,
           },
         ],
       },
@@ -106,28 +157,23 @@ const config = {
         style: 'dark',
         links: [
           {
-            title: 'Docs',
+            title: 'Tutorials',
             items: [
               {
-                label: 'Tutorial',
-                to: '/docs/intro',
-              },
-            ],
-          },
-          {
-            title: 'Community',
-            items: [
-              {
-                label: 'Stack Overflow',
-                href: 'https://stackoverflow.com/questions/tagged/docusaurus',
+                label: 'Getting started',
+                to: '/docs',
               },
               {
-                label: 'Discord',
-                href: 'https://discordapp.com/invite/docusaurus',
+                label: 'Citros',
+                to: '/docs-citros',
               },
               {
-                label: 'Twitter',
-                href: 'https://twitter.com/docusaurus',
+                label: 'CLI',
+                to: '/docs-cli',
+              },
+              {
+                label: 'Data analysis',
+                to: '/docs-data-analysis',
               },
             ],
           },
@@ -137,10 +183,6 @@ const config = {
               {
                 label: 'Blog',
                 to: '/blog',
-              },
-              {
-                label: 'GitHub',
-                href: 'https://github.com/facebook/docusaurus',
               },
             ],
           },

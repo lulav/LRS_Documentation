@@ -1,0 +1,30 @@
+{
+  "unversionedId": "error-analysis/error_analysis_examples",
+  "id": "error-analysis/error_analysis_examples",
+  "title": "Error analysis",
+  "description": "Examples of the error_analysis module",
+  "source": "@site/docs-data-analysis/error-analysis/error_analysis_examples.md",
+  "sourceDirName": "error-analysis",
+  "slug": "/error-analysis/error_analysis_examples",
+  "permalink": "/docs-data-analysis/error-analysis/error_analysis_examples",
+  "draft": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 1,
+  "frontMatter": {
+    "toc_max_heading_level": 4,
+    "sidebar_label": "Examples",
+    "hide_title": true,
+    "description": "Examples of the error_analysis module",
+    "sidebar_position": 1
+  },
+  "sidebar": "dataAnalysisdSidebar",
+  "previous": {
+    "title": "Error analysis",
+    "permalink": "/docs-data-analysis/category/error-analysis-3"
+  },
+  "next": {
+    "title": "Documentation",
+    "permalink": "/docs-data-analysis/error-analysis/error_analysis_description"
+  }
+}

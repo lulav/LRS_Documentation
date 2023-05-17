@@ -1,0 +1,52 @@
+{
+  "pluginId": "docs-cli",
+  "version": "current",
+  "label": "Next",
+  "banner": null,
+  "badge": false,
+  "noIndex": false,
+  "className": "docs-version-current",
+  "isLast": true,
+  "docsSidebars": {
+    "gettingStartedSidebar": [
+      {
+        "type": "link",
+        "label": "CLI",
+        "href": "/docs-cli/",
+        "docId": "index"
+      }
+    ],
+    "citrosdSidebar": [
+      {
+        "type": "link",
+        "label": "CLI",
+        "href": "/docs-cli/",
+        "docId": "index"
+      }
+    ],
+    "clidSidebar": [
+      {
+        "type": "link",
+        "label": "CLI",
+        "href": "/docs-cli/",
+        "docId": "index"
+      }
+    ],
+    "dataAnalysisdSidebar": [
+      {
+        "type": "link",
+        "label": "CLI",
+        "href": "/docs-cli/",
+        "docId": "index"
+      }
+    ]
+  },
+  "docs": {
+    "index": {
+      "id": "index",
+      "title": "index",
+      "description": "Command line interface",
+      "sidebar": "dataAnalysisdSidebar"
+    }
+  }
+}

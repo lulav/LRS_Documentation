@@ -1,0 +1,24 @@
+{
+  "permalink": "/blog/welcome",
+  "source": "@site/blog/2023-05-16-welcome/index.md",
+  "title": "Welcome",
+  "description": "Citros logo",
+  "date": "2023-05-16T00:00:00.000Z",
+  "formattedDate": "May 16, 2023",
+  "tags": [
+    {
+      "label": "greetings",
+      "permalink": "/blog/tags/greetings"
+    }
+  ],
+  "readingTime": 0.01,
+  "hasTruncateMarker": false,
+  "authors": [],
+  "frontMatter": {
+    "slug": "welcome",
+    "title": "Welcome",
+    "tags": [
+      "greetings"
+    ]
+  }
+}

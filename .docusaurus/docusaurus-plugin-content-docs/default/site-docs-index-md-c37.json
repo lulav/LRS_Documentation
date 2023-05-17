@@ -1,0 +1,24 @@
+{
+  "unversionedId": "index",
+  "id": "index",
+  "title": "index",
+  "description": "Citros",
+  "source": "@site/docs/index.md",
+  "sourceDirName": ".",
+  "slug": "/",
+  "permalink": "/docs/",
+  "draft": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 1,
+  "frontMatter": {
+    "sidebar_position": 1,
+    "sidebar_label": "Getting started",
+    "hide_title": true
+  },
+  "sidebar": "dataAnalysisdSidebar",
+  "next": {
+    "title": "New page",
+    "permalink": "/docs/new_page"
+  }
+}

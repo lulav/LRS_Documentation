@@ -15,10 +15,13 @@ slorber:
   title: Docusaurus maintainer
   url: https://sebastienlorber.com
   image_url: https://github.com/slorber.png
-
-
+  
 vovacooper:
   name: Vladimir Kouperman
   title: CITROS maintainer
-  url: https://citros.io
-  image_url: https://github.com/slorber.png
+  url: https://github.com/vovacooper
+
+lidia:
+  name: Lidia Yalyalieva
+  title: data scientis
+  url: https://github.com/Yalyalieva

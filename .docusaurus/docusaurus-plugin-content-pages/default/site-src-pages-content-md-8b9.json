@@ -1,0 +1,7 @@
+{
+  "type": "mdx",
+  "permalink": "/content",
+  "source": "@site/src/pages/content.md",
+  "description": "Citros data analysis package.",
+  "frontMatter": {}
+}

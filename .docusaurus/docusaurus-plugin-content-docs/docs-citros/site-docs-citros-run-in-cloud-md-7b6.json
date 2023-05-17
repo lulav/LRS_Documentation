@@ -1,0 +1,24 @@
+{
+  "unversionedId": "run_in_cloud",
+  "id": "run_in_cloud",
+  "title": "run_in_cloud",
+  "description": "New heading",
+  "source": "@site/docs-citros/run_in_cloud.md",
+  "sourceDirName": ".",
+  "slug": "/run_in_cloud",
+  "permalink": "/docs-citros/run_in_cloud",
+  "draft": false,
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 4,
+  "frontMatter": {
+    "sidebar_position": 4,
+    "sidebar_label": "Run in cloud",
+    "hide_title": true
+  },
+  "sidebar": "dataAnalysisdSidebar",
+  "previous": {
+    "title": "Run locally",
+    "permalink": "/docs-citros/run_locally"
+  }
+}

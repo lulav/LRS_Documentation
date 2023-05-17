@@ -1,0 +1,15 @@
+{
+  "title": "Error analysis",
+  "slug": "/category/error-analysis-3",
+  "permalink": "/docs-data-analysis/category/error-analysis-3",
+  "navigation": {
+    "previous": {
+      "title": "Documentation",
+      "permalink": "/docs-data-analysis/data-access/data_access_description"
+    },
+    "next": {
+      "title": "Examples",
+      "permalink": "/docs-data-analysis/error-analysis/error_analysis_examples"
+    }
+  }
+}

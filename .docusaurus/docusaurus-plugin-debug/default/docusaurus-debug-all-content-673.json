@@ -9,10 +9,8 @@
           "badge": false,
           "noIndex": false,
           "className": "docs-version-current",
-          "path": "/doc/docs",
-          "tagsPath": "/doc/docs/tags",
-          "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs",
-          "editUrlLocalized": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/i18n/en/docusaurus-plugin-content-docs/current",
+          "path": "/docs",
+          "tagsPath": "/docs/tags",
           "isLast": true,
           "routePriority": -1,
           "sidebarFilePath": "/Users/vovacooper/dev/citros/citros/citros_doc/sidebars.js",
@@ -20,380 +18,762 @@
           "contentPathLocalized": "/Users/vovacooper/dev/citros/citros/citros_doc/i18n/en/docusaurus-plugin-content-docs/current",
           "docs": [
             {
-              "unversionedId": "intro",
-              "id": "intro",
-              "title": "Tutorial Intro",
-              "description": "Let's discover Docusaurus in less than 5 minutes.",
-              "source": "@site/docs/intro.md",
+              "unversionedId": "index",
+              "id": "index",
+              "title": "index",
+              "description": "Citros",
+              "source": "@site/docs/index.md",
               "sourceDirName": ".",
-              "slug": "/intro",
-              "permalink": "/doc/docs/intro",
+              "slug": "/",
+              "permalink": "/docs/",
               "draft": false,
-              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/intro.md",
               "tags": [],
               "version": "current",
               "sidebarPosition": 1,
               "frontMatter": {
-                "sidebar_position": 1
+                "sidebar_position": 1,
+                "sidebar_label": "Getting started",
+                "hide_title": true
               },
-              "sidebar": "tutorialSidebar",
+              "sidebar": "dataAnalysisdSidebar",
               "next": {
-                "title": "Tutorial - Basics",
-                "permalink": "/doc/docs/category/tutorial---basics"
+                "title": "New page",
+                "permalink": "/docs/new_page"
               }
             },
             {
-              "unversionedId": "tests1/test",
-              "id": "tests1/test",
-              "title": "Hello from Docusaurus",
-              "description": "Are you ready to create the documentation site for your open source project?",
-              "source": "@site/docs/tests1/test.md",
-              "sourceDirName": "tests1",
-              "slug": "/tests1/test",
-              "permalink": "/doc/docs/tests1/test",
+              "unversionedId": "new_page",
+              "id": "new_page",
+              "title": "new_page",
+              "description": "New heading",
+              "source": "@site/docs/new_page.md",
+              "sourceDirName": ".",
+              "slug": "/new_page",
+              "permalink": "/docs/new_page",
               "draft": false,
-              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/tests1/test.md",
-              "tags": [],
-              "version": "current",
-              "sidebarPosition": 3,
-              "frontMatter": {
-                "sidebar_label": "Test 1!",
-                "sidebar_position": 3
-              },
-              "sidebar": "tutorialSidebar",
-              "previous": {
-                "title": "Translate your site",
-                "permalink": "/doc/docs/tutorial-extras/translate-your-site"
-              },
-              "next": {
-                "title": "Test2!",
-                "permalink": "/doc/docs/tests1/test2"
-              }
-            },
-            {
-              "unversionedId": "tests1/test2",
-              "id": "tests1/test2",
-              "title": "test2",
-              "description": "",
-              "source": "@site/docs/tests1/test2.md",
-              "sourceDirName": "tests1",
-              "slug": "/tests1/test2",
-              "permalink": "/doc/docs/tests1/test2",
-              "draft": false,
-              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/tests1/test2.md",
-              "tags": [],
-              "version": "current",
-              "sidebarPosition": 4,
-              "frontMatter": {
-                "sidebar_label": "Test2!",
-                "sidebar_position": 4
-              },
-              "sidebar": "tutorialSidebar",
-              "previous": {
-                "title": "Test 1!",
-                "permalink": "/doc/docs/tests1/test"
-              }
-            },
-            {
-              "unversionedId": "tutorial-basics/congratulations",
-              "id": "tutorial-basics/congratulations",
-              "title": "Congratulations!",
-              "description": "You have just learned the basics of Docusaurus and made some changes to the initial template.",
-              "source": "@site/docs/tutorial-basics/congratulations.md",
-              "sourceDirName": "tutorial-basics",
-              "slug": "/tutorial-basics/congratulations",
-              "permalink": "/doc/docs/tutorial-basics/congratulations",
-              "draft": false,
-              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/tutorial-basics/congratulations.md",
-              "tags": [],
-              "version": "current",
-              "sidebarPosition": 6,
-              "frontMatter": {
-                "sidebar_position": 6
-              },
-              "sidebar": "tutorialSidebar",
-              "previous": {
-                "title": "Deploy your site",
-                "permalink": "/doc/docs/tutorial-basics/deploy-your-site"
-              },
-              "next": {
-                "title": "Tutorial - Extras",
-                "permalink": "/doc/docs/category/tutorial---extras"
-              }
-            },
-            {
-              "unversionedId": "tutorial-basics/create-a-blog-post",
-              "id": "tutorial-basics/create-a-blog-post",
-              "title": "Create a Blog Post",
-              "description": "Docusaurus creates a page for each blog post, but also a blog index page, a tag system, an RSS feed...",
-              "source": "@site/docs/tutorial-basics/create-a-blog-post.md",
-              "sourceDirName": "tutorial-basics",
-              "slug": "/tutorial-basics/create-a-blog-post",
-              "permalink": "/doc/docs/tutorial-basics/create-a-blog-post",
-              "draft": false,
-              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/tutorial-basics/create-a-blog-post.md",
-              "tags": [],
-              "version": "current",
-              "sidebarPosition": 3,
-              "frontMatter": {
-                "sidebar_position": 3
-              },
-              "sidebar": "tutorialSidebar",
-              "previous": {
-                "title": "Create a Document",
-                "permalink": "/doc/docs/tutorial-basics/create-a-document"
-              },
-              "next": {
-                "title": "Markdown Features",
-                "permalink": "/doc/docs/tutorial-basics/markdown-features"
-              }
-            },
-            {
-              "unversionedId": "tutorial-basics/create-a-document",
-              "id": "tutorial-basics/create-a-document",
-              "title": "Create a Document",
-              "description": "Documents are groups of pages connected through:",
-              "source": "@site/docs/tutorial-basics/create-a-document.md",
-              "sourceDirName": "tutorial-basics",
-              "slug": "/tutorial-basics/create-a-document",
-              "permalink": "/doc/docs/tutorial-basics/create-a-document",
-              "draft": false,
-              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/tutorial-basics/create-a-document.md",
-              "tags": [],
-              "version": "current",
-              "sidebarPosition": 2,
-              "frontMatter": {
-                "sidebar_position": 2
-              },
-              "sidebar": "tutorialSidebar",
-              "previous": {
-                "title": "Create a Page",
-                "permalink": "/doc/docs/tutorial-basics/create-a-page"
-              },
-              "next": {
-                "title": "Create a Blog Post",
-                "permalink": "/doc/docs/tutorial-basics/create-a-blog-post"
-              }
-            },
-            {
-              "unversionedId": "tutorial-basics/create-a-page",
-              "id": "tutorial-basics/create-a-page",
-              "title": "Create a Page",
-              "description": "Add Markdown or React files to src/pages to create a standalone page:",
-              "source": "@site/docs/tutorial-basics/create-a-page.md",
-              "sourceDirName": "tutorial-basics",
-              "slug": "/tutorial-basics/create-a-page",
-              "permalink": "/doc/docs/tutorial-basics/create-a-page",
-              "draft": false,
-              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/tutorial-basics/create-a-page.md",
               "tags": [],
               "version": "current",
               "sidebarPosition": 1,
               "frontMatter": {
-                "sidebar_position": 1
+                "sidebar_position": 1,
+                "sidebar_label": "New page",
+                "hide_title": true
               },
-              "sidebar": "tutorialSidebar",
+              "sidebar": "dataAnalysisdSidebar",
               "previous": {
-                "title": "Tutorial - Basics",
-                "permalink": "/doc/docs/category/tutorial---basics"
-              },
-              "next": {
-                "title": "Create a Document",
-                "permalink": "/doc/docs/tutorial-basics/create-a-document"
-              }
-            },
-            {
-              "unversionedId": "tutorial-basics/deploy-your-site",
-              "id": "tutorial-basics/deploy-your-site",
-              "title": "Deploy your site",
-              "description": "Docusaurus is a static-site-generator (also called Jamstack).",
-              "source": "@site/docs/tutorial-basics/deploy-your-site.md",
-              "sourceDirName": "tutorial-basics",
-              "slug": "/tutorial-basics/deploy-your-site",
-              "permalink": "/doc/docs/tutorial-basics/deploy-your-site",
-              "draft": false,
-              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/tutorial-basics/deploy-your-site.md",
-              "tags": [],
-              "version": "current",
-              "sidebarPosition": 5,
-              "frontMatter": {
-                "sidebar_position": 5
-              },
-              "sidebar": "tutorialSidebar",
-              "previous": {
-                "title": "Markdown Features",
-                "permalink": "/doc/docs/tutorial-basics/markdown-features"
-              },
-              "next": {
-                "title": "Congratulations!",
-                "permalink": "/doc/docs/tutorial-basics/congratulations"
-              }
-            },
-            {
-              "unversionedId": "tutorial-basics/markdown-features",
-              "id": "tutorial-basics/markdown-features",
-              "title": "Markdown Features",
-              "description": "Docusaurus supports Markdown and a few additional features.",
-              "source": "@site/docs/tutorial-basics/markdown-features.mdx",
-              "sourceDirName": "tutorial-basics",
-              "slug": "/tutorial-basics/markdown-features",
-              "permalink": "/doc/docs/tutorial-basics/markdown-features",
-              "draft": false,
-              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/tutorial-basics/markdown-features.mdx",
-              "tags": [],
-              "version": "current",
-              "sidebarPosition": 4,
-              "frontMatter": {
-                "sidebar_position": 4
-              },
-              "sidebar": "tutorialSidebar",
-              "previous": {
-                "title": "Create a Blog Post",
-                "permalink": "/doc/docs/tutorial-basics/create-a-blog-post"
-              },
-              "next": {
-                "title": "Deploy your site",
-                "permalink": "/doc/docs/tutorial-basics/deploy-your-site"
-              }
-            },
-            {
-              "unversionedId": "tutorial-extras/manage-docs-versions",
-              "id": "tutorial-extras/manage-docs-versions",
-              "title": "Manage Docs Versions",
-              "description": "Docusaurus can manage multiple versions of your docs.",
-              "source": "@site/docs/tutorial-extras/manage-docs-versions.md",
-              "sourceDirName": "tutorial-extras",
-              "slug": "/tutorial-extras/manage-docs-versions",
-              "permalink": "/doc/docs/tutorial-extras/manage-docs-versions",
-              "draft": false,
-              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/tutorial-extras/manage-docs-versions.md",
-              "tags": [],
-              "version": "current",
-              "sidebarPosition": 1,
-              "frontMatter": {
-                "sidebar_position": 1
-              },
-              "sidebar": "tutorialSidebar",
-              "previous": {
-                "title": "Tutorial - Extras",
-                "permalink": "/doc/docs/category/tutorial---extras"
-              },
-              "next": {
-                "title": "Translate your site",
-                "permalink": "/doc/docs/tutorial-extras/translate-your-site"
-              }
-            },
-            {
-              "unversionedId": "tutorial-extras/translate-your-site",
-              "id": "tutorial-extras/translate-your-site",
-              "title": "Translate your site",
-              "description": "Let's translate docs/intro.md to French.",
-              "source": "@site/docs/tutorial-extras/translate-your-site.md",
-              "sourceDirName": "tutorial-extras",
-              "slug": "/tutorial-extras/translate-your-site",
-              "permalink": "/doc/docs/tutorial-extras/translate-your-site",
-              "draft": false,
-              "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/tutorial-extras/translate-your-site.md",
-              "tags": [],
-              "version": "current",
-              "sidebarPosition": 2,
-              "frontMatter": {
-                "sidebar_position": 2
-              },
-              "sidebar": "tutorialSidebar",
-              "previous": {
-                "title": "Manage Docs Versions",
-                "permalink": "/doc/docs/tutorial-extras/manage-docs-versions"
-              },
-              "next": {
-                "title": "Test 1!",
-                "permalink": "/doc/docs/tests1/test"
+                "title": "Getting started",
+                "permalink": "/docs/"
               }
             }
           ],
           "drafts": [],
           "sidebars": {
-            "tutorialSidebar": [
+            "gettingStartedSidebar": [
               {
                 "type": "doc",
-                "id": "intro"
+                "id": "index",
+                "label": "Getting started"
+              },
+              {
+                "type": "doc",
+                "id": "new_page",
+                "label": "New page"
+              }
+            ],
+            "citrosdSidebar": [
+              {
+                "type": "doc",
+                "id": "index",
+                "label": "Getting started"
+              },
+              {
+                "type": "doc",
+                "id": "new_page",
+                "label": "New page"
+              }
+            ],
+            "clidSidebar": [
+              {
+                "type": "doc",
+                "id": "index",
+                "label": "Getting started"
+              },
+              {
+                "type": "doc",
+                "id": "new_page",
+                "label": "New page"
+              }
+            ],
+            "dataAnalysisdSidebar": [
+              {
+                "type": "doc",
+                "id": "index",
+                "label": "Getting started"
+              },
+              {
+                "type": "doc",
+                "id": "new_page",
+                "label": "New page"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "docs-citros": {
+      "loadedVersions": [
+        {
+          "versionName": "current",
+          "label": "Next",
+          "banner": null,
+          "badge": false,
+          "noIndex": false,
+          "className": "docs-version-current",
+          "path": "/docs-citros",
+          "tagsPath": "/docs-citros/tags",
+          "isLast": true,
+          "routePriority": -1,
+          "sidebarFilePath": "/workspaces/citros_doc/sidebars.js",
+          "contentPath": "/workspaces/citros_doc/docs-citros",
+          "contentPathLocalized": "/workspaces/citros_doc/i18n/en/docusaurus-plugin-content-docs-docs-citros/current",
+          "docs": [
+            {
+              "unversionedId": "index",
+              "id": "index",
+              "title": "index",
+              "description": "About Citros",
+              "source": "@site/docs-citros/index.md",
+              "sourceDirName": ".",
+              "slug": "/",
+              "permalink": "/docs-citros/",
+              "draft": false,
+              "tags": [],
+              "version": "current",
+              "sidebarPosition": 1,
+              "frontMatter": {
+                "sidebar_position": 1,
+                "sidebar_label": "Citros guide book",
+                "hide_title": true
+              },
+              "sidebar": "dataAnalysisdSidebar",
+              "next": {
+                "title": "Simulation run",
+                "permalink": "/docs-citros/simulation_run"
+              }
+            },
+            {
+              "unversionedId": "run_in_cloud",
+              "id": "run_in_cloud",
+              "title": "run_in_cloud",
+              "description": "New heading",
+              "source": "@site/docs-citros/run_in_cloud.md",
+              "sourceDirName": ".",
+              "slug": "/run_in_cloud",
+              "permalink": "/docs-citros/run_in_cloud",
+              "draft": false,
+              "tags": [],
+              "version": "current",
+              "sidebarPosition": 4,
+              "frontMatter": {
+                "sidebar_position": 4,
+                "sidebar_label": "Run in cloud",
+                "hide_title": true
+              },
+              "sidebar": "dataAnalysisdSidebar",
+              "previous": {
+                "title": "Run locally",
+                "permalink": "/docs-citros/run_locally"
+              }
+            },
+            {
+              "unversionedId": "run_locally",
+              "id": "run_locally",
+              "title": "run_locally",
+              "description": "New heading",
+              "source": "@site/docs-citros/run_locally.md",
+              "sourceDirName": ".",
+              "slug": "/run_locally",
+              "permalink": "/docs-citros/run_locally",
+              "draft": false,
+              "tags": [],
+              "version": "current",
+              "sidebarPosition": 3,
+              "frontMatter": {
+                "sidebar_position": 3,
+                "sidebar_label": "Run locally",
+                "hide_title": true
+              },
+              "sidebar": "dataAnalysisdSidebar",
+              "previous": {
+                "title": "Simulation run",
+                "permalink": "/docs-citros/simulation_run"
+              },
+              "next": {
+                "title": "Run in cloud",
+                "permalink": "/docs-citros/run_in_cloud"
+              }
+            },
+            {
+              "unversionedId": "simulation_run",
+              "id": "simulation_run",
+              "title": "simulation_run",
+              "description": "New heading",
+              "source": "@site/docs-citros/simulation_run.md",
+              "sourceDirName": ".",
+              "slug": "/simulation_run",
+              "permalink": "/docs-citros/simulation_run",
+              "draft": false,
+              "tags": [],
+              "version": "current",
+              "sidebarPosition": 2,
+              "frontMatter": {
+                "sidebar_position": 2,
+                "sidebar_label": "Simulation run",
+                "hide_title": true
+              },
+              "sidebar": "dataAnalysisdSidebar",
+              "previous": {
+                "title": "Citros guide book",
+                "permalink": "/docs-citros/"
+              },
+              "next": {
+                "title": "Run locally",
+                "permalink": "/docs-citros/run_locally"
+              }
+            }
+          ],
+          "drafts": [],
+          "sidebars": {
+            "gettingStartedSidebar": [
+              {
+                "type": "doc",
+                "id": "index",
+                "label": "Citros guide book"
+              },
+              {
+                "type": "doc",
+                "id": "simulation_run",
+                "label": "Simulation run"
+              },
+              {
+                "type": "doc",
+                "id": "run_locally",
+                "label": "Run locally"
+              },
+              {
+                "type": "doc",
+                "id": "run_in_cloud",
+                "label": "Run in cloud"
+              }
+            ],
+            "citrosdSidebar": [
+              {
+                "type": "doc",
+                "id": "index",
+                "label": "Citros guide book"
+              },
+              {
+                "type": "doc",
+                "id": "simulation_run",
+                "label": "Simulation run"
+              },
+              {
+                "type": "doc",
+                "id": "run_locally",
+                "label": "Run locally"
+              },
+              {
+                "type": "doc",
+                "id": "run_in_cloud",
+                "label": "Run in cloud"
+              }
+            ],
+            "clidSidebar": [
+              {
+                "type": "doc",
+                "id": "index",
+                "label": "Citros guide book"
+              },
+              {
+                "type": "doc",
+                "id": "simulation_run",
+                "label": "Simulation run"
+              },
+              {
+                "type": "doc",
+                "id": "run_locally",
+                "label": "Run locally"
+              },
+              {
+                "type": "doc",
+                "id": "run_in_cloud",
+                "label": "Run in cloud"
+              }
+            ],
+            "dataAnalysisdSidebar": [
+              {
+                "type": "doc",
+                "id": "index",
+                "label": "Citros guide book"
+              },
+              {
+                "type": "doc",
+                "id": "simulation_run",
+                "label": "Simulation run"
+              },
+              {
+                "type": "doc",
+                "id": "run_locally",
+                "label": "Run locally"
+              },
+              {
+                "type": "doc",
+                "id": "run_in_cloud",
+                "label": "Run in cloud"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "docs-cli": {
+      "loadedVersions": [
+        {
+          "versionName": "current",
+          "label": "Next",
+          "banner": null,
+          "badge": false,
+          "noIndex": false,
+          "className": "docs-version-current",
+          "path": "/docs-cli",
+          "tagsPath": "/docs-cli/tags",
+          "isLast": true,
+          "routePriority": -1,
+          "sidebarFilePath": "/workspaces/citros_doc/sidebars.js",
+          "contentPath": "/workspaces/citros_doc/docs-cli",
+          "contentPathLocalized": "/workspaces/citros_doc/i18n/en/docusaurus-plugin-content-docs-docs-cli/current",
+          "docs": [
+            {
+              "unversionedId": "index",
+              "id": "index",
+              "title": "index",
+              "description": "Command line interface",
+              "source": "@site/docs-cli/index.md",
+              "sourceDirName": ".",
+              "slug": "/",
+              "permalink": "/docs-cli/",
+              "draft": false,
+              "tags": [],
+              "version": "current",
+              "sidebarPosition": 1,
+              "frontMatter": {
+                "sidebar_position": 1,
+                "sidebar_label": "CLI",
+                "hide_title": true
+              },
+              "sidebar": "dataAnalysisdSidebar"
+            }
+          ],
+          "drafts": [],
+          "sidebars": {
+            "gettingStartedSidebar": [
+              {
+                "type": "doc",
+                "id": "index",
+                "label": "CLI"
+              }
+            ],
+            "citrosdSidebar": [
+              {
+                "type": "doc",
+                "id": "index",
+                "label": "CLI"
+              }
+            ],
+            "clidSidebar": [
+              {
+                "type": "doc",
+                "id": "index",
+                "label": "CLI"
+              }
+            ],
+            "dataAnalysisdSidebar": [
+              {
+                "type": "doc",
+                "id": "index",
+                "label": "CLI"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "docs-data-analysis": {
+      "loadedVersions": [
+        {
+          "versionName": "current",
+          "label": "Next",
+          "banner": null,
+          "badge": false,
+          "noIndex": false,
+          "className": "docs-version-current",
+          "path": "/docs-data-analysis",
+          "tagsPath": "/docs-data-analysis/tags",
+          "isLast": true,
+          "routePriority": -1,
+          "sidebarFilePath": "/workspaces/citros_doc/sidebars.js",
+          "contentPath": "/workspaces/citros_doc/docs-data-analysis",
+          "contentPathLocalized": "/workspaces/citros_doc/i18n/en/docusaurus-plugin-content-docs-docs-data-analysis/current",
+          "docs": [
+            {
+              "unversionedId": "data-access/data_access_description",
+              "id": "data-access/data_access_description",
+              "title": "data_access_description",
+              "description": "Documentation",
+              "source": "@site/docs-data-analysis/data-access/data_access_description.md",
+              "sourceDirName": "data-access",
+              "slug": "/data-access/data_access_description",
+              "permalink": "/docs-data-analysis/data-access/data_access_description",
+              "draft": false,
+              "tags": [],
+              "version": "current",
+              "frontMatter": {
+                "toc_max_heading_level": 3,
+                "sidebar_label": "Documentation",
+                "description": "Documentation",
+                "hide_title": true
+              },
+              "sidebar": "dataAnalysisdSidebar",
+              "previous": {
+                "title": "Examples",
+                "permalink": "/docs-data-analysis/data-access/data_access_examples"
+              },
+              "next": {
+                "title": "Error analysis",
+                "permalink": "/docs-data-analysis/category/error-analysis-3"
+              }
+            },
+            {
+              "unversionedId": "data-access/data_access_examples",
+              "id": "data-access/data_access_examples",
+              "title": "data_access_examples",
+              "description": "Examples of the data_access module",
+              "source": "@site/docs-data-analysis/data-access/data_access_examples.md",
+              "sourceDirName": "data-access",
+              "slug": "/data-access/data_access_examples",
+              "permalink": "/docs-data-analysis/data-access/data_access_examples",
+              "draft": false,
+              "tags": [],
+              "version": "current",
+              "sidebarPosition": 1,
+              "frontMatter": {
+                "toc_max_heading_level": 4,
+                "sidebar_label": "Examples",
+                "hide_title": true,
+                "description": "Examples of the data_access module",
+                "sidebar_position": 1
+              },
+              "sidebar": "dataAnalysisdSidebar",
+              "previous": {
+                "title": "Data access",
+                "permalink": "/docs-data-analysis/category/data-access-3"
+              },
+              "next": {
+                "title": "Documentation",
+                "permalink": "/docs-data-analysis/data-access/data_access_description"
+              }
+            },
+            {
+              "unversionedId": "error-analysis/error_analysis_description",
+              "id": "error-analysis/error_analysis_description",
+              "title": "error_analysis_description",
+              "description": "Documentation",
+              "source": "@site/docs-data-analysis/error-analysis/error_analysis_description.md",
+              "sourceDirName": "error-analysis",
+              "slug": "/error-analysis/error_analysis_description",
+              "permalink": "/docs-data-analysis/error-analysis/error_analysis_description",
+              "draft": false,
+              "tags": [],
+              "version": "current",
+              "frontMatter": {
+                "toc_max_heading_level": 3,
+                "sidebar_label": "Documentation",
+                "description": "Documentation",
+                "hide_title": true
+              },
+              "sidebar": "dataAnalysisdSidebar",
+              "previous": {
+                "title": "Examples",
+                "permalink": "/docs-data-analysis/error-analysis/error_analysis_examples"
+              }
+            },
+            {
+              "unversionedId": "error-analysis/error_analysis_examples",
+              "id": "error-analysis/error_analysis_examples",
+              "title": "Error analysis",
+              "description": "Examples of the error_analysis module",
+              "source": "@site/docs-data-analysis/error-analysis/error_analysis_examples.md",
+              "sourceDirName": "error-analysis",
+              "slug": "/error-analysis/error_analysis_examples",
+              "permalink": "/docs-data-analysis/error-analysis/error_analysis_examples",
+              "draft": false,
+              "tags": [],
+              "version": "current",
+              "sidebarPosition": 1,
+              "frontMatter": {
+                "toc_max_heading_level": 4,
+                "sidebar_label": "Examples",
+                "hide_title": true,
+                "description": "Examples of the error_analysis module",
+                "sidebar_position": 1
+              },
+              "sidebar": "dataAnalysisdSidebar",
+              "previous": {
+                "title": "Error analysis",
+                "permalink": "/docs-data-analysis/category/error-analysis-3"
+              },
+              "next": {
+                "title": "Documentation",
+                "permalink": "/docs-data-analysis/error-analysis/error_analysis_description"
+              }
+            },
+            {
+              "unversionedId": "index",
+              "id": "index",
+              "title": "index",
+              "description": "Package overview",
+              "source": "@site/docs-data-analysis/index.md",
+              "sourceDirName": ".",
+              "slug": "/",
+              "permalink": "/docs-data-analysis/",
+              "draft": false,
+              "tags": [],
+              "version": "current",
+              "sidebarPosition": 1,
+              "frontMatter": {
+                "sidebar_position": 1,
+                "sidebar_label": "Package overview",
+                "hide_title": true
+              },
+              "sidebar": "dataAnalysisdSidebar",
+              "next": {
+                "title": "Data access",
+                "permalink": "/docs-data-analysis/category/data-access-3"
+              }
+            }
+          ],
+          "drafts": [],
+          "sidebars": {
+            "gettingStartedSidebar": [
+              {
+                "type": "doc",
+                "id": "index",
+                "label": "Package overview"
               },
               {
                 "type": "category",
-                "label": "Tutorial - Basics",
+                "label": "Data access",
                 "collapsible": true,
                 "collapsed": true,
                 "items": [
                   {
                     "type": "doc",
-                    "id": "tutorial-basics/create-a-page"
+                    "id": "data-access/data_access_examples",
+                    "label": "Examples"
                   },
                   {
                     "type": "doc",
-                    "id": "tutorial-basics/create-a-document"
-                  },
-                  {
-                    "type": "doc",
-                    "id": "tutorial-basics/create-a-blog-post"
-                  },
-                  {
-                    "type": "doc",
-                    "id": "tutorial-basics/markdown-features"
-                  },
-                  {
-                    "type": "doc",
-                    "id": "tutorial-basics/deploy-your-site"
-                  },
-                  {
-                    "type": "doc",
-                    "id": "tutorial-basics/congratulations"
+                    "id": "data-access/data_access_description",
+                    "label": "Documentation"
                   }
                 ],
                 "link": {
                   "type": "generated-index",
-                  "description": "5 minutes to learn the most important Docusaurus concepts.",
-                  "slug": "/category/tutorial---basics",
-                  "permalink": "/doc/docs/category/tutorial---basics"
+                  "slug": "/category/data-access",
+                  "permalink": "/docs-data-analysis/category/data-access"
                 }
               },
               {
                 "type": "category",
-                "label": "Tutorial - Extras",
+                "label": "Error analysis",
                 "collapsible": true,
                 "collapsed": true,
                 "items": [
                   {
                     "type": "doc",
-                    "id": "tutorial-extras/manage-docs-versions"
+                    "id": "error-analysis/error_analysis_examples",
+                    "label": "Examples"
                   },
                   {
                     "type": "doc",
-                    "id": "tutorial-extras/translate-your-site"
+                    "id": "error-analysis/error_analysis_description",
+                    "label": "Documentation"
                   }
                 ],
                 "link": {
                   "type": "generated-index",
-                  "slug": "/category/tutorial---extras",
-                  "permalink": "/doc/docs/category/tutorial---extras"
+                  "slug": "/category/error-analysis",
+                  "permalink": "/docs-data-analysis/category/error-analysis"
                 }
+              }
+            ],
+            "citrosdSidebar": [
+              {
+                "type": "doc",
+                "id": "index",
+                "label": "Package overview"
               },
               {
                 "type": "category",
-                "label": "tests1",
+                "label": "Data access",
                 "collapsible": true,
                 "collapsed": true,
                 "items": [
                   {
                     "type": "doc",
-                    "id": "tests1/test",
-                    "label": "Test 1!"
+                    "id": "data-access/data_access_examples",
+                    "label": "Examples"
                   },
                   {
                     "type": "doc",
-                    "id": "tests1/test2",
-                    "label": "Test2!"
+                    "id": "data-access/data_access_description",
+                    "label": "Documentation"
                   }
-                ]
+                ],
+                "link": {
+                  "type": "generated-index",
+                  "slug": "/category/data-access-1",
+                  "permalink": "/docs-data-analysis/category/data-access-1"
+                }
+              },
+              {
+                "type": "category",
+                "label": "Error analysis",
+                "collapsible": true,
+                "collapsed": true,
+                "items": [
+                  {
+                    "type": "doc",
+                    "id": "error-analysis/error_analysis_examples",
+                    "label": "Examples"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "error-analysis/error_analysis_description",
+                    "label": "Documentation"
+                  }
+                ],
+                "link": {
+                  "type": "generated-index",
+                  "slug": "/category/error-analysis-1",
+                  "permalink": "/docs-data-analysis/category/error-analysis-1"
+                }
+              }
+            ],
+            "clidSidebar": [
+              {
+                "type": "doc",
+                "id": "index",
+                "label": "Package overview"
+              },
+              {
+                "type": "category",
+                "label": "Data access",
+                "collapsible": true,
+                "collapsed": true,
+                "items": [
+                  {
+                    "type": "doc",
+                    "id": "data-access/data_access_examples",
+                    "label": "Examples"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "data-access/data_access_description",
+                    "label": "Documentation"
+                  }
+                ],
+                "link": {
+                  "type": "generated-index",
+                  "slug": "/category/data-access-2",
+                  "permalink": "/docs-data-analysis/category/data-access-2"
+                }
+              },
+              {
+                "type": "category",
+                "label": "Error analysis",
+                "collapsible": true,
+                "collapsed": true,
+                "items": [
+                  {
+                    "type": "doc",
+                    "id": "error-analysis/error_analysis_examples",
+                    "label": "Examples"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "error-analysis/error_analysis_description",
+                    "label": "Documentation"
+                  }
+                ],
+                "link": {
+                  "type": "generated-index",
+                  "slug": "/category/error-analysis-2",
+                  "permalink": "/docs-data-analysis/category/error-analysis-2"
+                }
+              }
+            ],
+            "dataAnalysisdSidebar": [
+              {
+                "type": "doc",
+                "id": "index",
+                "label": "Package overview"
+              },
+              {
+                "type": "category",
+                "label": "Data access",
+                "collapsible": true,
+                "collapsed": true,
+                "items": [
+                  {
+                    "type": "doc",
+                    "id": "data-access/data_access_examples",
+                    "label": "Examples"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "data-access/data_access_description",
+                    "label": "Documentation"
+                  }
+                ],
+                "link": {
+                  "type": "generated-index",
+                  "slug": "/category/data-access-3",
+                  "permalink": "/docs-data-analysis/category/data-access-3"
+                }
+              },
+              {
+                "type": "category",
+                "label": "Error analysis",
+                "collapsible": true,
+                "collapsed": true,
+                "items": [
+                  {
+                    "type": "doc",
+                    "id": "error-analysis/error_analysis_examples",
+                    "label": "Examples"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "error-analysis/error_analysis_description",
+                    "label": "Documentation"
+                  }
+                ],
+                "link": {
+                  "type": "generated-index",
+                  "slug": "/category/error-analysis-3",
+                  "permalink": "/docs-data-analysis/category/error-analysis-3"
+                }
               }
             ]
           }
@@ -406,357 +786,64 @@
       "blogSidebarTitle": "Recent posts",
       "blogPosts": [
         {
-          "id": "/2023/04/02/citros-first",
-          "metadata": {
-            "permalink": "/doc/blog/2023/04/02/citros-first",
-            "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/blog/2023-04-02-citros-first/index.md",
-            "source": "@site/blog/2023-04-02-citros-first/index.md",
-            "title": "citros-first",
-            "description": "---",
-            "date": "2023-04-02T00:00:00.000Z",
-            "formattedDate": "April 2, 2023",
-            "tags": [],
-            "readingTime": 0.27,
-            "hasTruncateMarker": false,
-            "authors": [],
-            "frontMatter": {},
-            "nextItem": {
-              "title": "Welcome",
-              "permalink": "/doc/blog/welcome"
-            }
-          },
-          "content": "---\r\nslug: best slug\r\ntitle: best title!\r\nauthors:\r\n  - name: vovacooper    \r\n    title: Co-creator of Docusaurus 1\r\n    url: https://github.com/JoelMarcey\r\n    image_url: https://github.com/JoelMarcey.png\r\n  - name: Sébastien Lorber\r\n    title: Docusaurus maintainer\r\n    url: https://sebastienlorber.com\r\n    image_url: https://github.com/slorber.png\r\ntags: [greetings]\r\n---\r\n\r\nCongratulations, you have made your first post!\r\n\r\nFeel free to play around and edit this post as much you like."
-        },
-        {
           "id": "welcome",
           "metadata": {
-            "permalink": "/doc/blog/welcome",
-            "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/blog/2021-08-26-welcome/index.md",
-            "source": "@site/blog/2021-08-26-welcome/index.md",
+            "permalink": "/blog/welcome",
+            "source": "@site/blog/2023-05-16-welcome/index.md",
             "title": "Welcome",
-            "description": "Docusaurus blogging features are powered by the blog plugin.",
-            "date": "2021-08-26T00:00:00.000Z",
-            "formattedDate": "August 26, 2021",
+            "description": "Citros logo",
+            "date": "2023-05-16T00:00:00.000Z",
+            "formattedDate": "May 16, 2023",
             "tags": [
               {
-                "label": "facebook",
-                "permalink": "/doc/blog/tags/facebook"
-              },
-              {
-                "label": "hello",
-                "permalink": "/doc/blog/tags/hello"
-              },
-              {
-                "label": "docusaurus",
-                "permalink": "/doc/blog/tags/docusaurus"
+                "label": "greetings",
+                "permalink": "/blog/tags/greetings"
               }
             ],
-            "readingTime": 0.405,
+            "readingTime": 0.01,
             "hasTruncateMarker": false,
-            "authors": [
-              {
-                "name": "Sébastien Lorber",
-                "title": "Docusaurus maintainer",
-                "url": "https://sebastienlorber.com",
-                "imageURL": "https://github.com/slorber.png",
-                "key": "slorber"
-              },
-              {
-                "name": "Yangshun Tay",
-                "title": "Front End Engineer @ Facebook",
-                "url": "https://github.com/yangshun",
-                "imageURL": "https://github.com/yangshun.png",
-                "key": "yangshun"
-              }
-            ],
+            "authors": [],
             "frontMatter": {
               "slug": "welcome",
               "title": "Welcome",
-              "authors": [
-                "slorber",
-                "yangshun"
-              ],
               "tags": [
-                "facebook",
-                "hello",
-                "docusaurus"
+                "greetings"
               ]
-            },
-            "prevItem": {
-              "title": "citros-first",
-              "permalink": "/doc/blog/2023/04/02/citros-first"
-            },
-            "nextItem": {
-              "title": "MDX Blog Post",
-              "permalink": "/doc/blog/mdx-blog-post"
             }
           },
-          "content": "[Docusaurus blogging features](https://docusaurus.io/docs/blog) are powered by the [blog plugin](https://docusaurus.io/docs/api/plugins/@docusaurus/plugin-content-blog).\r\n\r\nSimply add Markdown files (or folders) to the `blog` directory.\r\n\r\nRegular blog authors can be added to `authors.yml`.\r\n\r\nThe blog post date can be extracted from filenames, such as:\r\n\r\n- `2019-05-30-welcome.md`\r\n- `2019-05-30-welcome/index.md`\r\n\r\nA blog post folder can be convenient to co-locate blog post images:\r\n\r\n![Docusaurus Plushie](./docusaurus-plushie-banner.jpeg)\r\n\r\nThe blog supports tags as well!\r\n\r\n**And if you don't want a blog**: just delete this directory, and use `blog: false` in your Docusaurus config."
-        },
-        {
-          "id": "mdx-blog-post",
-          "metadata": {
-            "permalink": "/doc/blog/mdx-blog-post",
-            "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/blog/2021-08-01-mdx-blog-post.mdx",
-            "source": "@site/blog/2021-08-01-mdx-blog-post.mdx",
-            "title": "MDX Blog Post",
-            "description": "Blog posts support Docusaurus Markdown features, such as MDX.",
-            "date": "2021-08-01T00:00:00.000Z",
-            "formattedDate": "August 1, 2021",
-            "tags": [
-              {
-                "label": "docusaurus",
-                "permalink": "/doc/blog/tags/docusaurus"
-              }
-            ],
-            "readingTime": 0.175,
-            "hasTruncateMarker": false,
-            "authors": [
-              {
-                "name": "Vladimir Kouperman",
-                "title": "CITROS maintainer",
-                "url": "https://citros.io",
-                "imageURL": "https://github.com/slorber.png",
-                "key": "vovacooper"
-              }
-            ],
-            "frontMatter": {
-              "slug": "mdx-blog-post",
-              "title": "MDX Blog Post",
-              "authors": [
-                "vovacooper"
-              ],
-              "tags": [
-                "docusaurus"
-              ]
-            },
-            "prevItem": {
-              "title": "Welcome",
-              "permalink": "/doc/blog/welcome"
-            },
-            "nextItem": {
-              "title": "Long Blog Post",
-              "permalink": "/doc/blog/long-blog-post"
-            }
-          },
-          "content": "Blog posts support [Docusaurus Markdown features](https://docusaurus.io/docs/markdown-features), such as [MDX](https://mdxjs.com/).\r\n\r\n:::tip\r\n\r\nUse the power of React to create interactive blog posts.\r\n\r\n```js\r\n<button onClick={() => alert('button clicked!')}>Click me!</button>\r\n```\r\n\r\n<button onClick={() => alert('button clicked!')}>Click me!</button>\r\n\r\n:::"
-        },
-        {
-          "id": "long-blog-post",
-          "metadata": {
-            "permalink": "/doc/blog/long-blog-post",
-            "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/blog/2019-05-29-long-blog-post.md",
-            "source": "@site/blog/2019-05-29-long-blog-post.md",
-            "title": "Long Blog Post",
-            "description": "This is the summary of a very long blog post,",
-            "date": "2019-05-29T00:00:00.000Z",
-            "formattedDate": "May 29, 2019",
-            "tags": [
-              {
-                "label": "hello",
-                "permalink": "/doc/blog/tags/hello"
-              },
-              {
-                "label": "docusaurus",
-                "permalink": "/doc/blog/tags/docusaurus"
-              }
-            ],
-            "readingTime": 2.05,
-            "hasTruncateMarker": true,
-            "authors": [
-              {
-                "name": "Endilie Yacop Sucipto",
-                "title": "Maintainer of Docusaurus",
-                "url": "https://github.com/endiliey",
-                "imageURL": "https://github.com/endiliey.png",
-                "key": "endi"
-              }
-            ],
-            "frontMatter": {
-              "slug": "long-blog-post",
-              "title": "Long Blog Post",
-              "authors": "endi",
-              "tags": [
-                "hello",
-                "docusaurus"
-              ]
-            },
-            "prevItem": {
-              "title": "MDX Blog Post",
-              "permalink": "/doc/blog/mdx-blog-post"
-            },
-            "nextItem": {
-              "title": "First Blog Post",
-              "permalink": "/doc/blog/first-blog-post"
-            }
-          },
-          "content": "This is the summary of a very long blog post,\r\n\r\nUse a `<!--` `truncate` `-->` comment to limit blog post size in the list view.\r\n\r\n<!--truncate-->\r\n\r\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet\r\n\r\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet\r\n\r\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet\r\n\r\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet\r\n\r\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet\r\n\r\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet\r\n\r\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet\r\n\r\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet\r\n\r\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet\r\n\r\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet\r\n\r\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet\r\n\r\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet\r\n\r\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet\r\n\r\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet\r\n\r\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet\r\n\r\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet"
-        },
-        {
-          "id": "first-blog-post",
-          "metadata": {
-            "permalink": "/doc/blog/first-blog-post",
-            "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/blog/2019-05-28-first-blog-post.md",
-            "source": "@site/blog/2019-05-28-first-blog-post.md",
-            "title": "First Blog Post",
-            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet",
-            "date": "2019-05-28T00:00:00.000Z",
-            "formattedDate": "May 28, 2019",
-            "tags": [
-              {
-                "label": "hola",
-                "permalink": "/doc/blog/tags/hola"
-              },
-              {
-                "label": "docusaurus",
-                "permalink": "/doc/blog/tags/docusaurus"
-              }
-            ],
-            "readingTime": 0.12,
-            "hasTruncateMarker": false,
-            "authors": [
-              {
-                "name": "Gao Wei",
-                "title": "Docusaurus Core Team",
-                "url": "https://github.com/wgao19",
-                "image_url": "https://github.com/wgao19.png",
-                "imageURL": "https://github.com/wgao19.png"
-              }
-            ],
-            "frontMatter": {
-              "slug": "first-blog-post",
-              "title": "First Blog Post",
-              "authors": {
-                "name": "Gao Wei",
-                "title": "Docusaurus Core Team",
-                "url": "https://github.com/wgao19",
-                "image_url": "https://github.com/wgao19.png",
-                "imageURL": "https://github.com/wgao19.png"
-              },
-              "tags": [
-                "hola",
-                "docusaurus"
-              ]
-            },
-            "prevItem": {
-              "title": "Long Blog Post",
-              "permalink": "/doc/blog/long-blog-post"
-            }
-          },
-          "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet"
+          "content": "![Citros logo](/img/citros.png)"
         }
       ],
       "blogListPaginated": [
         {
           "items": [
-            "/2023/04/02/citros-first",
-            "welcome",
-            "mdx-blog-post",
-            "long-blog-post",
-            "first-blog-post"
+            "welcome"
           ],
           "metadata": {
             "permalink": "/doc/blog",
             "page": 1,
             "postsPerPage": 10,
             "totalPages": 1,
-            "totalCount": 5,
+            "totalCount": 1,
             "blogDescription": "Blog",
             "blogTitle": "Blog"
           }
         }
       ],
       "blogTags": {
-        "/doc/blog/tags/facebook": {
-          "label": "facebook",
+        "/blog/tags/greetings": {
+          "label": "greetings",
           "items": [
             "welcome"
           ],
-          "permalink": "/doc/blog/tags/facebook",
+          "permalink": "/blog/tags/greetings",
           "pages": [
             {
               "items": [
                 "welcome"
               ],
               "metadata": {
-                "permalink": "/doc/blog/tags/facebook",
-                "page": 1,
-                "postsPerPage": 10,
-                "totalPages": 1,
-                "totalCount": 1,
-                "blogDescription": "Blog",
-                "blogTitle": "Blog"
-              }
-            }
-          ]
-        },
-        "/doc/blog/tags/hello": {
-          "label": "hello",
-          "items": [
-            "welcome",
-            "long-blog-post"
-          ],
-          "permalink": "/doc/blog/tags/hello",
-          "pages": [
-            {
-              "items": [
-                "welcome",
-                "long-blog-post"
-              ],
-              "metadata": {
-                "permalink": "/doc/blog/tags/hello",
-                "page": 1,
-                "postsPerPage": 10,
-                "totalPages": 1,
-                "totalCount": 2,
-                "blogDescription": "Blog",
-                "blogTitle": "Blog"
-              }
-            }
-          ]
-        },
-        "/doc/blog/tags/docusaurus": {
-          "label": "docusaurus",
-          "items": [
-            "welcome",
-            "mdx-blog-post",
-            "long-blog-post",
-            "first-blog-post"
-          ],
-          "permalink": "/doc/blog/tags/docusaurus",
-          "pages": [
-            {
-              "items": [
-                "welcome",
-                "mdx-blog-post",
-                "long-blog-post",
-                "first-blog-post"
-              ],
-              "metadata": {
-                "permalink": "/doc/blog/tags/docusaurus",
-                "page": 1,
-                "postsPerPage": 10,
-                "totalPages": 1,
-                "totalCount": 4,
-                "blogDescription": "Blog",
-                "blogTitle": "Blog"
-              }
-            }
-          ]
-        },
-        "/doc/blog/tags/hola": {
-          "label": "hola",
-          "items": [
-            "first-blog-post"
-          ],
-          "permalink": "/doc/blog/tags/hola",
-          "pages": [
-            {
-              "items": [
-                "first-blog-post"
-              ],
-              "metadata": {
-                "permalink": "/doc/blog/tags/hola",
+                "permalink": "/blog/tags/greetings",
                 "page": 1,
                 "postsPerPage": 10,
                 "totalPages": 1,

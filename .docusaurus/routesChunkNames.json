@@ -42,7 +42,7 @@
       "plugin": "plugin---doc-docusaurus-debug-7-f-8-933"
     }
   },
-  "/doc/blog-ad0": {
+  "/blog-4c1": {
     "__comp": "__comp---theme-blog-list-pagea-6-a-7ba",
     "__context": {
       "plugin": "plugin---doc-blog-946-509"
@@ -50,63 +50,19 @@
     "sidebar": "sidebar---doc-blog-814-fe0",
     "items": [
       {
-        "content": "content---doc-blogf-1-c-0e6"
-      },
-      {
-        "content": "content---doc-blog-766-1b8"
-      },
-      {
-        "content": "content---doc-blogf-4-f-5c2"
-      },
-      {
-        "content": "content---doc-blog-871-5ef"
-      },
-      {
-        "content": "content---doc-blog-925-5d1"
+        "content": "content---blogf-8-f-f83"
       }
     ],
     "metadata": "metadata---doc-blogf-70-3eb"
   },
-  "/doc/blog/2023/04/02/citros-first-459": {
-    "__comp": "__comp---theme-blog-post-pageccc-cab",
-    "__context": {
-      "plugin": "plugin---doc-blog-946-509"
-    },
-    "sidebar": "sidebar---doc-blog-814-fe0",
-    "content": "content---doc-blog-2023-04-02-citros-first-21-b-9c2"
-  },
-  "/doc/blog/archive-0d0": {
+  "/blog/archive-b93": {
     "__comp": "__comp---theme-blog-archive-page-9-e-4-1d8",
     "__context": {
       "plugin": "plugin---doc-blog-946-509"
     },
     "archive": "archive---doc-blog-archivee-41-9a2"
   },
-  "/doc/blog/first-blog-post-26a": {
-    "__comp": "__comp---theme-blog-post-pageccc-cab",
-    "__context": {
-      "plugin": "plugin---doc-blog-946-509"
-    },
-    "sidebar": "sidebar---doc-blog-814-fe0",
-    "content": "content---doc-blog-first-blog-poste-27-38d"
-  },
-  "/doc/blog/long-blog-post-1c6": {
-    "__comp": "__comp---theme-blog-post-pageccc-cab",
-    "__context": {
-      "plugin": "plugin---doc-blog-946-509"
-    },
-    "sidebar": "sidebar---doc-blog-814-fe0",
-    "content": "content---doc-blog-long-blog-post-736-1b1"
-  },
-  "/doc/blog/mdx-blog-post-ab9": {
-    "__comp": "__comp---theme-blog-post-pageccc-cab",
-    "__context": {
-      "plugin": "plugin---doc-blog-946-509"
-    },
-    "sidebar": "sidebar---doc-blog-814-fe0",
-    "content": "content---doc-blog-mdx-blog-post-593-5df"
-  },
-  "/doc/blog/tags-076": {
+  "/blog/tags-de3": {
     "__comp": "__comp---theme-blog-tags-list-page-01-a-d0b",
     "__context": {
       "plugin": "plugin---doc-blog-946-509"
@@ -114,7 +70,7 @@
     "sidebar": "sidebar---doc-blog-814-fe0",
     "tags": "tags---doc-blog-tags-12-b-bf2"
   },
-  "/doc/blog/tags/docusaurus-9c9": {
+  "/blog/tags/greetings-027": {
     "__comp": "__comp---theme-blog-tags-posts-page-687-b6c",
     "__context": {
       "plugin": "plugin---doc-blog-946-509"
@@ -122,73 +78,19 @@
     "sidebar": "sidebar---doc-blog-814-fe0",
     "items": [
       {
-        "content": "content---doc-blog-766-1b8"
-      },
-      {
-        "content": "content---doc-blogf-4-f-5c2"
-      },
-      {
-        "content": "content---doc-blog-871-5ef"
-      },
-      {
-        "content": "content---doc-blog-925-5d1"
+        "content": "content---blogf-8-f-f83"
       }
     ],
-    "tag": "tag---doc-blog-tags-docusaurus-17-f-78b",
-    "listMetadata": "listMetadata---doc-blog-tags-docusaurusc-27-9b7"
+    "tag": "tag---blog-tags-greetingsce-0-3c2",
+    "listMetadata": "listMetadata---blog-tags-greetingsc-8-c-f35"
   },
-  "/doc/blog/tags/facebook-a42": {
-    "__comp": "__comp---theme-blog-tags-posts-page-687-b6c",
-    "__context": {
-      "plugin": "plugin---doc-blog-946-509"
-    },
-    "sidebar": "sidebar---doc-blog-814-fe0",
-    "items": [
-      {
-        "content": "content---doc-blog-766-1b8"
-      }
-    ],
-    "tag": "tag---doc-blog-tags-facebookeed-98d",
-    "listMetadata": "listMetadata---doc-blog-tags-facebooke-35-fa7"
-  },
-  "/doc/blog/tags/hello-9e0": {
-    "__comp": "__comp---theme-blog-tags-posts-page-687-b6c",
-    "__context": {
-      "plugin": "plugin---doc-blog-946-509"
-    },
-    "sidebar": "sidebar---doc-blog-814-fe0",
-    "items": [
-      {
-        "content": "content---doc-blog-766-1b8"
-      },
-      {
-        "content": "content---doc-blog-871-5ef"
-      }
-    ],
-    "tag": "tag---doc-blog-tags-hello-88-f-6d3",
-    "listMetadata": "listMetadata---doc-blog-tags-hellocaf-a11"
-  },
-  "/doc/blog/tags/hola-3db": {
-    "__comp": "__comp---theme-blog-tags-posts-page-687-b6c",
-    "__context": {
-      "plugin": "plugin---doc-blog-946-509"
-    },
-    "sidebar": "sidebar---doc-blog-814-fe0",
-    "items": [
-      {
-        "content": "content---doc-blog-925-5d1"
-      }
-    ],
-    "tag": "tag---doc-blog-tags-hola-66-b-5d6",
-    "listMetadata": "listMetadata---doc-blog-tags-hola-052-eda"
-  },
-  "/doc/blog/welcome-8d9": {
+  "/blog/welcome-a08": {
     "__comp": "__comp---theme-blog-post-pageccc-cab",
     "__context": {
       "plugin": "plugin---doc-blog-946-509"
     },
-    "sidebar": "sidebar---doc-blog-814-fe0",
-    "content": "content---doc-blog-welcomed-9-f-7d1"
+    "sidebar": "sidebar---blog-814-8ac",
+    "content": "content---blog-welcome-4-e-2-b44"
   },
   "/doc/markdown-page-e5e": {
     "__comp": "__comp---theme-mdx-page-1-f-3-b90",
@@ -197,64 +99,113 @@
     },
     "content": "content---doc-markdown-page-393-381"
   },
-  "/doc/docs-18c": {
+  "/docs-e68": {
     "__comp": "__comp---theme-doc-page-1-be-9be",
     "__context": {
       "plugin": "plugin---doc-docs-9-af-8cc"
     },
     "versionMetadata": "versionMetadata---doc-docs-935-73b"
   },
-  "/doc/docs/category/tutorial---basics-f13": {
+  "/docs/-b8b": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-c-37-4d0"
+  },
+  "/docs/new_page-5d3": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-new-page-89-c-44a"
+  },
+  "/docs-citros-cda": {
+    "__comp": "__comp---theme-doc-page-1-be-9be",
+    "__context": {
+      "plugin": "plugin---docs-citros-0-c-5-e37"
+    },
+    "versionMetadata": "versionMetadata---docs-citrosf-2-a-606"
+  },
+  "/docs-citros/-aa8": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-citros-2-fc-0d6"
+  },
+  "/docs-citros/run_in_cloud-448": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-citros-run-in-cloud-7-b-6-4f3"
+  },
+  "/docs-citros/run_locally-c08": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-citros-run-locally-7-aa-66f"
+  },
+  "/docs-citros/simulation_run-f76": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-citros-simulation-run-8-e-9-270"
+  },
+  "/docs-cli-e3e": {
+    "__comp": "__comp---theme-doc-page-1-be-9be",
+    "__context": {
+      "plugin": "plugin---docs-cli-800-5c5"
+    },
+    "versionMetadata": "versionMetadata---docs-cli-792-a6d"
+  },
+  "/docs-cli/-62e": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-cli-a-9-d-adf"
+  },
+  "/docs-data-analysis-fb2": {
+    "__comp": "__comp---theme-doc-page-1-be-9be",
+    "__context": {
+      "plugin": "plugin---docs-data-analysis-925-75b"
+    },
+    "versionMetadata": "versionMetadata---docs-data-analysis-2-d-6-af6"
+  },
+  "/docs-data-analysis/-6c2": {
+    "__comp": "__comp---theme-doc-item-178-a40",
+    "content": "content---docs-data-analysis-3-c-3-d98"
+  },
+  "/docs-data-analysis/category/data-access-2bd": {
     "__comp": "__comp---theme-doc-category-generated-index-page-14-e-640",
-    "categoryGeneratedIndex": "categoryGeneratedIndex---doc-docs-category-tutorial-basics-9-c-5-6a6"
+    "categoryGeneratedIndex": "categoryGeneratedIndex---docs-data-analysis-category-data-access-259-d86"
   },
-  "/doc/docs/category/tutorial---extras-953": {
+  "/docs-data-analysis/category/data-access-1-b20": {
     "__comp": "__comp---theme-doc-category-generated-index-page-14-e-640",
-    "categoryGeneratedIndex": "categoryGeneratedIndex---doc-docs-category-tutorial-extras-6-f-2-112"
+    "categoryGeneratedIndex": "categoryGeneratedIndex---docs-data-analysis-category-data-access-1-f-06-fc6"
   },
-  "/doc/docs/intro-464": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---doc-docs-intro-0-e-3-c2e"
+  "/docs-data-analysis/category/data-access-2-10a": {
+    "__comp": "__comp---theme-doc-category-generated-index-page-14-e-640",
+    "categoryGeneratedIndex": "categoryGeneratedIndex---docs-data-analysis-category-data-access-2662-722"
   },
-  "/doc/docs/tests1/test-721": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---doc-docs-tests-1-testbbb-529"
+  "/docs-data-analysis/category/data-access-3-700": {
+    "__comp": "__comp---theme-doc-category-generated-index-page-14-e-640",
+    "categoryGeneratedIndex": "categoryGeneratedIndex---docs-data-analysis-category-data-access-369-c-00b"
   },
-  "/doc/docs/tests1/test2-95c": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---doc-docs-tests-1-test-25-f-1-3ee"
+  "/docs-data-analysis/category/error-analysis-bfe": {
+    "__comp": "__comp---theme-doc-category-generated-index-page-14-e-640",
+    "categoryGeneratedIndex": "categoryGeneratedIndex---docs-data-analysis-category-error-analysisa-21-b07"
   },
-  "/doc/docs/tutorial-basics/congratulations-11a": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---doc-docs-tutorial-basics-congratulations-822-612"
+  "/docs-data-analysis/category/error-analysis-1-927": {
+    "__comp": "__comp---theme-doc-category-generated-index-page-14-e-640",
+    "categoryGeneratedIndex": "categoryGeneratedIndex---docs-data-analysis-category-error-analysis-1-c-5-e-bd2"
   },
-  "/doc/docs/tutorial-basics/create-a-blog-post-088": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---doc-docs-tutorial-basics-create-a-blog-post-533-a9e"
+  "/docs-data-analysis/category/error-analysis-2-afe": {
+    "__comp": "__comp---theme-doc-category-generated-index-page-14-e-640",
+    "categoryGeneratedIndex": "categoryGeneratedIndex---docs-data-analysis-category-error-analysis-28-f-1-9e7"
   },
-  "/doc/docs/tutorial-basics/create-a-document-fc4": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---doc-docs-tutorial-basics-create-a-document-1-e-4-3e0"
+  "/docs-data-analysis/category/error-analysis-3-7cf": {
+    "__comp": "__comp---theme-doc-category-generated-index-page-14-e-640",
+    "categoryGeneratedIndex": "categoryGeneratedIndex---docs-data-analysis-category-error-analysis-3-aa-0-0da"
   },
-  "/doc/docs/tutorial-basics/create-a-page-21e": {
+  "/docs-data-analysis/data-access/data_access_description-e80": {
     "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---doc-docs-tutorial-basics-create-a-page-5-c-8-827"
+    "content": "content---docs-data-analysis-data-access-data-access-description-5-f-0-b9d"
   },
-  "/doc/docs/tutorial-basics/deploy-your-site-3fe": {
+  "/docs-data-analysis/data-access/data_access_examples-47d": {
     "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---doc-docs-tutorial-basics-deploy-your-sitef-55-7d1"
+    "content": "content---docs-data-analysis-data-access-data-access-examplesbb-4-c84"
   },
-  "/doc/docs/tutorial-basics/markdown-features-84f": {
+  "/docs-data-analysis/error-analysis/error_analysis_description-8de": {
     "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---doc-docs-tutorial-basics-markdown-features-18-c-8ba"
+    "content": "content---docs-data-analysis-error-analysis-error-analysis-description-35-d-b20"
   },
-  "/doc/docs/tutorial-extras/manage-docs-versions-125": {
+  "/docs-data-analysis/error-analysis/error_analysis_examples-d81": {
     "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---doc-docs-tutorial-extras-manage-docs-versionsdff-f76"
-  },
-  "/doc/docs/tutorial-extras/translate-your-site-934": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---doc-docs-tutorial-extras-translate-your-sitee-44-65c"
+    "content": "content---docs-data-analysis-error-analysis-error-analysis-examplesc-91-9ff"
   },
   "/doc/-b75": {
     "__comp": "__comp---site-src-pages-index-tsx-1-df-d3e",

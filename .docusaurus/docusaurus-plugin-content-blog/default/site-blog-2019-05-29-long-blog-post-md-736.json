@@ -1,6 +1,5 @@
 {
-  "permalink": "/doc/blog/long-blog-post",
-  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/blog/2019-05-29-long-blog-post.md",
+  "permalink": "/blog/long-blog-post",
   "source": "@site/blog/2019-05-29-long-blog-post.md",
   "title": "Long Blog Post",
   "description": "This is the summary of a very long blog post,",
@@ -42,6 +41,6 @@
   },
   "nextItem": {
     "title": "First Blog Post",
-    "permalink": "/doc/blog/first-blog-post"
+    "permalink": "/blog/first-blog-post-example"
   }
 }
