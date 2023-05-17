@@ -32,6 +32,12 @@
             "label": "Documentation",
             "href": "/docs-data-analysis/data-access/data_access_description",
             "docId": "data-access/data_access_description"
+          },
+          {
+            "type": "link",
+            "label": "Documentation",
+            "href": "/docs-data-analysis/data-access/data_access_description1",
+            "docId": "data-access/data_access_description1"
           }
         ],
         "href": "/docs-data-analysis/category/data-access"
@@ -82,6 +88,12 @@
             "label": "Documentation",
             "href": "/docs-data-analysis/data-access/data_access_description",
             "docId": "data-access/data_access_description"
+          },
+          {
+            "type": "link",
+            "label": "Documentation",
+            "href": "/docs-data-analysis/data-access/data_access_description1",
+            "docId": "data-access/data_access_description1"
           }
         ],
         "href": "/docs-data-analysis/category/data-access-1"
@@ -132,6 +144,12 @@
             "label": "Documentation",
             "href": "/docs-data-analysis/data-access/data_access_description",
             "docId": "data-access/data_access_description"
+          },
+          {
+            "type": "link",
+            "label": "Documentation",
+            "href": "/docs-data-analysis/data-access/data_access_description1",
+            "docId": "data-access/data_access_description1"
           }
         ],
         "href": "/docs-data-analysis/category/data-access-2"
@@ -182,6 +200,12 @@
             "label": "Documentation",
             "href": "/docs-data-analysis/data-access/data_access_description",
             "docId": "data-access/data_access_description"
+          },
+          {
+            "type": "link",
+            "label": "Documentation",
+            "href": "/docs-data-analysis/data-access/data_access_description1",
+            "docId": "data-access/data_access_description1"
           }
         ],
         "href": "/docs-data-analysis/category/data-access-3"
@@ -213,6 +237,12 @@
     "data-access/data_access_description": {
       "id": "data-access/data_access_description",
       "title": "data_access_description",
+      "description": "Documentation",
+      "sidebar": "dataAnalysisdSidebar"
+    },
+    "data-access/data_access_description1": {
+      "id": "data-access/data_access_description1",
+      "title": "data_access_description1",
       "description": "Documentation",
       "sidebar": "dataAnalysisdSidebar"
     },

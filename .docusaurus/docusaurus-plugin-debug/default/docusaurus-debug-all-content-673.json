@@ -449,6 +449,34 @@
                 "permalink": "/docs-data-analysis/data-access/data_access_examples"
               },
               "next": {
+                "title": "Documentation",
+                "permalink": "/docs-data-analysis/data-access/data_access_description1"
+              }
+            },
+            {
+              "unversionedId": "data-access/data_access_description1",
+              "id": "data-access/data_access_description1",
+              "title": "data_access_description1",
+              "description": "Documentation",
+              "source": "@site/docs-data-analysis/data-access/data_access_description1.md",
+              "sourceDirName": "data-access",
+              "slug": "/data-access/data_access_description1",
+              "permalink": "/docs-data-analysis/data-access/data_access_description1",
+              "draft": false,
+              "tags": [],
+              "version": "current",
+              "frontMatter": {
+                "toc_max_heading_level": 3,
+                "sidebar_label": "Documentation",
+                "description": "Documentation",
+                "hide_title": true
+              },
+              "sidebar": "dataAnalysisdSidebar",
+              "previous": {
+                "title": "Documentation",
+                "permalink": "/docs-data-analysis/data-access/data_access_description"
+              },
+              "next": {
                 "title": "Error analysis",
                 "permalink": "/docs-data-analysis/category/error-analysis-3"
               }
@@ -585,6 +613,11 @@
                     "type": "doc",
                     "id": "data-access/data_access_description",
                     "label": "Documentation"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "data-access/data_access_description1",
+                    "label": "Documentation"
                   }
                 ],
                 "link": {
@@ -637,6 +670,11 @@
                   {
                     "type": "doc",
                     "id": "data-access/data_access_description",
+                    "label": "Documentation"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "data-access/data_access_description1",
                     "label": "Documentation"
                   }
                 ],
@@ -691,6 +729,11 @@
                     "type": "doc",
                     "id": "data-access/data_access_description",
                     "label": "Documentation"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "data-access/data_access_description1",
+                    "label": "Documentation"
                   }
                 ],
                 "link": {
@@ -743,6 +786,11 @@
                   {
                     "type": "doc",
                     "id": "data-access/data_access_description",
+                    "label": "Documentation"
+                  },
+                  {
+                    "type": "doc",
+                    "id": "data-access/data_access_description1",
                     "label": "Documentation"
                   }
                 ],

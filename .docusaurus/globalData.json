@@ -1,57 +1,5 @@
 {
   "docusaurus-plugin-content-docs": {
-    "default": {
-      "path": "/docs",
-      "versions": [
-        {
-          "name": "current",
-          "label": "Next",
-          "isLast": true,
-          "path": "/docs",
-          "mainDocId": "index",
-          "docs": [
-            {
-              "id": "index",
-              "path": "/docs/",
-              "sidebar": "dataAnalysisdSidebar"
-            },
-            {
-              "id": "new_page",
-              "path": "/docs/new_page",
-              "sidebar": "dataAnalysisdSidebar"
-            }
-          ],
-          "draftIds": [],
-          "sidebars": {
-            "gettingStartedSidebar": {
-              "link": {
-                "path": "/docs/",
-                "label": "Getting started"
-              }
-            },
-            "citrosdSidebar": {
-              "link": {
-                "path": "/docs/",
-                "label": "Getting started"
-              }
-            },
-            "clidSidebar": {
-              "link": {
-                "path": "/docs/",
-                "label": "Getting started"
-              }
-            },
-            "dataAnalysisdSidebar": {
-              "link": {
-                "path": "/docs/",
-                "label": "Getting started"
-              }
-            }
-          }
-        }
-      ],
-      "breadcrumbs": true
-    },
     "docs-citros": {
       "path": "/docs-citros",
       "versions": [
@@ -114,6 +62,105 @@
       ],
       "breadcrumbs": true
     },
+    "default": {
+      "path": "/docs",
+      "versions": [
+        {
+          "name": "current",
+          "label": "Next",
+          "isLast": true,
+          "path": "/docs",
+          "mainDocId": "index",
+          "docs": [
+            {
+              "id": "index",
+              "path": "/docs/",
+              "sidebar": "dataAnalysisdSidebar"
+            },
+            {
+              "id": "new_page",
+              "path": "/docs/new_page",
+              "sidebar": "dataAnalysisdSidebar"
+            }
+          ],
+          "draftIds": [],
+          "sidebars": {
+            "gettingStartedSidebar": {
+              "link": {
+                "path": "/docs/",
+                "label": "Getting started"
+              }
+            },
+            "citrosdSidebar": {
+              "link": {
+                "path": "/docs/",
+                "label": "Getting started"
+              }
+            },
+            "clidSidebar": {
+              "link": {
+                "path": "/docs/",
+                "label": "Getting started"
+              }
+            },
+            "dataAnalysisdSidebar": {
+              "link": {
+                "path": "/docs/",
+                "label": "Getting started"
+              }
+            }
+          }
+        }
+      ],
+      "breadcrumbs": true
+    },
+    "docs-cli": {
+      "path": "/docs-cli",
+      "versions": [
+        {
+          "name": "current",
+          "label": "Next",
+          "isLast": true,
+          "path": "/docs-cli",
+          "mainDocId": "index",
+          "docs": [
+            {
+              "id": "index",
+              "path": "/docs-cli/",
+              "sidebar": "dataAnalysisdSidebar"
+            }
+          ],
+          "draftIds": [],
+          "sidebars": {
+            "gettingStartedSidebar": {
+              "link": {
+                "path": "/docs-cli/",
+                "label": "CLI"
+              }
+            },
+            "citrosdSidebar": {
+              "link": {
+                "path": "/docs-cli/",
+                "label": "CLI"
+              }
+            },
+            "clidSidebar": {
+              "link": {
+                "path": "/docs-cli/",
+                "label": "CLI"
+              }
+            },
+            "dataAnalysisdSidebar": {
+              "link": {
+                "path": "/docs-cli/",
+                "label": "CLI"
+              }
+            }
+          }
+        }
+      ],
+      "breadcrumbs": true
+    },
     "docs-data-analysis": {
       "path": "/docs-data-analysis",
       "versions": [
@@ -127,6 +174,11 @@
             {
               "id": "data-access/data_access_description",
               "path": "/docs-data-analysis/data-access/data_access_description",
+              "sidebar": "dataAnalysisdSidebar"
+            },
+            {
+              "id": "data-access/data_access_description1",
+              "path": "/docs-data-analysis/data-access/data_access_description1",
               "sidebar": "dataAnalysisdSidebar"
             },
             {
@@ -214,53 +266,6 @@
               "link": {
                 "path": "/docs-data-analysis/",
                 "label": "Package overview"
-              }
-            }
-          }
-        }
-      ],
-      "breadcrumbs": true
-    },
-    "docs-cli": {
-      "path": "/docs-cli",
-      "versions": [
-        {
-          "name": "current",
-          "label": "Next",
-          "isLast": true,
-          "path": "/docs-cli",
-          "mainDocId": "index",
-          "docs": [
-            {
-              "id": "index",
-              "path": "/docs-cli/",
-              "sidebar": "dataAnalysisdSidebar"
-            }
-          ],
-          "draftIds": [],
-          "sidebars": {
-            "gettingStartedSidebar": {
-              "link": {
-                "path": "/docs-cli/",
-                "label": "CLI"
-              }
-            },
-            "citrosdSidebar": {
-              "link": {
-                "path": "/docs-cli/",
-                "label": "CLI"
-              }
-            },
-            "clidSidebar": {
-              "link": {
-                "path": "/docs-cli/",
-                "label": "CLI"
-              }
-            },
-            "dataAnalysisdSidebar": {
-              "link": {
-                "path": "/docs-cli/",
-                "label": "CLI"
               }
             }
           }

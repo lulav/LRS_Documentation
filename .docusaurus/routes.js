@@ -129,7 +129,7 @@ export default [
   },
   {
     path: '/docs-data-analysis',
-    component: ComponentCreator('/docs-data-analysis', 'fb2'),
+    component: ComponentCreator('/docs-data-analysis', '270'),
     routes: [
       {
         path: '/docs-data-analysis/',
@@ -188,6 +188,12 @@ export default [
       {
         path: '/docs-data-analysis/data-access/data_access_description',
         component: ComponentCreator('/docs-data-analysis/data-access/data_access_description', 'e80'),
+        exact: true,
+        sidebar: "dataAnalysisdSidebar"
+      },
+      {
+        path: '/docs-data-analysis/data-access/data_access_description1',
+        component: ComponentCreator('/docs-data-analysis/data-access/data_access_description1', '1d1'),
         exact: true,
         sidebar: "dataAnalysisdSidebar"
       },
