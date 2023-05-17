@@ -26,9 +26,11 @@ coverage
 
 # node-waf configuration
 .lock-wscript
+.docusaurus
 
 # Compiled binary addons (http://nodejs.org/api/addons.html)
 build/Release
+build
 
 # Dependency directories
 node_modules
