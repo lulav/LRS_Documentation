@@ -7,8 +7,8 @@ export default {
   "title": "CITROS",
   "tagline": "The starting point for your next robotic project",
   "favicon": "img/favicon.ico",
-  "url": "https://citros.io",
-  "baseUrl": "/",
+  "url": "http://localhost:3000",
+  "baseUrl": "/doc/",
   "organizationName": "citros",
   "projectName": "citros",
   "onBrokenLinks": "throw",
@@ -39,7 +39,7 @@ export default {
           "showReadingTime": true
         },
         "theme": {
-          "customCss": "/workspaces/citros_doc/src/css/custom.css"
+          "customCss": "/Users/vovacooper/dev/citros/citros/citros_doc/src/css/custom.css"
         }
       }
     ]

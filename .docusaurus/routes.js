@@ -3,38 +3,38 @@ import ComponentCreator from '@docusaurus/ComponentCreator';
 
 export default [
   {
-    path: '/__docusaurus/debug',
-    component: ComponentCreator('/__docusaurus/debug', '4af'),
+    path: '/doc/__docusaurus/debug',
+    component: ComponentCreator('/doc/__docusaurus/debug', 'da8'),
     exact: true
   },
   {
-    path: '/__docusaurus/debug/config',
-    component: ComponentCreator('/__docusaurus/debug/config', '366'),
+    path: '/doc/__docusaurus/debug/config',
+    component: ComponentCreator('/doc/__docusaurus/debug/config', 'a12'),
     exact: true
   },
   {
-    path: '/__docusaurus/debug/content',
-    component: ComponentCreator('/__docusaurus/debug/content', 'c62'),
+    path: '/doc/__docusaurus/debug/content',
+    component: ComponentCreator('/doc/__docusaurus/debug/content', 'f7c'),
     exact: true
   },
   {
-    path: '/__docusaurus/debug/globalData',
-    component: ComponentCreator('/__docusaurus/debug/globalData', '26c'),
+    path: '/doc/__docusaurus/debug/globalData',
+    component: ComponentCreator('/doc/__docusaurus/debug/globalData', '3d5'),
     exact: true
   },
   {
-    path: '/__docusaurus/debug/metadata',
-    component: ComponentCreator('/__docusaurus/debug/metadata', '8a9'),
+    path: '/doc/__docusaurus/debug/metadata',
+    component: ComponentCreator('/doc/__docusaurus/debug/metadata', '1be'),
     exact: true
   },
   {
-    path: '/__docusaurus/debug/registry',
-    component: ComponentCreator('/__docusaurus/debug/registry', 'e82'),
+    path: '/doc/__docusaurus/debug/registry',
+    component: ComponentCreator('/doc/__docusaurus/debug/registry', '1ec'),
     exact: true
   },
   {
-    path: '/__docusaurus/debug/routes',
-    component: ComponentCreator('/__docusaurus/debug/routes', 'f2f'),
+    path: '/doc/__docusaurus/debug/routes',
+    component: ComponentCreator('/doc/__docusaurus/debug/routes', '015'),
     exact: true
   },
   {
@@ -43,8 +43,8 @@ export default [
     exact: true
   },
   {
-    path: '/blog/archive',
-    component: ComponentCreator('/blog/archive', 'b93'),
+    path: '/doc/blog/archive',
+    component: ComponentCreator('/doc/blog/archive', '0d0'),
     exact: true
   },
   {
@@ -212,8 +212,8 @@ export default [
     ]
   },
   {
-    path: '/',
-    component: ComponentCreator('/', '066'),
+    path: '/doc/',
+    component: ComponentCreator('/doc/', 'b75'),
     exact: true
   },
   {

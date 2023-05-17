@@ -8,11 +8,11 @@
   "tags": [
     {
       "label": "hello",
-      "permalink": "/blog/tags/hello"
+      "permalink": "/doc/blog/tags/hello"
     },
     {
       "label": "docusaurus",
-      "permalink": "/blog/tags/docusaurus"
+      "permalink": "/doc/blog/tags/docusaurus"
     }
   ],
   "readingTime": 2.05,
@@ -37,7 +37,7 @@
   },
   "prevItem": {
     "title": "MDX Blog Post",
-    "permalink": "/blog/mdx-blog-post"
+    "permalink": "/doc/blog/mdx-blog-post"
   },
   "nextItem": {
     "title": "First Blog Post",

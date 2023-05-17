@@ -1,7 +1,7 @@
 {
   "docusaurus-plugin-content-docs": {
     "default": {
-      "path": "/docs",
+      "path": "/doc/docs",
       "versions": [
         {
           "name": "current",

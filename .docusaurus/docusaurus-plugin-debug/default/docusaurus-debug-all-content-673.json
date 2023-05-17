@@ -13,9 +13,9 @@
           "tagsPath": "/docs/tags",
           "isLast": true,
           "routePriority": -1,
-          "sidebarFilePath": "/workspaces/citros_doc/sidebars.js",
-          "contentPath": "/workspaces/citros_doc/docs",
-          "contentPathLocalized": "/workspaces/citros_doc/i18n/en/docusaurus-plugin-content-docs/current",
+          "sidebarFilePath": "/Users/vovacooper/dev/citros/citros/citros_doc/sidebars.js",
+          "contentPath": "/Users/vovacooper/dev/citros/citros/citros_doc/docs",
+          "contentPathLocalized": "/Users/vovacooper/dev/citros/citros/citros_doc/i18n/en/docusaurus-plugin-content-docs/current",
           "docs": [
             {
               "unversionedId": "index",
@@ -820,7 +820,7 @@
             "welcome"
           ],
           "metadata": {
-            "permalink": "/blog",
+            "permalink": "/doc/blog",
             "page": 1,
             "postsPerPage": 10,
             "totalPages": 1,
@@ -855,19 +855,19 @@
           ]
         }
       },
-      "blogTagsListPath": "/blog/tags"
+      "blogTagsListPath": "/doc/blog/tags"
     }
   },
   "docusaurus-plugin-content-pages": {
     "default": [
       {
         "type": "jsx",
-        "permalink": "/",
+        "permalink": "/doc/",
         "source": "@site/src/pages/index.tsx"
       },
       {
         "type": "mdx",
-        "permalink": "/markdown-page",
+        "permalink": "/doc/markdown-page",
         "source": "@site/src/pages/markdown-page.md",
         "title": "Markdown page example",
         "description": "You don't need React to write simple standalone pages.",
