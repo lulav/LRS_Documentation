@@ -5,3 +5,4 @@ hide_title: true
 ---
 
 ## About Citros
+![Citros logo](/img/citros.png)

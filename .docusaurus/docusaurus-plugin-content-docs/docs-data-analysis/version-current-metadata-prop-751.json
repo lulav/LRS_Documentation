@@ -23,15 +23,15 @@
         "items": [
           {
             "type": "link",
-            "label": "Documentation",
-            "href": "/docs-data-analysis/data-access/data_access_description",
-            "docId": "data-access/data_access_description"
-          },
-          {
-            "type": "link",
             "label": "Examples",
             "href": "/docs-data-analysis/data-access/data_access_examples",
             "docId": "data-access/data_access_examples"
+          },
+          {
+            "type": "link",
+            "label": "Documentation",
+            "href": "/docs-data-analysis/data-access/data_access_description",
+            "docId": "data-access/data_access_description"
           }
         ],
         "href": "/docs-data-analysis/category/data-access"
@@ -44,15 +44,15 @@
         "items": [
           {
             "type": "link",
-            "label": "Documentation",
-            "href": "/docs-data-analysis/error-analysis/error_analysis_description",
-            "docId": "error-analysis/error_analysis_description"
-          },
-          {
-            "type": "link",
             "label": "Examples",
             "href": "/docs-data-analysis/error-analysis/error_analysis_examples",
             "docId": "error-analysis/error_analysis_examples"
+          },
+          {
+            "type": "link",
+            "label": "Documentation",
+            "href": "/docs-data-analysis/error-analysis/error_analysis_description",
+            "docId": "error-analysis/error_analysis_description"
           }
         ],
         "href": "/docs-data-analysis/category/error-analysis"
@@ -73,15 +73,15 @@
         "items": [
           {
             "type": "link",
-            "label": "Documentation",
-            "href": "/docs-data-analysis/data-access/data_access_description",
-            "docId": "data-access/data_access_description"
-          },
-          {
-            "type": "link",
             "label": "Examples",
             "href": "/docs-data-analysis/data-access/data_access_examples",
             "docId": "data-access/data_access_examples"
+          },
+          {
+            "type": "link",
+            "label": "Documentation",
+            "href": "/docs-data-analysis/data-access/data_access_description",
+            "docId": "data-access/data_access_description"
           }
         ],
         "href": "/docs-data-analysis/category/data-access-1"
@@ -94,15 +94,15 @@
         "items": [
           {
             "type": "link",
-            "label": "Documentation",
-            "href": "/docs-data-analysis/error-analysis/error_analysis_description",
-            "docId": "error-analysis/error_analysis_description"
-          },
-          {
-            "type": "link",
             "label": "Examples",
             "href": "/docs-data-analysis/error-analysis/error_analysis_examples",
             "docId": "error-analysis/error_analysis_examples"
+          },
+          {
+            "type": "link",
+            "label": "Documentation",
+            "href": "/docs-data-analysis/error-analysis/error_analysis_description",
+            "docId": "error-analysis/error_analysis_description"
           }
         ],
         "href": "/docs-data-analysis/category/error-analysis-1"
@@ -123,15 +123,15 @@
         "items": [
           {
             "type": "link",
-            "label": "Documentation",
-            "href": "/docs-data-analysis/data-access/data_access_description",
-            "docId": "data-access/data_access_description"
-          },
-          {
-            "type": "link",
             "label": "Examples",
             "href": "/docs-data-analysis/data-access/data_access_examples",
             "docId": "data-access/data_access_examples"
+          },
+          {
+            "type": "link",
+            "label": "Documentation",
+            "href": "/docs-data-analysis/data-access/data_access_description",
+            "docId": "data-access/data_access_description"
           }
         ],
         "href": "/docs-data-analysis/category/data-access-2"
@@ -144,15 +144,15 @@
         "items": [
           {
             "type": "link",
-            "label": "Documentation",
-            "href": "/docs-data-analysis/error-analysis/error_analysis_description",
-            "docId": "error-analysis/error_analysis_description"
-          },
-          {
-            "type": "link",
             "label": "Examples",
             "href": "/docs-data-analysis/error-analysis/error_analysis_examples",
             "docId": "error-analysis/error_analysis_examples"
+          },
+          {
+            "type": "link",
+            "label": "Documentation",
+            "href": "/docs-data-analysis/error-analysis/error_analysis_description",
+            "docId": "error-analysis/error_analysis_description"
           }
         ],
         "href": "/docs-data-analysis/category/error-analysis-2"
@@ -173,15 +173,15 @@
         "items": [
           {
             "type": "link",
-            "label": "Documentation",
-            "href": "/docs-data-analysis/data-access/data_access_description",
-            "docId": "data-access/data_access_description"
-          },
-          {
-            "type": "link",
             "label": "Examples",
             "href": "/docs-data-analysis/data-access/data_access_examples",
             "docId": "data-access/data_access_examples"
+          },
+          {
+            "type": "link",
+            "label": "Documentation",
+            "href": "/docs-data-analysis/data-access/data_access_description",
+            "docId": "data-access/data_access_description"
           }
         ],
         "href": "/docs-data-analysis/category/data-access-3"
@@ -194,15 +194,15 @@
         "items": [
           {
             "type": "link",
-            "label": "Documentation",
-            "href": "/docs-data-analysis/error-analysis/error_analysis_description",
-            "docId": "error-analysis/error_analysis_description"
-          },
-          {
-            "type": "link",
             "label": "Examples",
             "href": "/docs-data-analysis/error-analysis/error_analysis_examples",
             "docId": "error-analysis/error_analysis_examples"
+          },
+          {
+            "type": "link",
+            "label": "Documentation",
+            "href": "/docs-data-analysis/error-analysis/error_analysis_description",
+            "docId": "error-analysis/error_analysis_description"
           }
         ],
         "href": "/docs-data-analysis/category/error-analysis-3"

@@ -445,12 +445,12 @@
               },
               "sidebar": "dataAnalysisdSidebar",
               "previous": {
-                "title": "Data access",
-                "permalink": "/docs-data-analysis/category/data-access-3"
-              },
-              "next": {
                 "title": "Examples",
                 "permalink": "/docs-data-analysis/data-access/data_access_examples"
+              },
+              "next": {
+                "title": "Error analysis",
+                "permalink": "/docs-data-analysis/category/error-analysis-3"
               }
             },
             {
@@ -465,20 +465,22 @@
               "draft": false,
               "tags": [],
               "version": "current",
+              "sidebarPosition": 1,
               "frontMatter": {
                 "toc_max_heading_level": 4,
                 "sidebar_label": "Examples",
                 "hide_title": true,
-                "description": "Examples of the data_access module"
+                "description": "Examples of the data_access module",
+                "sidebar_position": 1
               },
               "sidebar": "dataAnalysisdSidebar",
               "previous": {
-                "title": "Documentation",
-                "permalink": "/docs-data-analysis/data-access/data_access_description"
+                "title": "Data access",
+                "permalink": "/docs-data-analysis/category/data-access-3"
               },
               "next": {
-                "title": "Error analysis",
-                "permalink": "/docs-data-analysis/category/error-analysis-3"
+                "title": "Documentation",
+                "permalink": "/docs-data-analysis/data-access/data_access_description"
               }
             },
             {
@@ -501,10 +503,6 @@
               },
               "sidebar": "dataAnalysisdSidebar",
               "previous": {
-                "title": "Error analysis",
-                "permalink": "/docs-data-analysis/category/error-analysis-3"
-              },
-              "next": {
                 "title": "Examples",
                 "permalink": "/docs-data-analysis/error-analysis/error_analysis_examples"
               }
@@ -521,14 +519,20 @@
               "draft": false,
               "tags": [],
               "version": "current",
+              "sidebarPosition": 1,
               "frontMatter": {
                 "toc_max_heading_level": 4,
                 "sidebar_label": "Examples",
                 "hide_title": true,
-                "description": "Examples of the error_analysis module"
+                "description": "Examples of the error_analysis module",
+                "sidebar_position": 1
               },
               "sidebar": "dataAnalysisdSidebar",
               "previous": {
+                "title": "Error analysis",
+                "permalink": "/docs-data-analysis/category/error-analysis-3"
+              },
+              "next": {
                 "title": "Documentation",
                 "permalink": "/docs-data-analysis/error-analysis/error_analysis_description"
               }
@@ -574,13 +578,13 @@
                 "items": [
                   {
                     "type": "doc",
-                    "id": "data-access/data_access_description",
-                    "label": "Documentation"
+                    "id": "data-access/data_access_examples",
+                    "label": "Examples"
                   },
                   {
                     "type": "doc",
-                    "id": "data-access/data_access_examples",
-                    "label": "Examples"
+                    "id": "data-access/data_access_description",
+                    "label": "Documentation"
                   }
                 ],
                 "link": {
@@ -597,13 +601,13 @@
                 "items": [
                   {
                     "type": "doc",
-                    "id": "error-analysis/error_analysis_description",
-                    "label": "Documentation"
+                    "id": "error-analysis/error_analysis_examples",
+                    "label": "Examples"
                   },
                   {
                     "type": "doc",
-                    "id": "error-analysis/error_analysis_examples",
-                    "label": "Examples"
+                    "id": "error-analysis/error_analysis_description",
+                    "label": "Documentation"
                   }
                 ],
                 "link": {
@@ -627,13 +631,13 @@
                 "items": [
                   {
                     "type": "doc",
-                    "id": "data-access/data_access_description",
-                    "label": "Documentation"
+                    "id": "data-access/data_access_examples",
+                    "label": "Examples"
                   },
                   {
                     "type": "doc",
-                    "id": "data-access/data_access_examples",
-                    "label": "Examples"
+                    "id": "data-access/data_access_description",
+                    "label": "Documentation"
                   }
                 ],
                 "link": {
@@ -650,13 +654,13 @@
                 "items": [
                   {
                     "type": "doc",
-                    "id": "error-analysis/error_analysis_description",
-                    "label": "Documentation"
+                    "id": "error-analysis/error_analysis_examples",
+                    "label": "Examples"
                   },
                   {
                     "type": "doc",
-                    "id": "error-analysis/error_analysis_examples",
-                    "label": "Examples"
+                    "id": "error-analysis/error_analysis_description",
+                    "label": "Documentation"
                   }
                 ],
                 "link": {
@@ -680,13 +684,13 @@
                 "items": [
                   {
                     "type": "doc",
-                    "id": "data-access/data_access_description",
-                    "label": "Documentation"
+                    "id": "data-access/data_access_examples",
+                    "label": "Examples"
                   },
                   {
                     "type": "doc",
-                    "id": "data-access/data_access_examples",
-                    "label": "Examples"
+                    "id": "data-access/data_access_description",
+                    "label": "Documentation"
                   }
                 ],
                 "link": {
@@ -703,13 +707,13 @@
                 "items": [
                   {
                     "type": "doc",
-                    "id": "error-analysis/error_analysis_description",
-                    "label": "Documentation"
+                    "id": "error-analysis/error_analysis_examples",
+                    "label": "Examples"
                   },
                   {
                     "type": "doc",
-                    "id": "error-analysis/error_analysis_examples",
-                    "label": "Examples"
+                    "id": "error-analysis/error_analysis_description",
+                    "label": "Documentation"
                   }
                 ],
                 "link": {
@@ -733,13 +737,13 @@
                 "items": [
                   {
                     "type": "doc",
-                    "id": "data-access/data_access_description",
-                    "label": "Documentation"
+                    "id": "data-access/data_access_examples",
+                    "label": "Examples"
                   },
                   {
                     "type": "doc",
-                    "id": "data-access/data_access_examples",
-                    "label": "Examples"
+                    "id": "data-access/data_access_description",
+                    "label": "Documentation"
                   }
                 ],
                 "link": {
@@ -756,13 +760,13 @@
                 "items": [
                   {
                     "type": "doc",
-                    "id": "error-analysis/error_analysis_description",
-                    "label": "Documentation"
+                    "id": "error-analysis/error_analysis_examples",
+                    "label": "Examples"
                   },
                   {
                     "type": "doc",
-                    "id": "error-analysis/error_analysis_examples",
-                    "label": "Examples"
+                    "id": "error-analysis/error_analysis_description",
+                    "label": "Documentation"
                   }
                 ],
                 "link": {
@@ -807,7 +811,7 @@
               ]
             }
           },
-          "content": "![Citros logo](/img/citros_trn.png)"
+          "content": "![Citros logo](/img/citros.png)"
         }
       ],
       "blogListPaginated": [

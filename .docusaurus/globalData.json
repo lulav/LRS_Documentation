@@ -114,53 +114,6 @@
       ],
       "breadcrumbs": true
     },
-    "docs-cli": {
-      "path": "/docs-cli",
-      "versions": [
-        {
-          "name": "current",
-          "label": "Next",
-          "isLast": true,
-          "path": "/docs-cli",
-          "mainDocId": "index",
-          "docs": [
-            {
-              "id": "index",
-              "path": "/docs-cli/",
-              "sidebar": "dataAnalysisdSidebar"
-            }
-          ],
-          "draftIds": [],
-          "sidebars": {
-            "gettingStartedSidebar": {
-              "link": {
-                "path": "/docs-cli/",
-                "label": "CLI"
-              }
-            },
-            "citrosdSidebar": {
-              "link": {
-                "path": "/docs-cli/",
-                "label": "CLI"
-              }
-            },
-            "clidSidebar": {
-              "link": {
-                "path": "/docs-cli/",
-                "label": "CLI"
-              }
-            },
-            "dataAnalysisdSidebar": {
-              "link": {
-                "path": "/docs-cli/",
-                "label": "CLI"
-              }
-            }
-          }
-        }
-      ],
-      "breadcrumbs": true
-    },
     "docs-data-analysis": {
       "path": "/docs-data-analysis",
       "versions": [
@@ -261,6 +214,53 @@
               "link": {
                 "path": "/docs-data-analysis/",
                 "label": "Package overview"
+              }
+            }
+          }
+        }
+      ],
+      "breadcrumbs": true
+    },
+    "docs-cli": {
+      "path": "/docs-cli",
+      "versions": [
+        {
+          "name": "current",
+          "label": "Next",
+          "isLast": true,
+          "path": "/docs-cli",
+          "mainDocId": "index",
+          "docs": [
+            {
+              "id": "index",
+              "path": "/docs-cli/",
+              "sidebar": "dataAnalysisdSidebar"
+            }
+          ],
+          "draftIds": [],
+          "sidebars": {
+            "gettingStartedSidebar": {
+              "link": {
+                "path": "/docs-cli/",
+                "label": "CLI"
+              }
+            },
+            "citrosdSidebar": {
+              "link": {
+                "path": "/docs-cli/",
+                "label": "CLI"
+              }
+            },
+            "clidSidebar": {
+              "link": {
+                "path": "/docs-cli/",
+                "label": "CLI"
+              }
+            },
+            "dataAnalysisdSidebar": {
+              "link": {
+                "path": "/docs-cli/",
+                "label": "CLI"
               }
             }
           }

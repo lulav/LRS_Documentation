@@ -5,7 +5,7 @@
  */
 export default {
   "title": "CITROS",
-  "tagline": "CITROS is cool",
+  "tagline": "The starting point for your next robotic project",
   "favicon": "img/favicon.ico",
   "url": "https://citros.io",
   "baseUrl": "/",
@@ -84,7 +84,7 @@ export default {
     "navbar": {
       "logo": {
         "alt": "CITROS Logo",
-        "src": "img/citros_trn.png"
+        "src": "img/citros.png"
       },
       "items": [
         {
@@ -118,9 +118,16 @@ export default {
           "position": "left"
         },
         {
-          "href": "https://github.com/lulav-citrpos",
-          "label": "GitHub",
-          "position": "right"
+          "type": "docsVersionDropdown",
+          "position": "right",
+          "dropdownItemsAfter": [
+            {
+              "to": "/versions",
+              "label": "All versions"
+            }
+          ],
+          "dropdownActiveClassDisabled": true,
+          "dropdownItemsBefore": []
         }
       ],
       "hideOnScroll": false

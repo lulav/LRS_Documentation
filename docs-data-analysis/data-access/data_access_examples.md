@@ -3,6 +3,7 @@ toc_max_heading_level: 4
 sidebar_label: 'Examples'
 hide_title: true
 description: Examples of the data_access module
+sidebar_position: 1
 ---
 [![.github/workflows/gcr.yml](https://github.com/lulav/citros_data_analysis/actions/workflows/gcr.yml/badge.svg)](https://github.com/lulav/citros_data_analysis/actions/workflows/gcr.yml)
 
@@ -280,6 +281,29 @@ total number of messages in topic "A": 474
 </details>
 
 ## Query data
+
+The general query scheme is as follows:
+
+```mermaid
+flowchart LR
+    id1((CitrosDB<br>object)) ---id2((" ")) --- B{{"topic()"}}
+    B ---id3((" ")) ---C(["sid()"])
+    C ---id4((" ")) ---D(["rid()"])
+    D ---id5((" ")) --- E(["time()"])
+    E ---id6((" ")) 
+    id6 --- skip(["skip()"])
+    id6 --- avg(["avg()"])
+    id6 --- move_avg(["move_avg()"])
+    skip ---id7((" ")) 
+    id7((" ")) --- F(["set_filter()"])
+    avg --- id7((" "))
+    move_avg --- id7((" "))
+    F --- id8((" ")) --- G(["set_order()"])
+    G --- id9((" ")) --- M{{"data()"}}
+    classDef dot fill:#000
+    class id2,id3,id4,id5,id6,id7,id8,id9 dot;
+```
+where [**topic()**](data_access_description#citros_data_analysis.data_access.CitrosDB.topic) and [**data()**](data_access_description#citros_data_analysis.data_access.CitrosDB.data) methods are nessesary methods and all other are optional to use.
 
 The method [**data()**](data_access_description#citros_data_analysis.data_access.CitrosDB.data) of the [**CitrosDB**](#connection-to-the-database) object is dedicated to query data. Data is always querying for the specific topic, which is defined by [**topic()**](data_access_description#citros_data_analysis.data_access.CitrosDB.topic) method, which must be called before [**data()**](data_access_description#citros_data_analysis.data_access.CitrosDB.data) method. The result is returned as a [**DataFrame**](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.html) of the [**pandas** package](https://pandas.pydata.org/) - a widely used format in data science.
 
@@ -740,7 +764,11 @@ import matplotlib.pyplot as plt
 
 fig, ax = plt.subplots()
 
-citros.time_plot(ax, topic_name = 'A', var_name = 'data.x.x_1', time_step = 0.5, sids = [1,3], y_label='x_1', title_text = 'x_1 vs. Time')
+citros.time_plot(ax, topic_name = 'A', 
+                 var_name = 'data.x.x_1', 
+                 time_step = 0.5, 
+                 sids = [1,3], 
+                 y_label='x_1', title_text = 'x_1 vs. Time')
 ```
 <details>
   <summary>Show figure:</summary>
@@ -757,7 +785,12 @@ import matplotlib.pyplot as plt
 
 fig, ax = plt.subplots()
 
-citros.sid([1,2,3]).xy_plot(ax, topic_name = 'A', var_x_name = 'data.time', var_y_name = 'data.height', sids = [1,2,3], x_label='time', y_label = 'height', title_text='time vs. height')
+citros.sid([1,2,3]).xy_plot(ax, topic_name = 'A', 
+                            var_x_name = 'data.time', 
+                            var_y_name = 'data.height', 
+                            sids = [1,2,3], 
+                            x_label='time', y_label = 'height', 
+                            title_text='time vs. height')
 ```
 <details>
   <summary>Show figure:</summary>
@@ -879,7 +912,8 @@ print(table)
 Another way to apply constraints is to use argument `filter_by`, that has the same syntax as [**set_filter()**](#json-data-constraints) method. This way, the query from the previous example will look like:
 
 ```python
-result = citros.get_unique_values(column_names = ['type'], filter_by = {'topic': 'A', 'time': {'gt': 100, 'lte': 200}})
+result = citros.get_unique_values(column_names = ['type'], 
+                                  filter_by = {'topic': 'A', 'time': {'gt': 100, 'lte': 200}})
 ```
 :::note
 Constraints passed by `filter_by` will override those defined by [**topic()**](data_access_description#citros_data_analysis.data_access.CitrosDB.topic), [**rid()**](#rid-constraints), [**sid()**](#sid-constraints), [**time()**](#time-constraints) and [**set_filter()**](#json-data-constraints) methods.
@@ -963,7 +997,9 @@ number of messages in column 'sid':
 Another way to apply constraints is to use argument `filter_by`, that has the same syntax as [**set_filter()**](#json-data-constraints) method. This way, the query from the previous example will look like:
 
 ```python
-counts = citros.get_counts(column_name, group_by = ['type'], filter_by = {'time': {'lte': 150}, 'type': ['a', 'b']})
+counts = citros.get_counts(column_name, 
+                           group_by = ['type'],
+                           filter_by = {'time': {'lte': 150}, 'type': ['a', 'b']})
 ```
 
 :::note
@@ -985,7 +1021,9 @@ Let's find the number of unique values in column "rid", for messages, which meet
 column_name = 'sid'
 
 #Set "time" <= 150 and set "type" to be 'a' or 'b', group the counts by 'type':
-counts = citros.time(end = 150).set_filter({'type': ['a', 'b']}).get_unique_counts(column_name, group_by = ['type'])
+counts = citros.time(end = 150)\
+               .set_filter({'type': ['a', 'b']})\
+               .get_unique_counts(column_name, group_by = ['type'])
 
 #print the result:
 print("number of unique values in column '{}':".format(column_name))

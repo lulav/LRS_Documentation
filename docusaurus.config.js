@@ -7,7 +7,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'CITROS',
-  tagline: 'CITROS is cool',
+  tagline: 'The starting point for your next robotic project',
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
@@ -114,7 +114,7 @@ const config = {
         logo: {
           alt: 'CITROS Logo',
           // src: 'img/logo.svg',
-          src: 'img/citros_trn.png',
+          src: 'img/citros.png',
         },
         items: [
           {
@@ -143,13 +143,12 @@ const config = {
             position: 'left',
             activeBaseRegex: `/docs-data-analysis/`,
           },
-          { to: '/blog', label: 'Blog', position: 'left' },
-
-          
+          {to: '/blog', label: 'Blog', position: 'left' },
           {
-            href: 'https://github.com/lulav-citrpos',
-            label: 'GitHub',
+            type: 'docsVersionDropdown',
             position: 'right',
+            dropdownItemsAfter: [{to: '/versions', label: 'All versions'}],
+            dropdownActiveClassDisabled: true,
           },
         ],
       },

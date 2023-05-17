@@ -5,4 +5,4 @@ title: Welcome
 tags: [greetings]
 ---
 
-![Citros logo](/img/citros_trn.png)
+![Citros logo](/img/citros.png)

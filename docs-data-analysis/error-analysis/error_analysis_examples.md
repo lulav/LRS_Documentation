@@ -3,6 +3,7 @@ toc_max_heading_level: 4
 sidebar_label: 'Examples'
 hide_title: true
 description: Examples of the error_analysis module
+sidebar_position: 1
 ---
 
 # Error analysis
@@ -149,8 +150,8 @@ Let's choose one of the parameter, say 'data.time', divide it into `n_bins` inte
 
 ```python
 db_bin = dataset.bin_data(n_bins = 50,
-                               param_label = 'data.time',
-                               show_fig = True)
+                          param_label = 'data.time',
+                          show_fig = True)
 ```
 <details>
     <summary>Show the distribution:</summary>
@@ -361,8 +362,8 @@ dataset_B = analysis.CitrosData(df, type_name = 'x', data_label=['data.x'], unit
 
 #scale data
 db_sc_B = dataset.scale_data(n_points = 20, 
-                                param_label = 'data.time', 
-                                show_fig = False)
+                             param_label = 'data.time', 
+                             show_fig = False)
 
 db_sc.show_correlation(db2 = db_sc_B,
                        x_col = 'data.x.x_2',
@@ -531,10 +532,10 @@ To compare the results of these methods, list their names as `method`:
 
 ```python
 result_list = db_array.get_prediction(parameters = {'data.t':1}, 
-                                    method = ['neural_net', 'poly', 'gmm'],
-                                    n_poly = 2, 
-                                    activation='tanh', solver='lbfgs', hidden_layer_sizes = (8,), random_state = 9,  
-                                    show_fig = True)
+                                      method = ['neural_net', 'poly', 'gmm'],
+                                      n_poly = 2, 
+                                      activation='tanh', solver='lbfgs', hidden_layer_sizes = (8,), random_state = 9,  
+                                      show_fig = True)
 ```
 <details>
     <summary>The resulting plot:</summary>

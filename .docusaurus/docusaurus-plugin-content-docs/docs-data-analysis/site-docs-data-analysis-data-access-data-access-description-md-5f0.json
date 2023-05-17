@@ -18,11 +18,11 @@
   },
   "sidebar": "dataAnalysisdSidebar",
   "previous": {
-    "title": "Data access",
-    "permalink": "/docs-data-analysis/category/data-access-3"
-  },
-  "next": {
     "title": "Examples",
     "permalink": "/docs-data-analysis/data-access/data_access_examples"
+  },
+  "next": {
+    "title": "Error analysis",
+    "permalink": "/docs-data-analysis/category/error-analysis-3"
   }
 }

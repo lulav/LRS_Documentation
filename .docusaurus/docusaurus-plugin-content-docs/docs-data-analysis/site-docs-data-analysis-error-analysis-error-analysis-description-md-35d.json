@@ -18,10 +18,6 @@
   },
   "sidebar": "dataAnalysisdSidebar",
   "previous": {
-    "title": "Error analysis",
-    "permalink": "/docs-data-analysis/category/error-analysis-3"
-  },
-  "next": {
     "title": "Examples",
     "permalink": "/docs-data-analysis/error-analysis/error_analysis_examples"
   }

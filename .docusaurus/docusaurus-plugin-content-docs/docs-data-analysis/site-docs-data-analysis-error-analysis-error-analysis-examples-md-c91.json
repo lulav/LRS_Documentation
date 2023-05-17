@@ -10,14 +10,20 @@
   "draft": false,
   "tags": [],
   "version": "current",
+  "sidebarPosition": 1,
   "frontMatter": {
     "toc_max_heading_level": 4,
     "sidebar_label": "Examples",
     "hide_title": true,
-    "description": "Examples of the error_analysis module"
+    "description": "Examples of the error_analysis module",
+    "sidebar_position": 1
   },
   "sidebar": "dataAnalysisdSidebar",
   "previous": {
+    "title": "Error analysis",
+    "permalink": "/docs-data-analysis/category/error-analysis-3"
+  },
+  "next": {
     "title": "Documentation",
     "permalink": "/docs-data-analysis/error-analysis/error_analysis_description"
   }

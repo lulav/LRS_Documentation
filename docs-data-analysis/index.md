@@ -37,4 +37,4 @@ Second module [**error_analysis**](error-analysis/error_analysis_description) co
     light: useBaseUrl('/img/img_error_analysis_light.png'),
     dark: useBaseUrl('/img/img_error_analysis_dark.png'),
   }}
-/>;
+/>
