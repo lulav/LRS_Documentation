@@ -14,18 +14,18 @@ For performing error analysis, module [error_analysis](error_analysis_descriptio
 from citros_data_analysis import error_analysis as analysis
 ```
 
-But first of all, let's have a quick look at [data_access](data_access_description) module, which is dedicate to query data.
+But first of all, let's have a quick look at [data_access](../data-access/data_access_description) module, which is dedicate to query data.
 
 ## Query data
 
-To get access to a Citros database, create [**CitrosDB**](data_access_description#citros_data_analysis.data_access.CitrosDB) object:
+To get access to a Citros database, create [**CitrosDB**](../data-access/data_access_description#citros_data_analysis.data_access.CitrosDB) object:
 
 ```python
 from citros_data_analysis import data_access as da
 
 citros = da.CitrosDB()
 ```
-This way [**CitrosDB**](data_access_description#citros_data_analysis.data_access.CitrosDB) is created with defaults parameters. To specify connection parameters, pass correspondiong arguments:
+This way [**CitrosDB**](../data-access/data_access_description#citros_data_analysis.data_access.CitrosDB) is created with defaults parameters. To specify connection parameters, pass correspondiong arguments:
 
 ```python
 citros = da.CitrosDB(host = 'hostName',
@@ -56,7 +56,7 @@ print(df)
 The result is a [**DataFrame**](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.html) of the [**pandas** package](https://pandas.pydata.org/).
 
 Batch constists of two parts: json-data column, and all other columns.
-To query exact json-objects, pass list with their labels to [**data()**](data_access_description#citros_data_analysis.data_access.CitrosDB.data).
+To query exact json-objects, pass list with their labels to [**data()**](../data-access/data_access_description#citros_data_analysis.data_access.CitrosDB.data).
 For example, if the json-data column looks like:
 
 ```python
@@ -70,7 +70,7 @@ to query 'x_1', 'x_2', 'height' and values from the first position of 'y' json-a
 df = citros.topic('A').data(['data.x.x_1', 'data.x.x_2', 'data.height', 'data.y[0]'])
 ```
 
-Also, different constraints may be applied to query, see [examples of data_access module](data_access_examples).
+Also, different constraints may be applied to query, see [examples of data_access module](../data-access/data_access_examples).
 
 ## Bin, interpolate and calculate statistics
 
@@ -391,7 +391,7 @@ Different input parameters may vary the output, and to predict how the parameter
 db_array = analysis.CitrosDataArray()
 ```
 
-Let's say for the topic 'A' we have data for four different values of the parameter 't', that is written in json-data column 'data.t'. First, let's get all possible 'data.t' values for topic 'A' (see [examples](data_access_examples) of [data_access](data_access_description) module):
+Let's say for the topic 'A' we have data for four different values of the parameter 't', that is written in json-data column 'data.t'. First, let's get all possible 'data.t' values for topic 'A' (see [examples](../data-access/data_access_examples) of [data_access](../data-access/data_access_description) module):
 ```python
 >>> list_t = citros.get_unique_values('data.t', filter_by = {'topic' : 'A'})
 >>> print(list_t)

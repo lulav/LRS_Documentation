@@ -145,12 +145,12 @@ const config = {
             activeBaseRegex: `/docs-data-analysis/`,
           },
           {to: '/blog', label: 'Blog', position: 'left' },
-          {
+          /*{
             type: 'docsVersionDropdown',
             position: 'right',
             dropdownItemsAfter: [{to: '/versions', label: 'All versions'}],
             dropdownActiveClassDisabled: true,
-          },
+          },*/
         ],
       },
       footer: {
