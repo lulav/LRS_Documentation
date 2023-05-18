@@ -8,7 +8,7 @@ sidebar_position: 1
 
 # Error analysis
 
-For performing error analysis, module [error_analysis](error_analysis_description) is used. To download module:
+For performing error analysis module [error_analysis](error_analysis_description) is used. To download module:
 
 ```python
 from citros_data_analysis import error_analysis as analysis
