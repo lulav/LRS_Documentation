@@ -74,16 +74,16 @@ const config = {
         id: 'docs-citros',
         path: 'docs-citros',
         routeBasePath: 'docs-citros',
-        sidebarPath: require.resolve('./sidebars.js'),
+        sidebarPath: require.resolve('./sidebarsCitros.js'),
       }, 
     ],
     [
       '@docusaurus/plugin-content-docs',
       {
-        id: 'docs-cli',
+        id: 'docscli',
         path: 'docs-cli',
         routeBasePath: 'docs-cli',
-        sidebarPath: require.resolve('./sidebars.js'),
+        sidebarPath: require.resolve('./sidebarsCLI.js'),
       }, 
     ],
     [
@@ -92,7 +92,7 @@ const config = {
         id: 'docs-data-analysis',
         path: 'docs-data-analysis',
         routeBasePath: 'docs-data-analysis',
-        sidebarPath: require.resolve('./sidebars.js'),
+        sidebarPath: require.resolve('./sidebarsDataAnalysis.js'),
       }, 
     ],
   ],
