@@ -80,10 +80,11 @@ const config = {
     [
       '@docusaurus/plugin-content-docs',
       {
-        id: 'docscli',
+        id: 'docs-cli',
         path: 'docs-cli',
         routeBasePath: 'docs-cli',
         sidebarPath: require.resolve('./sidebarsCLI.js'),
+        includeCurrentVersion: false
       }, 
     ],
     [
@@ -137,6 +138,8 @@ const config = {
             label: 'CLI',
             position: 'left',
             activeBaseRegex: `/docs-cli/`,
+            // type: 'docsVersionDropdown',
+            // docsPluginId: 'docs-cli'
           },
           {
             to: '/docs-data-analysis',    // ./docs-api/Intro.md
@@ -145,12 +148,27 @@ const config = {
             activeBaseRegex: `/docs-data-analysis/`,
           },
           {to: '/blog', label: 'Blog', position: 'left' },
-          /*{
+          {
             type: 'docsVersionDropdown',
             position: 'right',
-            dropdownItemsAfter: [{to: '/versions', label: 'All versions'}],
-            dropdownActiveClassDisabled: true,
-          },*/
+            docsPluginId: 'docs-cli',
+            // dropdownItemsAfter: [{to: '/versions', label: 'All versions'}],
+            // dropdownActiveClassDisabled: true,
+          },
+          {
+            type: 'docsVersionDropdown',
+            position: 'right',
+            docsPluginId: 'docs-citros',
+            // dropdownItemsAfter: [{to: '/versions', label: 'All versions'}],
+            // dropdownActiveClassDisabled: true,
+          },
+          {
+            type: 'docsVersionDropdown',
+            position: 'right',
+            docsPluginId: 'docs-data-analysis',
+            // dropdownItemsAfter: [{to: '/versions', label: 'All versions'}],
+            // dropdownActiveClassDisabled: true,
+          },
         ],
       },
       footer: {

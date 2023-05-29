@@ -440,7 +440,7 @@ is supposed to be plotted along x-axis and the data from <code>db2</code> is sup
 
 
 return_fig : bool, default False.
-    If the fig, handles, labels should be returned.
+    If the fig, ax should be returned.
 **```display_id```** :&ensp;<code>bool</code>, default <code>True</code>
 :   Whether to print the pair of <code>slice\_id</code> <code>slice\_val</code> or not.
 
@@ -493,7 +493,7 @@ Collect all statistics for CitrosData object and plot it.
 
 
 **```return_fig```** :&ensp;<code>bool</code>
-:   If the figure parameters (fig, ax) should be returned; 
+:   If the figure parameters fig, ax should be returned; 
     fig is matplotlib.figure.Figure and ax is matplotlib.axes.Axes
 
 #### Returns
@@ -502,7 +502,7 @@ Collect all statistics for CitrosData object and plot it.
 :   if <code>return\_fig</code> set to True
 
 
-**```ax```** :&ensp;<code>matplotlib.axes.Axes</code>
+**```ax```** :&ensp;<code>list</code> of <code>matplotlib.axes.Axes</code>
 :   if <code>return\_fig</code> set to True
 
 
@@ -739,7 +739,7 @@ Show the predictions based on the results of the regression solution, neural net
 
 
 **```return_fig```** :&ensp;<code>bool</code>, default <code>False</code>
-:   If True, the figure, handles and labels for legend will be returned.
+:   If True, the figure and ax (or list of ax) will be returned.
 
 
 **```**kwargs```**
@@ -755,7 +755,7 @@ Show the predictions based on the results of the regression solution, neural net
 :   if <code>return\_fig</code> set to True
 
 
-**```ax```** :&ensp;<code>matplotlib.axes.Axes</code>
+**```ax```** :&ensp;<code>matplotlib.axes.Axes</code> or <code>list</code> of <code>matplotlib.axes.Axes</code>
 :   if <code>return\_fig</code> set to True
 
 

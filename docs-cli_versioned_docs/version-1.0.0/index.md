@@ -1,7 +1,7 @@
 ---
 sidebar_position: 1
-sidebar_label: 'New page'
+sidebar_label: 'CLI'
 hide_title: true
 ---
 
-## New heading
+## Command line interface

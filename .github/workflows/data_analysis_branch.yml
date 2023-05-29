@@ -1,0 +1,40 @@
+name: copy docs from data_analysis branch
+on: 
+  push:
+    branches: 
+      - data_analysis_*
+  # workflow_call:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: get_version
+        run: |
+          echo ${{ github.ref_name }}
+          version=$(echo ${{ github.ref_name }} | grep -oP '(?<=fixs.).*')
+          echo "version=$version" >> "$GITHUB_ENV"
+
+      - name: Check out repository code
+        uses: actions/checkout@v3
+        with:
+          ref: main
+
+      - name: froze the previous version
+      - name: copy folder
+        run: |
+         echo | ls
+         git fetch
+         git rm -r docs-data-analysis/*
+         git checkout origin/doc_data_analysis docs-data-analysis
+         yarn docusaurus docs-data-analysis:version "${{ env.version }}"
+         git config --global user.email "actions@github.com"
+         git config --global user.name "GitHub Actions"
+         git diff
+         git add -A
+         git commit -m "update docs-data-analysis"
+        #  git push origin main
+        git push origin test_result
+
+      - name: delete branch
+        run: git push origin --delete docs-data-analysis
