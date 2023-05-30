@@ -6,9 +6,6 @@ description: 'Documentation'
 hide_title: true
 ---
 
-## Some description
-
-    
 ## Module `citros_data_analysis.data_access` {#citros_data_analysis.data_access}
 
 
