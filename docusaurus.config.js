@@ -74,7 +74,8 @@ const config = {
         id: 'docs-citros',
         path: 'docs-citros',
         routeBasePath: 'docs-citros',
-        sidebarPath: require.resolve('./sidebars.js'),
+        sidebarPath: require.resolve('./sidebarsCitros.js'),
+        // includeCurrentVersion: false,
       }, 
     ],
     [
@@ -83,7 +84,8 @@ const config = {
         id: 'docs-cli',
         path: 'docs-cli',
         routeBasePath: 'docs-cli',
-        sidebarPath: require.resolve('./sidebars.js'),
+        sidebarPath: require.resolve('./sidebarsCLI.js'),
+        // includeCurrentVersion: false,
       }, 
     ],
     [
@@ -92,7 +94,8 @@ const config = {
         id: 'docs-data-analysis',
         path: 'docs-data-analysis',
         routeBasePath: 'docs-data-analysis',
-        sidebarPath: require.resolve('./sidebars.js'),
+        sidebarPath: require.resolve('./sidebarsDataAnalysis.js'),
+        // includeCurrentVersion: false,
       }, 
     ],
   ],
@@ -137,6 +140,8 @@ const config = {
             label: 'CLI',
             position: 'left',
             activeBaseRegex: `/docs-cli/`,
+            // type: 'docsVersionDropdown',
+            // docsPluginId: 'docs-cli'
           },
           {
             to: '/docs-data-analysis',    // ./docs-api/Intro.md
@@ -145,12 +150,27 @@ const config = {
             activeBaseRegex: `/docs-data-analysis/`,
           },
           {to: '/blog', label: 'Blog', position: 'left' },
-          /*{
+          {
             type: 'docsVersionDropdown',
             position: 'right',
-            dropdownItemsAfter: [{to: '/versions', label: 'All versions'}],
-            dropdownActiveClassDisabled: true,
-          },*/
+            docsPluginId: 'docs-cli',
+            // dropdownItemsAfter: [{to: '/versions', label: 'All versions'}],
+            // dropdownActiveClassDisabled: true,
+          },
+          {
+            type: 'docsVersionDropdown',
+            position: 'right',
+            docsPluginId: 'docs-citros',
+            // dropdownItemsAfter: [{to: '/versions', label: 'All versions'}],
+            // dropdownActiveClassDisabled: true,
+          },
+          {
+            type: 'docsVersionDropdown',
+            position: 'right',
+            docsPluginId: 'docs-data-analysis',
+            // dropdownItemsAfter: [{to: '/versions', label: 'All versions'}],
+            // dropdownActiveClassDisabled: true,
+          },
         ],
       },
       footer: {

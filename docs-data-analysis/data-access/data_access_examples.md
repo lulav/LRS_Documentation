@@ -10,7 +10,7 @@ sidebar_position: 1
 
 # Data Access
 
-In order to get information about the data of the specific table in the database, to look through the main features and to query the selected parts the module [**data_access**](data_access_description) from the package **citros_data_analysis** is used. Module is imported by:
+In order to get information about the data of the specific table in the database, to look through the main features and to query the selected parts the module [**data_access**](data_access_description.md) from the package **citros_data_analysis** is used. Module is imported by:
 
 ```python
 from citros_data_analysis import data_access as da
@@ -21,7 +21,7 @@ da.get_version()
 ```
 ## Connection to the database
 
-To connect to the database [**CitrosDB**](data_access_description#citros_data_analysis.data_access.CitrosDB) object is created:
+To connect to the database [**CitrosDB**](data_access_description.md#citros_data_analysis.data_access.CitrosDB) object is created:
 ```python
 citros = da.CitrosDB()
 ```
@@ -60,7 +60,7 @@ The data is stored in the *batches* as *messages*. Each batch contains the follo
 
 ### Batch size
 
-To check the batch sizes in the current schema method [**get_batch_size()**](data_access_description#citros_data_analysis.data_access.CitrosDB.get_batch_size) is used:
+To check the batch sizes in the current schema method [**get_batch_size()**](data_access_description.md#citros_data_analysis.data_access.CitrosDB.get_batch_size) is used:
 
 ```python
 result = citros.get_batch_size()
@@ -88,7 +88,7 @@ The output might look something like this:
 
 ### General batch information
 
-To get the overview about the batch, the function [**citros.info()**](data_access_description#citros_data_analysis.data_access.CitrosDB.info) is used:
+To get the overview about the batch, the function [**citros.info()**](data_access_description.md#citros_data_analysis.data_access.CitrosDB.info) is used:
 
 ```python
 citros.info()
@@ -101,15 +101,15 @@ It returns dictionary, that contains:
 * 'topic_list': list of topics
 * 'message_count': number of messages
 
-The result is a [**CitrosDict**](data_access_description#citros_data_analysis.data_access.CitrosDict) object, that inherits behaviour of an ordinary python dictionary, but has some additional methods.
-[**CitrosDict**](data_access_description#citros_data_analysis.data_access.CitrosDict) object can be converted to json string by the method [**to_json**()](data_access_description#citros_data_analysis.data_access.CitrosDict.to_json):
+The result is a [**CitrosDict**](data_access_description.md#citros_data_analysis.data_access.CitrosDict) object, that inherits behaviour of an ordinary python dictionary, but has some additional methods.
+[**CitrosDict**](data_access_description.md#citros_data_analysis.data_access.CitrosDict) object can be converted to json string by the method [**to_json**()](data_access_description.md#citros_data_analysis.data_access.CitrosDict.to_json):
 
 ```python
 >>> citros.info().to_json()
 
 '{\n  "size": "534 kB",\n  "sid_count": 3,\n  "sid_list": [\n    1,\n    2,\n    3\n  ],\n  "topic_count": 4,\n  "topic_list": [\n    "A",\n    "B",\n    "C",\n    "D"\n  ],\n  "message_count": 2000\n}'
 ```
-or printed by the method [**print()**](data_access_description#citros_data_analysis.data_access.CitrosDict.print):
+or printed by the method [**print()**](data_access_description.md#citros_data_analysis.data_access.CitrosDict.print):
 
 ```python
 >>> citros.info().print()
@@ -123,7 +123,7 @@ or printed by the method [**print()**](data_access_description#citros_data_analy
  'message_count': 2000
 }
 ```
-If specific sid is set, [**citros.info()**](data_access_description#citros_data_analysis.data_access.CitrosDB.info) also appends dictionary 'sids', with the following structure:
+If specific sid is set, [**citros.info()**](data_access_description.md#citros_data_analysis.data_access.CitrosDB.info) also appends dictionary 'sids', with the following structure:
 * 'sids':
     * int:
         * 'topics': 
@@ -173,7 +173,7 @@ To get information about data with sid = 1 or 2 and print it:
 }
 ```
 
-To set the specific topic, method [**topic()**](data_access_description#citros_data_analysis.data_access.CitrosDB.topic) is used.
+To set the specific topic, method [**topic()**](data_access_description.md#citros_data_analysis.data_access.CitrosDB.topic) is used.
 This way, dictionary 'topics' is appended:
     
 * 'topics':
@@ -213,7 +213,7 @@ This way, dictionary 'topics' is appended:
 }
 ```
 
-The specific piece of information may be achieved by the keywords of the [**CitrosDict**](data_access_description#citros_data_analysis.data_access.CitrosDict), obtained by [**info()**](data_access_description#citros_data_analysis.data_access.CitrosDB.info) method.
+The specific piece of information may be achieved by the keywords of the [**CitrosDict**](data_access_description.md#citros_data_analysis.data_access.CitrosDict), obtained by [**info()**](data_access_description.md#citros_data_analysis.data_access.CitrosDB.info) method.
 
 <details>
   <summary>Examples</summary>
@@ -303,9 +303,9 @@ flowchart LR
     classDef dot fill:#000
     class id2,id3,id4,id5,id6,id7,id8,id9 dot;
 ```
-where [**topic()**](data_access_description#citros_data_analysis.data_access.CitrosDB.topic) and [**data()**](data_access_description#citros_data_analysis.data_access.CitrosDB.data) methods are nessesary methods and all other are optional to use.
+where [**topic()**](data_access_description.md#citros_data_analysis.data_access.CitrosDB.topic) and [**data()**](data_access_description.md#citros_data_analysis.data_access.CitrosDB.data) methods are nessesary methods and all other are optional to use.
 
-The method [**data()**](data_access_description#citros_data_analysis.data_access.CitrosDB.data) of the [**CitrosDB**](#connection-to-the-database) object is dedicated to query data. Data is always querying for the specific topic, which is defined by [**topic()**](data_access_description#citros_data_analysis.data_access.CitrosDB.topic) method, which must be called before [**data()**](data_access_description#citros_data_analysis.data_access.CitrosDB.data) method. The result is returned as a [**DataFrame**](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.html) of the [**pandas** package](https://pandas.pydata.org/) - a widely used format in data science.
+The method [**data()**](data_access_description.md#citros_data_analysis.data_access.CitrosDB.data) of the [**CitrosDB**](#connection-to-the-database) object is dedicated to query data. Data is always querying for the specific topic, which is defined by [**topic()**](data_access_description.md#citros_data_analysis.data_access.CitrosDB.topic) method, which must be called before [**data()**](data_access_description.md#citros_data_analysis.data_access.CitrosDB.data) method. The result is returned as a [**DataFrame**](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.html) of the [**pandas** package](https://pandas.pydata.org/) - a widely used format in data science.
 
 To query all data for the topic 'B':
 ```python
@@ -324,7 +324,7 @@ A pandas DataFrame.
 ...|...|...|...|...|...|...|...|...|...|...|...
 </details>
 
-If no arguments are passed to the [**data()**](data_access_description#citros_data_analysis.data_access.CitrosDB.data) methods, all data from the json-data column is selected. The json-objects are splitted into columns, while json-arrays are retained as lists.
+If no arguments are passed to the [**data()**](data_access_description.md#citros_data_analysis.data_access.CitrosDB.data) methods, all data from the json-data column is selected. The json-objects are splitted into columns, while json-arrays are retained as lists.
 
 If the whole json-data column is desired as a json-object:
 
@@ -342,7 +342,7 @@ citros.topic('B').data('data')
 ...|...|...|...|...|...|...
 </details>
 
-If only some of the json objects are needed, for example data.x.x_1 and data.time, list with their labels may be passed to [**data()**](data_access_description#citros_data_analysis.data_access.CitrosDB.data): 
+If only some of the json objects are needed, for example data.x.x_1 and data.time, list with their labels may be passed to [**data()**](data_access_description.md#citros_data_analysis.data_access.CitrosDB.data): 
 
 ```python
 citros.topic('B').data(['data.x.x_1', 'data.time'])
@@ -376,7 +376,7 @@ citros.topic('B').data('data.note[0]')
 
 ### sid constraints
 
-To get data with the exact sid, method [**sid()**](data_access_description#citros_data_analysis.data_access.CitrosDB.sid) of the [**CitrosDB**](#connection-to-the-database) is used. It should be applied before [**data()**](data_access_description#citros_data_analysis.data_access.CitrosDB.data) method. It takes int or list of ints as an argument.
+To get data with the exact sid, method [**sid()**](data_access_description.md#citros_data_analysis.data_access.CitrosDB.sid) of the [**CitrosDB**](#connection-to-the-database) is used. It should be applied before [**data()**](data_access_description.md#citros_data_analysis.data_access.CitrosDB.data) method. It takes int or list of ints as an argument.
 
 To query json-data column 'data.x.x_1' of the topic 'B' with sid = 1 or 3:
 
@@ -396,7 +396,7 @@ citros.topic('B').sid([1,3]).data('data.x.x_1')
 
 ### rid constraints
 
-To select only messages with the exact values of rid, the method [**rid()**](data_access_description#citros_data_analysis.data_access.CitrosDB.rid) of the [**CitrosDB**](#connection-to-the-database) is used. It should be applied before [**data()**](data_access_description#citros_data_analysis.data_access.CitrosDB.data) method. Limits of the rid values are defined by `start`, `end` and `count` arguments: `start` <= rid, rid <= `end` and rid < `start` + `count`.  `start`, `end` and  `count` values must be integers.
+To select only messages with the exact values of rid, the method [**rid()**](data_access_description.md#citros_data_analysis.data_access.CitrosDB.rid) of the [**CitrosDB**](#connection-to-the-database) is used. It should be applied before [**data()**](data_access_description.md#citros_data_analysis.data_access.CitrosDB.data) method. Limits of the rid values are defined by `start`, `end` and `count` arguments: `start` <= rid, rid <= `end` and rid < `start` + `count`.  `start`, `end` and  `count` values must be integers.
 
 Since rid is always > 0, the default `start` being equal 0 means no constraints. 
 
@@ -440,7 +440,7 @@ citros.topic('B').rid(start = 10, count = 6).data('data.x.x_1')
 
 ### time constraints
 
-To apply constraints on time column, the [**time()**](data_access_description#citros_data_analysis.data_access.CitrosDB.time) method of the [**CitrosDB**](#connection-to-the-database) is used. It should be applied before [**data()**](data_access_description#citros_data_analysis.data_access.CitrosDB.data) method. [**time()**](data_access_description#citros_data_analysis.data_access.CitrosDB.time) method has `start`, `end` and  `duration` arguments to define the time limits (in seconds) of the query. Briefly, they set the following constraints on time: `start` <= time, time <= `end` and time < `start` + `duration`. `start`, `end` and  `duration` values must be integers.
+To apply constraints on time column, the [**time()**](data_access_description.md#citros_data_analysis.data_access.CitrosDB.time) method of the [**CitrosDB**](#connection-to-the-database) is used. It should be applied before [**data()**](data_access_description.md#citros_data_analysis.data_access.CitrosDB.data) method. [**time()**](data_access_description.md#citros_data_analysis.data_access.CitrosDB.time) method has `start`, `end` and  `duration` arguments to define the time limits (in seconds) of the query. Briefly, they set the following constraints on time: `start` <= time, time <= `end` and time < `start` + `duration`. `start`, `end` and  `duration` values must be integers.
 
 Since time is always >= 0, the default `start` being equal 0 means no constraints. To set the upper limit in seconds for the time column, define `end` argument.
 For example, for querying json-daat column 'data.x.x_1' of the topic 'B' with time <= 100s:
@@ -484,7 +484,7 @@ Note that when the `duration` istead of the `end` argumet is used, the upper lim
 
 ### json-data constraints
 
-To apply constraints on a json-data columns, [**set_filter()**](data_access_description#citros_data_analysis.data_access.CitrosDB.set_filter) method of the [**CitrosDB**](#connection-to-the-database) is used. It should be applied before [**data()**](data_access_description#citros_data_analysis.data_access.CitrosDB.data) method. It takes a dictionary as an argument.
+To apply constraints on a json-data columns, [**set_filter()**](data_access_description.md#citros_data_analysis.data_access.CitrosDB.set_filter) method of the [**CitrosDB**](#connection-to-the-database) is used. It should be applied before [**data()**](data_access_description.md#citros_data_analysis.data_access.CitrosDB.data) method. It takes a dictionary as an argument.
 
 The argument has the following structure:
 {Key: Value, Key1: Value1, ...}, where Key is a label of the column (for example, 'data.x') and Value defines the constraints, to apply on this column:
@@ -534,12 +534,12 @@ citros.topic('B').set_filter({'data.note[2][0]' :[55, 56]}).data(['data.x.x_1', 
 </details>
 
 :::note
-[**set_filter()**](data_access_description#citros_data_analysis.data_access.CitrosDB.set_filter) method may be used to apply constraints not only on json-data, but on any column. Conditions, passed here, have higher priority over those defined by [**topic()**](data_access_description#citros_data_analysis.data_access.CitrosDB.topic), [**rid()**](#rid-constraints), [**sid()**](#sid-constraints) and [**time()**](#time-constraints) methods and will override them.
+[**set_filter()**](data_access_description.md#citros_data_analysis.data_access.CitrosDB.set_filter) method may be used to apply constraints not only on json-data, but on any column. Conditions, passed here, have higher priority over those defined by [**topic()**](data_access_description.md#citros_data_analysis.data_access.CitrosDB.topic), [**rid()**](#rid-constraints), [**sid()**](#sid-constraints) and [**time()**](#time-constraints) methods and will override them.
 :::
 
 ### Constraints combination
 
-[**topic()**](data_access_description#citros_data_analysis.data_access.CitrosDB.topic), [**rid()**](#rid-constraints), [**sid()**](#sid-constraints), [**time()**](#time-constraints) and [**set_filter()**](#json-data-constraints) methods of the [**CitrosDB**](#connection-to-the-database) objects may be combined to precisely define the query:
+[**topic()**](data_access_description.md#citros_data_analysis.data_access.CitrosDB.topic), [**rid()**](#rid-constraints), [**sid()**](#sid-constraints), [**time()**](#time-constraints) and [**set_filter()**](#json-data-constraints) methods of the [**CitrosDB**](#connection-to-the-database) objects may be combined to precisely define the query:
 
 ```python
 citros.topic('B')\
@@ -562,7 +562,7 @@ citros.topic('B')\
 
 ### Sorting order
 
-To sort the result of the query in ascending or descending order the [**set_order()**](data_access_description#citros_data_analysis.data_access.CitrosDB.set_order) method of the [**CitrosDB**](#connection-to-the-database) object is used. It should be applied before [**data()**](#query-data) method calling. It takes a dictionary as an argument, where the key is a label of the column and the dictionary value defines whether in ascending ('asc') or in descending ('desc') order to sort.
+To sort the result of the query in ascending or descending order the [**set_order()**](data_access_description.md#citros_data_analysis.data_access.CitrosDB.set_order) method of the [**CitrosDB**](#connection-to-the-database) object is used. It should be applied before [**data()**](#query-data) method calling. It takes a dictionary as an argument, where the key is a label of the column and the dictionary value defines whether in ascending ('asc') or in descending ('desc') order to sort.
 
 To query json-data columns 'data.height' of the topic 'A' and to sort the result by sid in ascending order and by this column 'data.height' in descending order:
 
@@ -586,7 +586,7 @@ If the amount of output data is too huge, only part of it may be selected. It ma
 
 #### Skip
 
-[**skip(n)**](data_access_description#citros_data_analysis.data_access.CitrosDB.skip) method is used to select `n`-th message of the each sid.
+[**skip(n)**](data_access_description.md#citros_data_analysis.data_access.CitrosDB.skip) method is used to select `n`-th message of the each sid.
 
 To query only each 5th message of the topic 'B':
 ```python
@@ -607,7 +607,7 @@ citros.topic('B')\
 
 #### Avarage
 
-To average each `n` messages of the each sid, [**avg(n)**](data_access_description#citros_data_analysis.data_access.CitrosDB.avg) method is used. Only numeric values may be averaged and the labels of the json-data columns with numeric content should be explicitly listed in [**data()**](#query-data). The value in 'rid' column is set as a minimum value among the 'rid' values of the averaged rows.
+To average each `n` messages of the each sid, [**avg(n)**](data_access_description.md#citros_data_analysis.data_access.CitrosDB.avg) method is used. Only numeric values may be averaged and the labels of the json-data columns with numeric content should be explicitly listed in [**data()**](#query-data). The value in 'rid' column is set as a minimum value among the 'rid' values of the averaged rows.
 
 To average each 5 messages of the topic 'B':
 ```python
@@ -628,7 +628,7 @@ citros.topic('B')\
 
 #### Moving average
 
-To apply moving average over `n` messages and than select each `m`-th row of the result, [**move_avg(n, m)**](data_access_description#citros_data_analysis.data_access.CitrosDB.move_avg) method is used. Only numeric values may be averaged and the labels of the json-data columns with numeric content should be explicitly listed in [**data()**](#query-data). The value in 'rid' column is set as a minimum value among the 'rid' values of the averaged rows.
+To apply moving average over `n` messages and than select each `m`-th row of the result, [**move_avg(n, m)**](data_access_description.md#citros_data_analysis.data_access.CitrosDB.move_avg) method is used. Only numeric values may be averaged and the labels of the json-data columns with numeric content should be explicitly listed in [**data()**](#query-data). The value in 'rid' column is set as a minimum value among the 'rid' values of the averaged rows.
 
 To use moving average to average each 5 messages and query every second row of the result of the topic 'B':
 
@@ -650,7 +650,7 @@ citros.topic('B')\
 
 ### Segregate data by sid
 
-Method [**get_sid_tables(data_query)**](data_access_description#citros_data_analysis.data_access.CitrosDB.get_sid_tables) returns dict of tables, each of the tables corresponds to exact value of sid.
+Method [**get_sid_tables(data_query)**](data_access_description.md#citros_data_analysis.data_access.CitrosDB.get_sid_tables) returns dict of tables, each of the tables corresponds to exact value of sid.
 The returning dictionary containes sid as dictionary keys and tables as dictionary values.
 
 For example, let's query json-data columns 'data.x.x_2', 'data.time' for topic 'A', where 'data.x.x_2' >= 0 and sid equals 1 or 2. And let's also average each 10 rows of the table:
@@ -742,7 +742,7 @@ citros.topic('B')\
 
 ### plot_graph()
 
-[**plot_graph(df, x_label, y_label, ...)**](data_access_description#citros_data_analysis.data_access.CitrosDB.plot_graph) method of the [**CitrosDB**](#connection-to-the-database) object makes separate graphs '`y_label` vs. `x_label`' for each sid, where `x_label` and `y_label` are the labels of columns of the table `df`. Some other additional arguments may be passed to customize the plot, see documentation for [matplotlib.axes.Axes.plot](https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.plot.html).
+[**plot_graph(df, x_label, y_label, ...)**](data_access_description.md#citros_data_analysis.data_access.CitrosDB.plot_graph) method of the [**CitrosDB**](#connection-to-the-database) object makes separate graphs '`y_label` vs. `x_label`' for each sid, where `x_label` and `y_label` are the labels of columns of the table `df`. Some other additional arguments may be passed to customize the plot, see documentation for [matplotlib.axes.Axes.plot](https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.plot.html).
 
 To plot simple graph 'data.x.x_2' vs 'rid':
 
@@ -757,7 +757,7 @@ citros.plot_graph(df, 'rid', 'data.x.x_2', '-')
 
 ### time_plot()
 
-[**time_plot(ax, topic_name, var_name, time_step, sids = None, y_label = None, title_text = None)**](data_access_description#citros_data_analysis.data_access.CitrosDB.time_plot) method of the [**CitrosDB**](#connection-to-the-database) object query column `var_name` of the topic `topic_name` and plots `var_name` vs. `Time` for each of the sids, where `Time` = `time_step` * rid. It is possible to specify sids by passing them as a list to `sid`. If `sid` is not specified, data for all sids is used.
+[**time_plot(ax, topic_name, var_name, time_step, sids = None, y_label = None, title_text = None)**](data_access_description.md#citros_data_analysis.data_access.CitrosDB.time_plot) method of the [**CitrosDB**](#connection-to-the-database) object query column `var_name` of the topic `topic_name` and plots `var_name` vs. `Time` for each of the sids, where `Time` = `time_step` * rid. It is possible to specify sids by passing them as a list to `sid`. If `sid` is not specified, data for all sids is used.
 
 ```python
 import matplotlib.pyplot as plt
@@ -778,7 +778,7 @@ citros.time_plot(ax, topic_name = 'A',
 
 ### xy_plot()
 
-[**xy_plot(ax, topic_name, var_x_name, var_y_name, sids = None, x_label = None, y_label = None, title_text = None)**](data_access_description#citros_data_analysis.data_access.CitrosDB.xy_plot) method of the [**CitrosDB**](#connection-to-the-database) object query columns `var_x_name` and `var_y_name` of the topic `topic_name` and plots `var_y_name` vs. `var_x_name` for each of the sids. It is possible to specify sids by passing them as a list to `sid`. If `sid` is not specified, data for all sids is used.
+[**xy_plot(ax, topic_name, var_x_name, var_y_name, sids = None, x_label = None, y_label = None, title_text = None)**](data_access_description.md#citros_data_analysis.data_access.CitrosDB.xy_plot) method of the [**CitrosDB**](#connection-to-the-database) object query columns `var_x_name` and `var_y_name` of the topic `topic_name` and plots `var_y_name` vs. `var_x_name` for each of the sids. It is possible to specify sids by passing them as a list to `sid`. If `sid` is not specified, data for all sids is used.
 
 ```python
 import matplotlib.pyplot as plt
@@ -808,7 +808,7 @@ citros.sid([1,2,3]).xy_plot(ax, topic_name = 'A',
 
 ### Data structure
 
-[**get_data_structure(topic = None)**](data_access_description#citros_data_analysis.data_access.CitrosDB.get_data_structure) method of the [**CitrosDB**](#connection-to-the-database) object may be used to display json-data structure for specific topics, listed in `topic`. To get the result for all existing topics, leave `topic` = None:
+[**get_data_structure(topic = None)**](data_access_description.md#citros_data_analysis.data_access.CitrosDB.get_data_structure) method of the [**CitrosDB**](#connection-to-the-database) object may be used to display json-data structure for specific topics, listed in `topic`. To get the result for all existing topics, leave `topic` = None:
 
 ```python
 #leave only topics of interest or leave topic = None to see the information for all topics:
@@ -856,10 +856,10 @@ print(table)
 
 ### Unique values
 
-Method [**get_unique_values(column_names)**](data_access_description#citros_data_analysis.data_access.CitrosDB.get_unique_values) of the [**CitrosDB**](#connection-to-the-database) object is used to get the unique values or combination of values of the columns `column_names`.
+Method [**get_unique_values(column_names)**](data_access_description.md#citros_data_analysis.data_access.CitrosDB.get_unique_values) of the [**CitrosDB**](#connection-to-the-database) object is used to get the unique values or combination of values of the columns `column_names`.
 
 :::note
-Like in the case of [data querying](#data-access), such methods as [**topic()**](data_access_description#citros_data_analysis.data_access.CitrosDB.topic), [**rid()**](#rid-constraints), [**sid()**](#sid-constraints), [**time()**](#time-constraints) and [**set_filter()**](#json-data-constraints) may be applied too to define constraints.
+Like in the case of [data querying](#data-access), such methods as [**topic()**](data_access_description.md#citros_data_analysis.data_access.CitrosDB.topic), [**rid()**](#rid-constraints), [**sid()**](#sid-constraints), [**time()**](#time-constraints) and [**set_filter()**](#json-data-constraints) may be applied too to define constraints.
 :::
 
 - Get the unique combination of "topic" and "type" and show it by **prettytable**:
@@ -916,15 +916,15 @@ result = citros.get_unique_values(column_names = ['type'],
                                   filter_by = {'topic': 'A', 'time': {'gt': 100, 'lte': 200}})
 ```
 :::note
-Constraints passed by `filter_by` will override those defined by [**topic()**](data_access_description#citros_data_analysis.data_access.CitrosDB.topic), [**rid()**](#rid-constraints), [**sid()**](#sid-constraints), [**time()**](#time-constraints) and [**set_filter()**](#json-data-constraints) methods.
+Constraints passed by `filter_by` will override those defined by [**topic()**](data_access_description.md#citros_data_analysis.data_access.CitrosDB.topic), [**rid()**](#rid-constraints), [**sid()**](#sid-constraints), [**time()**](#time-constraints) and [**set_filter()**](#json-data-constraints) methods.
 :::
 
 ### Maximum and minimum values
 
-To find the maximum and the minimum values of the `column_name` methods [**get_max_value(column_name)**](data_access_description#citros_data_analysis.data_access.CitrosDB.get_max_value) and [**get_min_value(column_name)**](data_access_description#citros_data_analysis.data_access.CitrosDB.get_min_value) are used.
+To find the maximum and the minimum values of the `column_name` methods [**get_max_value(column_name)**](data_access_description.md#citros_data_analysis.data_access.CitrosDB.get_max_value) and [**get_min_value(column_name)**](data_access_description.md#citros_data_analysis.data_access.CitrosDB.get_min_value) are used.
 
 :::note
-Use [**topic()**](data_access_description#citros_data_analysis.data_access.CitrosDB.topic), [**rid()**](#rid-constraints), [**sid()**](#sid-constraints), [**time()**](#time-constraints) and [**set_filter()**](#json-data-constraints) methods to apply constraints.
+Use [**topic()**](data_access_description.md#citros_data_analysis.data_access.CitrosDB.topic), [**rid()**](#rid-constraints), [**sid()**](#sid-constraints), [**time()**](#time-constraints) and [**set_filter()**](#json-data-constraints) methods to apply constraints.
 :::
 
 Find the maximum and the minimum values of the column 'rid' for topic 'A':
@@ -954,15 +954,15 @@ result_max = citros.get_max_value(column_name, filter_by = {'topic': 'A'})
 result_min = citros.get_min_value(column_name, filter_by = {'topic': 'A'})
 ```
 :::note
-Constraints passed by `filter_by` will override those defined by [**topic()**](data_access_description#citros_data_analysis.data_access.CitrosDB.topic), [**rid()**](#rid-constraints), [**sid()**](#sid-constraints), [**time()**](#time-constraints) and [**set_filter()**](#json-data-constraints) methods.
+Constraints passed by `filter_by` will override those defined by [**topic()**](data_access_description.md#citros_data_analysis.data_access.CitrosDB.topic), [**rid()**](#rid-constraints), [**sid()**](#sid-constraints), [**time()**](#time-constraints) and [**set_filter()**](#json-data-constraints) methods.
 :::
 
 ### Number of messages
 
-To calculate the number of messages in the column `column_name` method [**get_counts(column_name, group_by = None)**](data_access_description#citros_data_analysis.data_access.CitrosDB.get_counts) is used.
+To calculate the number of messages in the column `column_name` method [**get_counts(column_name, group_by = None)**](data_access_description.md#citros_data_analysis.data_access.CitrosDB.get_counts) is used.
 
 :::note
-Methods [**topic()**](data_access_description#citros_data_analysis.data_access.CitrosDB.topic), [**rid()**](#rid-constraints), [**sid()**](#sid-constraints), [**time()**](#time-constraints) and [**set_filter()**](#json-data-constraints) may be used to apply constraints.
+Methods [**topic()**](data_access_description.md#citros_data_analysis.data_access.CitrosDB.topic), [**rid()**](#rid-constraints), [**sid()**](#sid-constraints), [**time()**](#time-constraints) and [**set_filter()**](#json-data-constraints) may be used to apply constraints.
 :::
 
 Let's find the number of the rows in column "rid", for messages which meet the following requirements: "type" is 'a' or 'b' and "time" <= 150. If we would like to see counts for each "type" separately, `group_by` argument may be used:
@@ -1003,15 +1003,15 @@ counts = citros.get_counts(column_name,
 ```
 
 :::note
-Constraints passed by `filter_by` will override those defined by [**topic()**](data_access_description#citros_data_analysis.data_access.CitrosDB.topic), [**rid()**](#rid-constraints), [**sid()**](#sid-constraints), [**time()**](#time-constraints) and [**set_filter()**](#json-data-constraints) methods.
+Constraints passed by `filter_by` will override those defined by [**topic()**](data_access_description.md#citros_data_analysis.data_access.CitrosDB.topic), [**rid()**](#rid-constraints), [**sid()**](#sid-constraints), [**time()**](#time-constraints) and [**set_filter()**](#json-data-constraints) methods.
 :::
 
 ### Number of the unique values
 
-To see the number of the unique values, the method [**get_unique_counts(column_name, group_by = None)**](data_access_description#citros_data_analysis.data_access.CitrosDB.get_unique_counts) is used.
+To see the number of the unique values, the method [**get_unique_counts(column_name, group_by = None)**](data_access_description.md#citros_data_analysis.data_access.CitrosDB.get_unique_counts) is used.
 
 :::note
-[**topic()**](data_access_description#citros_data_analysis.data_access.CitrosDB.topic), [**rid()**](#rid-constraints), [**sid()**](#sid-constraints), [**time()**](#time-constraints) and [**set_filter()**](#json-data-constraints) methods are used to define constraints.
+[**topic()**](data_access_description.md#citros_data_analysis.data_access.CitrosDB.topic), [**rid()**](#rid-constraints), [**sid()**](#sid-constraints), [**time()**](#time-constraints) and [**set_filter()**](#json-data-constraints) methods are used to define constraints.
 :::
 
 Let's find the number of unique values in column "rid", for messages, which meet the following requirements: "type" is 'a' or 'b' and "time" <= 150. To see counts for each "type" separately, `group_by` argument may be used:
@@ -1052,5 +1052,5 @@ counts = citros.get_unique_counts(column_name, group_by = ['type'], filter_by = 
 ```
 
 :::note
-Constraints passed by `filter_by` will override those defined by [**topic()**](data_access_description#citros_data_analysis.data_access.CitrosDB.topic), [**rid()**](#rid-constraints), [**sid()**](#sid-constraints), [**time()**](#time-constraints) and [**set_filter()**](#json-data-constraints) methods.
+Constraints passed by `filter_by` will override those defined by [**topic()**](data_access_description.md#citros_data_analysis.data_access.CitrosDB.topic), [**rid()**](#rid-constraints), [**sid()**](#sid-constraints), [**time()**](#time-constraints) and [**set_filter()**](#json-data-constraints) methods.
 :::
