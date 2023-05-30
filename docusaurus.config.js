@@ -75,6 +75,7 @@ const config = {
         path: 'docs-citros',
         routeBasePath: 'docs-citros',
         sidebarPath: require.resolve('./sidebarsCitros.js'),
+        // includeCurrentVersion: false,
       }, 
     ],
     [
@@ -84,7 +85,7 @@ const config = {
         path: 'docs-cli',
         routeBasePath: 'docs-cli',
         sidebarPath: require.resolve('./sidebarsCLI.js'),
-        includeCurrentVersion: false
+        // includeCurrentVersion: false,
       }, 
     ],
     [
@@ -94,6 +95,7 @@ const config = {
         path: 'docs-data-analysis',
         routeBasePath: 'docs-data-analysis',
         sidebarPath: require.resolve('./sidebarsDataAnalysis.js'),
+        // includeCurrentVersion: false,
       }, 
     ],
   ],

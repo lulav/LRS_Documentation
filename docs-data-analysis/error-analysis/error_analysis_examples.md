@@ -8,7 +8,7 @@ sidebar_position: 1
 
 # Error analysis
 
-For performing error analysis module [error_analysis](error_analysis_description) is used. To download module:
+For performing error analysis module [error_analysis](error_analysis_description.md) is used. To download module:
 
 ```python
 from citros_data_analysis import error_analysis as analysis
@@ -76,7 +76,7 @@ Also, different constraints may be applied to query, see [examples of data_acces
 
 ### **CitrosData** object
 
-To perform data analysis the [**CitrosData**](error_analysis_description#citros_data_analysis.error_analysis.CitrosData) object is used.
+To perform data analysis the [**CitrosData**](error_analysis_description.md#citros_data_analysis.error_analysis.CitrosData) object is used.
 Say, we would like to investigate the 'x' vector and its behaviour depending on the time. Let's query data:
 ```python
 df = citros.topic('A').data(['data.x', 'data.time'])
@@ -92,7 +92,7 @@ print(df)
 ...|...|...|...|...|...|...|...
 </details>
 
-[**CitrosData**](error_analysis_description#citros_data_analysis.error_analysis.CitrosData) object has two main attributes - 'data' - the depending variables whose behavior we would like to study, and all other additional columns - 'addData'. It is possible to specify which column(s) to treat as data by `data_label`. You may also specify `type_name` and `units` of the data to make future plots more informative.
+[**CitrosData**](error_analysis_description.md#citros_data_analysis.error_analysis.CitrosData) object has two main attributes - 'data' - the depending variables whose behavior we would like to study, and all other additional columns - 'addData'. It is possible to specify which column(s) to treat as data by `data_label`. You may also specify `type_name` and `units` of the data to make future plots more informative.
 
 ```python
 dataset = analysis.CitrosData(df,
@@ -100,7 +100,7 @@ dataset = analysis.CitrosData(df,
                               type_name = 'x',
                               units = 'm')
 ```
-When [**CitrosData**](error_analysis_description#citros_data_analysis.error_analysis.CitrosData) object is created, it will turn all dicts or lists, if there were any in **df** rows, into separate columns and store them in 'data' attribute as a [**DataFrame**](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.html):
+When [**CitrosData**](error_analysis_description.md#citros_data_analysis.error_analysis.CitrosData) object is created, it will turn all dicts or lists, if there were any in **df** rows, into separate columns and store them in 'data' attribute as a [**DataFrame**](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.html):
 
 ```python
 print(dataset.data)
@@ -130,7 +130,7 @@ print(dataset.addData)
 ...|...|...|...|...|...|...
 </details>
 
-It is possible to turn data of **CitrosData** object back to pandas.DataFrame. Method [**to_pandas()**](error_analysis_description#citros_data_analysis.error_analysis.CitrosData.to_pandas) concatenate 'data' and 'addData' attributes and return the result table as a pandas.DataFrame:
+It is possible to turn data of **CitrosData** object back to pandas.DataFrame. Method [**to_pandas()**](error_analysis_description.md#citros_data_analysis.error_analysis.CitrosData.to_pandas) concatenate 'data' and 'addData' attributes and return the result table as a pandas.DataFrame:
 
 ```python
 F = dataset.to_pandas()
@@ -146,7 +146,7 @@ F = dataset.to_pandas()
 </details>
 
 ### Bin data
-Let's choose one of the parameter, say 'data.time', divide it into `n_bins` intervals and assign index to each of the interval. Then let's group values of the 'x' vector from the [previous example](#citrosdata-object) according to this binning and calculate the mean values of 'x' for the each group. This procedure may be done by function [**bin_data()**](error_analysis_description#citros_data_analysis.error_analysis.CitrosData.bin_data). To see the histogram and control number of counts falling in each bin, pass `show_fig` = True:
+Let's choose one of the parameter, say 'data.time', divide it into `n_bins` intervals and assign index to each of the interval. Then let's group values of the 'x' vector from the [previous example](#citrosdata-object) according to this binning and calculate the mean values of 'x' for the each group. This procedure may be done by function [**bin_data()**](error_analysis_description.md#citros_data_analysis.error_analysis.CitrosData.bin_data). To see the histogram and control number of counts falling in each bin, pass `show_fig` = True:
 
 ```python
 db_bin = dataset.bin_data(n_bins = 50,
@@ -159,7 +159,7 @@ db_bin = dataset.bin_data(n_bins = 50,
 ![fig4](img/fig4.png "Fig4")
 </details>
 
-The result is a [**CitrosData**](error_analysis_description#citros_data_analysis.error_analysis.CitrosData) object too, whose `data` and `addData` attributes have two levels of indexes - the new obtained after binning indexes and 'sid'. Mean values of the vector 'x' are stored in 'data' attribute and values of the bin centers are stored in 'addData' attribute.
+The result is a [**CitrosData**](error_analysis_description.md#citros_data_analysis.error_analysis.CitrosData) object too, whose `data` and `addData` attributes have two levels of indexes - the new obtained after binning indexes and 'sid'. Mean values of the vector 'x' are stored in 'data' attribute and values of the bin centers are stored in 'addData' attribute.
 
 ```python
 print(db_bin.data)
@@ -197,7 +197,7 @@ print(db_bin.addData)
 </details>
 
 ### Scale data
-Another approach besides from binning is to scale parameter to [0,1] interval and interpolate data on this new interval with equally spaced points. Data of different 'sid' values processed independently. The function to perform this is [**scale_data**](error_analysis_description#citros_data_analysis.error_analysis.CitrosData.scale_data). It's syntax is pretty similar to [**bin_data()**](#bin-data):
+Another approach besides from binning is to scale parameter to [0,1] interval and interpolate data on this new interval with equally spaced points. Data of different 'sid' values processed independently. The function to perform this is [**scale_data**](error_analysis_description.md#citros_data_analysis.error_analysis.CitrosData.scale_data). It's syntax is pretty similar to [**bin_data()**](#bin-data):
 
 ```python
 db_sc = dataset.scale_data(n_points = 50,
@@ -253,7 +253,7 @@ As previously in the case of [**bin_data()**](#bin-data) method, to controll if 
 #### Get statistics
 
 Now, when we bin or scale data over one of the independent parameter and set new indices according to these procedures, we are able to study statistics for each of these indices.
-[**get_statistics()**](error_analysis_description#citros_data_analysis.error_analysis.CitrosData.get_statistics) method is dedicated to do it:
+[**get_statistics()**](error_analysis_description.md#citros_data_analysis.error_analysis.CitrosData.get_statistics) method is dedicated to do it:
 
 ```python
 stat = db_sc.get_statistics()
@@ -294,7 +294,7 @@ array([4.11865674e-02, 4.21584313e-02, 6.96475242e+01])
 
 #### Plot statistics
 
-To visualize statistics [**show_statistics()**](error_analysis_description#citros_data_analysis.error_analysis.CitrosData.show_statistics) function is used. It plots values from `data` attribute vs. independent parameter for each of the sid, the mean value over all sids and 3 $\sigma$ interval. If 'data' has several components, like in the example above ('x_1', 'x_1', 'x_3'), it makes separate plots for each of the component: 
+To visualize statistics [**show_statistics()**](error_analysis_description.md#citros_data_analysis.error_analysis.CitrosData.show_statistics) function is used. It plots values from `data` attribute vs. independent parameter for each of the sid, the mean value over all sids and 3 $\sigma$ interval. If 'data' has several components, like in the example above ('x_1', 'x_1', 'x_3'), it makes separate plots for each of the component: 
 
 ```python
 db_sc.show_statistics()
@@ -309,7 +309,7 @@ To study in details the features at the exact 'data.time' value see about [**sho
 
 ## Correlation
 
-Function [**show_correlation()**](error_analysis_description#citros_data_analysis.error_analysis.CitrosData.show_correlation) plots correlation between two variables for the exact index `slice_id`. Applying it to the previous example for the time_id = 0:
+Function [**show_correlation()**](error_analysis_description.md#citros_data_analysis.error_analysis.CitrosData.show_correlation) plots correlation between two variables for the exact index `slice_id`. Applying it to the previous example for the time_id = 0:
 ```python
 db_sc.show_correlation(x_col = 'data.x.x_1',
                        y_col = 'data.x.x_2',
@@ -385,7 +385,7 @@ slice_val_2 = 0.684
 </details>
 
 ## Regression
-Different input parameters may vary the output, and to predict how the parameter affects the result, regressions are used. By now, three methods of regression are supported: polinomial regression ('poly'), simple neural net regression ('neural_net') and gaussian mixture model ('gmm'). To apply regression analysis, we need to construct [**CitrosDataArray**](error_analysis_description#citros_data_analysis.error_analysis.CitrosDataArray) object, that stores [**CitrosData**](#citrosdata-object) objects with different input parameters.
+Different input parameters may vary the output, and to predict how the parameter affects the result, regressions are used. By now, three methods of regression are supported: polinomial regression ('poly'), simple neural net regression ('neural_net') and gaussian mixture model ('gmm'). To apply regression analysis, we need to construct [**CitrosDataArray**](error_analysis_description.md#citros_data_analysis.error_analysis.CitrosDataArray) object, that stores [**CitrosData**](#citrosdata-object) objects with different input parameters.
 
 ```python
 db_array = analysis.CitrosDataArray()
@@ -398,7 +398,7 @@ Let's say for the topic 'A' we have data for four different values of the parame
 
 [-1.5, 0, 2.5, 4]
 ```
-Now let's query data for each of these parameter values, set it as parameter, scale data over 'data.time' and put to [**CitrosDataArray**](error_analysis_description#citros_data_analysis.error_analysis.CitrosDataArray):
+Now let's query data for each of these parameter values, set it as parameter, scale data over 'data.time' and put to [**CitrosDataArray**](error_analysis_description.md#citros_data_analysis.error_analysis.CitrosDataArray):
 
 ```python
 for t in list_t:
@@ -433,7 +433,7 @@ dataset = analysis.CitrosData(df,
                               units = 'm', 
                               parameters = {'data.t': t})
 ```
-or set parameters manualy by [`set_parameter(`](error_analysis_description#citros_data_analysis.error_analysis.CitrosData.set_parameter) method. It accepts either setting parameter one by one by `key` and `value`:
+or set parameters manualy by [`set_parameter(`](error_analysis_description.md#citros_data_analysis.error_analysis.CitrosData.set_parameter) method. It accepts either setting parameter one by one by `key` and `value`:
 ```python
 db_sc.set_parameter(key = 'data.t', value = 0)
 ```
@@ -466,7 +466,7 @@ It is a sine function with some noise added, biased by 'data.t' value.
 ![fig11](img/fig11.png "Fig11")
 </details>
 
-Let's find the solution for the case 'data.t' = 1 by [**get_prediction()**](error_analysis_description#citros_data_analysis.error_analysis.CitrosDataArray.get_prediction) method. Parameter label (in our case 'data.t') and value (1), for which the prediction is desired, should be passed as `dict` by `parameters` argument. Method of regression calculation ('poly' for polinomial regression, simple  'neural_net' for neural net regression and 'gmm' for gaussian mixture model) should be stated by `method` argument.
+Let's find the solution for the case 'data.t' = 1 by [**get_prediction()**](error_analysis_description.md#citros_data_analysis.error_analysis.CitrosDataArray.get_prediction) method. Parameter label (in our case 'data.t') and value (1), for which the prediction is desired, should be passed as `dict` by `parameters` argument. Method of regression calculation ('poly' for polinomial regression, simple  'neural_net' for neural net regression and 'gmm' for gaussian mixture model) should be stated by `method` argument.
 
 ### Polynomial regression
 
