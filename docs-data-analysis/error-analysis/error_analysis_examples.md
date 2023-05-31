@@ -70,7 +70,7 @@ to query 'x_1', 'x_2', 'height' and values from the first position of 'y' json-a
 df = citros.topic('A').data(['data.x.x_1', 'data.x.x_2', 'data.height', 'data.y[0]'])
 ```
 
-Also, different constraints may be applied to query, see [examples of data_access module](../data-access/data_access_examples).
+Also, different constraints may be applied to query, see [examples of data_access module](../data-access/data_access_examples.md).
 
 ## Bin, interpolate and calculate statistics
 
@@ -391,7 +391,7 @@ Different input parameters may vary the output, and to predict how the parameter
 db_array = analysis.CitrosDataArray()
 ```
 
-Let's say for the topic 'A' we have data for four different values of the parameter 't', that is written in json-data column 'data.t'. First, let's get all possible 'data.t' values for topic 'A' (see [examples](../data-access/data_access_examples) of [data_access](../data-access/data_access_description) module):
+Let's say for the topic 'A' we have data for four different values of the parameter 't', that is written in json-data column 'data.t'. First, let's get all possible 'data.t' values for topic 'A' (see [examples](../data-access/data_access_examples.md) of [data_access](../data-access/data_access_description.md) module):
 ```python
 >>> list_t = citros.get_unique_values('data.t', filter_by = {'topic' : 'A'})
 >>> print(list_t)

@@ -8,6 +8,14 @@ hide_title: true
 
 Some words about citros ...
 
+<ThemedImage
+  alt="cli image"
+  sources={{
+    light: useBaseUrl('/img/citros_light.png'),
+    dark: useBaseUrl('/img/citros_dark.png'),
+  }}
+/>
+
 ### Logging in
 
 To log in to Citros ...
@@ -27,8 +35,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 <ThemedImage
   alt="cli image"
   sources={{
-    light: useBaseUrl('/img/cli_light.png'),
-    dark: useBaseUrl('/img/cli_dark.png'),
+    light: useBaseUrl('/img/cli_new.png'),
+    dark: useBaseUrl('/img/cli_new.png'),
   }}
 />
 

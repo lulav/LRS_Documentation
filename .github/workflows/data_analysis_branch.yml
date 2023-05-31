@@ -38,3 +38,9 @@ jobs:
 
       - name: delete branch
         run: git push origin --delete ${{ env.branch_name }}
+
+      - name: Repository Dispatch
+        # if: steps.verify_diff.outputs.changed == 'true'
+        uses: peter-evans/repository-dispatch@v2
+        with:
+          event-type: event_main_push
