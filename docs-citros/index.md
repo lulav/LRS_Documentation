@@ -4,5 +4,5 @@ sidebar_label: 'Citros guide book'
 hide_title: true
 ---
 
-## About Citros
+## About CITROS
 ![Citros logo](/img/citros.png)

@@ -131,7 +131,7 @@ const config = {
           },
           {
             to: '/docs-citros',    // ./docs-api/Intro.md
-            label: 'Citros',
+            label: 'Web',
             position: 'left',
             activeBaseRegex: `/docs-citros/`,
           },
@@ -184,7 +184,7 @@ const config = {
                 to: '/docs',
               },
               {
-                label: 'Citros',
+                label: 'Web',
                 to: '/docs-citros',
               },
               {
