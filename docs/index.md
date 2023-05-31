@@ -8,6 +8,9 @@ hide_title: true
 
 Some words about citros ...
 
+import ThemedImage from '@theme/ThemedImage';
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 <ThemedImage
   alt="cli image"
   sources={{
@@ -28,9 +31,6 @@ See more in a [Citros guide book](/docs-citros)
 
 Command line interface and how to use it.
 Take a look at the comprehensive guide [here](/docs-cli).
-
-import ThemedImage from '@theme/ThemedImage';
-import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <ThemedImage
   alt="cli image"
