@@ -91,9 +91,9 @@ const config = {
     [
       '@docusaurus/plugin-content-docs',
       {
-        id: 'docs-data-analysis',
-        path: 'docs-data-analysis',
-        routeBasePath: 'docs-data-analysis',
+        id: 'docs_data_analysis',
+        path: 'docs_data_analysis',
+        routeBasePath: 'docs_data_analysis',
         sidebarPath: require.resolve('./sidebarsDataAnalysis.js'),
         // includeCurrentVersion: false,
       }, 
@@ -144,10 +144,10 @@ const config = {
             // docsPluginId: 'docs-cli'
           },
           {
-            to: '/docs-data-analysis',    // ./docs-api/Intro.md
+            to: '/docs_data_analysis',    // ./docs-api/Intro.md
             label: 'Data analysis',
             position: 'left',
-            activeBaseRegex: `/docs-data-analysis/`,
+            activeBaseRegex: `/docs_data_analysis/`,
           },
           {to: '/blog', label: 'Blog', position: 'left' },
           {
@@ -167,7 +167,7 @@ const config = {
           {
             type: 'docsVersionDropdown',
             position: 'right',
-            docsPluginId: 'docs-data-analysis',
+            docsPluginId: 'docs_data_analysis',
             // dropdownItemsAfter: [{to: '/versions', label: 'All versions'}],
             // dropdownActiveClassDisabled: true,
           },
@@ -193,7 +193,7 @@ const config = {
               },
               {
                 label: 'Data analysis',
-                to: '/docs-data-analysis',
+                to: '/docs_data_analysis',
               },
             ],
           },
