@@ -8,7 +8,7 @@ description: Learn about command line interface
 ## CLI
 
 Command line interface and how to use it.
-Take a look at the comprehensive guide [here](/docs-cli).
+Take a look at the comprehensive guide [here](/docs_cli).
 
 import ThemedImage from '@theme/ThemedImage';
 import useBaseUrl from '@docusaurus/useBaseUrl';

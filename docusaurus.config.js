@@ -71,9 +71,9 @@ const config = {
     [
       '@docusaurus/plugin-content-docs',
       {
-        id: 'docs-citros',
-        path: 'docs-citros',
-        routeBasePath: 'docs-citros',
+        id: 'docs_citros_web',
+        path: 'docs_citros_web',
+        routeBasePath: 'docs_citros_web',
         sidebarPath: require.resolve('./sidebarsCitros.js'),
         // includeCurrentVersion: false,
       }, 
@@ -81,9 +81,9 @@ const config = {
     [
       '@docusaurus/plugin-content-docs',
       {
-        id: 'docs-cli',
-        path: 'docs-cli',
-        routeBasePath: 'docs-cli',
+        id: 'docs_cli',
+        path: 'docs_cli',
+        routeBasePath: 'docs_cli',
         sidebarPath: require.resolve('./sidebarsCLI.js'),
         // includeCurrentVersion: false,
       }, 
@@ -130,18 +130,18 @@ const config = {
             activeBaseRegex: `/docs/`,
           },
           {
-            to: '/docs-citros',    // ./docs-api/Intro.md
+            to: '/docs_citros_web',    // ./docs-api/Intro.md
             label: 'Web',
             position: 'left',
-            activeBaseRegex: `/docs-citros/`,
+            activeBaseRegex: `/docs_citros_web/`,
           },
           {
-            to: '/docs-cli',    // ./docs-api/Intro.md
+            to: '/docs_cli',    // ./docs-api/Intro.md
             label: 'CLI',
             position: 'left',
-            activeBaseRegex: `/docs-cli/`,
+            activeBaseRegex: `/docs_cli/`,
             // type: 'docsVersionDropdown',
-            // docsPluginId: 'docs-cli'
+            // docsPluginId: 'docs_cli'
           },
           {
             to: '/docs_data_analysis',    // ./docs-api/Intro.md
@@ -153,14 +153,14 @@ const config = {
           {
             type: 'docsVersionDropdown',
             position: 'right',
-            docsPluginId: 'docs-cli',
+            docsPluginId: 'docs_cli',
             // dropdownItemsAfter: [{to: '/versions', label: 'All versions'}],
             // dropdownActiveClassDisabled: true,
           },
           {
             type: 'docsVersionDropdown',
             position: 'right',
-            docsPluginId: 'docs-citros',
+            docsPluginId: 'docs_citros_web',
             // dropdownItemsAfter: [{to: '/versions', label: 'All versions'}],
             // dropdownActiveClassDisabled: true,
           },
@@ -185,11 +185,11 @@ const config = {
               },
               {
                 label: 'Web',
-                to: '/docs-citros',
+                to: '/docs_citros_web',
               },
               {
                 label: 'CLI',
-                to: '/docs-cli',
+                to: '/docs_cli',
               },
               {
                 label: 'Data analysis',

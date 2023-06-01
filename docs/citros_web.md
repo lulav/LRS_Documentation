@@ -25,4 +25,4 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 To log in to CITROS ...
 
-See more in a [Citros guide book](/docs-citros).
+See more in a [Citros guide book](/docs_citros_web).
