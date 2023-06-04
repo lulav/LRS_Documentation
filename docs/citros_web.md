@@ -3,8 +3,11 @@ sidebar_position: 2
 sidebar_label: 'Web'
 hide_title: true
 description: Learn about CITROS web
-image: static/img/img_data_access_light.png
+image: "/img/citros_web_dark.png"
 ---
+<!-- <head>
+  <meta name="image_link" content="/img/citros_web_dark.png" />
+</head> -->
 
 ## CITROS web
 
@@ -19,6 +22,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
     light: useBaseUrl('/img/citros_web_light.png'),
     dark: useBaseUrl('/img/citros_web_dark.png'),
   }}
+  
 />
 
 ### Logging in

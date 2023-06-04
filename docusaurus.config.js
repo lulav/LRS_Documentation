@@ -173,42 +173,42 @@ const config = {
           },
         ],
       },
-      footer: {
-        style: 'dark',
-        links: [
-          {
-            title: 'Tutorials',
-            items: [
-              {
-                label: 'Getting started',
-                to: '/docs',
-              },
-              {
-                label: 'Web',
-                to: '/docs_citros_web',
-              },
-              {
-                label: 'CLI',
-                to: '/docs_cli',
-              },
-              {
-                label: 'Data analysis',
-                to: '/docs_data_analysis',
-              },
-            ],
-          },
-          {
-            title: 'More',
-            items: [
-              {
-                label: 'Blog',
-                to: '/blog',
-              },
-            ],
-          },
-        ],
-        copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
-      },
+      // footer: {
+      //   style: 'dark',
+      //   links: [
+      //     {
+      //       title: 'Tutorials',
+      //       items: [
+      //         {
+      //           label: 'Getting started',
+      //           to: '/docs',
+      //         },
+      //         {
+      //           label: 'Web',
+      //           to: '/docs_citros_web',
+      //         },
+      //         {
+      //           label: 'CLI',
+      //           to: '/docs_cli',
+      //         },
+      //         {
+      //           label: 'Data analysis',
+      //           to: '/docs_data_analysis',
+      //         },
+      //       ],
+      //     },
+      //     {
+      //       title: 'More',
+      //       items: [
+      //         {
+      //           label: 'Blog',
+      //           to: '/blog',
+      //         },
+      //       ],
+      //     },
+      //   ],
+      //   copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+      // },
       prism: {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,

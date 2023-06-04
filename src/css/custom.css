@@ -67,5 +67,6 @@
 }
 
 .card {
-  background-color: var(--card-bg-color);/* Adjust the color as needed */
+  background-color: var(--card-bg-color); /*Adjust the color as needed */
+  /* background-image: url("https://www.alleycat.org/wp-content/uploads/2019/03/FELV-cat.jpg") */
 }
