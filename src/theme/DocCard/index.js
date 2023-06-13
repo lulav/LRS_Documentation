@@ -78,7 +78,7 @@ function CardLink({item}) {
       title={item.label}
       description={item.description ?? doc?.description}
       // image={useBaseUrl("/img/citros_banner.png")} //works!
-      // image = {useBaseUrl(item.image)}
+      image = {useBaseUrl(item.image) ?? useBaseUrl(doc?.image)}
       // image={imageUrl}
     />
   );

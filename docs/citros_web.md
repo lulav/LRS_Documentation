@@ -5,9 +5,6 @@ hide_title: true
 description: Learn about CITROS web
 image: "/img/citros_web_dark.png"
 ---
-<!-- <head>
-  <meta name="image_link" content="/img/citros_web_dark.png" />
-</head> -->
 
 ## CITROS web
 
