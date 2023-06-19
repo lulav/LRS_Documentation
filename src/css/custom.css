@@ -15,6 +15,10 @@
   --ifm-color-primary-lighter: #01c562;
   --ifm-color-primary-lightest: #01de6e;
 
+  /* --ifm-color-info-contrast-background: #fdf8ee; for description 
+  --ifm-color-info-dark: #4cd480; */
+   /* --ifm-color-info-contrast-foreground:  */
+
   --card-bg-color: #f2f3f5;
   --ifm-menu-color-background-active: #ebf8f2;
   --ifm-menu-color-active: #0aae5c;
@@ -30,6 +34,9 @@
   --ifm-button-background-color: #da5d47;
   --ifm-footer-background-color: #4413d4; 
   --ifm-footer-color: #4413d4;*/
+  /* --ifm-color-info-contrast-background: #474019; for description 
+  --ifm-color-info-dark: #4cd465; */
+
   --card-bg-color: #212b36;
   background-color: #161c24;
   --ifm-navbar-background-color: #212b36;
@@ -45,6 +52,8 @@
   --ifm-color-primary-lighter: #01c562;
   --ifm-color-primary-lightest: #01de6e;
 
+   /* --ifm-color-info-contrast-foreground:   */
+
   /* --ifm-color-primary: #25c2a0;
   --ifm-color-primary-dark: #21af90;
   --ifm-color-primary-darker: #1fa588;
@@ -53,7 +62,7 @@
   --ifm-color-primary-lighter: #32d8b4;
   --ifm-color-primary-lightest: #4fddbf;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3); */
-  --docusaurus-highlighted-code-line-bg: rgba(242, 2, 2, 0.844);
+  /* --docusaurus-highlighted-code-line-bg: rgba(242, 2, 2, 0.844); */
 }
 
 .footer--dark {
@@ -67,5 +76,17 @@
 }
 
 .card {
-  background-color: var(--card-bg-color);/* Adjust the color as needed */
+  background-color: var(--card-bg-color); /*Adjust the color as needed */
+  /* background-image: url("https://www.alleycat.org/wp-content/uploads/2019/03/FELV-cat.jpg") */
 }
+
+/*.alert--info {
+   --ifm-alert-background-color: var( --ifm-color-info-contrast-background );
+  --ifm-alert-background-color-highlight: rgba(236, 170, 84, 0.15);
+  --ifm-alert-foreground-color: var( --ifm-color-info-contrast-foreground ); 
+  --ifm-alert-border-color: var(--ifm-color-info-dark);
+}*/
+
+/* html[data-theme='dark'] {
+  --ifm-color-info-contrast-background: #6a6441;
+} */
