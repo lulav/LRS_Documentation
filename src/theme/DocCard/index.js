@@ -20,7 +20,7 @@ function CardContainer({href, children}) {
     </Link>
   );
 }
-function CardLayout({href, icon, title, description, image}) {
+function CardLayout({href, icon, title, description}) {
   return (
     <CardContainer href={href}>
       <h2 className={clsx('text--truncate', styles.cardTitle)} title={title}>
@@ -33,9 +33,6 @@ function CardLayout({href, icon, title, description, image}) {
           {description}
         </p>
       )}
-      <div>
-        <img src={image} alt="image" width="100" height="70"/>
-      </div>
     </CardContainer>
   );
 }
@@ -78,7 +75,7 @@ function CardLink({item}) {
       title={item.label}
       description={item.description ?? doc?.description}
       // image={useBaseUrl("/img/citros_banner.png")} //works!
-      image = {useBaseUrl(item.image) ?? useBaseUrl(doc?.image)}
+      // image = {useBaseUrl(item.image) ?? useBaseUrl(doc?.image)}
       // image={imageUrl}
     />
   );
