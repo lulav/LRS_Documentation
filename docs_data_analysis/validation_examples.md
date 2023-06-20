@@ -228,3 +228,11 @@ log.print()
            19: 1.0
           }
     - 'nan_std' - if some of the standard deviations points could not be calculated (for example, number of simulations for this index is less then two, that may occurs if the method of data assignment `method` = 'bin' has been chosen), their indexes and values of the x axis will be stored in the same way, as in the section 'failed'.
+
+## Mean test
+
+[**mean_test()**](documentation/validation.md#method-mean_test-citros_data_analysisvalidationvalidationmean_test) test whether `n_std`-standard deviation boundary is within the given limits, where boundary is defined as mean value $\pm$ `n_std` * standard deviation. 
+
+```python
+log, table, fig = V.std_bound_test(limits = [0.25, 0.3, [-300, 400]], n_std = 3)
+```
