@@ -10,6 +10,8 @@ This package is a comprehensive solution for data query, analysis and visualizat
 
 The package is devided into two modules: [Data access](#data-access) and [Error analysis](#error-analysis).
 
+---
+
 ### Data access
 
 The first module, [**data_access**](documentation/data_access.md), is designed to communicate with the database and obtain information about the selected data packages.
@@ -25,6 +27,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
     dark: useBaseUrl('/img/img_data_access_dark.png'),
   }}
 />
+
+---
 
 ### Error analysis
 
