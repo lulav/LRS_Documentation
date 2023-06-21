@@ -8,7 +8,7 @@ hide_title: true
 
 This package is a comprehensive solution for data query, analysis and visualization. With its extensive features, you can quickly and easily extract valuable insights from your data.
 
-The package is devided into two modules: [Data access](#data-access) and [Error analysis](#error-analysis).
+The package is devided into three modules: [Data access](#data-access), [Error analysis](#error-analysis) and [Validation](#validation).
 
 ---
 
@@ -41,3 +41,9 @@ Second module [**error_analysis**](documentation/error_analysis.md) containes a 
     dark: useBaseUrl('/img/img_error_analysis_dark.png'),
   }}
 />
+
+---
+
+### Validation
+
+Module [**validation**](documentation/validation.md) provides methods to tests the results of the simulations. By utilizing the 'validation' module, you can assess the compliance of data against various criteria, facilitating the analysis and evaluation of simulation results. To learn more, check the [examples](validation_examples.md).

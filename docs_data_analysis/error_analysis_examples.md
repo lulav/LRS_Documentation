@@ -144,7 +144,13 @@ F = dataset.to_pandas()
 ...|...|...|...|...|...|...|...|...|...
 </details>
 
-### Bin data
+### Assigning indexes
+
+To analyze data of multiple simulations it is necessary to establish a correspondence between the values of the data from these different simulations. One approach is to select an independent variable, define a scale that is common to all simulations and assign indexes on this scale. Then, the values of variables from different simulations will be connected by this independent variable.
+
+There are two ways to perform index assignment: divide the independent variable into N ranges, assign an index to each interval, and calculate the averages of the data values for each simulation in each range, or scale the independent variable to the interval [0,1], define a new range of N points uniformly distributed from 0 to 1, and interpolate data points over this new interval. The first approach corresponds to the [**bin_data()**](#bin-data) method, while the second is implemented by the [**scale_data()**](#scale-data) method.
+
+#### Bin data
 Let's choose one of the parameter, say 'data.time', divide it into `n_bins` intervals and assign index to each of the interval. Then let's group values of the 'x' vector from the [previous example](#citrosdata-object) according to this binning and calculate the mean values of 'x' for the each group. This procedure may be done by function [**bin_data()**](documentation/error_analysis.md#citros_data_analysis.error_analysis.CitrosData.bin_data). To see the histogram and control number of counts falling in each bin, pass `show_fig` = True:
 
 ```python
@@ -195,7 +201,7 @@ print(db_bin.addData)
 |...	|...|	...
 </details>
 
-### Scale data
+#### Scale data
 Another approach besides from binning is to scale parameter to [0,1] interval and interpolate data on this new interval with equally spaced points. Data of different 'sid' values processed independently. The function to perform this is [**scale_data**](documentation/error_analysis.md#citros_data_analysis.error_analysis.CitrosData.scale_data). It's syntax is pretty similar to [**bin_data()**](#bin-data):
 
 ```python
