@@ -8,7 +8,7 @@ sidebar_position: 1
 
 # Validation
 
-The 'validation' module provides a set of tests check the simulation results. These tests include:
+The [**validation**](documentation/validation.md) module provides a set of tests check the simulation results. These tests include:
 
  - [**std_bound_test()**](documentation/validation.md#method-std_bound_test-citros_data_analysisvalidationvalidationstd_bound_test) - verifies whether the n-$\sigma$ standard deviation boundary falls within the specified limits;
 
@@ -24,6 +24,8 @@ Number and type of tests may be set by [**set_tests()**](documentation/validatio
 
 To connect to the database [**CitrosDB**](documentation/data_access.md#citros_data_analysis.data_access.CitrosDB) object is created:
 ```python
+from citros_data_analysis import data_access as da
+
 citros = da.CitrosDB()
 ```
 To learn more about connection parameters, see [examples of data_access module](data_access_examples.md#connection-to-the-database).
@@ -32,9 +34,9 @@ Let's assume, that data for topic 'A' looks like:
 
 ||sid	|rid	|time	|topic	|type	|data
 |--|--|--|--|--|--|--
-0	|1	|0	|0.313	|A	|a	|{'x': {'x_1': 0.0, 'x_2': 0.08, 'x_3': 154.47}, 'time': 10.0}
-1	|1	|1	|0.407	|A	|a	|{'x': {'x_1': 0.008, 'x_2': 0.08, 'x_3': 130.97}, 'time': 17.9}
-2	|1	|2	|0.951	|A	|a	|{'x': {'x_1': 0.016, 'x_2': 0.078, 'x_3': 117.66}, 'time': 20.3}
+0	|1	|0	|312751159	|A	|a	|{'x': {'x_1': 0.0, 'x_2': 0.08, 'x_3': 154.47}, 'time': 10.0}
+1	|1	|1	|407264008	|A	|a	|{'x': {'x_1': 0.008, 'x_2': 0.08, 'x_3': 130.97}, 'time': 17.9}
+2	|1	|2	|951279608	|A	|a	|{'x': {'x_1': 0.016, 'x_2': 0.078, 'x_3': 117.66}, 'time': 20.3}
 ...|...|...|...|...|...|...|
 
 A json-data column containes information about time and vector x, that has elements x_1, x_2 and x_3. Let's query these columns:
@@ -46,25 +48,35 @@ The output is a [**pandas.DataFrame**](https://pandas.pydata.org/docs/reference/
 
 ||sid	|rid	|time	|topic	|type	|data.x|	data.time
 |--|--|--|--|--|--|--|--|
-0	|1	|0	|0.313	|A	|a	|{'x_1': 0.0, 'x_2': 0.08, 'x_3': 154.47}	|10.0
-1	|1	|1	|0.407	|A	|a	|{'x_1': 0.008, 'x_2': 0.08, 'x_3': 130.97}	|17.9
-2	|1	|2	|0.951	|A	|a	|{'x_1': 0.016, 'x_2': 0.078, 'x_3': 117.66}	|20.3
+0	|1	|0	|312751159	|A	|a	|{'x_1': 0.0, 'x_2': 0.08, 'x_3': 154.47}	|10.0
+1	|1	|1	|407264008	|A	|a	|{'x_1': 0.008, 'x_2': 0.08, 'x_3': 130.97}	|17.9
+2	|1	|2	|951279608	|A	|a	|{'x_1': 0.016, 'x_2': 0.078, 'x_3': 117.66}	|20.3
 ...|...|...|...|...|...|...|...
 
-Analysis of data from multiple simulations may be performed if the correspondence between data values from different simulation is set. It may be done through an independent variable that is shared between simulations. Indexes are assigned based on this variable, connecting data values across simulations.
+Analysis of data from multiple simulations may be performed if the correspondence between data values from different simulation is set. It may be done through an independent variable that is shared between simulations. Indexes are assigned based on this variable, connecting data values across the simulations.
 
 There are two methods to handle index assignment:
 
  - to divides the independent variable into `num` ranges, assign an index to each interval, and calculate data value averages for each simulation within each range (see [**bin_data()**](documentation/error_analysis.md#method-bin_data-citros_data_analysiserror_analysiscitrosdatabin_data))
  - to scale for each simulation the independent variable to the interval [0,1], defines `num` uniformly distributed points from 0 to 1, and interpolates data points over this new interval (see [**scale_data()**](documentation/error_analysis.md#method-scale_data-citros_data_analysiserror_analysiscitrosdatascale_data)).
 
-This preparation may be done by creating [**Validation**](documentation/validation.md#class-validation-citros_data_analysisvalidationvalidation) object, that is able to store apply mentioned above approaches to assign indexes and calculate statistics over different simulations. Let's choose 'data.time' as an independent variable and use it to assign indexes and connect 'data.x' values of different simulations. The method of index setting is specified by `method`: 'scale' or 'bin', the number of points (bins) is passed by `num`:
+This preparation may be done by creating [**Validation**](documentation/validation.md#class-validation-citros_data_analysisvalidationvalidation) object, that is able to apply mentioned above approaches to assign indexes and to calculate statistics over different simulations. Let's choose 'data.time' as an independent variable and use it to assign indexes and connect 'data.x' values of different simulations. The method of index setting is specified by `method`: 'scale' or 'bin', the number of points (bins) is passed by `num`:
 
 ```python
+from citros_data_analysis import validation as va
+
 V = va.Validation(df, data_label = ['data.x'], param_label = 'data.time', 
                   method = 'scale', num = 20, units = 'm')
 ```
 `units` are specified to make plots more informative.
+
+If only some of the elements of the vector 'data.x' are needed, for example 'data.x.x_1' and 'data.x.x_2', they may be quered and passed to [**Validation**](documentation/validation.md#class-validation-citros_data_analysisvalidationvalidation) object as follows:
+
+```python
+df = citros.topic('A').data(['data.x.x_1', 'data.x.x_2', 'data.time'])
+V = va.Validation(df, data_label = ['data.x.x_1', 'data.x.x_2'], param_label = 'data.time', 
+                  method = 'scale', num = 20, units = 'm')
+```
 
 After initialisation, [**Validation**](documentation/validation.md#class-validation-citros_data_analysisvalidationvalidation) object stores statistics as a [**CitrosStat**](documentation/error_analysis.md#class-citrosstat-citros_data_analysiserror_analysiscitrosstat) in `stat` attribute. For example, to get mean values:
 
@@ -77,7 +89,7 @@ data.time_id
 2             0.056261     0.043401     33.128443
 ...           ...          ...          ...
 ```
-In the same it is possible to access scaled 'data.time' range (`V.stat.x`), standard deviation (`V.stat.sigma`) and covarian matrix (`V.stat.covar_matrix`).
+In the same way it is possible to access scaled 'data.time' range (`V.stat.x`), standard deviation (`V.stat.sigma`) and covarian matrix (`V.stat.covar_matrix`).
 
 ## Standard deviation boundary test
 
@@ -126,6 +138,8 @@ Let's inspect the output of the example above:
 fig.show()
 ```
 ![fig1](img/fig21.png "Fig1")
+
+It is evident that the 3-$\sigma$ standard deviation boundaries remain within the limits for the 'data.x.x_1' and 'data.x.x_2' values, while in case of the 'data.x.x_3' column, certain points exceed the given limit.
 
 ```python
 print(table)
@@ -288,6 +302,8 @@ fig.show()
 ```
 ![fig2](img/fig22.png "Fig2")
 
+As it may be seen, the black line that repressents the mean value remain within the limits for the 'data.x.x_1' and 'data.x.x_2' columns, while in case of the 'data.x.x_3' column only some points meets the given constraints.
+
 ```python
 print(table)
 ```
@@ -444,6 +460,8 @@ fig.show()
 ```
 ![fig3](img/fig23.png "Fig3")
 
+All points of 'data.x.x_1' and 'data.x.x_2' columns are within the set limits, while some points of the simulations for 'data.x.x_3' column do not satisfy the given constraints.
+
 ```python
 print(table)
 ```
@@ -500,13 +518,13 @@ log.print()
    },
    'failed': {
      1: {
-       6: 0.3157894736842105,
-       8: 0.42105263157894735,
-       12: 0.631578947368421,
-       17: 0.894736842105263
+       6: 0.316,
+       8: 0.421,
+       12: 0.632,
+       17: 0.895
      },
      3: {
-       5: 0.2631578947368421
+       5: 0.263
      }
    }
  }
@@ -620,6 +638,8 @@ The output of the example above:
 fig.show()
 ```
 ![fig4](img/fig24.png "Fig4")
+
+The norm, calculated for each simulation of the 'data.x.x_1' and 'data.x.x_2' columns are within the esteblished limits, while norm for simulation 1 and 3 of the 'data.x.x_3' column exceed the limit.
 
 ```python
 print(table)
@@ -773,5 +793,37 @@ flowchart TD
     'norm_Linf' : fig_norm
     }") -.- fig("fig_... - matplotlib.figure.Figure")
 ```
+For example, to get detailed information about the results of the norm test:
+
+```python
+>>> logs['norm_L2'].print()
+
+{
+ 'test_param': {
+   'limits': [0.3, 0.35, 450]
+ },
+ 'data.x.x_1': {
+   'passed': True,
+   'pass_rate': 1.0,
+...
+```
+To get table that specifies for each simulation whether the norm is less then the given limit:
+
+```python
+>>> print(tables['norm_L2'])
+     data.x.x_1  data.x.x_2  data.x.x_3
+sid                                    
+1          True        True       False
+2          True        True        True
+3          True        True       False
+```
+
+To get the corresponding figure:
+
+```python
+figs['norm_L2']
+```
+![fig4](img/fig24.png "Fig4")
 
 See [**std_bound_test()**](#standard-deviation-boundary-test), [**mean_test()**](#mean-value-test), [**sid_test()**](#simulation-limits-test) and [**norm_test()**](#norm-test) for the output detailes.
+

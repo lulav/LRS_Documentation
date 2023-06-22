@@ -186,7 +186,7 @@ const config = {
             position: 'right',
             docsPluginId: 'docs_data_analysis',
             // dropdownItemsAfter: [{to: '/versions', label: 'All versions'}],
-            dropdownActiveClassDisabled: true,
+            dropdownActiveClassDisabled: false
           },
         ],
       },

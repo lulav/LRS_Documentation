@@ -61,7 +61,7 @@ The data is stored in the *batches* as *messages*. Each batch contains the follo
 ||user\_id | sid | rid | time | topic | type| data |
 |--|--|--|--|--|--|--|--|
 |description |user name | simulation id| run id| ros time message | topic name| type name | json-format data|
-|type| uuid | int | int | int | str | str | json|
+|type| uuid | int | int | big int | str | str | jsonb|
 
 ### Batch size
 
@@ -127,7 +127,7 @@ If specific sid is set, [**citros.info()**](documentation/data_access.md#citros_
                * 'start_time': time when simulation started
                * 'end_time': time when simulation ended
                * 'duration': duration of the simalation process
-               * 'frequency': frequency of the simulation process
+               * 'frequency': frequency of the simulation process (in Hz)
 
 sid may be passed during [**CitrosDB** initialization](#connection-to-the-database) or by [**citros.sid()**](#sid-constraints) method.
 
@@ -148,16 +148,16 @@ To get information about data with sid = 1 or 2 and print it:
      'topics': {
        'A': {
          'message_count': 155,
-         'start_time': 0.313,
-         'end_time': 100.485,
-         'duration': 100.172,
+         'start_time': 312751159,
+         'end_time': 100484965889,
+         'duration': 100172214730,
          'frequency': 0.01
        },
        'B': {
          'message_count': 178,
-         'start_time': 0.345,
-         'end_time': 100.752,
-         'duration': 100.407,
+         'start_time': 344594155,
+         'end_time': 100752013600,
+         'duration': 100407419445,
          'frequency': 0.01
        },
        'C': {
@@ -435,10 +435,10 @@ citros.topic('B').rid(start = 10, count = 6).data('data.x.x_1')
 
 ### time constraints
 
-To apply constraints on time column, the [**time()**](documentation/data_access.md#citros_data_analysis.data_access.CitrosDB.time) method of the [**CitrosDB**](#connection-to-the-database) is used. It should be applied before [**data()**](documentation/data_access.md#citros_data_analysis.data_access.CitrosDB.data) method. [**time()**](documentation/data_access.md#citros_data_analysis.data_access.CitrosDB.time) method has `start`, `end` and  `duration` arguments to define the time limits (in seconds) of the query. Briefly, they set the following constraints on time: `start` <= time, time <= `end` and time < `start` + `duration`. `start`, `end` and  `duration` values must be integers.
+To apply constraints on time column, the [**time()**](documentation/data_access.md#citros_data_analysis.data_access.CitrosDB.time) method of the [**CitrosDB**](#connection-to-the-database) is used. It should be applied before [**data()**](documentation/data_access.md#citros_data_analysis.data_access.CitrosDB.data) method. [**time()**](documentation/data_access.md#citros_data_analysis.data_access.CitrosDB.time) method has `start`, `end` and  `duration` arguments to define the time limits (in nanoseconds) of the query. Briefly, they set the following constraints on time: `start` <= time, time <= `end` and time < `start` + `duration`. `start`, `end` and  `duration` values must be integers.
 
-Since time is always >= 0, the default `start` being equal 0 means no constraints. To set the upper limit in seconds for the time column, define `end` argument.
-For example, for querying json-daat column 'data.x.x_1' of the topic 'B' with time <= 100s:
+Since time is always >= 0, the default `start` being equal 0 means no constraints. To set the upper limit in nanoseconds for the time column, define `end` argument.
+For example, for querying json-daat column 'data.x.x_1' of the topic 'B' with time <= 100ns:
 
 ```python
 citros.topic('B').time(end = 100).data('data.x.x_1')
@@ -454,7 +454,7 @@ citros.topic('B').time(end = 100).data('data.x.x_1')
 ...|...|...|...|...|...|...
 </details>
 
-Lower limit is set by the `start` argument. To set 50s <= time <= 100s:
+Lower limit is set by the `start` argument. To set 50ns <= time <= 100ns:
 
 ```python
 citros.topic('B').time(start = 50, end = 100).data('data.x.x_1')
@@ -470,7 +470,7 @@ citros.topic('B').time(start = 50, end = 100).data('data.x.x_1')
 ...|...|...|...|...|...|...
 </details>
 
-Instead of the `end` value the duration (in seconds) may be specified, that defines the upper limit of time relative to the `start`. To set 50s <= time < 100s with `duration`:
+Instead of the `end` value the duration (in nanoseconds) may be specified, that defines the upper limit of time relative to the `start`. To set 50ns <= time < 100ns with `duration`:
 
 ```python
 citros.topic('B').time(start = 50, duration = 50).data('data.x.x_1')
@@ -683,7 +683,7 @@ data with sid = 1:
 
 ## Plot data
 
-Let's make query that select 'data.x.x_1' and 'data.x.x_2' from the json-data column of the topic 'B' with sids equals 1,2 or 3, where 10 <= rid <= 200, 0s <= time < 200s. Let's also apply moving average sampling, that averages over 5 messages and select each second row of the result and save the output in variable named **df**:
+Let's make query that select 'data.x.x_1' and 'data.x.x_2' from the json-data column of the topic 'B' with sids equals 1,2 or 3, where 10 <= rid <= 200, 0ns <= time < 200ns. Let's also apply moving average sampling, that averages over 5 messages and select each second row of the result and save the output in variable named **df**:
 
 ```python
 df = citros.topic('B')\

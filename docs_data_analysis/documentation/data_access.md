@@ -671,7 +671,8 @@ Download averaged data for each sid separetly, setting ascending order by 'rid':
 
 ```python
 >>> citros = da.CitrosDB()
->>> dfs = citros.topic('A').set_order({'rid': 'asc'}).avg(2).get_sid_tables(data_query=['data.x.x_1'])
+>>> dfs = citros.topic('A').set_order({'rid': 'asc'}).avg(2)\
+                .get_sid_tables(data_query=['data.x.x_1'])
 ```
 
 
@@ -904,7 +905,7 @@ If specific sid is set, also appends dictionary 'sids', with the following struc
         'start_time': time when simulation started,
         'end_time': time when simulation ended,
         'duration': duration of the simalation process,
-        'frequency': frequency of the simulation process}}}}
+        'frequency': frequency of the simulation process (in Hz)}}}}
 ```
 If topic is specified, appends dictionary 'topics':
 ```python
@@ -983,16 +984,16 @@ If topic is specified, appends dictionary 'topics':
      'topics': {
        'A': {
           'message_count': 4,
-          'start_time': 2.0,
-          'end_time': 17.0,
-          'duration': 15.0,
+          'start_time': 2000000000,
+          'end_time': 17000000000,
+          'duration': 15000000000,
           'frequency': 0.067
        },
        'B': {
           'message_count': 9,
 ...
-          'duration': 15.0,
-          'frequency': 0.0667
+          'duration': 150000000,
+          'frequency': 0.067
        }
      }
    }
@@ -1015,10 +1016,10 @@ If topic is specified, appends dictionary 'topics':
      'topics': {
        'C': {
          'message_count': 8,
-         'start_time': 7.00000017,
-         'end_time': 19.0000008,
-         'duration': 12.00000063,
-         'frequency': 0.08333332895833356
+         'start_time': 7000000170,
+         'end_time': 19000000800,
+         'duration': 12000000630,
+         'frequency': 0.083
        }
      }
    }
@@ -1846,7 +1847,7 @@ Set constraints on time.
 ---
 #### Examples
 
-Get data for for topic 'A' where time is in the range 10s <= time <= 20s:
+Get data for for topic 'A' where time is in the range 10ns <= time <= 20ns:
 
 ```python
 >>> citros = da.CitrosDB()
@@ -1854,7 +1855,7 @@ Get data for for topic 'A' where time is in the range 10s <= time <= 20s:
 ```
 
 
-To set time range 'first 10s starting from 10th second', that means 10s <= time < 20s:
+To set time range 'first 10ns starting from 10th nanosecond', that means 10ns <= time < 20ns:
 
 ```python
 >>> df = citros.topic('A').time(start = 10, duration = 10).data()
