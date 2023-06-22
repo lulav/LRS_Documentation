@@ -105,10 +105,10 @@ For topic 'A' from json-data column download simulated data labeled as 'data.x.x
 >>> citros = da.CitrosDB()
 >>> df = citros.topic('A').set_order({'sid':'asc','rid':'asc'}).data(['data.x.x_1','data.time'])
 >>> print(df)
-    sid   rid   time    topic   type   data.x.x_1   data.time
-0   1     0     0.313   A       a      0.000        10.0
-1   1     1     0.407   A       a      0.008        17.9
-2   1     2     0.951   A       a      0.016        20.3
+    sid   rid   time        topic   type   data.x.x_1   data.time
+0   1     0     312751159   A       a      0.000        10.0
+1   1     1     407264008   A       a      0.008        17.9
+2   1     2     951279608   A       a      0.016        20.3
 ```
 
 
@@ -344,7 +344,7 @@ Test whether norm of the each simulation is less than the given limit.
 
 
    - 'L2' - Euclidean norm, square root of the sum of the squares.
-   - 'Linf' - maximum of the absolute values.
+   - 'Linf' - absolute maximum.
 
 **```limits```** :&ensp;**float** or **list**, default **1.0**
 :   Limits on the simulation norm. Limits may be set as:
@@ -369,7 +369,7 @@ column_name :                       # label of the column, str
     {'pass_rate' : float}           # fraction of the simulations that pass the test
     {'norm_value' :
         {sid: value}},              # norm for each of the simulation {int: float}
-    {'failed_sid' : list}           # sid that fail the test
+    {'failed' : list}               # sid that fail the test
 }
 ```
 **```table```** :&ensp;**pandas.DataFrame **
@@ -422,7 +422,7 @@ norm_test L2: passed
      2: 0.39,
      3: 0.38
    },
-   'failed_sid': []
+   'failed': []
  },
 }
 >>> print(table)
@@ -694,7 +694,7 @@ Print results of norm test in details:
      2: 0.38,
      3: 0.38
    },
-   'failed_sid': []
+   'failed': []
  },
  'data.x.x_2': {
    'passed': True,
@@ -704,7 +704,7 @@ Print results of norm test in details:
      2: 0.40,
      3: 0.40
    },
-   'failed_sid': []
+   'failed': []
  },
  'data.x.x_3': {
    'passed': True,
@@ -714,7 +714,7 @@ Print results of norm test in details:
      2: 0.11,
      3: 0.12
    },
-   'failed_sid': []
+   'failed': []
  }  
 }
 ```

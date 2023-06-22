@@ -374,10 +374,10 @@ It is possible to query all columns separetly:
 ```python
 >>> df = citros.topic('A').data(['data.x.x_1', 'data.x.x_2', 'data.x.x_3', 'data.time'])
 >>> print(df)
-   sid   rid   time   topic   type   data.x.x_1   data.x.x_2   data.x.x_3   data.time
-0  1     0     0.313  A       a      0.000        0.080        154.47       10.0
-1  1     1     0.407  A       a      0.008        0.080        130.97       17.9
-2  1     2     0.951  A       a      0.016        0.078        117.66       20.3
+   sid   rid   time       topic   type   data.x.x_1   data.x.x_2   data.x.x_3   data.time
+0  1     0     312751159  A       a      0.000        0.080        154.47       10.0
+1  1     1     407264008  A       a      0.008        0.080        130.97       17.9
+2  1     2     951279608  A       a      0.016        0.078        117.66       20.3
 ...
 ```
 
@@ -396,10 +396,10 @@ or query 'data.x' as a one column:
 ```python
 >>> df = citros.topic('A').data(['data.x', 'data.time'])
 >>> print(df)
-   sid   rid   time   topic   type   data.x                                       data.time
-0  1     0     0.313  A       a      {'x_1': 0.0, 'x_2': 0.08, 'x_3': 154.47}     10.0
-1  1     1     0.407  A       a      {'x_1': 0.008, 'x_2': 0.08, 'x_3': 130.97}   17.9
-2  1     2     0.951  A       a      {'x_1': 0.016, 'x_2': 0.078, 'x_3': 117.66}  20.3
+   sid   rid   time       topic   type   data.x                                       data.time
+0  1     0     312751159  A       a      {'x_1': 0.0, 'x_2': 0.08, 'x_3': 154.47}     10.0
+1  1     1     407264008  A       a      {'x_1': 0.008, 'x_2': 0.08, 'x_3': 130.97}   17.9
+2  1     2     951279608  A       a      {'x_1': 0.016, 'x_2': 0.078, 'x_3': 117.66}  20.3
 ...
 ```
 
@@ -413,9 +413,9 @@ and correspondingly set data_label:
 ```
 
 
-To analyze data of multiple simulations, it is necessary to establish a correspondence between the values of the data 
-from different simulations. One approach is to select an independent variable and define a scale that is common 
-to all simulations and assigned indexes on this scale. Then, the values of variables from different simulations
+To analyze data of multiple simulations it is necessary to establish a correspondence between the values of the data 
+from these different simulations. One approach is to select an independent variable, define a scale that is common 
+to all simulations and assign indexes on this scale. Then, the values of variables from different simulations
 will be connected by this independent variable.
 
 There are two ways to perform index assignment: divide the independent variable into N ranges, 

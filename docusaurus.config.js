@@ -1,8 +1,12 @@
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
 
-const lightCodeTheme = require('prism-react-renderer/themes/github');
-const darkCodeTheme = require('prism-react-renderer/themes/dracula');
+// const lightCodeTheme = require('prism-react-renderer/themes/github');
+// const darkCodeTheme = require('prism-react-renderer/themes/dracula');
+const lightCodeTheme = require('prism-react-renderer/themes/vsLight');
+const darkCodeTheme = require('prism-react-renderer/themes/vsDark');
+const math = require('remark-math');
+const katex = require('rehype-katex');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -48,6 +52,8 @@ const config = {
           //routeBasePath: 'docs',
           path: 'docs',
           sidebarPath: require.resolve('./sidebars.js'),
+          remarkPlugins: [math],
+          rehypePlugins: [katex],
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           //editUrl:
@@ -75,6 +81,8 @@ const config = {
         path: 'docs_citros_web',
         routeBasePath: 'docs_citros_web',
         sidebarPath: require.resolve('./sidebarsCitros.js'),
+        remarkPlugins: [math],
+        rehypePlugins: [katex],
         // includeCurrentVersion: false,
       }, 
     ],
@@ -85,6 +93,8 @@ const config = {
         path: 'docs_cli',
         routeBasePath: 'docs_cli',
         sidebarPath: require.resolve('./sidebarsCLI.js'),
+        remarkPlugins: [math],
+        rehypePlugins: [katex],
         // includeCurrentVersion: false,
       }, 
     ],
@@ -95,6 +105,8 @@ const config = {
         path: 'docs_data_analysis',
         routeBasePath: 'docs_data_analysis',
         sidebarPath: require.resolve('./sidebarsDataAnalysis.js'),
+        remarkPlugins: [math],
+        rehypePlugins: [katex],
         // includeCurrentVersion: false,
       }, 
     ],
@@ -102,8 +114,13 @@ const config = {
 
   stylesheets: [
     {
-      href: '/katex/katex.min.css',
+      href: 'katex/katex.min.css',
       type: 'text/css',
+      // href: 'https://cdn.jsdelivr.net/npm/katex@0.13.24/dist/katex.min.css',
+      // type: 'text/css',
+      // integrity:
+      //   'sha384-odtC+0UGzzFL/6PNoE8rX/SPcQDXBJ+uRepguP4QkPCm2LBxH3FA3y+fKSiJ+AmM',
+      // crossorigin: 'anonymous',
     },
   ],
   
@@ -169,7 +186,7 @@ const config = {
             position: 'right',
             docsPluginId: 'docs_data_analysis',
             // dropdownItemsAfter: [{to: '/versions', label: 'All versions'}],
-            dropdownActiveClassDisabled: true,
+            dropdownActiveClassDisabled: false
           },
         ],
       },
@@ -212,6 +229,7 @@ const config = {
       prism: {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
+        additionalLanguages: ['python'],
       },
     }),
 };

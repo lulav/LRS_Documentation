@@ -62,9 +62,14 @@ module.exports = {
           items: [
             {
               type: 'doc',
-              id: 'documentation/validation',
+              id: 'validation_examples',
               // label: 'Documentation',
             },
+            {
+              type: 'doc',
+              id: 'documentation/validation',
+              // label: 'Documentation',
+            }
           ],
         },
       ]
