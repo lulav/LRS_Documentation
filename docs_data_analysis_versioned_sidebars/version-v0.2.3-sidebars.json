@@ -1,0 +1,56 @@
+{
+  "dataAnalysisSidebar": [
+    {
+      "type": "category",
+      "label": "Docs",
+      "link": {
+        "type": "doc",
+        "id": "index"
+      },
+      "items": [
+        {
+          "type": "category",
+          "label": "Data access",
+          "items": [
+            {
+              "type": "doc",
+              "id": "data_access_examples"
+            },
+            {
+              "type": "doc",
+              "id": "documentation/data_access"
+            }
+          ]
+        },
+        {
+          "type": "category",
+          "label": "Error analysis",
+          "items": [
+            {
+              "type": "doc",
+              "id": "error_analysis_examples"
+            },
+            {
+              "type": "doc",
+              "id": "documentation/error_analysis"
+            }
+          ]
+        },
+        {
+          "type": "category",
+          "label": "Validation",
+          "items": [
+            {
+              "type": "doc",
+              "id": "validation_examples"
+            },
+            {
+              "type": "doc",
+              "id": "documentation/validation"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
