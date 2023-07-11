@@ -18,7 +18,7 @@ module.exports = {
   dataAnalysisSidebar: [
     {
       type: 'category',
-      label: 'Docs',
+      label: 'Package overview',
       link: {
         type: 'doc',
         id: "index",
