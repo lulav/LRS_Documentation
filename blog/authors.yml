@@ -19,9 +19,14 @@ slorber:
 vovacooper:
   name: Vladimir Kouperman
   title: CITROS maintainer
-  url: https://github.com/vovacooper
+  url: https://github.com/vovacooper.png
 
 lidia:
   name: Lidia Yalyalieva
   title: data scientis
-  url: https://github.com/Yalyalieva
+  url: https://github.com/Yalyalieva.png
+
+gtep:
+  name: Gleb Teplov
+  title: Aerospace Engineer
+  url: https://github.com/gtep96.png
