@@ -167,15 +167,15 @@ To use prepared layout: Download them from [foxglove_layouts](https://github.com
 $$
 \begin{array}{|c|c|c|}
 \hline
-\text{State number} & \text{Value} & \text{Describtion} \\
+\text{State number} & \text{Value} & \text{Describtion} \\\\
 \hline
-0 & h & \text{altitude above lunar surface level} \\
-1 & \phi & \text{latitude} \\
-2 & \lambda & \text{longitude} \\
-3 & v_n & \text{"northing" velocity} \\
-4 & v_e & \text{"east" velocity} \\
-5 & v_d & \text{vertical velocity} \\
-6 & m_{fuel} & \text{fuel mass} \\
+0 & h & \text{altitude above lunar surface level} \\\\
+1 & \phi & \text{latitude} \\\\
+2 & \lambda & \text{longitude} \\\\
+3 & v_n & \text{"northing" velocity} \\\\
+4 & v_e & \text{"east" velocity} \\\\
+5 & v_d & \text{vertical velocity} \\\\
+6 & m_{fuel} & \text{fuel mass} \\\\
 \hline
 \end{array}
 $$
