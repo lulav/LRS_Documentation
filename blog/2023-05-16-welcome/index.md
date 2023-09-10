@@ -1,20 +1,25 @@
 ---
-slug: Citros Blog
-title: Citros Blog
+slug: Lunar Starship optimal control example using CITROS
+title: Lunar Starship optimal control example using CITROS
 authors: [gtep]
 tags: [citros]
 ---
 
 Blog posts support [Docusaurus Markdown features](https://docusaurus.io/docs/markdown-features), such as [MDX](https://mdxjs.com/).
 
-:::tip
+## Example overview 🌐 
 
-# General Information 🌍
+This Lunar Starship mission project addresses the lunar hopper challenge by optimizing the ascent and landing process on the Moon's surface, aiming to minimize fuel consumption, time, or other relevant parameters. It empowers users to define both theoretical and real dynamic functions, enhancing prediction accuracy and enabling real-time corrections during lunar missions. This innovative approach promises more efficient and precise lunar exploration, revolutionizing our understanding of lunar surface operations. 
+
+Through the Lunar Starship project, researchers are paving the way for sustainable lunar exploration, as it not only optimizes missions but also conserves valuable resources for extended stays on the Moon. By allowing for the integration of real dynamic functions, it fosters adaptability and resilience in lunar operations, making it a cornerstone of future lunar exploration endeavors.
+
+## Mathematical explanation 🎓
 This example provides an array of time dependent values of states computed by solving non-linear optimal control problems(OCP) in the standard Bolza form using pseudo-spectral collocation methods and adjusted using an additional real dynamic function. The OCP solver used in this example is MPOPT (based on IPOPT) library modified by Lulav Space team.
 
 The dynamic function is:
 
-$$ \dot{v_N} = f_N + \frac{v_N v_D}{R_L + h} - \tan \phi \frac{v_E^2}{R_L + h} 
+$$ 
+\dot{v_N} = f_N + \frac{v_N v_D}{R_L + h} - \tan \phi \frac{v_E^2}{R_L + h} 
 $$ 
 
 $$
@@ -109,10 +114,15 @@ x^{(P )}(t^{(P )}_f), t^{(1)}_f, . . . , t^{(P )}_f, q^{(1)}, . . . , q^{(P )}, 
 $$
 
 
-## Algorithmic representation
+### Algorithmic representation 🧬
 
+![jpeg](img/Flowchart.jpeg "Algorithmic representation")
 
-# Installation 🛫
+## Local Usage 💻
+
+All project installation and usage information also available in the project [GitHub page](https://github.com/citros-garden/lunar_starship).
+
+### Installation 🔨
 1. Docker engine. This project runs inside Docker container, and requires Docker Engine/Docker Desktop. Follow the instructions on [Docker official website](https://www.docker.com/get-started/).
 2. To use Docker inside VS Code several extensions are required. Install [Dev Containers](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers) and [Docker](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-docker) extensions from Extensions tab on your left control panel.
 3. Clone the repository:
@@ -120,7 +130,7 @@ $$
 git clone git@github.com:citros-garden/lunar_starship.git
 ```
 
-# Build 🛰
+### Build 🏠
 1. Open project root folder in VS Code.
 2. Navigate to the lower-left corner of VS Code window and click on green mark.
 3. Select "Reopen in container" option in the list on the top of the VS Code window. Wait a minute while Docker container is starting.
@@ -134,7 +144,7 @@ colcon build
 source install/local_setup.bash
 ```
 
-# Preparing FoxGlove Studio 🪄
+### Preparing FoxGlove Studio 🪄
 FoxGlove Studio is a robotics visualization and debugging tool, which can connect to ROS topic and get the data publishing through it. We will use it to visualizate the results of our simulations.
 
 First of all, you need to download it from the [official website](https://foxglove.dev/) and install following the instructions. 
@@ -143,12 +153,16 @@ Next step is connecting to your ROS node. To perform it, open FoxGlove Studio an
 
 Last step is configuring the layout of FoxGlove. There are two ways to do it: using prepared layout file or manualy.
 
-
-To use prepared layout: Go to the second tab on the left panel, then click on *__import_layout__* button and select the file from [foxglove_layouts] folder.
+Manual plot layout configuration: we have 7 states in the output messages, so we need 7 plots. Add 7 plots using third tab on the left FoxGlove control panel. Then click on the fourth tab and set 'Message Path' for each plot: the path should be ``` /lunar_starship/state.data[n] ```, where n - number of the state. 
 
 OR 
 
-Manual plot layout configuration: we have 7 states in the output messages, so we need 7 plots. Add 7 plots using third tab on the left FoxGlove control panel. Then click on the fourth tab and set 'Message Path' for each plot: the path should be ``` /lunar_starship/state.data[n] ```, where n - number of the state. 
+:::tip
+To use prepared layout: Download them from [foxglove_layouts](https://github.com/citros-garden/lunar_starship/tree/main/foxglove_layouts) folder, then open your FoxGlove application, go to the Layout tab on the top panel, then click on *__Import from file__* button and select the downloaded file from [foxglove_layouts] folder.
+
+:::
+
+
 
 $$
 \begin{array}{|c|c|c|}
@@ -166,23 +180,109 @@ $$
 \end{array}
 $$
 
-Although the best way to process simulation results is Citros notebook 🍋 :)
 
-# Run 🚀
+:::tip
+
+The best way to process simulation results is Citros notebook 🍋 :)
+
+:::
+
+
+### Run 🚀
 1. Go back to the VS Code.
 2. Prepare your FoxGlove studio (previous step, if you haven't done it yet).
 3. Launch ROS2 package:
 ```bash 
 ros2 launch lunar_starship launch.py
 ```
-1. Watch the FoxGlove plot built from results!
+4. Watch the FoxGlove plot built from results!
 
-# Citros usage 🛸
-Although you can get simulation results using FoxGlove, the best way to work with such simulations and process the results is Citros! With its power, it is possible to create complex data processing scenarios, including the construction of more complex graphs, mathematical analysis and other high-level processing methods.
+OR
 
+:::tip
 
-# Extras
-## FoxGlove examples
-
+You can use Visual Code Tasks: simply press ```Alt+T``` and select ```Launch``` task to build, source and launch the project automaticly.
 
 :::
+
+
+## Citros usage 🛸
+Although you can get simulation results using FoxGlove, the best way to work with such simulations and process the results is Citros! With its power, it is possible to create complex data processing scenarios, including the construction of more complex graphs, mathematical analysis and other high-level processing methods.
+
+### Citros installation 🛫
+
+First of all, to use all the powerfull Citros features usage requires Citros installation: follow the instructions on the Citros CLI [GitHub page](https://github.com/lulav/citros_cli).
+
+### Configuring the project ⚙️
+After all the prerequisites done, we can start configuring our project. The starting point is the Lunar_Starship devcontainer loaded and running, Citros CLI is installed and ready.
+1. Initialize Citros:
+```bash 
+citros init
+```
+Now you can see ```.citros``` folder in the explorer.
+
+2. Configuring the setup. We need to set up the maximum perfomance available: timeout, CPU, GPU and Memory. To perform it, we need to define it in the ```.citros/simulations/simulation_lunar_starship.json```. The recommended setup is minimum 600 seconds timeout, 4 CPU, 4 GPU and 4096 MB of Memory. Don't forget to save the file!
+
+3. Configuring the params setup. You can find default setup in ```.citros/parameter_setups/default_param_setup.json```. Variables with '_0' are initial conditions, and variables with '_f' are final conditions respectively.
+
+$$
+\begin{array}{|c|c|}
+\hline
+\text{Parameter} & \text{Description} \\
+\hline
+h_0 & \text{initial altitude above lunar surface level} \\
+lat_0 & \text{initial latitude} \\
+long_0 & \text{initial longitude} \\
+vn_0 & \text{initial "northing" velocity} \\
+ve_0 & \text{initial "east" velocity} \\
+vd_0 & \text{initial vertical velocity} \\
+m_fuel_0 & \text{initial fuel mass} \\
+lat_f & \text{final latitude} \\
+long_f & \text{final longitude} \\
+vn_f & \text{final "northing" velocity} \\
+ve_f & \text{final "east" velocity} \\
+vd_f & \text{final vertical velocity} \\
+m_{\text{fuel f}}& \text{final fuel mass} \\
+dry~mass_f & \text{dry mass} \\
+F_{\text{thrustmax}} & \text{The maximum amount of thrust} \\
+I_{\text{sp}} & \text{Specific impulse} \\
+simulation~step & \text{step of simulation} \\
+publish~freq & \text{frequency of publishing} \\
+\hline
+\end{array}
+$$
+
+Don't forget to save the file!
+
+### Syncing the project's setup 📡
+Now we can sync our project settings with Citros server:
+```bash 
+citros commit
+citros push
+```
+### Running locally 🛋️
+Since all the preparations done, we can launch it locally (your project should be built and sourced before that, check the instructions above):
+```bash 
+citros run -n 'Lunar_Starship' -m 'local test run'
+```
+Select the launch file (should be the only one here) by pressing ```Enter``` button and wait for the output in the terminal. To plot the local run results you can use FoxGlove.
+
+### Uploading Docker image to the Citros database and running in the cloud 🛰️
+1. We need to build and push Docker container image to the Citros server:
+```bash 
+citros docker-build-push
+```
+
+2. Finally, we can run it in the cloud! Simply add ```-r``` to the terminal command: 
+```bash 
+citros run -n 'Lunar_Starship' -m 'cloud test run' -r
+```
+Select the launch file (should be the only one here) by pressing ```Enter``` button. Now the simulation is running in the Citros server, and it will upload results to the Citros database automaticly.
+
+### Citros Web usage and data analysis 🌌
+TODO
+## Extras
+### FoxGlove examples
+
+![png](img/img0.png "FoxGlove example")
+![png](img/img1.png "FoxGlove example")
