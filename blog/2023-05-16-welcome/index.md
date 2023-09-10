@@ -95,9 +95,11 @@ For this example terminal cost function, path constraints and terminal constrain
 $$
 b_{min}^{(g)} \le b\big[x^{(1)}(t_0^{(1)}),...,x^{(P)}(t_0^{(P)}),t_0^{(1)},...,t_0^{(P)},x^{(1)}(t_f^{(1)}),...,
 $$
+
 $$
 x^{(P)}(t_f^{(1)}),...,t_f^{(P)},q^{(1)},...,q^{(P)},s \big] \le b_{max}^{(g)}
 $$
+
 2. Path constraints (we need to limit controls values within the maximum possible thrust):
 
 $$
@@ -109,6 +111,7 @@ $$
 $$
 J = \phi \big[x^{(1)}(t^{(1)}_0),..., x^{(P)}(t^{(P )}_0), t^{(1)}_0, . . . , t^{(P)}_0, x^{(1)}(t^{(1)}_f), . . . , 
 $$
+
 $$
 x^{(P )}(t^{(P )}_f), t^{(1)}_f, . . . , t^{(P )}_f, q^{(1)}, . . . , q^{(P )}, s \big]
 $$
@@ -155,27 +158,18 @@ Last step is configuring the layout of FoxGlove. There are two ways to do it: us
 
 Manual plot layout configuration: we have 7 states in the output messages, so we need 7 plots. Add 7 plots using third tab on the left FoxGlove control panel. Then click on the fourth tab and set 'Message Path' for each plot: the path should be ``` /lunar_starship/state.data[n] ```, where n - number of the state. 
 
-OR 
-
-:::tip
-To use prepared layout: Download them from [foxglove_layouts](https://github.com/citros-garden/lunar_starship/tree/main/foxglove_layouts) folder, then open your FoxGlove application, go to the Layout tab on the top panel, then click on *__Import from file__* button and select the downloaded file from [foxglove_layouts] folder.
-
-:::
-
-
-
 $$
 \begin{array}{|c|c|c|}
 \hline
-\text{State number} & \text{Value} & \text{Describtion} \\\\
+\text{State number} & \text{Value} & \text{Describtion} \\
 \hline
-0 & h & \text{altitude above lunar surface level} \\\\
-1 & \phi & \text{latitude} \\\\
-2 & \lambda & \text{longitude} \\\\
-3 & v_n & \text{"northing" velocity} \\\\
-4 & v_e & \text{"east" velocity} \\\\
-5 & v_d & \text{vertical velocity} \\\\
-6 & m_{fuel} & \text{fuel mass} \\\\
+0 & h & \text{altitude above lunar surface level} \\
+1 & \phi & \text{latitude} \\
+2 & \lambda & \text{longitude} \\
+3 & v_n & \text{"northing" velocity} \\
+4 & v_e & \text{"east" velocity} \\
+5 & v_d & \text{vertical velocity} \\
+6 & m_{fuel} & \text{fuel mass} \\
 \hline
 \end{array}
 $$
