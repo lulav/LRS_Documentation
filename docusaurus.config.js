@@ -3,7 +3,7 @@
 
 // const lightCodeTheme = require('prism-react-renderer/themes/github');
 // const darkCodeTheme = require('prism-react-renderer/themes/dracula');
-const lightCodeTheme = require('prism-react-renderer/themes/vsLight');
+// const lightCodeTheme = require('prism-react-renderer/themes/vsLight');
 const darkCodeTheme = require('prism-react-renderer/themes/vsDark');
 const math = require('remark-math');
 const katex = require('rehype-katex');
@@ -116,13 +116,13 @@ const config = {
 
   stylesheets: [
     {
-      href: 'katex/katex.min.css',
-      type: 'text/css',
-      // href: 'https://cdn.jsdelivr.net/npm/katex@0.13.24/dist/katex.min.css',
+      // href: '/katex/katex.min.css',
       // type: 'text/css',
-      // integrity:
-      //   'sha384-odtC+0UGzzFL/6PNoE8rX/SPcQDXBJ+uRepguP4QkPCm2LBxH3FA3y+fKSiJ+AmM',
-      // crossorigin: 'anonymous',
+      href: 'https://cdn.jsdelivr.net/npm/katex@0.13.24/dist/katex.min.css',
+      type: 'text/css',
+      integrity:
+        'sha384-odtC+0UGzzFL/6PNoE8rX/SPcQDXBJ+uRepguP4QkPCm2LBxH3FA3y+fKSiJ+AmM',
+      crossorigin: 'anonymous',
     },
   ],
   
@@ -229,7 +229,7 @@ const config = {
       //   copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
       // },
       prism: {
-        theme: lightCodeTheme,
+        theme: darkCodeTheme,
         darkTheme: darkCodeTheme,
         additionalLanguages: ['python'],
       },
