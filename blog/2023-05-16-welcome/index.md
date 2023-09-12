@@ -202,6 +202,14 @@ Last step is configuring the layout of FoxGlove. There are two ways to do it: us
 
 Manual plot layout configuration: we have 7 states in the output messages, so we need 7 plots. Add 7 plots using third tab on the left FoxGlove control panel. Then click on the fourth tab and set 'Message Path' for each plot: the path should be ``` /lunar_starship/state.data[n] ```, where n - number of the state. 
 
+OR
+
+:::tip
+
+You can use prepared layout: Go to the ```Layout``` tab on the top panel, then click on import_layout button and select the file from foxglove_layouts folder.
+
+:::
+
 $$
 \begin{array}{|c|c|c|}
 \hline
@@ -275,7 +283,7 @@ long_0 & \text{initial longitude} \\
 vn_0 & \text{initial "northing" velocity} \\
 ve_0 & \text{initial "east" velocity} \\
 vd_0 & \text{initial vertical velocity} \\
-m_fuel_0 & \text{initial fuel mass} \\
+m\_fuel_0 & \text{initial fuel mass} \\
 lat_f & \text{final latitude} \\
 long_f & \text{final longitude} \\
 vn_f & \text{final "northing" velocity} \\
