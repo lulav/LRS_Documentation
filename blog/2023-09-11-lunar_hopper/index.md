@@ -163,6 +163,14 @@ Last step is configuring the layout of FoxGlove. There are two ways to do it: us
 
 Manual plot layout configuration: we have 5 states in the output messages, so we need 5 plots. Add 5 plots using third tab on the left FoxGlove control panel. Then click on the fourth tab and set 'Message Path' for each plot: the path should be ``` /lunar_hopper/state.data[n] ```, where n - number of the state. Use ``` /lunar_hopper/control.data[m] ``` as a Message Path for control vector, where m - number of the control (0 or 1).
 
+OR
+
+:::tip
+
+You can use prepared layout: Go to the ```Layout``` tab on the top panel, then click on import_layout button and select the file from foxglove_layouts folder.
+
+:::
+
 $$
 \begin{array}{|c|c|c|}
 \hline
