@@ -19,55 +19,55 @@
 
 // module.exports = sidebars;
 
-// module.exports = {
-//   gettingStartedSidebar: [
-//     { type: "doc", id: "index" },
-//     {
-//       type: 'doc',
-//       id: 'citros_web',
-//       label: 'CITROS web',
-//     },
-//     {
-//       type: 'doc',
-//       id: 'cli',
-//       label: 'CLI',
-//     },
-//     {
-//       type: 'doc',
-//       id: 'data_analysis',
-//       label: 'Data analysis',
-//     },
-//   ],
-// };
-
 module.exports = {
   gettingStartedSidebar: [
+    { type: "doc", id: "index" },
     {
-      type: 'category',
-      label: 'Getting started',
-      link: {
-        type: 'doc',
-        id: "index",
-      },
-      items: [
-        {
-          type: 'doc',
-          id: 'citros_web',
-          label: 'CITROS web',
-          // image: '/static/img/citros_web_light.png',
-        },
-        {
-          type: 'doc',
-          id: 'cli',
-          label: 'CLI',
-          // image: '/static/img/citros_cli.png',
-        },
-        {
-          type: 'doc',
-          id: 'data_analysis',
-          label: 'Data analysis',
-        },
-      ]
-    }
+      type: 'doc',
+      id: 'citros_web',
+      label: 'CITROS web',
+    },
+    {
+      type: 'doc',
+      id: 'cli',
+      label: 'CLI',
+    },
+    {
+      type: 'doc',
+      id: 'data_analysis',
+      label: 'Data analysis',
+    },
   ],
 };
+
+// module.exports = {
+//   gettingStartedSidebars: [
+//     {
+//       type: 'category',
+//       label: 'maria started',
+//       link: {
+//         type: 'doc',
+//         id: "index",
+//       },
+//       items: [
+//         {
+//           type: 'doc',
+//           id: 'citros_web',
+//           label: 'CITROS web',
+//           // image: '/static/img/citros_web_light.png',
+//         },
+//         {
+//           type: 'doc',
+//           id: 'cli',
+//           label: 'CLI',
+//           // image: '/static/img/citros_cli.png',
+//         },
+//         {
+//           type: 'doc',
+//           id: 'data_analysis',
+//           label: 'Data analysis',
+//         },
+//       ]
+//     }
+//   ],
+// };
