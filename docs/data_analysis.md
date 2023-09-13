@@ -1,12 +1,12 @@
 ---
 sidebar_position: 4
-sidebar_label: 'Data analysis'
+sidebar_label: 'Overview'
 hide_title: true
 description: Package for querying and analysing data
 ---
 
 
-## Data analysis
+## Data Analysis Overview
 
 [Data analysis](/docs_data_analysis) package provides seamless data selection, analysis, and visualization capabilities. This package is designed to help you quickly and easily write queries and download data, process it, and plot graphs to gain meaningful insights.
 
