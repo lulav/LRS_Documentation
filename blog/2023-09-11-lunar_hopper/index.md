@@ -2,7 +2,7 @@
 slug: Lunar Hopper optimal control example using CITROS
 title: Lunar Hopper optimal control example using CITROS
 authors: [gtep]
-tags: [citros]
+tags: [CITROS]
 ---
 
 Blog posts support [Docusaurus Markdown features](https://docusaurus.io/docs/markdown-features), such as [MDX](https://mdxjs.com/).
@@ -143,7 +143,7 @@ git git@github.com:citros-garden/lunar_hopper.git
 2. Navigate to the lower-left corner of VS Code window and click on green mark.
 3. Select "Reopen in container" option in the list on the top of the VS Code window. Wait a minute while Docker container is starting.
 2. Open ```/src/lunar_hopper/config/params.xml``` file to set parameters for simulation or just keep it default. Don't forget to save your changes!
-3. Build ROS2 environment:
+3. Build ROS 2 environment:
 ```bash 
 colcon build
 ```
@@ -188,7 +188,7 @@ $$
 
 :::tip
 
-The best way to process simulation results is Citros notebook 🍋 :)
+The best way to process simulation results is CITROS notebook 🍋 :)
 
 :::
 
@@ -196,7 +196,7 @@ The best way to process simulation results is Citros notebook 🍋 :)
 ### Run 🚀
 1. Go back to the VS Code.
 2. Prepare your FoxGlove studio (previous step, if you haven't done it yet).
-3. Launch ROS2 package:
+3. Launch ROS 2 package:
 ```bash 
 ros2 launch lunar_hopper lunar_hopper.launch.py
 ```
@@ -212,16 +212,16 @@ You can use Visual Code Tasks: simply press ```Alt+T``` and select ```Launch``` 
 
 <!-- ![gif](img/gif0.gif "FoxGlove example") -->
 
-## Citros usage 🛸
-Although you can get simulation results using FoxGlove, the best way to work with such simulations and process the results is Citros! With its power, it is possible to create complex data processing scenarios, including the construction of more complex graphs, mathematical analysis and other high-level processing methods.
+## CITROS usage 🛸
+Although you can get simulation results using FoxGlove, the best way to work with such simulations and process the results is CITROS! With its power, it is possible to create complex data processing scenarios, including the construction of more complex graphs, mathematical analysis and other high-level processing methods.
 
-### Citros installation 🛫
+### CITROS installation 🛫
 
-First of all, to use all the powerfull Citros features usage requires Citros installation: follow the instructions on the Citros CLI [GitHub page](https://github.com/lulav/citros_cli).
+First of all, to use all the powerfull CITROS features usage requires CITROS installation: follow the instructions on the CITROS CLI [GitHub page](https://github.com/lulav/citros_cli).
 
 ### Configuring the project ⚙️
-After all the prerequisites done, we can start configuring our project. The starting point is the Lunar_Starship devcontainer loaded and running, Citros CLI is installed and ready.
-1. Initialize Citros:
+After all the prerequisites done, we can start configuring our project. The starting point is the Lunar_Starship devcontainer loaded and running, CITROS CLI is installed and ready.
+1. Initialize CITROS:
 ```bash 
 citros init
 ```
@@ -249,7 +249,7 @@ $$
 Don't forget to save the file!
 
 ### Syncing the project's setup 📡
-Now we can sync our project settings with Citros server:
+Now we can sync our project settings with CITROS server:
 ```bash 
 citros commit
 citros push
@@ -261,8 +261,8 @@ citros run -n 'Lunar_hopper' -m 'local test run'
 ```
 Select the launch file (should be the only one here) by pressing ```Enter``` button and wait for the output in the terminal. To plot the local run results you can use FoxGlove.
 
-### Uploading Docker image to the Citros database and running in the cloud 🛰️
-1. We need to build and push Docker container image to the Citros server:
+### Uploading Docker image to the CITROS database and running in the cloud 🛰️
+1. We need to build and push Docker container image to the CITROS server:
 ```bash 
 citros docker-build-push
 ```
@@ -271,9 +271,9 @@ citros docker-build-push
 ```bash 
 citros run -n 'Lunar_hopper' -m 'cloud test run' -r
 ```
-Select the launch file (should be the only one here) by pressing ```Enter``` button. Now the simulation is running in the Citros server, and it will upload results to the Citros database automaticly.
+Select the launch file (should be the only one here) by pressing ```Enter``` button. Now the simulation is running in the CITROS server, and it will upload results to the CITROS database automaticly.
 
-### Citros Web usage and data analysis 🌌
+### CITROS Web usage and data analysis 🌌
 TODO
 ## Extras
 ### FoxGlove examples
