@@ -65,7 +65,6 @@ data
 {'x': {'x_1' : 5, 'x_2' : 10, 'x_3' : 73}, 'y': [5.5, 6.7, 50], 'height' : 11}
 ...
 ```
-```
 to query 'x_1', 'x_2', 'height' and values from the first position of 'y' json-array, the following code may be used:
 ```python
 df = citros.topic('A').data(['data.x.x_1', 'data.x.x_2', 'data.height', 'data.y[0]'])
