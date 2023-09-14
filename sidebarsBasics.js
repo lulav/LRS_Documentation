@@ -21,18 +21,19 @@ module.exports = {
   gettingStartedSidebar: [
     {
       type: 'category',
-      label: '///',
+      label: 'Quick Start',
       collapsible: true,
       collapsed: true,
       items: [
         {
           type: 'doc',
           label: 'TBD',
-          id: 'dummy',
+          id: 'quickstart/quick_tbd',
         },
       ],
     },
 
+    // CITROS CLI
     {
       type: 'category',
       label: 'CITROS CLI',
@@ -42,54 +43,76 @@ module.exports = {
         {
           type: 'doc',
           label: 'Overview',
-          id: 'dummy',
+          id: 'cli/cli_overview',
         },
         {
           type: 'doc',
           label: 'Installation',
-          id: 'dummy',
+          id: 'cli/cli_install',
         },
         {
           type: 'category',
-          label: 'CLI API Commands',
+          label: 'Commands',
           items: [
             {
               type: 'doc',
-              label: 'Initialisation',
-              id: 'dummy',
+              label: 'Init',
+              id: 'cli/cli_commands/cli_init',
             },
             {
               type: 'doc',
-              label: 'Account Commands',
-              id: 'dummy',
+              label: 'Authentication',
+              id: 'cli/cli_commands/cli_auth',
             },
             {
               type: 'doc',
-              label: 'Remote Repository Commands',
-              id: 'dummy',
+              label: 'Sync',//sync
+              id: 'cli/cli_commands/cli_sync',
             },
             {
               type: 'doc',
-              label: 'Simulations Commands',
-              id: 'dummy',
-            },
-            {
-              type: 'doc',
-              label: 'CI/CD Commands',
-              id: 'dummy',
+              label: 'Runs',
+              id: 'cli/cli_commands/cli_run',
             },
           ]
         },
         {
-          type: 'doc',
-          label: 'Project Configuration',
-          id: 'dummy',
+          type: 'category',
+          label: 'Tutorials',//how tos - start newe, init new, cooaboration, troubleshooting
+          items: [
+            {
+              type: 'doc',
+              label: 'Start New Repository',
+              id: 'cli/cli_tutorials/cli_tut_newproj',
+            },
+            {
+              type: 'doc',
+              label: 'Init New Simulation',
+              id: 'cli/cli_tutorials/cli_tut_newrun',
+            },
+            {
+              type: 'doc',
+              label: 'Collaborate with Team',
+              id: 'cli/cli_tutorials/cli_tut_collab',
+            },
+          ]
+        },
+        {
+          type: 'category',
+          label: 'Troubleshooting',//how tos - start newe, init new, cooaboration, troubleshooting
+          items: [
+            {
+              type: 'doc',
+              label: 'TBD',
+              id: 'cli/cli_troubelshooting/cli_ts_tbd',
+            },
+          ]
         },
       ],
     },
 
 
-
+    //Authentication
     {
       type: 'category',
       label: 'Authentication',
@@ -205,59 +228,7 @@ module.exports = {
     },
 
 
-
-
-
-    {
-      type: 'category',
-      label: 'Billing',
-      collapsible: true,
-      collapsed: true,
-      items: [
-        {
-          type: 'doc',
-          label: 'Payment Method',
-          id: 'billing/billing_pm',
-        },
-        {
-          type: 'doc',
-          label: 'Billing Address',
-          id: 'billing/billing_address',
-        },
-        {
-          type: 'doc',
-          label: 'Invoices',
-          id: 'billing/billing_invoices',
-        },
-        {
-          type: 'doc',
-          label: 'Plans',
-          id: 'billing/billing_plans',
-        },
-      ],
-    },
-
-    {
-      type: 'category',
-      label: 'Notifications',
-      collapsible: true,
-      collapsed: true,
-      items: [
-        {
-          type: 'doc',
-          label: 'Notification Template',
-          id: 'dummy',
-        },
-        {
-          type: 'doc',
-          label: 'Notification Settings',
-          id: 'dummy',
-        },
-      ],
-    },
-
-
-
+    //Simulations
     {
       type: 'category',
       label: 'Simulations',
@@ -313,6 +284,8 @@ module.exports = {
         },
       ],
     },
+
+    //Repositories
     {
       type: 'category',
       label: 'Repositories',
@@ -397,87 +370,198 @@ module.exports = {
         },
       ],
     },
+
+
+
+
+    //Data Analysis
+    // {
+    //   type: 'category',
+    //   label: 'Data Analysis',
+    //   collapsible: true,
+    //   collapsed: true,
+    //   items: [
+    //     {
+    //       type: 'doc',
+    //       label: 'Overview',
+    //       id: 'data_analysis/data_analysis_overview',
+    //     },
+    //     {
+    //       type: 'category',
+    //       label: 'Data Access',
+    //       items: [
+    //         {
+    //           type: 'doc',
+    //           label: 'Overview',
+    //           id: 'data_analysis/data_access/access_overview',
+    //         },
+    //         {
+    //           type: 'doc',
+    //           label: 'Data Structure',
+    //           id: 'data_analysis/data_access/access_ds',
+    //         },
+    //       ]
+    //     },
+    //     {
+    //       type: 'category',
+    //       label: 'Error Analysis',
+    //       items: [
+    //         {
+    //           type: 'doc',
+    //           label: 'Overview',
+    //           id: 'data_analysis/data_error/error_overview',
+    //         },
+    //         {
+    //           type: 'doc',
+    //           label: 'Data Structure',
+    //           id: 'data_analysis/data_error/error_ds',
+    //         },
+    //       ]
+    //     },
+    //     {
+    //       type: 'category',
+    //       label: 'Data Validation',
+    //       items: [
+    //         {
+    //           type: 'doc',
+    //           label: 'Overview',
+    //           id: 'data_analysis/data_validation/validation_overview',
+    //         },
+    //         {
+    //           type: 'doc',
+    //           label: 'Data Structure',
+    //           id: 'data_analysis/data_validation/validation_ds',
+    //         },
+    //       ]
+    //     }
+    //   ]
+    // },
+    // //     {
+    //       type: 'category',
+    //       label: 'Data access',
+    //       items: [
+    //         {
+    //           type: 'link',
+    //           label: 'Overview',
+    //           href: '/docs_data_analysis/index_data_access',
+    //         },
+    //         {
+    //           type: 'doc',
+    //           label: 'Data Access Examples',
+    //           id: 'data_analysis/data_access_examples',
+    //           // label: 'Examples',
+    //         },
+    //         {
+    //           type: 'link',
+    //           label: 'Data Access API',
+    //           href: '/documentation/data_access',
+    //           // label: 'Examples',
+    //         },
+    //       ]
+    //     },
+    //     {
+    //       type: 'category',
+    //       label: 'Error Analysis',
+    //       items: [
+    //         {
+    //           type: 'link',
+    //           label: 'Overview',
+    //           href: '/docs_data_analysis/index_data_access',
+    //         },
+    //         {
+    //           type: 'link',
+    //           label: 'Error Analysis Examples',
+    //           href: '/docs_data_analysis/error_analysis_examples',
+    //           // label: 'Documentation',
+    //         },
+    //         {
+    //           type: 'link',
+    //           label: 'Error Analysis API',
+    //           href: '/documentation/error_analysis',
+    //           // label: 'Examples',
+    //         },
+    //       ],
+    //     },
+    //     {
+    //       type: 'category',
+    //       label: 'Validation',
+    //       items: [
+    //         {
+    //           type: 'link',
+    //           label: 'Overview',
+    //           id: '/docs_data_analysis/index_data_access',
+    //         },
+    //         {
+    //           type: 'link',
+    //           label: 'Validation_examples',
+    //           href: '/docs_data_analysis/validation_examples',
+    //           // label: 'Documentation',
+    //         },
+    //         {
+    //           type: 'link',
+    //           label: 'Validation API',
+    //           href: '/documentation/validation',
+    //           // label: 'Documentation',
+    //         }
+    //       ],
+    //     },
+    //   ],
+    // },
+
+
+
+    //Billing
     {
       type: 'category',
-      label: 'Data Analysis',
+      label: 'Billing',
       collapsible: true,
       collapsed: true,
       items: [
         {
           type: 'doc',
-          id: 'data_analysis',
+          label: 'Payment Method',
+          id: 'billing/billing_pm',
         },
         {
-          type: 'category',
-          label: 'Data access',
-          items: [
-            {
-              type: 'link',
-              label: 'Overview',
-              href: '/docs_data_analysis/index_data_access',
-            },
-            {
-              type: 'link',
-              label: 'Data Access Examples',
-              href: '/docs_data_analysis/data_access_examples',
-              // label: 'Examples',
-            },
-            {
-              type: 'link',
-              label: 'Data Access API',
-              href: '/documentation/data_access',
-              // label: 'Examples',
-            },
-          ]
+          type: 'doc',
+          label: 'Billing Address',
+          id: 'billing/billing_address',
         },
         {
-          type: 'category',
-          label: 'Error Analysis',
-          items: [
-            {
-              type: 'link',
-              label: 'Overview',
-              href: '/docs_data_analysis/index_data_access',
-            },
-            {
-              type: 'link',
-              label: 'Error Analysis Examples',
-              href: '/docs_data_analysis/error_analysis_examples',
-              // label: 'Documentation',
-            },
-            {
-              type: 'link',
-              label: 'Error Analysis API',
-              href: '/documentation/error_analysis',
-              // label: 'Examples',
-            },
-          ],
+          type: 'doc',
+          label: 'Invoices',
+          id: 'billing/billing_invoices',
         },
         {
-          type: 'category',
-          label: 'Validation',
-          items: [
-            {
-              type: 'link',
-              label: 'Overview',
-              href: '/docs_data_analysis/index_data_access',
-            },
-            {
-              type: 'link',
-              label: 'Validation_examples',
-              href: '/docs_data_analysis/validation_examples',
-              // label: 'Documentation',
-            },
-            {
-              type: 'link',
-              label: 'Validation API',
-              href: '/documentation/validation',
-              // label: 'Documentation',
-            }
-          ],
+          type: 'doc',
+          label: 'Plans',
+          id: 'billing/billing_plans',
         },
       ],
     },
+
+
+    //Notifications
+    {
+      type: 'category',
+      label: 'Notifications',
+      collapsible: true,
+      collapsed: true,
+      items: [
+        {
+          type: 'doc',
+          label: 'Notification Template',
+          id: 'notifications/notifications_template',
+        },
+        {
+          type: 'doc',
+          label: 'Notifications Settings',
+          id: 'notifications/notifications_settings',
+        },
+      ],
+    },
+
+    //Organization
     {
       type: 'category',
       label: 'Organization',
@@ -487,10 +571,12 @@ module.exports = {
         {
           type: 'doc',
           label: 'TBD',
-          id: 'dummy',
+          id: 'organization/organization_tbd',
         },
       ],
     },
+
+    //CI/CD and DevOps
     {
       type: 'category',
       label: 'CI/CD and DevOps',
@@ -500,7 +586,7 @@ module.exports = {
         {
           type: 'doc',
           label: 'TBD',
-          id: 'dummy',
+          id: 'cicd/cicd_tbd',
         },
       ],
     }
