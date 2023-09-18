@@ -327,7 +327,26 @@ citros run -n 'Lunar_Starship' -m 'cloud test run' -r
 Select the launch file (should be the only one here) by pressing ```Enter``` button. Now the simulation is running in the CITROS server, and it will upload results to the CITROS database automaticly.
 
 ### CITROS Web usage and data analysis 🌌
-TODO
+#### Launching project via CITROS Web
+The best way to use all the innovative capabilities of CITROS is through it's Web interface. The following manual explains how to run this project in the cloud and how to process the simualtion results.
+The starting point is CITROS main page, user is logged in and the project Docker image is built and pushed to the cloud (see the [manual](#uploading-docker-image-to-the-citros-database-and-running-in-the-cloud-🛰️) above).
+1. Go to the ```Repositories``` page clicking on the tab on the top;
+2. Find your project and open it;
+3. Navigate to the ```Runs``` tab;
+4. Click on the ```Run Simulation``` button on the right;
+5. Now you can choose the project and the simulation setup from the droplists, set the number of repeats and how many simulations should run in parallel, type the Name of the run and the additional message. This window also shows the perfomance preset.
+6. We are ready to go! Start the Batch with the button below.
+
+The simualtion launched! Open the Run you just started in the list on ```Runs``` page to check how is it going. In this page you can find all the runs of this batch. The number of runs here equals to the number of runs you've set before.
+Navigate to the Run by clicking on it in the table:
+* The main part of this page is a simulation's log. Here you can find all the logging information from all levels: from your code logs up to the CITROS system information.
+* The right part of the page provides additional information about Events: the main stages of the simulation run.
+
+#### Working with integrated Jupiter Notebooks
+CITROS Web provides powerfull data analisys package, which is comprehensive solution for data query, analysis and visualization. With its extensive features, you can quickly and easily extract valuable insights from your data. To use it, the Jupiter Notebook support is built-in. 
+Navigate to our project ```Code``` page, open the Notebooks folder and click on the notebook file. Here you can see the usual Jupiter editor's interface: you can add blocks of code or built-in Markdown engine, run and save notebook and control the Python kernel.
+
+You can find all the data analisys package [here](https://citros.io/doc/docs_data_analysis).
 ## Extras
 ### FoxGlove examples
 
