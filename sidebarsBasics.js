@@ -375,33 +375,63 @@ module.exports = {
 
 
     //Data Analysis
-    // {
-    //   type: 'category',
-    //   label: 'Data Analysis',
-    //   collapsible: true,
-    //   collapsed: true,
-    //   items: [
-    //     {
-    //       type: 'doc',
-    //       label: 'Overview',
-    //       id: 'data_analysis/data_analysis_overview',
-    //     },
-    //     {
-    //       type: 'category',
-    //       label: 'Data Access',
-    //       items: [
-    //         {
-    //           type: 'doc',
-    //           label: 'Overview',
-    //           id: 'data_analysis/data_access/access_overview',
-    //         },
-    //         {
-    //           type: 'doc',
-    //           label: 'Data Structure',
-    //           id: 'data_analysis/data_access/access_ds',
-    //         },
-    //       ]
-    //     },
+    //
+    {
+      type: 'category',
+      label: 'Data Analysis',
+      collapsible: true,
+      collapsed: true,
+      items: [
+        {
+          type: 'doc',
+          label: 'Overview',
+          id: 'data_analysis/data_analysis_overview',
+        },
+        {
+          type: 'category',
+          label: 'Data Access',
+          items: [
+            {
+              type: 'doc',
+              label: 'Overview',
+              id: 'data_analysis/data_access/access_overview',
+              // id: 'dummy',
+
+            },
+            {
+              type: 'doc',
+              label: 'Examples',
+              // id: 'dummy',
+              id: 'data_analysis/data_access/access_examples',
+            },
+            {
+              type: 'doc',
+              label: 'Data Structure',
+              id: 'data_analysis/data_access/access_ds',
+              // id: 'dummy',
+
+            },
+          ]
+        },
+        // {
+        //   type: 'category',
+        //   label: 'Data Validation',
+        //   items: [
+        //     {
+        //       type: 'doc',
+        //       label: 'Overview',
+        //       id: 'data_analysis/data_validation/validation_overview',
+        //     },
+        //     {
+        //       type: 'doc',
+        //       label: 'Overview',
+        //       id: 'data_analysis/data_validation/validation_examples',
+        //     },
+
+        //   ]
+        // },
+      ]
+    },
     //     {
     //       type: 'category',
     //       label: 'Error Analysis',
