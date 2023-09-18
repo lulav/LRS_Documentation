@@ -1473,7 +1473,7 @@ df.set_index(['rid','sid']).unstack()['data.x.x_1'].plot()
 <details>
   <summary>Show figure:</summary>
 
-<!-- ![fig1](/docs/data_analysis/img/fig1.png "Fig1") -->
+![fig1](img/fig1.png "Fig1")
 
 </details>
 
@@ -1485,7 +1485,7 @@ df.set_index(['rid','sid']).unstack()[['data.x.x_1','data.x.x_2']].plot()
 <details>
   <summary>Show figure:</summary>
 
-<!-- ![fig2](/docs/data_analysis/img/fig2.png "Fig2") -->
+![fig2](img/fig2.png "Fig2")
 </details>
 
 It is also possible to query and plot all at once by a single command:
@@ -1501,8 +1501,8 @@ citros.topic('B')\
 <details>
   <summary>Show figure:</summary>
 
-<!-- ![fig1](/docs/data_analysis/img/fig1.png "Fig1") -->
-<!-- /docs/data_analysis/data_access/access_ds -->
+![fig1](img/fig1.png "Fig1")
+
 </details>
 
 ### plot_graph()
@@ -1517,7 +1517,7 @@ citros.plot_graph(df, 'rid', 'data.x.x_2', '.', title = 'data.x.x_2 vs. rid')
 <details>
   <summary>Show figure:</summary>
 
-<!-- ![fig3](/docs/data_analysis/img/fig3.png "Fig3") -->
+![fig3](img/fig3.png "Fig3")
 </details>
 
 ### plot_3dgraph()
@@ -1545,7 +1545,7 @@ fig.tight_layout()
 <details>
   <summary>Show figure:</summary>
 
-<!-- ![fig6](/docs/data_analysis/img/fig18.png "Fig6") -->
+![fig6](img/fig18.png "Fig6")
 </details>
 
 The `ax` parameter allows the option to pass a pre-existing three-dimensional axes for plotting:
@@ -1578,7 +1578,7 @@ fig, ax = citros.multiple_y_plot(df, 'data.time', ['data.x.x_1', 'data.x.x_2', '
 <details>
   <summary>Show figure:</summary>
 
-<!-- ![fig7](/docs/data_analysis/img/fig19.png "Fig7") -->
+![fig7](img/fig19.png "Fig7")
 </details>
 
 ### multiplot()
@@ -1595,7 +1595,7 @@ fig, ax = citros.multiplot(df, ['data.x.x_1','data.x.x_2', 'data.x.x_3'], '.' ,
 <details>
   <summary>Show figure:</summary>
 
-<!-- ![fig8](/docs/data_analysis/img/fig20.png "Fig8") -->
+![fig8](img/fig20.png "Fig8")
 </details>
 
 ### plot_sigma_ellipse()
@@ -1611,7 +1611,7 @@ fig, ax = citros.plot_sigma_ellipse(df, x_label = 'data.x.x_1', y_label = 'data.
 <details>
   <summary>Show figure:</summary>
 
-<!-- ![fig9](/docs/data_analysis/img/fig25.png "Fig9") -->
+![fig9](img/fig25.png "Fig9")
 </details>
 
 To plot multiple error ellipses, such as 1-$\sigma$, 2-$\sigma$, and 3-$\sigma$ ellipses, pass a list to the n_std parameter, like 'n_std=[1, 2, 3]'. By setting bounding_error to True, the bounding error will be plotted for all of these ellipses. Additionally, you have the flexibility to customize labels and titles of the plot as desired.
@@ -1625,7 +1625,7 @@ fig, ax = citros.plot_sigma_ellipse(df, x_label = 'data.x.x_1', y_label = 'data.
 <details>
   <summary>Show figure:</summary>
 
-<!-- ![fig10](/docs/data_analysis/img/fig26.png "Fig10") -->
+![fig10](img/fig26.png "Fig10")
 </details>
 
 If `return_ellipse_param` = True, the dictionary with ellipse parameters is also returned:
@@ -1670,7 +1670,7 @@ citros.topic('A').time_plot(ax,
 <details>
   <summary>Show figure:</summary>
 
-<!-- ![fig4](/docs/data_analysis/img/fig16.png "Fig4") -->
+![fig4](img/fig16.png "Fig4")
 </details>
 
 ### xy_plot()
@@ -1696,7 +1696,7 @@ citros.sid([1,2,3]).topic('A')\
 <details>
   <summary>Show figure:</summary>
 
-<!-- ![fig5](/docs/data_analysis/img/fig17.png "Fig5") -->
+![fig5](img/fig17.png "Fig5")
 </details>
 
 ## Useful utilities

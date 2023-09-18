@@ -413,130 +413,52 @@ module.exports = {
             },
           ]
         },
-        // {
-        //   type: 'category',
-        //   label: 'Data Validation',
-        //   items: [
-        //     {
-        //       type: 'doc',
-        //       label: 'Overview',
-        //       id: 'data_analysis/data_validation/validation_overview',
-        //     },
-        //     {
-        //       type: 'doc',
-        //       label: 'Overview',
-        //       id: 'data_analysis/data_validation/validation_examples',
-        //     },
+        {
+          type: 'category',
+          label: 'Data Validation',
+          items: [
+            {
+              type: 'doc',
+              label: 'Overview',
+              id: 'data_analysis/data_validation/validation_overview',
+            },
+            {
+              type: 'doc',
+              label: 'Examples',
+              id: 'data_analysis/data_validation/validation_example',
+            },
+            {
+              type: 'doc',
+              label: 'Data Structure',
+              id: 'data_analysis/data_validation/validation_ds',
+            },
 
-        //   ]
-        // },
+          ]
+        },
+        {
+          type: 'category',
+          label: 'Error Analysis',
+          items: [
+            {
+              type: 'doc',
+              label: 'Overview',
+              id: 'data_analysis/data_error/error_overview',
+            },
+            {
+              type: 'doc',
+              label: 'Examples',
+              id: 'data_analysis/data_error/error_examples',
+            },
+            {
+              type: 'doc',
+              label: 'Data Structure',
+              id: 'data_analysis/data_error/error_ds',
+            },
+
+          ]
+        }
       ]
     },
-    //     {
-    //       type: 'category',
-    //       label: 'Error Analysis',
-    //       items: [
-    //         {
-    //           type: 'doc',
-    //           label: 'Overview',
-    //           id: 'data_analysis/data_error/error_overview',
-    //         },
-    //         {
-    //           type: 'doc',
-    //           label: 'Data Structure',
-    //           id: 'data_analysis/data_error/error_ds',
-    //         },
-    //       ]
-    //     },
-    //     {
-    //       type: 'category',
-    //       label: 'Data Validation',
-    //       items: [
-    //         {
-    //           type: 'doc',
-    //           label: 'Overview',
-    //           id: 'data_analysis/data_validation/validation_overview',
-    //         },
-    //         {
-    //           type: 'doc',
-    //           label: 'Data Structure',
-    //           id: 'data_analysis/data_validation/validation_ds',
-    //         },
-    //       ]
-    //     }
-    //   ]
-    // },
-    // //     {
-    //       type: 'category',
-    //       label: 'Data access',
-    //       items: [
-    //         {
-    //           type: 'link',
-    //           label: 'Overview',
-    //           href: '/docs_data_analysis/index_data_access',
-    //         },
-    //         {
-    //           type: 'doc',
-    //           label: 'Data Access Examples',
-    //           id: 'data_analysis/data_access_examples',
-    //           // label: 'Examples',
-    //         },
-    //         {
-    //           type: 'link',
-    //           label: 'Data Access API',
-    //           href: '/documentation/data_access',
-    //           // label: 'Examples',
-    //         },
-    //       ]
-    //     },
-    //     {
-    //       type: 'category',
-    //       label: 'Error Analysis',
-    //       items: [
-    //         {
-    //           type: 'link',
-    //           label: 'Overview',
-    //           href: '/docs_data_analysis/index_data_access',
-    //         },
-    //         {
-    //           type: 'link',
-    //           label: 'Error Analysis Examples',
-    //           href: '/docs_data_analysis/error_analysis_examples',
-    //           // label: 'Documentation',
-    //         },
-    //         {
-    //           type: 'link',
-    //           label: 'Error Analysis API',
-    //           href: '/documentation/error_analysis',
-    //           // label: 'Examples',
-    //         },
-    //       ],
-    //     },
-    //     {
-    //       type: 'category',
-    //       label: 'Validation',
-    //       items: [
-    //         {
-    //           type: 'link',
-    //           label: 'Overview',
-    //           id: '/docs_data_analysis/index_data_access',
-    //         },
-    //         {
-    //           type: 'link',
-    //           label: 'Validation_examples',
-    //           href: '/docs_data_analysis/validation_examples',
-    //           // label: 'Documentation',
-    //         },
-    //         {
-    //           type: 'link',
-    //           label: 'Validation API',
-    //           href: '/documentation/validation',
-    //           // label: 'Documentation',
-    //         }
-    //       ],
-    //     },
-    //   ],
-    // },
 
 
 
