@@ -125,7 +125,7 @@ module.exports = {
           items: [
             {
               type: 'doc',
-              label: 'Registraion Login',
+              label: 'Account Registration',
               id: 'authentication/account/account_login',
             },
             {
