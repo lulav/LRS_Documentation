@@ -225,7 +225,7 @@ const config = {
               // },
               {
                 label: 'GitHub',
-                to: 'https://github.com/lulav',
+                to: 'https://github.com/citros-garden',
               },
             ],
           },

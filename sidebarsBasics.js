@@ -244,11 +244,11 @@ module.exports = {
           type: 'category',
           label: 'Batch Simulations',
           items: [
-            {
-              type: 'doc',
-              label: 'Breadcrumbs',
-              id: 'simulations_batch/sim_batch_breadcrumbs',
-            },
+            // {
+            //   type: 'doc',
+            //   label: 'Breadcrumbs',
+            //   id: 'simulations_batch/sim_batch_breadcrumbs',
+            // },
             {
               type: 'doc',
               label: 'Run New Batch Simulations',
@@ -265,11 +265,11 @@ module.exports = {
           type: 'category',
           label: 'Simulation Screen',
           items: [
-            {
-              type: 'doc',
-              label: 'Breadcrumbs',
-              id: 'simulation_screen/sim_breadcrumbs',
-            },
+            // {
+            //   type: 'doc',
+            //   label: 'Breadcrumbs',
+            //   id: 'simulation_screen/sim_breadcrumbs',
+            // },
             {
               type: 'doc',
               label: 'Possible Runs',
@@ -462,85 +462,85 @@ module.exports = {
 
 
 
-    //Billing
-    {
-      type: 'category',
-      label: 'Billing',
-      collapsible: true,
-      collapsed: true,
-      items: [
-        {
-          type: 'doc',
-          label: 'Payment Method',
-          id: 'billing/billing_pm',
-        },
-        {
-          type: 'doc',
-          label: 'Billing Address',
-          id: 'billing/billing_address',
-        },
-        {
-          type: 'doc',
-          label: 'Invoices',
-          id: 'billing/billing_invoices',
-        },
-        {
-          type: 'doc',
-          label: 'Plans',
-          id: 'billing/billing_plans',
-        },
-      ],
-    },
+    // //Billing
+    // {
+    //   type: 'category',
+    //   label: 'Billing',
+    //   collapsible: true,
+    //   collapsed: true,
+    //   items: [
+    //     {
+    //       type: 'doc',
+    //       label: 'Payment Method',
+    //       id: 'billing/billing_pm',
+    //     },
+    //     {
+    //       type: 'doc',
+    //       label: 'Billing Address',
+    //       id: 'billing/billing_address',
+    //     },
+    //     {
+    //       type: 'doc',
+    //       label: 'Invoices',
+    //       id: 'billing/billing_invoices',
+    //     },
+    //     {
+    //       type: 'doc',
+    //       label: 'Plans',
+    //       id: 'billing/billing_plans',
+    //     },
+    //   ],
+    // },
 
 
-    //Notifications
-    {
-      type: 'category',
-      label: 'Notifications',
-      collapsible: true,
-      collapsed: true,
-      items: [
-        {
-          type: 'doc',
-          label: 'Notification Template',
-          id: 'notifications/notifications_template',
-        },
-        {
-          type: 'doc',
-          label: 'Notifications Settings',
-          id: 'notifications/notifications_settings',
-        },
-      ],
-    },
+    // //Notifications
+    // {
+    //   type: 'category',
+    //   label: 'Notifications',
+    //   collapsible: true,
+    //   collapsed: true,
+    //   items: [
+    //     {
+    //       type: 'doc',
+    //       label: 'Notification Template',
+    //       id: 'notifications/notifications_template',
+    //     },
+    //     {
+    //       type: 'doc',
+    //       label: 'Notifications Settings',
+    //       id: 'notifications/notifications_settings',
+    //     },
+    //   ],
+    // },
 
-    //Organization
-    {
-      type: 'category',
-      label: 'Organization',
-      collapsible: true,
-      collapsed: true,
-      items: [
-        {
-          type: 'doc',
-          label: 'TBD',
-          id: 'organization/organization_tbd',
-        },
-      ],
-    },
+    // //Organization
+    // {
+    //   type: 'category',
+    //   label: 'Organization',
+    //   collapsible: true,
+    //   collapsed: true,
+    //   items: [
+    //     {
+    //       type: 'doc',
+    //       label: 'TBD',
+    //       id: 'organization/organization_tbd',
+    //     },
+    //   ],
+    // },
 
-    //CI/CD and DevOps
-    {
-      type: 'category',
-      label: 'CI/CD and DevOps',
-      collapsible: true,
-      collapsed: true,
-      items: [
-        {
-          type: 'doc',
-          label: 'TBD',
-          id: 'cicd/cicd_tbd',
-        },
-      ],
-    }
+    // //CI/CD and DevOps
+    // {
+    //   type: 'category',
+    //   label: 'CI/CD and DevOps',
+    //   collapsible: true,
+    //   collapsed: true,
+    //   items: [
+    //     {
+    //       type: 'doc',
+    //       label: 'TBD',
+    //       id: 'cicd/cicd_tbd',
+    //     },
+    //   ],
+    // }
   ]
 };
