@@ -1,0 +1,195 @@
+---
+slug: Soft-Landing Example
+title: Soft-Landing
+authors: [orrlulavspace , iftahnaf]
+tags: [citros]
+---
+
+# Soft Landing Tutorial
+
+---- add cool image heree----
+
+**Contents**
+
+- General Info
+    - system dynamics
+    - controller
+- Installition
+    - Prerequisits
+    - Install & build
+- citros interagtion
+- Example
+
+
+## General Info
+
+This is a ROS 2 simulation of soft landing of an object.  
+In the ROS system we have two nodes: the first represents the `dynamics` and the second one is the `controller`.
+
+![jpg](img/soft_landing_control.jpg "soft landing")
+
+#### **System dynamics** ?
+The system's equation of motion is the kinematic equation of a free body fall.  
+for more information see ---
+
+#### **The controller** ?
+The controller is based on this paper:
+
+*S. Gutman, "Rendezvous and Soft Landing in Closed Form via LQ Optimization," 2019 27th Mediterranean Conference on Control and Automation (MED), Akko, Israel, 2019, pp. 536-540, doi: 10.1109/MED.2019.8798572.*
+
+for more information about the controller look here
+
+
+## Installition
+
+#### Prerequisits
+ - ✅ Python 3.8+  
+ - ✅ VSCode  
+ - ✅ Docker  
+ 
+   
+#### Install & build  
+1. Clone the repository:
+   ```sh
+    git clone git@github.com:citros-garden/soft_landing.git
+   ```
+
+2. open the repository in the VScode:
+	```sh
+	cd ~/soft_landing
+	code .
+	```
+3. open the repository in the container from VScode with `reopen in container` option.
+
+
+## citros interagtion
+To use all the powerfull CITROS features usage requires CITROS installation:  
+(from the instructions on the CITROS CLI [GitHub page](https://github.com/lulav/citros_cli))
+
+
+**First,reopen the folder localy** then follow the instructions:
+```
+pip install citros
+```  
+and after it finished installation,copy and run the following line:
+```
+export CITROS_DOMAIN=dev5.citros.io
+
+```
+2. login to citros:
+```
+  citros login -v
+```
+(The -v flag is to validate that we are on dev5 )
+![Alt text](image.png)  
+enter your email and pasword ,you supose to see:    
+![Alt text](image-1.png)  
+then   
+```
+citros setup-ssh
+```
+### Configuring the project 
+After all the prerequisites done, we can start configuring our project. The starting point is the soft_landing devcontainer loaded and running, CITROS CLI is installed and ready.
+1. Initialize CITROS:
+```bash 
+citros init
+```
+Now you can see ```.citros``` folder in the explorer and at the terminal you can see that:  
+![Alt text](image-2.png)  
+
+4. Reopen in container
+5. source and build:
+	```sh
+	colcon build
+	source install/local_setup.bash
+	```
+
+## Run the  example
+
+### **The canerio**
+Run the example of an object with the initial condition that supose to land on an ending point.  
+The parameters are:  
+
+$$
+\begin{array}{|c|c|}
+\hline
+\text{Variable} & \text{Description} \\
+\hline
+[r_{x_0} ,r_{y_0},r_{z_0}] & \text{initial position of the dynamics} \\
+[v_{x_0} ,v_{y_0},v_{z_0}] & \text{initial velocity of the dynamics} \\
+g_{x_0} ,g_{y_0},g_{z_0} & \text{gravity vector} \\
+dt & \text{time interval} \\
+u & \text{controller fedback} \\
+[setpoint.{r_x} , setpoint.{r_y} , setpoint.{r_z}] & \text{controler target point} \\
+[setpoint.{v_x} , setpoint.{v_y} , setpoint.{v_z}] & \text{controler target velocity} \\
+um & \text{?} \\
+e & \text{stoping condition value} \\
+
+\hline
+\end{array}
+$$
+
+**All of the above are ros 2 parameters that could easly change by the user as wish.**  
+
+
+After compliting the citros interagition setup we can cheack citros by running a test simulation.  
+
+First, set up the parameter of the simulation in the file   `default_param_setup.json` in `.citros/parameter_setups` folder.  
+Don't forget to save the file!  
+
+:::tip
+
+you can read more about changing parameters in  `parameter setups` section in `citros_cli` readme.
+
+:::  
+
+After any change in the parameter file you need to  built and sourced befor running it: 
+
+```sh
+colcon build
+source install/local_setup.bash
+```
+### run a test simulation localy with citros ###
+#### Syncing the project's setup
+Now we can sync our project settings with CITROS server:
+```bash 
+citros commit
+citros push
+```
+when evrything is setup you can do a test run buy the following command:  
+```
+citros run -n 'test' -m 'testytest'
+```
+Then you will ask to choose the launch file you want to run.  
+There are two option:
+
+--- add image here ---
+
+The `dynamics_controller.launch.py` launch the dynamics with the controller and `dynamics.launch.py` launch only the dynamics.
+Select the launch file by pressing ```Enter``` button and wait for the output in the terminal.  
+If the simulation ran perfectly you can run the simlulation in the cloud.
+## run a test simulation in the web with citros ##
+Befor uplouding the simulation to the cloud cheack that the parameter file, `default_param_setup.json`  in `.citros/parameter_setups` folder is set as you wish and saved.  
+That you have build and sourced the project.  
+And you have sync the project settings with CITROS server (citros commit , citros push).  
+
+Then,run the following:
+1. We need to build and push Docker container image to the Citros server:
+```bash 
+citros docker-build-push
+```
+
+2. Finally, we can run it in the cloud! Simply add ```-r``` to the terminal command: 
+```bash 
+citros run -n 'test' -m 'testytest' -r
+```
+Select the launch file you want by pressing ```Enter``` button. Now the simulation is running in the Citros server, and it will upload results to the Citros database automaticly.
+
+
+
+show result from the notebooke
+
+
+
+
+
