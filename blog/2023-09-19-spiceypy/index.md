@@ -9,7 +9,7 @@ Blog posts support [Docusaurus Markdown features](https://docusaurus.io/docs/mar
 
 ![jpg](img/img0.jpg "https://images.nasa.gov/details/PIA03883")
 
-## Example overview 🌐 
+## Example Overview 🌐 
 
 This project is developed using ROS nodes and leverages the SpiceyPy library, a Python implementation of NASA's NAIF Spice toolkit. Its primary purpose is to provide the orbital trajectory information of the Cassini spacecraft relative to Saturn's barycenter within specified time intervals.
 
@@ -22,10 +22,10 @@ You can find more information about SpiceyPy library on [SpiceyPy official websi
 
 
 
-## CITROS usage 🛸
+## CITROS Usage 🛸
 Although you can get simulation results using FoxGlove, the best way to work with such simulations and process the results is CITROS! With its power, it is possible to create complex data processing scenarios, including the construction of more complex graphs, mathematical analysis and other high-level processing methods.
 
-### CITROS installation 🛫
+### CITROS Installation 🛫
 
 First of all, to use all the powerfull CITROS features usage requires CITROS installation: follow the instructions on the CITROS CLI [GitHub page](https://github.com/lulav/citros_cli).
 
