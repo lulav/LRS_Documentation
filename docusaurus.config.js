@@ -192,42 +192,59 @@ const config = {
           },
         ],
       },
-      // footer: {
-      //   style: 'dark',
-      //   links: [
-      //     {
-      //       title: 'Tutorials',
-      //       items: [
-      //         {
-      //           label: 'Getting started',
-      //           to: '/docs',
-      //         },
-      //         {
-      //           label: 'Web',
-      //           to: '/docs_citros_web',
-      //         },
-      //         {
-      //           label: 'CLI',
-      //           to: '/docs_cli',
-      //         },
-      //         {
-      //           label: 'Data analysis',
-      //           to: '/docs_data_analysis',
-      //         },
-      //       ],
-      //     },
-      //     {
-      //       title: 'More',
-      //       items: [
-      //         {
-      //           label: 'Blog',
-      //           to: '/blog',
-      //         },
-      //       ],
-      //     },
-      //   ],
-      //   copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
-      // },
+      footer: {
+        style: 'dark',
+        links: [
+          {
+            title: 'Visit',
+            items: [
+              {
+                label: 'Blog',
+                to: '/blog',
+              },
+              {
+                label: 'Twitter',
+                to: 'https://twitter.com/lulavspace',
+              },
+              {
+                label: 'Linkdin',
+                to: 'https://www.linkedin.com/company/lulav-space/',
+              },
+              {
+                label: 'Website',
+                to: 'https://www.lulav.space',
+              },
+            ],
+          },
+          {
+            title: 'More to Learn',
+            items: [
+              // {
+              //   label: 'ChangeLog',
+              //   to: '/docs_data_analysis',
+              // },
+              {
+                label: 'GitHub',
+                to: 'https://github.com/citros-garden',
+              },
+            ],
+          },
+          {
+            title: 'Legal',
+            items: [
+              {
+                label: 'Terms and Conditions',
+                to: '/blog',
+              },
+              {
+                label: 'Privacy Policy',
+                to: '/blog',
+              },
+            ],
+          },
+        ],
+        copyright: `Copyright © ${new Date().getFullYear()} Lulav Space.`,
+      },
       prism: {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
