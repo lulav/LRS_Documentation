@@ -2,7 +2,7 @@
 slug: Lunar Hopper optimal control example using CITROS
 title: Lunar Hopper optimal control example using CITROS
 authors: [gtep]
-tags: [citros]
+tags: [CITROS]
 ---
 
 Blog posts support [Docusaurus Markdown features](https://docusaurus.io/docs/markdown-features), such as [MDX](https://mdxjs.com/).
@@ -135,7 +135,7 @@ All project installation and usage information also available in the project [Gi
 2. To use Docker inside VS Code several extensions are required. Install [Dev Containers](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers) and [Docker](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-docker) extensions from Extensions tab on your left control panel.
 3. Clone the repository:
 ```bash 
-git git@github.com:citros-garden/lunar_hopper.git
+git clone git@github.com:citros-garden/lunar_hopper.git
 ```
 
 ### Build 🏠
@@ -143,7 +143,7 @@ git git@github.com:citros-garden/lunar_hopper.git
 2. Navigate to the lower-left corner of VS Code window and click on green mark.
 3. Select "Reopen in container" option in the list on the top of the VS Code window. Wait a minute while Docker container is starting.
 2. Open ```/src/lunar_hopper/config/params.xml``` file to set parameters for simulation or just keep it default. Don't forget to save your changes!
-3. Build ROS2 environment:
+3. Build ROS 2 environment:
 ```bash 
 colcon build
 ```
@@ -163,6 +163,14 @@ Last step is configuring the layout of FoxGlove. There are two ways to do it: us
 
 Manual plot layout configuration: we have 5 states in the output messages, so we need 5 plots. Add 5 plots using third tab on the left FoxGlove control panel. Then click on the fourth tab and set 'Message Path' for each plot: the path should be ``` /lunar_hopper/state.data[n] ```, where n - number of the state. Use ``` /lunar_hopper/control.data[m] ``` as a Message Path for control vector, where m - number of the control (0 or 1).
 
+OR
+
+:::tip
+
+You can use prepared layout: Go to the ```Layout``` tab on the top panel, then click on import_layout button and select the file from foxglove_layouts folder.
+
+:::
+
 $$
 \begin{array}{|c|c|c|}
 \hline
@@ -180,7 +188,7 @@ $$
 
 :::tip
 
-The best way to process simulation results is Citros notebook 🍋 :)
+The best way to process simulation results is CITROS notebook 🍋 :)
 
 :::
 
@@ -188,7 +196,7 @@ The best way to process simulation results is Citros notebook 🍋 :)
 ### Run 🚀
 1. Go back to the VS Code.
 2. Prepare your FoxGlove studio (previous step, if you haven't done it yet).
-3. Launch ROS2 package:
+3. Launch ROS 2 package:
 ```bash 
 ros2 launch lunar_hopper lunar_hopper.launch.py
 ```
@@ -204,16 +212,16 @@ You can use Visual Code Tasks: simply press ```Alt+T``` and select ```Launch``` 
 
 <!-- ![gif](img/gif0.gif "FoxGlove example") -->
 
-## Citros usage 🛸
-Although you can get simulation results using FoxGlove, the best way to work with such simulations and process the results is Citros! With its power, it is possible to create complex data processing scenarios, including the construction of more complex graphs, mathematical analysis and other high-level processing methods.
+## CITROS usage 🛸
+Although you can get simulation results using FoxGlove, the best way to work with such simulations and process the results is CITROS! With its power, it is possible to create complex data processing scenarios, including the construction of more complex graphs, mathematical analysis and other high-level processing methods.
 
-### Citros installation 🛫
+### CITROS installation 🛫
 
-First of all, to use all the powerfull Citros features usage requires Citros installation: follow the instructions on the Citros CLI [GitHub page](https://github.com/lulav/citros_cli).
+First of all, to use all the powerfull CITROS features usage requires CITROS installation: follow the instructions on the CITROS CLI [GitHub page](https://github.com/lulav/citros_cli).
 
 ### Configuring the project ⚙️
-After all the prerequisites done, we can start configuring our project. The starting point is the Lunar_Starship devcontainer loaded and running, Citros CLI is installed and ready.
-1. Initialize Citros:
+After all the prerequisites done, we can start configuring our project. The starting point is the Lunar_Starship devcontainer loaded and running, CITROS CLI is installed and ready.
+1. Initialize CITROS:
 ```bash 
 citros init
 ```
@@ -241,7 +249,7 @@ $$
 Don't forget to save the file!
 
 ### Syncing the project's setup 📡
-Now we can sync our project settings with Citros server:
+Now we can sync our project settings with CITROS server:
 ```bash 
 citros commit
 citros push
@@ -253,8 +261,8 @@ citros run -n 'Lunar_hopper' -m 'local test run'
 ```
 Select the launch file (should be the only one here) by pressing ```Enter``` button and wait for the output in the terminal. To plot the local run results you can use FoxGlove.
 
-### Uploading Docker image to the Citros database and running in the cloud 🛰️
-1. We need to build and push Docker container image to the Citros server:
+### Uploading Docker image to the CITROS database and running in the cloud 🛰️
+1. We need to build and push Docker container image to the CITROS server:
 ```bash 
 citros docker-build-push
 ```
@@ -263,10 +271,29 @@ citros docker-build-push
 ```bash 
 citros run -n 'Lunar_hopper' -m 'cloud test run' -r
 ```
-Select the launch file (should be the only one here) by pressing ```Enter``` button. Now the simulation is running in the Citros server, and it will upload results to the Citros database automaticly.
+Select the launch file (should be the only one here) by pressing ```Enter``` button. Now the simulation is running in the CITROS server, and it will upload results to the CITROS database automaticly.
 
-### Citros Web usage and data analysis 🌌
-TODO
+### CITROS Web usage and data analysis 🌌
+#### Launching project via CITROS Web
+The best way to use all the innovative capabilities of CITROS is through it's Web interface. The following manual explains how to run this project in the cloud and how to process the simualtion results.
+The starting point is CITROS main page, user is logged in and the project Docker image is built and pushed to the cloud (see the [manual](#uploading-docker-image-to-the-citros-database-and-running-in-the-cloud-🛰️) above).
+1. Go to the ```Repositories``` page clicking on the tab on the top;
+2. Find your project and open it;
+3. Navigate to the ```Runs``` tab;
+4. Click on the ```Run Simulation``` button on the right;
+5. Now you can choose the project and the simulation setup from the droplists, set the number of repeats and how many simulations should run in parallel, type the Name of the run and the additional message. This window also shows the perfomance preset.
+6. We are ready to go! Start the Batch with the button below.
+
+The simualtion launched! Open the Run you just started in the list on ```Runs``` page to check how is it going. In this page you can find all the runs of this batch. The number of runs here equals to the number of runs you've set before.
+Navigate to the Run by clicking on it in the table:
+* The main part of this page is a simulation's log. Here you can find all the logging information from all levels: from your code logs up to the CITROS system information.
+* The right part of the page provides additional information about Events: the main stages of the simulation run.
+
+#### Working with integrated Jupiter Notebooks
+CITROS Web provides powerfull data analisys package, which is comprehensive solution for data query, analysis and visualization. With its extensive features, you can quickly and easily extract valuable insights from your data. To use it, the Jupiter Notebook support is built-in. 
+Navigate to our project ```Code``` page, open the Notebooks folder and click on the notebook file. Here you can see the usual Jupiter editor's interface: you can add blocks of code or built-in Markdown engine, run and save notebook and control the Python kernel.
+
+You can find all the data analisys package [here](https://citros.io/doc/docs_data_analysis).
 ## Extras
 ### FoxGlove examples
 
