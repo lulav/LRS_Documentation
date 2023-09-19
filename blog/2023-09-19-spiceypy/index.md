@@ -15,87 +15,12 @@ This project is developed using ROS nodes and leverages the SpiceyPy library, a 
 
 Users can input the desired time bounds, and the project utilizes SpiceyPy's powerful capabilities to retrieve accurate and precise orbital data for the Cassini spacecraft during the specified period.
 
-You can find more information about SpiceyPy library on [SpiceyPy official website](https://spiceypy.readthedocs.io/en/v2.0.0/index.html).
+You can find more information about SpiceyPy library on [SpiceyPy official website](https://spiceypy.readthedocs.io/en/v2.0.0/index.html). All project installation, code overview and usage details also available in the project [GitHub page](https://github.com/citros-garden/spiceypy).
 
-## Code overview
-This example consists of several files:
-1. ```spiceypy_cassini.py```. This file is a ROS (Robot Operating System) node that utilizes the SpiceyPy library. It's objective is to launch the simulation and then to publish the simulation results via ROS topics. This code: initializes of a ROS node to manage the project, creates a publisher that sends trajectory data as a Float64MultiArray to the '/spiceypy_cassini/state' topic, uses user-defined inputs for the starting time, ending time, and the number of steps in the trajectory simulation, launches the simulation using SpiceyPy's capabilities, generating precise orbital data for Cassini during the specified time interval, and then publishes of trajectory data to the ROS topic, allowing users to access and analyze the spacecraft's orbital information.
-
-2. ```util_spiceypy_cassini.py```. This Python code uses the SpiceyPy library to simulate the trajectory of NASA's Cassini spacecraft relative to Saturn's barycenter. It takes user-defined inputs for the simulation's start and end times and the number of time steps. The code then computes the spacecraft's positions at evenly spaced time intervals within the specified range. By leveraging SPICE kernels (as defined in 'cassMetaK.txt') and the 'spkpos' function, it calculates Cassini's positions in the J2000 reference frame. Once the simulation is complete, the code provides the collected position data for further analysis or visualization, making it a valuable tool for researchers and space enthusiasts interested in studying Cassini's mission trajectory.
-
-You can find all the mathematical explanation in the [SpiceyPy example page](https://spiceypy.readthedocs.io/en/v2.0.0/exampleone.html). 
-
- The project also contains several additional files - kernels - to load Cassini trajectory data. They are stored under the ```resource``` folder: ```cassMetaK.txt``` is the main kernel file, where the other files are listed. For more on defining meta kernels in spice, please consult the [Kernel Required Reading](https://naif.jpl.nasa.gov/pub/naif/toolkit_docs/C/req/kernel.html). 
-
-
-## Local Usage 💻
-
-All project installation and usage information also available in the project [GitHub page](https://github.com/citros-garden/spiceypy).
-
-### Installation 🔨
-1. Docker engine. This project runs inside Docker container, and requires Docker Engine/Docker Desktop. Follow the instructions on [Docker official website](https://www.docker.com/get-started/).
-2. To use Docker inside VS Code several extensions are required. Install [Dev Containers](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers) and [Docker](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-docker) extensions from Extensions tab on your left control panel.
-3. Clone the repository:
-```bash 
-git clone git@github.com:citros-garden/spiceypy.git
-```
-
-### Build 🏠
-1. Open project root folder in VS Code.
-2. Navigate to the lower-left corner of VS Code window and click on green mark.
-3. Select "Reopen in container" option in the list on the top of the VS Code window. Wait a minute while Docker container is starting.
-2. Open ```/src/spiceypy_cassini/config/params.xml``` file to set parameters for simulation or just keep it default. Don't forget to save your changes!
-3. Build ROS 2 environment:
-```bash 
-colcon build
-```
-4. Source the environment:
-```bash 
-source install/local_setup.bash
-```
-
-### Preparing FoxGlove Studio 🪄
-FoxGlove Studio is a robotics visualization and debugging tool, which can connect to ROS topic and get the data publishing through it. We will use it to visualizate the results of our simulations.
-
-First of all, you need to download it from the [official website](https://foxglove.dev/) and install following the instructions. 
-
-Next step is connecting to your ROS node. To perform it, open FoxGlove Studio and select *__Open connection__* option, then select *__Rosbridge__* option. Check the *__WebSocket URL__* field on the right of the window, it should contain ```ws://localhost:9090```. Now we are almost ready to go!
-
-
-OR
-
-:::tip
-
-You can use prepared layout: Go to the ```Layout``` tab on the top panel, then click on import_layout button and select the file from foxglove_layouts folder.
-
-:::
 
 ![gif](img/gif0.gif "FoxGlove example")
 
-:::tip
 
-The best way to process simulation results is CITROS notebook 🍋 :)
-
-:::
-
-
-### Run 🚀
-1. Go back to the VS Code.
-2. Launch ROS 2 package:
-```bash 
-ros2 launch spiceypy_cassini spiceypy_cassini.launch.py
-```
-3. Watch the FoxGlove plot built from results!
-
-OR
-
-:::tip
-
-You can use Visual Code Tasks: simply press ```Alt+T``` and select the task you want to build. This will build, source and launch the project automaticly.
-
-:::
-
-![jpg](img/img1.jpg "FoxGlove example")
 
 ## CITROS usage 🛸
 Although you can get simulation results using FoxGlove, the best way to work with such simulations and process the results is CITROS! With its power, it is possible to create complex data processing scenarios, including the construction of more complex graphs, mathematical analysis and other high-level processing methods.
@@ -140,12 +65,21 @@ Now we can sync our project settings with CITROS server:
 citros commit
 citros push
 ```
+
+:::tip
+
+CITROS CLI in addition to other advantages also provides automatic ROS bag recording option, which allows user to use saved simulation results and export them! :)
+
+:::
+
 ### Running locally 🛋️
 Since all the preparations done, we can launch it locally (your project should be built and sourced before that, check the instructions above):
 ```bash 
 citros run -n 'spiceypy_cassini' -m 'local test run'
 ```
 Select the launch file (should be the only one here) by pressing ```Enter``` button and wait for the output in the terminal. To plot the local run results you can use FoxGlove.
+
+
 
 ### Uploading Docker image to the CITROS database and running in the cloud 🛰️
 1. We need to build and push Docker container image to the CITROS server:
@@ -180,7 +114,7 @@ Navigate to the Run by clicking on it in the table:
 CITROS Web provides powerfull data analisys package, which is comprehensive solution for data query, analysis and visualization. With its extensive features, you can quickly and easily extract valuable insights from your data. To use it, the Jupiter Notebook support is built-in. 
 Navigate to our project ```Code``` page, open the Notebooks folder and click on the notebook file. Here you can see the usual Jupiter editor's interface: you can add blocks of code or built-in Markdown engine, run and save notebook and control the Python kernel.
 
-You can find all the data analisys package [here](https://citros.io/doc/docs_data_analysis).
+You can find all the data analisys package guides and API reference [here](https://citros.io/doc/docs_data_analysis).
 
 
 ## Extras
