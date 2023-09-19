@@ -17,10 +17,7 @@ Users can input the desired time bounds, and the project utilizes SpiceyPy's pow
 
 You can find more information about SpiceyPy library on [SpiceyPy official website](https://spiceypy.readthedocs.io/en/v2.0.0/index.html). All project installation, code overview and usage details also available in the project [GitHub page](https://github.com/citros-garden/spiceypy).
 
-
-![gif](img/gif0.gif "FoxGlove example")
-
-
+![png](img/Example0.png "Plot")
 
 ## CITROS Usage 🛸
 Although you can get simulation results using FoxGlove, the best way to work with such simulations and process the results is CITROS! With its power, it is possible to create complex data processing scenarios, including the construction of more complex graphs, mathematical analysis and other high-level processing methods.
@@ -59,7 +56,9 @@ The date format should be 'MMM DD, YYYY'.
 
 Don't forget to save the file!
 
-### Syncing the project's setup 📡
+4. Launch files. This project contains only one launch file ```aerosandbox_cessna.launch.py```. This file will be used for CITROS launch. 
+
+### Syncing the Project's Setup 📡
 Now we can sync our project settings with CITROS server:
 ```bash 
 citros commit
@@ -72,8 +71,8 @@ CITROS CLI in addition to other advantages also provides automatic ROS bag recor
 
 :::
 
-### Running locally 🛋️
-Since all the preparations done, we can launch it locally (your project should be built and sourced before that, check the instructions above):
+### Running Locally 🛋️
+Since all the preparations done, we can launch it locally (your project should be built and sourced before that):
 ```bash 
 citros run -n 'spiceypy_cassini' -m 'local test run'
 ```
@@ -93,7 +92,7 @@ citros run -n 'spiceypy_cassini' -m 'cloud test run' -r
 ```
 Select the launch file (should be the only one here) by pressing ```Enter``` button. Now the simulation is running in the CITROS server, and it will upload results to the CITROS database automaticly.
 
-### CITROS Web usage and data analysis 🌌
+### CITROS Web Usage and Data Analysis 🌌
 #### Launching project via CITROS Web
 The best way to use all the innovative capabilities of CITROS is through it's Web interface. The following manual explains how to run this project in the cloud and how to process the simualtion results.
 The starting point is CITROS main page, user is logged in and the project Docker image is built and pushed to the cloud (see the [manual](#uploading-docker-image-to-the-citros-database-and-running-in-the-cloud-🛰️) above).
@@ -110,7 +109,7 @@ Navigate to the Run by clicking on it in the table:
 * The right part of the page provides additional information about Events: the main stages of the simulation run.
 
 
-#### Working with integrated Jupiter Notebooks
+#### Working with Integrated Jupiter Notebooks
 CITROS Web provides powerfull data analisys package, which is comprehensive solution for data query, analysis and visualization. With its extensive features, you can quickly and easily extract valuable insights from your data. To use it, the Jupiter Notebook support is built-in. 
 Navigate to our project ```Code``` page, open the Notebooks folder and click on the notebook file. Here you can see the usual Jupiter editor's interface: you can add blocks of code or built-in Markdown engine, run and save notebook and control the Python kernel.
 
@@ -119,6 +118,6 @@ You can find all the data analisys package guides and API reference [here](https
 
 ## Extras
 ### FoxGlove examples
+![gif](img/gif0.gif "FoxGlove example")
 
-![png](img/Example0.png "FoxGlove example")
 ![png](img/Example1.png "FoxGlove example")
