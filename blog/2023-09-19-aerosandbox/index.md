@@ -19,7 +19,7 @@ Once the simulation is initiated, the ROS nodes orchestrate the execution. The s
 
 The output of the simulation comprises critical flight data, such as altitude, velocity, and other relevant parameters, recorded over time intervals. These results are published via ROS topics, allowing for real-time data visualization, analysis, and integration with other ROS-based systems.
 
-You can find more information about this useful aerodynamics library on [Aerosandbox official website](https://github.com/peterdsharpe/AeroSandbox) [Poliastro Website](https://docs.poliastro.space/en/stable/).
+You can find more information about this useful aerodynamics library on [Aerosandbox official website](https://github.com/peterdsharpe/AeroSandbox).
 
 ## Code overview
 This example consists of several files:
@@ -33,11 +33,11 @@ Upon solving the optimization problem, the simulation results are logged, and th
     An "Airplane" object consists of several components, including wings, horizontal stabilizers, vertical stabilizers, and a fuselage. The wings are defined with multiple wing cross-sections ("WingXSec") that specify the airfoil shape, chord length, and other wing parameters. The wing geometry is defined symmetrically. The horizontal stabilizer and vertical stabilizer components are also defined with their respective cross-sections and geometry. The fuselage is defined with a series of cross-sections that describe its shape and dimensions. 
     The code then draws a three-view representation of the Cessna 152 using the defined geometry.
 
-The project also cantains several additional files for aerodynamic calculations under the ```resource``` folder: ```naca0012.json``` and ```naca2412.json```. They store aerodynamical profiles used for wings and other aerofoil planes for the Cessna 152. They are included into ```cessna152.py``` file.
+The project also contains several additional files for aerodynamic calculations under the ```resource``` folder: ```naca0012.json``` and ```naca2412.json```. They store aerodynamical profiles used for wings and other aerofoil planes for the Cessna 152. They are included into ```cessna152.py``` file.
 
 ## Local Usage 💻
 
-All project installation and usage information also available in the project [GitHub page](https://github.com/citros-garden/poliastro).
+All project installation and usage information also available in the project [GitHub page](https://github.com/citros-garden/aerosandbox_cessna).
 
 ### Installation 🔨
 1. Docker engine. This project runs inside Docker container, and requires Docker Engine/Docker Desktop. Follow the instructions on [Docker official website](https://www.docker.com/get-started/).
