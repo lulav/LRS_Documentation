@@ -177,7 +177,7 @@ citros init
 ```
 Now you can see ```.citros``` folder in the explorer.
 
-2. Configuring the setup. We need to set up the maximum perfomance available: timeout, CPU, GPU and Memory. To perform it, we need to define it in the ```.citros/simulations/simulation_turtlebot3.json```. The recommended setup is minimum 600 seconds timeout, 4 CPU, 4 GPU and 4096 MB of Memory. Don't forget to save the file!
+2. Configuring the setup. We need to set up the maximum perfomance available: timeout, CPU, GPU and Memory. To perform it, we need to define it in the ```.citros/simulations/simulation_turtlebot3.json```. The recommended setup is minimum 180 seconds timeout, 2 CPU, and 2048 MB of Memory. Don't forget to save the file!
 
 3. Configuring the params setup. You can find default setup in ```.citros/parameter_setups/default_param_setup.json```. Check the [table](#code-overview) for the list of parameters available.
 
@@ -232,7 +232,7 @@ Navigate to our project ```Code``` page, open the Notebooks folder and click on 
 
 You can find all the data analisys package [here](https://citros.io/doc/docs_data_analysis).
 
-[png](img/citros1.png "CITROS example")
+![png](img/citros1.png "CITROS example")
 
 ## Extras
 ### FoxGlove examples
