@@ -96,8 +96,8 @@ $$ m = N(\mu, \sigma)$$
 
 where:
 
-$$ \mu = 1.0 $$
-$$ \sigma = 0.3 $$
+$$ \mu = 1.0,    
+\sigma = 0.3 $$
 
 All the parameters can be set following the CITROS parameter guide.
 
