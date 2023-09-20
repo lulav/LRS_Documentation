@@ -5,21 +5,7 @@ authors: [iftahnaf]
 tags: [citros]
 ---
 
-# Mass Spring Damper Tutorial
-
-In this tutorial we will learn the following:
-
-- Mass-Spring-Damper system details.
-- Install the project on your PC.
-- Configure and run simulation.
-- Configure `citros_cli` and run simulations locally with CITROS.
-- Create a Dockerfile for running standalone simulations.
-- Push the simulation image to CITROS.
-- Configure and run batch of simulation on the cloud with CITROS.
-- Analyze the results from batch run.
-
-
-# Overview 🌍
+# Example Overview 🌐
 
 This is a simple ROS demonstration of a mass-spring-damper system.
 
@@ -51,29 +37,62 @@ $$f(t) = {k_pe(t) + k_i\int{e(t)dt}} + k_d {d\over dt}(e(t))$$
 
 you can tune the controller gains, $k_p$, $k_i$, $k_d$, configured as ROS 2 parameters.
 
-# Installation 🛫
+# CITROS Usage 🛸
 
-## Prerequisits:
-* Docker
-* VSCode
-* Python 3.8+
+## CITROS Installation 🛫
+First of all, to use all the powerfull CITROS features usage requires CITROS installation: follow the instructions on the CITROS CLI GitHub page. 
 
-## Install
+**TODO: add installation tutorial**
 
-Clone the repository to your local machine:
-                
-                git clone git@github.com:citros-garden/mass_spring_damper.git
+## Configuring the Project ⚙️
 
-Open the repository in the VScode:
+After all the prerequisites done, we can start configuring our project. Open the project's repository in `VSCode` and reopen the project in a the VSCode's `devcontainer`.
 
-                cd ~/mass_spring_damper
-                code .
+## Parameters
 
-open the repository in the container from VScode with `reopen in container` option.
+| Parameter | Package | Description
+| --------|  --------|  --------|
+|kp | controller | $p$ gain of the PID controller
+|ki | controller | $i$ gain of the PID controller
+|kd | controller | $d$ gain of the PID controller
+|setpoint | controller | Setpoint position for the controller
+|m | dynamics | The mass of the system
+|k | dynamics | The spring coefficient
+|c | dynamics | The damper coefficient
+|x | dynamics | The mass initial poisition
+|v | dynamics | The mass initial velocity
+|a | dynamics | The mass initial acceleration
 
-# Build :tractor:
+## Launch Files
 
-build and source the workspace:
+|Launch file| Description
+| --------|  --------|
+|dynamics.launch.py | Launch the uncontrolled system
+|dynamics_controller.launch.py | Launch the controlled system with PID controller
 
-                colcon build
-                source install/local_setup.bash
+## Initialize CITROS:
+
+        citros init
+
+## Run with CITROS:
+
+        citros run -n "default" -m "default simulation"
+
+After running the command, choose the launch file you wish to run.
+
+## Syncing the Project's Setup 📡
+
+Follow the guide for syncing CITROS project with the server.
+
+**TODO: add guide for syncing with the server**
+
+## Normal Distributed Mass
+
+Supposed we tune the PID gains of the controller for the nominal mass, and we reached a satisfying results.
+
+Now we want to know how robust was the tuning for a normal distributd mass:
+
+$$ m = N(\mu, \sigma)$$
+where\
+$$ \mu = 1.0 $$
+$$ \sigma = 0.3 $$
