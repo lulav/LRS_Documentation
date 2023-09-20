@@ -32,7 +32,7 @@ Now you can see ```.citros``` folder in the explorer.
 
 2. Configuring the setup. We need to set up the maximum perfomance available: timeout, CPU, GPU and Memory. To perform it, we need to define it in the ```.citros/simulations/simulation_lunar_hopper.json```. The recommended setup is minimum 600 seconds timeout, 4 CPU, 4 GPU and 4096 MB of Memory. Don't forget to save the file!
 
-3. Configuring the params setup. You can find default setup in ```.citros/parameter_setups/default_param_setup.json```. Variables with '_0' are initial conditions, and variables with '_f' are final conditions respectively. Don't forget to save the file!
+3. Configuring the params setup. You can find default setup in ```.citros/parameter_setups/default_param_setup.json```. [CITROS CLI](https://github.com/lulav/citros_cli) provides an opportinuty to use basic NumPy functions (such as distributions) and even user-defined functions, but let's keep it default for now. Variables with '_0' are initial conditions, and variables with '_f' are final conditions respectively. Don't forget to save the file!
 
 $$
 \begin{array}{|c|c|}
@@ -70,22 +70,23 @@ citros run -n 'Lunar_hopper' -m 'local test run'
 ```
 Select the launch file (should be the only one here) by pressing ```Enter``` button and wait for the output in the terminal. To plot the local run results you can use FoxGlove.
 
-### Uploading Docker image to the CITROS database and running in the cloud 🛰️
-1. We need to build and push Docker container image to the CITROS server:
+### Uploading Docker Image to CITROS Cloud
+We need to build and push Docker container image to the CITROS server:
 ```bash 
 citros docker-build-push
 ```
 
-2. Finally, we can run it in the cloud! Simply add ```-r``` to the terminal command: 
+### Running in the Cloud 🛰️
+Finally, we can run it in the cloud! Simply add ```-r``` to the terminal command: 
 ```bash 
 citros run -n 'Lunar_hopper' -m 'cloud test run' -r
 ```
 Select the launch file (should be the only one here) by pressing ```Enter``` button. Now the simulation is running in the CITROS server, and it will upload results to the CITROS database automaticly.
 
-### CITROS Web Usage and Data Analysis 🌌
+### CITROS Web Usage
 #### Launching Project via CITROS Web
 The best way to use all the innovative capabilities of CITROS is through it's Web interface. The following manual explains how to run this project in the cloud and how to process the simualtion results.
-The starting point is CITROS main page, user is logged in and the project Docker image is built and pushed to the cloud (see the [manual](#uploading-docker-image-to-the-citros-database-and-running-in-the-cloud-🛰️) above).
+The starting point is CITROS main page, user is logged in and the project Docker image is built and pushed to the cloud (see the [manual](#uploading-docker-image-to-citros-cloud) above).
 1. Go to the ```Repositories``` page clicking on the tab on the top;
 2. Find your project and open it;
 3. Navigate to the ```Runs``` tab;
@@ -98,7 +99,7 @@ Navigate to the Run by clicking on it in the table:
 * The main part of this page is a simulation's log. Here you can find all the logging information from all levels: from your code logs up to the CITROS system information.
 * The right part of the page provides additional information about Events: the main stages of the simulation run.
 
-#### Working with Integrated Jupiter Notebooks
+#### Working with Integrated Jupiter Notebooks and Data Analysis 🌌
 CITROS Web provides powerfull data analisys package, which is comprehensive solution for data query, analysis and visualization. With its extensive features, you can quickly and easily extract valuable insights from your data. To use it, the Jupiter Notebook support is built-in. 
 Navigate to our project ```Code``` page, open the Notebooks folder and click on the notebook file. Here you can see the usual Jupiter editor's interface: you can add blocks of code or built-in Markdown engine, run and save notebook and control the Python kernel.
 
