@@ -93,6 +93,21 @@ Supposed we tune the PID gains of the controller for the nominal mass, and we re
 Now we want to know how robust was the tuning for a normal distributd mass:
 
 $$ m = N(\mu, \sigma)$$
-where\
+where:
 $$ \mu = 1.0 $$
 $$ \sigma = 0.3 $$
+
+All the parameters can be set following the CITROS parameter guide.
+
+**TODO: add parameter guide**
+
+We will define the following requirements:
+
+* Maximum overshoot of `30%`.
+* Settling time is `2.0` [sec].
+* Settling to `10%` of the steady-state value.
+
+Lets run `50` simulations in the server and analyze the results:
+
+
+
