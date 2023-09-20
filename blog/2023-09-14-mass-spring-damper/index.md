@@ -52,9 +52,9 @@ After all the prerequisites done, we can start configuring our project. Open the
 
 | Parameter | Package | Description
 | --------|  --------|  --------|
-|kp | controller | $p$ gain of the PID controller
-|ki | controller | $i$ gain of the PID controller
-|kd | controller | $d$ gain of the PID controller
+|kp | controller | p gain of the PID controller
+|ki | controller | i gain of the PID controller
+|kd | controller | d gain of the PID controller
 |setpoint | controller | Setpoint position for the controller
 |m | dynamics | The mass of the system
 |k | dynamics | The spring coefficient
@@ -78,7 +78,7 @@ After all the prerequisites done, we can start configuring our project. Open the
 
         citros run -n "default" -m "default simulation"
 
-After running the command, choose the launch file you wish to run.
+After running the command, choose the launch file you wish to run. The simulation will start and you could see the mass position and the control signal in the terminal's logs.
 
 ## Syncing the Project's Setup 📡
 
@@ -93,7 +93,9 @@ Supposed we tune the PID gains of the controller for the nominal mass, and we re
 Now we want to know how robust was the tuning for a normal distributd mass:
 
 $$ m = N(\mu, \sigma)$$
+
 where:
+
 $$ \mu = 1.0 $$
 $$ \sigma = 0.3 $$
 
