@@ -111,5 +111,7 @@ We will define the following requirements:
 
 Lets run `50` simulations in the server and analyze the results:
 
+![img](img/analysis.jpeg)
 
 
+Can you do better?
