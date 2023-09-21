@@ -9,7 +9,7 @@ tags: [citros]
 
 This is a simple ROS demonstration of a mass-spring-damper system.
 
-<img src="img/system.jpeg" alt="drawing" width="300"/>
+<img src="img/system.jpeg" alt="drawing" width="500"/>
 
 The example contains two ROS 2 packages: `dynamics` and `controller`.
 
