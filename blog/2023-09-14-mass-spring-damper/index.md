@@ -9,7 +9,7 @@ tags: [citros]
 
 This is a simple ROS demonstration of a mass-spring-damper system.
 
-![](img/system.jpeg)
+<img src="img/system.jpeg" alt="drawing" width="500"/>
 
 The example contains two ROS 2 packages: `dynamics` and `controller`.
 
@@ -103,6 +103,16 @@ All the parameters can be set following the CITROS parameter guide.
 
 **TODO: add parameter guide**
 
+The initial condition are:
+
+$$
+r_0 = -1.0[m]\\
+v_0 = 0.0 [m/s]\\
+a_0 = 0.0 [m/s^2]\\
+$$
+
+With $setpoint = 0.0 [m]$.
+
 We will define the following requirements:
 
 * Maximum overshoot of `30%`.
@@ -111,5 +121,12 @@ We will define the following requirements:
 
 Lets run `50` simulations in the server and analyze the results:
 
+![img](img/analysis.jpeg)
 
 
+We can see that `43` tests were passed the requirements, `6` failed and `1` was generated invalid mass $(<0)$.
+
+The maximum mass that still meeting the requirements is equal to $1.335 [kg]$
+
+
+Can you do better?
