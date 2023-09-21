@@ -103,6 +103,16 @@ All the parameters can be set following the CITROS parameter guide.
 
 **TODO: add parameter guide**
 
+The initial condition are:
+
+$$
+r_0 = -1.0[m]\\
+v_0 = 0.0 [m/s]\\
+a_0 = 0.0 [m/s^2]\\
+$$
+
+With $setpoint = 0.0 [m]$.
+
 We will define the following requirements:
 
 * Maximum overshoot of `30%`.
