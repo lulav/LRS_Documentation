@@ -27,10 +27,21 @@ Although you can get simulation results using FoxGlove, the best way to work wit
 First of all, to use all the powerfull CITROS features usage requires CITROS installation: follow the instructions on the CITROS CLI [GitHub page](https://github.com/lulav/citros_cli).
 
 ### Configuring the project ⚙️
-After all the prerequisites done, we can start configuring our project. The starting point is the Lunar_Starship devcontainer loaded and running, CITROS CLI is installed and ready.
+After all the prerequisites done, we can start configuring our project. The starting point is the SpiceyPy devcontainer loaded and running, CITROS CLI is installed and ready.
 1. Initialize CITROS:
 ```bash 
-citros init
+>>> citros init
+Checking internet connection...
+Checking ssh...
+Updating Citros...
+Waiting for repo to be ready...
+Citros repo successfully cloned from remote.
+Creating new citros branch `master`.
+Creating an initial commit.
+Default branch of remote 'origin' set to: master
+Citros successfully synched with local project.
+You may review your changes via `citros status` and commit them via `citros commit`.
+Intialized Citros repository.
 ```
 Now you can see ```.citros``` folder in the explorer.
 
@@ -38,17 +49,11 @@ Now you can see ```.citros``` folder in the explorer.
 
 3. Configuring the params setup. You can find default setup in ```.citros/parameter_setups/default_param_setup.json```. [CITROS CLI](https://github.com/lulav/citros_cli) provides an opportinuty to use basic NumPy functions (such as distributions) and even user-defined functions, but let's keep it default for now. The SpiceyPy simulation has the following ROS parameters:
 
-$$
-\begin{array}{|c|c|}
-\hline
-\text{Parameter} & \text{Description} \\
-\hline
-start\_t & \text{Initial date} \\
-finish\_t & \text{Final date} \\
-publish~freq & \text{frequency of publishing} \\
-\hline
-\end{array}
-$$
+    |Parameter	|Package	|Description
+    |--|--|--
+    start_t	|spiceypy_cassini	|Initial date	
+    finish_t	|spiceypy_cassini	|Final date	
+    publish_freq	|spiceypy_cassini	|Frequency of publishing
 
 :::note
 The date format should be 'MMM DD, YYYY'.
@@ -58,11 +63,15 @@ Don't forget to save the file!
 
 4. Launch files. This project contains only one launch file ```spiceypy.launch.py```. This file will be used for CITROS launch. 
 
+    |Launch File	|Package	|Description
+    |--|--|--
+    spiceypy_cassini.launch.py	|spiceypy_cassini	|SpiceyPy Cassini simulation launch file 	
+
 ### Syncing the Project's Setup 📡
 Now we can sync our project settings with CITROS server:
 ```bash 
-citros commit
-citros push
+>>> citros commit
+>>> citros push
 ```
 
 :::tip
@@ -73,25 +82,46 @@ CITROS CLI in addition to other advantages also provides automatic ROS bag recor
 
 ### Running Locally 🛋️
 Since all the preparations done, we can launch it locally (your project should be built and sourced before that):
+
 ```bash 
-citros run -n 'spiceypy_cassini' -m 'local test run'
+>>> citros run -n 'spiceypy_cassini' -m 'local test run'
+? Please choose the simulation you wish to run:
+❯ spiceypy_cassini
 ```
+
 Select the launch file (should be the only one here) by pressing ```Enter``` button and wait for the output in the terminal. To plot the local run results you can use FoxGlove.
+
+```bash
+created new batch_id: <your-batch-id-here>. Running locally.
++ running batch [<your-batch-id-here>], description: local test run, repeating simulations: [1]
++ + running simulation [0]
+...
+```
 
 ![png](img/Example1.png "FoxGlove example")
 
 ### Uploading Docker Image to CITROS Cloud
 We need to build and push Docker container image to the CITROS server:
 ```bash 
-citros docker-build-push
+>>> citros docker-build-push
+Logging in to docker...
+...
 ```
 
 ### Running in the Cloud 🛰️
 Finally, we can run it in the cloud! Simply add ```-r``` to the terminal command: 
+
 ```bash 
-citros run -n 'spiceypy_cassini' -m 'cloud test run' -r
+>>> citros run -n 'spiceypy_cassini' -m 'local test run' -r
+? Please choose the simulation you wish to run:
+❯ spiceypy_cassini
 ```
+
 Select the launch file (should be the only one here) by pressing ```Enter``` button. Now the simulation is running in the CITROS server, and it will upload results to the CITROS database automaticly.
+
+```bash
+created new batch_id: <your-batch-id-here>. Running on Citros cluster. See https://citros.io/batch/<your-batch-id-here>.
+```
 
 ### CITROS Web Usage
 #### Launching project via CITROS Web

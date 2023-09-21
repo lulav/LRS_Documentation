@@ -29,49 +29,61 @@ First of all, to use all the powerfull CITROS features usage requires CITROS ins
 After all the prerequisites done, we can start configuring our project. The starting point is the Lunar_Starship devcontainer loaded and running, CITROS CLI is installed and ready.
 1. Initialize CITROS:
 ```bash 
-citros init
+>>> citros init
+Checking internet connection...
+Checking ssh...
+Updating Citros...
+Waiting for repo to be ready...
+Citros repo successfully cloned from remote.
+Creating new citros branch `master`.
+Creating an initial commit.
+Default branch of remote 'origin' set to: master
+Citros successfully synched with local project.
+You may review your changes via `citros status` and commit them via `citros commit`.
+Intialized Citros repository.
 ```
+
 Now you can see ```.citros``` folder in the explorer.
 
 2. Configuring the setup. We need to set up the maximum perfomance available: timeout, CPU, GPU and Memory. To perform it, we need to define it in the ```.citros/simulations/simulation_lunar_starship.json```. The recommended setup is minimum 600 seconds timeout, 4 CPU, 4 GPU and 4096 MB of Memory. Don't forget to save the file!
 
 3. Configuring the params setup. You can find default setup in ```.citros/parameter_setups/default_param_setup.json```. [CITROS CLI](https://github.com/lulav/citros_cli) provides an opportinuty to use basic NumPy functions (such as distributions) and even user-defined functions, but let's keep it default for now. Variables with '_0' are initial conditions, and variables with '_f' are final conditions respectively. Don't forget to save the file!
 
-$$
-\begin{array}{|c|c|}
-\hline
-\text{Parameter} & \text{Description} \\
-\hline
-h_0 & \text{initial altitude above lunar surface level} \\
-lat_0 & \text{initial latitude} \\
-long_0 & \text{initial longitude} \\
-vn_0 & \text{initial "northing" velocity} \\
-ve_0 & \text{initial "east" velocity} \\
-vd_0 & \text{initial vertical velocity} \\
-m\_fuel_0 & \text{initial fuel mass} \\
-lat_f & \text{final latitude} \\
-long_f & \text{final longitude} \\
-vn_f & \text{final "northing" velocity} \\
-ve_f & \text{final "east" velocity} \\
-vd_f & \text{final vertical velocity} \\
-m_{\text{fuel f}}& \text{final fuel mass} \\
-dry~mass_f & \text{dry mass} \\
-F_{\text{thrustmax}} & \text{The maximum amount of thrust} \\
-I_{\text{sp}} & \text{Specific impulse} \\
-simulation~step & \text{step of simulation} \\
-publish~freq & \text{frequency of publishing} \\
-\hline
-\end{array}
-$$
+    |Parameter	|Package	|Description
+    |--|--|--
+    h_0	|lunar_starship	|Initial altitude above lunar surface level
+    lat_0	|lunar_starship	|Initial latitude
+    long_0	|lunar_starship	|Initial longitude
+    vn_0	|lunar_starship	|Initial "northing" velocity
+    ve_0	|lunar_starship	|Initial "east" velocity
+    vd_0	|lunar_starship	|Initial vertical velocity
+    m_fuel_0	|lunar_starship	|Initial fuel mass
+    lat_f	|lunar_starship	|Final latitude
+    long_f	|lunar_starship	|Final longitude
+    vn_f	|lunar_starship	|Final "northing" velocity
+    ve_f	|lunar_starship	|Final "east" velocity
+    vd_f	|lunar_starship	|Final vertical velocity
+    m_fuel_f	|lunar_starship	|Final fuel mass
+    dry_mass	|lunar_starship	|dry mass
+    F_thrustmax	|lunar_starship	|The maximum amount of thrust
+    Isp	|lunar_starship	|Specific impulse
+    simulation_step	|lunar_starship	|step of simulation	
+    publish_freq	|lunar_starship	|Frequency of publishing
+
 
 4. Launch files. This project contains only one launch file ```lunar_starship.launch.py```. This file will be used for CITROS launch. 
+
+    |Launch File	|Package	|Description
+    |--|--|--
+    lunar_starship.launch.py	|lunar_starship	|Lunar Starship simulation launch file 	
 
 ### Syncing the Project's Setup 📡
 Now we can sync our project settings with CITROS server:
 ```bash 
-citros commit
-citros push
+>>> citros commit
+>>> citros push
 ```
+
 :::tip
 
 CITROS CLI in addition to other advantages also provides automatic ROS bag recording option, which allows user to use saved simulation results and export them! :)
@@ -81,9 +93,19 @@ CITROS CLI in addition to other advantages also provides automatic ROS bag recor
 ### Running Locally 🛋️
 Since all the preparations done, we can launch it locally (your project should be built and sourced before that):
 ```bash 
-citros run -n 'Lunar_Starship' -m 'local test run'
+>>> citros run -n 'Lunar_Starship' -m 'local test run'
+? Please choose the simulation you wish to run:
+❯ lunar_starship
 ```
+
 Select the launch file (should be the only one here) by pressing ```Enter``` button and wait for the output in the terminal. To plot the local run results you can use FoxGlove.
+
+```bash
+created new batch_id: <your-batch-id-here>. Running locally.
++ running batch [<your-batch-id-here>], description: local test run, repeating simulations: [1]
++ + running simulation [0]
+...
+```
 
 ![gif](img/gif0.gif "FoxGlove example")
 ![png](img/img1.png "FoxGlove example")
@@ -91,14 +113,24 @@ Select the launch file (should be the only one here) by pressing ```Enter``` but
 ### Uploading Docker Image to CITROS Cloud
 We need to build and push Docker container image to the CITROS server:
 ```bash 
-citros docker-build-push
+>>> citros docker-build-push
+Logging in to docker...
+...
 ```
+
 ### Running in the Cloud 🛰️
 Finally, we can run it in the cloud! Simply add ```-r``` to the terminal command: 
 ```bash 
-citros run -n 'Lunar_Starship' -m 'cloud test run' -r
+>>> citros run -n 'Lunar_Starship' -m 'local test run' -r
+? Please choose the simulation you wish to run:
+❯ lunar_starship
 ```
+
 Select the launch file (should be the only one here) by pressing ```Enter``` button. Now the simulation is running in the CITROS server, and it will upload results to the CITROS database automaticly.
+
+```bash
+created new batch_id: <your-batch-id-here>. Running on Citros cluster. See https://citros.io/batch/<your-batch-id-here>.
+```
 
 ### CITROS Web Usage
 #### Launching Project via CITROS Web

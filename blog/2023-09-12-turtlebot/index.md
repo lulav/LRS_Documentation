@@ -31,10 +31,21 @@ Although you can get simulation results using FoxGlove, the best way to work wit
 First of all, to use all the powerfull CITROS features usage requires CITROS installation: follow the instructions on the CITROS CLI [GitHub page](https://github.com/lulav/citros_cli).
 
 ### Configuring the Project ⚙️
-After all the prerequisites done, we can start configuring our project. The starting point is the Lunar_Starship devcontainer loaded and running, CITROS CLI is installed and ready.
+After all the prerequisites done, we can start configuring our project. The starting point is the TurtleBot3 devcontainer loaded and running, CITROS CLI is installed and ready.
 1. Initialize CITROS:
 ```bash 
-citros init
+>>> citros init
+Checking internet connection...
+Checking ssh...
+Updating Citros...
+Waiting for repo to be ready...
+Citros repo successfully cloned from remote.
+Creating new citros branch `master`.
+Creating an initial commit.
+Default branch of remote 'origin' set to: master
+Citros successfully synched with local project.
+You may review your changes via `citros status` and commit them via `citros commit`.
+Intialized Citros repository.
 ```
 Now you can see ```.citros``` folder in the explorer.
 
@@ -42,26 +53,25 @@ Now you can see ```.citros``` folder in the explorer.
 
 3. Configuring the params setup. You can find default setup in ```.citros/parameter_setups/default_param_setup.json```. [CITROS CLI](https://github.com/lulav/citros_cli) provides an opportinuty to use basic NumPy functions (such as distributions) and even user-defined functions, but let's keep it default for now. Don't forget to save the file!
 
-$$
-\begin{array}{|c|c|}
-\hline
-\text{Parameter} & \text{Description} \\
-\hline
-separation & \text{wheel separation} \\
-radius & \text{wheel radius} \\
-check\_forward\_dist\_param & \text{forward checking distance for Autonomous Collision Avoidance} \\
-check\_side\_dist\_param & \text{side checking distance for Autonomous Collision Avoidance} \\
-\hline
-\end{array}
-$$
+    |Parameter	|Package	|Description
+    |--|--|--
+    separation	|turtlebot3_gazebo	|wheel separation	
+    radius	|turtlebot3_gazebo	|wheel radius	
+    check_forward_dist_param	|turtlebot3_gazebo	|forward checking distance for Autonomous Collision Avoidance	
+    check_side_dist_param	|turtlebot3_gazebo	|side checking distance for Autonomous Collision Avoidance	
 
-4. Launch files. This project contains two launch files, but we will use only ```lunar_starship.launch.py```, and the second one launches automaticly (it's neccessary for publishing states).
+4. Launch files. This project contains two launch files, but we will use only ```turtlebot3_sim_cont.launch.py```, and the second one launches automaticly (it's neccessary for publishing states).
+
+    |Launch File	|Package	|Description
+    |--|--|--
+    turtlebot3_sim_cont.launch.py	|turtlebot3_gazebo	|Gazebo headless TurtleBot world launch file 	
+    robot_state_publisher.launch.py	|turtlebot3_gazebo	|Utility launch file for state publishing
 
 ### Syncing the Project's Setup 📡
 Now we can sync our project settings with CITROS server:
 ```bash 
-citros commit
-citros push
+>>> citros commit
+>>> citros push
 ```
 :::tip
 
@@ -72,9 +82,18 @@ CITROS CLI in addition to other advantages also provides automatic ROS bag recor
 ### Running Locally 🛋️
 Since all the preparations done, we can launch it locally (your project should be built and sourced before that, check the instructions above):
 ```bash 
-citros run -n 'turtlebot3' -m 'local test run'
+>>> citros run -n 'turtlebot3' -m 'local test run'
+? Please choose the simulation you wish to run: 
+  simulation_robot_state_publisher
+❯ simulation_turtlebot3_sim_cont
 ```
 Select the launch file (should be the only one here) by pressing ```Enter``` button and wait for the output in the terminal. To plot the local run results you can use FoxGlove.
+```bash
+created new batch_id: <your-batch-id-here>. Running locally.
++ running batch [<your-batch-id-here>], description: local test run, repeating simulations: [1]
++ + running simulation [0]
+...
+```
 
 ![gif](img/foxglove1.gif "FoxGlove example")
 ![gif](img/foxglove2.gif "FoxGlove example")
@@ -82,15 +101,24 @@ Select the launch file (should be the only one here) by pressing ```Enter``` but
 ### Uploading Docker Image to CITROS Cloud
 We need to build and push Docker container image to the CITROS server:
 ```bash 
-citros docker-build-push
+>>> citros docker-build-push
+Logging in to docker...
+...
 ```
 
 ### Running in the Cloud 🛰️
 Finally, we can run it in the cloud! Simply add ```-r``` to the terminal command: 
 ```bash 
-citros run -n 'turtlebot3' -m 'cloud test run' -r
+>>> citros run -n 'turtlebot3' -m 'cloud test run' -r
+? Please choose the simulation you wish to run: 
+  simulation_robot_state_publisher
+❯ simulation_turtlebot3_sim_cont
 ```
 Select the launch file (should be the only one here) by pressing ```Enter``` button. Now the simulation is running in the CITROS server, and it will upload results to the CITROS database automaticly.
+```bash
+created new batch_id: <your-batch-id-here>. Running on Citros cluster. See https://citros.io/batch/<your-batch-id-here>.
+```
+
 
 ### CITROS Web Usage
 #### Launching Project via CITROS Web
@@ -112,7 +140,11 @@ Navigate to the Run by clicking on it in the table:
 CITROS Web provides powerfull data analisys package, which is comprehensive solution for data query, analysis and visualization. With its extensive features, you can quickly and easily extract valuable insights from your data. To use it, the Jupiter Notebook support is built-in. 
 Navigate to our project ```Code``` page, open the Notebooks folder and click on the notebook file. Here you can see the usual Jupiter editor's interface: you can add blocks of code or built-in Markdown engine, run and save notebook and control the Python kernel.
 
+:::note
 You can find all the data analisys package guides and API reference [here](https://citros.io/doc/docs_data_analysis).
+:::
+
+Let's have a look on the Jupiter Notebook example:
 ## Extras
 ### FoxGlove examples
 ![png](img/foxglove0.png "FoxGlove example")

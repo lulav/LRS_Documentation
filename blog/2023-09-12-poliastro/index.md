@@ -26,10 +26,21 @@ Although you can get simulation results using FoxGlove, the best way to work wit
 First of all, to use all the powerfull CITROS features usage requires CITROS installation: follow the instructions on the CITROS CLI [GitHub page](https://github.com/lulav/citros_cli).
 
 ### Configuring the Project ⚙️
-After all the prerequisites done, we can start configuring our project. The starting point is the Lunar_Starship devcontainer loaded and running, CITROS CLI is installed and ready.
+After all the prerequisites done, we can start configuring our project. The starting point is the Poliastro devcontainer loaded and running, CITROS CLI is installed and ready.
 1. Initialize CITROS:
 ```bash 
-citros init
+>>> citros init
+Checking internet connection...
+Checking ssh...
+Updating Citros...
+Waiting for repo to be ready...
+Citros repo successfully cloned from remote.
+Creating new citros branch `master`.
+Creating an initial commit.
+Default branch of remote 'origin' set to: master
+Citros successfully synched with local project.
+You may review your changes via `citros status` and commit them via `citros commit`.
+Intialized Citros repository.
 ```
 Now you can see ```.citros``` folder in the explorer.
 
@@ -39,57 +50,55 @@ Now you can see ```.citros``` folder in the explorer.
 
     Poliastro Atmospheric Drag simulation:
 
-    $$
-    \begin{array}{|c|c|}
-    \hline
-    \text{Parameter} & \text{Description} \\
-    \hline
-    earth\_r & \text{Earth radius} \\
-    a & \text{Semimajor axis} \\
-    ecc & \text{Eccentricity} \\
-    inc & \text{Inclination} \\
-    raan & \text{Right Ascension of the Ascending Node} \\
-    argp & \text{Argument of periapsis} \\
-    nu & \text{True anomaly} \\
-    c\_d & \text{Drag coefficient} \\
-    t\_limit & \text{Maximum simulation duration} \\
-    publish~freq & \text{frequency of publishing} \\
-    \hline
-    \end{array}
-    $$
+    |Parameter	|Package	|Description
+    |--|--|--
+    earth_r	|poliastro_atmo_drag	|Earth radius	
+    a	|poliastro_atmo_drag	|Semimajor axis	
+    ecc	|poliastro_atmo_drag	|Eccentricity	
+    inc	|poliastro_atmo_drag	|Inclination	
+    raan	|poliastro_atmo_drag	|Right Ascension of the Ascending Node	
+    argp	|poliastro_atmo_drag	|Argument of periapsis	
+    nu	|poliastro_atmo_drag	|True anomaly	
+    c_d	|poliastro_atmo_drag	|Drag coefficient	
+    t_limit	|poliastro_atmo_drag	|Maximum simulation duration	
+    publish_freq	|poliastro_atmo_drag	|Frequency of publishing
 
      
     Poliastro Simple Orbit simulation:
 
-    $$
-    \begin{array}{|c|c|}
-    \hline
-    \text{Parameter} & \text{Description} \\
-    \hline
-    apo\_r & \text{Apoapsis alitude} \\
-    peri\_r & \text{Periapsis alitude} \\
-    start\_t & \text{Start date and time} \\
-    finish\_t & \text{Final date and time} \\
-    publish~freq & \text{frequency of publishing} \\
-    \hline
-    \end{array}
-    $$
+    |Parameter	|Package	|Description
+    |--|--|--
+    apo_r	|poliastro_simple_orbit	|Apoapsis alitude	
+    peri_r	|poliastro_simple_orbit	|Periapsis alitude	
+    start_t	|poliastro_simple_orbit	|Start date and time	
+    finish_t	|poliastro_simple_orbit	|Final date and time	
+    publish_freq	|poliastro_simple_orbit	|Frequency of publishing
 
-    Poliastro Maneuver simulation has only 2 ROS parameters: ```r_init``` - initial orbital altitude, and ```r_final``` - final orbital altitude.
+    Poliastro Maneuver simulation has only 3 ROS parameters:
+    
+    |Parameter	|Package	|Description
+    |--|--|--
+    r_init	|poliastro_maneuver	|Initial orbital altitude	
+    r_final	|poliastro_maneuver	|Final orbital altitude	
+    publish_freq	|poliastro_maneuver	|Frequency of publishing
 
 :::note
 Don't forget to save the file!
 :::
 4. Launch files. This project contains three launch files:
-     * ```poliastro_atmo_drag.launch.py``` - for the Poliastro Atmospheric Drag simulation;
-     * ```poliastro_maneuver.launch.py``` - for the Poliastro Simple Orbit simulation;
-     * ```poliastro_simple_orbit.launch.py``` - for the Poliastro Maneuver simulation.
+
+    |Launch File	|Package	|Description
+    |--|--|--
+    poliastro_atmo_drag.launch.py	|poliastro_atmo_drag	|Poliastro Atmospheric Drag simulation launch file 
+    poliastro_maneuver.launch.py	|poliastro_maneuver	|Poliastro Simple Orbit simulation launch file 
+    poliastro_simple_orbit.launch.py	|poliastro_simple_orbit	|Poliastro Maneuver simulation launch file 
+
      
 ### Syncing the Project's Setup 📡
 Now we can sync our project settings with CITROS server:
 ```bash 
-citros commit
-citros push
+>>> citros commit
+>>> citros push
 ```
 
 :::tip
@@ -101,25 +110,47 @@ CITROS CLI in addition to other advantages also provides automatic ROS bag recor
 ### Running Locally 🛋️
 Since all the preparations done, we can launch it locally (your project should be built and sourced before that, check the instructions above):
 ```bash 
-citros run -n 'poliastro' -m 'local test run'
+>>> citros run -n 'poliastro' -m 'local test run'
+? Please choose the simulation you wish to run:
+❯ poliastro_atmo_drag
+poliastro_maneuver
+poliastro_simple_orbit
 ```
-Select the launch file (should be the only one here) by pressing ```Enter``` button and wait for the output in the terminal. To plot the local run results you can use FoxGlove.
+
+Select the launch file by pressing ```Enter``` button and wait for the output in the terminal. To plot the local run results you can use FoxGlove.
+
+```bash
+created new batch_id: <your-batch-id-here>. Running locally.
++ running batch [<your-batch-id-here>], description: local test run, repeating simulations: [1]
++ + running simulation [0]
+...
+```
 
 ![gif](img/main.gif "FoxGlove example")
-![png](img/maneuver.png "FoxGlove example")
+
 
 ### Uploading Docker Image to CITROS Cloud
 We need to build and push Docker container image to the CITROS server:
 ```bash 
-citros docker-build-push
+>>> citros docker-build-push
+Logging in to docker...
+...
 ```
 
 ### Running in the Cloud 🛰️
 Finally, we can run it in the cloud! Simply add ```-r``` to the terminal command: 
 ```bash 
-citros run -n 'poliastro' -m 'cloud test run' -r
+>>> citros run -n 'poliastro' -m 'cloud test run' -r
+? Please choose the simulation you wish to run:
+❯ poliastro_atmo_drag
+poliastro_maneuver
+poliastro_simple_orbit
 ```
 Select the launch file by pressing ```Enter``` button. Now the simulation is running in the CITROS server, and it will upload results to the CITROS database automaticly.
+
+```bash
+created new batch_id: <your-batch-id-here>. Running on Citros cluster. See https://citros.io/batch/<your-batch-id-here>.
+```
 
 ### CITROS Web Usage
 #### Launching project via CITROS Web
@@ -137,7 +168,7 @@ Navigate to the Run by clicking on it in the table:
 * The main part of this page is a simulation's log. Here you can find all the logging information from all levels: from your code logs up to the CITROS system information.
 * The right part of the page provides additional information about Events: the main stages of the simulation run.
 
-![png](img/citros0.png "CITROS example")
+![png](img/citros2.png "CITROS example")
 
 #### Working with Integrated Jupiter Notebooks and Data Analysis 🌌
 CITROS Web provides powerfull data analisys package, which is comprehensive solution for data query, analysis and visualization. With its extensive features, you can quickly and easily extract valuable insights from your data. To use it, the Jupiter Notebook support is built-in. 
@@ -145,9 +176,9 @@ Navigate to our project ```Code``` page, open the Notebooks folder and click on 
 
 You can find all the data analisys package guides and API reference [here](https://citros.io/doc/docs_data_analysis).
 
-![png](img/citros1.png "CITROS example")
+![png](img/citros3.png "CITROS example")
 
 ## Extras
 ### FoxGlove examples
 ![png](img/atmo_drag0.png "FoxGlove example")
-
+![png](img/maneuver.png "FoxGlove example")
