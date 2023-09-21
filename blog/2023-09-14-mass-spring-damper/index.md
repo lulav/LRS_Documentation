@@ -114,4 +114,9 @@ Lets run `50` simulations in the server and analyze the results:
 ![img](img/analysis.jpeg)
 
 
+We can see that `43` tests were passed the requirements, `6` failed and `1` was generated invalid mass $(<0)$.
+
+The maximum mass that still meeting the requirements is equal to $1.335 [kg]$
+
+
 Can you do better?
