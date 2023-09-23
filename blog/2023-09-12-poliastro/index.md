@@ -176,9 +176,96 @@ Navigate to our project ```Code``` page, open the Notebooks folder and click on 
 
 You can find all the data analisys package guides and API reference [here](https://citros.io/doc/docs_data_analysis).
 
+Let's quickly go through the key points of using a Jupiter Notebook to fetch data from a database. But to try some brief examples of data analysis using the built-in package, we need to launch a batch with several simulations with a disctibution for one of the ROS parameters (Drag coefficient, in our case). This parameter will vary in each simulation:
+
+```json
+"c_d": {
+    "function": "numpy.random.uniform",
+    "args": [2, 4]
+},
+```
+
+All neccessary things are already configured (we used a NumPy distribution function, you can read more about it in the [CITROS CLI](https://github.com/lulav/citros_cli#examples---user-defined) manual), so you can start it from [CLI](#citros-usage-🛸): 
+
+```
+>>> citros run -n 'poliastro' -m 'cloud test run' -r -c 10
+? Please choose the simulation you wish to run:
+❯ poliastro_atmo_drag
+poliastro_maneuver
+poliastro_simple_orbit
+```
+
+Or from [Web](#running-in-the-cloud-🛰️):
+
+![png](img/web0.png "CITROS example")
+
+Run the simulation and copy your batch id (we will need it later).
+
+Let's return to our Notebook and check the code: to start with, we need to import all the necessary modules:
+
+```python
+import numpy as np
+import matplotlib.pyplot as plt
+from citros_data_analysis import data_access as da
+from prettytable import PrettyTable, ALL
+import json
+from platform import python_version
+```
+
+Now we can connect to the simulation database:
+```python
+batch_id = '<your-batch-id-here>'
+citros = da.CitrosDB(batch = batch_id)
+citros.info().print()
+```
+
+Last command provides general database info:
+```python
+{
+ 'size': '396 kB',
+ 'sid_count': 10,
+ 'sid_list': [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
+ 'topic_count': 3,
+ 'topic_list': ['/config', '/poliastro_atmo_drag/res', '/poliastro_atmo_drag/state'],
+ 'message_count': 1616
+}
+```
+As you can see in the output above, we've got some information about our simulation run (batch): data size, sid information and a number and a list of topics. 
+
+Now we are ready to do some simple research and draw some plots:
+
+```python
+citros.xy_plot(ax2, 
+               topic_name = '/poliastro_atmo_drag/state', 
+               var_x_name = 'data.data[0]',
+               var_y_name = 'data.data[1]',
+               sids = [0,1,2,3,4,5,6,7,8,9], 
+               x_label = 'x', y_label = 'y', title_text = 'Orbits')
+
+ax2.set_aspect(1,'datalim')
+```
+You can see the orbit duration decreases for different drag coefficients:
+![png](img/citros2.png "CITROS example")
+
+
+Let's go further:
+```python
+# Setting Dataframe
+df = citros.topic('/poliastro_atmo_drag/res').set_order({'sid':'asc'}).data('data.data[0]')
+
+# Defining the list of drag coefficients (from simulations' logs)
+
+c_d_list = [3.8878, 2.0820, 2.6130, 2.0375, 2.9814, 2.2868, 3.4474, 2.7485, 3.3561, 3.5870]
+df['drag'] = c_d_list 
+
+#Plotting figure
+fig3, ax3 = citros.plot_graph(df, 'drag', 'data.data[0]', '.', title = 'Orbit duration vs drag', set_x_label='Drag coefficient', set_y_label = 'Flight duration until deorbiting, days')
+ax3.plot(df.sort_values(by = 'drag')['drag'], df.sort_values(by = 'drag')['data.data[0]'], linestyle='--')
+```
+This plot shows us the exact orbit duration depending of Drag coefficient:
+
 ![png](img/citros3.png "CITROS example")
 
 ## Extras
 ### FoxGlove examples
-![png](img/atmo_drag0.png "FoxGlove example")
 ![png](img/maneuver.png "FoxGlove example")
