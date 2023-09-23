@@ -129,7 +129,7 @@ created new batch_id: <your-batch-id-here>. Running locally.
 ![gif](img/main.gif "FoxGlove example")
 
 
-### Uploading Docker Image to CITROS Cloud
+### Uploading Docker Image to CITROS Cloud 🚛
 We need to build and push Docker container image to the CITROS server:
 ```bash 
 >>> citros docker-build-push
@@ -152,8 +152,8 @@ Select the launch file by pressing ```Enter``` button. Now the simulation is run
 created new batch_id: <your-batch-id-here>. Running on Citros cluster. See https://citros.io/batch/<your-batch-id-here>.
 ```
 
-### CITROS Web Usage
-#### Launching project via CITROS Web
+### CITROS Web Usage ⭐ 
+#### Launching project via CITROS Web 🚀
 The best way to use all the innovative capabilities of CITROS is through it's Web interface. The following manual explains how to run this project in the cloud and how to process the simualtion results.
 The starting point is CITROS main page, user is logged in and the project Docker image is built and pushed to the cloud (see the [manual](#uploading-docker-image-to-citros-cloud) above).
 1. Go to the ```Repositories``` page clicking on the tab on the top;
@@ -176,7 +176,7 @@ Navigate to our project ```Code``` page, open the Notebooks folder and click on 
 
 You can find all the data analisys package guides and API reference [here](https://citros.io/doc/docs_data_analysis).
 
-Let's quickly go through the key points of using a Jupiter Notebook to fetch data from a database. But to try some brief examples of data analysis using the built-in package, we need to launch a batch with several simulations with a disctibution for one of the ROS parameters (Drag coefficient, in our case). This parameter will vary in each simulation:
+Let's quickly go through the key points of using a Jupiter Notebook and fetching data from a database. But to try some brief examples of data analysis using the built-in package, we need to launch a batch with several simulations and with a distribution for one of the ROS parameters (Drag coefficient, in our case). This parameter will vary in each simulation:
 
 ```json
 "c_d": {
@@ -185,7 +185,7 @@ Let's quickly go through the key points of using a Jupiter Notebook to fetch dat
 },
 ```
 
-All neccessary things are already configured (we used a NumPy distribution function, you can read more about it in the [CITROS CLI](https://github.com/lulav/citros_cli#examples---user-defined) manual), so you can start it from [CLI](#citros-usage-🛸): 
+All neccessary things are already configured (we used a NumPy distribution function, you can read more about it in the [CITROS CLI](https://github.com/lulav/citros_cli#examples---user-defined) manual), so you can start it from [CLI](#citros-usage-🛸) with ```-c 10``` flag: 
 
 ```
 >>> citros run -n 'poliastro' -m 'cloud test run' -r -c 10
@@ -232,7 +232,7 @@ Last command provides general database info:
 ```
 As you can see in the output above, we've got some information about our simulation run (batch): data size, sid information and a number and a list of topics. 
 
-Now we are ready to do some simple research and draw some plots:
+Now we are ready to do some simple research and draw some plots. All MatPlotLib capabilities available here, but the [CITROS Data Analisys](https://citros.io/doc/docs_data_analysis) package provides it's own powerfull functions (also based on MatPlotLib):
 
 ```python
 citros.xy_plot(ax2, 
