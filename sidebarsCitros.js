@@ -156,12 +156,12 @@ module.exports = {
             {
               type: 'doc',
               label: 'Run New Batch Simulations',
-              id: 'simulations_batch/sim_batch_run',
+              id: 'simulations/simulations_batch/sim_batch_run',
             },
             {
               type: 'doc',
               label: 'Batch Simulations Screen',
-              id: 'simulations_batch/sim_batch_screen',
+              id: 'simulations/simulations_batch/sim_batch_screen',
             },
           ]
         },
@@ -177,12 +177,12 @@ module.exports = {
             {
               type: 'doc',
               label: 'Possible Runs',
-              id: 'simulation_screen/sim_possible_runs',
+              id: 'simulations/simulation_screen/sim_possible_runs',
             },
             {
               type: 'doc',
               label: 'Logs',
-              id: 'simulation_screen/sim_logs',
+              id: 'simulations/simulation_screen/sim_logs',
             },
           ]
         },
@@ -218,57 +218,57 @@ module.exports = {
             {
               type: 'doc',
               label: 'Overview',
-              id: 'repos_file_structure/repos_fs_overview',
+              id: 'repos/repos_file_structure/repos_fs_overview',
             },
             {
               type: 'doc',
               label: 'citros_repo_id',
-              id: 'repos_file_structure/repos_fs_repo_id',
+              id: 'repos/repos_file_structure/repos_fs_repo_id',
             },
             {
               type: 'doc',
               label: 'notebooks',
-              id: 'repos_file_structure/repos_fs_notebooks',
+              id: 'repos/repos_file_structure/repos_fs_notebooks',
             },
             {
               type: 'doc',
               label: 'parameter_setup',
-              id: 'repos_file_structure/repos_fs_param_setup',
+              id: 'repos/repos_file_structure/repos_fs_param_setup',
             },
             {
               type: 'doc',
               label: 'project.json',
-              id: 'repos_file_structure/repos_fs_project_json',
+              id: 'repos/repos_file_structure/repos_fs_project_json',
             },
             {
               type: 'doc',
               label: 'readme',
-              id: 'repos_file_structure/repos_fs_readme',
+              id: 'repos/repos_file_structure/repos_fs_readme',
             },
             {
               type: 'doc',
               label: 'reports',
-              id: 'repos_file_structure/repos_fs_reports',
+              id: 'repos/repos_file_structure/repos_fs_reports',
             },
             {
               type: 'doc',
               label: 'settings.json',
-              id: 'repos_file_structure/repos_fs_settings_json',
+              id: 'repos/repos_file_structure/repos_fs_settings_json',
             },
             {
               type: 'doc',
               label: 'simulations',
-              id: 'repos_file_structure/repos_fs_simulations',
+              id: 'repos/repos_file_structure/repos_fs_simulations',
             },
             {
               type: 'doc',
               label: 'user_commit',
-              id: 'repos_file_structure/repos_fs_user_commit',
+              id: 'repos/repos_file_structure/repos_fs_user_commit',
             },
             {
               type: 'doc',
               label: 'workflows',
-              id: 'repos_file_structure/repos_fs_workflows',
+              id: 'repos/repos_file_structure/repos_fs_workflows',
             },
           ]
         },
