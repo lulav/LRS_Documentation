@@ -7,7 +7,7 @@ sidebar_position: 1
 ---
 
 # Error analysis
-
+<!-- 
 For performing error analysis module [error_analysis](/docs/data_analysis/data_error/error_ds) is used. To download module:
 
 ```python
@@ -618,4 +618,4 @@ result_list = db_array.get_prediction(parameters = {'data.t':1},
 ![fig15](img/fig15.png "Fig15")
 </details>
 
-That way, the returning result is a list of the [**DataFrames**](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.html).
+That way, the returning result is a list of the [**DataFrames**](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.html). -->
