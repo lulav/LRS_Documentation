@@ -8,7 +8,7 @@ description: Short description about..
 ### Validation
 
 **Validation** module provides methods to tests the results of the simulations. By utilizing the 'validation' module, you can assess the compliance of data against various criteria, facilitating the analysis and evaluation of simulation results. 
-To learn more, check the [examples](/docs/data_analysis/data_validation/validation_examples).
+<!-- To learn more, check the [examples](/docs/data_analysis/data_validation/validation_examples). -->
 
 
 import ThemedImage from '@theme/ThemedImage';

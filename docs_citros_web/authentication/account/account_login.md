@@ -1,3 +1,8 @@
+<!-- ---
+sidebar_label: 'Documentation'
+description: 'Documentation'
+hide_title: true
+--- -->
 
 # Account Entrance
 

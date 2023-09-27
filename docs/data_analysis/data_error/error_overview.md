@@ -7,7 +7,7 @@ description: Short description about..
 ---
 
 **Error Analysis** module containes a range of analysis methods, including statistical analysis and regressions, enabling you to visualize the results and derive valuable insights from your data. It provides an easy way to check statistics, explore correlations, and make predictions using regressions. 
-See the [examples](/docs/data_analysis/data_error/error_examples) about the module usage.
+<!-- See the [examples](/docs/data_analysis/data_error/error_examples) about the module usage. -->
 
 
 import ThemedImage from '@theme/ThemedImage';

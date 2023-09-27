@@ -51,7 +51,7 @@ const config = {
         docs: {
           //routeBasePath: 'docs',
           path: "docs",
-          sidebarPath: require.resolve("./sidebarsBasics.js"),
+          sidebarPath: require.resolve("./sidebars.js"),
           remarkPlugins: [math],
           rehypePlugins: [katex],
           // Please change this to your repo.
