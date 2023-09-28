@@ -163,9 +163,9 @@ citros run -n 'test' -m 'testytest'
 Then you will ask to choose the launch file you want to run.  
 There are two option:
 
---- add image here ---
+![Alt text](image-3.png)
 
-The `dynamics_controller.launch.py` launch the dynamics with the controller and `dynamics.launch.py` launch only the dynamics.
+The `simulation_dynamics_controller` launch the dynamics with the controller and `simulation_dynamics` launch only the dynamics.  
 Select the launch file by pressing ```Enter``` button and wait for the output in the terminal.  
 If the simulation ran perfectly you can run the simlulation in the cloud.
 ## run a test simulation in the web with citros ##
