@@ -23,7 +23,7 @@ Enter new passphrase (empty for no passphrase):
 ```
 - Re-Enter new passphrase
 ```shell
-Enter same passphrase again: [Repeat the new passphrase]
+Enter same passphrase again:
 ```
 - Your ssh should have a new passphrase
 ```shell
