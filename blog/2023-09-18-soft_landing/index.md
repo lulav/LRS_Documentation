@@ -71,23 +71,29 @@ To use all the powerfull CITROS features usage requires CITROS installation:
 ```
 pip install citros
 ```  
-and after it finished installation,copy and run the following line:
-```
-export CITROS_DOMAIN=dev5.citros.io
+and then 
 
 ```
-2. login to citros:
+ citros init
 ```
-  citros login -v
+![Alt text](image-4.png)
+
+then login:
+
 ```
-(The -v flag is to validate that we are on dev5 )
-![Alt text](image.png)  
+  citros login 
+```
+
 enter your email and pasword ,you supose to see:    
-![Alt text](image-1.png)  
+
+![Alt text](image-5.png)
+
 then   
 ```
 citros setup-ssh
+citros add-remote
 ```
+then cheack that we all set with the command: `citros status`
 ### Configuring the project 
 After all the prerequisites done, we can start configuring our project. The starting point is the soft_landing devcontainer loaded and running, CITROS CLI is installed and ready.
 1. Initialize CITROS:
@@ -178,8 +184,7 @@ Then,run the following:
 ```bash 
 citros docker-build-push
 ```
-
-2. Finally, we can run it in the cloud! Simply add ```-r``` to the terminal command: 
+ Finally, we can run it in the cloud! Simply add ```-r``` to the terminal command: 
 ```bash 
 citros run -n 'test' -m 'testytest' -r
 ```
