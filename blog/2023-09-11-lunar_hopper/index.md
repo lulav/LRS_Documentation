@@ -13,7 +13,7 @@ Blog posts support [Docusaurus Markdown features](https://docusaurus.io/docs/mar
 
 The Lunar Hopper project is a lunar exploration planning project aimed at solving the intricate problem of lunar hopper missions. It focuses on optimizing the spacecraft's trajectory across the whole flight. Leveraging state-of-the-art optimal problem-solving algorithms, specifically the [MPOPT Python library](https://mpopt.readthedocs.io/en/latest/), this project seeks to determine the most efficient path for maximizing the distance traveled during the mission. It empowers users to customize essential parameters such as spacecraft mass, fuel quantity, thrust, and specific impulse. 
 
-All project installation, code overview and usage details also available in the project [GitHub page](https://github.com/citros-garden/lunar_hopper).
+All project installation, code overview and usage details are also available on the project's  [GitHub page](https://github.com/citros-garden/lunar_hopper).
 
 ## CITROS Usage 🛸
 Although you can get simulation results using FoxGlove, the best way to work with such simulations and process the results is CITROS! With its power, it is possible to create complex data processing scenarios, including the construction of more complex graphs, mathematical analysis and other high-level processing methods.
@@ -23,7 +23,7 @@ Although you can get simulation results using FoxGlove, the best way to work wit
 First of all, to use all the powerfull CITROS features usage requires CITROS installation: follow the instructions on the CITROS CLI [GitHub page](https://github.com/lulav/citros_cli).
 
 ### Configuring the Project ⚙️
-After all the prerequisites done, we can start configuring our project. The starting point is the Lunar_hopper devcontainer loaded and running, CITROS CLI is installed and ready.
+After all the prerequisites are met, we can start configuring our project. The starting point is the Lunar_hopper devcontainer loaded and running, CITROS CLI is installed and ready.
 1. Initialize CITROS:
 ```bash 
 >>> citros init
@@ -41,9 +41,9 @@ Intialized Citros repository.
 ```
 Now you can see ```.citros``` folder in the explorer.
 
-2. Configuring the setup. We need to set up the maximum perfomance available: timeout, CPU, GPU and Memory. To perform it, we need to define it in the ```.citros/simulations/simulation_lunar_hopper.json```. The recommended setup is minimum 600 seconds timeout, 4 CPU, 4 GPU and 4096 MB of Memory. Don't forget to save the file!
+2. Configuring the setup. We need to set up the maximum performance available: timeout, CPU, GPU and Memory. To perform it, we need to define them in ```.citros/simulations/simulation_lunar_hopper.json```. The recommended setup is minimum 600 seconds timeout, 4 CPU, 4 GPU and 4096 MB of Memory. Don't forget to save the file!
 
-3. Configuring the params setup. You can find default setup in ```.citros/parameter_setups/default_param_setup.json```. [CITROS CLI](https://github.com/lulav/citros_cli) provides an opportinuty to use basic NumPy functions (such as distributions) and even user-defined functions, but let's keep it default for now. Variables with '_0' are initial conditions, and variables with '_f' are final conditions respectively. Don't forget to save the file!
+3. Configuring the params setup. You can find the default setup in ```.citros/parameter_setups/default_param_setup.json```. [CITROS CLI](https://github.com/lulav/citros_cli) provides an opportunity to use basic NumPy functions (such as distributions) and even user-defined functions, but let's keep it default for now. Variables with '_0' are initial conditions, and variables with '_f' are final conditions respectively. Don't forget to save the file!
 
     |Parameter	|Package	|Description
     |--|--|--
@@ -61,8 +61,8 @@ Now you can see ```.citros``` folder in the explorer.
     |--|--|--
     lunar_hopper.launch.py	|lunar_hopper	|Lunar Hopper simulation launch file 	
 
-### Syncing the Project's Setup 📡
-Now we can sync our project settings with CITROS server:
+### Synchronizing the Project's Setup 📡
+Now we can synchronize our project settings with CITROS server:
 ```bash 
 >>> citros commit
 >>> citros push
@@ -70,8 +70,7 @@ Now we can sync our project settings with CITROS server:
 
 :::tip
 
-CITROS CLI in addition to other advantages also provides automatic ROS bag recording option, which allows user to use saved simulation results and export them! :)
-
+CITROS CLI, in addition to other benefits, also provides an automatic ROS bag recording option, which allows user to use saved simulation results and export them! :)
 :::
 
 ### Running Locally 🛋️
@@ -90,8 +89,8 @@ created new batch_id: <your-batch-id-here>. Running locally.
 ...
 ```
 
-### Uploading Docker Image to CITROS Cloud
-We need to build and push Docker container image to the CITROS server:
+### Uploading Docker Image to CITROS Cloud 🚛
+We need to build and push a Docker container image to the CITROS server:
 ```bash 
 >>> citros docker-build-push
 Logging in to docker...
@@ -106,30 +105,145 @@ Finally, we can run it in the cloud! Simply add ```-r``` to the terminal command
 ❯ lunar_hopper
 ```
 
-Select the launch file (should be the only one here) by pressing ```Enter``` button. Now the simulation is running in the CITROS server, and it will upload results to the CITROS database automaticly.
+Select the launch file (should be the only one here) by pressing ```Enter``` button. Now the simulation is running in the CITROS server,  and the results will be automatically uploaded to the CITROS database.
 
 ```bash
 created new batch_id: <your-batch-id-here>. Running on Citros cluster. See https://citros.io/batch/<your-batch-id-here>.
 ```
 
-### CITROS Web Usage
-#### Launching Project via CITROS Web
+### CITROS Web Usage ⭐ 
+#### Launching project via CITROS Web 🚀
 The best way to use all the innovative capabilities of CITROS is through it's Web interface. The following manual explains how to run this project in the cloud and how to process the simualtion results.
 The starting point is CITROS main page, user is logged in and the project Docker image is built and pushed to the cloud (see the [manual](#uploading-docker-image-to-citros-cloud) above).
 1. Go to the ```Repositories``` page clicking on the tab on the top;
 2. Find your project and open it;
 3. Navigate to the ```Runs``` tab;
 4. Click on the ```Run Simulation``` button on the right;
-5. Now you can choose the project and the simulation setup from the droplists, set the number of repeats and how many simulations should run in parallel, type the Name of the run and the additional message. This window also shows the perfomance preset.
+5. Now you can select the project and the simulation setup from the drop-down lists, set the number of repeats and how many simulations should run in parallel, type the Name of the run and the additional message. This window also shows the perfomance preset.
 6. We are ready to go! Start the Batch with the button below.
 
-The simualtion launched! Open the Run you just started in the list on ```Runs``` page to check how is it going. In this page you can find all the runs of this batch. The number of runs here equals to the number of runs you've set before.
+The simualtion launched! Open the Run you just started in the list on ```Runs``` page to check how it is going. On this page you can find all the runs of this batch. The number of runs here equals to the number of runs you've set before.
 Navigate to the Run by clicking on it in the table:
 * The main part of this page is a simulation's log. Here you can find all the logging information from all levels: from your code logs up to the CITROS system information.
 * The right part of the page provides additional information about Events: the main stages of the simulation run.
 
 #### Working with Integrated Jupiter Notebooks and Data Analysis 🌌
-CITROS Web provides powerfull data analisys package, which is comprehensive solution for data query, analysis and visualization. With its extensive features, you can quickly and easily extract valuable insights from your data. To use it, the Jupiter Notebook support is built-in. 
-Navigate to our project ```Code``` page, open the Notebooks folder and click on the notebook file. Here you can see the usual Jupiter editor's interface: you can add blocks of code or built-in Markdown engine, run and save notebook and control the Python kernel.
+CITROS Web provides a powerfull data analysis package, which is a comprehensive solution for data query, analysis and visualization. With its extensive features, you can quickly and easily extract valuable insights from your data. To use it, Jupiter Notebook support is built-in. 
+Navigate to our ```Code``` project page, open the Notebooks folder and click on the notebook file. Here you can see the usual Jupiter editor interface: you can add blocks of code or built-in Markdown engine, run and save notebook and control the Python kernel.
 
 You can find all the data analisys package guides and API reference [here](https://citros.io/doc/docs_data_analysis).
+
+Let's quickly go through the key points of using a Jupiter Notebook and fetching data from a database. But to try some brief examples of data analysis using the built-in package, we need to launch a batch with several simulations and a distribution for one of the ROS parameters (Specific impulse, in our case). This parameter will be different for each simulation:
+
+```json
+"Isp": {
+    "function": "my_func.py:func_with_context",
+    "args": [200]
+},
+```
+
+All necessary things are already configured (we used a user-defined function, you can read more about its usage in the [CITROS CLI](https://github.com/lulav/citros_cli#examples---user-defined) manual), so you can start the simulation from [CLI](#citros-usage-🛸) with the ```-c 10``` flag: 
+
+```bash 
+>>> citros run -n 'Lunar_hopper' -m 'local test run' -r -c 10
+? Please choose the simulation you wish to run:
+❯ lunar_hopper
+```
+
+Or from [Web](#running-in-the-cloud-🛰️):
+
+![png](img/web0.png "CITROS example")
+
+Run the ```Lunar_hopper``` simulation and copy your batch id (we will need it later).
+
+Let's return to our Notebook and check the code: to start with, we need to import all the necessary modules:
+
+```python
+import numpy as np
+import matplotlib.pyplot as plt
+from citros_data_analysis import data_access as da
+from prettytable import PrettyTable, ALL
+import json
+from platform import python_version
+```
+
+Now we can connect to the simulation database:
+```python
+batch_id = '<your-batch-id-here>'
+citros = da.CitrosDB(batch = batch_id)
+citros.info().print()
+```
+
+The last command returns general database info:
+```python
+{
+ 'size': '5197 kB',
+ 'sid_count': 10,
+ 'sid_list': [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
+ 'topic_count': 4,
+ 'topic_list': ['/config', '/lunar_hopper/control', '/lunar_hopper/state', '/lunar_hopper/time'],
+ 'message_count': 21931
+}
+```
+As you can see in the output above, we've got some information about our simulation run (batch): data size, sid information and a list of topics. 
+
+Now we are ready to do some simple research and draw some plots. All MatPlotLib capabilities available here, but the [CITROS Data Analisys](https://citros.io/doc/docs_data_analysis) package provides it's own powerful plotting functions (also based on MatPlotLib):
+
+```python
+fig1, ax1 = plt.subplots()
+
+citros.time_plot(ax1, 
+                 topic_name = '/lunar_hopper/state', 
+                 var_name = 'data.data[0]', 
+                 time_step = 1, 
+                 sids = [0,1,2,3,4,5,6,7,8,9],
+                 y_label = 'X coords', title_text = 'X coords vs. Time')
+```
+As you can see, the maximum altitude varies for different sids:
+![png](img/citros2.png "CITROS example")
+
+
+Let's go further:
+```python
+# Defining the list of isp
+
+isp_list = [i for i in range(200,300,10)]
+
+# Setting Dataframe
+
+df = citros.topic('/lunar_hopper/state').set_order({'sid':'asc'}).data('data.data[1]')
+sid_list = list(set(df['sid']))
+data0_list = []
+for s in sid_list:
+    id_max = df[df['sid'] == s]['rid'].idxmax()
+    data0_list.append(df['data.data[1]'].loc[id_max])
+
+print(data0_list)
+fig, ax = plt.subplots()
+
+#Adjusting colors
+c = np.random.choice(50, 10, replace=False)
+scatter = ax.scatter(isp_list, data0_list,c=c)
+
+# Create legend entries for each point
+legend_labels = [str(i) for i in range(10)]
+
+# Initialize a list to store legend handles
+legend_handles = []
+
+# Loop through the points and create legend entries with matching colors
+for i, label in enumerate(legend_labels):
+    color = scatter.to_rgba(c[i])  # Get the color of the corresponding point
+    legend_handles.append(plt.Line2D([0], [0], marker='o', color='w', label=label, markerfacecolor=color, markersize=10))
+
+# Add the legend with custom handles
+legend1 = ax.legend(handles=legend_handles, loc="upper left", title="sid")
+ax.add_artist(legend1)
+ax.grid()
+ax.set_ylabel('hopping distance, m')
+ax.set_xlabel('Initial altitude, m')
+ax.set_title('Maximum hopping distance vs Initial altitude')    
+```
+This graph shows us the hopping distance depending of Specific impulse:
+
+![png](img/citros3.png "CITROS example")

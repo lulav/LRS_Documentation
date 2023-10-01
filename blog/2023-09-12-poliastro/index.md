@@ -12,11 +12,11 @@ Blog posts support [Docusaurus Markdown features](https://docusaurus.io/docs/mar
 ![jpg](img/img0.jpg "https://images.nasa.gov/details/0202375")
 
 This project contains three simple examples using Poliastro lib for Python 3:
-1. `Poliastro_simple_orbit`. It returns vessel orbital coordinates around Earth between time bounds from input apoapsis and periapsis altitudes. The result is an ephemerides of orbit (actually a part of it between given time bounds) with zero right ascension of the ascending node, argument of the pericenter and true anomaly for simplicity. 
+1. `Poliastro_simple_orbit`. It returns vessel orbital coordinates around the Earth between time bounds from given apoapsis and periapsis altitudes. The result is an ephemerides of orbit (actually a part of it between given time bounds) with zero right ascension of the ascending node, argument of the pericenter and true anomaly for simplicity. 
 2. `Poliastro_maneuver`. This package provides three orbits for the Hohmann transition: an initial orbit, an intermediate orbit, and a final orbit. Takes the radius of the initial orbit and the radius of the final orbit as input. You will get the ephemerides of these orbits, not the trajectory! 
-3. `Poliastro_atmo_drag`. A simple example showing the effect of aerodynamic drag forces on an artificial satellite on low Earth orbit. Takes Earth diameter, drag coefficient, Keppler orbit parameters and maximum simulation time as inputs. The result is a plot of altitude by time and the flight time before hitting the surface.
+3. `Poliastro_atmo_drag`. A simple example showing the effect of aerodynamic drag forces on an artificial satellite in low Earth orbit. Takes Earth diameter, drag coefficient, Keppler orbit parameters and maximum simulation time as inputs. The result is a plot of altitude versus time and flight time before hitting the surface.
 
-You can find all information about used functions and mathematical explanation on the [Poliastro Website](https://docs.poliastro.space/en/stable/). All project installation, code overview and usage details also available in the project [GitHub page](https://github.com/citros-garden/poliastro).
+You can find all information about used functions and mathematical explanation on the [Poliastro Website](https://docs.poliastro.space/en/stable/). All project installation, code overview and usage details are also available on the project's [GitHub page](https://github.com/citros-garden/poliastro).
 
 ## CITROS Usage 🛸
 Although you can get simulation results using FoxGlove, the best way to work with such simulations and process the results is CITROS! With its power, it is possible to create complex data processing scenarios, including the construction of more complex graphs, mathematical analysis and other high-level processing methods.
@@ -26,7 +26,7 @@ Although you can get simulation results using FoxGlove, the best way to work wit
 First of all, to use all the powerfull CITROS features usage requires CITROS installation: follow the instructions on the CITROS CLI [GitHub page](https://github.com/lulav/citros_cli).
 
 ### Configuring the Project ⚙️
-After all the prerequisites done, we can start configuring our project. The starting point is the Poliastro devcontainer loaded and running, CITROS CLI is installed and ready.
+After all the prerequisites are met, we can start configuring our project. The starting point is the Poliastro devcontainer loaded and running, CITROS CLI is installed and ready.
 1. Initialize CITROS:
 ```bash 
 >>> citros init
@@ -44,16 +44,16 @@ Intialized Citros repository.
 ```
 Now you can see ```.citros``` folder in the explorer.
 
-2. Configuring the setup. We need to set up the maximum perfomance available: timeout, CPU, GPU and Memory. To perform it, we need to define it in the ```.citros/simulations/simulation_turtlebot3.json```. The recommended setup is minimum 180 seconds timeout, 2 CPU, and 2048 MB of Memory. Don't forget to save the file!
+2. Configuring the setup. We need to set up the maximum performance available: timeout, CPU, GPU and Memory. To perform it, we need to define them in ```.citros/simulations/simulation_poliastro.json```. The recommended setup is minimum 180 seconds timeout, 2 CPU, and 2048 MB of Memory. Don't forget to save the file!
 
-3. Configuring the params setup. You can find default setup in ```.citros/parameter_setups/default_param_setup.json```. [CITROS CLI](https://github.com/lulav/citros_cli) provides an opportinuty to use basic NumPy functions (such as distributions) and even user-defined functions, but let's keep it default for now. The examples have the following parameters:
+3. Configuring the params setup. You can find the default setup in ```.citros/parameter_setups/default_param_setup.json```. [CITROS CLI](https://github.com/lulav/citros_cli) provides an opportunity to use basic NumPy functions (such as distributions) and even user-defined functions, but let's keep it default for now. The examples have the following parameters:
 
     Poliastro Atmospheric Drag simulation:
 
     |Parameter	|Package	|Description
     |--|--|--
     earth_r	|poliastro_atmo_drag	|Earth radius	
-    a	|poliastro_atmo_drag	|Semimajor axis	
+    a	|poliastro_atmo_drag	|Semi-Major axis	
     ecc	|poliastro_atmo_drag	|Eccentricity	
     inc	|poliastro_atmo_drag	|Inclination	
     raan	|poliastro_atmo_drag	|Right Ascension of the Ascending Node	
@@ -85,7 +85,7 @@ Now you can see ```.citros``` folder in the explorer.
 :::note
 Don't forget to save the file!
 :::
-4. Launch files. This project contains three launch files:
+4. Launch files. There are three launch files in this project:
 
     |Launch File	|Package	|Description
     |--|--|--
@@ -94,8 +94,8 @@ Don't forget to save the file!
     poliastro_simple_orbit.launch.py	|poliastro_simple_orbit	|Poliastro Maneuver simulation launch file 
 
      
-### Syncing the Project's Setup 📡
-Now we can sync our project settings with CITROS server:
+### Synchronizing the Project's Setup 📡
+Now we can synchronize our project settings with CITROS server:
 ```bash 
 >>> citros commit
 >>> citros push
@@ -103,12 +103,12 @@ Now we can sync our project settings with CITROS server:
 
 :::tip
 
-CITROS CLI in addition to other advantages also provides automatic ROS bag recording option, which allows user to use saved simulation results and export them! :)
+CITROS CLI, in addition to other benefits, also provides an automatic ROS bag recording option, which allows user to use saved simulation results and export them! :)
 
 :::
 
 ### Running Locally 🛋️
-Since all the preparations done, we can launch it locally (your project should be built and sourced before that, check the instructions above):
+Since all the preparations done, we can launch it locally (your project should be built and sourced before that):
 ```bash 
 >>> citros run -n 'poliastro' -m 'local test run'
 ? Please choose the simulation you wish to run:
@@ -130,7 +130,7 @@ created new batch_id: <your-batch-id-here>. Running locally.
 
 
 ### Uploading Docker Image to CITROS Cloud 🚛
-We need to build and push Docker container image to the CITROS server:
+We need to build and push a Docker container image to the CITROS server:
 ```bash 
 >>> citros docker-build-push
 Logging in to docker...
@@ -146,7 +146,7 @@ Finally, we can run it in the cloud! Simply add ```-r``` to the terminal command
 poliastro_maneuver
 poliastro_simple_orbit
 ```
-Select the launch file by pressing ```Enter``` button. Now the simulation is running in the CITROS server, and it will upload results to the CITROS database automaticly.
+Select the launch file by pressing ```Enter``` button. Now the simulation is running in the CITROS server, and the results will be automatically uploaded to the CITROS database.
 
 ```bash
 created new batch_id: <your-batch-id-here>. Running on Citros cluster. See https://citros.io/batch/<your-batch-id-here>.
@@ -160,10 +160,10 @@ The starting point is CITROS main page, user is logged in and the project Docker
 2. Find your project and open it;
 3. Navigate to the ```Runs``` tab;
 4. Click on the ```Run Simulation``` button on the right;
-5. Now you can choose the project and the simulation setup from the droplists, set the number of repeats and how many simulations should run in parallel, type the Name of the run and the additional message. This window also shows the perfomance preset.
+5. Now you can select the project and the simulation setup from the drop-down lists, set the number of repeats and how many simulations should run in parallel, type the Name of the run and the additional message. This window also shows the perfomance preset.
 6. We are ready to go! Start the Batch with the button below.
 
-The simualtion launched! Open the Run you just started in the list on ```Runs``` page to check how is it going. In this page you can find all the runs of this batch. The number of runs here equals to the number of runs you've set before.
+The simualtion launched! Open the Run you just started in the list on ```Runs``` page to check how it is going. On this page you can find all the runs of this batch. The number of runs here equals to the number of runs you've set before.
 Navigate to the Run by clicking on it in the table:
 * The main part of this page is a simulation's log. Here you can find all the logging information from all levels: from your code logs up to the CITROS system information.
 * The right part of the page provides additional information about Events: the main stages of the simulation run.
@@ -171,12 +171,12 @@ Navigate to the Run by clicking on it in the table:
 ![png](img/citros2.png "CITROS example")
 
 #### Working with Integrated Jupiter Notebooks and Data Analysis 🌌
-CITROS Web provides powerfull data analisys package, which is comprehensive solution for data query, analysis and visualization. With its extensive features, you can quickly and easily extract valuable insights from your data. To use it, the Jupiter Notebook support is built-in. 
-Navigate to our project ```Code``` page, open the Notebooks folder and click on the notebook file. Here you can see the usual Jupiter editor's interface: you can add blocks of code or built-in Markdown engine, run and save notebook and control the Python kernel.
+CITROS Web provides a powerfull data analysis package, which is a comprehensive solution for data query, analysis and visualization. With its extensive features, you can quickly and easily extract valuable insights from your data. To use it, Jupiter Notebook support is built-in. 
+Navigate to our ```Code``` project page, open the Notebooks folder and click on the notebook file. Here you can see the usual Jupiter editor interface: you can add blocks of code or built-in Markdown engine, run and save notebook and control the Python kernel.
 
 You can find all the data analisys package guides and API reference [here](https://citros.io/doc/docs_data_analysis).
 
-Let's quickly go through the key points of using a Jupiter Notebook and fetching data from a database. But to try some brief examples of data analysis using the built-in package, we need to launch a batch with several simulations and with a distribution for one of the ROS parameters (Drag coefficient, in our case). This parameter will vary in each simulation:
+Let's quickly go through the key points of using a Jupiter Notebook and fetching data from a database. But to try some brief examples of data analysis using the built-in package, we need to launch a batch with several simulations and a distribution for one of the ROS parameters (Drag coefficient, in our case). This parameter will be different for each simulation:
 
 ```json
 "c_d": {
@@ -185,7 +185,7 @@ Let's quickly go through the key points of using a Jupiter Notebook and fetching
 },
 ```
 
-All neccessary things are already configured (we used a NumPy distribution function, you can read more about it in the [CITROS CLI](https://github.com/lulav/citros_cli#examples---user-defined) manual), so you can start it from [CLI](#citros-usage-🛸) with ```-c 10``` flag: 
+All necessary things are already configured (we used a NumPy distribution function, you can read more about its usage in the [CITROS CLI](https://github.com/lulav/citros_cli#examples---user-defined) manual), so you can start the simulation from [CLI](#citros-usage-🛸) with the ```-c 10``` flag: 
 
 ```
 >>> citros run -n 'poliastro' -m 'cloud test run' -r -c 10
@@ -199,7 +199,7 @@ Or from [Web](#running-in-the-cloud-🛰️):
 
 ![png](img/web0.png "CITROS example")
 
-Run the simulation and copy your batch id (we will need it later).
+Run the ```poliastro_atmo_drag``` simulation and copy your batch id (we will need it later).
 
 Let's return to our Notebook and check the code: to start with, we need to import all the necessary modules:
 
@@ -219,7 +219,7 @@ citros = da.CitrosDB(batch = batch_id)
 citros.info().print()
 ```
 
-Last command provides general database info:
+The last command returns general database info:
 ```python
 {
  'size': '396 kB',
@@ -230,9 +230,9 @@ Last command provides general database info:
  'message_count': 1616
 }
 ```
-As you can see in the output above, we've got some information about our simulation run (batch): data size, sid information and a number and a list of topics. 
+As you can see in the output above, we've got some information about our simulation run (batch): data size, sid information and a list of topics. 
 
-Now we are ready to do some simple research and draw some plots. All MatPlotLib capabilities available here, but the [CITROS Data Analisys](https://citros.io/doc/docs_data_analysis) package provides it's own powerfull functions (also based on MatPlotLib):
+Now we are ready to do some simple research and draw some plots. All MatPlotLib capabilities available here, but the [CITROS Data Analisys](https://citros.io/doc/docs_data_analysis) package provides it's own powerful plotting functions (also based on MatPlotLib):
 
 ```python
 citros.xy_plot(ax2, 
@@ -244,7 +244,7 @@ citros.xy_plot(ax2,
 
 ax2.set_aspect(1,'datalim')
 ```
-You can see the orbit duration decreases for different drag coefficients:
+As you can see, the orbit duration varies for different sids:
 ![png](img/citros2.png "CITROS example")
 
 
@@ -254,7 +254,6 @@ Let's go further:
 df = citros.topic('/poliastro_atmo_drag/res').set_order({'sid':'asc'}).data('data.data[0]')
 
 # Defining the list of drag coefficients (from simulations' logs)
-
 c_d_list = [3.8878, 2.0820, 2.6130, 2.0375, 2.9814, 2.2868, 3.4474, 2.7485, 3.3561, 3.5870]
 df['drag'] = c_d_list 
 
@@ -262,7 +261,7 @@ df['drag'] = c_d_list
 fig3, ax3 = citros.plot_graph(df, 'drag', 'data.data[0]', '.', title = 'Orbit duration vs drag', set_x_label='Drag coefficient', set_y_label = 'Flight duration until deorbiting, days')
 ax3.plot(df.sort_values(by = 'drag')['drag'], df.sort_values(by = 'drag')['data.data[0]'], linestyle='--')
 ```
-This plot shows us the exact orbit duration depending of Drag coefficient:
+This graph shows us the exact orbit duration depending of Drag coefficient:
 
 ![png](img/citros3.png "CITROS example")
 
