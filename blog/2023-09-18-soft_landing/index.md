@@ -7,7 +7,7 @@ tags: [citros]
 
 # Soft Landing Tutorial
 
----- add cool image heree----
+![Alt text](soft-landing-of-a-spacecraft-on-the-moon.png)
 
 **Contents**
 
@@ -21,18 +21,17 @@ tags: [citros]
 - Example
 
 
-## General Info
+## General Info  🌐
 
 This is a ROS 2 simulation of soft landing of an object.  
 In the ROS system we have two nodes: the first represents the `dynamics` and the second one is the `controller`.
 
 ![jpg](img/soft_landing_control.jpg "soft landing")
 
-#### **System dynamics** ?
+#### **System dynamics**  🏁
 The system's equation of motion is the kinematic equation of a free body fall.  
-for more information see ---
-
-#### **The controller** ?
+for more information see [Soft Landing](https://github.com/citros-garden/soft_landing)  
+#### **The controller**  🎮
 The controller is based on this paper:
 
 *S. Gutman, "Rendezvous and Soft Landing in Closed Form via LQ Optimization," 2019 27th Mediterranean Conference on Control and Automation (MED), Akko, Israel, 2019, pp. 536-540, doi: 10.1109/MED.2019.8798572.*
@@ -40,15 +39,15 @@ The controller is based on this paper:
 for more information about the controller look here
 
 
-## Installition
+## Installition  🛫
 
-#### Prerequisits
+#### Prerequisits 📝
  - ✅ Python 3.8+  
  - ✅ VSCode  
  - ✅ Docker  
  
    
-#### Install & build  
+#### Install & build 🏠 
 1. Clone the repository:
    ```sh
     git clone git@github.com:citros-garden/soft_landing.git
@@ -62,7 +61,7 @@ for more information about the controller look here
 3. open the repository in the container from VScode with `reopen in container` option.
 
 
-## citros interagtion
+## citros interagtion 🛸
 To use all the powerfull CITROS features usage requires CITROS installation:  
 (from the instructions on the CITROS CLI [GitHub page](https://github.com/lulav/citros_cli))
 
@@ -71,12 +70,7 @@ To use all the powerfull CITROS features usage requires CITROS installation:
 ```
 pip install citros
 ```  
-and then 
 
-```
- citros init
-```
-![Alt text](image-4.png)
 
 then login:
 
@@ -88,13 +82,23 @@ enter your email and pasword ,you supose to see:
 
 ![Alt text](image-5.png)
 
-then   
+then:
+
+```
+ citros init
+```
+![Alt text](image-4.png)
+
+
+
+and finely:
+
 ```
 citros setup-ssh
 citros add-remote
 ```
-then cheack that we all set with the command: `citros status`
-### Configuring the project 
+then cheack that we all set with the cli command: `citros status`
+### Configuring the project ⚙️
 After all the prerequisites done, we can start configuring our project. The starting point is the soft_landing devcontainer loaded and running, CITROS CLI is installed and ready.
 1. Initialize CITROS:
 ```bash 
@@ -110,9 +114,9 @@ Now you can see ```.citros``` folder in the explorer and at the terminal you can
 	source install/local_setup.bash
 	```
 
-## Run the  example
+## Run the  example 🌑
 
-### **The canerio**
+### **The canerio** 🎥
 Run the example of an object with the initial condition that supose to land on an ending point.  
 The parameters are:  
 
@@ -149,13 +153,8 @@ you can read more about changing parameters in  `parameter setups` section in `c
 
 :::  
 
-After any change in the parameter file you need to  built and sourced befor running it: 
 
-```sh
-colcon build
-source install/local_setup.bash
-```
-### run a test simulation localy with citros ###
+### run a test simulation localy with citros 🕹️	
 #### Syncing the project's setup
 Now we can sync our project settings with CITROS server:
 ```bash 
@@ -174,7 +173,7 @@ There are two option:
 The `simulation_dynamics_controller` launch the dynamics with the controller and `simulation_dynamics` launch only the dynamics.  
 Select the launch file by pressing ```Enter``` button and wait for the output in the terminal.  
 If the simulation ran perfectly you can run the simlulation in the cloud.
-## run a test simulation in the web with citros ##
+## run a test simulation in the web with citros 📡
 Befor uplouding the simulation to the cloud cheack that the parameter file, `default_param_setup.json`  in `.citros/parameter_setups` folder is set as you wish and saved.  
 That you have build and sourced the project.  
 And you have sync the project settings with CITROS server (citros commit , citros push).  
