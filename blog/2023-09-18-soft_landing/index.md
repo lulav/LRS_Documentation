@@ -18,20 +18,24 @@ tags: [citros]
     - Prerequisits
     - Install & build
 - citros interagtion
-- Example
+    - Configuring the project
+- Run the  example
+    - The canerio
+    - Run a test simulation localy with citros
+    - Run a test simulation in the web with citros
 
 
-## General Info  🌐
+# General Info  🌐
 
 This is a ROS 2 simulation of soft landing of an object.  
 In the ROS system we have two nodes: the first represents the `dynamics` and the second one is the `controller`.
 
 ![jpg](img/soft_landing_control.jpg "soft landing")
 
-#### **System dynamics**  🏁
+## **System dynamics**  🏁
 The system's equation of motion is the kinematic equation of a free body fall.  
 for more information see [Soft Landing](https://github.com/citros-garden/soft_landing)  
-#### **The controller**  🎮
+## **The controller**  🎮
 The controller is based on this paper:
 
 *S. Gutman, "Rendezvous and Soft Landing in Closed Form via LQ Optimization," 2019 27th Mediterranean Conference on Control and Automation (MED), Akko, Israel, 2019, pp. 536-540, doi: 10.1109/MED.2019.8798572.*
@@ -39,15 +43,15 @@ The controller is based on this paper:
 for more information about the controller look here
 
 
-## Installition  🛫
+# Installition  🛫
 
-#### Prerequisits 📝
+### Prerequisits 📝
  - ✅ Python 3.8+  
  - ✅ VSCode  
  - ✅ Docker  
  
    
-#### Install & build 🏠 
+### Install & build 🏠 
 1. Clone the repository:
    ```sh
     git clone git@github.com:citros-garden/soft_landing.git
@@ -61,7 +65,7 @@ for more information about the controller look here
 3. open the repository in the container from VScode with `reopen in container` option.
 
 
-## citros interagtion 🛸
+# citros interagtion 🛸
 To use all the powerfull CITROS features usage requires CITROS installation:  
 (from the instructions on the CITROS CLI [GitHub page](https://github.com/lulav/citros_cli))
 
@@ -98,7 +102,7 @@ citros setup-ssh
 citros add-remote
 ```
 then cheack that we all set with the cli command: `citros status`
-### Configuring the project ⚙️
+## Configuring the project ⚙️
 After all the prerequisites done, we can start configuring our project. The starting point is the soft_landing devcontainer loaded and running, CITROS CLI is installed and ready.
 1. Initialize CITROS:
 ```bash 
@@ -114,9 +118,9 @@ Now you can see ```.citros``` folder in the explorer and at the terminal you can
 	source install/local_setup.bash
 	```
 
-## Run the  example 🌑
+# Run the  example 🌑
 
-### **The canerio** 🎥
+## **The canerio** 🎥
 Run the example of an object with the initial condition that supose to land on an ending point.  
 The parameters are:  
 
@@ -154,8 +158,8 @@ you can read more about changing parameters in  `parameter setups` section in `c
 :::  
 
 
-### run a test simulation localy with citros 🕹️	
-#### Syncing the project's setup
+## Run a test simulation localy with citros 🕹️	
+### Syncing the project's setup
 Now we can sync our project settings with CITROS server:
 ```bash 
 citros commit
@@ -173,7 +177,7 @@ There are two option:
 The `simulation_dynamics_controller` launch the dynamics with the controller and `simulation_dynamics` launch only the dynamics.  
 Select the launch file by pressing ```Enter``` button and wait for the output in the terminal.  
 If the simulation ran perfectly you can run the simlulation in the cloud.
-## run a test simulation in the web with citros 📡
+## Run a test simulation in the web with citros 📡
 Befor uplouding the simulation to the cloud cheack that the parameter file, `default_param_setup.json`  in `.citros/parameter_setups` folder is set as you wish and saved.  
 That you have build and sourced the project.  
 And you have sync the project settings with CITROS server (citros commit , citros push).  
@@ -189,9 +193,23 @@ citros run -n 'test' -m 'testytest' -r
 ```
 Select the launch file you want by pressing ```Enter``` button. Now the simulation is running in the Citros server, and it will upload results to the Citros database automaticly.
 
+Now we all set to run simulations from the web itself.  
+At the web,go to the soft landing repo and then to the `Runs` tab.  
 
+start a new simulation by clicking the ![Alt text](image-1.png) button.  
+then a window will pop:
 
-show result from the notebooke
+![Alt text](image-6.png)  
+
+As you can see I chose to fill the soft landing repository, the main branch, and run the simulations with the controller.  
+Then I chose to repeat 100 times such that citros run 10 simulations in parallel.  
+Then i clicked on *Run Simulation*.  
+The results were:
+![Alt text](image-7.png)
+
+And by getting the miss distance and miss velociy i could show a figure of all the runs.  
+![Alt text](image-8.png)  
+The full report with the data acces and error anlyisis you can watch it [here](https://citros.io/soft_landing/blob/main/notebooks/Soft_landing_analysis.ipynb).
 
 
 
