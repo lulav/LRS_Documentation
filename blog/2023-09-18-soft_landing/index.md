@@ -52,7 +52,7 @@ The controller is based on this paper:
 ### Install & Build 🏠 
 1. Clone the repository:
    ```sh
-    git clone git@github.com:CITROS-garden/soft_landing.git
+    git clone git@github.com:citros-garden/soft_landing.git
    ```
 
 2. open the repository in the VScode:
@@ -70,7 +70,7 @@ To use all the powerfull CITROS features usage requires CITROS installation:
 
 **First,reopen the folder localy** then follow the instructions:
 ```
-pip install CITROS
+pip install citros
 ```  
 
 
