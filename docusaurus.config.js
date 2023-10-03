@@ -168,7 +168,7 @@ const config = {
             position: "left",
             activeBaseRegex: `/docs_data_analysis/`,
           },
-          { to: "/blog", label: "Tutorials", position: "left" },
+          { to: "/blog", label: "Blog", position: "left" },
           {
             type: "docsVersionDropdown",
             position: "right",
@@ -199,7 +199,7 @@ const config = {
             title: 'Visit',
             items: [
               {
-                label: 'Tutorials',
+                label: 'Blog',
                 to: '/blog',
               },
               {
