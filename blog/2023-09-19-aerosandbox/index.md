@@ -232,7 +232,7 @@ fig, ax = plt.subplots()
 #Adjusting colors
 c = np.random.choice(50, 10, replace=False)
 scatter = ax.scatter(h_0, data0_list,c=c)
-
+6
 # Create legend entries for each point
 legend_labels = [str(i) for i in range(10)]
 

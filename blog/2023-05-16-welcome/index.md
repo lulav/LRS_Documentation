@@ -150,37 +150,33 @@ Navigate to the Run by clicking on it in the table:
 
 #### Working with Integrated Jupiter Notebooks and Data Analysis 🌌
 
-TODO
-
 CITROS Web provides a powerfull data analysis package, which is a comprehensive solution for data query, analysis and visualization. With its extensive features, you can quickly and easily extract valuable insights from your data. To use it, Jupiter Notebook support is built-in. 
 Navigate to our ```Code``` project page, open the Notebooks folder and click on the notebook file. Here you can see the usual Jupiter editor interface: you can add blocks of code or built-in Markdown engine, run and save notebook and control the Python kernel.
 
 You can find all the data analisys package guides and API reference [here](https://citros.io/doc/docs_data_analysis).
 
-Let's quickly go through the key points of using a Jupiter Notebook and fetching data from a database. But to try some brief examples of data analysis using the built-in package, we need to launch a batch with several simulations and a distribution for one of the ROS parameters (Drag coefficient, in our case). This parameter will be different for each simulation:
+Let's quickly go through the key points of using a Jupiter Notebook and fetching data from a database. But to try some brief examples of data analysis using the built-in package, we need to launch a batch with several simulations and a distribution for one of the ROS parameters (Specific impulse, in our case). This parameter will be different for each simulation:
 
 ```json
-"c_d": {
-    "function": "numpy.random.uniform",
-    "args": [2, 4]
+"Isp": {
+    "function": "my_func.py:func_with_context",
+    "args": [200]
 },
 ```
 
 All necessary things are already configured (we used a NumPy distribution function, you can read more about its usage in the [CITROS CLI](https://github.com/lulav/citros_cli#examples---user-defined) manual), so you can start the simulation from [CLI](#citros-usage-🛸) with the ```-c 10``` flag: 
 
-```
->>> citros run -n 'poliastro' -m 'cloud test run' -r -c 10
+```bash 
+>>> citros run -n 'Lunar_Starship' -m 'local test run' -r -c 10
 ? Please choose the simulation you wish to run:
-❯ poliastro_atmo_drag
-poliastro_maneuver
-poliastro_simple_orbit
+❯ lunar_starship
 ```
 
 Or from [Web](#running-in-the-cloud-🛰️):
 
 ![png](img/web0.png "CITROS example")
 
-Run the ```poliastro_atmo_drag``` simulation and copy your batch id (we will need it later).
+Run the ```lunar_starship``` simulation and copy your batch id (we will need it later).
 
 Let's return to our Notebook and check the code: to start with, we need to import all the necessary modules:
 
@@ -203,12 +199,12 @@ citros.info().print()
 The last command returns general database info:
 ```python
 {
- 'size': '396 kB',
+ 'size': '543 kB',
  'sid_count': 10,
  'sid_list': [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
- 'topic_count': 3,
- 'topic_list': ['/config', '/poliastro_atmo_drag/res', '/poliastro_atmo_drag/state'],
- 'message_count': 1616
+ 'topic_count': 2,
+ 'topic_list': ['/config', '/lunar_starship/state'],
+ 'message_count': 1646
 }
 ```
 As you can see in the output above, we've got some information about our simulation run (batch): data size, sid information and a list of topics. 
@@ -216,33 +212,100 @@ As you can see in the output above, we've got some information about our simulat
 Now we are ready to do some simple research and draw some plots. All MatPlotLib capabilities available here, but the [CITROS Data Analisys](https://citros.io/doc/docs_data_analysis) package provides it's own powerful plotting functions (also based on MatPlotLib):
 
 ```python
-citros.xy_plot(ax2, 
-               topic_name = '/poliastro_atmo_drag/state', 
-               var_x_name = 'data.data[0]',
-               var_y_name = 'data.data[1]',
-               sids = [0,1,2,3,4,5,6,7,8,9], 
-               x_label = 'x', y_label = 'y', title_text = 'Orbits')
+fig1, ax1 = plt.subplots()
 
-ax2.set_aspect(1,'datalim')
+citros.time_plot(ax1, 
+                 topic_name = '/lunar_starship/state', 
+                 var_name = 'data.data[0]', 
+                 time_step = 1, 
+                 sids = [0,1,2,3,4,5,6,7,8,9], 
+                 y_label = 'H', title_text = 'H vs. Time')
 ```
-As you can see, the orbit duration varies for different sids:
+As you can see, the maximum altitude varies for different sids:
 ![png](img/citros2.png "CITROS example")
 
 
 Let's go further:
 ```python
-# Setting Dataframe
-df = citros.topic('/poliastro_atmo_drag/res').set_order({'sid':'asc'}).data('data.data[0]')
+import math
 
-# Defining the list of drag coefficients (from simulations' logs)
-c_d_list = [3.8878, 2.0820, 2.6130, 2.0375, 2.9814, 2.2868, 3.4474, 2.7485, 3.3561, 3.5870]
-df['drag'] = c_d_list 
+# Setting Dataframe and getting initial and final coords
+df = citros.topic('/lunar_starship/state').set_order({'sid':'asc'}).data('data.data[1]')
+dff = citros.topic('/lunar_starship/state').set_order({'sid':'asc'}).data('data.data[2]')
+sid_list = list(set(df['sid']))
+lat0_list = []
+latf_list = []
+long0_list = []
+longf_list = []
+for s in sid_list:
+    id_max = df[df['sid'] == s]['rid'].idxmax()
+    id_min = df[df['sid'] == s]['rid'].idxmin()
+    lat0_list.append((df['data.data[1]'].loc[id_min])*57.3)
+    latf_list.append((df['data.data[1]'].loc[id_max])*57.3)
+    long0_list.append((dff['data.data[2]'].loc[id_min])*57.3)
+    longf_list.append((dff['data.data[2]'].loc[id_max])*57.3)
 
-#Plotting figure
-fig3, ax3 = citros.plot_graph(df, 'drag', 'data.data[0]', '.', title = 'Orbit duration vs drag', set_x_label='Drag coefficient', set_y_label = 'Flight duration until deorbiting, days')
-ax3.plot(df.sort_values(by = 'drag')['drag'], df.sort_values(by = 'drag')['data.data[0]'], linestyle='--')
+# Moon radius
+rad = 1737400
+
+# Calculating travelled distance for each sid
+dist_list= []
+for i in range(len(sid_list)):
+
+    llat1 = lat0_list[i]
+    llong1 = long0_list[i]
+
+    llat2 = latf_list[i]
+    llong2 = longf_list[i]
+
+    lat1 = llat1*math.pi/180.
+    lat2 = llat2*math.pi/180.
+    long1 = llong1*math.pi/180.
+    long2 = llong2*math.pi/180.
+
+    cl1 = math.cos(lat1)
+    cl2 = math.cos(lat2)
+    sl1 = math.sin(lat1)
+    sl2 = math.sin(lat2)
+    delta = long2 - long1
+    cdelta = math.cos(delta)
+    sdelta = math.sin(delta)
+
+    y = math.sqrt(math.pow(cl2*sdelta,2)+math.pow(cl1*sl2-sl1*cl2*cdelta,2))
+    x = sl1*sl2+cl1*cl2*cdelta
+    ad = math.atan2(y,x)
+    dist_list.append(ad*rad)
+
+
+# Defining the list of Isp
+isp = [i for i in range(200,300, 10)]
+
+fig, ax = plt.subplots()
+
+c = np.random.choice(50, 10, replace=False)
+scatter = ax.scatter(isp, dist_list,c=c)
+
+# Create legend entries for each point
+legend_labels = [str(i) for i in range(10)]
+
+# Initialize a list to store legend handles
+legend_handles = []
+
+# Loop through the points and create legend entries with matching colors
+for i, label in enumerate(legend_labels):
+    color = scatter.to_rgba(c[i])  # Get the color of the corresponding point
+    legend_handles.append(plt.Line2D([0], [0], marker='o', color='w', label=label, markerfacecolor=color, markersize=10))
+
+# Add the legend with custom handles
+legend1 = ax.legend(handles=legend_handles, loc="upper left", title="sid")
+ax.add_artist(legend1)
+ax.grid()
+
+ax.set_xlabel('Specific impulse, sec')
+ax.set_ylabel('Travelled distance, m')
+ax.set_title('Travelled distance vs Specific impulse')
 ```
-This graph shows us the exact orbit duration depending of Drag coefficient:
+This graph shows us the travelled distance depending of Specific impulse:
 
 ![png](img/citros3.png "CITROS example")
 ## Extras

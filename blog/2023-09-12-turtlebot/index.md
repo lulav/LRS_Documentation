@@ -138,8 +138,6 @@ Navigate to the Run by clicking on it in the table:
 
 #### Working with Integrated Jupiter Notebooks and Data Analysis 🌌
 
-TODO
-
 CITROS Web provides a powerfull data analysis package, which is a comprehensive solution for data query, analysis and visualization. With its extensive features, you can quickly and easily extract valuable insights from your data. To use it, Jupiter Notebook support is built-in. 
 Navigate to our ```Code``` project page, open the Notebooks folder and click on the notebook file. Here you can see the usual Jupiter editor interface: you can add blocks of code or built-in Markdown engine, run and save notebook and control the Python kernel.
 
@@ -148,30 +146,20 @@ You can find all the data analisys package guides and API reference [here](https
 :::
 
 
-Let's quickly go through the key points of using a Jupiter Notebook and fetching data from a database. But to try some brief examples of data analysis using the built-in package, we need to launch a batch with several simulations and a distribution for one of the ROS parameters (Drag coefficient, in our case). This parameter will be different for each simulation:
-
-```json
-"c_d": {
-    "function": "numpy.random.uniform",
-    "args": [2, 4]
-},
-```
-
-All necessary things are already configured (we used a NumPy distribution function, you can read more about its usage in the [CITROS CLI](https://github.com/lulav/citros_cli#examples---user-defined) manual), so you can start the simulation from [CLI](#citros-usage-🛸) with the ```-c 10``` flag: 
+Let's quickly go through the key points of using a Jupiter Notebook and fetching data from a database. All necessary things are already configured (we used a NumPy distribution function, you can read more about its usage in the [CITROS CLI](https://github.com/lulav/citros_cli#examples---user-defined) manual), so you can start the simulation from [CLI](#citros-usage-🛸) with the ```-c 5``` flag, which will launch 5 simulations in parallel: 
 
 ```
->>> citros run -n 'poliastro' -m 'cloud test run' -r -c 10
-? Please choose the simulation you wish to run:
-❯ poliastro_atmo_drag
-poliastro_maneuver
-poliastro_simple_orbit
+>>> citros run -n 'turtlebot3' -m 'cloud test run' -r -c 5
+? Please choose the simulation you wish to run: 
+  simulation_robot_state_publisher
+❯ simulation_turtlebot3_sim_cont
 ```
 
 Or from [Web](#running-in-the-cloud-🛰️):
 
 ![png](img/web0.png "CITROS example")
 
-Run the ```poliastro_atmo_drag``` simulation and copy your batch id (we will need it later).
+Run the ```simulation_turtlebot3_sim_cont``` simulation and copy your batch id (we will need it later).
 
 Let's return to our Notebook and check the code: to start with, we need to import all the necessary modules:
 
@@ -194,12 +182,12 @@ citros.info().print()
 The last command returns general database info:
 ```python
 {
- 'size': '396 kB',
- 'sid_count': 10,
- 'sid_list': [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
- 'topic_count': 3,
- 'topic_list': ['/config', '/poliastro_atmo_drag/res', '/poliastro_atmo_drag/state'],
- 'message_count': 1616
+ 'size': '138 MB',
+ 'sid_count': 1,
+ 'sid_list': [0],
+ 'topic_count': 10,
+ 'topic_list': ['/clock', '/cmd_vel', '/config', '/imu', '/joint_states', '/odom', '/robot_description', '/scan', '/tf', '/tf_static'],
+ 'message_count': 139250
 }
 ```
 As you can see in the output above, we've got some information about our simulation run (batch): data size, sid information and a list of topics. 
@@ -207,33 +195,39 @@ As you can see in the output above, we've got some information about our simulat
 Now we are ready to do some simple research and draw some plots. All MatPlotLib capabilities available here, but the [CITROS Data Analisys](https://citros.io/doc/docs_data_analysis) package provides it's own powerful plotting functions (also based on MatPlotLib):
 
 ```python
-citros.xy_plot(ax2, 
-               topic_name = '/poliastro_atmo_drag/state', 
-               var_x_name = 'data.data[0]',
-               var_y_name = 'data.data[1]',
-               sids = [0,1,2,3,4,5,6,7,8,9], 
-               x_label = 'x', y_label = 'y', title_text = 'Orbits')
-
-ax2.set_aspect(1,'datalim')
+citros.xy_plot(ax1, 
+               topic_name = '/odom', 
+               var_x_name = 'data.pose.pose.position.x',
+               var_y_name = 'data.pose.pose.position.y',
+               sids = [0,1,2], 
+               x_label = 'x, m', y_label = 'y, m', title_text = 'XY path plot for sids ##0-2')
 ```
-As you can see, the orbit duration varies for different sids:
+As you can see, the travelled trajectory varies for different sids:
 ![png](img/citros2.png "CITROS example")
 
 
-Let's go further:
+Let's perform some error analisys!
+
+To analyze data of multiple simulations it is necessary to establish a correspondence between the values of the data from these different simulations. One approach is to select an independent variable, define a scale that is common to all simulations and assign indexes on this scale. Then, the values of variables from different simulations will be connected by this independent variable.
+
+To visualize statistics show_statistics() function is used:
 ```python
-# Setting Dataframe
-df = citros.topic('/poliastro_atmo_drag/res').set_order({'sid':'asc'}).data('data.data[0]')
+from citros_data_analysis import error_analysis as analysis
 
-# Defining the list of drag coefficients (from simulations' logs)
-c_d_list = [3.8878, 2.0820, 2.6130, 2.0375, 2.9814, 2.2868, 3.4474, 2.7485, 3.3561, 3.5870]
-df['drag'] = c_d_list 
+# Getting data and setting dataframe
+df = citros.topic('/cmd_vel').set_order({'sid': 'asc', 'rid': 'asc'}).data(['data.linear.x', 'data.linear.y','data.linear.z'])
+df['vel'] = np.sqrt(df['data.linear.x']**2 + df['data.linear.y']**2 + df['data.linear.z']**2)
+df['clock'] = df['rid'] * 0.1
 
-#Plotting figure
-fig3, ax3 = citros.plot_graph(df, 'drag', 'data.data[0]', '.', title = 'Orbit duration vs drag', set_x_label='Drag coefficient', set_y_label = 'Flight duration until deorbiting, days')
-ax3.plot(df.sort_values(by = 'drag')['drag'], df.sort_values(by = 'drag')['data.data[0]'], linestyle='--')
+# Setting dataset
+dataset = analysis.CitrosData(df, data_label = 'vel', units = 'm')
+
+# Creating bins
+db = dataset.bin_data(n_bins = 50, param_label = 'clock')
+
+db.show_statistics()
 ```
-This graph shows us the exact orbit duration depending of Drag coefficient:
+This graph shows values from data attribute vs. independent parameter for each of the sid, the mean value over all sids and 3 σ interval.
 
 ![png](img/citros3.png "CITROS example")
 ## Extras
