@@ -17,11 +17,15 @@ The example contains two ROS 2 packages: `dynamics` and `controller`.
 
 The system's equations of motion:
 
-$$m\ddot x =  kf(t) -c\dot x -kx$$
+$$
+m\ddot x =  kf(t) -c\dot x -kx
+$$
 
 and after laplace transformation (with zero I.C) we get a second order system:
 
-$${X \over F} = {\omega_n^2 \over s^2 +2\omega_n\zeta s + \omega_n^2} $$
+$$
+{X \over F} = {\omega_n^2 \over s^2 +2\omega_n\zeta s + \omega_n^2}
+$$
 
 where the natural frequency $\omega_n = \sqrt{k \over m}$
 
@@ -121,7 +125,7 @@ We will define the following requirements:
 
 Lets run `50` simulations in the server and analyze the results:
 
-![img](img/analysis.jpeg)
+![jpeg](img/analysis.jpeg)
 
 
 We can see that `43` tests were passed the requirements, `6` failed and `1` was generated invalid mass $(<0)$.
