@@ -7,17 +7,17 @@ tags: [CITROS]
 
 # Soft Landing Tutorial
 
-![Alt text](soft-landing-of-a-spacecraft-on-the-moon.png)
+![Alt text](img/soft-landing-of-a-spacecraft-on-the-moon.png)
 
 **Contents**
 
 - General Info
     - System Dynamics
     - The Controller
-- Installition
+- Installation
     - Prerequisits
     - Install & Build
-- CITROS interagtion
+- CITROS Integration
     - Configuring The Project
 - Run The  Example
     - The Scenario
@@ -41,7 +41,7 @@ The controller is based on this paper:
 *S. Gutman, "Rendezvous and Soft Landing in Closed Form via LQ Optimization," 2019 27th Mediterranean Conference on Control and Automation (MED), Akko, Israel, 2019, pp. 536-540, doi: 10.1109/MED.2019.8798572.*
 
 
-# Installition  🛫
+# Installation  🛫
 
 ### Prerequisits 📝
  - ✅ Python 3.8+  
@@ -63,7 +63,7 @@ The controller is based on this paper:
 3. open the repository in the container from VScode with `reopen in container` option.
 
 
-# CITROS Interagtion 🛸
+# CITROS Integration 🛸
 To use all the powerfull CITROS features usage requires CITROS installation:  
 (from the instructions on the CITROS CLI [GitHub page](https://github.com/lulav/CITROS_cli))
 
@@ -82,14 +82,14 @@ then login:
 
 enter your email and pasword ,you supose to see:    
 
-![Alt text](image-5.png)
+![Alt text](img/image-5.png)
 
 then:
 
 ```
  CITROS init
 ```
-![Alt text](image-4.png)
+![Alt text](img/image-4.png)
 
 
 
@@ -99,7 +99,7 @@ and finely:
 CITROS setup-ssh
 CITROS add-remote
 ```
-then cheack that we all set with the cli command: `CITROS status`
+then check that we all set with the cli command: `CITROS status`
 ## Configuring The Project ⚙️
 After all the prerequisites done, we can start configuring our project. The starting point is the soft_landing devcontainer loaded and running, CITROS CLI is installed and ready.
 1. Initialize CITROS:
@@ -107,7 +107,7 @@ After all the prerequisites done, we can start configuring our project. The star
 CITROS init
 ```
 Now you can see ```.CITROS``` folder in the explorer and at the terminal you can see that:  
-![Alt text](image-2.png)  
+![Alt text](img/image-2.png)  
 
 4. Reopen in container
 5. source and build:
@@ -119,7 +119,7 @@ Now you can see ```.CITROS``` folder in the explorer and at the terminal you can
 # Run The  Example 🌑
 
 ## **The Scenario** 🎥
-Run the example of an object with the initial condition that supose to land on an ending point.  
+Run the example of an object with the initial condition that suppose to land on an ending point.  
 The parameters are:  
 
 
@@ -139,7 +139,7 @@ The parameters are:
 **All of the above are ROS 2 parameters that could easly change by the user as wish.**  
 
 
-After compliting the CITROS interagition setup we can cheack CITROS by running a test simulation.  
+After completing the CITROS interagition setup we can cheack CITROS by running a test simulation.  
 
 First, set up the parameter of the simulation in the file   `default_param_setup.json` in `.CITROS/parameter_setups` folder.  
 Don't forget to save the file!  
@@ -157,20 +157,20 @@ Now we can sync our project settings with CITROS server:
 CITROS commit
 CITROS push
 ```
-when evrything is setup you can do a test run buy the following command:  
+when everything is setup you can do a test run buy the following command:  
 ```
 CITROS run -n 'test' -m 'testytest'
 ```
 Then you will ask to choose the launch file you want to run.  
 There are two option:
 
-![Alt text](image-3.png)
+![Alt text](img/image-3.png)
 
 The `simulation_dynamics_controller` launch the dynamics with the controller and `simulation_dynamics` launch only the dynamics.  
 Select the launch file by pressing ```Enter``` button and wait for the output in the terminal.  
 If the simulation ran perfectly you can run the simlulation in the cloud.
 ## Run A Test Simulation In The Web With CITROS 📡
-Befor uplouding the simulation to the cloud cheack that the parameter file, `default_param_setup.json`  in `.CITROS/parameter_setups` folder is set as you wish and saved.  
+Befor uploading the simulation to the cloud check that the parameter file, `default_param_setup.json`  in `.CITROS/parameter_setups` folder is set as you wish and saved.  
 That you have build and sourced the project.  
 And you have sync the project settings with CITROS server (CITROS commit , CITROS push).  
 
@@ -191,16 +191,16 @@ At the web,go to the soft landing repo and then to the `Runs` tab.
 start a new simulation by clicking the ![Alt text](image-1.png) button.  
 then a window will pop:
 
-![Alt text](image-6.png)  
+![Alt text](img/image-6.png)  
 
 As you can see I chose to fill the soft landing repository, the main branch, and run the simulations with the controller.  
 Then I chose to repeat 100 times such that CITROS run 10 simulations in parallel.  
 Then i clicked on *Run Simulation*.  
 The results were:  
-![Alt text](image-7.png)
+![Alt text](img/image-7.png)
 
 And by getting the miss distance and miss velociy i could show a figure of all the runs.  
-![Alt text](image-8.png)  
+![Alt text](img/image-8.png)  
 The full report with the data acces and error anlyisis you can watch it [here](https://CITROS.io/soft_landing/blob/main/notebooks/Soft_landing_analysis.ipynb).
 
 
