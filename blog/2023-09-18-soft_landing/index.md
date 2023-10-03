@@ -122,24 +122,19 @@ Now you can see ```.CITROS``` folder in the explorer and at the terminal you can
 Run the example of an object with the initial condition that supose to land on an ending point.  
 The parameters are:  
 
-$$
-\begin{array}{|c|c|}
-\hline
-\text{Variable} & \text{Description} \\
-\hline
-[r_{x_0} ,r_{y_0},r_{z_0}] & \text{initial position of the dynamics} \\
-[v_{x_0} ,v_{y_0},v_{z_0}] & \text{initial velocity of the dynamics} \\
-g_{x_0} ,g_{y_0},g_{z_0} & \text{gravity vector} \\
-dt & \text{time interval} \\
-u & \text{controller fedback} \\
-[setpoint.{r_x} , setpoint.{r_y} , setpoint.{r_z}] & \text{controler target point} \\
-[setpoint.{v_x} , setpoint.{v_y} , setpoint.{v_z}] & \text{controler target velocity} \\
-um & \text{?} \\
-e & \text{stoping condition value} \\
 
-\hline
-\end{array}
-$$
+
+|     Variable     | Description |
+| -------- |    ------- | 
+| $$ [r_{x_0} ,r_{y_0},r_{z_0}] $$| initial position of the dynamics |
+| $$[v_{x_0} ,v_{y_0},v_{z_0}]$$ | initial velocity of the dynamics |
+| $$[g_{x_0} ,g_{y_0},g_{z_0}]$$ | gravity vector |
+| $$dt$$ | time interval |
+| $$u $$| controller fedback |
+| $$[setpoint.{r_x} , setpoint.{r_y} , setpoint.{r_z}] $$| controler target point |
+| $$[setpoint.{v_x} , setpoint.{v_y} , setpoint.{v_z}]$$ | controler target velocity | 
+| $$um$$ |  -- |
+| $$e $$| stoping condition value |
 
 **All of the above are ROS 2 parameters that could easly change by the user as wish.**  
 
