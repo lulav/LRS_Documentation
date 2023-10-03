@@ -77,7 +77,7 @@ pip install CITROS
 then login:
 
 ```
-  CITROS login 
+  citros login 
 ```
 
 enter your email and pasword ,you supose to see:    
@@ -87,7 +87,7 @@ enter your email and pasword ,you supose to see:
 then:
 
 ```
- CITROS init
+ citros init
 ```
 ![Alt text](img/image-4.png)
 
@@ -96,15 +96,15 @@ then:
 and finely:
 
 ```
-CITROS setup-ssh
-CITROS add-remote
+citros setup-ssh
+citros add-remote
 ```
 then check that we all set with the cli command: `CITROS status`
 ## Configuring The Project ⚙️
 After all the prerequisites done, we can start configuring our project. The starting point is the soft_landing devcontainer loaded and running, CITROS CLI is installed and ready.
 1. Initialize CITROS:
 ```bash 
-CITROS init
+citros init
 ```
 Now you can see ```.CITROS``` folder in the explorer and at the terminal you can see that:  
 ![Alt text](img/image-2.png)  
@@ -124,17 +124,18 @@ The parameters are:
 
 
 
-|     Variable     | Description |
-| -------- |    ------- | 
-| $$ [r_{x_0} ,r_{y_0},r_{z_0}] $$| initial position of the dynamics |
-| $$[v_{x_0} ,v_{y_0},v_{z_0}]$$ | initial velocity of the dynamics |
-| $$[g_{x_0} ,g_{y_0},g_{z_0}]$$ | gravity vector |
-| $$dt$$ | time interval |
-| $$u $$| controller fedback |
-| $$[setpoint.{r_x} , setpoint.{r_y} , setpoint.{r_z}] $$| controler target point |
-| $$[setpoint.{v_x} , setpoint.{v_y} , setpoint.{v_z}]$$ | controler target velocity | 
-| $$um$$ |  -- |
-| $$e $$| stoping condition value |
+|     Variable     | Description | package |
+| -------- |    ------- |  ------- | 
+| r_x0 , r_y0, r_z0 | initial position| dynamics |
+| v_x0 ,v_y0,v_z0 | initial velocity |  dynamics |
+| g_x , g_y , g_z | gravity vector | dynamics |
+| dt | time interval | dynamics |
+|  setpoint_r_x , setpoint_r_y , setpoint_r_z , |  ending position |controller |  
+|  setpoint_v_x , setpoint_v_y , setpoint_v_z , |  ending velocity |controller |
+|  g  | gravity parameter | controller |
+| um |  acceleration limit | controller |
+| e | stoping condition value | controller |
+| dt | time interval | controller |
 
 **All of the above are ROS 2 parameters that could easly change by the user as wish.**  
 
@@ -154,12 +155,12 @@ you can read more about changing parameters in  `parameter setups` section in `C
 ### Syncing The Project's Setup
 Now we can sync our project settings with CITROS server:
 ```bash 
-CITROS commit
-CITROS push
+citros commit
+citros push
 ```
 when everything is setup you can do a test run buy the following command:  
 ```
-CITROS run -n 'test' -m 'testytest'
+citros run -n 'test' -m 'testytest'
 ```
 Then you will ask to choose the launch file you want to run.  
 There are two option:
@@ -177,11 +178,11 @@ And you have sync the project settings with CITROS server (CITROS commit , CITRO
 Then,run the following:
 1. We need to build and push Docker container image to the CITROS server:
 ```bash 
-CITROS docker-build-push
+citros docker-build-push
 ```
  Finally, we can run it in the cloud! Simply add ```-r``` to the terminal command: 
 ```bash 
-CITROS run -n 'test' -m 'testytest' -r
+citros run -n 'test' -m 'testytest' -r
 ```
 Select the launch file you want by pressing ```Enter``` button. Now the simulation is running in the CITROS server, and it will upload results to the CITROS database automaticly.
 
