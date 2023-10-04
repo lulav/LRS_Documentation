@@ -13,9 +13,10 @@ In order to get information about the data of the specific table in the database
 ```python
 from citros_data_analysis import data_access as da
 ```
-Current version can be checked by the method [**get_version()**](../documentation/data_access/util.md#citros_data_analysis.data_access.util.get_version):
+To obtain the current package version number, execute the following:
 ```python
->>> da.get_version()
+>>> import citros_data_analysis
+>>> print(citros_data_analysis.__version__)
 ```
 ## Connection to the database
 

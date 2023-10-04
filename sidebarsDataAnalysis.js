@@ -42,7 +42,7 @@ module.exports = {
             {
               type: 'category',
               label: 'Documentation',
-              items: ['documentation/data_access/citros_db', 'documentation/data_access/citros_dict', 'documentation/data_access/util']
+              items: ['documentation/data_access/citros_db', 'documentation/data_access/citros_dict']
             },
           ]
         },

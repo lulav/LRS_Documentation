@@ -34,8 +34,7 @@
               "label": "Documentation",
               "items": [
                 "documentation/data_access/citros_db",
-                "documentation/data_access/citros_dict",
-                "documentation/data_access/util"
+                "documentation/data_access/citros_dict"
               ]
             }
           ]
