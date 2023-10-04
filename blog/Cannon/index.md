@@ -1,4 +1,4 @@
-# Welcome to CITROS CLI
+# Introduction to CITROS CLI
 
 This tutorial will guide you through the CITROS CLI interface, using a simple ROS 2 example project to demonstrate the usage, while providing usefull recommendations and best practices. While this is not a comprehensive guide to all CITROS CLI commands, it should get you up and running using your own projects with CITROS in no time. For further details and an exhaustive guide to the CITROS CLI, refer to the [CLI Documentation](https://github.com/lulav/citros_doc/blob/main/docs_cli/index.md).
 
@@ -48,26 +48,26 @@ Two versions of the simulation are provided: an analytic solution and a numeric 
 
 ### Installation
 ```bash
-    $ git clone git@github.com:citros-garden/cannon.git
-    $ cd ~/cannon
-    $ code .
+$ git clone git@github.com:citros-garden/cannon.git
+$ cd ~/cannon
+$ code .
 ```
 and open the repository inside a container using VScode's *reopen in container* option.
 
 ### Build 
 ```bash
-    $ colcon build
-    $ source install/local_setup.bash
+$ colcon build
+$ source install/local_setup.bash
 ```
 
 ### Run the analytic solution
 ```bash
-    $ ros2 launch scheduler cannon_analytic.launch.py
+$ ros2 launch scheduler cannon_analytic.launch.py
 ```
 
 ### Run the numeric integration solution
 ```bash
-    $ ros2 launch scheduler cannon_numeric.launch.py
+$ ros2 launch scheduler cannon_numeric.launch.py
 ```
 
 
@@ -112,18 +112,18 @@ But first, let's make sure all the prerequisites for running CITROS have been me
 - Open the project (in this case Cannon) inside a VS Code dev-container.
 - Build and source your project by running:
     ```bash
-        $ colcon build
-        $ source install/local_setup.bash
+    $ colcon build
+    $ source install/local_setup.bash
     ```
 - in the dev-container's terminal, run
     ```bash
-        $ pip install citros
+    $ pip install citros
     ```
 
     You can verify that the installation succeeded by running 
     ```bash
-        $ citros -V
-        1.2.28
+    $ citros -V
+    1.2.28
     ```
 
     to get the CITROS CLI version installed.
