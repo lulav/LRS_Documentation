@@ -37,7 +37,7 @@ module.exports = {
               label: 'Examples',
               items: ["data_access/getting_started", "data_access/repository_overview", "data_access/batch_overview",
                       "data_access/users_overview", "data_access/batch_content", "data_access/query_data",
-                      "data_access/plot_data", "data_access/useful_utilities"],
+                      "data_access/plot_data"],
             },
             {
               type: 'category',
