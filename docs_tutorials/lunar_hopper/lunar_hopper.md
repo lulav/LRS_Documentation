@@ -1,13 +1,9 @@
----
-id: hopper
----
-
 
 # Lunar Hopper Optimal Control Example Using CITROS
 
 The Lunar Hopper project is a lunar exploration planning project aimed at solving the intricate problem of lunar hopper missions. It focuses on optimizing the spacecraft's trajectory across the whole flight. Leveraging state-of-the-art optimal problem-solving algorithms, specifically the MPOPT Python library, this project seeks to determine the most efficient path for maximizing the distance traveled during the mission. It empowers users to customize essential parameters such as spacecraft mass, fuel quantity, thrust, and specific impulse. 
 
-![jpg](img/hopper0.jpg "Did you find a easter egg?)")
+![jpg](img/hopper0.jpg "Did you find an easter egg?)")
 
 ## Table of contents
 1. [Mathematical explanation](#mathematical-explanation)
@@ -15,12 +11,12 @@ The Lunar Hopper project is a lunar exploration planning project aimed at solvin
 3. [Local Usage](#local-usage)
     1. [Installation](#installation)
     2. [Build](#build)
-    3. [Preparing Foxglove Studio](#preparing-foxglove-studio)
+    3. [Preparing Foxglove Studio](#foxglove-studio)
     4. [Run](#run)
 4. [CITROS Usage](#citros-usage)
-    1. [Installation](#installation)
+    1. [CITROS Installation](#citros-installation)
     2. [Configuring the project](#configuring-the-project)
-    3. [Syncing the project's setup](#syncing-the-projects-setup)
+    3. [Syncing the project's setup](#syncing-projects-setup)
     4. [Running locally](#running-locally)
     5. [Uploading Docker image to the CITROS database and running in the cloud](#uploading-docker-image-to-the-citros-database-and-running-in-the-cloud)
     6. [CITROS Web usage and data analysis](#citros-web-usage-and-data-analysis)
@@ -58,7 +54,6 @@ $$
 \dot{m} = \frac {-F_{thrust}}{g_0*I_{sp}}
 $$
 
-
 $$
 \begin{array}{|c|c|}
 \hline
@@ -82,22 +77,29 @@ $$
 For this example terminal cost function, path constraints and terminal constraints functions used as well: 
 
 1. Terminal contraints (we want to start from the given initial conditions and finish with the given final conditions):
+$$
+b_{min}^{(g)} \le b\big[x^{(1)}(t_0^{(1)}),...,x^{(P)}(t_0^{(P)}),t_0^{(1)},...,t_0^{(P)},x^{(1)}(t_f^{(1)}),...,
+$$
 
-    $$
-    b_{min}^{(g)} \le b\big[x^{(1)}(t_0^{(1)}),...,x^{(P)}(t_0^{(P)}),t_0^{(1)},...,t_0^{(P)},x^{(1)}(t_f^{(1)}),...,x^{(P)}(t_f^{(1)}),...,t_f^{(P)},q^{(1)},...,q^{(P)},s \big] \le b_{max}^{(g)}
-    $$
+$$
+x^{(P)}(t_f^{(1)}),...,t_f^{(P)},q^{(1)},...,q^{(P)},s \big] \le b_{max}^{(g)}
+$$
 
 2. Path constraints (we need to limit controls values within the maximum possible thrust):
 
-    $$
-    c_{min}^{(p)} \le c^{(p)} \Big[x^{(p)}, y^{(p)}, t^{(p)} \Big] \le c_{max}^{(p)},
-    $$
+$$
+c_{min}^{(p)} \le c^{(p)} \Big[x^{(p)}, y^{(p)}, t^{(p)} \Big] \le c_{max}^{(p)},
+$$
 
 3. Cost function:
 
-    $$
-    J = \phi \big[x^{(1)}(t^{(1)}_0),..., x^{(P)}(t^{(P )}_0), t^{(1)}_0, . . . , t^{(P)}_0, x^{(1)}(t^{(1)}_f), . . . , x^{(P )}(t^{(P )}_f), t^{(1)}_f, . . . , t^{(P )}_f, q^{(1)}, . . . , q^{(P )}, s \big]
-    $$ 
+$$
+J = \phi \big[x^{(1)}(t^{(1)}_0),..., x^{(P)}(t^{(P )}_0), t^{(1)}_0, . . . , t^{(P)}_0, x^{(1)}(t^{(1)}_f), . . . , 
+$$
+    
+$$
+x^{(P )}(t^{(P )}_f), t^{(1)}_f, . . . , t^{(P )}_f, q^{(1)}, . . . , q^{(P )}, s \big]
+$$ 
 
 
 ## Code Overview
@@ -167,7 +169,7 @@ colcon build
 source install/local_setup.bash
 ```
 
-### Preparing FoxGlove Studio
+### FoxGlove Studio
 FoxGlove Studio is a robotics visualization and debugging tool, which can connect to ROS topic and get the data publishing through it. We will use it to visualizate the results of our simulations.
 
 First of all, you need to download it from the [official website](https://foxglove.dev/) and install following the instructions. 
@@ -263,7 +265,7 @@ $$
 
 Don't forget to save the file!
 
-### Syncing the project's setup
+### Syncing project's setup
 Now we can sync our project settings with CITROS server:
 ```bash 
 citros commit

@@ -1,21 +1,32 @@
----
-slug: Lunar Starship optimal control example using CITROS
-title: Lunar Starship optimal control example using CITROS
-authors: [gtep]
-tags: [CITROS]
----
 
-Blog posts support [Docusaurus Markdown features](https://docusaurus.io/docs/markdown-features), such as [MDX](https://mdxjs.com/).
-
-## Example overview 🌐 
-
-![jpg](img/starship.jpg "FoxGlove example")
+# Lunar Starship optimal control example using CITROS
 
 This Lunar Starship mission project addresses the lunar hopper challenge by optimizing the ascent, ballistic flight and landing process on the Moon's surface, aiming to minimize fuel consumption, time, or other relevant parameters. It empowers users to define both theoretical and real dynamic functions, enhancing prediction accuracy and enabling real-time corrections during lunar mission. 
 
 Through the Lunar Starship project, researchers are paving the way for sustainable lunar exploration, as it not only optimizes missions but also conserves valuable resources for extended stays on the Moon. By allowing for the integration of real dynamic functions, it fosters adaptability and resilience in lunar operations, making it a cornerstone of future lunar exploration endeavors.
 
-## Mathematical explanation 🎓
+![jpg](img/starship.jpg "FoxGlove example")
+
+## Table of contents
+1. [Mathematical explanation](#mathematical-explanation)
+2. [Code Overview](#code-overview)
+    1. [Algorithmic representation](#algorithmic-representation)
+3. [Local Usage](#local-usage)
+    1. [Installation](#installation)
+    2. [Build](#build)
+    3. [Foxglove Studio](#foxglove-studio)
+    4. [Run](#run)
+4. [CITROS Usage](#citros-usage)
+    1. [CITROS Installation](#citros-installation)
+    2. [Configuring the project](#configuring-the-project)
+    3. [Syncing the project's setup](#syncing-the-projects-setup)
+    4. [Running locally](#running-locally)
+    5. [Uploading Docker image to the CITROS database and running in the cloud](#uploading-docker-image-to-the-citros-database-and-running-in-the-cloud)
+    6. [CITROS Web usage and data analysis](#citros-web-usage-and-data-analysis)
+5. [Extras](#extras)
+    1. [Foxglove examples](#foxglove-examples)
+
+## Mathematical explanation
 This example provides an array of time dependent values of states computed by solving non-linear optimal control problems(OCP) in the standard Bolza form using pseudo-spectral collocation methods and adjusted using an additional real dynamic function. The OCP solver used in this example is MPOPT (based on IPOPT) library modified by Lulav Space team.
 
 The dynamic function is:
@@ -34,7 +45,7 @@ $$
 
 
 $$
-\text{where } v_{horis} = \sqrt{v_N^2 + v_E^2} \text{ is the magnitude of the horizontal velocity vector } V_{horis},
+\text{where } v_{horis} = \sqrt{v_N^2 + v_E^2} \\ \text{ is the magnitude of the horizontal velocity vector }   V_{horis},
 $$
 
 $$
@@ -43,7 +54,10 @@ $$
 
 $$
 \text{and where the latitude and altitude are determined from
-} \\
+}
+$$
+
+$$
 \dot{\phi} = \frac{v_N}{R_L + h}, \quad \dot{h}=-v_D.
 $$
 
@@ -142,7 +156,7 @@ The project consists of three main files:
 
 3. ```mpopt_lulav.py``` - the main file of MPOPT library. It contains all MPOPT functions and features used in this project. You can find more information about MPOPT optimal control solving library on the MPOPT [GitHub](https://github.com/mpopt/mpopt) or [website](https://mpopt.readthedocs.io/en/latest/).
 
-### Algorithmic representation 🧬
+### Algorithmic representation
 ```mermaid
 
 %%{ init: { 'flowchart': { 'curve': 'linear' } } }%%
@@ -165,11 +179,11 @@ flowchart
 ```
 
 
-## Local Usage 💻
+## Local usage
 
 All project installation and usage information also available in the project [GitHub page](https://github.com/citros-garden/lunar_starship).
 
-### Installation 🔨
+### Installation
 1. Docker engine. This project runs inside Docker container, and requires Docker Engine/Docker Desktop. Follow the instructions on [Docker official website](https://www.docker.com/get-started/).
 2. To use Docker inside VS Code several extensions are required. Install [Dev Containers](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers) and [Docker](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-docker) extensions from Extensions tab on your left control panel.
 3. Clone the repository:
@@ -177,7 +191,7 @@ All project installation and usage information also available in the project [Gi
 git clone git@github.com:citros-garden/lunar_starship.git
 ```
 
-### Build 🏠
+### Build
 1. Open project root folder in VS Code.
 2. Navigate to the lower-left corner of VS Code window and click on green mark.
 3. Select "Reopen in container" option in the list on the top of the VS Code window. Wait a minute while Docker container is starting.
@@ -191,7 +205,7 @@ colcon build
 source install/local_setup.bash
 ```
 
-### Preparing FoxGlove Studio 🪄
+### FoxGlove Studio
 FoxGlove Studio is a robotics visualization and debugging tool, which can connect to ROS topic and get the data publishing through it. We will use it to visualizate the results of our simulations.
 
 First of all, you need to download it from the [official website](https://foxglove.dev/) and install following the instructions. 
@@ -234,7 +248,7 @@ The best way to process simulation results is CITROS notebook 🍋 :)
 :::
 
 
-### Run 🚀
+### Run
 1. Go back to the VS Code.
 2. Prepare your FoxGlove studio (previous step, if you haven't done it yet).
 3. Launch ROS 2 package:
@@ -253,14 +267,14 @@ You can use Visual Code Tasks: simply press ```Alt+T``` and select ```Launch``` 
 
 ![gif](img/gif0.gif "FoxGlove example")
 
-## CITROS usage 🛸
+## CITROS usage
 Although you can get simulation results using FoxGlove, the best way to work with such simulations and process the results is CITROS! With its power, it is possible to create complex data processing scenarios, including the construction of more complex graphs, mathematical analysis and other high-level processing methods.
 
-### CITROS installation 🛫
+### CITROS installation
 
 First of all, to use all the powerfull CITROS features usage requires CITROS installation: follow the instructions on the CITROS CLI [GitHub page](https://github.com/lulav/citros_cli).
 
-### Configuring the project ⚙️
+### Configuring the project
 After all the prerequisites done, we can start configuring our project. The starting point is the Lunar_Starship devcontainer loaded and running, CITROS CLI is installed and ready.
 1. Initialize CITROS:
 ```bash 
@@ -301,20 +315,20 @@ $$
 
 Don't forget to save the file!
 
-### Syncing the project's setup 📡
+### Syncing project's setup 
 Now we can sync our project settings with CITROS server:
 ```bash 
 citros commit
 citros push
 ```
-### Running locally 🛋️
+### Running locally
 Since all the preparations done, we can launch it locally (your project should be built and sourced before that, check the instructions above):
 ```bash 
 citros run -n 'Lunar_Starship' -m 'local test run'
 ```
 Select the launch file (should be the only one here) by pressing ```Enter``` button and wait for the output in the terminal. To plot the local run results you can use FoxGlove.
 
-### Uploading Docker image to the CITROS database and running in the cloud 🛰️
+### Uploading Docker image to the CITROS database and running in the cloud 
 1. We need to build and push Docker container image to the CITROS server:
 ```bash 
 citros docker-build-push
@@ -326,7 +340,7 @@ citros run -n 'Lunar_Starship' -m 'cloud test run' -r
 ```
 Select the launch file (should be the only one here) by pressing ```Enter``` button. Now the simulation is running in the CITROS server, and it will upload results to the CITROS database automaticly.
 
-### CITROS Web usage and data analysis 🌌
+### CITROS Web usage and data analysis 
 #### Launching project via CITROS Web
 The best way to use all the innovative capabilities of CITROS is through it's Web interface. The following manual explains how to run this project in the cloud and how to process the simualtion results.
 The starting point is CITROS main page, user is logged in and the project Docker image is built and pushed to the cloud (see the [manual](#uploading-docker-image-to-the-citros-database-and-running-in-the-cloud-🛰️) above).
