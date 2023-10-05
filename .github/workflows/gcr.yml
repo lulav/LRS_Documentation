@@ -39,6 +39,6 @@ jobs:
 
     - name: Upload [citros-doc] to Artifact Registry
       run: |
-        docker tag citros-doc us-central1-docker.pkg.dev/citros/citros-docker/citros-doc
-        docker push us-central1-docker.pkg.dev/citros/citros-docker/citros-doc
+        docker tag citros-doc us-central1-docker.pkg.dev/citros/citros-prod-registry/citros-doc
+        docker push us-central1-docker.pkg.dev/citros/citros-prod-registry/citros-doc
         
