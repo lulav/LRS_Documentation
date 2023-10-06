@@ -128,10 +128,10 @@ const config = {
 
   stylesheets: [
     {
-    //   href: "katex/katex.min.css",
-    //   type: "text/css",
-      href: 'https://cdn.jsdelivr.net/npm/katex@0.13.24/dist/katex.min.css',
-      type: 'text/css',
+      //   href: "katex/katex.min.css",
+      //   type: "text/css",
+      href: "https://cdn.jsdelivr.net/npm/katex@0.13.24/dist/katex.min.css",
+      type: "text/css",
       // integrity:
       //   'sha384-odtC+0UGzzFL/6PNoE8rX/SPcQDXBJ+uRepguP4QkPCm2LBxH3FA3y+fKSiJ+AmM',
       // crossorigin: 'anonymous',
@@ -141,6 +141,12 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
+      colorMode: {
+        defaultMode: "dark",
+        disableSwitch: true,
+        respectPrefersColorScheme: false,
+      },
+
       // Replace with your project's social card
       image: "img/docusaurus-social-card.jpg",
 
@@ -211,52 +217,52 @@ const config = {
         ],
       },
       footer: {
-        style: 'dark',
+        style: "dark",
         links: [
           {
-            title: 'Visit',
+            title: "Visit",
             items: [
               {
-                label: 'Blog',
-                to: '/blog',
+                label: "Blog",
+                to: "/blog",
               },
               {
-                label: 'Twitter',
-                to: 'https://twitter.com/lulavspace',
+                label: "Twitter",
+                to: "https://twitter.com/lulavspace",
               },
               {
-                label: 'Linkdin',
-                to: 'https://www.linkedin.com/company/lulav-space/',
+                label: "Linkdin",
+                to: "https://www.linkedin.com/company/lulav-space/",
               },
               {
-                label: 'Website',
-                to: 'https://www.lulav.space',
+                label: "Website",
+                to: "https://www.lulav.space",
               },
             ],
           },
           {
-            title: 'More to Learn',
+            title: "More to Learn",
             items: [
               // {
               //   label: 'ChangeLog',
               //   to: '/docs_data_analysis',
               // },
               {
-                label: 'GitHub',
-                to: 'https://github.com/citros-garden',
+                label: "GitHub",
+                to: "https://github.com/citros-garden",
               },
             ],
           },
           {
-            title: 'Legal',
+            title: "Legal",
             items: [
               {
-                label: 'Terms and Conditions',
-                to: '/blog',
+                label: "Terms and Conditions",
+                to: "/blog",
               },
               {
-                label: 'Privacy Policy',
-                to: '/blog',
+                label: "Privacy Policy",
+                to: "/blog",
               },
             ],
           },
