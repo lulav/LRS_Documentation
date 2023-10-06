@@ -34,7 +34,7 @@ $$m\ddot x =  kf(t) -c\dot x -kx$$
 
 and after laplace transformation (with zero I.C) we get a second order system:
 
-$${X \over F} = {\omega_n^2 \over s^2 +2\omega_n\zeta s + \omega_n^2} $$
+${X \over F} = {\omega_n^2 \over s^2 +2\omega_n\zeta s + \omega_n^2} $
 
 where the natural frequency $\omega_n = \sqrt{k \over m}$
 
