@@ -1,3 +1,8 @@
+---
+sidebar_position: 70
+sidebar_label: 'Lunar Starship'
+
+---
 
 # Lunar Starship optimal control example using CITROS
 
@@ -7,22 +12,22 @@ Through the Lunar Starship project, researchers are paving the way for sustainab
 
 ![jpg](img/starship.jpg "FoxGlove example")
 
-## Table of contents
-1. [Mathematical explanation](#mathematical-explanation)
+## Table of Contents
+1. [Mathematical Explanation](#mathematical-explanation)
 2. [Code Overview](#code-overview)
     1. [Algorithmic representation](#algorithmic-representation)
 3. [Local Usage](#local-usage)
     1. [Installation](#installation)
     2. [Build](#build)
-    3. [Foxglove Studio](#foxglove-studio)
+    3. [Foxglove studio](#foxglove-studio)
     4. [Run](#run)
 4. [CITROS Usage](#citros-usage)
-    1. [CITROS Installation](#citros-installation)
+    1. [CITROS installation](#citros-installation)
     2. [Configuring the project](#configuring-the-project)
-    3. [Syncing the project's setup](#syncing-the-projects-setup)
+    3. [Syncing project's setup](#syncing-projects-setup)
     4. [Running locally](#running-locally)
     5. [Uploading Docker image to the CITROS database and running in the cloud](#uploading-docker-image-to-the-citros-database-and-running-in-the-cloud)
-    6. [CITROS Web usage and data analysis](#citros-web-usage-and-data-analysis)
+    6. [CITROS web usage and data analysis](#citros-web-usage-and-data-analysis)
 5. [Extras](#extras)
     1. [Foxglove examples](#foxglove-examples)
 
@@ -82,21 +87,22 @@ $$
 \hline
 \text{Variable} & \text{Description} \\
 \hline
-v_n & \text{"northing" velocity} \\
-v_e & \text{"east" velocity} \\
-v_d & \text{vertical velocity} \\
-f_n & \text{"northing" control value} \\
-f_e & \text{"east" control value} \\
-f_d & \text{vertical control value} \\
-R_L & \text{Lunar radius} \\
-h & \text{altitude above lunar surface level} \\
-\phi & \text{latitude} \\
-\lambda & \text{longitude} \\
-\mu_L & \text{standard gravitational parameter} \\
-m & \text{mass} \\
-F_{\text{thrust}} & \text{The amount of thrust} \\
-g_0 & \text{gravity parameter} \\
-I_{\text{sp}} & \text{Specific impulse} \\
+\\v_n & \text{"northing" velocity} \\
+\\v_e & \text{"east" velocity} \\
+\\v_d & \text{vertical velocity} \\
+\\f_n & \text{"northing" control value} \\
+\\f_e & \text{"east" control value} \\
+\\f_d & \text{vertical control value} \\
+\\R_L & \text{Lunar radius} \\
+\\h & \text{altitude above lunar surface level} \\
+\\\phi & \text{latitude} \\
+\\\lambda & \text{longitude} \\
+\\\mu_L & \text{standard gravitational parameter} \\
+\\m & \text{mass} \\
+\\F_{\text{thrust}} & \text{The amount of thrust} \\
+\\g_0 & \text{gravity parameter} \\
+\\I_{\text{sp}} & \text{Specific impulse} \\
+\\
 \hline
 \end{array}
 $$
@@ -205,7 +211,7 @@ colcon build
 source install/local_setup.bash
 ```
 
-### FoxGlove Studio
+### Foxglove studio
 FoxGlove Studio is a robotics visualization and debugging tool, which can connect to ROS topic and get the data publishing through it. We will use it to visualizate the results of our simulations.
 
 First of all, you need to download it from the [official website](https://foxglove.dev/) and install following the instructions. 
@@ -229,13 +235,14 @@ $$
 \hline
 \text{State number} & \text{Value} & \text{Describtion} \\
 \hline
-0 & h & \text{altitude above lunar surface level} \\
-1 & \phi & \text{latitude} \\
-2 & \lambda & \text{longitude} \\
-3 & v_n & \text{"northing" velocity} \\
-4 & v_e & \text{"east" velocity} \\
-5 & v_d & \text{vertical velocity} \\
-6 & m_{fuel} & \text{fuel mass} \\
+\\0 & h & \text{altitude above lunar surface level} \\
+\\1 & \phi & \text{latitude} \\
+\\2 & \lambda & \text{longitude} \\
+\\3 & v_n & \text{"northing" velocity} \\
+\\4 & v_e & \text{"east" velocity} \\
+\\5 & v_d & \text{vertical velocity} \\
+\\6 & m_{fuel} & \text{fuel mass} \\
+\\
 \hline
 \end{array}
 $$
@@ -291,24 +298,25 @@ $$
 \hline
 \text{Parameter} & \text{Description} \\
 \hline
-h_0 & \text{initial altitude above lunar surface level} \\
-lat_0 & \text{initial latitude} \\
-long_0 & \text{initial longitude} \\
-vn_0 & \text{initial "northing" velocity} \\
-ve_0 & \text{initial "east" velocity} \\
-vd_0 & \text{initial vertical velocity} \\
-m\_fuel_0 & \text{initial fuel mass} \\
-lat_f & \text{final latitude} \\
-long_f & \text{final longitude} \\
-vn_f & \text{final "northing" velocity} \\
-ve_f & \text{final "east" velocity} \\
-vd_f & \text{final vertical velocity} \\
-m_{\text{fuel f}}& \text{final fuel mass} \\
-dry~mass_f & \text{dry mass} \\
-F_{\text{thrustmax}} & \text{The maximum amount of thrust} \\
-I_{\text{sp}} & \text{Specific impulse} \\
-simulation~step & \text{step of simulation} \\
-publish~freq & \text{frequency of publishing} \\
+\\h_0 & \text{initial altitude above lunar surface level} \\
+\\lat_0 & \text{initial latitude} \\
+\\long_0 & \text{initial longitude} \\
+\\vn_0 & \text{initial "northing" velocity} \\
+\\ve_0 & \text{initial "east" velocity} \\
+\\vd_0 & \text{initial vertical velocity} \\
+\\m\_fuel_0 & \text{initial fuel mass} \\
+\\lat_f & \text{final latitude} \\
+\\long_f & \text{final longitude} \\
+\\vn_f & \text{final "northing" velocity} \\
+\\ve_f & \text{final "east" velocity} \\
+\\vd_f & \text{final vertical velocity} \\
+\\m_{\text{fuel f}}& \text{final fuel mass} \\
+\\dry~mass_f & \text{dry mass} \\
+\\F_{\text{thrustmax}} & \text{The maximum amount of thrust} \\
+\\I_{\text{sp}} & \text{Specific impulse} \\
+\\simulation~step & \text{step of simulation} \\
+\\publish~freq & \text{frequency of publishing} \\
+\\
 \hline
 \end{array}
 $$
@@ -340,8 +348,8 @@ citros run -n 'Lunar_Starship' -m 'cloud test run' -r
 ```
 Select the launch file (should be the only one here) by pressing ```Enter``` button. Now the simulation is running in the CITROS server, and it will upload results to the CITROS database automaticly.
 
-### CITROS Web usage and data analysis 
-#### Launching project via CITROS Web
+### CITROS web usage and data analysis 
+#### Launching project via CITROS web
 The best way to use all the innovative capabilities of CITROS is through it's Web interface. The following manual explains how to run this project in the cloud and how to process the simualtion results.
 The starting point is CITROS main page, user is logged in and the project Docker image is built and pushed to the cloud (see the [manual](#uploading-docker-image-to-the-citros-database-and-running-in-the-cloud-🛰️) above).
 1. Go to the ```Repositories``` page clicking on the tab on the top;
@@ -356,13 +364,13 @@ Navigate to the Run by clicking on it in the table:
 * The main part of this page is a simulation's log. Here you can find all the logging information from all levels: from your code logs up to the CITROS system information.
 * The right part of the page provides additional information about Events: the main stages of the simulation run.
 
-#### Working with integrated Jupiter Notebooks
+#### Working with integrated Jupiter notebooks
 CITROS Web provides powerfull data analisys package, which is comprehensive solution for data query, analysis and visualization. With its extensive features, you can quickly and easily extract valuable insights from your data. To use it, the Jupiter Notebook support is built-in. 
 Navigate to our project ```Code``` page, open the Notebooks folder and click on the notebook file. Here you can see the usual Jupiter editor's interface: you can add blocks of code or built-in Markdown engine, run and save notebook and control the Python kernel.
 
 You can find all the data analisys package [here](https://citros.io/doc/docs_data_analysis).
 ## Extras
-### FoxGlove examples
+### Foxglove examples
 
 ![png](img/img0.png "FoxGlove example")
 ![png](img/img1.png "FoxGlove example")

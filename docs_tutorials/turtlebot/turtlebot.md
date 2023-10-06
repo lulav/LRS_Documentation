@@ -1,3 +1,7 @@
+---
+sidebar_position: 50
+sidebar_label: 'TurtleBot'
+---
 
 # TurtleBot3 example using CITROS
 
@@ -18,7 +22,7 @@ The primary functionalities of this node are as follows:
 1. [Local Usage](#local-usage)
     1. [Installation](#installation)
     2. [Build](#build)
-    3. [Foxglove Studio](#foxglove-studio)
+    3. [Foxglove studio](#foxglove-studio)
     4. [Run](#run)
 2. [CITROS Usage](#citros-usage)
     1. [CITROS Installation](#citros-installation)
@@ -56,7 +60,7 @@ colcon build
 source install/local_setup.bash
 ```
 
-### FoxGlove Studio
+### Foxglove studio
 FoxGlove Studio is a robotics visualization and debugging tool, which can connect to ROS topic and get the data publishing through it. We will use it to visualizate the results of our simulations.
 
 First of all, you need to download it from the [official website](https://foxglove.dev/) and install following the instructions. 
@@ -70,14 +74,15 @@ $$
 \hline
 \text{Topic name} & \text{Message type} & \text{Describtion} \\
 \hline
-/cmd\_vel & geometry\_msgs/msg/Twist & \text{linear and angular velocities} \\
-/odom & nav\_msgs/msg/Odometry & \text{position and orientation} \\
-/scan & sensor\_msgs/msg/LaserScan & \text{scan data} \\
-/imu & sensor\_msgs/msg/Imu & \text{IMU data} \\
-/stereo/left/camera\_info & sensor\_msgs/msg/CameraInfo & \text{left camera info} \\
-/stereo/left/image\_raw & sensor\_msgs/msg/Image & \text{left camera image} \\
-/stereo/right/camera\_info & sensor\_msgs/msg/CameraInfo & \text{rigth camera info} \\
-/stereo/right/image\_raw & sensor\_msgs/msg/Image & \text{rigth camera image} \\
+\\/cmd\_vel & geometry\_msgs/msg/Twist & \text{linear and angular velocities} \\
+\\/odom & nav\_msgs/msg/Odometry & \text{position and orientation} \\
+\\/scan & sensor\_msgs/msg/LaserScan & \text{scan data} \\
+\\/imu & sensor\_msgs/msg/Imu & \text{IMU data} \\
+\\/stereo/left/camera\_info & sensor\_msgs/msg/CameraInfo & \text{left camera info} \\
+\\/stereo/left/image\_raw & sensor\_msgs/msg/Image & \text{left camera image} \\
+\\/stereo/right/camera\_info & sensor\_msgs/msg/CameraInfo & \text{rigth camera info} \\
+\\/stereo/right/image\_raw & sensor\_msgs/msg/Image & \text{rigth camera image} \\
+\\
 \hline
 \end{array}
 $$
@@ -145,10 +150,11 @@ $$
 \hline
 \text{Parameter} & \text{Description} \\
 \hline
-separation & \text{wheel separation} \\
-radius & \text{wheel radius} \\
-check\_forward\_dist\_param & \text{forward checking distance for Autonomous Collision Avoidance} \\
-check\_side\_dist\_param & \text{side checking distance for Autonomous Collision Avoidance} \\
+\\separation & \text{wheel separation} \\
+\\radius & \text{wheel radius} \\
+\\check\_forward\_dist\_param & \text{forward checking distance for Autonomous Collision Avoidance} \\
+\\check\_side\_dist\_param & \text{side checking distance for Autonomous Collision Avoidance} \\
+\\
 \hline
 \end{array}
 $$
@@ -202,6 +208,6 @@ Navigate to our project ```Code``` page, open the Notebooks folder and click on 
 
 You can find all the data analisys package [here](https://citros.io/doc/docs_data_analysis).
 ## Extras
-### FoxGlove examples
+### Foxglove examples
 
 ![gif](img/foxglove2.gif "FoxGlove example")

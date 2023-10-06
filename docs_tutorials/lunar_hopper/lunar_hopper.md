@@ -1,3 +1,7 @@
+---
+sidebar_position: 60
+sidebar_label: 'Lunar Hopper'
+---
 
 # Lunar Hopper Optimal Control Example Using CITROS
 
@@ -5,13 +9,13 @@ The Lunar Hopper project is a lunar exploration planning project aimed at solvin
 
 ![jpg](img/hopper0.jpg "Did you find an easter egg?)")
 
-## Table of contents
-1. [Mathematical explanation](#mathematical-explanation)
+## Table of Contents
+1. [Mathematical Explanation](#mathematical-explanation)
 2. [Code Overview](#code-overview)
 3. [Local Usage](#local-usage)
     1. [Installation](#installation)
     2. [Build](#build)
-    3. [Preparing Foxglove Studio](#foxglove-studio)
+    3. [Foxglove studio](#foxglove-studio)
     4. [Run](#run)
 4. [CITROS Usage](#citros-usage)
     1. [CITROS Installation](#citros-installation)
@@ -59,16 +63,17 @@ $$
 \hline
 \text{Variable} & \text{Description} \\
 \hline
-v_h & \text{horizontal velocity} \\
-v_d & \text{vertical velocity} \\
-f_1, f_2 & \text{control values} \\
-R_{L} & \text{Lunar radius} \\
-h & \text{altitude above lunar surface level} \\
-\mu_L & \text{standard gravitational parameter} \\
-m & \text{mass} \\
-F_{\text{thrust}} & \text{The amount of thrust} \\
-g_0 & \text{gravity parameter} \\
-I_{\text{sp}} & \text{Specific impulse} \\
+\\v_h & \text{horizontal velocity} \\
+\\v_d & \text{vertical velocity} \\
+\\f_1, f_2 & \text{control values} \\
+\\R_{L} & \text{Lunar radius} \\
+\\h & \text{altitude above lunar surface level} \\
+\\\mu_L & \text{standard gravitational parameter} \\
+\\m & \text{mass} \\
+\\F_{\text{thrust}} & \text{The amount of thrust} \\
+\\g_0 & \text{gravity parameter} \\
+\\I_{\text{sp}} & \text{Specific impulse} \\
+\\
 \hline
 \end{array}
 $$
@@ -169,7 +174,7 @@ colcon build
 source install/local_setup.bash
 ```
 
-### FoxGlove Studio
+### Foxglove Studio
 FoxGlove Studio is a robotics visualization and debugging tool, which can connect to ROS topic and get the data publishing through it. We will use it to visualizate the results of our simulations.
 
 First of all, you need to download it from the [official website](https://foxglove.dev/) and install following the instructions. 
@@ -193,11 +198,12 @@ $$
 \hline
 \text{State number} & \text{Value} & \text{Describtion} \\
 \hline
-0 & h & \text{altitude above lunar surface level} \\
-1 & d & \text{ground distance} \\
-2 & v_h & \text{horizontal velocity} \\
-3 & v_d & \text{vertical velocity} \\
-4 & m_{fuel} & \text{fuel mass} \\
+\\0 & h & \text{altitude above lunar surface level} \\
+\\1 & d & \text{ground distance} \\
+\\2 & v_h & \text{horizontal velocity} \\
+\\3 & v_d & \text{vertical velocity} \\
+\\4 & m_{fuel} & \text{fuel mass} \\
+\\
 \hline
 \end{array}
 $$
@@ -229,7 +235,7 @@ You can use Visual Code Tasks: simply press ```Alt+T``` and select ```Launch``` 
 
 <!-- ![gif](img/gif0.gif "FoxGlove example") -->
 
-## CITROS usage
+## CITROS Usage
 Although you can get simulation results using FoxGlove, the best way to work with such simulations and process the results is CITROS! With its power, it is possible to create complex data processing scenarios, including the construction of more complex graphs, mathematical analysis and other high-level processing methods.
 
 ### CITROS installation
@@ -253,12 +259,13 @@ $$
 \hline
 \text{Parameter} & \text{Description} \\
 \hline
-m_{\text{fuel 0}} & \text{initial fuel mass} \\
-m_{\text{fuel f}}& \text{final fuel mass} \\
-dry~mass & \text{dry mass} \\
-F_{\text{thrustmax}} & \text{The maximum amount of thrust} \\
-I_{\text{sp}} & \text{Specific impulse} \\
-publish~freq & \text{frequency of publishing} \\
+\\m_{\text{fuel 0}} & \text{initial fuel mass} \\
+\\m_{\text{fuel f}}& \text{final fuel mass} \\
+\\dry~mass & \text{dry mass} \\
+\\F_{\text{thrustmax}} & \text{The maximum amount of thrust} \\
+\\I_{\text{sp}} & \text{Specific impulse} \\
+\\publish~freq & \text{frequency of publishing} \\
+\\
 \hline
 \end{array}
 $$
@@ -290,8 +297,8 @@ citros run -n 'Lunar_hopper' -m 'cloud test run' -r
 ```
 Select the launch file (should be the only one here) by pressing ```Enter``` button. Now the simulation is running in the CITROS server, and it will upload results to the CITROS database automaticly.
 
-### CITROS Web usage and data analysis
-#### Launching project via CITROS Web
+### CITROS web usage and data analysis
+#### Launching project via CITROS web
 The best way to use all the innovative capabilities of CITROS is through it's Web interface. The following manual explains how to run this project in the cloud and how to process the simualtion results.
 The starting point is CITROS main page, user is logged in and the project Docker image is built and pushed to the cloud (see the [manual](#uploading-docker-image-to-the-citros-database-and-running-in-the-cloud-🛰️) above).
 1. Go to the ```Repositories``` page clicking on the tab on the top;
@@ -306,13 +313,13 @@ Navigate to the Run by clicking on it in the table:
 * The main part of this page is a simulation's log. Here you can find all the logging information from all levels: from your code logs up to the CITROS system information.
 * The right part of the page provides additional information about Events: the main stages of the simulation run.
 
-#### Working with integrated Jupiter Notebooks
+#### Working with integrated Jupiter notebooks
 CITROS Web provides powerfull data analisys package, which is comprehensive solution for data query, analysis and visualization. With its extensive features, you can quickly and easily extract valuable insights from your data. To use it, the Jupiter Notebook support is built-in. 
 Navigate to our project ```Code``` page, open the Notebooks folder and click on the notebook file. Here you can see the usual Jupiter editor's interface: you can add blocks of code or built-in Markdown engine, run and save notebook and control the Python kernel.
 
 You can find all the data analisys package [here](https://citros.io/doc/docs_data_analysis).
 ## Extras
-### FoxGlove examples
+### Foxglove examples
 
 <!-- ![png](img/img0.png "FoxGlove example") -->
 <!-- ![png](img/img1.png "FoxGlove example") -->

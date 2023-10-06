@@ -1,26 +1,31 @@
+---
+sidebar_position: 30
+sidebar_label: 'Mass Spring Damper'
+---
 
 # Mass Spring Damper
 
 This is a simple ROS demonstration of a mass-spring-damper system.
-The example contains two ROS 2 packages: `dynamics` and `controller`.
 
-<!-- <img src="img/system.jpeg" alt="drawing" width="500"/> -->
-<!-- img/system.jpeg -->
 ![jpg](img/system.jpeg)
 
-## Table of contents
+The example contains two ROS 2 packages: `dynamics` and `controller`.
+
+
+## Table of Contents
 1. [System Dynamics](#system-dynamics)
-2. [The Controller](#code-overview)
-3. [CITROS Usage](#local-usage)
-    1. [Installation](#installation)
+2. [CITROS Installation](#citros-installation)
+3. [The Controller](#the-controller)
+4. [CITROS Usage](#citros-usage)
+    1. [CITROS Installation](#citros-installation)
     2. [Configuring the project](#configuring-the-project)
     3. [Parameters](#parameters)
-    4. [Launch files](#launch-files)
-    5. [Initialize CITROS](#initialize-citros)
-    6. [Run with CITROS](#run-with-citros)
-    7. [Syncing project's setup](#syncing-projects-setup)
-    8. [Normal distributed mass](#normal-distributed-mass)
-
+    3. [Launch files](#launch-files)
+    4. [Initialize CITROS](#initialize-citros)
+    5. [Run with CITROS](#run-with-citros)
+    3. [Syncing project's setup](#syncing-projects-setup)
+    4. [Normal distributed mass](#normal-distributed-mass)
+    
 ## System Dynamics
 
 The system's equations of motion:
@@ -29,7 +34,7 @@ $$m\ddot x =  kf(t) -c\dot x -kx$$
 
 and after laplace transformation (with zero I.C) we get a second order system:
 
-${X \over F} = {\omega_n^2 \over s^2 +2\omega_n\zeta s + \omega_n^2}$
+$${X \over F} = {\omega_n^2 \over s^2 +2\omega_n\zeta s + \omega_n^2} $$
 
 where the natural frequency $\omega_n = \sqrt{k \over m}$
 
@@ -47,7 +52,7 @@ you can tune the controller gains, $k_p$, $k_i$, $k_d$, configured as ROS 2 para
 
 ## CITROS Usage
 
-### Installation
+### CITROS installation
 First of all, to use all the powerfull CITROS features usage requires CITROS installation: follow the instructions on the CITROS CLI GitHub page. 
 
 **TODO: add installation tutorial**
@@ -71,7 +76,7 @@ After all the prerequisites done, we can start configuring our project. Open the
 |v | dynamics | The mass initial velocity
 |a | dynamics | The mass initial acceleration
 
-### Launch files
+### Launch Files
 
 |Launch file| Description
 | --------|  --------|
@@ -79,6 +84,7 @@ After all the prerequisites done, we can start configuring our project. Open the
 |dynamics_controller.launch.py | Launch the controlled system with PID controller
 
 ### Initialize CITROS
+
     citros init
 
 ### Run with CITROS
@@ -87,7 +93,7 @@ After all the prerequisites done, we can start configuring our project. Open the
 
 After running the command, choose the launch file you wish to run. The simulation will start and you could see the mass position and the control signal in the terminal's logs.
 
-### Syncing project's Setup
+### Syncing project's setup
 
 Follow the guide for syncing CITROS project with the server.
 
