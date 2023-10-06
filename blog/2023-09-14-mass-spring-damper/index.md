@@ -37,16 +37,16 @@ You can write your own controller to try stabilize the system for a given setpoi
 
 the default controller is a simple PID controller with the following form:
 
-$$f(t) = {k_pe(t) + k_i\int{e(t)dt}} + k_d {d\over dt}(e(t))$$
+$$
+        f(t) = {k_pe(t) + k_i\int{e(t)dt}} + k_d {d\over dt}(e(t))
+$$
 
 you can tune the controller gains, $k_p$, $k_i$, $k_d$, configured as ROS 2 parameters.
 
 # CITROS Usage 🛸
 
 ## CITROS Installation 🛫
-First of all, to use all the powerfull CITROS features usage requires CITROS installation: follow the instructions on the CITROS CLI GitHub page. 
-
-**TODO: add installation tutorial**
+First of all, to use all the powerfull CITROS features usage requires CITROS installation: follow the instructions on the CITROS CLI [documentation](https://citros.io/doc/docs/cli/cli_install)
 
 ## Configuring the Project ⚙️
 
@@ -86,9 +86,9 @@ After running the command, choose the launch file you wish to run. The simulatio
 
 ## Syncing the Project's Setup 📡
 
-Follow the guide for syncing CITROS project with the server.
+Follow the [guide](https://citros.io/doc/docs/cli/cli_commands/cli_sync) for syncing CITROS project with the server.
 
-**TODO: add guide for syncing with the server**
+
 
 ## Normal Distributed Mass
 
