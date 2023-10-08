@@ -1,36 +1,46 @@
 ---
-slug: TurtleBot3 Example with CITROS
-title: TurtleBot3 Example with CITROS
-authors: [gtep]
-tags: [CITROS]
+sidebar_position: 50
+sidebar_label: 'TurtleBot'
 ---
 
-Blog posts support [Docusaurus Markdown features](https://docusaurus.io/docs/markdown-features), such as [MDX](https://mdxjs.com/).
+# TurtleBot3 example using CITROS
 
-## Example Overview 🌐 
+This project is designed to wrap the official TurtleBot3 simulation [example](https://emanual.robotis.com/docs/en/platform/turtlebot3/simulation/#gazebo-simulation) and integrate it with a simple Autonomous Collision Avoidance node. The node provides ROS parameters that allow users to adjust various TurtleBot3 specifications, enabling the analysis of how these changes affect collision avoidance behavior. 
+The primary functionalities of this node are as follows:
 
-![png](img/turtlebot3_0.png "TurtleBot3")
+* **Integration with TurtleBot3 Simulation**: The ROS node interfaces with the official TurtleBot3 simulation example, leveraging the TurtleBot3 robot model and simulated environment. This integration allows users to observe how the robot behaves in a controlled environment.
 
-This project is designed to wrap the official TurtleBot3 simulation [example](https://emanual.robotis.com/docs/en/platform/turtlebot3/simulation/#gazebo-simulation) and integrate it with a simple Autonomous Collision Avoidance node. The node provides ROS parameters that allow users to adjust various TurtleBot3 specifications, enabling the analysis of how these changes affect collision avoidance behavior. The primary functionalities of this node are as follows:
+* **Autonomous Collision Avoidance**: The node includes a simple Autonomous Collision Avoidance module. This module is responsible for ensuring that the TurtleBot3 avoids collisions with obstacles in its path. It utilizes sensor data, such as simulated lidar readings, to detect obstacles and adjust the robot's trajectory accordingly.
 
-* Integration with TurtleBot3 Simulation: The ROS node interfaces with the official TurtleBot3 simulation example, leveraging the TurtleBot3 robot model and simulated environment. This integration allows users to observe how the robot behaves in a controlled environment.
+* **User-Adjustable Parameters**: The ROS parameters provided by this node give users the flexibility to modify various TurtleBot3 specifications. These parameters may include attributes like the robot's size, speed, sensor range, or collision avoidance algorithms. Users can experiment with different parameter values to observe their impact on collision avoidance behavior.
 
-* Autonomous Collision Avoidance: The node includes a simple Autonomous Collision Avoidance module. This module is responsible for ensuring that the TurtleBot3 avoids collisions with obstacles in its path. It utilizes sensor data, such as simulated lidar readings, to detect obstacles and adjust the robot's trajectory accordingly.
-
-* User-Adjustable Parameters: The ROS parameters provided by this node give users the flexibility to modify various TurtleBot3 specifications. These parameters may include attributes like the robot's size, speed, sensor range, or collision avoidance algorithms. Users can experiment with different parameter values to observe their impact on collision avoidance behavior.
-
-* Orientation and Navigation: The TurtleBot3 robot is capable of orienting itself effectively within a prepared TurtleBot3 world. It utilizes the simulated lidar module to gather environmental data, allowing it to make informed decisions about its navigation path.
+* **Orientation and Navigation**: The TurtleBot3 robot is capable of orienting itself effectively within a prepared TurtleBot3 world. It utilizes the simulated lidar module to gather environmental data, allowing it to make informed decisions about its navigation path.
 
 All project installation, code overview and usage details are also available on the project's[GitHub page](https://github.com/citros-garden/turtlebot3).
 
-## CITROS Usage 🛸
+![png](img/turtlebot3_0.png "TurtleBot3")
+
+## Table of contents
+1. [CITROS Usage](#citros-usage)
+    1. [CITROS Installation](#citros-installation)
+    2. [Configuring the project](#configuring-the-project)
+    3. [Syncing project's setup](#syncing-projects-setup)
+    4. [Running locally](#running-locally)
+    5. [Uploading Docker image to the CITROS database and running in the cloud](#uploading-docker-image-to-the-citros-database-and-running-in-the-cloud)
+    6. [Running in the cloud](#running-in-the-cloud)
+    6. [CITROS Web usage](#citros-web-usage)
+2. [Extras](#extras)
+    1. [Foxglove examples](#foxglove-examples)
+
+
+## CITROS usage
 Although you can get simulation results using FoxGlove, the best way to work with such simulations and process the results is CITROS! With its power, it is possible to create complex data processing scenarios, including the construction of more complex graphs, mathematical analysis and other high-level processing methods.
 
-### CITROS Installation 🛫
+### CITROS installation
 
 First of all, to use all the powerfull CITROS features usage requires CITROS installation: follow the instructions on the CITROS CLI [GitHub page](https://github.com/lulav/citros_cli).
 
-### Configuring the Project ⚙️
+### Configuring the project
 After all the prerequisites are met, we can start configuring our project. The starting point is the TurtleBot3 devcontainer loaded and running, CITROS CLI is installed and ready.
 1. Initialize CITROS:
 ```bash 
@@ -67,7 +77,7 @@ Now you can see ```.citros``` folder in the explorer.
     turtlebot3_sim_cont.launch.py	|turtlebot3_gazebo	|Gazebo headless TurtleBot world launch file 	
     robot_state_publisher.launch.py	|turtlebot3_gazebo	|Utility launch file for state publishing
 
-### Synchronizing the Project's Setup 📡
+### Syncing project's setup
 Now we can synchronize our project settings with CITROS server:
 ```bash 
 >>> citros commit
@@ -78,8 +88,7 @@ Now we can synchronize our project settings with CITROS server:
 CITROS CLI, in addition to other benefits, also provides an automatic ROS bag recording option, which allows user to use saved simulation results and export them! :)
 
 :::
-
-### Running Locally 🛋️
+### Running locally
 Since all the preparations done, we can launch it locally (your project should be built and sourced before that):
 ```bash 
 >>> citros run -n 'turtlebot3' -m 'local test run'
@@ -97,8 +106,7 @@ created new batch_id: <your-batch-id-here>. Running locally.
 
 ![gif](img/foxglove1.gif "FoxGlove example")
 ![gif](img/foxglove2.gif "FoxGlove example")
-
-### Uploading Docker Image to CITROS Cloud 🚛
+### Uploading Docker image to the CITROS database and running in the cloud
 We need to build and push a Docker container image to the CITROS server:
 ```bash 
 >>> citros docker-build-push
@@ -106,7 +114,7 @@ Logging in to docker...
 ...
 ```
 
-### Running in the Cloud 🛰️
+### Running in the cloud
 Finally, we can run it in the cloud! Simply add ```-r``` to the terminal command: 
 ```bash 
 >>> citros run -n 'turtlebot3' -m 'cloud test run' -r
@@ -119,9 +127,8 @@ Select the launch file (should be the only one here) by pressing ```Enter``` but
 created new batch_id: <your-batch-id-here>. Running on Citros cluster. See https://citros.io/batch/<your-batch-id-here>.
 ```
 
-
-### CITROS Web Usage ⭐ 
-#### Launching project via CITROS Web 🚀
+### CITROS Web usage
+#### Launching project via CITROS Web
 The best way to use all the innovative capabilities of CITROS is through it's Web interface. The following manual explains how to run this project in the cloud and how to process the simualtion results.
 The starting point is CITROS main page, user is logged in and the project Docker image is built and pushed to the cloud (see the [manual](#uploading-docker-image-to-citros-cloud) above).
 1. Go to the ```Repositories``` page clicking on the tab on the top;
@@ -136,8 +143,7 @@ Navigate to the Run by clicking on it in the table:
 * The main part of this page is a simulation's log. Here you can find all the logging information from all levels: from your code logs up to the CITROS system information.
 * The right part of the page provides additional information about Events: the main stages of the simulation run.
 
-#### Working with Integrated Jupiter Notebooks and Data Analysis 🌌
-
+#### Working with Integrated Jupiter notebooks and data analysis
 CITROS Web provides a powerfull data analysis package, which is a comprehensive solution for data query, analysis and visualization. With its extensive features, you can quickly and easily extract valuable insights from your data. To use it, Jupiter Notebook support is built-in. 
 Navigate to our ```Code``` project page, open the Notebooks folder and click on the notebook file. Here you can see the usual Jupiter editor interface: you can add blocks of code or built-in Markdown engine, run and save notebook and control the Python kernel.
 
@@ -231,6 +237,6 @@ This graph shows values from data attribute vs. independent parameter for each o
 
 ![png](img/citros3.png "CITROS example")
 ## Extras
-### FoxGlove examples
-![png](img/foxglove0.png "FoxGlove example")
+### Foxglove examples
 
+![gif](img/foxglove2.gif "FoxGlove example")

@@ -1,28 +1,31 @@
 ---
-slug: Lunar Hopper Optimal Control Example with CITROS
-title: Lunar Hopper Optimal Control Example with CITROS
-authors: [gtep]
-tags: [CITROS]
+sidebar_position: 60
+sidebar_label: 'Lunar Hopper'
 ---
 
-Blog posts support [Docusaurus Markdown features](https://docusaurus.io/docs/markdown-features), such as [MDX](https://mdxjs.com/).
+# Lunar Hopper Optimal Control Example Using CITROS
 
-## Example Overview 🌐 
+The Lunar Hopper project is a lunar exploration planning project aimed at solving the intricate problem of lunar hopper missions. It focuses on optimizing the spacecraft's trajectory across the whole flight. Leveraging state-of-the-art optimal problem-solving algorithms, specifically the MPOPT Python library, this project seeks to determine the most efficient path for maximizing the distance traveled during the mission. It empowers users to customize essential parameters such as spacecraft mass, fuel quantity, thrust, and specific impulse. 
 
-![jpg](img/hopper0.jpg "Did you find a easter egg?:)")
+![jpg](img/hopper0.jpg "Did you find an easter egg?)")
 
-The Lunar Hopper project is a lunar exploration planning project aimed at solving the intricate problem of lunar hopper missions. It focuses on optimizing the spacecraft's trajectory across the whole flight. Leveraging state-of-the-art optimal problem-solving algorithms, specifically the [MPOPT Python library](https://mpopt.readthedocs.io/en/latest/), this project seeks to determine the most efficient path for maximizing the distance traveled during the mission. It empowers users to customize essential parameters such as spacecraft mass, fuel quantity, thrust, and specific impulse. 
+## Table of Contents
+4. [CITROS Usage](#citros-usage)
+    1. [CITROS Installation](#citros-installation)
+    2. [Configuring the project](#configuring-the-project)
+    3. [Syncing the project's setup](#syncing-projects-setup)
+    4. [Running locally](#running-locally)
+    5. [Uploading Docker image to the CITROS database and running in the cloud](#uploading-docker-image-to-the-citros-database-and-running-in-the-cloud)
+    6. [CITROS Web usage and data analysis](#citros-web-usage-and-data-analysis)
 
-All project installation, code overview and usage details are also available on the project's  [GitHub page](https://github.com/citros-garden/lunar_hopper).
-
-## CITROS Usage 🛸
+## CITROS Usage
 Although you can get simulation results using FoxGlove, the best way to work with such simulations and process the results is CITROS! With its power, it is possible to create complex data processing scenarios, including the construction of more complex graphs, mathematical analysis and other high-level processing methods.
 
-### CITROS Installation 🛫
+### CITROS installation
 
 First of all, to use all the powerfull CITROS features usage requires CITROS installation: follow the instructions on the CITROS CLI [GitHub page](https://github.com/lulav/citros_cli).
 
-### Configuring the Project ⚙️
+### Configuring the project
 After all the prerequisites are met, we can start configuring our project. The starting point is the Lunar_hopper devcontainer loaded and running, CITROS CLI is installed and ready.
 1. Initialize CITROS:
 ```bash 
@@ -60,8 +63,7 @@ Now you can see ```.citros``` folder in the explorer.
     |Launch File	|Package	|Description
     |--|--|--
     lunar_hopper.launch.py	|lunar_hopper	|Lunar Hopper simulation launch file 	
-
-### Synchronizing the Project's Setup 📡
+### Syncing project's setup
 Now we can synchronize our project settings with CITROS server:
 ```bash 
 >>> citros commit
@@ -72,8 +74,7 @@ Now we can synchronize our project settings with CITROS server:
 
 CITROS CLI, in addition to other benefits, also provides an automatic ROS bag recording option, which allows user to use saved simulation results and export them! :)
 :::
-
-### Running Locally 🛋️
+### Running locally
 Since all the preparations done, we can launch it locally (your project should be built and sourced before that):
 ```bash 
 >>> citros run -n 'Lunar_hopper' -m 'local test run'
@@ -88,8 +89,7 @@ created new batch_id: <your-batch-id-here>. Running locally.
 + + running simulation [0]
 ...
 ```
-
-### Uploading Docker Image to CITROS Cloud 🚛
+### Uploading Docker image to CITROS cloud
 We need to build and push a Docker container image to the CITROS server:
 ```bash 
 >>> citros docker-build-push
@@ -97,7 +97,7 @@ Logging in to docker...
 ...
 ```
 
-### Running in the Cloud 🛰️
+### Running in the cloud 🛰️
 Finally, we can run it in the cloud! Simply add ```-r``` to the terminal command: 
 ```bash 
 >>> citros run -n 'Lunar_hopper' -m 'local test run' -r
@@ -111,23 +111,23 @@ Select the launch file (should be the only one here) by pressing ```Enter``` but
 created new batch_id: <your-batch-id-here>. Running on Citros cluster. See https://citros.io/batch/<your-batch-id-here>.
 ```
 
-### CITROS Web Usage ⭐ 
-#### Launching project via CITROS Web 🚀
+### CITROS web usage and data analysis
+#### Launching project via CITROS web
 The best way to use all the innovative capabilities of CITROS is through it's Web interface. The following manual explains how to run this project in the cloud and how to process the simualtion results.
-The starting point is CITROS main page, user is logged in and the project Docker image is built and pushed to the cloud (see the [manual](#uploading-docker-image-to-citros-cloud) above).
+The starting point is CITROS main page, user is logged in and the project Docker image is built and pushed to the cloud (see the [manual](#uploading-docker-image-to-the-citros-database-and-running-in-the-cloud-🛰️) above).
 1. Go to the ```Repositories``` page clicking on the tab on the top;
 2. Find your project and open it;
 3. Navigate to the ```Runs``` tab;
 4. Click on the ```Run Simulation``` button on the right;
-5. Now you can select the project and the simulation setup from the drop-down lists, set the number of repeats and how many simulations should run in parallel, type the Name of the run and the additional message. This window also shows the perfomance preset.
+5. Now you can choose the project and the simulation setup from the droplists, set the number of repeats and how many simulations should run in parallel, type the Name of the run and the additional message. This window also shows the perfomance preset.
 6. We are ready to go! Start the Batch with the button below.
 
-The simualtion launched! Open the Run you just started in the list on ```Runs``` page to check how it is going. On this page you can find all the runs of this batch. The number of runs here equals to the number of runs you've set before.
+The simualtion launched! Open the Run you just started in the list on ```Runs``` page to check how is it going. In this page you can find all the runs of this batch. The number of runs here equals to the number of runs you've set before.
 Navigate to the Run by clicking on it in the table:
 * The main part of this page is a simulation's log. Here you can find all the logging information from all levels: from your code logs up to the CITROS system information.
 * The right part of the page provides additional information about Events: the main stages of the simulation run.
 
-#### Working with Integrated Jupiter Notebooks and Data Analysis 🌌
+#### Working with integrated Jupiter notebooks and data analysis
 CITROS Web provides a powerfull data analysis package, which is a comprehensive solution for data query, analysis and visualization. With its extensive features, you can quickly and easily extract valuable insights from your data. To use it, Jupiter Notebook support is built-in. 
 Navigate to our ```Code``` project page, open the Notebooks folder and click on the notebook file. Here you can see the usual Jupiter editor interface: you can add blocks of code or built-in Markdown engine, run and save notebook and control the Python kernel.
 

@@ -1,15 +1,9 @@
 ---
-slug: Poliastro Example with CITROS
-title: Poliastro Example with CITROS
-authors: [gtep]
-tags: [CITROS]
+sidebar_position: 40
+sidebar_label: 'Poliastro'
 ---
 
-Blog posts support [Docusaurus Markdown features](https://docusaurus.io/docs/markdown-features), such as [MDX](https://mdxjs.com/).
-
-## Example Overview 🌐 
-
-![jpg](img/img0.jpg "https://images.nasa.gov/details/0202375")
+# Poliastro
 
 This project contains three simple examples using Poliastro lib for Python 3:
 1. `Poliastro_simple_orbit`. It returns vessel orbital coordinates around the Earth between time bounds from given apoapsis and periapsis altitudes. The result is an ephemerides of orbit (actually a part of it between given time bounds) with zero right ascension of the ascending node, argument of the pericenter and true anomaly for simplicity. 
@@ -18,14 +12,29 @@ This project contains three simple examples using Poliastro lib for Python 3:
 
 You can find all information about used functions and mathematical explanation on the [Poliastro Website](https://docs.poliastro.space/en/stable/). All project installation, code overview and usage details are also available on the project's [GitHub page](https://github.com/citros-garden/poliastro).
 
-## CITROS Usage 🛸
+![jpg](img/img0.jpg)
+
+## Table of Contents
+
+1. [CITROS Usage](#citros-usage)
+    1. [CITROS installation](#citros-installation)
+    2. [Configuring the project](#configuring-the-project)
+    3. [Syncing project's setup](#syncing-projects-setup)
+    4. [Running locally](#running-locally)
+    5. [Uploading Docker image to the CITROS database and running in the cloud](#uploading-docker-image-to-the-citros-database-and-running-in-the-cloud)
+    6. [Running in the cloud](#running-in-the-cloud)
+    7. [CITROS web usage](#citros-web-usage)
+2. [Extras](#extras)
+    1. [Foxglove examples](#foxglove-examples)
+
+## CITROS Usage
 Although you can get simulation results using FoxGlove, the best way to work with such simulations and process the results is CITROS! With its power, it is possible to create complex data processing scenarios, including the construction of more complex graphs, mathematical analysis and other high-level processing methods.
 
-### CITROS Installation 🛫
+### CITROS installation
 
 First of all, to use all the powerfull CITROS features usage requires CITROS installation: follow the instructions on the CITROS CLI [GitHub page](https://github.com/lulav/citros_cli).
 
-### Configuring the Project ⚙️
+### Configuring the project
 After all the prerequisites are met, we can start configuring our project. The starting point is the Poliastro devcontainer loaded and running, CITROS CLI is installed and ready.
 1. Initialize CITROS:
 ```bash 
@@ -94,7 +103,7 @@ Don't forget to save the file!
     poliastro_simple_orbit.launch.py	|poliastro_simple_orbit	|Poliastro Maneuver simulation launch file 
 
      
-### Synchronizing the Project's Setup 📡
+### Syncing project's setup
 Now we can synchronize our project settings with CITROS server:
 ```bash 
 >>> citros commit
@@ -107,7 +116,7 @@ CITROS CLI, in addition to other benefits, also provides an automatic ROS bag re
 
 :::
 
-### Running Locally 🛋️
+### Running locally
 Since all the preparations done, we can launch it locally (your project should be built and sourced before that):
 ```bash 
 >>> citros run -n 'poliastro' -m 'local test run'
@@ -129,7 +138,7 @@ created new batch_id: <your-batch-id-here>. Running locally.
 ![gif](img/main.gif "FoxGlove example")
 
 
-### Uploading Docker Image to CITROS Cloud 🚛
+### Uploading Docker image to the CITROS database and running in the cloud
 We need to build and push a Docker container image to the CITROS server:
 ```bash 
 >>> citros docker-build-push
@@ -137,7 +146,7 @@ Logging in to docker...
 ...
 ```
 
-### Running in the Cloud 🛰️
+### Running in the cloud
 Finally, we can run it in the cloud! Simply add ```-r``` to the terminal command: 
 ```bash 
 >>> citros run -n 'poliastro' -m 'cloud test run' -r
@@ -152,8 +161,8 @@ Select the launch file by pressing ```Enter``` button. Now the simulation is run
 created new batch_id: <your-batch-id-here>. Running on Citros cluster. See https://citros.io/batch/<your-batch-id-here>.
 ```
 
-### CITROS Web Usage ⭐ 
-#### Launching project via CITROS Web 🚀
+### CITROS web usage
+#### Launching project via CITROS web
 The best way to use all the innovative capabilities of CITROS is through it's Web interface. The following manual explains how to run this project in the cloud and how to process the simualtion results.
 The starting point is CITROS main page, user is logged in and the project Docker image is built and pushed to the cloud (see the [manual](#uploading-docker-image-to-citros-cloud) above).
 1. Go to the ```Repositories``` page clicking on the tab on the top;
@@ -170,7 +179,7 @@ Navigate to the Run by clicking on it in the table:
 
 ![png](img/citros2.png "CITROS example")
 
-#### Working with Integrated Jupiter Notebooks and Data Analysis 🌌
+#### Working with integrated Jupiter notebooks and data analysis
 CITROS Web provides a powerfull data analysis package, which is a comprehensive solution for data query, analysis and visualization. With its extensive features, you can quickly and easily extract valuable insights from your data. To use it, Jupiter Notebook support is built-in. 
 Navigate to our ```Code``` project page, open the Notebooks folder and click on the notebook file. Here you can see the usual Jupiter editor interface: you can add blocks of code or built-in Markdown engine, run and save notebook and control the Python kernel.
 
@@ -266,5 +275,5 @@ This graph shows us the exact orbit duration depending of Drag coefficient:
 ![png](img/citros3.png "CITROS example")
 
 ## Extras
-### FoxGlove examples
+### Foxglove examples
 ![png](img/maneuver.png "FoxGlove example")

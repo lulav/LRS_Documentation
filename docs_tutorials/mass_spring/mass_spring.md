@@ -1,19 +1,32 @@
 ---
-slug: Mass-Spring-Damper Control Example
-title: Mass-Spring-Damper
-authors: [iftahnaf]
-tags: [citros]
+sidebar_position: 30
+sidebar_label: 'Mass Spring Damper'
 ---
 
-# Example Overview 🌐
+# Mass Spring Damper
 
 This is a simple ROS demonstration of a mass-spring-damper system.
 
-<img src="img/system.jpeg" alt="drawing" width="500"/>
+![jpg](img/system.jpeg)
 
 The example contains two ROS 2 packages: `dynamics` and `controller`.
 
-## System Dynamics 🏁
+
+## Table of Contents
+1. [System Dynamics](#system-dynamics)
+2. [CITROS Installation](#citros-installation)
+3. [The Controller](#the-controller)
+4. [CITROS Usage](#citros-usage)
+    1. [CITROS Installation](#citros-installation)
+    2. [Configuring the project](#configuring-the-project)
+    3. [Parameters](#parameters)
+    3. [Launch files](#launch-files)
+    4. [Initialize CITROS](#initialize-citros)
+    5. [Run with CITROS](#run-with-citros)
+    3. [Syncing project's setup](#syncing-projects-setup)
+    4. [Normal distributed mass](#normal-distributed-mass)
+    
+## System Dynamics
 
 The system's equations of motion:
 
@@ -21,13 +34,13 @@ $$m\ddot x =  kf(t) -c\dot x -kx$$
 
 and after laplace transformation (with zero I.C) we get a second order system:
 
-$${X \over F} = {\omega_n^2 \over s^2 +2\omega_n\zeta s + \omega_n^2} $$
+${X \over F} = {\omega_n^2 \over s^2 +2\omega_n\zeta s + \omega_n^2} $
 
 where the natural frequency $\omega_n = \sqrt{k \over m}$
 
 You can choose the system's parameters `m`, `k` and `c` and choose the initial condition `x0`, `v0` and `a0`, all configured as ROS 2 parameters.
 
-## The Controller 🎮
+## The Controller
 
 You can write your own controller to try stabilize the system for a given setpoint.
 
@@ -37,18 +50,18 @@ $$f(t) = {k_pe(t) + k_i\int{e(t)dt}} + k_d {d\over dt}(e(t))$$
 
 you can tune the controller gains, $k_p$, $k_i$, $k_d$, configured as ROS 2 parameters.
 
-# CITROS Usage 🛸
+## CITROS Usage
 
-## CITROS Installation 🛫
+### CITROS installation
 First of all, to use all the powerfull CITROS features usage requires CITROS installation: follow the instructions on the CITROS CLI GitHub page. 
 
 **TODO: add installation tutorial**
 
-## Configuring the Project ⚙️
+### Configuring the project
 
 After all the prerequisites done, we can start configuring our project. Open the project's repository in `VSCode` and reopen the project in a the VSCode's `devcontainer`.
 
-## Parameters
+### Parameters
 
 | Parameter | Package | Description
 | --------|  --------|  --------|
@@ -63,30 +76,30 @@ After all the prerequisites done, we can start configuring our project. Open the
 |v | dynamics | The mass initial velocity
 |a | dynamics | The mass initial acceleration
 
-## Launch Files
+### Launch Files
 
 |Launch file| Description
 | --------|  --------|
 |dynamics.launch.py | Launch the uncontrolled system
 |dynamics_controller.launch.py | Launch the controlled system with PID controller
 
-## Initialize CITROS:
+### Initialize CITROS
 
-        citros init
+    citros init
 
-## Run with CITROS:
+### Run with CITROS
 
-        citros run -n "default" -m "default simulation"
+    citros run -n "default" -m "default simulation"
 
 After running the command, choose the launch file you wish to run. The simulation will start and you could see the mass position and the control signal in the terminal's logs.
 
-## Syncing the Project's Setup 📡
+### Syncing project's setup
 
 Follow the guide for syncing CITROS project with the server.
 
 **TODO: add guide for syncing with the server**
 
-## Normal Distributed Mass
+### Normal distributed mass
 
 Supposed we tune the PID gains of the controller for the nominal mass, and we reached a satisfying results.
 

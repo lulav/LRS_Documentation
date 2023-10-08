@@ -1,25 +1,37 @@
+---
+sidebar_position: 1
+sidebar_label: 'Introduction to CITROS CLI'
+hide_title: true
+---
+<!-- 
+```mdx-code-block
+import DocCardList from '@theme/DocCardList';
+
+<DocCardList />
+``` -->
+
 # Introduction to CITROS CLI
 
 This tutorial will guide you through the CITROS CLI interface, using a simple ROS 2 example project to demonstrate the usage, while providing usefull recommendations and best practices. While this is not a comprehensive guide to all CITROS CLI commands, it should get you up and running using your own projects with CITROS in no time. For further details and an exhaustive guide to the CITROS CLI, refer to the [CLI Documentation](https://github.com/lulav/citros_doc/blob/main/docs_cli/index.md).
 
 ![orangesqueeze](img/orange_squeeze.jpg "CITROS CLI")
 
-## Table of contents
+## Table of Contents
 
-1. [The Cannon example project](#the-cannon-example-project)
+1. [The Cannon Example Project](#the-cannon-example-project)
     1. [Prerequisites](#prerequisites)
     2. [Installation](#installation)
     3. [Build](#build)
     4. [Run the analytic solution](#run-the-analytic-solution)
     5. [Run the numeric integration solution](#run-the-numeric-integration-solution)
-    6. [Implementation Overview](#implementation-overview)
+    6. [Implementation overview](#implementation-overview)
     7. [Foxglove](#foxglove)
-2. [Working with CITROS CLI offline](#cannon-via-citros-offline)
+2. [Working with CITROS CLI - Offline](#cannon-via-citros-offline)
     1. [Prerequisites](#prerequisites-1)
     2. [Initialization](#initialization)
     3. [Running a simulation](#running-a-simulation)
     4. [Configuring a simulation](#configuring-a-simulation)
-3. [Working with CITROS CLI online](#cannon-via-citros-online)
+3. [Working with CITROS CLI - Online](#cannon-via-citros-online)
     1. [Prerequisites](#prerequisites-2)
     2. [logging in](#logging-in)
     3. [ssh](#ssh)
@@ -29,7 +41,7 @@ This tutorial will guide you through the CITROS CLI interface, using a simple RO
     7. [Configuring a simulation](#configuring-a-simulation-1)
 
 
-## The Cannon example project
+## The Cannon Example Project
 
 This project is a ROS implementation of the [cannonball simulation](https://nasa.github.io/trick/tutorial/ATutASimpleSim) provided by NASA Johnson Space Center as part of the tutorial for the 
 [Trick Simulation Environment](https://nasa.github.io/trick/).
@@ -80,7 +92,7 @@ Additionally, the `scheduler` node subscribes to a `debug` topic, which, togethe
 
 The output of the simulation, i.e. the topic containing the calculated results, is called `cannon/state` (in both analytic and numeric versions). It is a list of `float` of size 4, the layout being:
         
-        [position_x, position_y, velocity_x, velocity_y]
+    [position_x, position_y, velocity_x, velocity_y]
 
 The simulation will halt when `position_y` reaches zero (i.e. impact).
 
@@ -91,11 +103,11 @@ It is recommended to start the simulation in a paused state, and then, once your
 
 To do that, in the `__init__` member function of the `scheduler` node (in `scheduler.py`), change the line
 
-        self.debug_mode = False
+    self.debug_mode = False
 
 to
 
-        self.debug_mode = True
+    self.debug_mode = True
 You will need to build (and source) again.
 
 Output example:
@@ -103,7 +115,7 @@ Output example:
 
 
 
-## Cannon via CITROS (offline)
+## Working with CITROS CLI - Offline
 
 Working with the CITROS CLI offline is pretty straight forward, since there are only two thinks you need to do - initialze your CITROS repository, and run your project. Additionaly, you may configure your CITROS repository to fit your simulation needs, but if all you want to do is run your project via CITROS with the default configuration, than only two commands are necessary.
 
@@ -206,7 +218,7 @@ and choose `simulation_cannon_analytic` from the menue, the simulation will run 
 More options for configuring your simulation are [discussed](#configuring-a-simulation-1) in the next section. For user defined functions and further details about configuring CITROS simulations in general, refer to the [CLI Documentation](https://github.com/lulav/citros_doc/blob/main/docs_cli/index.md). 
 
 
-## Cannon via CITROS (online)
+## Working with CITROS CLI - Online
 
 ### Prerequisites
 In addition to the prerquisites for working with the CITROS CLI offline, make sure:
