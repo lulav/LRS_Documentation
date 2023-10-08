@@ -9,39 +9,39 @@ tags: [CITROS]
 
 ![Alt text](img/soft-landing-of-a-spacecraft-on-the-moon.png)
 
-**Contents**
+**Table of contents**
 
-- General Info
-    - System Dynamics
-    - The Controller
-- Installation
-    - Prerequisits
-    - Install & Build
-- CITROS Integration
-    - Configuring The Project
-- Run The  Example
-    - The Scenario
-    - Run A Test Simulation Localy With CITROS
-    - Run A Test Simulation In The Web With CITROS
+1. [General Info](#general-info-🌐)
+    1. [System Dynamics](#system-dynamics-🏁)
+    2. [The Controller](#the-controller-🎮)
+2. [Installation](#installation-🛫)
+    1. [Prerequisits](#prerequisits-📝)
+    2. [Install & Build](#install--build-🏠)
+3. [CITROS Integration](#citros-integration-🛸)
+    1. [Configuring The Project](#configuring-the-project-⚙️)
+4. [Run The Example](#run-the-example-🌑)
+    1. [The Scenario](#the-scenario-🎥)
+    2. [Run A Test Simulation Locally With CITROS](#run-a-test-simulation-localy-with-citros-🕹️)
+    3. [Run A Test Simulation In The Web With CITROS](#run-a-test-simulation-in-the-web-with-citros-📡)
 
 
-# General Info  🌐
+## General Info  🌐
 
 This is a ROS 2 simulation of soft landing of an object.  
 In the ROS 2 system we have two nodes: the first represents the `dynamics` and the second one is the `controller`.
 
 ![jpg](img/soft_landing_control.jpg "soft landing")
 
-## **System Dynamics**  🏁
+### **System Dynamics**  🏁
 The system's equation of motion is the kinematic equation of a free body fall.  
 for more information see [Soft Landing](https://github.com/CITROS-garden/soft_landing)  
-## **The Controller**  🎮
+### **The Controller**  🎮
 The controller is based on this paper:
 
 *S. Gutman, "Rendezvous and Soft Landing in Closed Form via LQ Optimization," 2019 27th Mediterranean Conference on Control and Automation (MED), Akko, Israel, 2019, pp. 536-540, doi: 10.1109/MED.2019.8798572.*
 
 
-# Installation  🛫
+## Installation  🛫
 
 ### Prerequisits 📝
  - ✅ Python 3.8+  
@@ -63,7 +63,7 @@ The controller is based on this paper:
 3. open the repository in the container from VScode with `reopen in container` option.
 
 
-# CITROS Integration 🛸
+## CITROS Integration 🛸
 To use all the powerfull CITROS features usage requires CITROS installation:  
 (from the instructions on the CITROS CLI [GitHub page](https://github.com/lulav/CITROS_cli))
 
@@ -75,12 +75,11 @@ pip install citros
 
 
 then login:
-
 ```
-  citros login 
+citros login 
 ```
 
-enter your email and pasword ,you supose to see:    
+enter your email and password, you suppose to see:    
 
 ![Alt text](img/image-5.png)
 
@@ -93,7 +92,7 @@ then:
 
 
 
-and finely:
+and finally:
 
 ```
 citros setup-ssh
@@ -116,9 +115,9 @@ Now you can see ```.CITROS``` folder in the explorer and at the terminal you can
 	source install/local_setup.bash
 	```
 
-# Run The  Example 🌑
+## Run The Example 🌑
 
-## **The Scenario** 🎥
+### **The Scenario** 🎥
 Run the example of an object with the initial condition that suppose to land on an ending point.  
 The parameters are:  
 
@@ -151,7 +150,7 @@ you can read more about changing parameters in  `parameter setups` section in `C
 ```  
 
 
-## Run A Test Simulation Localy With CITROS 🕹️	
+## Run A Test Simulation Locally With CITROS 🕹️	
 ### Syncing The Project's Setup
 Now we can sync our project settings with CITROS server:
 ```bash 
@@ -189,7 +188,7 @@ Select the launch file you want by pressing ```Enter``` button. Now the simulati
 Now we all set to run simulations from the web itself.  
 At the web,go to the soft landing repo and then to the `Runs` tab.  
 
-start a new simulation by clicking the ![Alt text](image-1.png) button.  
+start a new simulation by clicking the ![Alt text](img/image-1.png) button.  
 then a window will pop:
 
 ![Alt text](img/image-6.png)  
