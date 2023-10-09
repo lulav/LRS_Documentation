@@ -3,6 +3,8 @@
 **Introduction:**
 The main Runs' list page is the list of your team's simulations runs. It allows you to manage and monitor simulations efficiently. In this tutorial, we will walk through the key features and functionalities of this page to help you navigate and utilize it effectively.
 
+![png](img/runs0.png "Runs page overview")
+
 1. **Accessing the Simulations' List Page**
    - Navigate the "Runs" page using corresponding button in the main navigation bar.
    - Log in to your account if prompted.

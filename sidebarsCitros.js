@@ -141,50 +141,23 @@ module.exports = {
       items: [
         {
           type: 'doc',
+          label: 'Getting Started with Simulations',
+          id: 'simulations/sim_quick_start',
+        },
+        {
+          type: 'doc',
           label: 'Overview',
           id: 'simulations/sim_overview',
         },
         {
-          type: 'category',
-          label: 'Batch Simulations',
-          items: [
-            // {
-            //   type: 'doc',
-            //   label: 'Breadcrumbs',
-            //   id: 'simulations_batch/sim_batch_breadcrumbs',
-            // },
-            {
-              type: 'doc',
-              label: 'Run New Batch Simulations',
-              id: 'simulations/simulations_batch/sim_batch_run',
-            },
-            {
-              type: 'doc',
-              label: 'Batch Simulations Screen',
-              id: 'simulations/simulations_batch/sim_batch_screen',
-            },
-          ]
+          type: 'doc',
+          label: 'Batch Page',
+          id: 'simulations/sim_batch_screen',
         },
         {
-          type: 'category',
-          label: 'Simulation Screen',
-          items: [
-            // {
-            //   type: 'doc',
-            //   label: 'Breadcrumbs',
-            //   id: 'simulation_screen/sim_breadcrumbs',
-            // },
-            {
-              type: 'doc',
-              label: 'Possible Runs',
-              id: 'simulations/simulation_screen/sim_possible_runs',
-            },
-            {
-              type: 'doc',
-              label: 'Logs',
-              id: 'simulations/simulation_screen/sim_logs',
-            },
-          ]
+          type: 'doc',
+          label: 'Run Page',
+          id: 'simulations/sim_run_screen',
         },
       ],
     },

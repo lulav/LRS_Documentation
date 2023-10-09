@@ -3,6 +3,8 @@
 **Introduction:**
 This simulation run page provides a comprehensive dashboard that allows users to monitor and manage batch simulation runs, offering detailed information about each run and overall batch status, while also providing insights into the development context in which the simulations were run.
 
+![png](img/batch0.png "Batch page overview")
+
 1. **Understanding Batch Info**
    - View the Batch Run Info to quickly understand the context and purpose of the current batch simulation.
 
