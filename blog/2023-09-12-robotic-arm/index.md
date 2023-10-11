@@ -112,19 +112,7 @@ created new batch_id: <your-batch-id-here>. Running on Citros cluster. See https
 
 ### CITROS Web Usage ⭐ 
 #### Launching project via CITROS Web 🚀
-The best way to use all the innovative capabilities of CITROS is through it's Web interface. The following manual explains how to run this project in the cloud and how to process the simualtion results.
-The starting point is CITROS main page, user is logged in and the project Docker image is built and pushed to the cloud (see the [manual](#uploading-docker-image-to-citros-cloud) above).
-1. Go to the ```Repositories``` page clicking on the tab on the top;
-2. Find your project and open it;
-3. Navigate to the ```Runs``` tab;
-4. Click on the ```Run Simulation``` button on the right;
-5. Now you can select the project and the simulation setup from the drop-down lists, set the number of repeats and how many simulations should run in parallel, type the Name of the run and the additional message. This window also shows the perfomance preset.
-6. We are ready to go! Start the Batch with the button below.
-
-The simualtion launched! Open the Run you just started in the list on ```Runs``` page to check how it is going. On this page you can find all the runs of this batch. The number of runs here equals to the number of runs you've set before.
-Navigate to the Run by clicking on it in the table:
-* The main part of this page is a simulation's log. Here you can find all the logging information from all levels: from your code logs up to the CITROS system information.
-* The right part of the page provides additional information about Events: the main stages of the simulation run.
+The best way to use all the innovative capabilities of CITROS is through it's Web interface. Follow [this manual](https://citros.io/doc/docs_citros_web/simulations/sim_overview) to easily launch a simulation on CITROS Web platform.
 
 #### Working with Integrated Jupiter Notebooks and Data Analysis 🌌
 
