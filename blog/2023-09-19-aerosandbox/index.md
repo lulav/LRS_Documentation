@@ -27,7 +27,7 @@ Although you can get simulation results using FoxGlove, the best way to work wit
 
 ### CITROS Installation 🛫
 
-First of all, to use all the powerfull CITROS features usage requires CITROS installation: follow the instructions on the CITROS CLI [GitHub page](https://github.com/lulav/citros_cli).
+First of all, to use all the powerfull CITROS features usage requires CITROS installation: follow the instructions on the CITROS CLI [Documentation page](https://citros.io/doc/docs_cli).
 
 ### Configuring the Project ⚙️
 After all the prerequisites are met, we can start configuring our project. The starting point is the Poliastro devcontainer loaded and running, CITROS CLI is installed and ready.
@@ -50,7 +50,7 @@ Now you can see ```.citros``` folder in the explorer.
 
 2. Configuring the setup. We need to set up the maximum performance available: timeout, CPU, GPU and Memory. To perform it, we need to define them in ```.citros/simulations/simulation_aerosandbox_cessna.json```. The recommended setup is minimum 180 seconds timeout, 2 CPU, 2 GPU and 1024 MB of Memory. Don't forget to save the file!
 
-3. Configuring the params setup. You can find the default setup in ```.citros/parameter_setups/default_param_setup.json```. [CITROS CLI](https://github.com/lulav/citros_cli) provides an opportunity to use basic NumPy functions (such as distributions) and even user-defined functions, but let's keep it default for now. The Aerosanbox simulation has the following ROS parameters:
+3. Configuring the params setup. You can find the default setup in ```.citros/parameter_setups/default_param_setup.json```. [CITROS CLI](https://citros.io/doc/docs_cli) provides an opportunity to use basic NumPy functions (such as distributions) and even user-defined functions, but let's keep it default for now. The Aerosanbox simulation has the following ROS parameters:
 
     |Parameter	|Package	|Description
     |--|--|--
@@ -151,7 +151,7 @@ Let's quickly go through the key points of using a Jupiter Notebook and fetching
 },
 ```
 
-All necessary things are already configured (we used a NumPy distribution function, you can read more about its usage in the [CITROS CLI](https://github.com/lulav/citros_cli#examples---user-defined) manual), so you can start the simulation from [CLI](#citros-usage-🛸) with the ```-c 10``` flag: 
+All necessary things are already configured (we used a NumPy distribution function, you can read more about its usage in the [CITROS CLI](https://citros.io/doc/docs_cli) manual), so you can start the simulation from [CLI](#citros-usage-🛸) with the ```-c 10``` flag: 
 
 ```
 citros run -n 'aerosandbox_cessna' -m 'cloud test run' -r -c 10
