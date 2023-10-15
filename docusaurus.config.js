@@ -112,14 +112,26 @@ const config = {
         // includeCurrentVersion: false,
       },
     ],
+    [
+      "@docusaurus/plugin-content-docs",
+      {
+        id: "docs_tutorials",
+        path: "docs_tutorials",
+        routeBasePath: "docs_tutorials",
+        sidebarPath: require.resolve("./sidebarsTutorials.js"),
+        remarkPlugins: [math],
+        rehypePlugins: [katex],
+        // includeCurrentVersion: false,
+      },
+    ],
   ],
 
   stylesheets: [
     {
-      href: "katex/katex.min.css",
+      //   href: "katex/katex.min.css",
+      //   type: "text/css",
+      href: "https://cdn.jsdelivr.net/npm/katex@0.13.24/dist/katex.min.css",
       type: "text/css",
-      // href: 'https://cdn.jsdelivr.net/npm/katex@0.13.24/dist/katex.min.css',
-      // type: 'text/css',
       // integrity:
       //   'sha384-odtC+0UGzzFL/6PNoE8rX/SPcQDXBJ+uRepguP4QkPCm2LBxH3FA3y+fKSiJ+AmM',
       // crossorigin: 'anonymous',
@@ -129,6 +141,12 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
+      colorMode: {
+        defaultMode: "dark",
+        disableSwitch: true,
+        respectPrefersColorScheme: false,
+      },
+
       // Replace with your project's social card
       image: "img/docusaurus-social-card.jpg",
 
@@ -168,6 +186,12 @@ const config = {
             position: "left",
             activeBaseRegex: `/docs_data_analysis/`,
           },
+          {
+            to: "/docs_tutorials", // ./docs-api/Intro.md
+            label: "Tutorials",
+            position: "left",
+            activeBaseRegex: `/docs_tutorials/`,
+          },
           { to: "/blog", label: "Blog", position: "left" },
           {
             type: "docsVersionDropdown",
@@ -192,42 +216,59 @@ const config = {
           },
         ],
       },
-      // footer: {
-      //   style: 'dark',
-      //   links: [
-      //     {
-      //       title: 'Tutorials',
-      //       items: [
-      //         {
-      //           label: 'Getting started',
-      //           to: '/docs',
-      //         },
-      //         {
-      //           label: 'Web',
-      //           to: '/docs_citros_web',
-      //         },
-      //         {
-      //           label: 'CLI',
-      //           to: '/docs_cli',
-      //         },
-      //         {
-      //           label: 'Data analysis',
-      //           to: '/docs_data_analysis',
-      //         },
-      //       ],
-      //     },
-      //     {
-      //       title: 'More',
-      //       items: [
-      //         {
-      //           label: 'Blog',
-      //           to: '/blog',
-      //         },
-      //       ],
-      //     },
-      //   ],
-      //   copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
-      // },
+      footer: {
+        style: "dark",
+        links: [
+          {
+            title: "Visit",
+            items: [
+              {
+                label: "Blog",
+                to: "/blog",
+              },
+              {
+                label: "Twitter",
+                to: "https://twitter.com/lulavspace",
+              },
+              {
+                label: "Linkdin",
+                to: "https://www.linkedin.com/company/lulav-space/",
+              },
+              {
+                label: "Website",
+                to: "https://www.lulav.space",
+              },
+            ],
+          },
+          {
+            title: "More to Learn",
+            items: [
+              // {
+              //   label: 'ChangeLog',
+              //   to: '/docs_data_analysis',
+              // },
+              {
+                label: "GitHub",
+                to: "https://github.com/citros-garden",
+              },
+            ],
+          },
+          {
+            title: "Legal",
+            items: [
+              {
+                label: "Terms and Conditions",
+                to: "/blog",
+              },
+              {
+                label: "Privacy Policy",
+                to: "/blog",
+              },
+            ],
+          },
+        ],
+        copyright: `Copyright © ${new Date().getFullYear()} Lulav Space.`,
+      },
       prism: {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,

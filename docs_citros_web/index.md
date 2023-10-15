@@ -1,8 +1,11 @@
 ---
 sidebar_position: 1
-sidebar_label: 'Citros guide book'
+sidebar_label: 'CITWEB'
 hide_title: true
 ---
+<!-- 
+```mdx-code-block
+import DocCardList from '@theme/DocCardList';
 
-## About CITROS
-![Citros logo](/img/citros.png)
+<DocCardList />
+``` -->
