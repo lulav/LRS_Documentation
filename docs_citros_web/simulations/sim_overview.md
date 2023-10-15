@@ -1,13 +1,13 @@
 # Runs page Overview
 
 **Introduction:**
-The main Runs' list page is the list of your team's simulations runs. It allows you to manage and monitor simulations efficiently. In this tutorial, we will walk through the key features and functionalities of this page to help you navigate and utilize it effectively.
+The `Runs` page is comprized of a list of your team's simulation runs. It allows you to manage and monitor simulations easily and efficiently. In this tutorial, we will walk through the key features and functionalities of this page to help you navigate and utilize it effectively.
 
 ![png](img/runs0.png "Runs page overview")
 
-1. **Accessing the Simulations' List Page:**
+1. **Accessing the Simulations List Page:**
 
-   Navigate the "Runs" page using corresponding button in the main navigation bar. Log in to your account if prompted.
+   Navigate to the "Runs" page using the corresponding button in the main navigation bar. Log in to your account if prompted.
 
 2. **The Simulations' List Overview**
 
@@ -38,18 +38,18 @@ The main Runs' list page is the list of your team's simulations runs. It allows 
       * Username;
       * Number of runs and their status.
 
-7. **Interpreting Simulation Data Status**
+7. **Interpreting Simulation Status Data**
 
-   The status of a simulation results can be one of several states, including:
+   The status of simulation results can be one of several states:
      - **UNKNOWN:** Unsynced with the Database.
      - **UNLOADED:** The batch run data is unloaded from the Database.
      - **LOADED:** The batch run data is loaded to the data DB and available for querying.
      - **LOADING:** The data is being loaded and should be available soon.
-     - **ERROR:** All related simulation_runs is in DONE and at least one in ERROR state.
+     - **ERROR:** All related simulation runs are in a DONE state and at least one is in an ERROR state.
 
 
 8. **Best Practices**
    
-   Keep simulation names descriptive for easy identification.Regularly check and manage old or unnecessary simulations to save resources.
+   Keep simulation names descriptive for easy identification. Regularly check and manage old or unnecessary simulations to save resources.
 
-By following these steps, you'll be able to effectively use the simulations' list page, improving your workflow and ensuring smoother simulation management.
+By following these steps, you'll be able to effectively use the simulations list page, improving your workflow and ensuring smoother simulation management.

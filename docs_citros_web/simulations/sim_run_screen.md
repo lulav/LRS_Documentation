@@ -1,7 +1,7 @@
 # Run Page Overview
 
 **Introduction:**
-The Simulation Log Page provides a detailed record of all simulation logs across various levels, from high-level batch (e.g., CITROS level) down to granular simulation logging levels. It also showcases the status messages related to the simulation, offering insights into the simulation's progression, state, and any potential issues or milestones.
+The Simulation Log Page provides a detailed record of all simulation logs across various levels, from high-level batch (e.g., CITROS level) down to granular simulation logging levels. It also showcases the status messages related to the simulation, offering insights into the simulation's progression, state, and any potential issues.
 
 ![png](img/run0.png "Run page")
 
@@ -18,7 +18,7 @@ The Simulation Log Page provides a detailed record of all simulation logs across
 3. **Monitoring and Utilizing Status Info**
    
    Monitor the Status Info section on the right to keep track of the simulation’s ongoing status and progression. 
-   Review the most recent status message at the top, and peruse previous messages to understand the historical progression of the simulation status.
+   Review the most recent status message at the top, and examine previous messages to understand the historical progression of the simulation status.
    Use the status messages for quick insights into the simulation's health, state, and any noteworthy events or issues.
 
 3. **Managing and Troubleshooting Simulations**
