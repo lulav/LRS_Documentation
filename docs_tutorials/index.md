@@ -12,7 +12,7 @@ import DocCardList from '@theme/DocCardList';
 
 # Introduction to CITROS CLI
 
-This tutorial will guide you through the CITROS CLI interface, using a simple ROS 2 example project to demonstrate the usage, while providing usefull recommendations and best practices. While this is not a comprehensive guide to all CITROS CLI commands, it should get you up and running using your own projects with CITROS in no time. For further details and an exhaustive guide to the CITROS CLI, refer to the [CLI Documentation](https://github.com/lulav/citros_doc/blob/main/docs_cli/index.md).
+This tutorial will guide you through the CITROS CLI interface, using a simple ROS 2 example project to demonstrate the usage, while providing usefull recommendations and best practices. While this is not a comprehensive guide to all CITROS CLI commands, it should get you up and running using your own projects with CITROS in no time. For further details and an exhaustive guide to the CITROS CLI, refer to the [CLI Documentation](https://citros.io/doc/docs_cli).
 
 ![orangesqueeze](img/orange_squeeze.jpg "CITROS CLI")
 
@@ -141,7 +141,7 @@ But first, let's make sure all the prerequisites for running CITROS have been me
     to get the CITROS CLI version installed.
 
 ### Initialization
-Alrightythan! you're now ready to run the first command - `init`, which will initialize your local CITROS repository:
+Alrightythan! You're now ready to run the first command - `init`, which will initialize your local CITROS repository:
 ```bash
 $ citros init
 User is not logged in. Initialzing Citros locally.
@@ -153,7 +153,7 @@ Intialized Citros repository.
 
 This command creates a folder named `.citros` under your project directory, and initializes it as a git repository. The current git branch of the `.citros` repository should always be named as the current branch in your ROS project (i.e. `main` in the example above). In case they are different, CITROS will create and/or checkout the branch for you, as can be seen in the output above.
 
-The `.citros` directory contains several files and folders that capture the state of your project and allow you to configure your simulations according to your needs. We will discuss some of them briefly later on. For a full and detailed description of the contents of the `.citros`  directory, refer to the [CLI Documentation](https://github.com/lulav/citros_doc/blob/main/docs_cli/index.md).
+The `.citros` directory contains several files and folders that capture the state of your project and allow you to configure your simulations according to your needs. We will discuss some of them briefly later on. For a full and detailed description of the contents of the `.citros`  directory, refer to the [CLI Documentation](https://citros.io/doc/docs_cli).
 
 ### Running a simulation
 
@@ -181,7 +181,7 @@ To fully understand what's going on, we need to familiarize ourselves with three
 
     Defined as a single execution of a simulation as defined by the chosen launch file. Launching CITROS simulations with multiple runs ('*complitions*') is particulary advantageous when working online, in which case a large number of simulation runs can be simultaneously executed on the CITROS cloud.
 
-    The folder corresponding to a simulation run will contain all the information relevant for that run. Look through such a folder after running a simulation and see for yourself. For further details refer to the [CLI Documentation](https://github.com/lulav/citros_doc/blob/main/docs_cli/index.md)
+    The folder corresponding to a simulation run will contain all the information relevant for that run. Look through such a folder after running a simulation and see for yourself. For further details refer to the [CLI Documentation](https://citros.io/doc/docs_cli)
 
 
 By default, when using the `run` command, you must provide a batch name (using the `-n` flag) and a message (using the `-m` flag). The name you provide will be used as the name of the directory in which all runs for this batch will be saved. If a batch by that name already exists - no worries, CITROS will simply add an underscore and an index to the name you provided, thereby keeping the batch directory names unique for each simulation. 
@@ -215,7 +215,7 @@ citros run -n "test_params" -m "testing random initial angle" -c 10
 
 and choose `simulation_cannon_analytic` from the menue, the simulation will run 10 times (sequentially), and each time the cannon will have a different initial angle. By looking at the results, we can hopefully come to the conclusion that 45 degrees is the optimal angle. 
 
-More options for configuring your simulation are [discussed](#configuring-a-simulation-1) in the next section. For user defined functions and further details about configuring CITROS simulations in general, refer to the [CLI Documentation](https://github.com/lulav/citros_doc/blob/main/docs_cli/index.md). 
+More options for configuring your simulation are [discussed](#configuring-a-simulation-1) in the next section. For user defined functions and further details about configuring CITROS simulations in general, refer to the [CLI Documentation](https://citros.io/doc/docs_cli). 
 
 
 ## Working with CITROS CLI - Online
@@ -224,10 +224,10 @@ More options for configuring your simulation are [discussed](#configuring-a-simu
 In addition to the prerquisites for working with the CITROS CLI offline, make sure:
 
 - You have a working internet connection.
-- You have signed up to [Citos](https://citros.io) and have your login password.
+- You have signed up to [CITROS](https://citros.io) and have your login password.
 
 
-Using the CITROS CLI online is very similar, from the user's standpoint, to using it offline. We still use the `init` and `run` commands, albeit with slite alterations or different consequences. In addition, there are a few more commands necessary to interact with the CITROS cloud.
+Using the CITROS CLI online is very similar, from the user's standpoint, to using it offline. We still use the `init` and `run` commands, albeit with slight alterations or different consequences. In addition, there are a few more commands necessary to interact with the CITROS cloud.
 
 ### logging in
 
@@ -245,7 +245,7 @@ Before we continue to initialze our project, there is one more prerequisite we n
 ```bash
 citros setup-ssh
 ```
-for further details, see the [CLI Documentation](https://github.com/lulav/citros_doc/blob/main/docs_cli/index.md)
+for further details, see the [CLI Documentation](https://citros.io/doc/docs_cli)
 
 
 ### Initialization
@@ -264,7 +264,7 @@ Citros successfully synched with local project.
 You may review your changes via `citros status` and commit them via `citros commit`.
 Intialized Citros repository.
 ```
-As you can see, a lot more is happening when you initialize your repository while being logged in. We will not delve into all the details behind the scenes, but as always, feel free to roam through the [CLI Documentation](https://github.com/lulav/citros_doc/blob/main/docs_cli/index.md) for further details.
+As you can see, a lot more is happening when you initialize your repository while being logged in. We will not delve into all the details behind the scenes, but as always, feel free to roam through the [CLI Documentation](https://citros.io/doc/docs_cli) for further details.
 
 :::note
 
@@ -331,6 +331,6 @@ In addition there are several more usefull fields, which are also relevant when 
     },
     "timeout": 64,
 
-The `launch` field specifies the specific launch file for this simulation and the package it rersides in. You may change it according to your needs.
+The `launch` field specifies the specific launch file for this simulation and the package it resides in. You may change it according to your needs.
 
 The `timeout` field, surprisingly enough, sets a timeout (in *seconds*) for each simulation run, after which it will be automatically halted.
