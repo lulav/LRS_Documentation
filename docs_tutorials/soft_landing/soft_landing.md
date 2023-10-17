@@ -1,55 +1,41 @@
 ---
-slug: Soft-Landing Example
-title: Soft-Landing
-authors: [orrlulavspace]
-tags: [CITROS]
+sidebar_position: 80
+sidebar_label: 'Soft Landing'
 ---
 
 # Soft Landing Tutorial
 
-![Alt text](img/soft-landing-of-a-spacecraft-on-the-moon.png)
-
-**Table of contents**
-
-1. [General Info](#general-info-🌐)
-    1. [System Dynamics](#system-dynamics-🏁)
-    2. [The Controller](#the-controller-🎮)
-2. [Installation](#installation-🛫)
-    1. [Prerequisits](#prerequisits-📝)
-    2. [Install & Build](#install--build-🏠)
-3. [CITROS Integration](#citros-integration-🛸)
-    1. [Configuring The Project](#configuring-the-project-⚙️)
-4. [Run The Example](#run-the-example-🌑)
-    1. [The Scenario](#the-scenario-🎥)
-    2. [Run A Test Simulation Locally With CITROS](#run-a-test-simulation-localy-with-citros-🕹️)
-    3. [Run A Test Simulation In The Web With CITROS](#run-a-test-simulation-in-the-web-with-citros-📡)
-
-
-## General Info  🌐
-
 This is a ROS 2 simulation of soft landing of an object.  
 In the ROS 2 system we have two nodes: the first represents the `dynamics` and the second one is the `controller`.
+- **System dynamics** - The system's equation of motion is the kinematic equation of a free body fall.  
+for more information see [Soft Landing](https://github.com/CITROS-garden/soft_landing)  
+
+- **The controller** - The controller is based on this paper:
+*S. Gutman, "Rendezvous and Soft Landing in Closed Form via LQ Optimization," 2019 27th Mediterranean Conference on Control and Automation (MED), Akko, Israel, 2019, pp. 536-540, doi: 10.1109/MED.2019.8798572.*
 
 ![jpg](img/soft_landing_control.jpg "soft landing")
 
-### **System Dynamics**  🏁
-The system's equation of motion is the kinematic equation of a free body fall.  
-for more information see [Soft Landing](https://github.com/CITROS-garden/soft_landing)  
-### **The Controller**  🎮
-The controller is based on this paper:
+## Table of Contents
 
-*S. Gutman, "Rendezvous and Soft Landing in Closed Form via LQ Optimization," 2019 27th Mediterranean Conference on Control and Automation (MED), Akko, Israel, 2019, pp. 536-540, doi: 10.1109/MED.2019.8798572.*
+3. [Installation](#installation)
+    1. [Prerequisits](#prerequisits)
+    2. [Install & build](#install--build)
+4. [CITROS Integration](#citros-integration)
+    1. [Configuring the project](#configuring-the-project)
+5. [Run the Example](#run-the-example)
+    1. [The scenario](#the-scenario)
+    2. [Run a test simulation locally with CITROS](#run-a-test-simulation-locally-with-citros)
+    3. [Run a test simulation in the web with CITROS](#run-a-test-simulation-in-the-web-with-citros)
 
+## Installation
 
-## Installation  🛫
-
-### Prerequisits 📝
- - ✅ Python 3.8+  
- - ✅ VSCode  
- - ✅ Docker  
+### Prerequisits
+ - Python 3.8+  
+ - VSCode  
+ - Docker  
  
    
-### Install & Build 🏠 
+### Install & build 
 1. Clone the repository:
    ```sh
     git clone git@github.com:citros-garden/soft_landing.git
@@ -63,7 +49,7 @@ The controller is based on this paper:
 3. open the repository in the container from VScode with `reopen in container` option.
 
 
-## CITROS Integration 🛸
+## CITROS Integration
 To use all the powerfull CITROS features usage requires CITROS installation:  
 (from the instructions on the CITROS CLI [GitHub page](https://github.com/lulav/CITROS_cli))
 
@@ -99,7 +85,8 @@ citros setup-ssh
 citros add-remote
 ```
 then check that we all set with the cli command: `CITROS status`
-## Configuring The Project ⚙️
+
+### Configuring the project
 After all the prerequisites done, we can start configuring our project. The starting point is the soft_landing devcontainer loaded and running, CITROS CLI is installed and ready.
 1. Initialize CITROS:
 ```bash 
@@ -115,9 +102,9 @@ Now you can see ```.CITROS``` folder in the explorer and at the terminal you can
 	source install/local_setup.bash
 	```
 
-## Run The Example 🌑
+## Run the Example
 
-### **The Scenario** 🎥
+### The scenario
 Run the example of an object with the initial condition that suppose to land on an ending point.  
 The parameters are:  
 
@@ -150,8 +137,8 @@ you can read more about changing parameters in  `parameter setups` section in `C
 ```  
 
 
-## Run A Test Simulation Locally With CITROS 🕹️	
-### Syncing The Project's Setup
+### Run a test simulation locally with CITROS
+#### Syncing project's setup
 Now we can sync our project settings with CITROS server:
 ```bash 
 citros commit
@@ -169,7 +156,8 @@ There are two option:
 The `simulation_dynamics_controller` launch the dynamics with the controller and `simulation_dynamics` launch only the dynamics.  
 Select the launch file by pressing ```Enter``` button and wait for the output in the terminal.  
 If the simulation ran perfectly you can run the simlulation in the cloud.
-## Run A Test Simulation In The Web With CITROS 📡
+
+### Run a test simulation in the web with CITROS
 Befor uploading the simulation to the cloud check that the parameter file, `default_param_setup.json`  in `.CITROS/parameter_setups` folder is set as you wish and saved.  
 That you have build and sourced the project.  
 And you have sync the project settings with CITROS server (CITROS commit , CITROS push).  
