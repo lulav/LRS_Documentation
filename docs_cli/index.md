@@ -61,7 +61,7 @@ hide_title: true
 
 # Description
 
-Welcome to Citros CLI. [Citros](http://citros.io/) serves as an innovative platform for executing ROS project simulations, automating integration, and conducting in-depth performance analysis.
+Welcome to Citros CLI. [Citros](https://citros.io/) serves as an innovative platform for executing ROS project simulations, automating integration, and conducting in-depth performance analysis.
 
 The Citros CLI offers ROS 2 developers a seamless interface to launch multiple ROS simulations for a specific project with just a single command. Beyond setting static parameter values, it empowers users with the flexibility to utilize function objects. This means you can craft dynamic simulation environments where each execution produces unique parameter values, whether they're sourced from standard numpy functions or tailored via user-defined computations. Moreover, these operations can be executed offline without relying on any external dependencies.
 
@@ -478,7 +478,7 @@ All changes in the working directory have been reverted to the last commit.
 ```
 
 ## login
-The `login` command allows you to authenticate your session with Citros. To use this command, you must already have a registered account with [Citros](citros.io), including a valid username (email) and password.
+The `login` command allows you to authenticate your session with Citros. To use this command, you must already have a registered account with [Citros](https://citros.io/), including a valid username (email) and password.
 
 By logging in, you unlock additional features such as cloud-based simulations, data analysis tools, automated report generation, and collaboration with other Citros users. Use this command to seamlessly integrate your local workspace with the Citros platform and fully utilize its capabilities.
 
