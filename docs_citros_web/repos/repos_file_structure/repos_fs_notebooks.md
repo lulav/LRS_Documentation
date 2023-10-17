@@ -1,3 +1,5 @@
 # Notebooks
 
-for more guidelines go to [Qucik Start/TBD](/docs/quickstart/quick_tbd) file
+Here you can see all the notebooks that made for a specific repository.
+
+![Alt text](img/repo4_image.png)

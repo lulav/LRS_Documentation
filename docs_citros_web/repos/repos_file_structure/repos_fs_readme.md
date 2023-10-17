@@ -1,3 +1,3 @@
 # Readme
 
-for more guidelines go to [Qucik Start/TBD](/docs/quickstart/quick_tbd) file
+Here you can provide a brief description of the project.

@@ -1,3 +1,5 @@
 # Repository File Structure
 
-for more guidelines go to [Qucik Start/TBD](/docs/quickstart/quick_tbd) file
+The following folder and file structure is automatically generated for you (when you run `citros init`).
+
+![Alt text](img/repo5_image.png)

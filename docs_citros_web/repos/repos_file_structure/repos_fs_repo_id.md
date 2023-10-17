@@ -1,3 +1,3 @@
 # Repo ID
 
-for more guidelines go to [Qucik Start/TBD](/docs/quickstart/quick_tbd) file
+Here is the repository ID, which is required to access the simulation database for notebook analysis.

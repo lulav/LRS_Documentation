@@ -1,3 +1,3 @@
 # Reports
 
-for more guidelines go to [Qucik Start/TBD](/docs/quickstart/quick_tbd) file
+You can view all the reports created in this repository here.
