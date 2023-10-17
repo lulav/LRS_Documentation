@@ -5,37 +5,36 @@ sidebar_label: 'Galactic orbits'
 
 # Globular star cluster orbit simulations
 
-The current repository is dedicated to demonstrating the application CITROS and of the [**citros_data_analysis**](https://citros.io/doc/docs_data_analysis) package using the example of star globular cluster orbit simulations.
+The current repository is dedicated to demonstrating the application of **CITROS** system and of the [**citros_data_analysis**](https://citros.io/doc/docs_data_analysis) package using star globular cluster orbit simulations as an example.
 
-## Table of Contents
-1. [Overview](#overview)
-2. [CITROS usage](#citros-usage)
-   - [Set up the project](#set-up-the-project)
-   - [Run locally (offline)](#run-locally-offline)
-   - [Run in CITROS cloud](#run-in-citros-cloud)
-   - [Parameter setups](#parameter-setups)
-
-## Overview
 Globular star clusters are gravitationally bound, dense and rich aggregations of stars, that can be found nearly in every galaxy, including our own Milky Way. In comparison with another type of star clusters, the open clusters, globular clusters are populated with older stars and can have up to millions of members. Another notable difference is that they are not part of the disk component but belong to the halo. This means they can be located far from both the thin and thick disks of the Galaxy, which have thicknesses of about 300 pc and 2.6 kpc, respectively.
+
+To calculate orbits the Python package [GalOrb](https://github.com/ChemelAA/GalOrb-Package) was adopted. The orbits are calculated in a non-axisymmetric gravitational potential, using an adopted model of the Galaxy with four components: disk, spheroid, dark-matter halo, and a bar. Details on this package, as well as parameters required for simulations, can be found in the article [Globular Clusters: Absolute Proper Motions and Galactic Orbits](https://link.springer.com/article/10.1134/S1990341318020049), [arXiv](https://arxiv.org/pdf/1804.07086.pdf).
 
 ![figNGC6316](img/NGC6316.png "NGC6316")
 
 *globular star cluster NGC 6316, Atlas Image [or Atlas Image mosaic] obtained as part of the Two Micron All Sky Survey (2MASS), a joint project of the University of Massachusetts and the Infrared Processing and Analysis Center/California Institute of Technology, funded by the National Aeronautics and Space Administration and the National Science Foundation*.
 
-For the calculations of the orbits, the Python package [GalOrb](https://github.com/ChemelAA/GalOrb-Package) was adopted. The orbits are calculated in a non-axisymmetric gravitational potential, using an adopted model of the Galaxy with four components: disk, spheroid, dark-matter halo, and a bar. Details on this package, as well as parameters required for simulations, can be found in the article [Globular Clusters: Absolute Proper Motions and Galactic Orbits](https://link.springer.com/article/10.1134/S1990341318020049), [arXiv](https://arxiv.org/pdf/1804.07086.pdf).
+## Table of Contents
+1. [CITROS usage](#citros-usage)
+   - [Set up the project](#set-up-the-project)
+   - [Run locally (offline)](#run-locally-offline)
+   - [Run in CITROS cloud](#run-in-citros-cloud)
+   - [Parameter setups](#parameter-setups)
 
 ## CITROS usage
 
-The description of the CITROS CLI is presented in details in the [Tutorial](https://citros.io/doc/blog/Cannon).
+The description of the CITROS CLI is presented in details in the [Tutorial](https://citros.io/doc/docs_tutorials/).
 
-Briefly, you need to clone project, set the parameters, synchronize with CITROS and either run locally or upload project image and run in CITROS cloud.
+Briefly, you need to clone project from the GitHub, set the parameters, install CITROS and either run locally or upload project image and run in a CITROS cloud.
 
 ### Set up the project
-#### Clone github repository
+#### Clone GitHub repository
 ```bash
 $ git clone git@github.com:citros-garden/gal_orbits.git
 $ cd ~/gal_orbits
 ```
+If you do not have the SSH key required for cloning the GitHub repository, please follow the steps described in [ssh key tutorial](https://citros.io/doc/docs_citros_web/authentication/ssh/ssh_generate_key).
 
 #### Build the project
 ```bash
