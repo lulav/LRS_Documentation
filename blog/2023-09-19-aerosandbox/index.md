@@ -27,7 +27,7 @@ Although you can get simulation results using FoxGlove, the best way to work wit
 
 ### CITROS Installation 🛫
 
-First of all, to use all the powerfull CITROS features usage requires CITROS installation: follow the instructions on the CITROS CLI [Documentation page](https://citros.io/doc/docs_cli).
+First of all, to use all the powerfull CITROS features the CLI installation is required: follow the instructions on the CITROS CLI [documentation page](https://citros.io/doc/docs_cli).
 
 ### Configuring the Project ⚙️
 After all the prerequisites are met, we can start configuring our project. The starting point is the Poliastro devcontainer loaded and running, CITROS CLI is installed and ready.
@@ -66,12 +66,6 @@ Don't forget to save the file!
     |--|--|--
     aerosandbox_cessna.launch.py	|aerosandbox_cessna	|Aerosandbox simulation launch file 
 
-### Synchronizing the Project's Setup 📡
-Now we can synchronize our project settings with CITROS server:
-```bash 
->>> citros commit
->>> citros push
-```
 
 :::tip
 
@@ -97,11 +91,20 @@ created new batch_id: <your-batch-id-here>. Running locally.
 
 ![gif](img/gif0.gif "FoxGlove example")
 
+### Synchronizing the Project's Setup 📡
+CITROS account is required for cloud usage. Follow the instructions on [CITROS Website](https://citros.io/auth/login) to register a new one, or check the [CLI documentation](https://citros.io/doc/docs_cli) for logging in. To complete the following steps, it is assumed that the user is registered, logged in and has met all requirements for Web Usage.
+Now we can synchronize our project settings with CITROS server:
+```bash 
+>>> citros commit
+>>> citros push
+```
+
 ### Uploading Docker Image to CITROS Cloud 🚛
 We need to build and push a Docker container image to the CITROS server:
 ```bash 
 >>> citros docker-build-push
 Logging in to docker...
+...
 ```
 
 ### Running in the Cloud 🛰️
@@ -171,7 +174,7 @@ citros = da.CitrosDB(batch = batch_id)
 citros.info().print()
 ```
 
-The last command returns general database info:
+The last command returns general batch info:
 ```python
 {
  'size': '261 kB',

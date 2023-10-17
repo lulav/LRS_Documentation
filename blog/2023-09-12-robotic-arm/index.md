@@ -13,14 +13,14 @@ Blog posts support [Docusaurus Markdown features](https://docusaurus.io/docs/mar
 
 This project is designed to wrap the [Robotic Arm Simulation project](https://github.com/dvalenciar/robotic_arm_environment) and integrate it with CITROS platform. The node provides ROS parameters that allow users to adjust target arm joints position.
 
-All project installation, code overview and usage details are also available on the project's[GitHub page](https://github.com/citros-garden/robotic_arm).
+All project installation, code overview and usage details are also available on the project's [GitHub page](https://github.com/citros-garden/robotic_arm).
 
 ## CITROS Usage 🛸
 Although you can get simulation results using FoxGlove, the best way to work with such simulations and process the results is CITROS! With its power, it is possible to create complex data processing scenarios, including the construction of more complex graphs, mathematical analysis and other high-level processing methods.
 
 ### CITROS Installation 🛫
 
-First of all, to use all the powerfull CITROS features usage requires CITROS installation: follow the instructions on the CITROS CLI [documentation](https://citros.io/doc/docs_cli).
+First of all, to use all the powerfull CITROS features the CLI installation is required: follow the instructions on the CITROS CLI [documentation page](https://citros.io/doc/docs_cli).
 
 ### Configuring the Project ⚙️
 After all the prerequisites are met, we can start configuring our project. The starting point is the Robotic Arm devcontainer loaded and running, CITROS CLI is installed and ready.
@@ -60,12 +60,6 @@ Now you can see ```.citros``` folder in the explorer.
     |--|--|--
     my_doosan_gazebo_controller.launch.py	|my_doosan_pkg	|Gazebo Robotic Arm launch file 	
 
-### Synchronizing the Project's Setup 📡
-Now we can synchronize our project settings with CITROS server:
-```bash 
->>> citros commit
->>> citros push
-```
 :::tip
 
 CITROS CLI, in addition to other benefits, also provides an automatic ROS bag recording option, which allows user to use saved simulation results and export them! :)
@@ -88,6 +82,14 @@ created new batch_id: <your-batch-id-here>. Running locally.
 ```
 
 ![gif](img/foxglove1.gif "FoxGlove example")
+
+### Synchronizing the Project's Setup 📡
+CITROS account is required for cloud usage. Follow the instructions on [CITROS Website](https://citros.io/auth/login) to register a new one, or check the [CLI documentation](https://citros.io/doc/docs_cli) for logging in. To complete the following steps, it is assumed that the user is registered, logged in and has met all requirements for Web Usage.
+Now we can synchronize our project settings with CITROS server:
+```bash 
+>>> citros commit
+>>> citros push
+```
 
 ### Uploading Docker Image to CITROS Cloud 🚛
 We need to build and push a Docker container image to the CITROS server:
@@ -156,7 +158,7 @@ citros = da.CitrosDB(batch = batch_id)
 citros.info().print()
 ```
 
-The last command returns general database info:
+The last command returns general batch info:
 ```python
 {
  'size': '15 MB',

@@ -15,7 +15,7 @@ This Lunar Starship mission project addresses the lunar hopper challenge by opti
 
 Through the Lunar Starship project, researchers are paving the way for sustainable lunar exploration, as it not only optimizes missions but also conserves valuable resources for extended stays on the Moon. By allowing for the integration of real dynamic functions, it fosters adaptability and resilience in lunar operations, making it a cornerstone of future lunar exploration endeavors.
 
-All project installation, code overview and usage details also available in the project [GitHub page](https://github.com/citros-garden/lunar_starship).
+All project installation, code overview and usage details are also available on the project's [GitHub page](https://github.com/citros-garden/lunar_starship).
 
 
 ## CITROS Usage 🛸
@@ -23,7 +23,7 @@ Although you can get simulation results using FoxGlove, the best way to work wit
 
 ### CITROS Installation 🛫
 
-First of all, to use all the powerfull CITROS features usage requires CITROS installation: follow the instructions on the CITROS CLI [documentation page](https://citros.io/doc/docs_cli).
+First of all, to use all the powerfull CITROS features the CLI installation is required: follow the instructions on the CITROS CLI [documentation page](https://citros.io/doc/docs_cli).
 
 ### Configuring the Project ⚙️
 After all the prerequisites are met, we can start configuring our project. The starting point is the Lunar_Starship devcontainer loaded and running, CITROS CLI is installed and ready.
@@ -77,13 +77,6 @@ Now you can see ```.citros``` folder in the explorer.
     |--|--|--
     lunar_starship.launch.py	|lunar_starship	|Lunar Starship simulation launch file 	
 
-### Synchronizing the Project's Setup 📡
-Now we can synchronize our project settings with CITROS server:
-```bash 
->>> citros commit
->>> citros push
-```
-
 :::tip
 
 CITROS CLI, in addition to other benefits, also provides an automatic ROS bag recording option, which allows user to use saved simulation results and export them! :)
@@ -109,6 +102,14 @@ created new batch_id: <your-batch-id-here>. Running locally.
 
 ![gif](img/gif0.gif "FoxGlove example")
 ![png](img/img1.png "FoxGlove example")
+
+### Synchronizing the Project's Setup 📡
+CITROS account is required for cloud usage. Follow the instructions on [CITROS Website](https://citros.io/auth/login) to register a new one, or check the [CLI documentation](https://citros.io/doc/docs_cli) for logging in. To complete the following steps, it is assumed that the user is registered, logged in and has met all requirements for Web Usage.
+Now we can synchronize our project settings with CITROS server:
+```bash 
+>>> citros commit
+>>> citros push
+```
 
 ### Uploading Docker Image to CITROS Cloud 🚛
 We need to build and push a Docker container image to the CITROS server:
@@ -184,7 +185,7 @@ citros = da.CitrosDB(batch = batch_id)
 citros.info().print()
 ```
 
-The last command returns general database info:
+The last command returns general batch info:
 ```python
 {
  'size': '543 kB',
