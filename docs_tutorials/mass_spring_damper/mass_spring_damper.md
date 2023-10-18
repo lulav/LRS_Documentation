@@ -57,8 +57,8 @@ you can tune the controller gains, $k_p$, $k_i$, $k_d$, configured as ROS 2 para
 
 ## CITROS Usage
 
-### CITROS Installation 🛫
-First of all, to use all the powerfull CITROS features usage requires CITROS installation: follow the instructions on the CITROS CLI [documentation](https://citros.io/doc/docs/cli/cli_install)
+### CITROS Installation
+First of all, to use all the powerfull CITROS features usage requires CITROS installation: follow the instructions on the CITROS CLI [documentation](https://citros.io/doc/docs_cli/)
 
 ### Configuring the Project
 
