@@ -1,9 +1,9 @@
 ---
 sidebar_position: 150
-sidebar_label: 'Galactic orbits'
+sidebar_label: 'Galactic Orbits'
 ---
 
-# Globular star cluster orbit simulations
+# Globular Star Cluster Orbit Simulations
 
 The current repository is dedicated to demonstrating the application of **CITROS** system and of the [**citros_data_analysis**](https://citros.io/doc/docs_data_analysis) package using star globular cluster orbit simulations as an example.
 
@@ -16,19 +16,19 @@ To calculate orbits the Python package [GalOrb](https://github.com/ChemelAA/GalO
 *globular star cluster NGC 6316, Atlas Image [or Atlas Image mosaic] obtained as part of the Two Micron All Sky Survey (2MASS), a joint project of the University of Massachusetts and the Infrared Processing and Analysis Center/California Institute of Technology, funded by the National Aeronautics and Space Administration and the National Science Foundation*.
 
 ## Table of Contents
-1. [CITROS usage](#citros-usage)
-   - [Set up the project](#set-up-the-project)
-   - [Run locally (offline)](#run-locally-offline)
-   - [Run in CITROS cloud](#run-in-citros-cloud)
-   - [Parameter setups](#parameter-setups)
+1. [CITROS Usage](#citros-usage)
+   1. [Configuring the project](#configuring-the-project)
+   2. [Running locally](#running-locally)
+   3. [Run in CITROS cloud](#run-in-citros-cloud)
+   4. [Parameter setups](#parameter-setups)
 
-## CITROS usage
+## CITROS Usage
 
 The description of the CITROS CLI is presented in details in the [Tutorial](https://citros.io/doc/docs_tutorials/).
 
 Briefly, you need to clone project from the GitHub, set the parameters, install CITROS and either run locally or upload project image and run in a CITROS cloud.
 
-### Set up the project
+### Configuring the project
 #### Clone GitHub repository
 ```bash
 $ git clone git@github.com:citros-garden/gal_orbits.git
@@ -47,7 +47,7 @@ $ source install/local_setup.bash
 $ pip install citros
 ```
 
-### Run locally (offline)
+### Running locally
 
 #### Initialization
 ```bash
@@ -81,7 +81,7 @@ $ citros setup-ssh
 ```bash
 $ citros init
 ```
-The .citros directory can only be initialized once. If you initialized it previously, when [running simulation locally](#run-locally-offline) and the directory `.citros` exists in your local folder tree but does not exist on remote server, you can:
+The .citros directory can only be initialized once. If you initialized it previously, when [running simulation locally](#running-locally) and the directory `.citros` exists in your local folder tree but does not exist on remote server, you can:
 ```
 $ citros add-remote
 ```
@@ -107,6 +107,8 @@ Simillar to [running simulation locally](#run-simulation), but with an additiona
 ```bash
 $ citros run -n "galactic orbits" -m "first run" -c 5 -r
 ```
+
+Now that your simulation is complete, you're ready to check the results! Explore the notebooks in `.citros/notebooks`. There, you'll find examples prepared using the [citros_data_analysis package](https://citros.io/doc/docs_data_analysis) on how to query, analyze, and present results. Feel free to use them or create your own!
 
 ### Parameter setups
 
