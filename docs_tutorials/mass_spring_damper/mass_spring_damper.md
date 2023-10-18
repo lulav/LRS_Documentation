@@ -24,7 +24,7 @@ The example contains two ROS 2 packages: `dynamics` and `controller`.
     - [Launch Files](#launch-files)
     - [Initialize CITROS:](#initialize-citros)
     - [Run with CITROS:](#run-with-citros)
-  - [Syncing the Project's setup](#syncing-the-projects-setup)
+    - [Syncing the Project's setup](#syncing-the-projects-setup)
     - [Normal distributed mass](#normal-distributed-mass)
 
 ## System Dynamics
@@ -98,7 +98,7 @@ After all the prerequisites done, we can start configuring our project. Open the
 
 After running the command, choose the launch file you wish to run. The simulation will start and you could see the mass position and the control signal in the terminal's logs.
 
-## Syncing the Project's setup
+### Syncing the Project's setup
 
 Follow the [guide](https://citros.io/doc/docs/cli/cli_commands/cli_sync) for syncing CITROS project with the server.
 
