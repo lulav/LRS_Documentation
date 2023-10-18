@@ -227,64 +227,6 @@ module.exports = {
       ],
     },
 
-
-    //Simulations
-    {
-      type: 'category',
-      label: 'Simulations',
-      collapsible: true,
-      collapsed: true,
-      items: [
-        {
-          type: 'doc',
-          label: 'Overview',
-          id: 'simulations/sim_overview',
-        },
-        {
-          type: 'category',
-          label: 'Batch Simulations',
-          items: [
-            // {
-            //   type: 'doc',
-            //   label: 'Breadcrumbs',
-            //   id: 'simulations_batch/sim_batch_breadcrumbs',
-            // },
-            {
-              type: 'doc',
-              label: 'Run New Batch Simulations',
-              id: 'simulations_batch/sim_batch_run',
-            },
-            {
-              type: 'doc',
-              label: 'Batch Simulations Screen',
-              id: 'simulations_batch/sim_batch_screen',
-            },
-          ]
-        },
-        {
-          type: 'category',
-          label: 'Simulation Screen',
-          items: [
-            // {
-            //   type: 'doc',
-            //   label: 'Breadcrumbs',
-            //   id: 'simulation_screen/sim_breadcrumbs',
-            // },
-            {
-              type: 'doc',
-              label: 'Possible Runs',
-              id: 'simulation_screen/sim_possible_runs',
-            },
-            {
-              type: 'doc',
-              label: 'Logs',
-              id: 'simulation_screen/sim_logs',
-            },
-          ]
-        },
-      ],
-    },
-
     //Repositories
     {
       type: 'category',
@@ -370,9 +312,6 @@ module.exports = {
         },
       ],
     },
-
-
-
 
     //Data Analysis
     //

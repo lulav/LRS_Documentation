@@ -135,15 +135,10 @@ module.exports = {
     //Simulations
     {
       type: 'category',
-      label: 'Simulations',
+      label: 'Runs',
       collapsible: true,
       collapsed: true,
       items: [
-        {
-          type: 'doc',
-          label: 'Getting Started with Simulations',
-          id: 'simulations/sim_quick_start',
-        },
         {
           type: 'doc',
           label: 'Overview',
@@ -151,13 +146,23 @@ module.exports = {
         },
         {
           type: 'doc',
-          label: 'Batch Page',
-          id: 'simulations/sim_batch_screen',
+          label: 'Batch Runs',
+          id: 'simulations/sim_batch_runs',
         },
         {
           type: 'doc',
-          label: 'Run Page',
-          id: 'simulations/sim_run_screen',
+          label: 'Batch Run',
+          id: 'simulations/sim_batch_run',
+        },
+        {
+          type: 'doc',
+          label: 'Simulation Run',
+          id: 'simulations/sim_run',
+        },
+        {
+          type: 'doc',
+          label: 'Batch Runs Quick Start',
+          id: 'simulations/sim_quick_start',
         },
       ],
     },

@@ -1,3 +1,25 @@
+<!-- # Batch Run
+## Introduction
+
+## Batch Runs Table
+//explanations about it
+### Run ID
+### Last Message
+### ...
+
+## Batch Runs Details
+//explanations about it
+### Run Name
+### Status
+### ...
+
+
+## Available actions
+### search run
+...
+###
+-->
+
 # Run Page Overview
 
 **Introduction:**
