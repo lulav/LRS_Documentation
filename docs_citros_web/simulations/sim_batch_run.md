@@ -22,7 +22,7 @@
 
 # Run Page Overview
 
-**Introduction:**
+## Overview
 The Simulation Run Page provides a detailed record of all simulation logs across various levels, from high-level batch (e.g., CITROS level) down to granular simulation logging levels. It also showcases the status messages related to the simulation, offering insights into the simulation's progression, state, and any potential issues or milestones.
 
 ![png](img/run0.png "Run page")
