@@ -121,9 +121,8 @@ $$
 \sigma = 0.3 
 $$
 
-All the parameters can be set following the CITROS parameter guide.
+All the parameters can be set following the CITROS [parameter guide](https://citros.io/doc/docs_citros_web/repos/repos_file_structure/repos_fs_param_setup).
 
-**TODO: add parameter guide**
 
 The initial condition are:
 
