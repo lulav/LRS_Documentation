@@ -20,8 +20,8 @@ The example contains two ROS 2 packages: `dynamics` and `controller`.
     - [Configuring the project](#configuring-the-project)
     - [Parameters](#parameters)
     - [Launch Files](#launch-files)
-    - [Initialize CITROS:](#initialize-citros)
-    - [Run with CITROS:](#run-with-citros)
+    - [Initialize CITROS](#initialize-citros)
+    - [Run with CITROS](#run-with-citros)
     - [Syncing the Project's setup](#syncing-the-projects-setup)
     - [Normal distributed mass](#normal-distributed-mass)
 
