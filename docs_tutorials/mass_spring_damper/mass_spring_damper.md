@@ -13,8 +13,6 @@ This is a simple ROS demonstration of a mass-spring-damper system.
 The example contains two ROS 2 packages: `dynamics` and `controller`.
 
 ## Table of Contents
-- [Mass Spring Damper](#mass-spring-damper)
-  - [Table of Contents](#table-of-contents)
   - [System Dynamics](#system-dynamics)
   - [The Controller](#the-controller)
   - [CITROS Usage](#citros-usage)
