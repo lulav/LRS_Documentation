@@ -1,6 +1,6 @@
 # Runs page Overview
 
-**Introduction:**
+## Introduction
 The `Runs` page is comprized of a list of your team's simulation runs. It allows you to manage and monitor simulations easily and efficiently. In this tutorial, we will walk through the key features and functionalities of this page to help you navigate and utilize it effectively.
 
 ![png](img/runs0.png "Runs page overview")
