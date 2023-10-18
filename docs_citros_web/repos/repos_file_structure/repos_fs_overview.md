@@ -1,5 +1,0 @@
-# Repository File Structure
-
-The following folder and file structure is automatically generated for you (when you run `citros init`).
-
-![Alt text](img/repo5_image.png)

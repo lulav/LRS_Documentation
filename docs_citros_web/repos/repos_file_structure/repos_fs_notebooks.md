@@ -1,5 +1,0 @@
-# Notebooks
-
-Here you can see all the notebooks that made for a specific repository.
-
-![Alt text](img/repo4_image.png)
