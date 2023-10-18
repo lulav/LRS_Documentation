@@ -18,9 +18,9 @@ Through the Lunar Starship project, researchers are paving the way for sustainab
 1. [CITROS Usage](#citros-usage)
     1. [CITROS installation](#citros-installation)
     2. [Configuring the project](#configuring-the-project)
-    3. [Syncing project's setup](#syncing-projects-setup)
-    4. [Running locally](#running-locally)
-    5. [Uploading Docker image to the CITROS cloud](#uploading-docker-image-to-the-citros-cloud)
+    3. [Running locally](#running-locally)
+    4. [Synchronizing project's setup](#synchronizing-the-projects-setup)
+    5. [Uploading Docker image to the CITROS cloud](#uploading-docker-image-to-citros-cloud)
     6. [Running in the cloud](#running-in-the-cloud)
     7. [CITROS web usage](#citros-web-usage)
 2. [Extras](#extras)
@@ -31,7 +31,7 @@ Although you can get simulation results using FoxGlove, the best way to work wit
 
 ### CITROS installation
 
-First of all, to use all the powerfull CITROS features usage requires CITROS installation: follow the instructions on the CITROS CLI [GitHub page](https://github.com/lulav/citros_cli).
+First of all, to use all the powerfull CITROS features the CLI installation is required: follow the instructions on the CITROS CLI [documentation page](https://citros.io/doc/docs_cli).
 
 ### Configuring the project
 After all the prerequisites are met, we can start configuring our project. The starting point is the Lunar_Starship devcontainer loaded and running, CITROS CLI is installed and ready.
@@ -55,7 +55,7 @@ Now you can see ```.citros``` folder in the explorer.
 
 2. Configuring the setup. We need to set up the maximum performance available: timeout, CPU, GPU and Memory. To perform it, we need to define them in ```.citros/simulations/simulation_lunar_starship.json```. The recommended setup is minimum 600 seconds timeout, 4 CPU, 4 GPU and 4096 MB of Memory. Don't forget to save the file!
 
-3. Configuring the params setup. You can find the default setup in ```.citros/parameter_setups/default_param_setup.json```. [CITROS CLI](https://github.com/lulav/citros_cli) provides an opportunity to use basic NumPy functions (such as distributions) and even user-defined functions, but let's keep it default for now. Variables with '_0' are initial conditions, and variables with '_f' are final conditions respectively. Don't forget to save the file!
+3. Configuring the params setup. You can find the default setup in ```.citros/parameter_setups/default_param_setup.json```. [CITROS CLI](https://citros.io/doc/docs_cli) provides an opportunity to use basic NumPy functions (such as distributions) and even user-defined functions, but let's keep it default for now. Variables with '_0' are initial conditions, and variables with '_f' are final conditions respectively. Don't forget to save the file!
 
     |Parameter	|Package	|Description
     |--|--|--
@@ -85,13 +85,6 @@ Now you can see ```.citros``` folder in the explorer.
     |--|--|--
     lunar_starship.launch.py	|lunar_starship	|Lunar Starship simulation launch file 	
 
-### Syncing project's setup
-Now we can synchronize our project settings with CITROS server:
-```bash 
->>> citros commit
->>> citros push
-```
-
 :::tip
 
 CITROS CLI, in addition to other benefits, also provides an automatic ROS bag recording option, which allows user to use saved simulation results and export them! :)
@@ -118,6 +111,14 @@ created new batch_id: <your-batch-id-here>. Running locally.
 ![gif](img/gif0.gif "FoxGlove example")
 ![png](img/img1.png "FoxGlove example")
 
+### Synchronizing the Project's Setup 
+CITROS account is required for cloud usage. Follow the instructions on [CITROS Website](https://citros.io/auth/login) to register a new one, or check the [CLI documentation](https://citros.io/doc/docs_cli) for logging in. To complete the following steps, it is assumed that the user is registered, logged in and has met all requirements for Web Usage.
+Now we can synchronize our project settings with CITROS server:
+```bash 
+>>> citros commit
+>>> citros push
+```
+
 ### Uploading Docker image to CITROS cloud
 We need to build and push a Docker container image to the CITROS server:
 ```bash 
@@ -142,19 +143,7 @@ created new batch_id: <your-batch-id-here>. Running on Citros cluster. See https
 
 ### CITROS web usage 
 #### Launching project via CITROS web
-The best way to use all the innovative capabilities of CITROS is through it's Web interface. The following manual explains how to run this project in the cloud and how to process the simualtion results.
-The starting point is CITROS main page, user is logged in and the project Docker image is built and pushed to the cloud (see the [manual](#uploading-docker-image-to-citros-cloud) above).
-1. Go to the ```Repositories``` page clicking on the tab on the top;
-2. Find your project and open it;
-3. Navigate to the ```Runs``` tab;
-4. Click on the ```Run Simulation``` button on the right;
-5. Now you can select the project and the simulation setup from the drop-down lists, set the number of repeats and how many simulations should run in parallel, type the Name of the run and the additional message. This window also shows the perfomance preset.
-6. We are ready to go! Start the Batch with the button below.
-
-The simualtion launched! Open the Run you just started in the list on ```Runs``` page to check how it is going. On this page you can find all the runs of this batch. The number of runs here equals to the number of runs you've set before.
-Navigate to the Run by clicking on it in the table:
-* The main part of this page is a simulation's log. Here you can find all the logging information from all levels: from your code logs up to the CITROS system information.
-* The right part of the page provides additional information about Events: the main stages of the simulation run.
+The best way to use all the innovative capabilities of CITROS is through it's Web interface. Follow [this manual](https://citros.io/doc/docs_citros_web/simulations/sim_overview) to easily launch a simulation on CITROS Web platform.
 
 #### Working with Integrated Jupiter notebooks and data analysis
 
@@ -172,7 +161,7 @@ Let's quickly go through the key points of using a Jupiter Notebook and fetching
 },
 ```
 
-All necessary things are already configured (we used a NumPy distribution function, you can read more about its usage in the [CITROS CLI](https://github.com/lulav/citros_cli#examples---user-defined) manual), so you can start the simulation from [CLI](#citros-usage-🛸) with the ```-c 10``` flag: 
+All necessary things are already configured (we used a NumPy distribution function, you can read more about its usage in the [CITROS CLI](https://citros.io/doc/docs_cli) manual), so you can start the simulation from [CLI](#citros-usage-🛸) with the ```-c 10``` flag: 
 
 ```bash 
 >>> citros run -n 'Lunar_Starship' -m 'local test run' -r -c 10
@@ -204,7 +193,7 @@ citros = da.CitrosDB(batch = batch_id)
 citros.info().print()
 ```
 
-The last command returns general database info:
+The last command returns general batch info:
 ```python
 {
  'size': '543 kB',
@@ -317,7 +306,7 @@ This graph shows us the travelled distance depending of Specific impulse:
 
 ![png](img/citros3.png "CITROS example")
 ## Extras
-### Foxglove examples
+### FoxGlove examples
 
 ![png](img/img0.png "FoxGlove example")
 
