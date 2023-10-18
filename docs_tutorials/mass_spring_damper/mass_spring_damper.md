@@ -60,7 +60,7 @@ you can tune the controller gains, $k_p$, $k_i$, $k_d$, configured as ROS 2 para
 ### CITROS Installation 🛫
 First of all, to use all the powerfull CITROS features usage requires CITROS installation: follow the instructions on the CITROS CLI [documentation](https://citros.io/doc/docs/cli/cli_install)
 
-### Configuring the project
+### Configuring the Project
 
 After all the prerequisites done, we can start configuring our project. Open the project's repository in `VSCode` and reopen the project in a the VSCode's `devcontainer`.
 
@@ -96,13 +96,13 @@ After all the prerequisites done, we can start configuring our project. Open the
 
 After running the command, choose the launch file you wish to run. The simulation will start and you could see the mass position and the control signal in the terminal's logs.
 
-### Syncing the Project's setup
+### Syncing the Project's Setup
 
 Follow the [guide](https://citros.io/doc/docs/cli/cli_commands/cli_sync) for syncing CITROS project with the server.
 
 
 
-### Normal distributed mass
+### Normal Distributed Mass
 
 Supposed we tune the PID gains of the controller for the nominal mass, and we reached a satisfying results.
 
