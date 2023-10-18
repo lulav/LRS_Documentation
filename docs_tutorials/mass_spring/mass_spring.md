@@ -1,67 +1,58 @@
 ---
-sidebar_position: 30
-sidebar_label: 'Mass Spring Damper'
+slug: Mass-Spring-Damper Control Example
+title: Mass-Spring-Damper
+authors: [iftahnaf]
+tags: [citros]
 ---
 
-# Mass Spring Damper
+# Example Overview 🌐
 
 This is a simple ROS demonstration of a mass-spring-damper system.
 
-![jpg](img/system.jpeg)
+![jpeg](img/system.jpeg)
 
 The example contains two ROS 2 packages: `dynamics` and `controller`.
 
-
-## Table of Contents
-1. [System Dynamics](#system-dynamics)
-2. [CITROS Installation](#citros-installation)
-3. [The Controller](#the-controller)
-4. [CITROS Usage](#citros-usage)
-    1. [CITROS Installation](#citros-installation)
-    2. [Configuring the project](#configuring-the-project)
-    3. [Parameters](#parameters)
-    3. [Launch files](#launch-files)
-    4. [Initialize CITROS](#initialize-citros)
-    5. [Run with CITROS](#run-with-citros)
-    3. [Syncing project's setup](#syncing-projects-setup)
-    4. [Normal distributed mass](#normal-distributed-mass)
-    
-## System Dynamics
+## System Dynamics 🏁
 
 The system's equations of motion:
 
-$$m\ddot x =  kf(t) -c\dot x -kx$$
+$$
+        m\ddot x =  kf(t) -c\dot x -kx
+$$
 
 and after laplace transformation (with zero I.C) we get a second order system:
 
-${X \over F} = {\omega_n^2 \over s^2 +2\omega_n\zeta s + \omega_n^2} $
+$$
+        {X \over F} = {\omega_n^2 \over s^2 +2\omega_n\zeta s + \omega_n^2}
+$$
 
 where the natural frequency $\omega_n = \sqrt{k \over m}$
 
 You can choose the system's parameters `m`, `k` and `c` and choose the initial condition `x0`, `v0` and `a0`, all configured as ROS 2 parameters.
 
-## The Controller
+## The Controller 🎮
 
 You can write your own controller to try stabilize the system for a given setpoint.
 
 the default controller is a simple PID controller with the following form:
 
-$$f(t) = {k_pe(t) + k_i\int{e(t)dt}} + k_d {d\over dt}(e(t))$$
+$$
+        f(t) = {k_pe(t) + k_i\int{e(t)dt}} + k_d {d\over dt}(e(t))
+$$
 
 you can tune the controller gains, $k_p$, $k_i$, $k_d$, configured as ROS 2 parameters.
 
-## CITROS Usage
+# CITROS Usage 🛸
 
-### CITROS installation
-First of all, to use all the powerfull CITROS features usage requires CITROS installation: follow the instructions on the CITROS CLI GitHub page. 
+## CITROS Installation 🛫
+First of all, to use all the powerfull CITROS features usage requires CITROS installation: follow the instructions on the CITROS CLI [documentation](https://citros.io/doc/docs/cli/cli_install)
 
-**TODO: add installation tutorial**
-
-### Configuring the project
+## Configuring the Project ⚙️
 
 After all the prerequisites done, we can start configuring our project. Open the project's repository in `VSCode` and reopen the project in a the VSCode's `devcontainer`.
 
-### Parameters
+## Parameters
 
 | Parameter | Package | Description
 | --------|  --------|  --------|
@@ -76,41 +67,45 @@ After all the prerequisites done, we can start configuring our project. Open the
 |v | dynamics | The mass initial velocity
 |a | dynamics | The mass initial acceleration
 
-### Launch Files
+## Launch Files
 
 |Launch file| Description
 | --------|  --------|
 |dynamics.launch.py | Launch the uncontrolled system
 |dynamics_controller.launch.py | Launch the controlled system with PID controller
 
-### Initialize CITROS
+## Initialize CITROS:
 
-    citros init
+        citros init
 
-### Run with CITROS
+## Run with CITROS:
 
-    citros run -n "default" -m "default simulation"
+        citros run -n "default" -m "default simulation"
 
 After running the command, choose the launch file you wish to run. The simulation will start and you could see the mass position and the control signal in the terminal's logs.
 
-### Syncing project's setup
+## Syncing the Project's Setup 📡
 
-Follow the guide for syncing CITROS project with the server.
+Follow the [guide](https://citros.io/doc/docs/cli/cli_commands/cli_sync) for syncing CITROS project with the server.
 
-**TODO: add guide for syncing with the server**
 
-### Normal distributed mass
+
+## Normal Distributed Mass
 
 Supposed we tune the PID gains of the controller for the nominal mass, and we reached a satisfying results.
 
 Now we want to know how robust was the tuning for a normal distributd mass:
 
-$$ m = N(\mu, \sigma)$$
+$$ 
+m = N(\mu, \sigma)
+$$
 
 where:
 
-$$ \mu = 1.0,    
-\sigma = 0.3 $$
+$$ 
+\mu = 1.0,    
+\sigma = 0.3 
+$$
 
 All the parameters can be set following the CITROS parameter guide.
 
@@ -134,7 +129,7 @@ We will define the following requirements:
 
 Lets run `50` simulations in the server and analyze the results:
 
-![img](img/analysis.jpeg)
+![jpeg](img/analysis.jpeg)
 
 
 We can see that `43` tests were passed the requirements, `6` failed and `1` was generated invalid mass $(<0)$.
