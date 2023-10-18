@@ -16,7 +16,7 @@ The example contains two ROS 2 packages: `dynamics` and `controller`.
   - [System Dynamics](#system-dynamics)
   - [The Controller](#the-controller)
   - [CITROS Usage](#citros-usage)
-    - [CITROS Installation 🛫](#citros-installation-)
+    - [CITROS Installation](#citros-installation-)
     - [Configuring the project](#configuring-the-project)
     - [Parameters](#parameters)
     - [Launch Files](#launch-files)
@@ -86,14 +86,15 @@ After all the prerequisites done, we can start configuring our project. Open the
 |dynamics.launch.py | Launch the uncontrolled system
 |dynamics_controller.launch.py | Launch the controlled system with PID controller
 
-### Initialize CITROS:
+### Initialize CITROS
+```bash
+citros init
+```
 
-        citros init
-
-### Run with CITROS:
-
-        citros run -n "default" -m "default simulation"
-
+### Run with CITROS
+```bash
+citros run -n "default" -m "default simulation"
+```
 After running the command, choose the launch file you wish to run. The simulation will start and you could see the mass position and the control signal in the terminal's logs.
 
 ### Syncing the Project's Setup
