@@ -1,14 +1,14 @@
-## Adding functions to parameter setup
+# Adding Functions to Parameter Setup
 
 In order to define a function in your parameter setup file, simply replace any constant parameter value with a `function object`.
 
 Function objects provide a powerful and dynamic way to compute and set values in the parameter_setup.json file for ROS 2 nodes. This feature allows for much greater flexibility and dynamism when setting parameters.
 
-### How to Add Function Objects
+## How to Add Function Objects
 
 Function objects are essentially references to functions (either from numpy or user-defined) that will be executed to compute a value for a particular key.
 
-#### Numpy Functions
+### Numpy Functions
 
 To use a numpy function, simply provide its fully qualified name as the value in the dictionary. For example:
 
@@ -18,10 +18,11 @@ To use a numpy function, simply provide its fully qualified name as the value in
             "args": [1, 2]
         }
     }
+
 <details>
 <summary>Example</summary>
 
-##### simple arithmetic 
+#### Simple Arithmetic 
 
 compute the product of two numbers:
 
@@ -32,7 +33,7 @@ compute the product of two numbers:
         }
     }
 
-##### Using Random Distribution
+#### Using Random Distribution
 
 Generating a random number from a normal distribution with a mean of 0 and standard deviation of 1:
 
@@ -57,7 +58,7 @@ Drawing a random value between 1 and 10:
 
 </details>
 
-#### User-Defined Functions
+### User-Defined Functions
 
 For user-defined functions, you need to:
 
@@ -73,12 +74,10 @@ For instance, if you have a function named `my_function` in a file named `my_fun
         }
     }
 
-### Examples - numpy
+<details>
+<summary>Example</summary>
 
-
-### Examples - user-defined
-
-#### Read from a CSV file
+#### Read from a CSV File
 
 Suppose you want to load a matrix from a csv file into a parameter of type list of lists of floats. Copy the following function to a python file (let's call it `file_utils.py`) and place it in the `functions` directory:
 
@@ -98,7 +97,9 @@ Reference it in your parameter_setup.json as:
         }
     }
 
-#### function with citros context
+
+
+#### Function with CITROS Context
 
 Sometimes you may want to access some information that is part of the Citros context. For example, you may want to write a user-defined function that uses the run index of the simulation being run. In such a case, you could write a function with a parameter named `citros_context` (which must appear last in the parameter list):
 
@@ -114,7 +115,9 @@ Sometimes you may want to access some information that is part of the Citros con
 
 Notice that the argument for `citros_context` is added automatically for you - the `args` list only contains the argument for the first parameter (`num`).
 
-### Examples - full parameter_setup.json example
+</details>
+
+### Full parameter_setup.json Example
 
 Using the following parameter setup file, the `init_angle` parameter in the `analytic_dynamics` node of the `cannon_analytic` package (taken from the `cannon` project), will get a random value each time the simulation is run. Specifically, 60% of the evaluated values will be between 30 and 60 degrees (a standard deviation of 15 around 45). In addition, the parameter `init_speed` will be evaluated to 50.0 on the first run, and will be incremented by one for every subsequent run (see previous example for details):
 
@@ -160,20 +163,20 @@ So, for example, if you run the following command in the `cannon` project:
 
 and choose `simulation_cannon_analytic`, the simulation will be run 10 times, and each time `init_angle` and `init_speed` will be evaluated to different values. You can see for yourself the evaluated values if you open the `cannon_analytic.yaml` under `.citors/runs/simulation_cannon_analytic/my_batch_name/0/config`, after the run has finished.
 
-### Pitfalls and Gotchas
+## Pitfalls and Gotchas
 
-#### User-Defined Functions
+### User-Defined Functions
 
 - **Import Handling** - Always perform imports inside the function. This ensures the function has all the necessary dependencies when called.
 - **Return Types** - The function should return native Python types or numpy scalars. Avoid returning non-scalar numpy values.
 - **Function Path** - Only the file name where the function is defined is needed (including the `.py` suffix). Avoid including directory paths.
 - **Citros context** - if you're using the `citros_context` parameter in your user-defined function, make sure to add it *last* in the function's parameter list.
 
-#### Numpy functions
+### Numpy functions
 
 - Always use the fully qualified name for numpy functions, such as numpy.random.exponential.
 
-#### General Pitfalls
+### General Pitfalls
 
 - **Multi-Level Key References** - When referencing a dictionary key from a function, if the key is not unique across the dictionary, use a multi-level key string to differentiate it, seperating dictionary levels with `'.'`. For example: 
 

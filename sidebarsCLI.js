@@ -38,6 +38,12 @@ module.exports = {
       label: 'Citros Repository Directory and File Structure',
       id: 'structure/citros_structure',
     },
+
+    {
+      type: 'doc',
+      label: 'Citros Repository Configuration',
+      id: 'configuration/config_params',
+    },
     // {
     //   type: 'category',
     //   label: 'CLI Commands',
@@ -192,19 +198,19 @@ module.exports = {
     // },
 
      //repo config
-     {
-      type: 'category',
-      label: 'Citros Repository Configuration',
-      collapsible: true,
-      collapsed: true,
-      items: [
-        {
-          type: 'doc',
-          label: 'Adding functions to parameter setup',
-          id: 'configuration/param_functions',
-        },
-      ],
-    },
+    //  {
+    //   type: 'category',
+    //   label: 'Citros Repository Configuration',
+    //   collapsible: true,
+    //   collapsed: true,
+    //   items: [
+    //     {
+    //       type: 'doc',
+    //       label: 'Adding functions to parameter setup',
+    //       id: 'configuration/param_functions',
+    //     },
+    //   ],
+    // },
     {
       type: "doc",
       label: "User Templates",
