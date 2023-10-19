@@ -32,6 +32,12 @@ module.exports = {
       label: 'CLI Commands',
       id: 'commands/cli_commands',
     },
+
+    {
+      type: 'doc',
+      label: 'Citros Repository Directory and File Structure',
+      id: 'structure/citros_structure',
+    },
     // {
     //   type: 'category',
     //   label: 'CLI Commands',
@@ -132,58 +138,58 @@ module.exports = {
     // },
 
     //structure
-    {
-      type: 'category',
-      label: 'Citros Repository Directory and File Structure',
-      collapsible: true,
-      collapsed: true,
-      link: {
-        type: "doc",
-        id: "structure/structure_overview"
-      },
-      items: [
-        {
-          type: 'doc',
-          label: 'notebooks',
-          id: 'structure/notebooks',
-        },
-        {
-          type: 'doc',
-          label: 'parameter setups',
-          id: 'structure/paramater_setups',
-        },
-        {
-          type: 'doc',
-          label: 'reports',
-          id: 'structure/reports',
-        },
-        {
-          type: 'doc',
-          label: 'runs',
-          id: 'structure/runs',
-        },
-        {
-          type: 'doc',
-          label: 'simulations',
-          id: 'structure/simulations',
-        },
-        {
-          type: 'doc',
-          label: 'workflows',
-          id: 'structure/workflows',
-        },
-        {
-          type: 'doc',
-          label: 'project.json',
-          id: 'structure/project_json',
-        },
-        {
-          type: 'doc',
-          label: 'settings.json',
-          id: 'structure/settings_json',
-        },
-      ],
-    },
+    // {
+    //   type: 'category',
+    //   label: 'Citros Repository Directory and File Structure',
+    //   collapsible: true,
+    //   collapsed: true,
+    //   link: {
+    //     type: "doc",
+    //     id: "structure/citros_structure"
+    //   },
+    //   items: [
+    //     // {
+    //     //   type: 'doc',
+    //     //   label: 'notebooks',
+    //     //   id: 'structure/notebooks',
+    //     // },
+    //     // {
+    //     //   type: 'doc',
+    //     //   label: 'parameter setups',
+    //     //   id: 'structure/paramater_setups',
+    //     // },
+    //     // {
+    //     //   type: 'doc',
+    //     //   label: 'reports',
+    //     //   id: 'structure/reports',
+    //     // },
+    //     // {
+    //     //   type: 'doc',
+    //     //   label: 'runs',
+    //     //   id: 'structure/runs',
+    //     // },
+    //     // {
+    //     //   type: 'doc',
+    //     //   label: 'simulations',
+    //     //   id: 'structure/simulations',
+    //     // },
+    //     // {
+    //     //   type: 'doc',
+    //     //   label: 'workflows',
+    //     //   id: 'structure/workflows',
+    //     // // },
+    //     // {
+    //     //   type: 'doc',
+    //     //   label: 'project.json',
+    //     //   id: 'structure/project_json',
+    //     // },
+    //     // {
+    //     //   type: 'doc',
+    //     //   label: 'settings.json',
+    //     //   id: 'structure/settings_json',
+    //     // },
+    //   ],
+    // },
 
      //repo config
      {
