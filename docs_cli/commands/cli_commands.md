@@ -264,13 +264,12 @@ In the example above you can see that when there is a local commit to be pushed 
 $ citros diff [-dir <folder_name>] 
 [-d | --debug] [-v | --verbose]
 ```    
-
-
 <details>
   <summary>Description</summary>
   
   The `diff` command presents you with a detailed description of all differences between the latest commit and your working directory. New lines will be colored in green, and deleted lines will be colored in red.
 
+#### Options
 Option|Description
 |--|--|
 |`-dir` <folder_name> | Specifies the project's working directory. Defaults to `.`|
@@ -313,6 +312,7 @@ $ citros checkout [-dir <folder_name>]
 
 If the branch you're attempting to check out exists (locally or on the remote), it will be checked out. If it doesn't exist yet, you will be asked if you would like to create it. If you decline, the checkout will not take place.
 
+#### Options
 Option|Description
 |--|--|
 |`-dir` <folder_name> | Specifies the project's working directory. Defaults to `.`|
@@ -350,6 +350,7 @@ $ citros merge [-dir <folder_name>]
 
 However, if conflicts arise, the merge operation halts, requiring you to address these discrepancies manually, using a diff/merge tool. 
 
+#### Options
 Option|Description
 |--|--|
 |`-dir` <folder_name> | Specifies the project's working directory. Defaults to `.`|
@@ -422,6 +423,7 @@ If you'd like discard **all** changes in your working directory, effectively che
 
 **Notice**: the effects of this command cannot be undone.
 
+#### Options
 Option|Description
 |--|--|
 |`-dir` <folder_name> | Specifies the project's working directory. Defaults to `.`|
@@ -478,6 +480,7 @@ $ citros login
 
 By logging in, you unlock additional features such as cloud-based simulations, data analysis tools, automated report generation, and collaboration with other Citros users. Use this command to seamlessly integrate your local workspace with the Citros platform and fully utilize its capabilities.
 
+#### Options
 Option|Description
 |--|--|
 |`-d`, `--debug` | Sets the logging level to debug.|
@@ -511,6 +514,7 @@ $ citros logout
 
   The `logout` command terminates your active session with Citros.
 
+#### Options
 Option|Description
 |--|--|
 |`-d`, `--debug` | Sets the logging level to debug.|
