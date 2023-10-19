@@ -165,8 +165,8 @@ The project.json file is a key component of your Citros repository. It contains 
 - `is_active`: A boolean flag indicating whether the project is active or not.
 
 - `launches`: An array for storing metadata about launch files associated with the project. 
-
-**Note**: these are the global launch files, which are not associated with any specific package. Generally, they are less commonly used. For package launch files, see inside the list of [*packages*](#packages-array).
+  
+    **Note**: these are the global launch files, which are not associated with any specific package. Generally, they are less commonly used. For package launch files, see inside the list of [*packages*](#packages-array).
 
 - `license`: A string indicating the license of the project.
 

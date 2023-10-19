@@ -8,11 +8,11 @@ module.exports = {
         id: "index",
       },
       items: [
-        {
-          type: "doc",
-          id: "overview/cli_overview",
-          label: "Overview",
-        },
+        // {
+        //   type: "doc",
+        //   id: "overview/cli_overview",
+        //   label: "Overview",
+        // },
         {
           type: "doc",
           id: "overview/cli_quickstart",

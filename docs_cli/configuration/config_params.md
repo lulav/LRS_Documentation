@@ -20,7 +20,7 @@ To use a numpy function, simply provide its fully qualified name as the value in
     }
 
 <details>
-<summary>Example</summary>
+<summary>Examples</summary>
 
 #### Simple Arithmetic 
 
@@ -75,7 +75,7 @@ For instance, if you have a function named `my_function` in a file named `my_fun
     }
 
 <details>
-<summary>Example</summary>
+<summary>Examples</summary>
 
 #### Read from a CSV File
 

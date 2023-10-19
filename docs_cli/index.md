@@ -9,3 +9,12 @@ Citros takes its capabilities a notch higher when the user logs in. Once logged 
 For additional information, please refer to the Citros documentation. This will provide you with comprehensive insights and detailed instructions for effective usage of Citros in general and Citros CLI in particular, and their full suite of features.
 
 We are dedicated to enriching your ROS project simulation experience, and this package is our contribution to that cause.
+
+## Table of Contents
+1. [Quick Start](/docs_cli/overview/cli_quickstart)
+2. [Installation](/docs_cli/overview/cli_install)
+4. [CLI Commands](/docs_cli/commands/cli_commands.md)
+5. [Citros Repository directory and file Structure](/docs_cli/structure/citros_structure.md) 
+6. [Citros Repository Configuration](/docs_cli/configuration/config_params.md)
+7. [User Templates](/docs_cli/user_templates.md#user-templates)
+
