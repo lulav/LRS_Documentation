@@ -18,7 +18,7 @@ The second command, `citros run`, executes a simulation of the provided name a d
 In order to run your simulation on the cloud, two (possibly three) additional steps are required:
 
 1. First of all, you would need to login to citros by running `citros login`. 
-<!-- 2. After logging in, and before running `citros init`, **if you haven't done so already**, you would need to setup your ssh keys in order communicate with the Citros server. One way to do this is through the [Citros](https://citros.io) web GUI (which provides detailed instructions), but this may also be done through the CLI by running `citros setup-ssh`. see details [here](./setup-ssh.md#setup-ssh). -->
+2. After logging in, and before running `citros init`, **if you haven't done so already**, you would need to setup your ssh keys in order communicate with the Citros server. One way to do this is through the [Citros](https://citros.io) web GUI (which provides detailed instructions), but this may also be done through the CLI by running `citros setup-ssh`. see details [here](/docs_cli/commands/setup-ssh.md).
 
 3. Once ssh is setup, you may run `citros init`. This will pull an existing Citros repository from the Citros server, or create a new one.
 

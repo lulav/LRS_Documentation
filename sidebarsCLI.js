@@ -36,8 +36,8 @@ module.exports = {
       items: [
         {
           type: 'doc',
-          // label: 'Quick Start',
-          id: 'commands/quick_start',
+          label: 'CLI Commands',
+          id: 'commands/cli_commands',
         },
         {
           type: 'doc',
