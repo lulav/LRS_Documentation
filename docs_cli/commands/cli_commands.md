@@ -15,6 +15,7 @@ The initialization process involves creating a `.citros` directory within your R
 
 **Note:** the initialization process will also make sure that within your Citros repo, you are working on a branch whose name is the same as the current branch in your ROS project. It will do so by checking it out (and possibly creating such a branch if it does not already exist).
 
+#### Options
 Option|Description
 |--|--|
 |`-dir` <folder_name> | Specifies the project's working directory. Defaults to `.`|
@@ -59,8 +60,8 @@ To re-initialize an existing Citros repository, you must first delete the existi
 
 <details>
   <summary>Description</summary>
-
-  The `setup-ssh` command sets up SSH keys for secure communication with the remote Citros repository.
+  
+The `setup-ssh` command sets up SSH keys for secure communication with the remote Citros repository.
 
 Setting up your ssh keys can be done in several different ways. You can do it manually by yourself, following the instructions on the [citros.io](https://citros.io) website, or you can use the `setup-ssh` command to automate this process.
 
@@ -100,10 +101,11 @@ $ citros status [-dir <folder_name>]
 <details>
   <summary>Description</summary>
 
-The `status` command first syncs any changes in your ROS project with your Citros repository and than retrieves the current state of your Citros repository. Essentially, it acts as a wrapper for the `git status` command specifically for your Citros repository.
-
-This command provides a quick and concise overview of the changes made to your project, giving you insights into tracked, modified, and staged files.
-
+  The `status` command first syncs any changes in your ROS project with your Citros repository and than retrieves the current state of your Citros repository. Essentially, it acts as a wrapper for the `git status` command specifically for your Citros repository.
+  
+  This command provides a quick and concise overview of the changes made to your project, giving you insights into tracked, modified, and staged files.
+  
+  #### Options
 Option|Description
 |--|--|
 |`-dir` <folder_name> | Specifies the project's working directory. Defaults to `.`|
@@ -142,14 +144,15 @@ Option|Description
   <summary>Description</summary>
 
   The `add-remote` command associates a remote Citros repository, named `origin`, with your local repository. This remote repository is hosted on the Citros servers.
-
-**prerequisites:**
-- `citros setup-ssh` has already been run.
+  
+  #### Prerequisites
+  `citros setup-ssh` has already been run.
 
 **Important:** If you execute `citros init` while logged in, the `add-remote` command will automatically run in the background, making a direct call unnecessary. However, if you initially ran `citros init` while logged out and later decide to work with the online Citros system (e.g., running commands like `citros push`), you will need to manually run the `add-remote` command.
 
 Furthermore, to ensure secure communication with the server, the `setup-ssh` command should be executed before running add-remote.
 
+#### Options
 Option|Description
 |--|--|
 |`-dir` <folder_name> | Specifies the project's working directory. Defaults to `.`|
@@ -171,10 +174,11 @@ $ citros commit [-dir <folder_name>]
 
 <details>
   <summary>Description</summary>
-    
-   The `commit` command captures all modifications to your local Citros repository in a snapshot, essentially serving as a wrapper for the `git commit` command, but tailored to your Citros repository.
-   
-   By executing this command, you essentially save the current state of your project, allowing you to keep track of your progress, revert changes, and even collaborate more effectively. This forms an integral part of managing and controlling the version history of your Citros repository.
+
+  The `commit` command captures all modifications to your local Citros repository in a snapshot, essentially serving as a wrapper for the `git commit` command, but tailored to your Citros repository.
+  By executing this command, you essentially save the current state of your project, allowing you to keep track of your progress, revert changes, and even collaborate more effectively. This forms an integral part of managing and controlling the version history of your Citros repository.
+
+  #### Options
 
 Option|Description
 |--|--|
@@ -193,16 +197,17 @@ Option|Description
 ## Command `pull`
 
 ```sh
-$ citros commit [-dir <folder_name>] 
+$ citros pull [-dir <folder_name>] 
 [-d | --debug] [-v | --verbose]
 ```
 <details>
   <summary>Description</summary>
   
   The `pull` command fetches from and integrates with another Citros repository or a local branch. Essentially, it acts as a wrapper for the `git pull` command within the context of your Citros repo.
+  
+  **Note:** if there conflicts between your local copy and the remote copy that cannot be resolved automatically, than a manual merge will have to take place. Not to worry - Citros makes this process user-friendly - see [Merge](./merge.md#merge) for details.
 
-**Note:** if there conflicts between your local copy and the remote copy that cannot be resolved automatically, than a manual merge will have to take place. Not to worry - Citros makes this process user-friendly - see [Merge](./merge.md#merge) for details.
-
+  #### Options
 Option|Description
 |--|--|
 |`-dir` <folder_name> | Specifies the project's working directory. Defaults to `.`|
@@ -214,8 +219,9 @@ Option|Description
 
 <details>
   <summary>Examples</summary>
+  
+    $ citros pull
 
-   $ citros pull
 </details>
 
 
@@ -228,11 +234,12 @@ $ citros push [-dir <folder_name>]
 
 <details>
   <summary>Description</summary>
-  
+
   The `push` command transfers all committed changes in your local Citros repository to the remote repository. Essentially, it acts as a wrapper for the `git push` command within the context of your Citros repo.
   
   By employing the `push` command, you are synchronizing your local project modifications with the remote repository. This is crucial not only for backing up your work on the server but also for enabling seamless collaboration with other team members using the Citros platform.
 
+  #### Options
 
 Option|Description
 |--|--|
@@ -266,10 +273,10 @@ $ citros diff [-dir <folder_name>]
 ```    
 <details>
   <summary>Description</summary>
-  
-  The `diff` command presents you with a detailed description of all differences between the latest commit and your working directory. New lines will be colored in green, and deleted lines will be colored in red.
 
-#### Options
+  The `diff` command presents you with a detailed description of all differences between the latest commit and your working directory. New lines will be colored in green, and deleted lines will be colored in red.
+  
+  #### Options
 Option|Description
 |--|--|
 |`-dir` <folder_name> | Specifies the project's working directory. Defaults to `.`|
@@ -307,12 +314,12 @@ $ citros checkout [-dir <folder_name>]
 
 <details>
   <summary>Description</summary>
-  
+
   The `checkout` command lets you check out a different branch than the one your are currently on. It essentially wraps the `git checkout` command. If you have any uncommitted changes in your Citros working directory, you will be asked if you want to commit those changes. If you decline, the checkout will not take place, since Citros doesn't allow checking out while the working directory is dirty.
-
-If the branch you're attempting to check out exists (locally or on the remote), it will be checked out. If it doesn't exist yet, you will be asked if you would like to create it. If you decline, the checkout will not take place.
-
-#### Options
+  
+  If the branch you're attempting to check out exists (locally or on the remote), it will be checked out. If it doesn't exist yet, you will be asked if you would like to create it. If you decline, the checkout will not take place.
+  
+  #### Options
 Option|Description
 |--|--|
 |`-dir` <folder_name> | Specifies the project's working directory. Defaults to `.`|
@@ -347,10 +354,10 @@ $ citros merge [-dir <folder_name>]
   <summary>Description</summary>
 
   The `merge` command enables you to integrate another branch into your current one. You'll be shown a list of accessible branches to select from. When both your branch and the target branch have modifications to the same file, the outcome varies based on the nature of these changes. Non-conflicting changes will be seamlessly merged. 
-
-However, if conflicts arise, the merge operation halts, requiring you to address these discrepancies manually, using a diff/merge tool. 
-
-#### Options
+  
+  However, if conflicts arise, the merge operation halts, requiring you to address these discrepancies manually, using a diff/merge tool. 
+  
+  #### Options
 Option|Description
 |--|--|
 |`-dir` <folder_name> | Specifies the project's working directory. Defaults to `.`|
