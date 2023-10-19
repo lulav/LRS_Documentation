@@ -13,7 +13,7 @@ We are dedicated to enriching your ROS project simulation experience, and this p
 ## Table of Contents
 2. [Prerequisites](#prerequisites)
 3. [Installation](#installation)
-4. CLI Commands  (citros_data.md#citros_data_analysis.error_analysis.citros_data.CitrosData
+4. CLI Commands
    1. [Quick Start](/docs_cli/commands/quick_start)
    2. [init](/docs_cli/commands/init.md#init)
    3. [setup-ssh](/docs_cli/commands/setup-ssh.md#setup-ssh)

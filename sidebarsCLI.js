@@ -1,9 +1,20 @@
 module.exports = {
   cliSidebar: [
     {
-      type: "doc",
-      label: "Overview",
-      id: "cli_overview",
+      type: "category",
+      label: "CITROS CLI",
+      link: {
+        type: "doc",
+        id: "index",
+      },
+      items: [
+        {
+          type: "doc",
+          id: "cli_overview",
+          label: "Overview",
+        },
+      ],
+    
     },
 
      //Commands

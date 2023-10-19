@@ -177,8 +177,6 @@ const config = {
             label: "CLI",
             position: "left",
             activeBaseRegex: `/docs_cli/`,
-            // type: 'docsVersionDropdown',
-            // docsPluginId: 'docs_cli'
           },
           {
             to: "/docs_data_analysis", // ./docs-api/Intro.md
