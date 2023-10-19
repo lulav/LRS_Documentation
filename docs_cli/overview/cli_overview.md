@@ -11,8 +11,8 @@ For additional information, please refer to the Citros documentation. This will 
 We are dedicated to enriching your ROS project simulation experience, and this package is our contribution to that cause.
 
 ## Table of Contents
-2. [Prerequisites](#prerequisites)
-3. [Installation](#installation)
+1. [Quick Start](/docs_cli/overview/cli_quickstart)
+2. [Installation](/docs_cli/overview/cli_install)
 4. CLI Commands
    1. [Quick Start](/docs_cli/commands/quick_start)
    2. [init](/docs_cli/commands/init.md#init)
@@ -50,44 +50,3 @@ We are dedicated to enriching your ROS project simulation experience, and this p
         5. [Pitfalls and Gotchas](/docs_cli/configuration/param_functions.md#pitfalls-and-gotchas)
 7. [User Templates](/docs_cli/user_templates.md#user-templates)
 
-
-# Prerequisites
-
-- [vscode](https://code.visualstudio.com/download)
-- [Docker](https://www.docker.com/)
-- [Python3](https://www.python.org/downloads/)
-- [git](https://git-scm.com/)
-
-# Installation
-### option 1: without code:
-
-        $ pip install citros 
-
-### option 2: with code:
-
-1. clone the repo:
-    
-        $ git clone git@github.com:lulav/citros_cli.git
-
-2.  Within the cloned `citros_cli` folder, Install the package to a global bin folder:
-
-        $ python3 -m pip install .
-        $ source ~/.profile
-
-### option 3: with code and soft links
-If you are developing the citros_cli package itself, than the best practice is to create a `utils` directory under a ROS project, clone the repo into it, and install the package with soft links to dev environment. I.e. from your ROS project dir:
-
-        $ mkdir utils && cd utils
-        $ git clone git@github.com:lulav/citros_cli.git
-        $ cd ..
-        $ python3 -m pip install -e utils/citros_cli
-    
-3. Environment Variables. 
-   
-   `citros_cli` uses several environment variables, some of which you may change according to your needs, although for the most part, the defaults are likely to be what you want. Generally speaking, most of these are only used by developers of the package, and should not be used.
-
-| ENV | Description | used in |
-| --- | --- | --- |
-| `CITROS_DOMAIN` | The main domain, defaults to `citros.io` | all packages |
-| `CITROS_DIR` | Used by the citros cluster, do not use. | citros |
-| `CITROS_SIM_RUN_DIR` | The directory under `.citros/runs` in which all simulation data will be saved (see [runs](docs_cli/structure/runs)). This can be handy, if your code needs to know this location in order to access some of the files, e.g. parameter setups. | citros |

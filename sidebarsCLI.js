@@ -10,8 +10,18 @@ module.exports = {
       items: [
         {
           type: "doc",
-          id: "cli_overview",
+          id: "overview/cli_overview",
           label: "Overview",
+        },
+        {
+          type: "doc",
+          id: "overview/cli_quickstart",
+          label: "Quick Start",
+        },
+        {
+          type: "doc",
+          id: "overview/cli_install",
+          label: "Installation",
         },
       ],
     
