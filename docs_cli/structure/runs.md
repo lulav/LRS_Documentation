@@ -1,4 +1,4 @@
-## runs
+# Directory `runs`
 
 The runs directory stores data and metadata about each run of your simulations. Its structure is as follows:
 

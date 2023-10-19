@@ -1,4 +1,4 @@
-# Citros Repository file Structure
+# Citros Repository File Structure
 
 The following folder and file structure is automatically generated for you (when you run `citros init`):
 
@@ -9,7 +9,7 @@ The following folder and file structure is automatically generated for you (when
       - `my_func.py`
     - `default_param_setup.json`
   - reports
-  - runs *(see below)*
+  - [runs](#directory-runs)
   - simulations
     - `simulation_foo.json`
     - `simulation_bar.json`
@@ -19,6 +19,8 @@ The following folder and file structure is automatically generated for you (when
   - `project.json`
   - `settings.json`
   - `user_commit`
+
+## Directory `runs`
 
 The `runs` directory will be populated with further files and folder every time you run a simulation (via `citros run`):
 
@@ -46,3 +48,6 @@ The `runs` directory will be populated with further files and folder every time 
         - `otlp_trace`
         - `ros.log`
       - `info.json`
+
+
+# Directory `Notebooks`

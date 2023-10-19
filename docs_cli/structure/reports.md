@@ -1,3 +1,3 @@
-## reports
+# Directory `reports`
 
 TODO

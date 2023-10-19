@@ -1,4 +1,4 @@
-## simulations
+# Directory `simulations`
 
 The `simulations` directory stores your JSON-formatted simulation files.
 

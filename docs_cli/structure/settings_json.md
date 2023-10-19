@@ -1,4 +1,4 @@
-## settings.json
+# File `settings.json`
 
 The settings.json file holds configuration settings for your Citros repository. Here is a breakdown of each field in this file:
 

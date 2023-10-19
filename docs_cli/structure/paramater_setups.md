@@ -1,4 +1,4 @@
-## parameter setups
+# Directory `parameter_setups`
 
 The `parameter_setups` directory stores your JSON-formatted parameter setup files. When you initialize your citros repository, a `default_param_setup.json` file is automatically generated. This file consolidates all the default parameters for every node across all the packages in your ROS project, providing a consolidated and easily accessible record of these parameters.
 

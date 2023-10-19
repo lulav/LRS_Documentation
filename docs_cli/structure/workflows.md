@@ -1,4 +1,4 @@
-## workflows
+# Directory `workflows`
 
 The `workflows` directory stores your JSON-formatted workflow files.
 
