@@ -59,8 +59,9 @@ To re-initialize an existing Citros repository, you must first delete the existi
 ## Command `setup-ssh`
 
 <details>
-  <summary>Description</summary>
-  
+
+<summary>Description</summary>
+
 The `setup-ssh` command sets up SSH keys for secure communication with the remote Citros repository.
 
 Setting up your ssh keys can be done in several different ways. You can do it manually by yourself, following the instructions on the [citros.io](https://citros.io) website, or you can use the `setup-ssh` command to automate this process.
@@ -73,19 +74,15 @@ In any case, you may view (and possibly delete) your keys in your profile settin
 
 **Note:** this command *may* append some bash commands to the end of any of the following user profile files, if they exist in the user's home directory: `~/.bashrc` , `~/.bash_profile`, `~/.zprofile`. 
 
-**prerequisites:**
-- user must be logged in (using `citros login`).
+#### Prerequisites
+User must be logged in (using `citros login`).
 
-</details>
-
-<details>
-  <summary>Parameters</summary>
-
-
+#### Options
 Option|Description
 |--|--|
 |`-d`, `--debug` | Sets the logging level to debug.|
 |`-v`, `--verbose` | Enables verbose console output.|
+
 </details>
 
 <details>
@@ -201,13 +198,14 @@ $ citros pull [-dir <folder_name>]
 [-d | --debug] [-v | --verbose]
 ```
 <details>
-  <summary>Description</summary>
-  
-  The `pull` command fetches from and integrates with another Citros repository or a local branch. Essentially, it acts as a wrapper for the `git pull` command within the context of your Citros repo.
-  
-  **Note:** if there conflicts between your local copy and the remote copy that cannot be resolved automatically, than a manual merge will have to take place. Not to worry - Citros makes this process user-friendly - see [Merge](./merge.md#merge) for details.
 
-  #### Options
+<summary>Description</summary>
+
+The `pull` command fetches from and integrates with another Citros repository or a local branch. Essentially, it acts as a wrapper for the `git pull` command within the context of your Citros repo.
+
+**Note:** if there conflicts between your local copy and the remote copy that cannot be resolved automatically, than a manual merge will have to take place. Not to worry - Citros makes this process user-friendly - see [Merge](./merge.md#merge) for details.
+
+#### Options
 Option|Description
 |--|--|
 |`-dir` <folder_name> | Specifies the project's working directory. Defaults to `.`|
@@ -219,10 +217,10 @@ Option|Description
 
 <details>
   <summary>Examples</summary>
-  
-    $ citros pull
 
+    $ citros pull
 </details>
+
 
 
 ## Command `push`
