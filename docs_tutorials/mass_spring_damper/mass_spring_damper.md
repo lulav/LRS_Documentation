@@ -17,13 +17,13 @@ The example contains two ROS 2 packages: `dynamics` and `controller`.
   - [The Controller](#the-controller)
   - [CITROS Usage](#citros-usage)
     - [CITROS Installation](#citros-installation-)
-    - [Configuring the project](#configuring-the-project)
+    - [Configuring The Project](#configuring-the-project)
     - [Parameters](#parameters)
     - [Launch Files](#launch-files)
     - [Initialize CITROS](#initialize-citros)
     - [Run with CITROS](#run-with-citros)
-    - [Syncing the Project's setup](#syncing-the-projects-setup)
-    - [Normal distributed mass](#normal-distributed-mass)
+    - [Syncing Project's Setup](#syncing-projects-setup)
+    - [Normal Distributed Mass](#normal-distributed-mass)
 
 ## System Dynamics
 
@@ -60,7 +60,7 @@ you can tune the controller gains, $k_p$, $k_i$, $k_d$, configured as ROS 2 para
 ### CITROS Installation
 First of all, to use all the powerfull CITROS features usage requires CITROS installation: follow the instructions on the CITROS CLI [documentation](https://citros.io/doc/docs_cli/)
 
-### Configuring the Project
+### Configuring The Project
 
 After all the prerequisites done, we can start configuring our project. Open the project's repository in `VSCode` and reopen the project in a the VSCode's `devcontainer`.
 
@@ -97,7 +97,7 @@ citros run -n "default" -m "default simulation"
 ```
 After running the command, choose the launch file you wish to run. The simulation will start and you could see the mass position and the control signal in the terminal's logs.
 
-### Syncing the Project's Setup
+### Syncing Project's Setup
 
 Follow the [guide](https://citros.io/doc/docs/cli/cli_commands/cli_sync) for syncing CITROS project with the server.
 

@@ -19,13 +19,13 @@ for more information see [Soft Landing](https://github.com/CITROS-garden/soft_la
 
 3. [Installation](#installation)
     1. [Prerequisits](#prerequisits)
-    2. [Install & build](#install--build)
+    2. [Install & Build](#install--build)
 4. [CITROS Integration](#citros-integration)
-    1. [Configuring the project](#configuring-the-project)
+    1. [Configuring The Project](#configuring-the-project)
 5. [Run the Example](#run-the-example)
-    1. [The scenario](#the-scenario)
-    2. [Run a test simulation locally with CITROS](#run-a-test-simulation-locally-with-citros)
-    3. [Run a test simulation in the web with CITROS](#run-a-test-simulation-in-the-web-with-citros)
+    1. [The Scenario](#the-scenario)
+    2. [Run a Test Simulation Locally with CITROS](#run-a-test-simulation-locally-with-citros)
+    3. [Run a Test Simulation In The Web with CITROS](#run-a-test-simulation-in-the-web-with-citros)
 
 ## Installation
 
@@ -35,7 +35,7 @@ for more information see [Soft Landing](https://github.com/CITROS-garden/soft_la
  - Docker  
  
    
-### Install & build 
+### Install & Build 
 1. Clone the repository:
    ```sh
     git clone git@github.com:citros-garden/soft_landing.git
@@ -86,7 +86,7 @@ citros add-remote
 ```
 then check that we all set with the cli command: `CITROS status`
 
-### Configuring the project
+### Configuring The Project
 After all the prerequisites done, we can start configuring our project. The starting point is the soft_landing devcontainer loaded and running, CITROS CLI is installed and ready.
 1. Initialize CITROS:
 ```bash 
@@ -104,7 +104,7 @@ Now you can see ```.CITROS``` folder in the explorer and at the terminal you can
 
 ## Run the Example
 
-### The scenario
+### The Scenario
 Run the example of an object with the initial condition that suppose to land on an ending point.  
 The parameters are:  
 
@@ -137,8 +137,8 @@ you can read more about changing parameters in  `parameter setups` section in `C
 ```  
 
 
-### Run a test simulation locally with CITROS
-#### Syncing project's setup
+### Run a Test Simulation Locally with CITROS
+#### Syncing Project's Setup
 Now we can sync our project settings with CITROS server:
 ```bash 
 citros commit
@@ -157,7 +157,7 @@ The `simulation_dynamics_controller` launch the dynamics with the controller and
 Select the launch file by pressing ```Enter``` button and wait for the output in the terminal.  
 If the simulation ran perfectly you can run the simlulation in the cloud.
 
-### Run a test simulation in the web with CITROS
+### Run a Test Simulation in The Web with CITROS
 Befor uploading the simulation to the cloud check that the parameter file, `default_param_setup.json`  in `.CITROS/parameter_setups` folder is set as you wish and saved.  
 That you have build and sourced the project.  
 And you have sync the project settings with CITROS server (CITROS commit , CITROS push).  

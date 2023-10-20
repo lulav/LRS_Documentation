@@ -17,10 +17,10 @@ To calculate orbits the Python package [GalOrb](https://github.com/ChemelAA/GalO
 
 ## Table of Contents
 1. [CITROS Usage](#citros-usage)
-   1. [Configuring the project](#configuring-the-project)
-   2. [Running locally](#running-locally)
-   3. [Run in CITROS cloud](#run-in-citros-cloud)
-   4. [Parameter setups](#parameter-setups)
+   1. [Configuring The Project](#configuring-the-project)
+   2. [Running Locally](#running-locally)
+   3. [Run in CITROS Cloud](#run-in-citros-cloud)
+   4. [Parameter Setups](#parameter-setups)
 
 ## CITROS Usage
 
@@ -28,15 +28,15 @@ The description of the CITROS CLI is presented in details in the [Tutorial](http
 
 Briefly, you need to clone project from the GitHub, set the parameters, install CITROS and either run locally or upload project image and run in a CITROS cloud.
 
-### Configuring the project
-#### Clone GitHub repository
+### Configuring The Project
+#### Clone GitHub Repository
 ```bash
 $ git clone git@github.com:citros-garden/gal_orbits.git
 $ cd ~/gal_orbits
 ```
 If you do not have the SSH key required for cloning the GitHub repository, please follow the steps described in [ssh key tutorial](https://citros.io/doc/docs_citros_web/authentication/ssh/ssh_generate_key).
 
-#### Build the project
+#### Build The Project
 ```bash
 $ colcon build
 $ source install/local_setup.bash
@@ -47,17 +47,17 @@ $ source install/local_setup.bash
 $ pip install citros
 ```
 
-### Running locally
+### Running Locally
 
 #### Initialization
 ```bash
 $ citros init
 ```
 
-#### Set up parameters of the simulation
+#### Set Up Simulation Parameters
 Check the [parameters](#parameter-setups) that are required for the orbits calculations. 
 
-#### Run simulation
+#### Run Simulation
 Set name of the batch, message and number of simulations, for example to set 5 simulations:
 ```bash
 $ citros run -n "galactic orbits" -m "first local run" -c 5 -r
@@ -65,9 +65,9 @@ $ citros run -n "galactic orbits" -m "first local run" -c 5 -r
 
 The results of the simulations will be stored in '.citros/runs/simulation_gal_orbits/galactic orbits/'. Inside this directory, there will be 5 folders numbered 0 through 4, each containing the output of a respective simulation.
 
-### Run in CITROS cloud
+### Run in CITROS Cloud
 
-#### Log in:
+#### Log In:
 ```bash
 $ citros login
 ```
@@ -86,7 +86,7 @@ The .citros directory can only be initialized once. If you initialized it previo
 $ citros add-remote
 ```
 
-#### Synchronize with CITROS server
+#### Synchronize with CITROS Server
 ```bash
 $ citros commit
 $ citros push
@@ -97,12 +97,12 @@ $ git add -A
 $ git commit -m "<you commit message>"
 ```
 
-#### Build and push a docker image
+#### Build and Push a Docker Image
 ```bash
 $ citros docker-build-push
 ```
 
-#### Run simulation in the cloud
+#### Run Simulation in The Cloud
 Simillar to [running simulation locally](#run-simulation), but with an additional `-r` key:
 ```bash
 $ citros run -n "galactic orbits" -m "first run" -c 5 -r
@@ -110,7 +110,7 @@ $ citros run -n "galactic orbits" -m "first run" -c 5 -r
 
 Now that your simulation is complete, you're ready to check the results! Explore the notebooks in `.citros/notebooks`. There, you'll find examples prepared using the [citros_data_analysis package](https://citros.io/doc/docs_data_analysis) on how to query, analyze, and present results. Feel free to use them or create your own!
 
-### Parameter setups
+### Parameter Setups
 
 Parameters for the simulation are the following:
 
