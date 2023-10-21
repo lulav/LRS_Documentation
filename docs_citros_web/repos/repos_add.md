@@ -1,28 +1,32 @@
 # Add Repository
 
 Too add a new project repository please follow these steps:
-
+        
 **Be sure first that you are in your repository folder**
+<!-- add the above as a step in your tutorial -->
 
 1.  Install CITROS to your project
 
 
-        pip install citros
+    pip install citros
 
 
 2.  Login to your CITROS account
 
-        citros login
+
+    citros login
 
 
 3.  Sync your repo to CITROS 
 
-        citros init
+
+    citros init
 
 
 4.  Uploud the project to the web 
 
-        citros docker-build-push
+
+    citros docker-build-push
 
 
 If by any chance you did `citros init` befor you logged in and you want to add the project to CITROS then you need to run the command: 
