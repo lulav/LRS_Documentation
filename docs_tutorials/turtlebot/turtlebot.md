@@ -3,7 +3,7 @@ sidebar_position: 50
 sidebar_label: 'TurtleBot'
 ---
 
-# TurtleBot3 example using CITROS
+# TurtleBot3 Example Using CITROS
 
 This project is designed to wrap the official TurtleBot3 simulation [example](https://emanual.robotis.com/docs/en/platform/turtlebot3/simulation/#gazebo-simulation) and integrate it with a simple Autonomous Collision Avoidance node. The node provides ROS parameters that allow users to adjust various TurtleBot3 specifications, enabling the analysis of how these changes affect collision avoidance behavior. 
 The primary functionalities of this node are as follows:
@@ -16,31 +16,31 @@ The primary functionalities of this node are as follows:
 
 * **Orientation and Navigation**: The TurtleBot3 robot is capable of orienting itself effectively within a prepared TurtleBot3 world. It utilizes the simulated lidar module to gather environmental data, allowing it to make informed decisions about its navigation path.
 
-All project installation, code overview and usage details are also available on the project's[GitHub page](https://github.com/citros-garden/turtlebot3).
+All project installation, code overview and usage details are also available on the project's [GitHub page](https://github.com/citros-garden/turtlebot3).
 
 ![png](img/turtlebot3_0.png "TurtleBot3")
 
-## Table of contents
+## Table of Contents
 1. [CITROS Usage](#citros-usage)
     1. [CITROS Installation](#citros-installation)
-    2. [Configuring the project](#configuring-the-project)
-    3. [Syncing project's setup](#syncing-projects-setup)
-    4. [Running locally](#running-locally)
-    5. [Uploading Docker image to the CITROS database and running in the cloud](#uploading-docker-image-to-the-citros-database-and-running-in-the-cloud)
-    6. [Running in the cloud](#running-in-the-cloud)
-    6. [CITROS Web usage](#citros-web-usage)
+    2. [Configuring The Project](#configuring-the-project)
+    3. [Running Locally](#running-locally)
+    4. [Syncing Project's Setup](#syncing-projects-setup)
+    5. [Uploading Docker Image to CITROS Database](#uploading-docker-image-to-citros-database)
+    6. [Running in The Cloud](#running-in-the-cloud)
+    6. [CITROS Web Usage](#citros-web-usage)
 2. [Extras](#extras)
-    1. [Foxglove examples](#foxglove-examples)
+    1. [Foxglove Examples](#foxglove-examples)
 
 
-## CITROS usage
+## CITROS Usage
 Although you can get simulation results using FoxGlove, the best way to work with such simulations and process the results is CITROS! With its power, it is possible to create complex data processing scenarios, including the construction of more complex graphs, mathematical analysis and other high-level processing methods.
 
-### CITROS installation
+### CITROS Installation
 
-First of all, to use all the powerfull CITROS features usage requires CITROS installation: follow the instructions on the CITROS CLI [GitHub page](https://github.com/lulav/citros_cli).
+First of all, to use all the powerfull CITROS features the CLI installation is required: follow the instructions on the CITROS CLI [documentation page](https://citros.io/doc/docs_cli).
 
-### Configuring the project
+### Configuring The Project
 After all the prerequisites are met, we can start configuring our project. The starting point is the TurtleBot3 devcontainer loaded and running, CITROS CLI is installed and ready.
 1. Initialize CITROS:
 ```bash 
@@ -61,7 +61,7 @@ Now you can see ```.citros``` folder in the explorer.
 
 2. Configuring the setup. We need to set up the maximum performance available: timeout, CPU, GPU and Memory. To perform it, we need to define them in ```.citros/simulations/simulation_turtlebot3.json```. The recommended setup is minimum 600 seconds timeout, 4 CPU, 4 GPU and 4096 MB of Memory. Don't forget to save the file!
 
-3. Configuring the params setup. You can find the default setup in ```.citros/parameter_setups/default_param_setup.json```. [CITROS CLI](https://github.com/lulav/citros_cli) provides an opportunity to use basic NumPy functions (such as distributions) and even user-defined functions, but let's keep it default for now. Don't forget to save the file!
+3. Configuring the params setup. You can find the default setup in ```.citros/parameter_setups/default_param_setup.json```. [CITROS CLI](https://citros.io/doc/docs_cli) provides an opportunity to use basic NumPy functions (such as distributions) and even user-defined functions, but let's keep it default for now. Don't forget to save the file!
 
     |Parameter	|Package	|Description
     |--|--|--
@@ -77,18 +77,13 @@ Now you can see ```.citros``` folder in the explorer.
     turtlebot3_sim_cont.launch.py	|turtlebot3_gazebo	|Gazebo headless TurtleBot world launch file 	
     robot_state_publisher.launch.py	|turtlebot3_gazebo	|Utility launch file for state publishing
 
-### Syncing project's setup
-Now we can synchronize our project settings with CITROS server:
-```bash 
->>> citros commit
->>> citros push
-```
+
 :::tip
 
 CITROS CLI, in addition to other benefits, also provides an automatic ROS bag recording option, which allows user to use saved simulation results and export them! :)
 
 :::
-### Running locally
+### Running Locally
 Since all the preparations done, we can launch it locally (your project should be built and sourced before that):
 ```bash 
 >>> citros run -n 'turtlebot3' -m 'local test run'
@@ -106,7 +101,15 @@ created new batch_id: <your-batch-id-here>. Running locally.
 
 ![gif](img/foxglove1.gif "FoxGlove example")
 ![gif](img/foxglove2.gif "FoxGlove example")
-### Uploading Docker image to the CITROS database and running in the cloud
+
+### Syncing Project's Setup
+CITROS account is required for cloud usage. Follow the instructions on [CITROS Website](https://citros.io/auth/login) to register a new one, or check the [CLI documentation](https://citros.io/doc/docs_cli) for logging in. To complete the following steps, it is assumed that the user is registered, logged in and has met all requirements for Web Usage.
+Now we can synchronize our project settings with CITROS server:
+```bash 
+>>> citros commit
+>>> citros push
+```
+### Uploading Docker Image to CITROS Database
 We need to build and push a Docker container image to the CITROS server:
 ```bash 
 >>> citros docker-build-push
@@ -114,7 +117,7 @@ Logging in to docker...
 ...
 ```
 
-### Running in the cloud
+### Running in The Cloud
 Finally, we can run it in the cloud! Simply add ```-r``` to the terminal command: 
 ```bash 
 >>> citros run -n 'turtlebot3' -m 'cloud test run' -r
@@ -127,23 +130,11 @@ Select the launch file (should be the only one here) by pressing ```Enter``` but
 created new batch_id: <your-batch-id-here>. Running on Citros cluster. See https://citros.io/batch/<your-batch-id-here>.
 ```
 
-### CITROS Web usage
-#### Launching project via CITROS Web
-The best way to use all the innovative capabilities of CITROS is through it's Web interface. The following manual explains how to run this project in the cloud and how to process the simualtion results.
-The starting point is CITROS main page, user is logged in and the project Docker image is built and pushed to the cloud (see the [manual](#uploading-docker-image-to-citros-cloud) above).
-1. Go to the ```Repositories``` page clicking on the tab on the top;
-2. Find your project and open it;
-3. Navigate to the ```Runs``` tab;
-4. Click on the ```Run Simulation``` button on the right;
-5. Now you can select the project and the simulation setup from the drop-down lists, set the number of repeats and how many simulations should run in parallel, type the Name of the run and the additional message. This window also shows the perfomance preset.
-6. We are ready to go! Start the Batch with the button below.
+### CITROS Web Usage
+#### Launching Project via CITROS Web
+The best way to use all the innovative capabilities of CITROS is through it's Web interface. Follow [this manual](https://citros.io/doc/docs_citros_web/simulations/sim_overview) to easily launch a simulation on CITROS Web platform.
 
-The simualtion launched! Open the Run you just started in the list on ```Runs``` page to check how it is going. On this page you can find all the runs of this batch. The number of runs here equals to the number of runs you've set before.
-Navigate to the Run by clicking on it in the table:
-* The main part of this page is a simulation's log. Here you can find all the logging information from all levels: from your code logs up to the CITROS system information.
-* The right part of the page provides additional information about Events: the main stages of the simulation run.
-
-#### Working with Integrated Jupiter notebooks and data analysis
+#### Working with Integrated Jupiter Notebooks and Data Analysis
 CITROS Web provides a powerfull data analysis package, which is a comprehensive solution for data query, analysis and visualization. With its extensive features, you can quickly and easily extract valuable insights from your data. To use it, Jupiter Notebook support is built-in. 
 Navigate to our ```Code``` project page, open the Notebooks folder and click on the notebook file. Here you can see the usual Jupiter editor interface: you can add blocks of code or built-in Markdown engine, run and save notebook and control the Python kernel.
 
@@ -152,7 +143,7 @@ You can find all the data analisys package guides and API reference [here](https
 :::
 
 
-Let's quickly go through the key points of using a Jupiter Notebook and fetching data from a database. All necessary things are already configured (we used a NumPy distribution function, you can read more about its usage in the [CITROS CLI](https://github.com/lulav/citros_cli#examples---user-defined) manual), so you can start the simulation from [CLI](#citros-usage-🛸) with the ```-c 5``` flag, which will launch 5 simulations in parallel: 
+Let's quickly go through the key points of using a Jupiter Notebook and fetching data from a database. All necessary things are already configured (we used a NumPy distribution function, you can read more about its usage in the [CITROS CLI](https://citros.io/doc/docs_cli) manual), so you can start the simulation from [CLI](#citros-usage-🛸) with the ```-c 5``` flag, which will launch 5 simulations in parallel: 
 
 ```
 >>> citros run -n 'turtlebot3' -m 'cloud test run' -r -c 5
@@ -185,7 +176,7 @@ citros = da.CitrosDB(batch = batch_id)
 citros.info().print()
 ```
 
-The last command returns general database info:
+The last command returns general batch info:
 ```python
 {
  'size': '138 MB',
@@ -237,6 +228,6 @@ This graph shows values from data attribute vs. independent parameter for each o
 
 ![png](img/citros3.png "CITROS example")
 ## Extras
-### Foxglove examples
+### Foxglove Examples
 
 ![gif](img/foxglove2.gif "FoxGlove example")

@@ -12,7 +12,7 @@ import DocCardList from '@theme/DocCardList';
 
 # Introduction to CITROS CLI
 
-This tutorial will guide you through the CITROS CLI interface, using a simple ROS 2 example project to demonstrate the usage, while providing usefull recommendations and best practices. While this is not a comprehensive guide to all CITROS CLI commands, it should get you up and running using your own projects with CITROS in no time. For further details and an exhaustive guide to the CITROS CLI, refer to the [CLI Documentation](https://github.com/lulav/citros_doc/blob/main/docs_cli/index.md).
+This tutorial will guide you through the CITROS CLI interface, using a simple ROS 2 example project to demonstrate the usage, while providing usefull recommendations and best practices. While this is not a comprehensive guide to all CITROS CLI commands, it should get you up and running using your own projects with CITROS in no time. For further details and an exhaustive guide to the CITROS CLI, refer to the [CLI Documentation](https://citros.io/doc/docs_cli).
 
 ![orangesqueeze](img/orange_squeeze.jpg "CITROS CLI")
 
@@ -22,23 +22,23 @@ This tutorial will guide you through the CITROS CLI interface, using a simple RO
     1. [Prerequisites](#prerequisites)
     2. [Installation](#installation)
     3. [Build](#build)
-    4. [Run the analytic solution](#run-the-analytic-solution)
-    5. [Run the numeric integration solution](#run-the-numeric-integration-solution)
-    6. [Implementation overview](#implementation-overview)
+    4. [Run The Analytic Solution](#run-the-analytic-solution)
+    5. [Run The Numeric Integration Solution](#run-the-numeric-integration-solution)
+    6. [Implementation Overview](#implementation-overview)
     7. [Foxglove](#foxglove)
-2. [Working with CITROS CLI - Offline](#cannon-via-citros-offline)
+2. [Working with CITROS CLI - Offline](#working-with-citros-cli---offline)
     1. [Prerequisites](#prerequisites-1)
     2. [Initialization](#initialization)
-    3. [Running a simulation](#running-a-simulation)
-    4. [Configuring a simulation](#configuring-a-simulation)
-3. [Working with CITROS CLI - Online](#cannon-via-citros-online)
+    3. [Running a Simulation](#running-a-simulation)
+    4. [Configuring a Simulation](#configuring-a-simulation)
+3. [Working with CITROS CLI - Online](#working-with-citros-cli---online)
     1. [Prerequisites](#prerequisites-2)
     2. [logging in](#logging-in)
     3. [ssh](#ssh)
     4. [Initialization](#initialization-1)
-    5. [Building and pushing a docker image](#building-and-pushing-a-docker-image)
-    6. [Running on the cloud](#running-on-the-cloud)
-    7. [Configuring a simulation](#configuring-a-simulation-1)
+    5. [Building and Pushing a Docker Image](#building-and-pushing-a-docker-image)
+    6. [Running on The Cloud](#running-on-the-cloud)
+    7. [Configuring a Simulation](#configuring-a-simulation-1)
 
 
 ## The Cannon Example Project
@@ -72,12 +72,12 @@ $ colcon build
 $ source install/local_setup.bash
 ```
 
-### Run the analytic solution
+### Run The Analytic Solution
 ```bash
 $ ros2 launch scheduler cannon_analytic.launch.py
 ```
 
-### Run the numeric integration solution
+### Run The Numeric Integration Solution
 ```bash
 $ ros2 launch scheduler cannon_numeric.launch.py
 ```
@@ -85,7 +85,7 @@ $ ros2 launch scheduler cannon_numeric.launch.py
 
 Running either of the two simulations will result in the logger output being written to the console.
 
-### Implementation overview
+### Implementation Overview
 The project is made out of three ROS nodes - `cannon_analytic`, `cannon_numeric` and `scheduler`. The scheduler node is responsible for driving the simulation by publishing a `scheduler` topic at a given rate (say, 100Hz). The cannon nodes subscribe to this topic, and upon receiving it perform a single calculation step. The rate (`dt`) is a ROS parameter for the scheduler node, which means you may change its value in the `config/params.yaml` file, without the need to recompile. The two cannon nodes also have `params.yaml` files of their own, in which you can set the initial speed and angle, and also the time/integration delta (`dt`).
 
 Additionally, the `scheduler` node subscribes to a `debug` topic, which, together with the provided Foxglove layout, facilitates a play/pause/step/resume functionality.
@@ -141,7 +141,7 @@ But first, let's make sure all the prerequisites for running CITROS have been me
     to get the CITROS CLI version installed.
 
 ### Initialization
-Alrightythan! you're now ready to run the first command - `init`, which will initialize your local CITROS repository:
+Alrightythan! You're now ready to run the first command - `init`, which will initialize your local CITROS repository:
 ```bash
 $ citros init
 User is not logged in. Initialzing Citros locally.
@@ -153,9 +153,9 @@ Intialized Citros repository.
 
 This command creates a folder named `.citros` under your project directory, and initializes it as a git repository. The current git branch of the `.citros` repository should always be named as the current branch in your ROS project (i.e. `main` in the example above). In case they are different, CITROS will create and/or checkout the branch for you, as can be seen in the output above.
 
-The `.citros` directory contains several files and folders that capture the state of your project and allow you to configure your simulations according to your needs. We will discuss some of them briefly later on. For a full and detailed description of the contents of the `.citros`  directory, refer to the [CLI Documentation](https://github.com/lulav/citros_doc/blob/main/docs_cli/index.md).
+The `.citros` directory contains several files and folders that capture the state of your project and allow you to configure your simulations according to your needs. We will discuss some of them briefly later on. For a full and detailed description of the contents of the `.citros`  directory, refer to the [CLI Documentation](https://citros.io/doc/docs_cli).
 
-### Running a simulation
+### Running a Simulation
 
 After your `.citros` repository has been initialized, you're ready to run a CITROS simulation, albeit with all the default configurations, by using the `run` command:
 
@@ -181,14 +181,14 @@ To fully understand what's going on, we need to familiarize ourselves with three
 
     Defined as a single execution of a simulation as defined by the chosen launch file. Launching CITROS simulations with multiple runs ('*complitions*') is particulary advantageous when working online, in which case a large number of simulation runs can be simultaneously executed on the CITROS cloud.
 
-    The folder corresponding to a simulation run will contain all the information relevant for that run. Look through such a folder after running a simulation and see for yourself. For further details refer to the [CLI Documentation](https://github.com/lulav/citros_doc/blob/main/docs_cli/index.md)
+    The folder corresponding to a simulation run will contain all the information relevant for that run. Look through such a folder after running a simulation and see for yourself. For further details refer to the [CLI Documentation](https://citros.io/doc/docs_cli)
 
 
 By default, when using the `run` command, you must provide a batch name (using the `-n` flag) and a message (using the `-m` flag). The name you provide will be used as the name of the directory in which all runs for this batch will be saved. If a batch by that name already exists - no worries, CITROS will simply add an underscore and an index to the name you provided, thereby keeping the batch directory names unique for each simulation. 
 
 Now that you understand what's going on, choose on of the simulations presented in the menue, press enter and see it run...
 
-### Configuring a simulation
+### Configuring a Simulation
 
 We just ran a simulation a single time with all the default configurations, which is admittedly not that exciting. Let's see how we can turn things up a notch by setting up dynamic parameter evaluation for our simulation, thereby allowing each run within the same batch to have different parameter values.
 
@@ -215,7 +215,7 @@ citros run -n "test_params" -m "testing random initial angle" -c 10
 
 and choose `simulation_cannon_analytic` from the menue, the simulation will run 10 times (sequentially), and each time the cannon will have a different initial angle. By looking at the results, we can hopefully come to the conclusion that 45 degrees is the optimal angle. 
 
-More options for configuring your simulation are [discussed](#configuring-a-simulation-1) in the next section. For user defined functions and further details about configuring CITROS simulations in general, refer to the [CLI Documentation](https://github.com/lulav/citros_doc/blob/main/docs_cli/index.md). 
+More options for configuring your simulation are [discussed](#configuring-a-simulation-1) in the next section. For user defined functions and further details about configuring CITROS simulations in general, refer to the [CLI Documentation](https://citros.io/doc/docs_cli). 
 
 
 ## Working with CITROS CLI - Online
@@ -224,10 +224,10 @@ More options for configuring your simulation are [discussed](#configuring-a-simu
 In addition to the prerquisites for working with the CITROS CLI offline, make sure:
 
 - You have a working internet connection.
-- You have signed up to [Citos](https://citros.io) and have your login password.
+- You have signed up to [CITROS](https://citros.io) and have your login password.
 
 
-Using the CITROS CLI online is very similar, from the user's standpoint, to using it offline. We still use the `init` and `run` commands, albeit with slite alterations or different consequences. In addition, there are a few more commands necessary to interact with the CITROS cloud.
+Using the CITROS CLI online is very similar, from the user's standpoint, to using it offline. We still use the `init` and `run` commands, albeit with slight alterations or different consequences. In addition, there are a few more commands necessary to interact with the CITROS cloud.
 
 ### logging in
 
@@ -245,7 +245,7 @@ Before we continue to initialze our project, there is one more prerequisite we n
 ```bash
 citros setup-ssh
 ```
-for further details, see the [CLI Documentation](https://github.com/lulav/citros_doc/blob/main/docs_cli/index.md)
+for further details, see the [CLI Documentation](https://citros.io/doc/docs_cli)
 
 
 ### Initialization
@@ -264,7 +264,7 @@ Citros successfully synched with local project.
 You may review your changes via `citros status` and commit them via `citros commit`.
 Intialized Citros repository.
 ```
-As you can see, a lot more is happening when you initialize your repository while being logged in. We will not delve into all the details behind the scenes, but as always, feel free to roam through the [CLI Documentation](https://github.com/lulav/citros_doc/blob/main/docs_cli/index.md) for further details.
+As you can see, a lot more is happening when you initialize your repository while being logged in. We will not delve into all the details behind the scenes, but as always, feel free to roam through the [CLI Documentation](https://citros.io/doc/docs_cli) for further details.
 
 :::note
 
@@ -290,7 +290,7 @@ working remotely with [git@citros.io:lulav/cannon.git].
  ``` 
 :::
 
-### Building and pushing a docker image
+### Building and Pushing a Docker Image
 
 Now that our CITROS repository is initialized and synched with the CITROS remote, we have one more imported thing we need to do before we can run our simulation on the cloud - we need to build a docker image of our ROS project, tag it with the current commit hash for the project, and upload it to CITROS. Sounds complicated? Not to worry - all this is accomplished by running a single command:
 ```bash
@@ -302,7 +302,7 @@ As a prerequisite for this command, the working directory of your ROS project mu
 
 :::
 
-### Running on the cloud
+### Running on The Cloud
 
 After running the previous command, CITROS has a docker image of your ROS project, so we can finally run the simulation on the cloud (notice the `-r` flag):
 ```bash
@@ -313,7 +313,7 @@ created new batch_id: a2d7bc36-9b59-4aae-9c49-3bef5e9c5850. Running on Citros cl
 
 The above command will run the `cannon_analytic` simulation 3 times on the CITROS cloud. By clicking the provided link, you can directly navigate to the *runs* tab on the CITROS website, and see your runs in action.
 
-### Configuring a simulation
+### Configuring a Simulation
 
 When working online, there are several more ways with which you can configure your simulation. Specifically, you can directly set the hardware resources that will be used on the cloud. Simply open the `.citros/simulations/simulation_cannon_analytic.json` file (for example), set the values according to your needs:
 
@@ -331,6 +331,6 @@ In addition there are several more usefull fields, which are also relevant when 
     },
     "timeout": 64,
 
-The `launch` field specifies the specific launch file for this simulation and the package it rersides in. You may change it according to your needs.
+The `launch` field specifies the specific launch file for this simulation and the package it resides in. You may change it according to your needs.
 
 The `timeout` field, surprisingly enough, sets a timeout (in *seconds*) for each simulation run, after which it will be automatically halted.
