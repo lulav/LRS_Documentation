@@ -11,7 +11,7 @@ const katex = require("rehype-katex");
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: "CITROS",
-  tagline: "The starting point for your next robotic project",
+  tagline: "The starting point for your next robotic project", 
   favicon: "img/favicon.ico",
 
   // Set the production url of your site here
@@ -59,15 +59,15 @@ const config = {
           //editUrl:
           //  'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
         },
-        blog: {
-          showReadingTime: true,
-          remarkPlugins: [math],
-          rehypePlugins: [katex],
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          //editUrl:
-          //  'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
-        },
+        // blog: {
+        //   showReadingTime: true,
+        //   remarkPlugins: [math],
+        //   rehypePlugins: [katex],
+        //   // Please change this to your repo.
+        //   // Remove this to remove the "edit this page" links.
+        //   //editUrl:
+        //   //  'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+        // },
         theme: {
           customCss: require.resolve("./src/css/custom.css"),
         },
@@ -190,7 +190,7 @@ const config = {
             position: "left",
             activeBaseRegex: `/docs_tutorials/`,
           },
-          { to: "/blog", label: "Blog", position: "left" },
+          // { to: "/blog", label: "Blog", position: "left" },
           {
             type: "docsVersionDropdown",
             position: "right",
@@ -220,10 +220,10 @@ const config = {
           {
             title: "Visit",
             items: [
-              {
-                label: "Blog",
-                to: "/blog",
-              },
+              // {
+              //   label: "Blog",
+              //   to: "/blog",
+              // },
               {
                 label: "Twitter",
                 to: "https://twitter.com/lulavspace",
@@ -256,11 +256,11 @@ const config = {
             items: [
               {
                 label: "Terms and Conditions",
-                to: "/blog",
+                to: "https://www.lulav.space",
               },
               {
                 label: "Privacy Policy",
-                to: "/blog",
+                to: "https://www.lulav.space",
               },
             ],
           },
