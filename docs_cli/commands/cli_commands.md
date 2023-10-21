@@ -203,7 +203,7 @@ $ citros pull [-dir <folder_name>]
 
 The `pull` command fetches from and integrates with another Citros repository or a local branch. Essentially, it acts as a wrapper for the `git pull` command within the context of your Citros repo.
 
-**Note:** if there conflicts between your local copy and the remote copy that cannot be resolved automatically, than a manual merge will have to take place. Not to worry - Citros makes this process user-friendly - see [Merge](./merge.md#merge) for details.
+**Note:** if there conflicts between your local copy and the remote copy that cannot be resolved automatically, than a manual merge will have to take place. Not to worry - Citros makes this process user-friendly - see [Merge](#command-merge) for details.
 
 #### Options
 Option|Description

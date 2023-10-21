@@ -40,7 +40,7 @@ The file `default_param_setup.json` will not be overwritten during citros `init`
     
 The structured format of the parameter setup files streamlines both the understanding and alteration of parameters for each node in your ROS project. This becomes especially valuable when you're keen to explore the influence of different parameter values on your ROS project's behavior. Take, for instance, a static parameter value like 42. Instead of hard-coding it, you could use a *function object* to derive a value from a normal distribution centered at 42. The introduction of function objects broadens your horizons, enabling you to use any numpy function or even craft user-defined functions for meticulous computational adjustments. A prime example is when parameter values are intricate, making them cumbersome to hard-code; in such scenarios, you can devise a function to fetch them from a file. In essence, this newfound flexibility paves the way for limitless computational and manipulative possibilities for your parameters.
     
-To learn how to add functions to parameter setups, please refer to the [Adding functions to parameter setup](../configuration/param_functions.md#Adding-functions-to-parameter-setup) section.
+To learn how to add functions to parameter setups, please refer to the [Adding functions to parameter setup](/docs_cli/configuration/config_params.md) section.
 
 </details>
 
@@ -77,7 +77,7 @@ The runs directory stores data and metadata about each run of your simulations. 
 
 - `bag`: This sub-directory holds the recorded data from the simulation run. It includes:
 
-- bag_0.db3: This is a ROS bag file that contains all the messages that were sent during the simulation. The default bag format is `sqlite3` (hence the db3 postfix), but you may also use the `mcap` format. See [simulations](./simulations.md#simulations).
+- bag_0.db3: This is a ROS bag file that contains all the messages that were sent during the simulation. The default bag format is `sqlite3` (hence the db3 postfix), but you may also use the `mcap` format. See [simulations](#directory-simulations).
 
 - metadata.yaml: A file holding metadata information associated with the bag file.
 
