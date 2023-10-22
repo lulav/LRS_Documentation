@@ -58,6 +58,10 @@ To re-initialize an existing Citros repository, you must first delete the existi
 
 ## Command `setup-ssh`
 
+```sh
+$ citros setup-ssh [-d | --debug] [-v | --verbose]
+```
+
 <details>
 
 <summary>Description</summary>
@@ -137,6 +141,10 @@ Option|Description
 
 ## Command `add-remote`
 
+```sh
+$ citros add-remote [-dir <folder_name>] 
+[-d | --debug] [-v | --verbose]
+```
 <details>
   <summary>Description</summary>
 
