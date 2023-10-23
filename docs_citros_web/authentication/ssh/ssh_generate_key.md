@@ -46,7 +46,7 @@ clip < ~/.ssh/id_rsa.pub
 ```
 **Please Note**, if you changed the name of the key, then copy if from "Your public key location path"
 
-- To add the key into CITROS follow [Add Key to CITROS](/docs_citros_web/authentication/ssh/ssh_add_key.md). 
+- To add the key into CITROS follow [Add Key to CITROS](/docs_citros_web/authentication/ssh/ssh_add_new.md). 
 
 
 </TabItem>
@@ -94,7 +94,7 @@ pbcopy < ~/.ssh/id_ed25519.pub
 ```
 **Please Note**, if you changed the name of the key, then copy if from "Your public key location path"
 
-- To add the key into CITROS follow [Add Key to CITROS](/docs_citros_web/authentication/ssh/ssh_add_key.md). 
+- To add the key into CITROS follow [Add Key to CITROS](/docs_citros_web/authentication/ssh/ssh_add_new.md). 
 
 </TabItem>
 
@@ -141,7 +141,7 @@ cat ~/.ssh/id_rsa.pub
 ```
 **Please Note**, if you changed the name of the key, then copy if from "Your public key location path"
 
-- To add the key into CITROS follow [Add Key to CITROS](/docs_citros_web/authentication/ssh/ssh_add_key.md). 
+- To add the key into CITROS follow [Add Key to CITROS](./ssh_add_new.md). 
 
 </TabItem>
 </Tabs>
