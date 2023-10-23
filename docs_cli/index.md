@@ -15,6 +15,6 @@ We are dedicated to enriching your ROS project simulation experience, and this p
 2. [Installation](/docs_cli/overview/cli_install)
 4. [CLI Commands](/docs_cli/commands/cli_commands.md)
 5. [Citros Repository directory and file Structure](/docs_cli/structure/citros_structure.md) 
-6. [Citros Repository Configuration](/docs_cli/configuration/config_params.md)
+6. [Adding Functions to Parameter Setup](/docs_cli/configuration/config_params.md)
 7. [User Templates](/docs_cli/user_templates.md#user-templates)
 
