@@ -86,8 +86,23 @@ module.exports = {
                 },
                 {
                   type: 'doc',
+                  label: 'Managing deploy keys',
+                  id: 'authentication/ssh/ssh_mng_deploy_keys',
+                },
+                {
+                  type: 'doc',
+                  label: 'Checking for existing SSH keys',
+                  id: 'authentication/ssh/ssh_chk_existing_key',
+                },
+                {
+                  type: 'doc',
                   label: 'Generate new SSH Key',
                   id: 'authentication/ssh/ssh_generate_key',
+                },
+                {
+                  type: 'doc',
+                  label: 'Adding a new SSH key',
+                  id: 'authentication/ssh/ssh_add_new',
                 },
                 {
                   type: 'doc',
