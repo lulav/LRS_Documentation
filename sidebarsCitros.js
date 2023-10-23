@@ -132,63 +132,6 @@ module.exports = {
       ],
     },
     
-    //Simulations
-    {
-      type: 'category',
-      label: 'Simulations',
-      collapsible: true,
-      collapsed: true,
-      items: [
-        {
-          type: 'doc',
-          label: 'Overview',
-          id: 'simulations/sim_overview',
-        },
-        {
-          type: 'category',
-          label: 'Batch Simulations',
-          items: [
-            // {
-            //   type: 'doc',
-            //   label: 'Breadcrumbs',
-            //   id: 'simulations_batch/sim_batch_breadcrumbs',
-            // },
-            {
-              type: 'doc',
-              label: 'Run New Batch Simulations',
-              id: 'simulations/simulations_batch/sim_batch_run',
-            },
-            {
-              type: 'doc',
-              label: 'Batch Simulations Screen',
-              id: 'simulations/simulations_batch/sim_batch_screen',
-            },
-          ]
-        },
-        {
-          type: 'category',
-          label: 'Simulation Screen',
-          items: [
-            // {
-            //   type: 'doc',
-            //   label: 'Breadcrumbs',
-            //   id: 'simulation_screen/sim_breadcrumbs',
-            // },
-            {
-              type: 'doc',
-              label: 'Possible Runs',
-              id: 'simulations/simulation_screen/sim_possible_runs',
-            },
-            {
-              type: 'doc',
-              label: 'Logs',
-              id: 'simulations/simulation_screen/sim_logs',
-            },
-          ]
-        },
-      ],
-    },
-
     //Repositories
     {
       type: 'category',
@@ -275,75 +218,102 @@ module.exports = {
       ],
     },
 
-  
-    //Billing
+    //Simulations
     {
       type: 'category',
-      label: 'Billing',
+      label: 'Simulations',
       collapsible: true,
       collapsed: true,
       items: [
         {
           type: 'doc',
-          label: 'Payment Method',
-          id: 'billing/billing_pm',
+          label: 'Overview',
+          id: 'simulations/sim_overview',
         },
         {
-          type: 'doc',
-          label: 'Billing Address',
-          id: 'billing/billing_address',
+          type: 'category',
+          label: 'Batch Simulations',
+          items: [
+            // {
+            //   type: 'doc',
+            //   label: 'Breadcrumbs',
+            //   id: 'simulations_batch/sim_batch_breadcrumbs',
+            // },
+            {
+              type: 'doc',
+              label: 'Run New Batch Simulations',
+              id: 'simulations/simulations_batch/sim_batch_run',
+            },
+            {
+              type: 'doc',
+              label: 'Batch Simulations Screen',
+              id: 'simulations/simulations_batch/sim_batch_screen',
+            },
+          ]
         },
         {
-          type: 'doc',
-          label: 'Invoices',
-          id: 'billing/billing_invoices',
-        },
-        {
-          type: 'doc',
-          label: 'Plans',
-          id: 'billing/billing_plans',
+          type: 'category',
+          label: 'Simulation Screen',
+          items: [
+
+            {
+              type: 'doc',
+              label: 'Possible Runs',
+              id: 'simulations/simulation_screen/sim_possible_runs',
+            },
+            {
+              type: 'doc',
+              label: 'Logs',
+              id: 'simulations/simulation_screen/sim_logs',
+            },
+          ]
         },
       ],
     },
+
+    //Billing
+    // {
+    //   type: 'category',
+    //   label: 'Billing',
+    //   collapsible: true,
+    //   collapsed: true,
+    //   items: [
+    //     {
+    //       type: 'doc',
+    //       label: 'Payment Method',
+    //       id: 'billing/billing_pm',
+    //     },
+    //     {
+    //       type: 'doc',
+    //       label: 'Billing Address',
+    //       id: 'billing/billing_address',
+    //     },
+    //     {
+    //       type: 'doc',
+    //       label: 'Invoices',
+    //       id: 'billing/billing_invoices',
+    //     },
+    //     {
+    //       type: 'doc',
+    //       label: 'Plans',
+    //       id: 'billing/billing_plans',
+    //     },
+    //   ],
+    // },
     
     //Organization
-    {
-      type: 'category',
-      label: 'Organization',
-      collapsible: true,
-      collapsed: true,
-      items: [
-        {
-          type: 'doc',
-          label: 'TBD',
-          id: 'organization/organization_tbd',
-        },
-      ],
-    },
+    // {
+    //   type: 'category',
+    //   label: 'Organization',
+    //   collapsible: true,
+    //   collapsed: true,
+    //   items: [
+    //     {
+    //       type: 'doc',
+    //       label: 'TBD',
+    //       id: 'organization/organization_tbd',
+    //     },
+    //   ],
+    // },
   ],
 };
-
-
-// 
-// module.exports = {
-//   gettingStartedSidebar: [
-//     {
-//       type: "category",
-//     label: "Quick Start",
-//     link: {
-//       // type: "doc",
-//       id: "index",
-//     },
-//     items: [
-//       {
-//         type: "doc",
-//         id: "quickstart/quick_tbd",
-//         label: "CITROS web",
-//       },
-//     ],
-//     },
-    
-    
-    
-//   ],
-// };
