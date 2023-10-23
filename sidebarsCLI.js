@@ -30,7 +30,7 @@ module.exports = {
 
     {
       type: 'doc',
-      label: 'Citros Repository Directory and File Structure',
+      label: 'CITROS Repository Directory and File Structure',
       id: 'structure/citros_structure',
     },
 
