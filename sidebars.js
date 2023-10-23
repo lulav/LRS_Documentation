@@ -22,11 +22,11 @@ module.exports = {
   gettingStartedSidebar: [
     {
       type: "category",
-      label: "Quick Start",
-      // link: {
-      //   // type: "doc",
-      //   id: "index",
-      // },
+      label: "CITROS Docs",
+      link: {
+        type: "doc",
+        id: "index",
+      },
       items: [
         {
           type: "doc",
