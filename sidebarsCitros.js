@@ -2,7 +2,7 @@ module.exports = {
   citrosSidebar: [
     {
       type: "category",
-      label: "Overview",
+      label: "CITRSO Web",
       link: {
         type: "doc",
         id: "index",
@@ -11,7 +11,7 @@ module.exports = {
         {
           type: "doc",
           id: "quickstart/quick_tbd",
-          label: "CITROS web",
+          label: "Quick Start",
         },
       ],
     
@@ -20,132 +20,125 @@ module.exports = {
      //Authentication
     {
       type: 'category',
-      label: 'Authentication',
-      collapsible: true,
-      collapsed: true,
+      label: 'Account',
       items: [
         {
+          type: 'doc',
+          label: 'Overview',
+          id: 'authentication/account/account_overview',
+        },
+        {
+          type: 'doc',
+          label: 'Account Registration',
+          id: 'authentication/account/account_login',
+        },
+        {
+          type: 'doc',
+          label: 'Change Password',
+          id: 'authentication/account/account_password',
+        },
+        {
           type: 'category',
-          label: 'Account',
+          label: 'Profile Settings',
           items: [
             {
               type: 'doc',
-              label: 'Account Registration',
-              id: 'authentication/account/account_login',
+              label: 'Notification Settings',
+              id: 'authentication/account/profile/notification_settings',
             },
             {
               type: 'doc',
-              label: 'Change Password',
-              id: 'authentication/account/account_password',
+              label: 'SSH Keys',
+              id: 'authentication/account/profile/ssh',
             },
             {
-              type: 'category',
-              label: 'Profile Settings',
-              items: [
-
-                {
-                  type: 'doc',
-                  label: 'Notification Settings',
-                  id: 'authentication/profile/notification_settings',
-                },
-                {
-                  type: 'doc',
-                  label: 'SSH Keys',
-                  id: 'authentication/profile/ssh',
-                },
-                {
-                  type: 'doc',
-                  label: 'Quota',
-                  id: 'authentication/profile/quota',
-                },
-
-
-
-
+              type: 'doc',
+              label: 'Quota',
+              id: 'authentication/account/profile/quota',
+            },
               ]
             },
+          ]
+        },
+    {
+      type: 'category',
+      label: 'SSH Keys',
+      items: [
+        {
+          type: 'doc',
+          label: 'Overview',
+          id: 'authentication/ssh/ssh_overview',
+        },
+        {
+          type: 'category',
+          label: 'Connect with SSH',
+          items: [
+            {
+              type: 'doc',
+              label: 'SSH Agent Forwarding',
+              id: 'authentication/ssh/ssh_agent_forwarding',
+            },
+            {
+              type: 'doc',
+              label: 'Managing deploy keys',
+              id: 'authentication/ssh/ssh_mng_deploy_keys',
+            },
+            {
+              type: 'doc',
+              label: 'Checking for existing SSH keys',
+              id: 'authentication/ssh/ssh_chk_existing_key',
+            },
+            {
+              type: 'doc',
+              label: 'Generate new SSH Key',
+              id: 'authentication/ssh/ssh_generate_key',
+            },
+            {
+              type: 'doc',
+              label: 'Adding a new SSH key',
+              id: 'authentication/ssh/ssh_add_new',
+            },
+            {
+              type: 'doc',
+              label: 'Test your SSH connection',
+              id: 'authentication/ssh/ssh_test_connection',
+            },
+            {
+              type: 'doc',
+              label: 'SSH key passphrases',
+              id: 'authentication/ssh/ssh_passphrases',
+            }
           ]
         },
         {
           type: 'category',
-          label: 'SSH Keys',
+          label: 'Troubleshooting',
           items: [
             {
-              type: 'category',
-              label: 'Connect with SSH',
-              items: [
-                {
-                  type: 'doc',
-                  label: 'Overview',
-                  id: 'authentication/ssh/ssh_overview',
-                },
-                {
-                  type: 'doc',
-                  label: 'SSH Agent Forwarding',
-                  id: 'authentication/ssh/ssh_agent_forwarding',
-                },
-                {
-                  type: 'doc',
-                  label: 'Managing deploy keys',
-                  id: 'authentication/ssh/ssh_mng_deploy_keys',
-                },
-                {
-                  type: 'doc',
-                  label: 'Checking for existing SSH keys',
-                  id: 'authentication/ssh/ssh_chk_existing_key',
-                },
-                {
-                  type: 'doc',
-                  label: 'Generate new SSH Key',
-                  id: 'authentication/ssh/ssh_generate_key',
-                },
-                {
-                  type: 'doc',
-                  label: 'Adding a new SSH key',
-                  id: 'authentication/ssh/ssh_add_new',
-                },
-                {
-                  type: 'doc',
-                  label: 'Test your SSH connection',
-                  id: 'authentication/ssh/ssh_test_connection',
-                },
-                {
-                  type: 'doc',
-                  label: 'SSH key passphrases',
-                  id: 'authentication/ssh/ssh_passphrases',
-                }
-              ]
+              type: 'doc',
+              label: 'SSH key passphrases',
+              id: 'authentication/troubleshooting/ts_passphrases',
             },
             {
-              type: 'category',
-              label: 'Troubleshooting',
-              items: [
-                {
-                  type: 'doc',
-                  label: 'SSH key passphrases',
-                  id: 'authentication/troubleshooting/ts_passphrases',
-                },
-                {
-                  type: 'doc',
-                  label: 'Deleted or Missing SSH Keys',
-                  id: 'authentication/troubleshooting/ts_missing_key',
-                },
-                {
-                  type: 'doc',
-                  label: 'Errors',
-                  id: 'authentication/troubleshooting/ts_error',
-                },
-                {
-                  type: 'doc',
-                  label: 'Permission Denied',
-                  id: 'authentication/troubleshooting/ts_permissions',
-                }
-              ]
+              type: 'doc',
+              label: 'Deleted or Missing SSH Keys',
+              id: 'authentication/troubleshooting/ts_missing_key',
             },
+            {
+              type: 'doc',
+              label: 'Errors',
+              id: 'authentication/troubleshooting/ts_error',
+            },
+            {
+              type: 'doc',
+              label: 'Permission Denied',
+              id: 'authentication/troubleshooting/ts_permissions',
+            }
           ]
         },
-      ],
+      ]
     },
+  
     
     //Repositories
     {
