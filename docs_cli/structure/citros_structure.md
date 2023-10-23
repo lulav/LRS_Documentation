@@ -1,4 +1,4 @@
-# Citros Repository File Structure
+# CITROS Repository File Structure
 
 The following folder and file structure is automatically generated for you (when you run `citros init`):
 
@@ -34,9 +34,9 @@ The following folder and file structure is automatically generated for you (when
 
 <summary>Description</summary>
 
-The `parameter_setups` directory stores your JSON-formatted parameter setup files. When you initialize your citros repository, a `default_param_setup.json` file is automatically generated. This file consolidates all the default parameters for every node across all the packages in your ROS project, providing a consolidated and easily accessible record of these parameters.
+The `parameter_setups` directory stores your JSON-formatted parameter setup files. When you initialize your CITROS repository, a `default_param_setup.json` file is automatically generated. This file consolidates all the default parameters for every node across all the packages in your ROS project, providing a consolidated and easily accessible record of these parameters.
 
-The file `default_param_setup.json` will not be overwritten during citros `init`, `run` or `status` commands. Nevertheless, it is recommended to duplicate this file under a different name within the `parameter_setups` directory before making any modifications. This practice ensures your custom setups are preserved and allows you to experiment with various parameter configurations.
+The file `default_param_setup.json` will not be overwritten during CITROS `init`, `run` or `status` commands. Nevertheless, it is recommended to duplicate this file under a different name within the `parameter_setups` directory before making any modifications. This practice ensures your custom setups are preserved and allows you to experiment with various parameter configurations.
     
 The structured format of the parameter setup files streamlines both the understanding and alteration of parameters for each node in your ROS project. This becomes especially valuable when you're keen to explore the influence of different parameter values on your ROS project's behavior. Take, for instance, a static parameter value like 42. Instead of hard-coding it, you could use a *function object* to derive a value from a normal distribution centered at 42. The introduction of function objects broadens your horizons, enabling you to use any numpy function or even craft user-defined functions for meticulous computational adjustments. A prime example is when parameter values are intricate, making them cumbersome to hard-code; in such scenarios, you can devise a function to fetch them from a file. In essence, this newfound flexibility paves the way for limitless computational and manipulative possibilities for your parameters.
     
@@ -89,7 +89,7 @@ The runs directory stores data and metadata about each run of your simulations. 
             
 - `environment.json`: A file capturing a snapshot of your environment variables and Python packages at the time of the simulation run.
 
-- `info.json`: A JSON file containing general metadata about the run, such as batch ID, batch name, datetime of the run, user's Git commit and branch information, and Citros' Git commit and branch information, as well as a hash of the bag file.
+- `info.json`: A JSON file containing general metadata about the run, such as batch ID, batch name, datetime of the run, user's Git commit and branch information, and CITROS' Git commit and branch information, as well as a hash of the bag file.
 
 - `metrics.csv`: A CSV file recording system performance metrics during the simulation run, including CPU usage, total memory, available memory, used memory, and memory usage percentage.
 
@@ -133,7 +133,7 @@ You can modify these fields to suit your simulation needs, just remember to save
 
 The `workflows` directory stores your JSON-formatted workflow files.
 
-A flow.json file (e.g. `default_flow.json` which is auto-generated during `citros init`) is a user-crafted file used to automate and manage the flow of simulations in a citros repository. This file controls when the flow is triggered, which simulations are running, the post-processing analysis using Jupyter notebooks, and the recipients of the final reports. Here is a breakdown of its structure and content:
+A flow.json file (e.g. `default_flow.json` which is auto-generated during `citros init`) is a user-crafted file used to automate and manage the flow of simulations in a CITROS repository. This file controls when the flow is triggered, which simulations are running, the post-processing analysis using Jupyter notebooks, and the recipients of the final reports. Here is a breakdown of its structure and content:
 
 - `trigger`: This field specifies the event that initiates the flow. It is usually tied to some form of version control event, like a Git push, but can be configured according to the user's needs.
 
@@ -143,16 +143,16 @@ A flow.json file (e.g. `default_flow.json` which is auto-generated during `citro
 
 - `recipients`: This is a list of email addresses that will receive the reports generated from the notebooks' analysis.
 
-The flow.json file helps to streamline and automate your citros repository by tying together simulation runs, data analysis, and report distribution into a single manageable file. You can customize it to suit the specifics of your project.
+The flow.json file helps to streamline and automate your CITROS repository by tying together simulation runs, data analysis, and report distribution into a single manageable file. You can customize it to suit the specifics of your project.
 
 </details>
 
 ## File `project.json`
 <details>
 <summary>Description</summary>
-The project.json file is a key component of your Citros repository. It contains metadata about your ROS project, and is automatically generated by the citros `init`, `run` and `status` commands. Here's a description of its top-level fields:
+The project.json file is a key component of your CITROS repository. It contains metadata about your ROS project, and is automatically generated by the citros `init`, `run` and `status` commands. Here's a description of its top-level fields:
 
-- `citros_cli_version`: The Citros CLI version installed.
+- `citros_cli_version`: The CITROS CLI version installed.
 
 - `cover`: A placeholder for a potential image that represents the project.
 
@@ -170,7 +170,7 @@ The project.json file is a key component of your Citros repository. It contains 
 
 - `license`: A string indicating the license of the project.
 
-- `name`: The name of the project. *Note*: this is the only field that you may edit and it will not be overwritten during subsequent citros commands.
+- `name`: The name of the project. *Note*: this is the only field that you may edit and it will not be overwritten during subsequent CITROS commands.
 
 - [`packages`](#packages-array): An array of objects that describe the ROS packages that exist within the project.
 
@@ -216,7 +216,7 @@ The `nodes` array contains objects that describe the ROS nodes within a package.
 <details>
 <summary>Description</summary>
 
-The settings.json file holds configuration settings for your Citros repository. Here is a breakdown of each field in 
+The settings.json file holds configuration settings for your CITROS repository. Here is a breakdown of each field in 
 this file:
 
 - `name`: The name of the current settings profile. This can be useful if you want to maintain different sets of settings for different contexts (e.g., 'default_settings', 'debug_settings', etc.).
