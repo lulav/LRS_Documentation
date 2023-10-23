@@ -18,7 +18,7 @@ for more information see [Soft Landing](https://github.com/CITROS-garden/soft_la
 ## Table of Contents
 
 3. [Installation](#installation)
-    1. [Prerequisits](#prerequisits)
+    1. [Prerequisites](#prerequisites)
     2. [Install & Build](#install--build)
 4. [CITROS Integration](#citros-integration)
     1. [Configuring The Project](#configuring-the-project)
@@ -29,10 +29,10 @@ for more information see [Soft Landing](https://github.com/CITROS-garden/soft_la
 
 ## Installation
 
-### Prerequisits
- - Python 3.8+  
- - VSCode  
- - Docker  
+### Prerequisites
+ - [Python 3.8+](https://www.python.org/downloads/)  
+ - [VSCode](https://code.visualstudio.com/download) 
+ - [Docker](https://www.docker.com/get-started/)  
  
    
 ### Install & Build 
