@@ -127,7 +127,7 @@ module.exports = {
             {
               type: 'doc',
               label: 'Errors',
-              id: 'authentication/troubleshooting/ts_error',
+              id: 'authentication/troubleshooting/ts_errors',
             },
             {
               type: 'doc',
