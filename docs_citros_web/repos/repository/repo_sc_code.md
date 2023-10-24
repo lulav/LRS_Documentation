@@ -181,11 +181,4 @@ this file:
 
 ## Drop Down Menu
 
-<!--TODO Explain what users sees when pressing on different branch
-
-When you choose a different branch in drop down menu you...
-devide the screen   as before for each part 
-if you already explain something, add link to it
--->
-
 When you are working on a repository, the branch name that you see is the one you are currently working on. You can view all the branches of your repository by clicking on the arrow next to the branch name. If you want to switch to another branch, simply click on the branch name you want to work on. This will help you switch between branches easily and continue your work without any hassle.
