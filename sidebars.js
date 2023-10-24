@@ -220,7 +220,7 @@ module.exports = {
     //Simulations
     {
       type: 'category',
-      label: 'Simulations',
+      label: 'Runs',
       collapsible: true,
       collapsed: true,
       items: [
@@ -230,42 +230,19 @@ module.exports = {
           id: 'simulations/sim_overview',
         },
         {
-          type: 'category',
-          label: 'Batch Simulations',
-          items: [
-            // {
-            //   type: 'doc',
-            //   label: 'Breadcrumbs',
-            //   id: 'simulations_batch/sim_batch_breadcrumbs',
-            // },
-            {
-              type: 'doc',
-              label: 'Run New Batch Simulations',
-              id: 'simulations/simulations_batch/sim_batch_run',
-            },
-            {
-              type: 'doc',
-              label: 'Batch Simulations Screen',
-              id: 'simulations/simulations_batch/sim_batch_screen',
-            },
-          ]
+          type: 'doc',
+          label: 'Batch Runs',
+          id: 'simulations/sim_batch_runs',
         },
         {
-          type: 'category',
-          label: 'Simulation Screen',
-          items: [
-
-            {
-              type: 'doc',
-              label: 'Possible Runs',
-              id: 'simulations/simulation_screen/sim_possible_runs',
-            },
-            {
-              type: 'doc',
-              label: 'Logs',
-              id: 'simulations/simulation_screen/sim_logs',
-            },
-          ]
+          type: 'doc',
+          label: 'Batch Run',
+          id: 'simulations/sim_batch_run',
+        },
+        {
+          type: 'doc',
+          label: 'Simulation Run',
+          id: 'simulations/sim_run',
         },
       ],
     },
@@ -316,3 +293,5 @@ module.exports = {
     // },
   ]
 };
+
+
