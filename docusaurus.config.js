@@ -51,6 +51,7 @@ const config = {
         docs: {
           //routeBasePath: 'docs',
           path: "docs",
+          // path: "docs_citros_web",
           sidebarPath: require.resolve("./sidebars.js"),
           remarkPlugins: [math],
           rehypePlugins: [katex],
@@ -162,16 +163,16 @@ const config = {
             //to: '/docs/intro',    // ./docs/Intro.md
             type: "docSidebar",
             sidebarId: "gettingStartedSidebar",
-            label: "Getting started",
-            position: "left",
-            activeBaseRegex: `/docs/`,
-          },
-          {
-            to: "/docs_citros_web", // ./docs-api/Intro.md
             label: "Web",
             position: "left",
             activeBaseRegex: `/docs_citros_web/`,
           },
+          // {
+          //   to: "/docs_citros_web", // ./docs-api/Intro.md
+          //   label: "Web",
+          //   position: "left",
+          //   activeBaseRegex: `/docs_citros_web/`,
+          // },
           {
             to: "/docs_cli", // ./docs-api/Intro.md
             label: "CLI",

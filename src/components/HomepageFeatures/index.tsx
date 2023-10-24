@@ -15,7 +15,7 @@ const FeatureList: FeatureItem[] = [
 
     {
       title: 'CITROS Web',
-      url: "docs_citros_web",
+      url: "docs",
       Svg: require('@site/static/img/citros_home_web.svg').default,
       description: (
         <div>
