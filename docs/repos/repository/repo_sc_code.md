@@ -1,18 +1,21 @@
 # Repository Code
 
-The Code screen contains:
+## Introduction
 
-1. Drop Down Menu of your repository Branches  
+The code tab contains the full code structure and directories of the repository
 
-![Alt text](img/drop_down_menu_branches.png)  
+![Alt text](img/code_table.png)
 
-2. Table of all directories, files and code your repository contains. 
+## Code Table
 
-<!--TODO Add image of directoris table only -->
-![Alt text](img/table_repo_direct.png)
+The code structure described in a table with the following fields:
 
-## Table Fields
-<!--TODO Describe table fields -->
+1. Type - Directory or file
+
+2. Name - Name of directory or file
+
+3. Path - The path of the directory or file in the code
+
 ## Directories and Files Description
 
 ### Directory `notebooks`
@@ -179,6 +182,24 @@ this file:
 
 </details>
 
-## Drop Down Menu
+## Other Options
 
-When you are working on a repository, the branch name that you see is the one you are currently working on. You can view all the branches of your repository by clicking on the arrow next to the branch name. If you want to switch to another branch, simply click on the branch name you want to work on. This will help you switch between branches easily and continue your work without any hassle.
+### Droop Down Menu
+
+Branch drop down menu exists above the code table, lising all branches the repositoory have.
+
+### Readme File
+
+The readme.md file of the repoository shown under the coode table.
+
+
+## Detailed Code Screen
+
+Choosing a specific file or a branch from the [roop Down Menu](#droop-down-menu) opens a new view of the code which contains:
+
+- Code Tree - contains the direcotries and files as [described above](#directories-and-files-description).
+- Preview of the directory or file chosen
+- search Box to find a file
+- Drop down menu to choose a different branch
+
+![Alt text](img/code_detailed.png)

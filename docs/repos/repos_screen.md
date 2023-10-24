@@ -1,9 +1,31 @@
 # Repositories Screen
 
-The `Repositories` page is comprized of a list of your team's repositories.  
+## Introduction
 
-![Alt text](img/repo0_image_highlight.png)
+The `Repositories` tab contains a list of all organization's repositories.
+It allows you to manage and monitor repositories easily and efficiently. 
 
-The red boxes contain the name or identifier of the specific project or software component that is being monitored or tested in CITROS.  
-The green boxes contain the name of the team member who uploaded the project to CITROS for testing or analysis.  
-The yellow boxes field is used to track the number of times the project passed and the number of times it failed in CITROS runs. It's common to represent this as two separate counts, one for "Pass" and one for "Fail." These counts are updated each time a CITROS test is executed, and the outcome is recorded.
+![Alt text](img/repos_screen_intro.png)
+
+
+## Repositories List
+
+Each list item represents a repository. it contains the following fileds
+- Repository Name
+- Uploader name - The team member who uploaded the project
+- Number of successful runs
+- Number of failed runs
+
+![Alt text](img/repos_screen_list.png)
+
+## Other Options
+
+### Search Box
+
+This allows to search a repository name by enetering it in the text box
+
+### New Repository Button
+
+Pressing on the button opens a window with a step-by-step instructions to upload a new repository
+
+![Alt text](img/repos_screen_top_line.png)

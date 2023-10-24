@@ -1,36 +1,65 @@
 # Add Repository
 
-Too add a new project repository please follow these steps:
-        
-1.  Make sure you are at your repository folder
+## Prequisites
 
-        cd ~/<your repository>
+To add repository to CITROS you first need to Install CITROS
+   
+   ```
+   pip install citros
+   ```
 
-2.  Install CITROS to your project
+## Add Repository to CITROS From Scrach
 
+1. Go to your repository path
 
-        pip install citros
+    ```
+    cd <repository name>
+    ```
 
-3.  Login to your CITROS account
+2.  Login to your CITROS account
 
+    ```
+    citros login
+    ```
 
-        citros login
+3.  Sync your repository to CITROS 
 
-4.  Sync your repository to CITROS 
+    ```
+    citros init
+    ```
 
+You should now see your repository at your [CITROS](https://citros.io/) account
 
-        citros init
+## Add Repository to CITROS After Working Offline
 
+If you started working with CITROS without login, meaning you already ini
 
-5.  Uploud the project to the web 
+1. Go to your repository path
 
+    ```
+    cd <repository name>
+    ```
 
-        citros docker-build-push
+2. Sync your repository to CITROS 
 
+    ```
+    citros init
+    ```
 
-If by any chance you did `citros init` befor you logged in and you want to add the project to CITROS then you need to run the command: 
-```
-citros add-remote
-```
-If you encounter any issues with authentication, please refer to [this](/docs/authentication/ssh/ssh_overview.md) resource for assistance.
+3. Login to your CITROS account
 
+    ```
+    citros login
+    ```
+
+4. Add your repository into CITROS account
+
+    ```
+    citros add-remote
+    ```
+
+You should now see your repository at your [CITROS](https://citros.io/) account
+
+:::noteNote:
+Only Metadata files are uploaded into CITROS servers, never your code
+:::
