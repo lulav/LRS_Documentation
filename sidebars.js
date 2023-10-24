@@ -59,39 +59,24 @@ module.exports = {
         },
         {
           type: 'category',
-          label: 'Settings',
+          label: 'Profile Settings',
           items: [
             {
               type: 'doc',
-              label: 'General',
-              id: 'authentication/account/profile/pr_general',
-            },
-            {
-              type: 'doc',
-              label: 'Organization',
-              id: 'authentication/account/profile/pr_org',
-            },
-            {
-              type: 'doc',
-              label: 'Users',
-              id: 'authentication/account/profile/pr_users',
-            },
-            {
-              type: 'doc',
-              label: 'Change Password',
-              id: 'authentication/account/profile/pr_pass',
+              label: 'Notification Settings',
+              id: 'authentication/account/profile/notification_settings',
             },
             {
               type: 'doc',
               label: 'SSH Keys',
-              id: 'authentication/account/profile/pr_ssh',
-            },
-              ]
+              id: 'authentication/account/profile/ssh',
             },
             {
               type: 'doc',
-              label: 'Notifications',
-              id: 'authentication/account/profile/notification_settings',
+              label: 'Quota',
+              id: 'authentication/account/profile/quota',
+            },
+              ]
             },
           ]
         },
@@ -189,82 +174,53 @@ module.exports = {
         },
         {
           type: 'doc',
-          label: 'Add Repository',
-          id: 'repos/repos_add',
-        },
-        {
-          type: 'doc',
-          label: 'Repository Template',
-          id: 'repos/repos_template',
+          label: 'Repositories Screen',
+          id: 'repos/repos_screen',
         },
         {
           type: 'category',
-          label: 'Repository File Structure',
+          label: 'Repositry Tabs',
           items: [
             {
               type: 'doc',
               label: 'Overview',
-              id: 'repos/repos_file_structure/repos_fs_overview',
+              id: 'repos/repository/repo_sc_overview',
+                        },
+            {
+              type: 'doc',
+              label: 'Code',
+              id: 'repos/repository/repo_sc_code',
             },
             {
               type: 'doc',
-              label: 'citros_repo_id',
-              id: 'repos/repos_file_structure/repos_fs_repo_id',
+              label: 'Runs',
+              id: 'repos/repository/repo_sc_runs',
             },
             {
               type: 'doc',
-              label: 'notebooks',
-              id: 'repos/repos_file_structure/repos_fs_notebooks',
+              label: 'Images',
+              id: 'repos/repository/repo_sc_images',
             },
             {
               type: 'doc',
-              label: 'parameter_setup',
-              id: 'repos/repos_file_structure/repos_fs_param_setup',
-            },
-            {
-              type: 'doc',
-              label: 'project.json',
-              id: 'repos/repos_file_structure/repos_fs_project_json',
-            },
-            {
-              type: 'doc',
-              label: 'readme',
-              id: 'repos/repos_file_structure/repos_fs_readme',
-            },
-            {
-              type: 'doc',
-              label: 'reports',
-              id: 'repos/repos_file_structure/repos_fs_reports',
-            },
-            {
-              type: 'doc',
-              label: 'settings.json',
-              id: 'repos/repos_file_structure/repos_fs_settings_json',
-            },
-            {
-              type: 'doc',
-              label: 'simulations',
-              id: 'repos/repos_file_structure/repos_fs_simulations',
-            },
-            {
-              type: 'doc',
-              label: 'user_commit',
-              id: 'repos/repos_file_structure/repos_fs_user_commit',
-            },
-            {
-              type: 'doc',
-              label: 'workflows',
-              id: 'repos/repos_file_structure/repos_fs_workflows',
+              label: 'Data',
+              id: 'repos/repository/repo_sc_data',
             },
           ]
         },
+{
+          type: 'doc',
+          label: 'Add Repository',
+          id: 'repos/repos_add',
+        },
+
       ],
     },
 
     //Simulations
     {
       type: 'category',
-      label: 'Simulations',
+      label: 'Runs',
       collapsible: true,
       collapsed: true,
       items: [
@@ -274,42 +230,19 @@ module.exports = {
           id: 'simulations/sim_overview',
         },
         {
-          type: 'category',
-          label: 'Batch Simulations',
-          items: [
-            // {
-            //   type: 'doc',
-            //   label: 'Breadcrumbs',
-            //   id: 'simulations_batch/sim_batch_breadcrumbs',
-            // },
-            {
-              type: 'doc',
-              label: 'Run New Batch Simulations',
-              id: 'simulations/simulations_batch/sim_batch_run',
-            },
-            {
-              type: 'doc',
-              label: 'Batch Simulations Screen',
-              id: 'simulations/simulations_batch/sim_batch_screen',
-            },
-          ]
+          type: 'doc',
+          label: 'Batch Runs',
+          id: 'simulations/sim_batch_runs',
         },
         {
-          type: 'category',
-          label: 'Simulation Screen',
-          items: [
-
-            {
-              type: 'doc',
-              label: 'Possible Runs',
-              id: 'simulations/simulation_screen/sim_possible_runs',
-            },
-            {
-              type: 'doc',
-              label: 'Logs',
-              id: 'simulations/simulation_screen/sim_logs',
-            },
-          ]
+          type: 'doc',
+          label: 'Batch Run',
+          id: 'simulations/sim_batch_run',
+        },
+        {
+          type: 'doc',
+          label: 'Simulation Run',
+          id: 'simulations/sim_run',
         },
       ],
     },
@@ -360,3 +293,5 @@ module.exports = {
     // },
   ]
 };
+
+
