@@ -15,35 +15,37 @@ const FeatureList: FeatureItem[] = [
 
     {
       title: 'CITROS Web',
-      url: "vova",
+      url: "docs_citros_web",
       Svg: require('@site/static/img/citros_home_web.svg').default,
       description: (
-        <>
+        <div>
+          <p>
           CITROS Web offers a full platform to create and run simulations, 
-          investigate and analyse results, collaborate with your team with a simple UIץ
-        </>
+          investigate and analyse results, collaborate with your team with a simple UI</p>
+          <p>Read more...</p>        
+        </div>
       ),
     },
     {
       title: 'CITROS CLI',
-      url: "vova1",
+      url: "docs_cli",
       Svg: require('@site/static/img/citros_home_cli.svg').default,
       description: (
-        <>
-          CITROS CLI offers ROS 2 developers a seamless interface to launch 
-          multiple ROS simulations for a specific project with just a single command.
-        </>
+        <div>
+          <p>CITROS CLI offers ROS 2 developers a seamless interface to launch multiple ROS simulations for a specific project with just a single command.</p>
+          <p>Read more...</p>
+        </div>
       ),
     },
     {
       title: 'CITROS Data Analysis',
-      url: "vova"2,
+      url: "docs_data_analysis",
       Svg: require('@site/static/img/citros_home_analysis.svg').default,
       description: (
-        <>
-          CITROS Data Analysis offers you to data query, analyse and visualize it. 
-          With its extensive features, you can quickly and easily extract valuable insights from your data.
-        </>
+        <div>
+          <p>CITROS Data Analysis offers you to data query, analyse and visualize it. With its extensive features, you can easily extract valuable insights from your data.</p>
+          <p>Read more...</p>
+        </div>
       ),
     },
 ];
