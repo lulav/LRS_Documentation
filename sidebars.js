@@ -174,14 +174,46 @@ module.exports = {
         },
         {
           type: 'doc',
+          label: 'Repositories Screen',
+          id: 'repos/repos_screen',
+        },
+        {
+          type: 'category',
+          label: 'Repositry Tabs',
+          items: [
+            {
+              type: 'doc',
+              label: 'Overview',
+              id: 'repos/repository/repo_sc_overview',
+                        },
+            {
+              type: 'doc',
+              label: 'Code',
+              id: 'repos/repository/repo_sc_code',
+            },
+            {
+              type: 'doc',
+              label: 'Runs',
+              id: 'repos/repository/repo_sc_runs',
+            },
+            {
+              type: 'doc',
+              label: 'Images',
+              id: 'repos/repository/repo_sc_images',
+            },
+            {
+              type: 'doc',
+              label: 'Data',
+              id: 'repos/repository/repo_sc_data',
+            },
+          ]
+        },
+{
+          type: 'doc',
           label: 'Add Repository',
           id: 'repos/repos_add',
         },
-        {
-          type: 'doc',
-          label: 'Repository Template',
-          id: 'repos/repos_template',
-        },
+
       ],
     },
 
