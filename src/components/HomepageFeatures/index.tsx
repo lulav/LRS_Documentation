@@ -1,16 +1,21 @@
-import React from 'react';
-import clsx from 'clsx';
-import styles from './styles.module.css';
+import React from "react";
+import clsx from "clsx";
+import styles from "./styles.module.css";
+import { Link } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
 type FeatureItem = {
   title: string;
-  Svg: React.ComponentType<React.ComponentProps<'svg'>>;
+  Svg: React.ComponentType<React.ComponentProps<"svg">>;
   description: JSX.Element;
+  url: string;
 };
 
 const FeatureList: FeatureItem[] = [
+
     {
       title: 'CITROS Web',
+      url: "vova",
       Svg: require('@site/static/img/citros_home_web.svg').default,
       description: (
         <>
@@ -21,6 +26,7 @@ const FeatureList: FeatureItem[] = [
     },
     {
       title: 'CITROS CLI',
+      url: "vova1",
       Svg: require('@site/static/img/citros_home_cli.svg').default,
       description: (
         <>
@@ -31,6 +37,7 @@ const FeatureList: FeatureItem[] = [
     },
     {
       title: 'CITROS Data Analysis',
+      url: "vova"2,
       Svg: require('@site/static/img/citros_home_analysis.svg').default,
       description: (
         <>
@@ -41,9 +48,16 @@ const FeatureList: FeatureItem[] = [
     },
 ];
 
-function Feature({title, Svg, description}: FeatureItem) {
+function Feature({ title, Svg, description, url }: FeatureItem) {
+  const history = useHistory();
   return (
-    <div className={clsx('col col--4')}>
+    <div
+      className={clsx("col col--4")}
+      onClick={() => {
+        history.push(url);
+      }}
+      style={{ cursor: "pointer" }}
+    >
       <div className="text--center">
         <Svg className={styles.featureSvg} role="img" />
       </div>
