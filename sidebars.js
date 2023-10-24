@@ -59,24 +59,39 @@ module.exports = {
         },
         {
           type: 'category',
-          label: 'Profile Settings',
+          label: 'Settings',
           items: [
             {
               type: 'doc',
-              label: 'Notification Settings',
-              id: 'authentication/account/profile/notification_settings',
+              label: 'General',
+              id: 'authentication/account/profile/pr_general',
+            },
+            {
+              type: 'doc',
+              label: 'Organization',
+              id: 'authentication/account/profile/pr_org',
+            },
+            {
+              type: 'doc',
+              label: 'Users',
+              id: 'authentication/account/profile/pr_users',
+            },
+            {
+              type: 'doc',
+              label: 'Change Password',
+              id: 'authentication/account/profile/pr_pass',
             },
             {
               type: 'doc',
               label: 'SSH Keys',
-              id: 'authentication/account/profile/ssh',
+              id: 'authentication/account/profile/pr_ssh',
+            },
+              ]
             },
             {
               type: 'doc',
-              label: 'Quota',
-              id: 'authentication/account/profile/quota',
-            },
-              ]
+              label: 'Notifications',
+              id: 'authentication/account/profile/notification_settings',
             },
           ]
         },
