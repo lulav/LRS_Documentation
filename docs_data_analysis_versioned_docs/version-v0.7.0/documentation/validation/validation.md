@@ -14,7 +14,7 @@ description: 'Documentation'
 
 
     
-## Class Validation {#citros_data_analysis.validation.validation.Validation}
+## Class `Validation` {#citros_data_analysis.validation.validation.Validation}
 
 
 
@@ -156,7 +156,7 @@ and interpolate data on the new scale.
 
 
     
-### Method mean_test {#citros_data_analysis.validation.validation.Validation.mean_test}
+### Method `mean_test` {#citros_data_analysis.validation.validation.Validation.mean_test}
 
 
 
@@ -320,7 +320,7 @@ mean_test: passed
 
 
     
-### Method norm_test {#citros_data_analysis.validation.validation.Validation.norm_test}
+### Method `norm_test` {#citros_data_analysis.validation.validation.Validation.norm_test}
 
 
 
@@ -462,7 +462,7 @@ norm_test Linf: passed
 
 
     
-### Method set_tests {#citros_data_analysis.validation.validation.Validation.set_tests}
+### Method `set_tests` {#citros_data_analysis.validation.validation.Validation.set_tests}
 
 
 
@@ -526,6 +526,28 @@ Test parameters are stored as the dict:
     **limit_lower** < mean_1 < **limit_upper**, <br />
     -**value_1** < mean_2 < **value_1**, <br />
     -**value_2** < mean_2 < **value_2**.
+- 'nan_passed' : bool, default True
+    If True, the NaN values of the mean will pass the test.
+
+</details>
+
+<details>
+    <summary>'std'</summary>
+
+Test whether standard deviation is less then the given limits.
+Test parameters are stored as the dict:
+- 'limits' : float or list, default 1.0
+    Limit to test standard deviation. Limits may be set as:
+   - one value;
+   - If the data has multiple columns, limits may be set for each of the column.
+    That way list length must be equal to number of columns. For example, for the 3-dimensional vector
+    with corresponding standard deviation vectors [std_1, std_2, std_3]:
+    limits = [**value_1**, **value_2**, **value_3**] will be processed as: <br />
+    std_1 < **value_1**,<br />
+    std_2 < **value_2**,<br />
+    std_2 < **value_3**.
+- 'n_std' : int, default 3
+    The parameter specifies the number of standard deviations to be less then limits.
 - 'nan_passed' : bool, default True
     If True, the NaN values of the mean will pass the test.
 
@@ -730,7 +752,7 @@ Print results of norm test in details:
 
 
     
-### Method sid_test {#citros_data_analysis.validation.validation.Validation.sid_test}
+### Method `sid_test` {#citros_data_analysis.validation.validation.Validation.sid_test}
 
 
 
@@ -897,7 +919,7 @@ sid_test: passed
 
 
     
-### Method std_bound_test {#citros_data_analysis.validation.validation.Validation.std_bound_test}
+### Method `std_bound_test` {#citros_data_analysis.validation.validation.Validation.std_bound_test}
 
 
 
@@ -994,7 +1016,7 @@ column_name:                  # label of the column, str
 ---
 #### See Also
 
-**pandas.DataFrame**, **pandas.Series **
+**pandas.DataFrame**, **pandas.Series**
 
 ---
 #### Examples
@@ -1107,7 +1129,7 @@ std_bound_test: passed
 
 
     
-### Method std_test {#citros_data_analysis.validation.validation.Validation.std_test}
+### Method `std_test` {#citros_data_analysis.validation.validation.Validation.std_test}
 
 
 
@@ -1128,7 +1150,7 @@ def std_test(
 <details>
   <summary>Description</summary>
 
-Test whether **n_std**-standard deviation does not succeed the given limits.
+Test whether **n_std**-standard deviation does not exceed the given limits.
 
 ---
 #### Parameters
@@ -1140,7 +1162,7 @@ Test whether **n_std**-standard deviation does not succeed the given limits.
    - one value;
    - If the data has multiple columns, limits may be set for each of the column.
     That way list length must be equal to number of columns. For example, for the 3-dimensional vector
-    with corresponding standard deviations [std_1, std_2, std_3]:
+    with corresponding standard deviation vectors [std_1, std_2, std_3]:
     limits = [**value_1**, **value_2**, **value_3**] will be processed as: <br />
     std_1 < **value_1**,<br />
     std_2 < **value_2**,<br />
@@ -1203,7 +1225,7 @@ column_name:                  # label of the column, str
 ---
 #### See Also
 
-**pandas.DataFrame**, **pandas.Series **
+**pandas.DataFrame**, **pandas.Series**
 
 ---
 #### Examples

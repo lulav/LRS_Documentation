@@ -2,14 +2,14 @@
 toc_max_heading_level: 4
 hide_title: true
 sidebar_position: 4
-sidebar_label: 'Users overview'
+sidebar_label: 'Users Overview'
 description: 'Information about users'
 ---
-## Users overview
+# Users Overview
 
 To display the main information about users of the organization, methods [**get_users()**](../documentation/data_access/citros_db.md#citros_data_analysis.data_access.citros_db.CitrosDB.get_users) and [**user_info()**](../documentation/data_access/citros_db.md#citros_data_analysis.data_access.citros_db.CitrosDB.user_info) are used. 
 
-### Table with users' information
+## Table with Users' Information
 
 Method [**get_users()**](../documentation/data_access/citros_db.md#citros_data_analysis.data_access.citros_db.CitrosDB.get_users) display the table with users names and last names and their emails:
 
@@ -26,7 +26,7 @@ Method [**get_users()**](../documentation/data_access/citros_db.md#citros_data_a
 +--------+------------+-----------------------------+
 ```
 
-### Dictionary with users' information
+## Dictionary with Users' Information
 
 The [**user_info()**](../documentation/data_access/citros_db.md#citros_data_analysis.data_access.citros_db.CitrosDB.user_info) method allows you to retrieve the main information about users in a [**CitrosDict**](../documentation/data_access/citros_dict.md#citros_data_analysis.data_access.citros_dict.CitrosDict) format, that inherits behaviour of an ordinary python dictionary, but has some additional methods, like method [**print()**](../documentation/data_access/citros_dict.md#citros_data_analysis.data_access.citros_dict.CitrosDict.print). The obtained information includes users' first names, last names, emails, as well as lists of repositories they've created and repositories in which they've created batches, with emails serving as the dictionary keys.
 

@@ -14,7 +14,7 @@ description: 'Documentation'
 
 
     
-## Class CitrosDataArray {#citros_data_analysis.error_analysis.citros_data_array.CitrosDataArray}
+## Class `CitrosDataArray` {#citros_data_analysis.error_analysis.citros_data_array.CitrosDataArray}
 
 
 
@@ -50,7 +50,7 @@ Store CitrosData objects in a "dbs" attribute for regression analysis.
 
 
     
-### Method add_db {#citros_data_analysis.error_analysis.citros_data_array.CitrosDataArray.add_db}
+### Method `add_db` {#citros_data_analysis.error_analysis.citros_data_array.CitrosDataArray.add_db}
 
 
 
@@ -78,7 +78,7 @@ Add one CitrosData object to CitrosDataArray.
 
 
     
-### Method add_dbs {#citros_data_analysis.error_analysis.citros_data_array.CitrosDataArray.add_dbs}
+### Method `add_dbs` {#citros_data_analysis.error_analysis.citros_data_array.CitrosDataArray.add_dbs}
 
 
 
@@ -106,7 +106,7 @@ Add list of CitrosData objects to CitrosDataArray.
 
 
     
-### Method drop_db {#citros_data_analysis.error_analysis.citros_data_array.CitrosDataArray.drop_db}
+### Method `drop_db` {#citros_data_analysis.error_analysis.citros_data_array.CitrosDataArray.drop_db}
 
 
 
@@ -137,7 +137,7 @@ if **value** is a CitrosData object, then removes it if it exists in CitrosDataA
 
 
     
-### Method get_prediction {#citros_data_analysis.error_analysis.citros_data_array.CitrosDataArray.get_prediction}
+### Method `get_prediction` {#citros_data_analysis.error_analysis.citros_data_array.CitrosDataArray.get_prediction}
 
 
 
@@ -219,9 +219,11 @@ Show the predictions based on the results of the regression solution, neural net
 **```return_fig```** :&ensp;**bool**, default **False**
 :   If True, the figure and ax (or list of ax) will be returned.
 
+---
+#### Other Parameters
 
-**```**kwargs```**
-:   other keyword arguments for **method** = 'neural_net', see sklearn.neural_network.MLPRegressor.
+**```kwargs```** :&ensp;**dict**, optional
+:   Other keyword arguments for **method** = 'neural_net', see sklearn.neural_network.MLPRegressor.
 
 ---
 #### Returns

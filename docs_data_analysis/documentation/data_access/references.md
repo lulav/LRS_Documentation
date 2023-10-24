@@ -14,7 +14,7 @@ description: 'Documentation'
 
 
     
-## Class Ref {#citros_data_analysis.data_access.references.Ref}
+## Class `Ref` {#citros_data_analysis.data_access.references.Ref}
 
 
 
@@ -40,7 +40,7 @@ Stores references to the batches used in the work
 
 
     
-### Method print {#citros_data_analysis.data_access.references.Ref.print}
+### Method `print` {#citros_data_analysis.data_access.references.Ref.print}
 
 
 

@@ -2,10 +2,10 @@
 toc_max_heading_level: 4
 hide_title: true
 sidebar_position: 7
-sidebar_label: 'Set multiple tests'
+sidebar_label: 'Set Multiple Tests'
 description: 'Set multiple tests'
 ---
-## Set multiple tests
+# Set Multiple Tests
 
 It is possible to set several tests by the method [**set_tests**](../documentation/validation/validation.md#citros_data_analysis.validation.validation.Validation.set_tests):
 
@@ -34,7 +34,7 @@ For example, to set a standard deviation boundary test and a test on norm $L^2$:
                                  {'std_bound' : {'limits' : [0.25, 0.3, [-150, 300]], 'n_std': 3},
                                   'norm_L2' : {'limits' : [0.3, 0.35, 450]}})
 ```
-### Returning parameters
+## Returning Parameters
 
 The method returns three dictionaris, that containes the output results of each test: 
 

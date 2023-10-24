@@ -1,10 +1,6 @@
 ---
 hide_title: true
 ---
-## Validation documentation
+# Validation Documentation
 
-```mdx-code-block
-import DocCardList from '@theme/DocCardList';
-
-<DocCardList />
-```
+The documentation for the class [**Validation**](../documentation/validation/validation.md) of the **citros_data_analysis.validation** module.

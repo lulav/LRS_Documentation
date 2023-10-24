@@ -14,7 +14,7 @@ description: 'Documentation'
 
 
     
-## Class CitrosStat {#citros_data_analysis.error_analysis.citros_stat.CitrosStat}
+## Class `CitrosStat` {#citros_data_analysis.error_analysis.citros_stat.CitrosStat}
 
 
 
@@ -79,7 +79,7 @@ Object to store statistics.
 
 
     
-### Method plot {#citros_data_analysis.error_analysis.citros_stat.CitrosStat.plot}
+### Method `plot` {#citros_data_analysis.error_analysis.citros_stat.CitrosStat.plot}
 
 
 
@@ -143,7 +143,7 @@ Plot mean values and standard deviations.
 
 
     
-### Method to_pandas {#citros_data_analysis.error_analysis.citros_stat.CitrosStat.to_pandas}
+### Method `to_pandas` {#citros_data_analysis.error_analysis.citros_stat.CitrosStat.to_pandas}
 
 
 

@@ -2,12 +2,12 @@
 toc_max_heading_level: 4
 hide_title: true
 sidebar_position: 2
-sidebar_label: 'Bin, interpolate and calculate statistics'
+sidebar_label: 'Bin, Interpolate and Calculate Statistics'
 description: 'Get statistics across different simulations'
 ---
-## Bin, interpolate and calculate statistics
+# Bin, Interpolate and Calculate Statistics
 
-### **CitrosData** object
+## **CitrosData** Object
 
 To perform data analysis the [**CitrosData**](../documentation/error_analysis/citros_data.md#citros_data_analysis.error_analysis.citros_data.CitrosData) object is used.
 Say, we would like to investigate the 'x' vector and its behaviour depending on the time. Let's query data:
@@ -77,13 +77,13 @@ It is possible to turn data of **CitrosData** object back to pandas.DataFrame. M
 ...|...|...|...|...|...|...|...|...|...
 </details>
 
-### Assigning indexes
+## Assigning Indexes
 
 To analyze data of multiple simulations it is necessary to establish a correspondence between the values of the data from these different simulations. One approach is to select an independent variable, define a scale that is common to all simulations and assign indexes on this scale. Then, the values of variables from different simulations will be connected by this independent variable.
 
 There are two ways to perform index assignment. The first one is to divide the independent variable into N ranges, assign an index to each interval, and calculate the averages of the data values for each simulation in each range. The second approach is to scale the independent variable to the interval [0,1], define a new range of N points uniformly distributed from 0 to 1, and interpolate data points over this new interval. The first approach corresponds to the [**bin_data()**](#bin-data) method, while the second is implemented by the [**scale_data()**](#scale-data) method.
 
-#### Bin data
+### Bin Data
 Let's choose one of the parameter, say 'data.time', divide it into `n_bins` intervals and assign index to each of the interval. Then let's group values of the 'x' vector from the [previous example](#citrosdata-object) according to this binning and calculate the mean values of 'x' for the each group. This procedure may be done by function [**bin_data()**](../documentation/error_analysis/citros_data.md#citros_data_analysis.error_analysis.citros_data.CitrosData.bin_data). To see the histogram and control number of counts falling in each bin, pass `show_fig` = True:
 
 ```python
@@ -134,7 +134,7 @@ The result is a [**CitrosData**](../documentation/error_analysis/citros_data.md#
 |...	|...|	...
 </details>
 
-#### Scale data
+### Scale Data
 Another approach besides from binning is to scale parameter to [0,1] interval and interpolate data on this new interval with equally spaced points. Data of different 'sid' values processed independently. The function to perform this is [**scale_data**](../documentation/error_analysis/citros_data.md#citros_data_analysis.error_analysis.citros_data.CitrosData.scale_data). It's syntax is pretty similar to [**bin_data()**](#bin-data):
 
 ```python
@@ -186,9 +186,9 @@ As previously in the case of [**bin_data()**](#bin-data) method, to controll if 
 ![fig5](img/fig5.png "Fig5")
 </details>
 
-### Statistics
+## Statistics
 
-#### Get statistics
+### Get Statistics
 
 Now, when we bin or scale data over one of the independent parameter and set new indices according to these procedures, we are able to study statistics for each of these indices.
 [**get_statistics()**](../documentation/error_analysis/citros_data.md#citros_data_analysis.error_analysis.citros_data.CitrosData.get_statistics) method is dedicated to do it:
@@ -274,7 +274,7 @@ array[-4.56666667e-02  4.46666667e-02  9.37066667e+01]
 array([4.11865674e-02, 4.21584313e-02, 6.96475242e+01])
 ```
 
-#### Plot statistics
+### Plot Statistics
 
 To visualize statistics [**show_statistics()**](../documentation/error_analysis/citros_data.md#citros_data_analysis.error_analysis.citros_data.CitrosData.show_statistics) function is used. It plots values from `data` attribute vs. independent parameter for each of the sid, the mean value over all sids and 3 $\sigma$ interval. If 'data' has several components, like in the example above ('x_1', 'x_1', 'x_3'), it makes separate plots for each of the component: 
 

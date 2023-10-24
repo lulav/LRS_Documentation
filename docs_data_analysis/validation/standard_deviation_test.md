@@ -2,10 +2,10 @@
 toc_max_heading_level: 4
 hide_title: true
 sidebar_position: 4
-sidebar_label: 'Standard deviation test'
+sidebar_label: 'Standard Deviation Test'
 description: 'Check standard deviation'
 ---
-## Standard deviation test
+# Standard Deviation Test
 
 [**std_test()**](../documentation/validation/validation.md#citros_data_analysis.validation.validation.Validation.std_test) test whether `n_std`-standard deviation is less than the given limits. In case there are NaN (Not a Number) values of standard deviation, to specify whether they should be considered as passing the test, set `nan_passed` = True or False (True by default).
 
@@ -20,14 +20,14 @@ Let's query data for a 3 dimensional vector, assign indexes to data to set corre
                                  std_area = True)
 ```
 
-### Setting limits
+## Setting Limits
 
 Ways to set limits are the same as for [**norm_test**](norm_test.md):
   
   - if `limits` are set as a one value, for example `limits` = 1, then it will be applied to all columns and considered as maximum value that must not be exceeded;
   - `limits` may be set separately for each column, as in the example above: `limits` = [0.25, 0.3, 300] means that standard deviation (or 3 standard deviations, as in the example, since `n_std` = 3) for the first column must be < 0.25, for the second < 0.3 and for the last column < 300. That way length of the `limits` must be equal to the number of columns.
 
-### Returning parameters
+## Returning Parameters
 
 The method returns three parameters: 
 - `log` : [**CitrosDict**](../documentation/data_access/citros_dict.md#citros_data_analysis.data_access.citros_dict.CitrosDict) - dictionary with test result summary;

@@ -2,10 +2,10 @@
 toc_max_heading_level: 4
 hide_title: true
 sidebar_position: 3
-sidebar_label: 'Batch overview'
+sidebar_label: 'Batch Overview'
 description: 'Information about batches'
 ---
-## Batch overview
+# Batch Overview
 
 Different simulations are identified by their *sid* numbers, with each step of the simulation being sequentially numbered by *rid*. Batches typically containe multiple topics that encapsulate related datasets.
 
@@ -24,7 +24,7 @@ Each simulation in the batch has its own id - *sid*, and each message in the sim
 
 If there are infinite values in the data, they are stored as $\pm 10^{308}$.
 
-### Batch information
+## Batch Information
 
 Method [**batch_info**](../documentation/data_access/citros_db.md#citros_data_analysis.data_access.citros_db.CitrosDB.batch_info) is applied to show the general information about batches: its name, batch id, list of simulation ids (sids) and when the batch was created. The result is a [**CitrosDict**](../documentation/data_access/citros_dict.md#citros_data_analysis.data_access.citros_dict.CitrosDict) object, that inherits behaviour of an ordinary python dictionary, but has some additional methods, like [**print()**](../documentation/data_access/citros_dict.md#citros_data_analysis.data_access.citros_dict.CitrosDict.print) method. To display the information about all the existing batches adopt the following:
 
@@ -355,7 +355,7 @@ By default, the displayed batches include all batches, regardless of their creat
 }
 ```
 
-### Setting batch
+## Setting Batch
 
 The batch is set either when [**CitrosDB**](getting_started.md#connection-to-the-database) object is created (by passing an argument `batch` or automatically, getting id from the environment variable `bid`) or by method [**batch()**](../documentation/data_access/citros_db.md#citros_data_analysis.data_access.citros_db.CitrosDB.batch). 
 
@@ -405,7 +405,7 @@ Batch may be set by its order of the creation as in the [**batch_info**](#batch-
 ```
 In the above example, the most recently created batch is assigned.
 
-### Setting repository and simulation of the batch
+## Setting Repository and Simulation of the Batch
 
 By default, search by name is looking not for the exact name, but for the occurence of the given words in batch name. So if there are two batches 'kinematics' and 'kinematics_1', attempt to set batch by 'kinematics' will result in warning that the batch is not set:
 ```python
@@ -470,7 +470,7 @@ The mantioned constraints may be applied before [**batch_info**](#batch-informat
 ```
 :::
 
-### Current batch name and id
+## Current Batch Name and ID
 
 Name of the current batch and its id may be retrieved by [**get_batch()**](../documentation/data_access/citros_db.md#citros_data_analysis.data_access.citros_db.CitrosDB.get_batch) and [**get_batch_id()**](../documentation/data_access/citros_db.md#citros_data_analysis.data_access.citros_db.CitrosDB.get_batch_id) methods correspondingly:
 
@@ -484,7 +484,7 @@ current batch name: spectroscopy
 current batch id: 00000000-1111-2222-3333-444444444444
 ```
 
-### Batch size
+## Batch Size
 
 To check the batch sizes in the current schema method [**get_batch_size()**](../documentation/data_access/citros_db.md#citros_data_analysis.data_access.citros_db.CitrosDB.get_batch_size) is used:
 
@@ -502,7 +502,7 @@ The result is a table that contains batch names, batch ids, batch sizes and tota
 +--------------+--------------------------------------+------------+------------+
 ```
 
-### Current batch size
+## Current Batch Size
 
 Similar to [**get_batch_size()**](#batch-size) method, [**get_current_batch_size()**](../documentation/data_access/citros_db.md#citros_data_analysis.data_access.citros_db.CitrosDB.get_batch_size) method is used, with the difference that it shows the size for the current batch (if it is set):
 

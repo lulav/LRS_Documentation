@@ -1,11 +1,11 @@
 ---
 toc_max_heading_level: 4
-sidebar_label: 'Getting started'
+sidebar_label: 'Getting Started'
 hide_title: true
 description: 'Getting started'
 sidebar_position: 1
 ---
-## Data Access
+# Data Access
 
 In order to get information about the data of the specific table in the database, to look through the main features and to query the selected parts the module **data_access** from the package **citros_data_analysis** is used. Module is imported by:
 
@@ -17,7 +17,7 @@ To obtain the current package version number, execute the following:
 >>> import citros_data_analysis
 >>> print(citros_data_analysis.__version__)
 ```
-## Connection to the database
+## Connection to the Database
 
 To connect to the database [**CitrosDB**](../documentation/data_access/citros_db.md#citros_data_analysis.data_access.citros_db.CitrosDB) object is created:
 ```python

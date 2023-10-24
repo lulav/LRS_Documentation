@@ -2,10 +2,10 @@
 toc_max_heading_level: 4
 hide_title: true
 sidebar_position: 2
-sidebar_label: 'Standard deviation boundary test'
+sidebar_label: 'Standard Deviation Boundary Test'
 description: 'Check standard deviation boundary'
 ---
-## Standard deviation boundary test
+# Standard Deviation Boundary Test
 
 [**std_bound_test()**](../documentation/validation/validation.md#citros_data_analysis.validation.validation.Validation.std_bound_test) test whether `n_std`-standard deviation boundary is within the given limits, where boundary is defined as mean value $\pm$ `n_std` * standard deviation. In case there are NaN (Not a Number) values of standard deviation, to specify whether they should be considered as passing the test, set `nan_passed` = True or False (True by default).
 
@@ -19,7 +19,7 @@ Let's query data for a 3 dimensional vector, assign indexes to data to set corre
 >>> log, table, fig = V.std_bound_test(limits = [0.25, 0.3, [-150, 300]], n_std = 3, 
                                        nan_passed = True)
 ```
-### Setting limits
+## Setting Limits
 
 Ways to set limits are the same as for [**mean_test**](mean_value_test.md) and [**sid_test()**](testing_each_simulation.md):
   
@@ -28,7 +28,7 @@ Ways to set limits are the same as for [**mean_test**](mean_value_test.md) and [
   - `limits` may be set separately for each column, as in the example above: `limits` = [0.25, 0.3, [-150, 300]] means that for the first column boundaries are [-0.25, 0.25], for the second one are [-0.3, 0.3] and for the last column [-150, 300]. That way length of the `limits` must be equal to the number of columns.
   - if number of column equals two, then `limits` = [1, 3] will be considered as common limits [1, 3] for both columns. If separate limits [-1, 1] for the first column and [-3, 3] for the second one are needed, they must be passed as `limits` = [[-1, 1],  [-3, 3]].
 
-### Returning parameters
+## Returning Parameters
 
 The method returns three parameters: 
 - `log` : [**CitrosDict**](../documentation/data_access/citros_dict.md#citros_data_analysis.data_access.citros_dict.CitrosDict) - dictionary with test result summary;

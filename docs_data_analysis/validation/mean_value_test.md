@@ -2,10 +2,10 @@
 toc_max_heading_level: 4
 hide_title: true
 sidebar_position: 3
-sidebar_label: 'Mean value test'
+sidebar_label: 'Mean Value Test'
 description: 'Check mean value'
 ---
-## Mean value test
+# Mean Value Test
 
 [**mean_test()**](../documentation/validation/validation.md#citros_data_analysis.validation.validation.Validation.mean_test) - test whether mean is within the given limits.
 
@@ -19,7 +19,7 @@ As previously, let's get data for a 3 dimensional vector, assign indexes to data
 >>> log, table, fig = V.mean_test(limits = [0.1, 0.15, [-50, 80]])
 ```
 
-### Setting limits
+## Setting Limits
 
 Ways to set limits are the same as for [**std_bound_test()**](standard_deviation_boundary_test.md) and [**sid_test()**](testing_each_simulation.md):
   
@@ -28,7 +28,7 @@ Ways to set limits are the same as for [**std_bound_test()**](standard_deviation
   - `limits` may be set separately for each column, as in the example above: `limits` = [0.1, 0.15, [-50, 80]] means that for the first column boundaries are [-0.1, 0.1], for the second one are [-0.15, 0.15] and for the last column [-50, 80]. That way length of the `limits` must be equal to the number of columns.
   - if number of column equals two, then `limits` = [1, 3] will be considered as common limits [1, 3] for both columns. If separate limits [-1, 1] for the first column and [-3, 3] for the second one are needed, they must be passed as `limits` = [[-1, 1],  [-3, 3]].
 
-### Returning parameters
+## Returning Parameters
 
 The method returns three parameters: 
 - `log` : [**CitrosDict**](../documentation/data_access/citros_dict.md#citros_data_analysis.data_access.citros_dict.CitrosDict) - dictionary with test result summary;

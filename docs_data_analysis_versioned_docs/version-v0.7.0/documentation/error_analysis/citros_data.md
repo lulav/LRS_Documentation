@@ -14,7 +14,7 @@ description: 'Documentation'
 
 
     
-## Class CitrosData {#citros_data_analysis.error_analysis.citros_data.CitrosData}
+## Class `CitrosData` {#citros_data_analysis.error_analysis.citros_data.CitrosData}
 
 
 
@@ -135,7 +135,7 @@ and all other additional columns - 'addData'. Both 'data' and 'addData' attribut
 
 
     
-### Method add_addData {#citros_data_analysis.error_analysis.citros_data.CitrosData.add_addData}
+### Method `add_addData` {#citros_data_analysis.error_analysis.citros_data.CitrosData.add_addData}
 
 
 
@@ -168,7 +168,7 @@ Add column to 'addData' attribute.
 
 
     
-### Method bin_data {#citros_data_analysis.error_analysis.citros_data.CitrosData.bin_data}
+### Method `bin_data` {#citros_data_analysis.error_analysis.citros_data.CitrosData.bin_data}
 
 
 
@@ -282,7 +282,7 @@ data.time_id  sid
 
 
     
-### Method drop_addData {#citros_data_analysis.error_analysis.citros_data.CitrosData.drop_addData}
+### Method `drop_addData` {#citros_data_analysis.error_analysis.citros_data.CitrosData.drop_addData}
 
 
 
@@ -310,7 +310,7 @@ Delete column from 'addData' attribute.
 
 
     
-### Method drop_parameter {#citros_data_analysis.error_analysis.citros_data.CitrosData.drop_parameter}
+### Method `drop_parameter` {#citros_data_analysis.error_analysis.citros_data.CitrosData.drop_parameter}
 
 
 
@@ -338,7 +338,7 @@ Delete parameter labeled **key** and associated value.
 
 
     
-### Method get_statistics {#citros_data_analysis.error_analysis.citros_data.CitrosData.get_statistics}
+### Method `get_statistics` {#citros_data_analysis.error_analysis.citros_data.CitrosData.get_statistics}
 
 
 
@@ -380,7 +380,7 @@ Return table with statistics for CitrosData object.
 ---
 #### See Also
 
-**bin_data()**, **scale_data()**, **show_statistics()**
+**[CitrosData.bin_data()](#citros_data_analysis.error_analysis.citros_data.CitrosData.bin_data "citros_data_analysis.error_analysis.citros_data.CitrosData.bin_data")**, **[CitrosData.scale_data()](#citros_data_analysis.error_analysis.citros_data.CitrosData.scale_data "citros_data_analysis.error_analysis.citros_data.CitrosData.scale_data")**, **[CitrosData.show_statistics()](#citros_data_analysis.error_analysis.citros_data.CitrosData.show_statistics "citros_data_analysis.error_analysis.citros_data.CitrosData.show_statistics")**
 
 ---
 #### Examples
@@ -522,7 +522,7 @@ is a data dimension:
 
 
     
-### Method scale_data {#citros_data_analysis.error_analysis.citros_data.CitrosData.scale_data}
+### Method `scale_data` {#citros_data_analysis.error_analysis.citros_data.CitrosData.scale_data}
 
 
 
@@ -632,7 +632,7 @@ data.time_id  sid
 
 
     
-### Method set_parameter {#citros_data_analysis.error_analysis.citros_data.CitrosData.set_parameter}
+### Method `set_parameter` {#citros_data_analysis.error_analysis.citros_data.CitrosData.set_parameter}
 
 
 
@@ -670,7 +670,7 @@ Set parameter value to a CitrosData object.
 
 
     
-### Method show_correlation {#citros_data_analysis.error_analysis.citros_data.CitrosData.show_correlation}
+### Method `show_correlation` {#citros_data_analysis.error_analysis.citros_data.CitrosData.show_correlation}
 
 
 
@@ -755,7 +755,7 @@ return_fig : bool, default False.
 ---
 #### Other Parameters
 
-**```**kwargs```**
+**```kwargs```** :&ensp;**dict**, optional
 :   see matplotlib.patches.Ellipse.
 
 ---
@@ -840,7 +840,7 @@ slice_val = 0.2632
 
 
     
-### Method show_statistics {#citros_data_analysis.error_analysis.citros_data.CitrosData.show_statistics}
+### Method `show_statistics` {#citros_data_analysis.error_analysis.citros_data.CitrosData.show_statistics}
 
 
 
@@ -918,7 +918,7 @@ Collect statistics for CitrosData object and plot it.
 ---
 #### See Also
 
-**get_statistics()**, **bin_data()**, **scale_data()**
+**[CitrosData.get_statistics()](#citros_data_analysis.error_analysis.citros_data.CitrosData.get_statistics "citros_data_analysis.error_analysis.citros_data.CitrosData.get_statistics")**, **[CitrosData.bin_data()](#citros_data_analysis.error_analysis.citros_data.CitrosData.bin_data "citros_data_analysis.error_analysis.citros_data.CitrosData.bin_data")**, **[CitrosData.scale_data()](#citros_data_analysis.error_analysis.citros_data.CitrosData.scale_data "citros_data_analysis.error_analysis.citros_data.CitrosData.scale_data")**
 
 ---
 #### Examples
@@ -965,7 +965,7 @@ Show statistics plot:
 
 
     
-### Method to_pandas {#citros_data_analysis.error_analysis.citros_data.CitrosData.to_pandas}
+### Method `to_pandas` {#citros_data_analysis.error_analysis.citros_data.CitrosData.to_pandas}
 
 
 

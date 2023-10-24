@@ -5,7 +5,7 @@ sidebar_position: 3
 sidebar_label: 'Correlation'
 description: 'Correlation'
 ---
-## Correlation
+# Correlation
 
 Function [**show_correlation()**](../documentation/error_analysis/citros_data.md#citros_data_analysis.error_analysis.citros_data.CitrosData.show_correlation) plots correlation between two variables for the exact index `slice_id`. Applying it to the [previous example](statistics.md#scale-data) for the time_id = 0:
 ```python

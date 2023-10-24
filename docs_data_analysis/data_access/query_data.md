@@ -2,10 +2,10 @@
 toc_max_heading_level: 4
 hide_title: true
 sidebar_position: 6
-sidebar_label: 'Query data'
+sidebar_label: 'Query Data'
 description: 'How to query data'
 ---
-## Query data
+# Query Data
 
 Assuming, that the batch has already been set (see [**batch()**](batch_overview.md#setting-batch) method, `inplace` = True), the general query scheme is as follows:
 
@@ -118,7 +118,7 @@ Since the output is a pandas [**DataFrame**](https://pandas.pydata.org/docs/refe
 ...|...|...|...|...|...|...|...
 </details>
 
-### sid constraints
+## sid Constraints
 
 To get data with the exact sid, method [**sid()**](../documentation/data_access/citros_db.md#citros_data_analysis.data_access.citros_db.CitrosDB.sid) of the [**CitrosDB**](getting_started.md#connection-to-the-database) is used. It should be applied before [**data()**](../documentation/data_access/citros_db.md#citros_data_analysis.data_access.citros_db.CitrosDB.data) method. To query for the data with the exact simulation ids pass them as a list of ints, for example:
 
@@ -156,7 +156,7 @@ To query json-data column 'data.x.x_1' of the topic 'B' for sid 3, 4, 5:
 ...|...|...|...|...|...|...
 </details>
 
-### rid constraints
+## rid Constraints
 
 To select only messages with the exact values of rid, the method [**rid()**](../documentation/data_access/citros_db.md#citros_data_analysis.data_access.citros_db.CitrosDB.rid) of the [**CitrosDB**](getting_started.md#connection-to-the-database) is used. It should be applied before [**data()**](../documentation/data_access/citros_db.md#citros_data_analysis.data_access.citros_db.CitrosDB.data) method. 
 
@@ -218,7 +218,7 @@ Instead of the `end` value the upper limit of rid may be specified by `count` ar
 >>> citros.topic('B').rid(start = 10, count = 6).data('data.x.x_1')
 ```
 
-### time constraints
+## time Constraints
 
 To apply constraints on time column, the [**time()**](../documentation/data_access/citros_db.md#citros_data_analysis.data_access.citros_db.CitrosDB.time) method of the [**CitrosDB**](getting_started.md#connection-to-the-database) is used. It should be applied before [**data()**](../documentation/data_access/citros_db.md#citros_data_analysis.data_access.citros_db.CitrosDB.data) method. [**time()**](../documentation/data_access/citros_db.md#citros_data_analysis.data_access.citros_db.CitrosDB.time) method has `start`, `end` and  `duration` arguments to define the time limits (in nanoseconds) of the query. Briefly, they set the following constraints on time: `start` <= time, time <= `end` and time < `start` + `duration`. `start`, `end` and  `duration` values must be integers.
 
@@ -262,7 +262,7 @@ Instead of the `end` value the duration (in nanoseconds) may be specified, that 
 ```
 Note that when the `duration` istead of the `end` argumet is used, the upper limit that equals `start`+`duration` is not included in the query.
 
-### json-data constraints
+## JSON-Data Constraints
 
 To apply constraints on a json-data columns, [**set_filter()**](../documentation/data_access/citros_db.md#citros_data_analysis.data_access.citros_db.CitrosDB.set_filter) method of the [**CitrosDB**](getting_started.md#connection-to-the-database) is used. It should be applied before [**data()**](../documentation/data_access/citros_db.md#citros_data_analysis.data_access.citros_db.CitrosDB.data) method. It takes a dictionary as an argument.
 
@@ -317,7 +317,7 @@ If one of the sampling method ([**skip()**](#skip), [**avg()**](#avarage), [**mo
 [**set_filter()**](../documentation/data_access/citros_db.md#citros_data_analysis.data_access.citros_db.CitrosDB.set_filter) method may be used to apply constraints not only on json-data, but on any column. Conditions, passed here, have higher priority over those defined by [**topic()**](../documentation/data_access/citros_db.md#citros_data_analysis.data_access.citros_db.CitrosDB.topic), [**rid()**](#rid-constraints), [**sid()**](#sid-constraints) and [**time()**](#time-constraints) methods and will override them.
 :::
 
-### Constraints combination
+## Constraints Combination
 
 [**topic()**](../documentation/data_access/citros_db.md#citros_data_analysis.data_access.citros_db.CitrosDB.topic), [**rid()**](#rid-constraints), [**sid()**](#sid-constraints), [**time()**](#time-constraints) and [**set_filter()**](#json-data-constraints) methods of the [**CitrosDB**](getting_started.md#connection-to-the-database) objects may be combined to precisely define the query:
 
@@ -340,7 +340,7 @@ If one of the sampling method ([**skip()**](#skip), [**avg()**](#avarage), [**mo
 ...|...|...|...|...|...|...|...
 </details>
 
-### Sorting order
+## Sorting Order
 
 By default, the data is returned in ascending order based on the 'sid' and 'rid' columns. To sort the result of the query in ascending or descending order based on other columns, the [**set_order()**](../documentation/data_access/citros_db.md#citros_data_analysis.data_access.citros_db.CitrosDB.set_order) method of the [**CitrosDB**](getting_started.md#connection-to-the-database) object is used. It should be applied before [**data()**](#query-data) method calling. It takes a dictionary as an argument, where the key is a label of the column and the dictionary value defines whether in ascending ('asc') or in descending ('desc') order to sort. 
 
@@ -360,11 +360,11 @@ To query json-data columns 'data.height' of the topic 'A' and to sort the result
 ...|...|...|...|...|...|...
 </details> 
 
-### Sampling methods 
+## Sampling Methods 
 
 If the amount of output data is too huge, only part of it may be selected. It may be achived by sampling methods [**skip()**](#skip), [**avg()**](#avarage) and [**move_avg()**](#moving-average), applied before [**data()**](#query-data) method. Only one of this sampling function may be used at one query.
 
-#### Skip
+### Skip
 
 [**skip(n)**](../documentation/data_access/citros_db.md#citros_data_analysis.data_access.citros_db.CitrosDB.skip) method is used to select `n`-th message of the each sid.
 
@@ -385,7 +385,7 @@ To query only each 5th message of the topic 'B':
 ...|...|...|...|...|...|...|...
 </details>
 
-#### Avarage
+### Avarage
 
 To average each `n` messages of the each sid, [**avg(n)**](../documentation/data_access/citros_db.md#citros_data_analysis.data_access.citros_db.CitrosDB.avg) method is used. Only numeric values may be averaged and the labels of the json-data columns with numeric content should be explicitly listed in [**data()**](#query-data). The value in 'rid' column is set as a minimum value among the 'rid' values of the averaged rows.
 
@@ -406,7 +406,7 @@ To average each 5 messages of the topic 'B':
 ...|...|...|...|...|...|...|...
 </details>
 
-#### Moving average
+### Moving Average
 
 To apply moving average over `n` messages and than select each `m`-th row of the result, [**move_avg(n, m)**](../documentation/data_access/citros_db.md#citros_data_analysis.data_access.citros_db.CitrosDB.move_avg) method is used. Only numeric values may be averaged and the labels of the json-data columns with numeric content should be explicitly listed in [**data()**](#query-data). The value in 'rid' column is set as a minimum value among the 'rid' values of the averaged rows.
 
@@ -428,7 +428,7 @@ To use moving average to average each 5 messages and query every second row of t
 ...|...|...|...|...|...|...|...
 </details>
 
-### Segregate data by sid
+## Segregate Data by sid
 
 Method [**get_sid_tables(data_query)**](../documentation/data_access/citros_db.md#citros_data_analysis.data_access.citros_db.CitrosDB.get_sid_tables) returns dict of tables, each of the tables corresponds to exact value of sid.
 The returning dictionary containes sid as dictionary keys and tables as dictionary values.
@@ -467,7 +467,7 @@ data with sid = 1:
 </details>
 
 
-## Initial parameters of the simulation
+## Initial Parameters of the Simulation
 
 Initial parameters of the simulation are written under the topic '/config'. Values of the parameters for each of the simulation as well as the overall information about this topic is accessed as for any other topics. For example, if simulation named 'simulation_dynamics' requires 1 initial parameter, say 'mass', the initial values for the batch 'robotic_test' may be queried in the following way:
 
@@ -494,7 +494,7 @@ To get the parameter used in the exact simulation, for example for the first one
 
 Getting the initial parameters can be extremely useful, especially when they are set randomly in the simulation.
 
-## Maximum and minimum values
+## Maximum and Minimum Values
 
 To find the maximum and the minimum values of the `column_name` methods [**get_max_value(column_name)**](../documentation/data_access/citros_db.md#citros_data_analysis.data_access.citros_db.CitrosDB.get_max_value) and [**get_min_value(column_name)**](../documentation/data_access/citros_db.md#citros_data_analysis.data_access.citros_db.CitrosDB.get_min_value) are used.
 
@@ -552,7 +552,7 @@ Another way to apply constraints is to use argument `filter_by`, that has the sa
 Constraints passed by `filter_by` will override those defined by [**topic()**](../documentation/data_access/citros_db.md#citros_data_analysis.data_access.citros_db.CitrosDB.topic), [**rid()**](#rid-constraints), [**sid()**](#sid-constraints), [**time()**](#time-constraints) and [**set_filter()**](#json-data-constraints) methods.
 :::
 
-## Number of messages
+## Number of Messages
 
 To calculate the number of messages in the column `column_name` method [**get_counts(column_name, group_by = None)**](../documentation/data_access/citros_db.md#citros_data_analysis.data_access.citros_db.CitrosDB.get_counts) is used.
 
@@ -621,7 +621,7 @@ Another way to apply constraints is to use argument `filter_by`, that has the sa
 Constraints passed by `filter_by` will override those defined by [**topic()**](../documentation/data_access/citros_db.md#citros_data_analysis.data_access.citros_db.CitrosDB.topic), [**rid()**](#rid-constraints), [**sid()**](#sid-constraints), [**time()**](#time-constraints) and [**set_filter()**](#json-data-constraints) methods.
 :::
 
-## Unique values
+## Unique Values
 
 Method [**get_unique_values(column_names)**](../documentation/data_access/citros_db.md#citros_data_analysis.data_access.citros_db.CitrosDB.get_unique_values) of the [**CitrosDB**](getting_started.md#connection-to-the-database) object is used to get the unique values or combination of values of the columns `column_names`.
 

@@ -1,13 +1,13 @@
 ---
 toc_max_heading_level: 4
 hide_title: true
-sidebar_label: 'Batch content'
+sidebar_label: 'Batch Content'
 description: 'Information about batch content and topics'
 sidebar_position: 5
 ---
-## Batch content
+# Batch Content
 
-### Data overview
+## Data Overview
 
 To get the overview about the exact batch, say 'dynamics', the function [**info()**](../documentation/data_access/citros_db.md#citros_data_analysis.data_access.citros_db.CitrosDB.info) is used:
 
@@ -256,7 +256,7 @@ total number of messages in topic "A": 474
 </details>
 
 
-### Data structure
+## Data Structure
 
 [**get_data_structure(topic = None)**](../documentation/data_access/citros_db.md#citros_data_analysis.data_access.citros_db.CitrosDB.get_data_structure) method of the [**CitrosDB**](getting_started.md#connection-to-the-database) object may be used to display json-data structure of the exact batch for the specific topics, set by [**topic**](../documentation/data_access/citros_db.md#citros_data_analysis.data_access.citros_db.CitrosDB.topic) or listed in `topic`:
 

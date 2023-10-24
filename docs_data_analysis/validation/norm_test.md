@@ -2,10 +2,10 @@
 toc_max_heading_level: 4
 hide_title: true
 sidebar_position: 6
-sidebar_label: 'Norm test'
+sidebar_label: 'Norm Test'
 description: 'Calculate and check norm'
 ---
-## Norm test
+# Norm Test
 
 [**norm_test()**](../documentation/validation/validation.md#citros_data_analysis.validation.validation.Validation.norm_test) - test whether norm of the each simulation is less than the given limit.
 
@@ -30,14 +30,14 @@ The type of the norm may be specified by `norm_type` parameter:
   $$
 
 
-### Setting limits
+## Setting Limits
 
 Limits may be set as:
   
   - if `limits` are set as a one value, for example `limits` = 1, then it will be considered as a limit for all columns;
   - `limits` may be set separately for each column, as in the example above: `limits` = [0.3, 0.35, 450] means that for the first column limit on the norm is 0.3, for the second one is 0.35 and for the last column 450. That way length of the `limits` must be equal to the number of columns.
 
-### Returning parameters
+## Returning Parameters
 
 The method returns three parameters: 
 - `log` : [**CitrosDict**](../documentation/data_access/citros_dict.md#citros_data_analysis.data_access.citros_dict.CitrosDict) - dictionary with test result summary;

@@ -2,10 +2,10 @@
 toc_max_heading_level: 4
 hide_title: true
 sidebar_position: 5
-sidebar_label: 'Testing each simulation'
+sidebar_label: 'Testing Each Simulation'
 description: 'Check individual simulations'
 ---
-## Testing each simulation
+# Testing Each Simulation
 
 [**sid_test()**](../documentation/validation/validation.md#citros_data_analysis.validation.validation.Validation.sid_test) test whether all simulation values are within the given limits.
 
@@ -19,7 +19,7 @@ Let's query data for a 3 dimensional vector, assign indexes to data to set corre
 >>> log, table, fig = V.sid_test(limits = [0.1, 0.15, [-50, 175]])
 ```
 
-### Setting limits
+## Setting Limits
 
 Ways to set limits are the same as for [**std_bound_test()**](standard_deviation_boundary_test.md) and [**mean_test**](mean_value_test.md):
   
@@ -28,7 +28,7 @@ Ways to set limits are the same as for [**std_bound_test()**](standard_deviation
   - `limits` may be set separately for each column, as in the example above: `limits` = [0.1, 0.15, [-50, 175]] means that for the first column boundaries are [-0.25, 0.25], for the second one are [-0.3, 0.3] and for the last column [-50, 175]. That way length of the `limits` must be equal to the number of columns.
   - if number of column equals two, then `limits` = [1, 3] will be considered as common limits [1, 3] for both columns. If separate limits [-1, 1] for the first column and [-3, 3] for the second one are needed, they must be passed as `limits` = [[-1, 1],  [-3, 3]].
 
-### Returning parameters
+## Returning Parameters
 
 The method returns three parameters: 
 - `log` : [**CitrosDict**](../documentation/data_access/citros_dict.md#citros_data_analysis.data_access.citros_dict.CitrosDict) - dictionary with test result summary;

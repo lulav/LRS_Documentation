@@ -2,14 +2,14 @@
 toc_max_heading_level: 4
 hide_title: true
 sidebar_position: 2
-sidebar_label: 'Repository overview'
+sidebar_label: 'Repository Overview'
 description: 'Information about repositories'
 ---
-## Repository overview
+# Repository Overview
 
 Projects are organized and stored within *repositories*. Each repository may comprise multiple [*batches* (tables)](batch_overview.md#batch-overview), that contain specific datasets, divided by [*topics*](query_data.md#query-data). Method [**repo_info()**](#repository-information) provides an overview of the existing repositories, offering insights into their properties and contents. When you wish to work with a specific repository, you can utilize the [**repo()**](#setting-repository) method to set the target repository. This can be particularly useful to narrow down searches or operations to batches within that chosen repository. Methods [**get_repo()** and **get_repo_id()**](#current-repository-name-and-id) return the name and the id of the current repository, respectively.
 
-### Repository information
+## Repository Information
 
 To display the main information about the repositories, such as repositories names, ids, times of creation and update, description and git source, method [**repo_info()**](../documentation/data_access/citros_db.md#citros_data_analysis.data_access.citros_db.CitrosDB.repo_info) is applied. The result is a [**CitrosDict**](../documentation/data_access/citros_dict.md#citros_data_analysis.data_access.citros_dict.CitrosDict) object. It inherits behaviour of an ordinary python dictionary, but has some additional methods, like [**print()**](../documentation/data_access/citros_dict.md#citros_data_analysis.data_access.citros_dict.CitrosDict.print) method. To display the information about all repositories:
 
@@ -255,7 +255,7 @@ By default, all repositories are displayed, regardless of the creator. To exclus
 }
 ```
 
-### Setting repository
+## Setting Repository
 
 Althoug defining the repository is not necessary, since in different repositories there may be batches with the same name, applying method [**repo()**](../documentation/data_access/citros_db.md#citros_data_analysis.data_access.citros_db.CitrosDB.repo) ensures that only information that corresponds to the exact repository will be displayed. It also may be set when [**CitrosDB**](getting_started.md#connection-to-the-database) object is created (by passing an argument `repo`). 
 
@@ -304,7 +304,7 @@ or its order of the creation:
 
 In the above example, the most recently created repository is assigned. If the provided repository name has multiple matches, the clarification may be needed. This can be easily achieved by checking the list of repositories by [**repo_info()**](#repository-information) method.
 
-### Current repository name and id
+## Current Repository Name and ID
 
 As it was demonstarted above, the current repository name and id may be checked by methods [**get_repo()**](../documentation/data_access/citros_db.md#citros_data_analysis.data_access.citros_db.CitrosDB.get_repo) and [**get_repo_id()**](../documentation/data_access/citros_db.md#citros_data_analysis.data_access.citros_db.CitrosDB.get_repo_id), respectively:
 

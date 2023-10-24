@@ -1,11 +1,11 @@
 ---
 toc_max_heading_level: 4
-sidebar_label: 'Getting started: query data'
+sidebar_label: 'Getting Started: Query Data'
 hide_title: true
 sidebar_position: 1
 description: 'Quick start'
 ---
-## Error analysis
+# Error analysis
 
 For performing error analysis module [error_analysis](../documentation/error_analysis/citros_data.md) is used. To download module:
 

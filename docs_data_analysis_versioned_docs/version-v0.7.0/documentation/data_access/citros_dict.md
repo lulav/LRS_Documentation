@@ -14,7 +14,7 @@ description: 'Documentation'
 
 
     
-## Class CitrosDict {#citros_data_analysis.data_access.citros_dict.CitrosDict}
+## Class `CitrosDict` {#citros_data_analysis.data_access.citros_dict.CitrosDict}
 
 
 
@@ -45,7 +45,7 @@ CitrosDict is a dictionary-like object, that allows to print the content as a js
 
 
     
-### Method print {#citros_data_analysis.data_access.citros_dict.CitrosDict.print}
+### Method `print` {#citros_data_analysis.data_access.citros_dict.CitrosDict.print}
 
 
 
@@ -80,7 +80,7 @@ Make a CitrosDict object and print it in json-style:
 
 
     
-### Method to_json {#citros_data_analysis.data_access.citros_dict.CitrosDict.to_json}
+### Method `to_json` {#citros_data_analysis.data_access.citros_dict.CitrosDict.to_json}
 
 
 

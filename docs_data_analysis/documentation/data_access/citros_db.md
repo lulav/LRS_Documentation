@@ -14,7 +14,7 @@ description: 'Documentation'
 
 
     
-## Class CitrosDB {#citros_data_analysis.data_access.citros_db.CitrosDB}
+## Class `CitrosDB` {#citros_data_analysis.data_access.citros_db.CitrosDB}
 
 
 
@@ -111,7 +111,7 @@ CitrosDB object, that allows to get general information about the batch and make
 
 
     
-### Method avg {#citros_data_analysis.data_access.citros_db.CitrosDB.avg}
+### Method `avg` {#citros_data_analysis.data_access.citros_db.CitrosDB.avg}
 
 
 
@@ -157,7 +157,7 @@ To average each 3 messages of the topic 'A' and get the result:
 
 
     
-### Method batch {#citros_data_analysis.data_access.citros_db.CitrosDB.batch}
+### Method `batch` {#citros_data_analysis.data_access.citros_db.CitrosDB.batch}
 
 
 
@@ -256,7 +256,7 @@ Set batch id '00000000-1111-2222-3333-444444444444' to the already existing **[C
 
 
     
-### Method batch_info {#citros_data_analysis.data_access.citros_db.CitrosDB.batch_info}
+### Method `batch_info` {#citros_data_analysis.data_access.citros_db.CitrosDB.batch_info}
 
 
 
@@ -611,7 +611,7 @@ Get list of the all existing batches names as a list:
 
 
     
-### Method data {#citros_data_analysis.data_access.citros_db.CitrosDB.data}
+### Method `data` {#citros_data_analysis.data_access.citros_db.CitrosDB.data}
 
 
 
@@ -679,7 +679,7 @@ To get the whole 'data' column as a json-object:
 
 
     
-### Method get_batch {#citros_data_analysis.data_access.citros_db.CitrosDB.get_batch}
+### Method `get_batch` {#citros_data_analysis.data_access.citros_db.CitrosDB.get_batch}
 
 
 
@@ -715,7 +715,7 @@ Get name of the batch that was created the last:
 
 
     
-### Method get_batch_id {#citros_data_analysis.data_access.citros_db.CitrosDB.get_batch_id}
+### Method `get_batch_id` {#citros_data_analysis.data_access.citros_db.CitrosDB.get_batch_id}
 
 
 
@@ -751,7 +751,7 @@ Get id of the batch 'dynamics':
 
 
     
-### Method get_batch_size {#citros_data_analysis.data_access.citros_db.CitrosDB.get_batch_size}
+### Method `get_batch_size` {#citros_data_analysis.data_access.citros_db.CitrosDB.get_batch_size}
 
 
 
@@ -788,7 +788,7 @@ Print the table with information about batch sizes:
 
 
     
-### Method get_counts {#citros_data_analysis.data_access.citros_db.CitrosDB.get_counts}
+### Method `get_counts` {#citros_data_analysis.data_access.citros_db.CitrosDB.get_counts}
 
 
 
@@ -904,7 +904,7 @@ The same, but passing all constraintes by **filter_by** parameter:
 
 
     
-### Method get_current_batch_size {#citros_data_analysis.data_access.citros_db.CitrosDB.get_current_batch_size}
+### Method `get_current_batch_size` {#citros_data_analysis.data_access.citros_db.CitrosDB.get_current_batch_size}
 
 
 
@@ -940,7 +940,7 @@ Print the table with information about batch sizes:
 
 
     
-### Method get_data_structure {#citros_data_analysis.data_access.citros_db.CitrosDB.get_data_structure}
+### Method `get_data_structure` {#citros_data_analysis.data_access.citros_db.CitrosDB.get_data_structure}
 
 
 
@@ -1014,7 +1014,7 @@ or
 
 
     
-### Method get_max_value {#citros_data_analysis.data_access.citros_db.CitrosDB.get_max_value}
+### Method `get_max_value` {#citros_data_analysis.data_access.citros_db.CitrosDB.get_max_value}
 
 
 
@@ -1108,7 +1108,7 @@ The same as in the first example, but passing all constraintes by **filter_by** 
 
 
     
-### Method get_min_value {#citros_data_analysis.data_access.citros_db.CitrosDB.get_min_value}
+### Method `get_min_value` {#citros_data_analysis.data_access.citros_db.CitrosDB.get_min_value}
 
 
 
@@ -1204,7 +1204,7 @@ The same as in the first example, but passing all constraintes by **filter_by** 
 
 
     
-### Method get_repo {#citros_data_analysis.data_access.citros_db.CitrosDB.get_repo}
+### Method `get_repo` {#citros_data_analysis.data_access.citros_db.CitrosDB.get_repo}
 
 
 
@@ -1240,7 +1240,7 @@ Get the name of the last created repository:
 
 
     
-### Method get_repo_id {#citros_data_analysis.data_access.citros_db.CitrosDB.get_repo_id}
+### Method `get_repo_id` {#citros_data_analysis.data_access.citros_db.CitrosDB.get_repo_id}
 
 
 
@@ -1276,7 +1276,7 @@ Get id of the repository 'citros_project':
 
 
     
-### Method get_sid_tables {#citros_data_analysis.data_access.citros_db.CitrosDB.get_sid_tables}
+### Method `get_sid_tables` {#citros_data_analysis.data_access.citros_db.CitrosDB.get_sid_tables}
 
 
 
@@ -1403,7 +1403,7 @@ sid values are: [1, 2, 3, 4]
 
 
     
-### Method get_simulation {#citros_data_analysis.data_access.citros_db.CitrosDB.get_simulation}
+### Method `get_simulation` {#citros_data_analysis.data_access.citros_db.CitrosDB.get_simulation}
 
 
 
@@ -1439,7 +1439,7 @@ Get the name of the imulation that was set in initialization:
 
 
     
-### Method get_unique_counts {#citros_data_analysis.data_access.citros_db.CitrosDB.get_unique_counts}
+### Method `get_unique_counts` {#citros_data_analysis.data_access.citros_db.CitrosDB.get_unique_counts}
 
 
 
@@ -1537,7 +1537,7 @@ The same, but passing all constraintes by **filter_by** parameter:
 
 
     
-### Method get_unique_values {#citros_data_analysis.data_access.citros_db.CitrosDB.get_unique_values}
+### Method `get_unique_values` {#citros_data_analysis.data_access.citros_db.CitrosDB.get_unique_values}
 
 
 
@@ -1605,7 +1605,7 @@ The same, but passing all constraintes by **filter_by** parameter:
 
 
     
-### Method get_users {#citros_data_analysis.data_access.citros_db.CitrosDB.get_users}
+### Method `get_users` {#citros_data_analysis.data_access.citros_db.CitrosDB.get_users}
 
 
 
@@ -1641,7 +1641,7 @@ Print information about users in a table:
 
 
     
-### Method info {#citros_data_analysis.data_access.citros_db.CitrosDB.info}
+### Method `info` {#citros_data_analysis.data_access.citros_db.CitrosDB.info}
 
 
 
@@ -1834,7 +1834,7 @@ their data structure types and numbered as "type_group_0", "type_group_1", and s
 
 
     
-### Method move_avg {#citros_data_analysis.data_access.citros_db.CitrosDB.move_avg}
+### Method `move_avg` {#citros_data_analysis.data_access.citros_db.CitrosDB.move_avg}
 
 
 
@@ -1887,7 +1887,7 @@ and select every second row of the result:
 
 
     
-### Method multiple_y_plot {#citros_data_analysis.data_access.citros_db.CitrosDB.multiple_y_plot}
+### Method `multiple_y_plot` {#citros_data_analysis.data_access.citros_db.CitrosDB.multiple_y_plot}
 
 
 
@@ -1979,7 +1979,7 @@ Different colors correspond to different sids.
 ---
 #### Other Parameters
 
-**```**kwargs```**
+**```kwargs```** :&ensp;**dict**, optional
 :   Other keyword arguments, see **[matplotlib.axes.Axes.plot](https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.plot.html)**.
 
 ---
@@ -2010,7 +2010,7 @@ Plot scatter graph:
 
 
     
-### Method multiplot {#citros_data_analysis.data_access.citros_db.CitrosDB.multiplot}
+### Method `multiplot` {#citros_data_analysis.data_access.citros_db.CitrosDB.multiplot}
 
 
 
@@ -2117,7 +2117,7 @@ For non-diagonal graphs, colors are assigned to points according to sids.
 ---
 #### Other Parameters
 
-**```**kwargs```**
+**```kwargs```** :&ensp;**dict**, optional
 :   Other keyword arguments, see **[matplotlib.axes.Axes.plot](https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.plot.html)**.
 
 ---
@@ -2143,7 +2143,7 @@ correlation between them; plot by dots and scale x and y axes ranges to oneintre
 
 
     
-### Method plot_3dgraph {#citros_data_analysis.data_access.citros_db.CitrosDB.plot_3dgraph}
+### Method `plot_3dgraph` {#citros_data_analysis.data_access.citros_db.CitrosDB.plot_3dgraph}
 
 
 
@@ -2244,7 +2244,7 @@ are the labels of columns of the pandas.DataFrame **df**.
 ---
 #### Other Parameters
 
-**```**kwargs```**
+**```kwargs```** :&ensp;**dict**, optional
 :   Other keyword arguments, see **[matplotlib.axes.Axes.plot](https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.plot.html)**.
 
 ---
@@ -2278,7 +2278,7 @@ Make 3D plot with dashed lines; **scale** = True aligns all axes to have the sam
 
 
     
-### Method plot_graph {#citros_data_analysis.data_access.citros_db.CitrosDB.plot_graph}
+### Method `plot_graph` {#citros_data_analysis.data_access.citros_db.CitrosDB.plot_graph}
 
 
 
@@ -2368,7 +2368,7 @@ are the labels of columns of the pandas.DataFrame **df**.
 ---
 #### Other Parameters
 
-**```**kwargs```**
+**```kwargs```** :&ensp;**dict**, optional
 :   Other keyword arguments, see **[matplotlib.axes.Axes.plot](https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.plot.html)**.
 
 ---
@@ -2409,7 +2409,7 @@ Generate a new figure and plot the previous graph but using a dotted line:
 
 
     
-### Method plot_sigma_ellipse {#citros_data_analysis.data_access.citros_db.CitrosDB.plot_sigma_ellipse}
+### Method `plot_sigma_ellipse` {#citros_data_analysis.data_access.citros_db.CitrosDB.plot_sigma_ellipse}
 
 
 
@@ -2562,7 +2562,7 @@ between the ellipse points and the origin), set custom labels and title to the p
 
 
     
-### Method repo {#citros_data_analysis.data_access.citros_db.CitrosDB.repo}
+### Method `repo` {#citros_data_analysis.data_access.citros_db.CitrosDB.repo}
 
 
 
@@ -2706,7 +2706,7 @@ Assign the 'projects' repository to the existing CitrosDB object and show detail
 
 
     
-### Method repo_info {#citros_data_analysis.data_access.citros_db.CitrosDB.repo_info}
+### Method `repo_info` {#citros_data_analysis.data_access.citros_db.CitrosDB.repo_info}
 
 
 
@@ -3022,7 +3022,7 @@ Get list of the all existing repositories names as a list:
 
 
     
-### Method rid {#citros_data_analysis.data_access.citros_db.CitrosDB.rid}
+### Method `rid` {#citros_data_analysis.data_access.citros_db.CitrosDB.rid}
 
 
 
@@ -3103,7 +3103,7 @@ For rid >= 5:
 
 
     
-### Method set_filter {#citros_data_analysis.data_access.citros_db.CitrosDB.set_filter}
+### Method `set_filter` {#citros_data_analysis.data_access.citros_db.CitrosDB.set_filter}
 
 
 
@@ -3143,10 +3143,17 @@ Allows to set constraints on json-data columns.
 ---
 #### See Also
 
-`topic() : set topic name to query`
-`sid() : set sid values to query`
-`rid() : set rid values to query`
-`time() : set time constraints`
+**[CitrosDB.topic()](#citros_data_analysis.data_access.citros_db.CitrosDB.topic "citros_data_analysis.data_access.citros_db.CitrosDB.topic")**
+:   set topic name to query
+
+**[CitrosDB.sid()](#citros_data_analysis.data_access.citros_db.CitrosDB.sid "citros_data_analysis.data_access.citros_db.CitrosDB.sid")**
+:   set sid values to query
+
+**[CitrosDB.rid()](#citros_data_analysis.data_access.citros_db.CitrosDB.rid "citros_data_analysis.data_access.citros_db.CitrosDB.rid")**
+:   set rid values to query
+
+**[CitrosDB.time()](#citros_data_analysis.data_access.citros_db.CitrosDB.time "citros_data_analysis.data_access.citros_db.CitrosDB.time")**
+:   set time constraints
 
 ---
 #### Examples
@@ -3176,7 +3183,7 @@ get data where the value on the first position in the json-array 'note' equals 1
 
 
     
-### Method set_order {#citros_data_analysis.data_access.citros_db.CitrosDB.set_order}
+### Method `set_order` {#citros_data_analysis.data_access.citros_db.CitrosDB.set_order}
 
 
 
@@ -3224,7 +3231,7 @@ Sort the result by sid and rid in ascending order:
 
 
     
-### Method sid {#citros_data_analysis.data_access.citros_db.CitrosDB.sid}
+### Method `sid` {#citros_data_analysis.data_access.citros_db.CitrosDB.sid}
 
 
 
@@ -3307,7 +3314,7 @@ For sid >= 7:
 
 
     
-### Method simulation {#citros_data_analysis.data_access.citros_db.CitrosDB.simulation}
+### Method `simulation` {#citros_data_analysis.data_access.citros_db.CitrosDB.simulation}
 
 
 
@@ -3362,7 +3369,7 @@ Show information about the batch 'test' that was created in 'simulation_cannon_a
 
 
     
-### Method skip {#citros_data_analysis.data_access.citros_db.CitrosDB.skip}
+### Method `skip` {#citros_data_analysis.data_access.citros_db.CitrosDB.skip}
 
 
 
@@ -3409,7 +3416,7 @@ the 1th, the 4th, the 7th ... messages will be selected
 
 
     
-### Method time {#citros_data_analysis.data_access.citros_db.CitrosDB.time}
+### Method `time` {#citros_data_analysis.data_access.citros_db.CitrosDB.time}
 
 
 
@@ -3477,7 +3484,7 @@ For time >= 20:
 
 
     
-### Method time_plot {#citros_data_analysis.data_access.citros_db.CitrosDB.time_plot}
+### Method `time_plot` {#citros_data_analysis.data_access.citros_db.CitrosDB.time_plot}
 
 
 
@@ -3557,7 +3564,7 @@ Plot **var_name** vs. **Time** for each of the sids, where **Time** = **time_ste
 ---
 #### Other Parameters
 
-**```**kwargs```**
+**```kwargs```** :&ensp;**dict**, optional
 :   Other keyword arguments, see **[matplotlib.axes.Axes.plot](https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.plot.html)**.
 
 ---
@@ -3598,7 +3605,7 @@ Create a new figure and plot only part of the data, where 'data.x.x_1' <= 0; plo
 
 
     
-### Method topic {#citros_data_analysis.data_access.citros_db.CitrosDB.topic}
+### Method `topic` {#citros_data_analysis.data_access.citros_db.CitrosDB.topic}
 
 
 
@@ -3650,7 +3657,7 @@ Get maximum value of the 'sid' among topics 'A' and 'B':
 
 
     
-### Method user_info {#citros_data_analysis.data_access.citros_db.CitrosDB.user_info}
+### Method `user_info` {#citros_data_analysis.data_access.citros_db.CitrosDB.user_info}
 
 
 
@@ -3799,7 +3806,7 @@ If there is a batch 'velocity' in 'robot_master' repository, to show who create 
 
 
     
-### Method xy_plot {#citros_data_analysis.data_access.citros_db.CitrosDB.xy_plot}
+### Method `xy_plot` {#citros_data_analysis.data_access.citros_db.CitrosDB.xy_plot}
 
 
 
@@ -3884,7 +3891,7 @@ Plot **var_y_name** vs. **var_x_name** for each of the sids.
 ---
 #### Other Parameters
 
-**```**kwargs```**
+**```kwargs```** :&ensp;**dict**, optional
 :   Other keyword arguments, see **[matplotlib.axes.Axes.plot](https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.plot.html)**.
 
 ---

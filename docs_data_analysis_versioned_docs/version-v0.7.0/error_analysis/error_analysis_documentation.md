@@ -1,10 +1,6 @@
 ---
 hide_title: true
 ---
-## Error analysis documentation
+# Error Analysis Documentation
 
-```mdx-code-block
-import DocCardList from '@theme/DocCardList';
-
-<DocCardList />
-```
+The documentation for the classes [**CitrosData**](../documentation/error_analysis/citros_data.md), [**CitrosStat**](../documentation/error_analysis/citros_stat.md) and [**CitrosDataArray**](../documentation/error_analysis/citros_data_array.md) of the **citros_data_analysis.error_analysis** module.

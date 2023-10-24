@@ -1,11 +1,11 @@
 ---
 toc_max_heading_level: 4
-sidebar_label: 'Getting started'
+sidebar_label: 'Getting Started'
 hide_title: true
 sidebar_position: 1
 description: 'Quick start'
 ---
-## Validation
+# Validation
 
 The [**validation**](../documentation/validation/validation.md) module provides a set of tests check the simulation results. These tests include:
 
@@ -21,7 +21,7 @@ The [**validation**](../documentation/validation/validation.md) module provides 
 
 Number and type of tests may be set by [**set_tests()**](../documentation/validation/validation.md#citros_data_analysis.validation.validation.Validation.set_tests) method that allows to specify the desired tests by providing their names and corresponding parameters and produces a consolidated report.
 
-## Query and prepare data
+## Query and Prepare Data
 
 To connect to the database [**CitrosDB**](../documentation/data_access/citros_db.md#citros_data_analysis.data_access.citros_db.CitrosDB) object is created:
 ```python
