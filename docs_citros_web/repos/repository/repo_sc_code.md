@@ -23,7 +23,7 @@ The `notebooks` directory in your CITROS simulation contains all the Jupyter-Not
 
 The advantages of IPYNB files is that they are human-readable, as plain text files formatted using JSON (JavaScript Object Notation), which makes them easy to read. Additionally, IPYNB files are saved in an open standard file format, which means they are accessible to anyone. Furthermore, IPYNB files can easily be converted to other formats such as HTML, PDF, reStructuredText, and LateX formats.
 
-For further information on how to process the data and analyze the results you can see [here](https://citros.io/doc/docs_data_analysis/data_access/) 
+For further information on how to process the data and analyze the results you can see [here](../docs_data_analysis/data_access/getting_started.md).
 
 
 </details>
@@ -38,9 +38,8 @@ The `parameter_setups` directory stores your JSON-formatted parameter setup file
 The file `default_param_setup.json` will not be overwritten during citros `init`, `run` or `status` commands. Nevertheless, it is recommended to duplicate this file under a different name within the `parameter_setups` directory before making any modifications. This practice ensures your custom setups are preserved and allows you to experiment with various parameter configurations.
     
 The structured format of the parameter setup files streamlines both the understanding and alteration of parameters for each node in your ROS project. This becomes especially valuable when you're keen to explore the influence of different parameter values on your ROS project's behavior. Take, for instance, a static parameter value like 42. Instead of hard-coding it, you could use a *function object* to derive a value from a normal distribution centered at 42. The introduction of function objects broadens your horizons, enabling you to use any numpy function or even craft user-defined functions for meticulous computational adjustments. A prime example is when parameter values are intricate, making them cumbersome to hard-code; in such scenarios, you can devise a function to fetch them from a file. In essence, this newfound flexibility paves the way for limitless computational and manipulative possibilities for your parameters.
-    
-<!-- To learn how to add functions to parameter setups, please refer to the [Adding functions to parameter setup](/docs_cli/configuration/config_params.md) section. -->
 
+To learn more about how to include functions in the parameter file, you can find detailed information on the process [here](../docs_cli/configuration/onfig_params.md).
 
 </details>
 

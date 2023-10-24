@@ -32,5 +32,5 @@ If by any chance you did `citros init` befor you logged in and you want to add t
 ```
 citros add-remote
 ```
-If you encounter any issues with authentication, please refer to this [this](https://citros.io/doc/docs_citros_web/authentication/ssh/ssh_overview) resource for assistance.
+If you encounter any issues with authentication, please refer to [this](../docs_citros_web/authentication/ssh/ssh_overview.md) resource for assistance.
 
