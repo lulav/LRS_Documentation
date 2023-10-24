@@ -233,10 +233,10 @@ const config = {
                 label: "Linkdin",
                 to: "https://www.linkedin.com/company/lulav-space/",
               },
-              {
-                label: "Website",
-                to: "https://www.lulav.space",
-              },
+              // {
+              //   label: "Website",
+              //   to: "https://www.lulav.space",
+              // },
             ],
           },
           {
@@ -247,7 +247,7 @@ const config = {
               //   to: '/docs_data_analysis',
               // },
               {
-                label: "GitHub",
+                label: "CITROS Garden in GitHub",
                 to: "https://github.com/citros-garden",
               },
             ],
