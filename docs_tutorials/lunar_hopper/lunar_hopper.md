@@ -119,7 +119,7 @@ created new batch_id: <your-batch-id-here>. Running on Citros cluster. See https
 
 ### CITROS Web Usage and Data Analysis
 #### Launching Project Via Citros Web
-The best way to use all the innovative capabilities of CITROS is through it's Web interface. Follow [this manual](https://citros.io/doc/docs_citros_web/simulations/sim_overview) to easily launch a simulation on CITROS Web platform.
+The best way to use all the innovative capabilities of CITROS is through it's Web interface. Follow [this manual](https://citros.io/doc/docs/simulations/sim_overview) to easily launch a simulation on CITROS Web platform.
 
 #### Working with Integrated Jupiter Notebooks and Data Analysis
 CITROS Web provides a powerfull data analysis package, which is a comprehensive solution for data query, analysis and visualization. With its extensive features, you can quickly and easily extract valuable insights from your data. To use it, Jupiter Notebook support is built-in. 
