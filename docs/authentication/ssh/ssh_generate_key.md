@@ -26,7 +26,7 @@ Enter a file in which to save the key (/c/Users/YOU/.ssh/id_ALGORITHM):
 ```bash
 /c/Users/YOU/.ssh/id_ALGORITHM_new
 ```
-- Decide whether you would like to enter [passphrase](/docs_citros_web/authentication/ssh/ssh_passphrases.md). If you don't want to add it, just press Enter.
+- Decide whether you would like to enter [passphrase](/docs/authentication/ssh/ssh_passphrases.md). If you don't want to add it, just press Enter.
 ```bash
 Enter passphrase (empty for no passphrase):
 ```
@@ -46,7 +46,7 @@ clip < ~/.ssh/id_rsa.pub
 ```
 **Please Note**, if you changed the name of the key, then copy if from "Your public key location path"
 
-- To add the key into CITROS follow [Add Key to CITROS](/docs_citros_web/authentication/ssh/ssh_add_new.md). 
+- To add the key into CITROS follow [Add Key to CITROS](/docs/authentication/ssh/ssh_add_new.md). 
 
 
 </TabItem>
@@ -74,7 +74,7 @@ Enter file in which to save the key (/User/name/default_location/id_ssh_keyname)
 ```shell
 /User/name/default_location/id_ssh_keyname_updated
 ```
-- Decide whether you would like to enter [passphrase](/docs_citros_web/authentication/ssh/ssh_passphrases.md). If you don't want to add it, just press Enter.
+- Decide whether you would like to enter [passphrase](/docs/authentication/ssh/ssh_passphrases.md). If you don't want to add it, just press Enter.
 ```shell
 Enter passphrase (empty for no passphrase):
 ```
@@ -94,7 +94,7 @@ pbcopy < ~/.ssh/id_ed25519.pub
 ```
 **Please Note**, if you changed the name of the key, then copy if from "Your public key location path"
 
-- To add the key into CITROS follow [Add Key to CITROS](/docs_citros_web/authentication/ssh/ssh_add_new.md). 
+- To add the key into CITROS follow [Add Key to CITROS](/docs/authentication/ssh/ssh_add_new.md). 
 
 </TabItem>
 
@@ -121,7 +121,7 @@ Enter file in which to save the key (/home/YOU/.ssh/ALGORITHM):
 ```shell
 /home/YOU/.ssh/id_ALGORITHM_new
 ```
-- Decide whether you would like to enter [passphrase](/docs_citros_web/authentication/ssh/ssh_passphrases.md). If you don't want to add it, just press Enter.
+- Decide whether you would like to enter [passphrase](/docs/authentication/ssh/ssh_passphrases.md). If you don't want to add it, just press Enter.
 ```shell
 Enter passphrase (empty for no passphrase):
 ```

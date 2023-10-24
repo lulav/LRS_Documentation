@@ -164,7 +164,7 @@ created new batch_id: <your-batch-id-here>. Running on Citros cluster. See https
 
 ### CITROS Web Usage
 #### Launching Project via CITROS Web
-The best way to use all the innovative capabilities of CITROS is through it's Web interface. Follow [this manual](https://citros.io/doc/docs_citros_web/simulations/sim_overview) to easily launch a simulation on CITROS Web platform.
+The best way to use all the innovative capabilities of CITROS is through it's Web interface. Follow [this manual](https://citros.io/doc/docs/simulations/sim_overview) to easily launch a simulation on CITROS Web platform.
 
 ![png](img/citros2.png "CITROS example")
 

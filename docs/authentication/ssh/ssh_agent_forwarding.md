@@ -9,7 +9,7 @@ If you've already set up an SSH key to interact with GitHub, you're probably fam
 Check out [Steve Friedl's Tech Tips guide](http://www.unixwiz.net/techtips/ssh-agent-forwarding.html) for a more detailed explanation of SSH agent forwarding.
 
 ## Setting up SSH agent forwarding
-Ensure that your own SSH key is set up and working. You can use [our guide on generating SSH keys](/docs_citros_web/authentication/ssh/ssh_generate_key.md) if you've not done this yet.
+Ensure that your own SSH key is set up and working. You can use [our guide on generating SSH keys](/docs/authentication/ssh/ssh_generate_key.md) if you've not done this yet.
 
 You can test that your local key works by entering ssh -T git@citros.com in the terminal:
 
@@ -51,4 +51,4 @@ $ ssh -T git@github.com
 > Permission denied (publickey).
 ```
 
-In any issue, checkout [Agent Forwarding Troubleshooting](/docs_citros_web/authentication/troubleshooting/ts_agent_forwarding.md).
+In any issue, checkout [Agent Forwarding Troubleshooting](/docs/authentication/troubleshooting/ts_agent_forwarding.md).

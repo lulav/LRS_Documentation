@@ -15,8 +15,8 @@ const config = {
   favicon: "img/favicon.ico",
 
   // Set the production url of your site here
-  // url: 'https://citros.io',
-  url: "http://localhost:3000",
+  url: 'https://citros.io',
+//   url: "http://localhost:3000",
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: "/doc/",
@@ -49,7 +49,6 @@ const config = {
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         docs: {
-          //routeBasePath: 'docs',
           path: "docs",
           sidebarPath: require.resolve("./sidebars.js"),
           remarkPlugins: [math],
@@ -76,18 +75,6 @@ const config = {
   ],
 
   plugins: [
-    [
-      "@docusaurus/plugin-content-docs",
-      {
-        id: "docs_citros_web",
-        path: "docs_citros_web",
-        routeBasePath: "docs_citros_web",
-        sidebarPath: require.resolve("./sidebarsCitros.js"),
-        remarkPlugins: [math],
-        rehypePlugins: [katex],
-        // includeCurrentVersion: false,
-      },
-    ],
     [
       "@docusaurus/plugin-content-docs",
       {
@@ -162,12 +149,6 @@ const config = {
             //to: '/docs/intro',    // ./docs/Intro.md
             type: "docSidebar",
             sidebarId: "gettingStartedSidebar",
-            label: "Getting started",
-            position: "left",
-            activeBaseRegex: `/docs/`,
-          },
-          {
-            to: "/docs_citros_web", // ./docs-api/Intro.md
             label: "Web",
             position: "left",
             activeBaseRegex: `/docs_citros_web/`,
@@ -201,13 +182,6 @@ const config = {
           {
             type: "docsVersionDropdown",
             position: "right",
-            docsPluginId: "docs_citros_web",
-            // dropdownItemsAfter: [{to: '/versions', label: 'All versions'}],
-            // dropdownActiveClassDisabled: true,
-          },
-          {
-            type: "docsVersionDropdown",
-            position: "right",
             docsPluginId: "docs_data_analysis",
             // dropdownItemsAfter: [{to: '/versions', label: 'All versions'}],
             dropdownActiveClassDisabled: false,
@@ -232,10 +206,10 @@ const config = {
                 label: "Linkdin",
                 to: "https://www.linkedin.com/company/lulav-space/",
               },
-              {
-                label: "Website",
-                to: "https://www.lulav.space",
-              },
+              // {
+              //   label: "Website",
+              //   to: "https://www.lulav.space",
+              // },
             ],
           },
           {
@@ -246,7 +220,7 @@ const config = {
               //   to: '/docs_data_analysis',
               // },
               {
-                label: "GitHub",
+                label: "CITROS Garden in GitHub",
                 to: "https://github.com/citros-garden",
               },
             ],

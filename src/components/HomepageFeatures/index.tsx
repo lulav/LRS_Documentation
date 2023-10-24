@@ -1,49 +1,65 @@
-import React from 'react';
-import clsx from 'clsx';
-import styles from './styles.module.css';
+import React from "react";
+import clsx from "clsx";
+import styles from "./styles.module.css";
+import { Link } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
 type FeatureItem = {
   title: string;
-  Svg: React.ComponentType<React.ComponentProps<'svg'>>;
+  Svg: React.ComponentType<React.ComponentProps<"svg">>;
   description: JSX.Element;
+  url: string;
 };
 
 const FeatureList: FeatureItem[] = [
-  /*{
-    title: 'Easy to Use',
-    Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
-    description: (
-      <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
-      </>
-    ),
-  },
-  {
-    title: 'Focus on What Matters',
-    Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
-    description: (
-      <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
-      </>
-    ),
-  },
-  {
-    title: 'Powered by React',
-    Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
-    description: (
-      <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
-      </>
-    ),
-  },*/
+
+    {
+      title: 'CITROS Web',
+      url: "docs",
+      Svg: require('@site/static/img/citros_home_web.svg').default,
+      description: (
+        <div>
+          <p>
+          CITROS Web offers a full platform to create and run simulations, 
+          investigate and analyse results, collaborate with your team with a simple UI</p>
+          <p>Read more...</p>        
+        </div>
+      ),
+    },
+    {
+      title: 'CITROS CLI',
+      url: "docs_cli",
+      Svg: require('@site/static/img/citros_home_cli.svg').default,
+      description: (
+        <div>
+          <p>CITROS CLI offers ROS 2 developers a seamless interface to launch multiple ROS simulations for a specific project with just a single command.</p>
+          <p>Read more...</p>
+        </div>
+      ),
+    },
+    {
+      title: 'CITROS Data Analysis',
+      url: "docs_data_analysis",
+      Svg: require('@site/static/img/citros_home_analysis.svg').default,
+      description: (
+        <div>
+          <p>CITROS Data Analysis offers you to data query, analyse and visualize it. With its extensive features, you can easily extract valuable insights from your data.</p>
+          <p>Read more...</p>
+        </div>
+      ),
+    },
 ];
 
-function Feature({title, Svg, description}: FeatureItem) {
+function Feature({ title, Svg, description, url }: FeatureItem) {
+  const history = useHistory();
   return (
-    <div className={clsx('col col--4')}>
+    <div
+      className={clsx("col col--4")}
+      onClick={() => {
+        history.push(url);
+      }}
+      style={{ cursor: "pointer" }}
+    >
       <div className="text--center">
         <Svg className={styles.featureSvg} role="img" />
       </div>

@@ -34,7 +34,7 @@ Briefly, you need to clone project from the GitHub, set the parameters, install 
 $ git clone git@github.com:citros-garden/gal_orbits.git
 $ cd ~/gal_orbits
 ```
-If you do not have the SSH key required for cloning the GitHub repository, please follow the steps described in [ssh key tutorial](https://citros.io/doc/docs_citros_web/authentication/ssh/ssh_generate_key).
+If you do not have the SSH key required for cloning the GitHub repository, please follow the steps described in [ssh key tutorial](https://citros.io/doc/docs/authentication/ssh/ssh_generate_key).
 
 #### Build The Project
 ```bash
