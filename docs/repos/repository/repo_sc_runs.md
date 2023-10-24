@@ -1,7 +1,3 @@
- <!-- TODO Gleb is working on simulation documentation, he might have something that will fit this screen  -->
-
-
-
 # Repository Runs
 When you navigate to the `Runs` tab within a repository, you will see a list of all previous runs for that repository.
 
