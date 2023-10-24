@@ -49,9 +49,7 @@ const config = {
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         docs: {
-          //routeBasePath: 'docs',
           path: "docs",
-          // path: "docs_citros_web",
           sidebarPath: require.resolve("./sidebars.js"),
           remarkPlugins: [math],
           rehypePlugins: [katex],
@@ -77,18 +75,6 @@ const config = {
   ],
 
   plugins: [
-    [
-      "@docusaurus/plugin-content-docs",
-      {
-        id: "docs_citros_web",
-        path: "docs_citros_web",
-        routeBasePath: "docs_citros_web",
-        sidebarPath: require.resolve("./sidebarsCitros.js"),
-        remarkPlugins: [math],
-        rehypePlugins: [katex],
-        // includeCurrentVersion: false,
-      },
-    ],
     [
       "@docusaurus/plugin-content-docs",
       {
@@ -167,12 +153,6 @@ const config = {
             position: "left",
             activeBaseRegex: `/docs_citros_web/`,
           },
-          // {
-          //   to: "/docs_citros_web", // ./docs-api/Intro.md
-          //   label: "Web",
-          //   position: "left",
-          //   activeBaseRegex: `/docs_citros_web/`,
-          // },
           {
             to: "/docs_cli", // ./docs-api/Intro.md
             label: "CLI",
@@ -196,13 +176,6 @@ const config = {
             type: "docsVersionDropdown",
             position: "right",
             docsPluginId: "docs_cli",
-            // dropdownItemsAfter: [{to: '/versions', label: 'All versions'}],
-            // dropdownActiveClassDisabled: true,
-          },
-          {
-            type: "docsVersionDropdown",
-            position: "right",
-            docsPluginId: "docs_citros_web",
             // dropdownItemsAfter: [{to: '/versions', label: 'All versions'}],
             // dropdownActiveClassDisabled: true,
           },
