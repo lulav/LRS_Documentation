@@ -182,67 +182,6 @@ module.exports = {
           label: 'Repository Template',
           id: 'repos/repos_template',
         },
-        {
-          type: 'category',
-          label: 'Repository File Structure',
-          items: [
-            {
-              type: 'doc',
-              label: 'Overview',
-              id: 'repos/repos_file_structure/repos_fs_overview',
-            },
-            {
-              type: 'doc',
-              label: 'citros_repo_id',
-              id: 'repos/repos_file_structure/repos_fs_repo_id',
-            },
-            {
-              type: 'doc',
-              label: 'notebooks',
-              id: 'repos/repos_file_structure/repos_fs_notebooks',
-            },
-            {
-              type: 'doc',
-              label: 'parameter_setup',
-              id: 'repos/repos_file_structure/repos_fs_param_setup',
-            },
-            {
-              type: 'doc',
-              label: 'project.json',
-              id: 'repos/repos_file_structure/repos_fs_project_json',
-            },
-            {
-              type: 'doc',
-              label: 'readme',
-              id: 'repos/repos_file_structure/repos_fs_readme',
-            },
-            {
-              type: 'doc',
-              label: 'reports',
-              id: 'repos/repos_file_structure/repos_fs_reports',
-            },
-            {
-              type: 'doc',
-              label: 'settings.json',
-              id: 'repos/repos_file_structure/repos_fs_settings_json',
-            },
-            {
-              type: 'doc',
-              label: 'simulations',
-              id: 'repos/repos_file_structure/repos_fs_simulations',
-            },
-            {
-              type: 'doc',
-              label: 'user_commit',
-              id: 'repos/repos_file_structure/repos_fs_user_commit',
-            },
-            {
-              type: 'doc',
-              label: 'workflows',
-              id: 'repos/repos_file_structure/repos_fs_workflows',
-            },
-          ]
-        },
       ],
     },
 

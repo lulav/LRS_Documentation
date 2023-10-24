@@ -9,4 +9,4 @@ You can access and write data in repositories on citros.io using SSH (Secure She
 You can further secure your SSH key by using a hardware security key, which requires the physical hardware security key to be attached to your computer when the key pair is used to authenticate with SSH. You can also secure your SSH key by adding your key to the ssh-agent and using a passphrase. For more information, see 
 [SSH key passphrases](/docs/authentication/ssh/ssh_passphrases.md).
 
-To maintain account security, you can regularly review your SSH keys list and delete any keys that are invalid or have been compromised. For more information, see [SSH Screen](docs/authentication/account/profile/ssh.md).
+To maintain account security, you can regularly review your SSH keys list and delete any keys that are invalid or have been compromised. For more information, see [SSH Screen](/docs/authentication/account/profile/ssh.md).
