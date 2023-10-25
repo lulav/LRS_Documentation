@@ -48,7 +48,7 @@ The first step to work with CITROS is registration (or login). This is a step-by
 
 2. Click the "Sign In" button
 
-  ![image](img/account_login.png)
+![image](img/account_login.png)
 
 3. Enter your email and password and click "Login".
 
