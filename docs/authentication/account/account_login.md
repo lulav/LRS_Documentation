@@ -1,80 +1,95 @@
-<!-- ---
-sidebar_label: 'Documentation'
-description: 'Documentation'
-hide_title: true
---- -->
-
 # Account Entrance
 
-### Description
+## Description
 
-The first step to work with CITROS is registration (or login). This guide will take you through the process of registering and/or logging into your account step by step.
+The first step to work with CITROS is registration (or login). This is a step-by-stpe guide of the registering and/or logging process into [CITROS](http://citros.io/) account.
 
 ## Account Registration
 
-- Open [CITROS](http://citros.io/) website.
+1. Open [CITROS](http://citros.io/) website.
 
-![image](img/MainPage.png)
+2. Click on the "Get Started" button.
 
-- Click on the "Get Started" button, and you will be redirected to the registration page.
+![image](img/account_getstarted.png)
 
-![image](img/RegisterOrgAndUsr.png)
+3. Enter details, all fields required
+  - First Name, 
+  - Last Name
+  - Email
+  - Organization Name or Company name
+  - Organization Slug
+  :::note
+  *Organization slug is the unique identifier of the organization.*
+  *For example: Lulav Space slug is: lulav-space*
+  :::
+  - Password
+  - Repeat Password
 
-- Enter your First Name, Last Name, Email, Organization Name, and Organization Slug (the lowercase version of the organization name; it should contain only lowercase letters or numbers). Finally, set your password. Click on "Create Account", and if all fields are correctly filled, you will be redirected to this page:
+4. Click on "Create Account"
 
-![image](img/ThanksForRegistration.png)
+5. Success message will appear
 
-- You will receive an email notifying you that we have received your registration request.
+![image](img/account_success.png)
 
-![image](img/GreetingsWaitActivation.png)
+6. You shuold receive an email notifying that we have received your registration request.
+**This is not an activation email**
 
-- At this step, the CITROS team will be notified of a new User and Organization. We will review the information and confirm the request. Shortly after, you will receive a confirmation email.
+![image](img/account_welcome.png)
 
-![image](img/GreetingsActivated.png)
+7. the CITROS team will be notified of a new User and Organization. We will review the information and confirm the request. Shortly after, you will receive a confirmation email.
 
-- Then, you can return to the [CITROS](http://citros.io/) website and log in.
+![image](img/account_activated.png)
+
+8. You can now login into [CITROS](https://citros.io/auth/login) account with the email and password you enterd in registration
 
 ## Logging into CITROS
 
-- Open [CITROS](http://citros.io/) website.
+1. Open [CITROS](http://citros.io/) website.
 
-- Click on the "Sign In" button, and you will be redirected to the login page.
+2. Click the "Sign In" button
 
-  ![image](img/LogIn.png)
+  ![image](img/account_login.png)
 
-- Enter your email and password and click "Login".
-- If the data you entered is correct, you will be logged into CITROS.
+3. Enter your email and password and click "Login".
 
-## Inviting a New User to Your Organization (For admin users only)
+## Inviting a New User to Your Organization (Admin Users Only)
 
-- Open the "Settings" tab on the main CITROS page.
+1. Open the "Settings" tab on the main CITROS page.
 
 ![image](img/UserList.png)
 
-- Click on the "Invite User" button at the top right of the tab. The user invitation drawer will appear.
+2. Click on the "Invite User" button at the top right of the tab. The user invitation drawer will appear.
 
 ![image](img/UserListWithDrawer.png)
 
-- Enter the email address of the user you wish to invite in the "Email address" field and click "Invite User". Right after, a confirmation dialog will pop up. Double-check the email address you entered and if it's correct, click "Confirm".
+3. Enter the email address of the user you wish to invite.
+
+4. click "Invite User". 
+
+5. click "Confirm" the email appears in dialog or "Cancel" to change address.
 
 ![image](img/InviteDialog.png)
 
-- Afterward, an invitation email will be sent to the address you provided. You will see a snack bar confirming that the user invitation was successful.
+6. Success notification will pop-up.
 
 ![image](img/UserListSnackBar.png)
 
-## Account Reegistration by invitation
+7. Invitation email will be sent to the address you provided. 
 
-- If you have been invited to CITROS, you will receive an invitation email.
+## Account Reegistration by Invitation
+
+1. Click "LOG IN" button in your invitaation email.
 
 ![image](img/YouHaveBeenInvited.png)
 
-- Click "Log In" to proceed to the registration page.
+2. Enter details, all fields required
+  - First Name, 
+  - Last Name
+  - Password
+  - Repeat Password
+
+3. Click on "Create Account".
 
 ![image](img/RegistrationByInvitation.png)
 
-- Enter your First Name, Last Name, and password. Click on "Create Account" and if all fields are filled correctly, you will be redirected to the Login page.
-
-![image](img/LogIn.png)
-
-- Log into CITROS.
+4. You can now login into [CITROS](https://citros.io/auth/login) account with the email and password you enterd in registration
