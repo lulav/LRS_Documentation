@@ -18,7 +18,7 @@ module.exports = {
   dataAnalysisSidebar: [
     {
       type: 'category',
-      label: 'Package overview',
+      label: 'Citros Data Analysis',
       link: {
         type: 'doc',
         id: "index",
@@ -27,49 +27,65 @@ module.exports = {
         {
           type: 'category',
           label: 'Data access',
+          link: {
+            type: 'doc',
+            id: "data_access/index",
+          },
           items: [
             {
-              type: 'doc',
-              id: 'data_access_examples',
-              // label: 'Examples',
+              type: 'category',
+              label: 'Examples',
+              items: ["data_access/getting_started", "data_access/repository_overview", "data_access/batch_overview",
+                      "data_access/users_overview", "data_access/batch_content", "data_access/query_data",
+                      "data_access/plot_data"],
             },
             {
-              type: 'doc',
-              id: 'documentation/data_access',
-              // label: 'Examples',
+              type: 'category',
+              label: 'Documentation',
+              items: ['documentation/data_access/citros_db', 'documentation/data_access/citros_dict']
             },
           ]
         },
         {
           type: 'category',
           label: 'Error analysis',
+          link: {
+            type: 'doc',
+            id: "error_analysis/index",
+          },
           items: [
             {
-              type: 'doc',
-              id: 'error_analysis_examples',
-              // label: 'Documentation',
+              type: 'category',
+              label: 'Examples',
+              items: ['error_analysis/getting_started_query_data', 'error_analysis/statistics', 
+                      'error_analysis/correlation', 'error_analysis/regression', ],
             },
             {
-              type: 'doc',
-              id: 'documentation/error_analysis',
-              // label: 'Examples',
+              type: 'category',
+              label: 'Documentation',
+              items: ['documentation/error_analysis/citros_data', 'documentation/error_analysis/citros_data_array', 'documentation/error_analysis/citros_stat'],
             },
           ],
         },
         {
           type: 'category',
           label: 'Validation',
+          link: {
+            type: 'doc',
+            id: "validation/index",
+          },
           items: [
             {
-              type: 'doc',
-              id: 'validation_examples',
-              // label: 'Documentation',
+              type: 'category',
+              label: 'Examples',
+              items: ['validation/getting_started', 'validation/standard_deviation_boundary_test', 'validation/mean_value_test',
+                       'validation/norm_test', 'validation/testing_each_simulation', 'validation/set_multiple_tests'],
             },
             {
-              type: 'doc',
-              id: 'documentation/validation',
-              // label: 'Documentation',
-            }
+              type: 'category',
+              label: 'Documentation',
+              items: ['documentation/validation/validation'],
+            },
           ],
         },
       ]

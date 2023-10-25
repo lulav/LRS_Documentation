@@ -11,12 +11,12 @@ const katex = require("rehype-katex");
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: "CITROS",
-  tagline: "The starting point for your next robotic project",
+  tagline: "The starting point for your next robotic project", 
   favicon: "img/favicon.ico",
 
   // Set the production url of your site here
-  // url: 'https://citros.io',
-  url: "http://localhost:3000",
+  url: 'https://citros.io',
+//   url: "http://localhost:3000",
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: "/doc/",
@@ -49,7 +49,6 @@ const config = {
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         docs: {
-          //routeBasePath: 'docs',
           path: "docs",
           sidebarPath: require.resolve("./sidebars.js"),
           remarkPlugins: [math],
@@ -59,15 +58,15 @@ const config = {
           //editUrl:
           //  'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
         },
-        blog: {
-          showReadingTime: true,
-          remarkPlugins: [math],
-          rehypePlugins: [katex],
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          //editUrl:
-          //  'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
-        },
+        // blog: {
+        //   showReadingTime: true,
+        //   remarkPlugins: [math],
+        //   rehypePlugins: [katex],
+        //   // Please change this to your repo.
+        //   // Remove this to remove the "edit this page" links.
+        //   //editUrl:
+        //   //  'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+        // },
         theme: {
           customCss: require.resolve("./src/css/custom.css"),
         },
@@ -76,18 +75,6 @@ const config = {
   ],
 
   plugins: [
-    [
-      "@docusaurus/plugin-content-docs",
-      {
-        id: "docs_citros_web",
-        path: "docs_citros_web",
-        routeBasePath: "docs_citros_web",
-        sidebarPath: require.resolve("./sidebarsCitros.js"),
-        remarkPlugins: [math],
-        rehypePlugins: [katex],
-        // includeCurrentVersion: false,
-      },
-    ],
     [
       "@docusaurus/plugin-content-docs",
       {
@@ -107,6 +94,18 @@ const config = {
         path: "docs_data_analysis",
         routeBasePath: "docs_data_analysis",
         sidebarPath: require.resolve("./sidebarsDataAnalysis.js"),
+        remarkPlugins: [math],
+        rehypePlugins: [katex],
+        // includeCurrentVersion: false,
+      },
+    ],
+    [
+      "@docusaurus/plugin-content-docs",
+      {
+        id: "docs_tutorials",
+        path: "docs_tutorials",
+        routeBasePath: "docs_tutorials",
+        sidebarPath: require.resolve("./sidebarsTutorials.js"),
         remarkPlugins: [math],
         rehypePlugins: [katex],
         // includeCurrentVersion: false,
@@ -150,12 +149,6 @@ const config = {
             //to: '/docs/intro',    // ./docs/Intro.md
             type: "docSidebar",
             sidebarId: "gettingStartedSidebar",
-            label: "Getting started",
-            position: "left",
-            activeBaseRegex: `/docs/`,
-          },
-          {
-            to: "/docs_citros_web", // ./docs-api/Intro.md
             label: "Web",
             position: "left",
             activeBaseRegex: `/docs_citros_web/`,
@@ -165,8 +158,6 @@ const config = {
             label: "CLI",
             position: "left",
             activeBaseRegex: `/docs_cli/`,
-            // type: 'docsVersionDropdown',
-            // docsPluginId: 'docs_cli'
           },
           {
             to: "/docs_data_analysis", // ./docs-api/Intro.md
@@ -174,18 +165,17 @@ const config = {
             position: "left",
             activeBaseRegex: `/docs_data_analysis/`,
           },
-          { to: "/blog", label: "Blog", position: "left" },
+          {
+            to: "/docs_tutorials", // ./docs-api/Intro.md
+            label: "Tutorials",
+            position: "left",
+            activeBaseRegex: `/docs_tutorials/`,
+          },
+          // { to: "/blog", label: "Blog", position: "left" },
           {
             type: "docsVersionDropdown",
             position: "right",
             docsPluginId: "docs_cli",
-            // dropdownItemsAfter: [{to: '/versions', label: 'All versions'}],
-            // dropdownActiveClassDisabled: true,
-          },
-          {
-            type: "docsVersionDropdown",
-            position: "right",
-            docsPluginId: "docs_citros_web",
             // dropdownItemsAfter: [{to: '/versions', label: 'All versions'}],
             // dropdownActiveClassDisabled: true,
           },
@@ -204,10 +194,10 @@ const config = {
           {
             title: "Visit",
             items: [
-              {
-                label: "Blog",
-                to: "/blog",
-              },
+              // {
+              //   label: "Blog",
+              //   to: "/blog",
+              // },
               {
                 label: "Twitter",
                 to: "https://twitter.com/lulavspace",
@@ -216,10 +206,10 @@ const config = {
                 label: "Linkdin",
                 to: "https://www.linkedin.com/company/lulav-space/",
               },
-              {
-                label: "Website",
-                to: "https://www.lulav.space",
-              },
+              // {
+              //   label: "Website",
+              //   to: "https://www.lulav.space",
+              // },
             ],
           },
           {
@@ -230,7 +220,7 @@ const config = {
               //   to: '/docs_data_analysis',
               // },
               {
-                label: "GitHub",
+                label: "CITROS Garden in GitHub",
                 to: "https://github.com/citros-garden",
               },
             ],
@@ -240,11 +230,11 @@ const config = {
             items: [
               {
                 label: "Terms and Conditions",
-                to: "/blog",
+                to: "https://www.lulav.space",
               },
               {
                 label: "Privacy Policy",
-                to: "/blog",
+                to: "https://www.lulav.space",
               },
             ],
           },
