@@ -1,6 +1,6 @@
 ---
 # Display h3 headings
-sidebar_label: 'class CitrosDataArray'
+sidebar_label: 'Class CitrosDataArray'
 toc_max_heading_level: 3
 hide_title: true
 description: 'Documentation'
@@ -32,17 +32,16 @@ class CitrosDataArray(
 
 Store CitrosData objects in a "dbs" attribute for regression analysis.
 
----
 #### Parameters
 
 **```dbs```** :&ensp;**list**
 :   list of CitrosData objects
 
 
-
-
-
 </details>
+
+
+
 
 
 
@@ -67,7 +66,6 @@ def add_db(
 
 Add one CitrosData object to CitrosDataArray.
 
----
 #### Parameters
 
 **```db```** :&ensp;**[CitrosData](citros_data.md#citros_data_analysis.error_analysis.citros_data.CitrosData "citros_data_analysis.error_analysis.citros_data.CitrosData")**
@@ -95,7 +93,6 @@ def add_dbs(
 
 Add list of CitrosData objects to CitrosDataArray.
 
----
 #### Parameters
 
 **```dbs```** :&ensp;**list **
@@ -126,7 +123,6 @@ Remove CitrosData object from CitrosDataArray.
 If **value** is an int, then removes by index, 
 if **value** is a CitrosData object, then removes it if it exists in CitrosDataArray.
 
----
 #### Parameters
 
 **```value```** :&ensp;**int** or **[CitrosData](citros_data.md#citros_data_analysis.error_analysis.citros_data.CitrosData "citros_data_analysis.error_analysis.citros_data.CitrosData")**
@@ -165,7 +161,6 @@ def get_prediction(
 
 Show the predictions based on the results of the regression solution, neural net or gaussian mixture model.
 
----
 #### Parameters
 
 **```parameters```** :&ensp;**dict**
@@ -219,13 +214,11 @@ Show the predictions based on the results of the regression solution, neural net
 **```return_fig```** :&ensp;**bool**, default **False**
 :   If True, the figure and ax (or list of ax) will be returned.
 
----
 #### Other Parameters
 
 **```kwargs```** :&ensp;**dict**, optional
 :   Other keyword arguments for **method** = 'neural_net', see sklearn.neural_network.MLPRegressor.
 
----
 #### Returns
 
 **```result```** :&ensp;**pandas.DataFrame**
@@ -239,8 +232,10 @@ Show the predictions based on the results of the regression solution, neural net
 **```ax```** :&ensp;**matplotlib.axes.Axes** or **list** of **matplotlib.axes.Axes**
 :   if **return_fig** set to True
 
----
-#### Examples
+
+</details>
+<details>
+  <summary>Examples</summary>
 
 Create CitrosDataArray object:
 

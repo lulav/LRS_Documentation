@@ -1,6 +1,6 @@
 ---
 # Display h3 headings
-sidebar_label: 'class CitrosData'
+sidebar_label: 'Class CitrosData'
 toc_max_heading_level: 3
 hide_title: true
 description: 'Documentation'
@@ -43,7 +43,6 @@ Create CitrosData object, that allows to bin and interpolate data.
 CitrosData object has two main attributes: 'data' - the vector of depending variables, 
 and all other additional columns - 'addData'. Both 'data' and 'addData' attributes containes pandas.DataFrame.
 
----
 #### Parameters
 
 **```db```** :&ensp;**DataFrame** or **tuple** of **two DataFrames** or **None**, optional
@@ -124,10 +123,10 @@ and all other additional columns - 'addData'. Both 'data' and 'addData' attribut
     will be treated as NaN values. If this functionality is not required, set inf_vals = None.
 
 
-
-
-
 </details>
+
+
+
 
 
 
@@ -153,7 +152,6 @@ def add_addData(
 
 Add column to 'addData' attribute.
 
----
 #### Parameters
 
 **```column```** :&ensp;`array-like object`
@@ -197,7 +195,6 @@ is calculated in each bin.
 'addData' and 'data' attributes of the new CitrosData object have two levels of indexes, 
 with id values from binning as the first level and 'sid' as the second one.
 
----
 #### Parameters
 
 **```n_bins```** :&ensp;**int**, default **10**
@@ -221,14 +218,15 @@ with id values from binning as the first level and 'sid' as the second one.
 **```show_fig```** :&ensp;**bool**, default **False**
 :   If the histogram that represents the distibution of the values in **param_label** should be shown.
 
----
 #### Returns
 
 &ensp;**[CitrosData](#citros_data_analysis.error_analysis.citros_data.CitrosData "citros_data_analysis.error_analysis.citros_data.CitrosData")**
 :   New CitrosData object with two levels of indexes in 'addData' and 'data' attributes.
 
----
-#### Examples
+
+</details>
+<details>
+  <summary>Examples</summary>
 
 Query some data from the topic 'A'
 
@@ -299,7 +297,6 @@ def drop_addData(
 
 Delete column from 'addData' attribute.
 
----
 #### Parameters
 
 **```column_label```** :&ensp;**str**
@@ -327,7 +324,6 @@ def drop_parameter(
 
 Delete parameter labeled **key** and associated value.
 
----
 #### Parameters
 
 **```key```** :&ensp;**str**
@@ -355,13 +351,11 @@ def get_statistics(
 
 Return table with statistics for CitrosData object.
 
----
 #### Parameters
 
 **```return_format```** :&ensp;`{'pandas', 'citrosStat',}`, default `'pandas'`
 :   Returning format.
 
----
 #### Returns
 
 **```Statistics```** :&ensp;**pandas.DataFrame** or **[CitrosStat](citros_stat.md#citros_data_analysis.error_analysis.citros_stat.CitrosStat "citros_data_analysis.error_analysis.citros_stat.CitrosStat")**
@@ -377,13 +371,14 @@ Return table with statistics for CitrosData object.
     If **return_format** is 'citrosStat', then returns CitrosStat object with 'x', 'mean', 'covar_matrix' and 'sigma' attributes,
     that corresponds to (1)-(4) items, but in the form of pandas.DataFrames.
 
----
 #### See Also
 
 **[CitrosData.bin_data()](#citros_data_analysis.error_analysis.citros_data.CitrosData.bin_data "citros_data_analysis.error_analysis.citros_data.CitrosData.bin_data")**, **[CitrosData.scale_data()](#citros_data_analysis.error_analysis.citros_data.CitrosData.scale_data "citros_data_analysis.error_analysis.citros_data.CitrosData.scale_data")**, **[CitrosData.show_statistics()](#citros_data_analysis.error_analysis.citros_data.CitrosData.show_statistics "citros_data_analysis.error_analysis.citros_data.CitrosData.show_statistics")**
 
----
-#### Examples
+
+</details>
+<details>
+  <summary>Examples</summary>
 
 Import 'data_access' and 'error_analysis' modules and create CitrosDB object to query data:
 
@@ -550,7 +545,6 @@ For each 'sid' this procedure is performed separately.
 'addData' and 'data' attributes of the new CitrosData object have two levels of indexes, 
 with id values from scaling as the first level and 'sid' as the second one.
 
----
 #### Parameters
 
 **```n_points```** :&ensp;**int**, default **10**
@@ -570,15 +564,16 @@ with id values from scaling as the first level and 'sid' as the second one.
 **```intr_kind```** :&ensp;**str**, default `'linear'`
 :   Type of the interpolation, see scipy.interpolate.interp1d.
 
----
 #### Returns
 
 &ensp;**[CitrosData](#citros_data_analysis.error_analysis.citros_data.CitrosData "citros_data_analysis.error_analysis.citros_data.CitrosData")**
 :   CitrosData object with multiindexing: the first level stores ids of the points of the new scale, the second one - 'sid'.
     Values of the new scale are stored in 'addData' attribute.
 
----
-#### Examples
+
+</details>
+<details>
+  <summary>Examples</summary>
 
 Query some data from the topic 'A'
 
@@ -651,7 +646,6 @@ def set_parameter(
 
 Set parameter value to a CitrosData object.
 
----
 #### Parameters
 
 **```key```** :&ensp;**str**
@@ -703,7 +697,6 @@ If the data stored in CitrosData object **db** is multidimensional, then **x_col
 If the data from another CitrosData objects is used, the latter must be provided in **db2**. Then the data from **db** 
 is supposed to be plotted along x-axis and the data from **db2** is supposed to be plotted along y-axis.
 
----
 #### Parameters
 
 **```db2```** :&ensp;**[CitrosData](#citros_data_analysis.error_analysis.citros_data.CitrosData "citros_data_analysis.error_analysis.citros_data.CitrosData")**
@@ -752,13 +745,11 @@ return_fig : bool, default False.
 **```return_ellipse_param```** :&ensp;**bool**, default **False**
 :   If True, returns ellipse parameters.
 
----
 #### Other Parameters
 
 **```kwargs```** :&ensp;**dict**, optional
 :   see matplotlib.patches.Ellipse.
 
----
 #### Returns
 
 **```fig```** :&ensp;**matplotlib.figure.Figure**
@@ -788,8 +779,10 @@ return_fig : bool, default False.
   - bounding_error : float
       Radius of the error circle.
 
----
-#### Examples
+
+</details>
+<details>
+  <summary>Examples</summary>
 
 Import 'data_access' and 'error_analysis' modules and create CitrosDB object to query data:
 
@@ -865,7 +858,6 @@ def show_statistics(
 
 Collect statistics for CitrosData object and plot it.
 
----
 #### Parameters
 
 **```fig```** :&ensp;**matplotlib.figure.Figure**
@@ -905,7 +897,6 @@ Collect statistics for CitrosData object and plot it.
 **```std_lines```** :&ensp;**bool**, default **True**
 :   If False, remove standard deviation boundary lines.
 
----
 #### Returns
 
 **```fig```** :&ensp;**matplotlib.figure.Figure**
@@ -915,13 +906,14 @@ Collect statistics for CitrosData object and plot it.
 **```ax```** :&ensp;**numpy.ndarray** of **matplotlib.axes.Axes**
 :   if **return_fig** set to True
 
----
 #### See Also
 
 **[CitrosData.get_statistics()](#citros_data_analysis.error_analysis.citros_data.CitrosData.get_statistics "citros_data_analysis.error_analysis.citros_data.CitrosData.get_statistics")**, **[CitrosData.bin_data()](#citros_data_analysis.error_analysis.citros_data.CitrosData.bin_data "citros_data_analysis.error_analysis.citros_data.CitrosData.bin_data")**, **[CitrosData.scale_data()](#citros_data_analysis.error_analysis.citros_data.CitrosData.scale_data "citros_data_analysis.error_analysis.citros_data.CitrosData.scale_data")**
 
----
-#### Examples
+
+</details>
+<details>
+  <summary>Examples</summary>
 
 Import 'data_access' and 'error_analysis' modules and create CitrosDB object to query data:
 
@@ -980,7 +972,6 @@ def to_pandas()
 
 Concatenate **data** and **addData** attributes and return the result table as a pandas.DataFrame.
 
----
 #### Returns
 
 &ensp;**pandas.DataFrame**

@@ -1,6 +1,6 @@
 ---
 # Display h3 headings
-sidebar_label: 'class Ref'
+sidebar_label: 'Class Ref'
 toc_max_heading_level: 3
 hide_title: true
 description: 'Documentation'
@@ -29,10 +29,10 @@ class Ref
   <summary>Description</summary>
 
 Stores references to the batches used in the work
-
-
-
 </details>
+
+
+
 
 
 
@@ -58,8 +58,10 @@ Print the information about all batches that were used.
 Displays the batch creator's first and last name and email, batch name, message and creation time, link to the batch.
 The output is sorted by the last names.
 
----
-#### Examples
+
+</details>
+<details>
+  <summary>Examples</summary>
 
 Display references to the batches that were used in the current notebook:
 

@@ -1,6 +1,6 @@
 ---
 # Display h3 headings
-sidebar_label: 'class CitrosDB'
+sidebar_label: 'Class CitrosDB'
 toc_max_heading_level: 3
 hide_title: true
 description: 'Documentation'
@@ -42,7 +42,6 @@ class CitrosDB(
 
 CitrosDB object, that allows to get general information about the batch and make queries.
 
----
 #### Parameters
 
 **```host```** :&ensp;**str**
@@ -100,10 +99,10 @@ CitrosDB object, that allows to get general information about the batch and make
     If True, this will cause the code to abort if an error occurs.
 
 
-
-
-
 </details>
+
+
+
 
 
 
@@ -131,20 +130,20 @@ Average **n_avg** number of messages.
 Messages with different sids are processed separately. 
 The value in 'rid' column is set as a minimum value among the 'rid' values of the averaged rows.
 
----
 #### Parameters
 
 **```n_avg```** :&ensp;**int**
 :   Number of messages to average.
 
----
 #### Returns
 
 &ensp;**[CitrosDB](#citros_data_analysis.data_access.citros_db.CitrosDB "citros_data_analysis.data_access.citros_db.CitrosDB")**
 :   CitrosDB with parameters set for sampling method 'avg'.
 
----
-#### Examples
+
+</details>
+<details>
+  <summary>Examples</summary>
 
 To average each 3 messages of the topic 'A' and get the result:
 
@@ -177,7 +176,6 @@ def batch(
 
 Set batch to the CitrosDB object.
 
----
 #### Parameters
 
 **```batch```** :&ensp;**int** or **str**
@@ -202,14 +200,15 @@ Set batch to the CitrosDB object.
 :   Set **user** = 'me' to search only among batches that were created by you. 
     To display batches that were created by another user, provide the user's email.
 
----
 #### Returns
 
 &ensp;**[CitrosDB](#citros_data_analysis.data_access.citros_db.CitrosDB "citros_data_analysis.data_access.citros_db.CitrosDB")**
 :   CitrosDB with set batch id or None, if inplace = True.
 
----
-#### Examples
+
+</details>
+<details>
+  <summary>Examples</summary>
 
 Get data for topic 'A' from the batch '00000000-1111-2222-3333-444444aaaaaa':
 
@@ -281,7 +280,6 @@ Return information about batches.
 The output is a dictionary, that contains batch names as dictionary keys 
 and batch ids, list of corresponding simulation ids and date of creation as dictionary values.
 
----
 #### Parameters
 
 **```search```** :&ensp;**str, int** or **float**
@@ -357,14 +355,15 @@ and batch ids, list of corresponding simulation ids and date of creation as dict
 :   Set **user** = 'me' to filter and display only the batches that belong to you. 
     To display batches that were created by another user, provide the user's email.
 
----
 #### Returns
 
 &ensp;**[CitrosDict](citros_dict.md#citros_data_analysis.data_access.citros_dict.CitrosDict "citros_data_analysis.data_access.citros_dict.CitrosDict")**
 :   Information about the batches.
 
----
-#### Examples
+
+</details>
+<details>
+  <summary>Examples</summary>
 
 Display the information about all batches:
 
@@ -631,20 +630,20 @@ Return table with data.
 Query data according to the constraints set by topic(), rid(), sid() and time() methods
 and one of the aggrative method skip(), avg() or move_avg().
 
----
 #### Parameters
 
 **```data_names```** :&ensp;**list**, optional
 :   Labels of the columns from json data column.
 
----
 #### Returns
 
 &ensp;**pandas.DataFrame**
 :   Table with selected data.
 
----
-#### Examples
+
+</details>
+<details>
+  <summary>Examples</summary>
 
 if the structure of the data column is the following:
 
@@ -694,14 +693,15 @@ def get_batch()
 
 Get the name of the current batch if the batch is set.
 
----
 #### Returns
 
 &ensp;**str**
 :   Name of the current batch. If the batch is not set, return None.
 
----
-#### Examples
+
+</details>
+<details>
+  <summary>Examples</summary>
 
 Get name of the batch that was created the last:
 
@@ -730,14 +730,15 @@ def get_batch_id()
 
 Get the id of the current batch if the batch is set.
 
----
 #### Returns
 
 &ensp;**str**
 :   id of the current batch. If the batch is not set, return None.
 
----
-#### Examples
+
+</details>
+<details>
+  <summary>Examples</summary>
 
 Get id of the batch 'dynamics':
 
@@ -768,8 +769,10 @@ Print sizes of the all batches in the current schema that are downloaded in the 
 
 Print table with batch ids, batch size and total batch size with indexes.
 
----
-#### Examples
+
+</details>
+<details>
+  <summary>Examples</summary>
 
 Print the table with information about batch sizes:
 
@@ -808,7 +811,6 @@ def get_counts(
 
 Return number of the rows in the column **column_name**.
 
----
 #### Parameters
 
 **```column_name```** :&ensp;**str**
@@ -830,14 +832,15 @@ Return number of the rows in the column **column_name**.
 **```nan_exclude```** :&ensp;**bool**, default **False**
 :   If True, nan values are excluded from the count.
 
----
 #### Returns
 
 &ensp;**list** of **tuples** or **None**
 :   Number of rows in **column_name**.
 
----
-#### Examples
+
+</details>
+<details>
+  <summary>Examples</summary>
 
 Calculate the total number of rows:
 
@@ -921,8 +924,10 @@ Print size of the current batch, if it is set.
 
 Print table with batch name, batch size and total batch size with indexes.
 
----
-#### Examples
+
+</details>
+<details>
+  <summary>Examples</summary>
 
 Print the table with information about batch sizes:
 
@@ -959,7 +964,6 @@ Print structure of the json-data column for the specific topic(s).
 
 Each tuple conatains topic and type names, structure of the corresponding data and number of sids.
 
----
 #### Parameters
 
 **```topic```** :&ensp;**list** or **list** of **str**, optional
@@ -968,8 +972,10 @@ Each tuple conatains topic and type names, structure of the corresponding data a
     and will override them.
     If not specified, shows data structure for all topics.
 
----
-#### Examples
+
+</details>
+<details>
+  <summary>Examples</summary>
 
 Print structure of the json-data column for topics 'A' and 'C':
 
@@ -1033,7 +1039,6 @@ def get_max_value(
 
 Return maximum value of the column **column_name**.
 
----
 #### Parameters
 
 **```column_name```** :&ensp;**str**
@@ -1051,7 +1056,6 @@ Return maximum value of the column **column_name**.
 **```return_index```** :&ensp;**bool**, default **False**
 :   If True, the pair of sid and rid corresponding to the obtained maximum value is also returned.
 
----
 #### Returns
 
 **```value```** :&ensp;**int, float, str** or **None**
@@ -1065,8 +1069,10 @@ Return maximum value of the column **column_name**.
 **```rid```** :&ensp;**int** or **list**
 :   Corresponding to the maximum value's rid. Returns only if **return_index** is set to True
 
----
-#### Examples
+
+</details>
+<details>
+  <summary>Examples</summary>
 
 Get max value of the column 'data.x.x_2' where topics are 'A' or 'B', 10 <= 'time' <= 5000 and data.x.x_1 > 10:
 
@@ -1127,7 +1133,6 @@ def get_min_value(
 
 Return minimum value of the column **column_name**.
 
----
 #### Parameters
 
 **```column_name```** :&ensp;**str**
@@ -1147,7 +1152,6 @@ Return minimum value of the column **column_name**.
     If there are several cases when the maximum or minimum value is reached, the lists of corresponding 
     sids and rids are returned.
 
----
 #### Returns
 
 **```value```** :&ensp;**int, float, str** or **None**
@@ -1161,8 +1165,10 @@ Return minimum value of the column **column_name**.
 **```rid```** :&ensp;**int** or **list**
 :   Corresponding to the minimum value's rid. Returns only if **return_index** is set to True.
 
----
-#### Examples
+
+</details>
+<details>
+  <summary>Examples</summary>
 
 Get min value of the column 'data.x.x_2' where topics are 'A' or 'B', 10 <= 'time' <= 5000 and data.x.x_1 > 10:
 
@@ -1219,14 +1225,15 @@ def get_repo()
 
 Get the current repository name if the repository is set.
 
----
 #### Returns
 
 &ensp;**str**
 :   Name of the current repository. If the repository is not set, return None.
 
----
-#### Examples
+
+</details>
+<details>
+  <summary>Examples</summary>
 
 Get the name of the last created repository:
 
@@ -1255,14 +1262,15 @@ def get_repo_id()
 
 Get the current repository id if the repository is set.
 
----
 #### Returns
 
 &ensp;**str**
 :   id of the current repository. If the repository is not set, return None.
 
----
-#### Examples
+
+</details>
+<details>
+  <summary>Examples</summary>
 
 Get id of the repository 'citros_project':
 
@@ -1300,7 +1308,6 @@ def get_sid_tables(
 
 Return dict of tables, each of the tables corresponds to exact value of sid.
 
----
 #### Parameters
 
 **```data_query```** :&ensp;**list**, optional
@@ -1352,14 +1359,15 @@ Return dict of tables, each of the tables corresponds to exact value of sid.
     Number of rows to skip in a result output. 
     For example, if skip = 2, only every second row will be returned.
 
----
 #### Returns
 
 &ensp;**dict** of **pandas.DataFrames**
 :   dict with tables, key is a value of sid.
 
----
-#### Examples
+
+</details>
+<details>
+  <summary>Examples</summary>
 
 Download averaged data for each sid separately, setting ascending order by 'rid':
 
@@ -1418,14 +1426,15 @@ def get_simulation()
 
 Get the simulation name if the simulation is set.
 
----
 #### Returns
 
 &ensp;**str**
 :   Name of the simulation. If the simulation is not set, return None.
 
----
-#### Examples
+
+</details>
+<details>
+  <summary>Examples</summary>
 
 Get the name of the imulation that was set in initialization:
 
@@ -1459,7 +1468,6 @@ def get_unique_counts(
 
 Return number of the unique values in the column **column_name**.
 
----
 #### Parameters
 
 **```column_name```** :&ensp;**str**
@@ -1481,14 +1489,15 @@ Return number of the unique values in the column **column_name**.
 **```nan_exclude```** :&ensp;**bool**, default **False**
 :   If True, nan values are excluded from the count.
 
----
 #### Returns
 
 &ensp;**list** of **tuples** or **None**
 :   Counts of the unique values in **column_name**.
 
----
-#### Examples
+
+</details>
+<details>
+  <summary>Examples</summary>
 
 If the structure of the data column is the following:
 
@@ -1555,7 +1564,6 @@ def get_unique_values(
 
 Return unique values of the columns **column_names**.
 
----
 #### Parameters
 
 **```column_names```** :&ensp;**str** or **list** of **str**
@@ -1569,14 +1577,15 @@ Return unique values of the columns **column_names**.
                in the case of inequality: dict with ">", ">=", "<" or "<=".<br />
     Conditions, passed here, have higher priority over those defined by **topic()**, **rid()**, **sid()**, **time()** and **set_filter()** and will override them.
 
----
 #### Returns
 
 &ensp;**list** or **list** of **tuples**
 :   Each tuple contains unique combinations of the values for **column_names**.
 
----
-#### Examples
+
+</details>
+<details>
+  <summary>Examples</summary>
 
 Get unique values of type for topics 'A' or 'B', where 10 <= 'time' <= 5000 and data.x.x_1 > 10:
 
@@ -1620,8 +1629,10 @@ def get_users()
 
 Display a table that presents key user information, including their first names, last names, and email addresses.
 
----
-#### Examples
+
+</details>
+<details>
+  <summary>Examples</summary>
 
 Print information about users in a table:
 
@@ -1701,14 +1712,15 @@ their data structure types and numbered as "type_group_0", "type_group_1", and s
       'message_count': number of messages}}}
 ```
 
----
 #### Returns
 
 &ensp;**[CitrosDict](citros_dict.md#citros_data_analysis.data_access.citros_dict.CitrosDict "citros_data_analysis.data_access.citros_dict.CitrosDict")**
 :   Information about the batch.
 
----
-#### Examples
+
+</details>
+<details>
+  <summary>Examples</summary>
 
 ```python
 >>> citros = da.CitrosDB()
@@ -1855,7 +1867,6 @@ Compute moving average over **n_avg** massages and select each **n_skip**-th one
 Messages with different sids are processed separately.
 The value in 'rid' column is set as a minimum value among the 'rid' values of the averaged rows.
 
----
 #### Parameters
 
 **```n_avg```** :&ensp;**int**, optional
@@ -1866,14 +1877,15 @@ The value in 'rid' column is set as a minimum value among the 'rid' values of th
 :   Number of the messages to skip.
     For example, if **skip** = 3, the 1th, the 4th, the 7th ... messages will be selected
 
----
 #### Returns
 
 &ensp;**[CitrosDB](#citros_data_analysis.data_access.citros_db.CitrosDB "citros_data_analysis.data_access.citros_db.CitrosDB")**
 :   CitrosDB with parameters set for sampling method 'move_avg'.
 
----
-#### Examples
+
+</details>
+<details>
+  <summary>Examples</summary>
 
 Calculate moving average over each 5 messages of the topic 'A' 
 and select every second row of the result:
@@ -1918,7 +1930,6 @@ specified in the **y_labels** parameter.
 
 Different colors correspond to different sids.
 
----
 #### Parameters
 
 **```df```** :&ensp;**pandas.DataFrame**
@@ -1966,7 +1977,6 @@ Different colors correspond to different sids.
 :   If specified, all values that exceed the provided value in absolute terms will be removed before plotting.
     If this functionality is not required, set inf_vals = None.
 
----
 #### Returns
 
 **```fig```** :&ensp;**matplotlib.figure.Figure**
@@ -1976,14 +1986,15 @@ Different colors correspond to different sids.
 **```ax```** :&ensp;**numpy.ndarray** of **matplotlib.axes.Axes**
 :   Created axis if **fig** is not passed.
 
----
 #### Other Parameters
 
 **```kwargs```** :&ensp;**dict**, optional
 :   Other keyword arguments, see **[matplotlib.axes.Axes.plot](https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.plot.html)**.
 
----
-#### Examples
+
+</details>
+<details>
+  <summary>Examples</summary>
 
 For topic 'A' from json-data column download 'data.x.x_1', 'data.x.x_2' and 'data.x.x_3' and 'data.time' columns:
 
@@ -2044,7 +2055,6 @@ the relationship between variables listed in **labels**, with N being the length
 
 For non-diagonal graphs, colors are assigned to points according to sids.
 
----
 #### Parameters
 
 **```df```** :&ensp;**pandas.DataFrame**
@@ -2104,7 +2114,6 @@ For non-diagonal graphs, colors are assigned to points according to sids.
 **```num```** :&ensp;**int**, default **5**
 :   Number of bins in the histogram on the diogonal.
 
----
 #### Returns
 
 **```fig```** :&ensp;**matplotlib.figure.Figure**
@@ -2114,14 +2123,15 @@ For non-diagonal graphs, colors are assigned to points according to sids.
 **```ax```** :&ensp;**numpy.ndarray** of **matplotlib.axes.Axes**
 :   Created axis if **fig** is not passed.
 
----
 #### Other Parameters
 
 **```kwargs```** :&ensp;**dict**, optional
 :   Other keyword arguments, see **[matplotlib.axes.Axes.plot](https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.plot.html)**.
 
----
-#### Examples
+
+</details>
+<details>
+  <summary>Examples</summary>
 
 For topic 'A' from json-data column download 'data.x.x_1', 'data.x.x_2' and 'data.x.x_3':
 
@@ -2175,7 +2185,6 @@ def plot_3dgraph(
 Plot 3D graph '**z_label** vs. **x_label** and **y_label**' for each sid, where **x_label**, **y_label** and **z_label**
 are the labels of columns of the pandas.DataFrame **df**.
 
----
 #### Parameters
 
 **```df```** :&ensp;**pandas.DataFrame**
@@ -2231,7 +2240,6 @@ are the labels of columns of the pandas.DataFrame **df**.
 :   If specified, all values that exceed the provided value in absolute terms will be removed before plotting.
     If this functionality is not required, set inf_vals = None.
 
----
 #### Returns
 
 **```fig```** :&ensp;**matplotlib.figure.Figure**
@@ -2241,14 +2249,15 @@ are the labels of columns of the pandas.DataFrame **df**.
 **```ax```** :&ensp;**matplotlib.axes.Axes**
 :   Created axis if **ax** is not passed.
 
----
 #### Other Parameters
 
 **```kwargs```** :&ensp;**dict**, optional
 :   Other keyword arguments, see **[matplotlib.axes.Axes.plot](https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.plot.html)**.
 
----
-#### Examples
+
+</details>
+<details>
+  <summary>Examples</summary>
 
 Import matplotlib and mplot3d for 3D plots and create figure to plot on:
 
@@ -2307,7 +2316,6 @@ def plot_graph(
 Plot graph '**y_label** vs. **x_label**' for each sid, where **x_label** and **y_label**
 are the labels of columns of the pandas.DataFrame **df**.
 
----
 #### Parameters
 
 **```df```** :&ensp;**pandas.DataFrame**
@@ -2355,7 +2363,6 @@ are the labels of columns of the pandas.DataFrame **df**.
 :   If specified, all values that exceed the provided value in absolute terms will be removed before plotting.
     If this functionality is not required, set inf_vals = None.
 
----
 #### Returns
 
 **```fig```** :&ensp;**matplotlib.figure.Figure**
@@ -2365,14 +2372,15 @@ are the labels of columns of the pandas.DataFrame **df**.
 **```ax```** :&ensp;**matplotlib.axes.Axes**
 :   Created axis if **ax** is not passed.
 
----
 #### Other Parameters
 
 **```kwargs```** :&ensp;**dict**, optional
 :   Other keyword arguments, see **[matplotlib.axes.Axes.plot](https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.plot.html)**.
 
----
-#### Examples
+
+</details>
+<details>
+  <summary>Examples</summary>
 
 Import matplotlib and create figure to plot on:
 
@@ -2439,7 +2447,6 @@ def plot_sigma_ellipse(
 
 Plot sigma ellipses for the set of data.
 
----
 #### Parameters
 
 **```df```** :&ensp;**pandas.DataFrame**
@@ -2498,7 +2505,6 @@ Plot sigma ellipses for the set of data.
 **```return_ellipse_param```** :&ensp;**bool**, default **False**
 :   If True, returns ellipse parameters.
 
----
 #### Returns
 
 **```fig```** :&ensp;**matplotlib.figure.Figure**
@@ -2528,8 +2534,10 @@ Plot sigma ellipses for the set of data.
   - bounding_error : float
       Radius of the error circle.
 
----
-#### Examples
+
+</details>
+<details>
+  <summary>Examples</summary>
 
 For topic 'A' from json-data column query 'data.x.x_1', 'data.x.x_2' and 'data.x.x_3':
 
@@ -2581,7 +2589,6 @@ def repo(
 
 Set repository to the CitrosDB object.
 
----
 #### Parameters
 
 **```repo```** :&ensp;**int** or **str**
@@ -2601,14 +2608,15 @@ Set repository to the CitrosDB object.
 :   If True, search for the repository with exact match in name field.
     If False, searches for the occurance of the provided string within the name field.
 
----
 #### Returns
 
 &ensp;**[CitrosDB](#citros_data_analysis.data_access.citros_db.CitrosDB "citros_data_analysis.data_access.citros_db.CitrosDB")**
 :   CitrosDB with set repository id or None, if inplace = True.
 
----
-#### Examples
+
+</details>
+<details>
+  <summary>Examples</summary>
 
 Display information about all batches of the repository 'projects':
 
@@ -2730,7 +2738,6 @@ Return information about repositories.
 The output is a dictionary, that contains repository names as dictionary keys 
 and repository ids, list of corresponding simulation ids and date of creation as dictionary values.
 
----
 #### Parameters
 
 **```search```** :&ensp;**int** or **str**
@@ -2784,14 +2791,15 @@ and repository ids, list of corresponding simulation ids and date of creation as
 :   Set **user** as 'me' to filter and display only the repositories that belong to you.
     To get the repositories that were created by another user, provide the email.
 
----
 #### Returns
 
 &ensp;**[CitrosDict](citros_dict.md#citros_data_analysis.data_access.citros_dict.CitrosDict "citros_data_analysis.data_access.citros_dict.CitrosDict")**
 :   Information about the repositories.
 
----
-#### Examples
+
+</details>
+<details>
+  <summary>Examples</summary>
 
 Display the information about all repositories:
 
@@ -3042,7 +3050,6 @@ def rid(
 
 Set constraints on rid.
 
----
 #### Parameters
 
 **```value```** :&ensp;**int** or **list** of **ints**, optional
@@ -3061,14 +3068,15 @@ Set constraints on rid.
 :   Used only if the **end** is not set.
     Number of rid to return in the query, starting form the **start**.
 
----
 #### Returns
 
 &ensp;**[CitrosDB](#citros_data_analysis.data_access.citros_db.CitrosDB "citros_data_analysis.data_access.citros_db.CitrosDB")**
 :   CitrosDB with set 'rid' parameter.
 
----
-#### Examples
+
+</details>
+<details>
+  <summary>Examples</summary>
 
 Get data for topic 'A' where rid values are 10 or 20:
 
@@ -3122,7 +3130,6 @@ Set constraints on query.
 
 Allows to set constraints on json-data columns.
 
----
 #### Parameters
 
 **```filter_by```** :&ensp;**dict**
@@ -3134,13 +3141,11 @@ Allows to set constraints on json-data columns.
     If sampling method is used, constraints on additional columns are applied BEFORE sampling while
     constraints on columns from json-data are applied AFTER sampling.
 
----
 #### Returns
 
 &ensp;**[CitrosDB](#citros_data_analysis.data_access.citros_db.CitrosDB "citros_data_analysis.data_access.citros_db.CitrosDB")**
 :   CitrosDB with set constraints.
 
----
 #### See Also
 
 **[CitrosDB.topic()](#citros_data_analysis.data_access.citros_db.CitrosDB.topic "citros_data_analysis.data_access.citros_db.CitrosDB.topic")**
@@ -3155,8 +3160,10 @@ Allows to set constraints on json-data columns.
 **[CitrosDB.time()](#citros_data_analysis.data_access.citros_db.CitrosDB.time "citros_data_analysis.data_access.citros_db.CitrosDB.time")**
 :   set time constraints
 
----
-#### Examples
+
+</details>
+<details>
+  <summary>Examples</summary>
 
 if the structure of the data column is the following:
 
@@ -3202,15 +3209,16 @@ Apply sorting to the result of the query.
 
 Sort the result of the query in ascending or descending order.
 
----
 #### Parameters
 
 **```order_by```** :&ensp;**str, list** of **str** or **dict**, optional
 :   If **order_by** is a single string or a list of strings, it represents the column label(s) by which the result is sorted in ascending order.
     For more control, use a dictionary with column labels as keys and values ('asc' for ascending, 'desc' for descending) to define the sorting order.
 
----
-#### Examples
+
+</details>
+<details>
+  <summary>Examples</summary>
 
 Get data for topic 'A' and sort the result by sid in ascending order and by rid in descending order.
 
@@ -3251,7 +3259,6 @@ def sid(
 
 Set constraints on sid.
 
----
 #### Parameters
 
 **```value```** :&ensp;**int** or **list** of **ints**, optional
@@ -3272,14 +3279,15 @@ Set constraints on sid.
 :   Used only if the **end** is not set.
     Number of sid to return in the query, starting form the **start**.
 
----
 #### Returns
 
 &ensp;**[CitrosDB](#citros_data_analysis.data_access.citros_db.CitrosDB "citros_data_analysis.data_access.citros_db.CitrosDB")**
 :   CitrosDB with set 'sid' parameter.
 
----
-#### Examples
+
+</details>
+<details>
+  <summary>Examples</summary>
 
 Get data for topic 'A' where sid values are 1 or 2:
 
@@ -3332,7 +3340,6 @@ def simulation(
 
 Set batch to the CitrosDB object.
 
----
 #### Parameters
 
 **```simulation```** :&ensp;**str**
@@ -3344,8 +3351,10 @@ Set batch to the CitrosDB object.
 :   If True, set simulation name to the current CitrosDB object, otherwise returns new CitrosDB 
     object with set simulation.
 
----
-#### Examples
+
+</details>
+<details>
+  <summary>Examples</summary>
 
 Show information about the batch 'test' that was created in 'simulation_cannon_analytic' simulation:
 
@@ -3388,20 +3397,20 @@ Select each **n_skip**-th message.
 
 Messages with different sids are selected separately.
 
----
 #### Parameters
 
 **```skip```** :&ensp;**int**, optional
 :   Control number of the messages to skip.
 
----
 #### Returns
 
 &ensp;**[CitrosDB](#citros_data_analysis.data_access.citros_db.CitrosDB "citros_data_analysis.data_access.citros_db.CitrosDB")**
 :   CitrosDB with parameters set for sampling method 'skip'.
 
----
-#### Examples
+
+</details>
+<details>
+  <summary>Examples</summary>
 
 To get every 3th message of the topic 'A':
 
@@ -3435,7 +3444,6 @@ def time(
 
 Set constraints on time.
 
----
 #### Parameters
 
 **```start```** :&ensp;**int**, default **0**
@@ -3450,14 +3458,15 @@ Set constraints on time.
 :   Used only if the **end** is not set.
     Time interval to return in the query, starting form the **start**.
 
----
 #### Returns
 
 &ensp;**[CitrosDB](#citros_data_analysis.data_access.citros_db.CitrosDB "citros_data_analysis.data_access.citros_db.CitrosDB")**
 :   CitrosDB with set 'time' parameter.
 
----
-#### Examples
+
+</details>
+<details>
+  <summary>Examples</summary>
 
 Get data for for topic 'A' where time is in the range 10ns <= time <= 20ns:
 
@@ -3512,7 +3521,6 @@ def time_plot(
 
 Plot **var_name** vs. **Time** for each of the sids, where **Time** = **time_step** * rid.
 
----
 #### Parameters
 
 **```ax```** :&ensp;**matplotlib.axes.Axes**
@@ -3561,14 +3569,15 @@ Plot **var_name** vs. **Time** for each of the sids, where **Time** = **time_ste
 :   If specified, all values that exceed the provided value in absolute terms will be removed before plotting.
     If this functionality is not required, set inf_vals = None.
 
----
 #### Other Parameters
 
 **```kwargs```** :&ensp;**dict**, optional
 :   Other keyword arguments, see **[matplotlib.axes.Axes.plot](https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.plot.html)**.
 
----
-#### Examples
+
+</details>
+<details>
+  <summary>Examples</summary>
 
 Import matplotlib and create figure to plot on:
 
@@ -3622,20 +3631,20 @@ def topic(
 
 Select topic.
 
----
 #### Parameters
 
 **```topic_name```** :&ensp;**str** or **list** of **str**
 :   Name of the topic.
 
----
 #### Returns
 
 &ensp;**[CitrosDB](#citros_data_analysis.data_access.citros_db.CitrosDB "citros_data_analysis.data_access.citros_db.CitrosDB")**
 :   CitrosDB with set 'topic' parameter.
 
----
-#### Examples
+
+</details>
+<details>
+  <summary>Examples</summary>
 
 Get data for topic name 'A':
 
@@ -3681,7 +3690,6 @@ If the repository is set using the **repo()** method, it displays information ab
 and users who have created batches within it. If the batch is set using the **batch()** method, it shows information 
 about the user who created that specific batch.
 
----
 #### Parameters
 
 **```search```** :&ensp;**str**, optional
@@ -3711,14 +3719,15 @@ about the user who created that specific batch.
     To specify whether to use descending or ascending order, create a dictionary where the keys correspond to the options mentioned above, 
     and the values are either 'asc' for ascending or 'desc' for descending. For instance: {'name': 'asc', 'last_name': 'desc'}"
 
----
 #### Returns
 
 &ensp;**[CitrosDict](citros_dict.md#citros_data_analysis.data_access.citros_dict.CitrosDict "citros_data_analysis.data_access.citros_dict.CitrosDict")**
 :   Information about the users.
 
----
-#### Examples
+
+</details>
+<details>
+  <summary>Examples</summary>
 
 Display all users of your organization, order the output by names:
 
@@ -3835,7 +3844,6 @@ def xy_plot(
 
 Plot **var_y_name** vs. **var_x_name** for each of the sids.
 
----
 #### Parameters
 
 **```ax```** :&ensp;**matplotlib.axes.Axes**
@@ -3888,14 +3896,15 @@ Plot **var_y_name** vs. **var_x_name** for each of the sids.
 :   If specified, all values that exceed the provided value in absolute terms will be removed before plotting.
     If this functionality is not required, set inf_vals = None.
 
----
 #### Other Parameters
 
 **```kwargs```** :&ensp;**dict**, optional
 :   Other keyword arguments, see **[matplotlib.axes.Axes.plot](https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.plot.html)**.
 
----
-#### Examples
+
+</details>
+<details>
+  <summary>Examples</summary>
 
 ```python
 >>> import matplotlib.pyplot as plt

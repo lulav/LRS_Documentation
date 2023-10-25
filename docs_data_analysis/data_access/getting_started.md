@@ -17,12 +17,21 @@ To obtain the current package version number, execute the following:
 >>> import citros_data_analysis
 >>> print(citros_data_analysis.__version__)
 ```
+
 ## Connection to the Database
 
 To connect to the database [**CitrosDB**](../documentation/data_access/citros_db.md#citros_data_analysis.data_access.citros_db.CitrosDB) object is created:
 ```python
 >>> citros = da.CitrosDB()
 ```
+
+If you are working in [web](https://citros.io/), you usually do not need to pass any arguments.
+If you are working with cloud data locally using [CLI](https://citros.io/doc/docs_cli) and properly [logged in CITROS](https://citros.io/doc/docs_tutorials#logging-in), you typically need to specify the `database` (your organization) you are going to work with:
+
+```python
+>>> citros = da.CitrosDB(database = 'my_database')
+```
+
 <details>
   <summary>Advanced CitrosDB parameters</summary>
 

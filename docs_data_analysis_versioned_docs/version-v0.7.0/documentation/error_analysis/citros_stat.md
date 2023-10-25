@@ -1,6 +1,6 @@
 ---
 # Display h3 headings
-sidebar_label: 'class CitrosStat'
+sidebar_label: 'Class CitrosStat'
 toc_max_heading_level: 3
 hide_title: true
 description: 'Documentation'
@@ -34,7 +34,6 @@ class CitrosStat(
 
 Object to store statistics.
 
----
 #### Parameters
 
 **```F```** :&ensp;**pandas.DataFrame**
@@ -48,7 +47,6 @@ Object to store statistics.
 **```x_label```** :&ensp;**str**
 :   Label of the independent variable.
 
----
 #### Attributes
 
 **```x```** :&ensp;**pandas.DataFrame**
@@ -68,10 +66,10 @@ Object to store statistics.
     If statistics was collected for a vector, columns correspond to vector elements.
 
 
-
-
-
 </details>
+
+
+
 
 
 
@@ -101,7 +99,6 @@ def plot(
 
 Plot mean values and standard deviations.
 
----
 #### Parameters
 
 **```fig```** :&ensp;**matplotlib.figure.Figure**
@@ -128,7 +125,6 @@ Plot mean values and standard deviations.
 **```std_color```** :&ensp;**str**, default `'r'`
 :   Color for dispalying standard deviations, red by default.
 
----
 #### Returns
 
 **```fig```** :&ensp;**matplotlib.figure.Figure**
@@ -158,7 +154,6 @@ def to_pandas()
 
 Convert CitrosStat object back to pandas DataFrame.
 
----
 #### Returns
 
 &ensp;**pandas.DataFrame**

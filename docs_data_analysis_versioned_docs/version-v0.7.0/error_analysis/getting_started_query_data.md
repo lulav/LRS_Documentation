@@ -5,7 +5,7 @@ hide_title: true
 sidebar_position: 1
 description: 'Quick start'
 ---
-# Error analysis
+# Error Analysis
 
 For performing error analysis module [error_analysis](../documentation/error_analysis/citros_data.md) is used. To download module:
 
@@ -15,7 +15,7 @@ from citros_data_analysis import error_analysis as analysis
 
 But first of all, let's have a quick look at [data_access](../documentation/data_access/citros_db.md) module, which is dedicate to query data.
 
-## Query data
+## Query Data
 
 To get access to a Citros database, create [**CitrosDB**](../documentation/data_access/citros_db.md#citros_data_analysis.data_access.citros_db.CitrosDB) object:
 

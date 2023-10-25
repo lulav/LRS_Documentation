@@ -1,6 +1,6 @@
 ---
 # Display h3 headings
-sidebar_label: 'class CitrosDict'
+sidebar_label: 'Class CitrosDict'
 toc_max_heading_level: 3
 hide_title: true
 description: 'Documentation'
@@ -34,10 +34,10 @@ class CitrosDict(
 Citros dictionary
 
 CitrosDict is a dictionary-like object, that allows to print the content as a json-object.
-
-
-
 </details>
+
+
+
 
 
 
@@ -60,8 +60,10 @@ def print()
 
 Print content of the CitrosDict object in a 'json'-style.
 
----
-#### Examples
+
+</details>
+<details>
+  <summary>Examples</summary>
 
 Make a CitrosDict object and print it in json-style:
 
@@ -95,14 +97,15 @@ def to_json()
 
 Convert to json string.
 
----
 #### Returns
 
 &ensp;**str**
 :   json_str
 
----
-#### Examples
+
+</details>
+<details>
+  <summary>Examples</summary>
 
 Make a CitrosDict object, convert it to json string and print it:
 

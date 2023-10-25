@@ -27,11 +27,11 @@ module.exports = {
         {
           type: 'category',
           label: 'Data access',
-          link: {
-            type: 'doc',
-            id: "data_access/index",
-          },
           items: [
+            {
+              type: 'doc',
+              id: "data_access/index",
+            },
             {
               type: 'category',
               label: 'Examples',
@@ -58,11 +58,11 @@ module.exports = {
         {
           type: 'category',
           label: 'Error analysis',
-          link: {
-            type: 'doc',
-            id: "error_analysis/index",
-          },
           items: [
+            {
+              type: 'doc',
+              id: "error_analysis/index",
+            },
             {
               type: 'category',
               label: 'Examples',
@@ -88,11 +88,11 @@ module.exports = {
         {
           type: 'category',
           label: 'Validation',
-          link: {
-            type: 'doc',
-            id: "validation/index",
-          },
           items: [
+            {
+              type: 'doc',
+              id: "validation/index",
+            },
             {
               type: 'category',
               label: 'Examples',

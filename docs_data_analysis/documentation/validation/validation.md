@@ -1,6 +1,6 @@
 ---
 # Display h3 headings
-sidebar_label: 'class Validation'
+sidebar_label: 'Class Validation'
 toc_max_heading_level: 3
 hide_title: true
 description: 'Documentation'
@@ -39,7 +39,6 @@ class Validation(
 
 Validation class.
 
----
 #### Parameters
 
 **```df```** :&ensp;**pandas.DataFrame**
@@ -76,7 +75,6 @@ Validation class.
 :   If specified, all values from **data_label** column that exceed the provided value in absolute terms 
     will be treated as NaN values. If this functionality is not required, set inf_vals = None.
 
----
 #### Attributes
 
 **```df```** :&ensp;**pandas.DataFrame** or **None**
@@ -90,8 +88,10 @@ Validation class.
 **```stat```** :&ensp;**[CitrosStat](../error_analysis/citros_stat.md#citros_data_analysis.error_analysis.citros_stat.CitrosStat "citros_data_analysis.error_analysis.citros_stat.CitrosStat")** or **None**
 :   CitrosStat object that stores mean, stndard deviation and covarian matrix as attributes.
 
----
-#### Examples
+
+</details>
+<details>
+  <summary>Examples</summary>
 
 Import validation and data_analysis packages:
 
@@ -145,10 +145,10 @@ and interpolate data on the new scale.
 ...                   method = 'scale', num = 50, units = 'm')
 ```
 
-
-
-
 </details>
+
+
+
 
 
 
@@ -174,7 +174,6 @@ def mean_test(
 
 Test whether mean is within the given limits.
 
----
 #### Parameters
 
 **```limits```** :&ensp;**float** or **list**, default **1.0**
@@ -194,7 +193,6 @@ Test whether mean is within the given limits.
 **```nan_passed```** :&ensp;**bool**, default **True**
 :   If True, the NaN values of the mean will pass the test.
 
----
 #### Returns
 
 **```log```** :&ensp;**[CitrosDict](../data_access/citros_dict.md#citros_data_analysis.data_access.citros_dict.CitrosDict "citros_data_analysis.data_access.citros_dict.CitrosDict")**
@@ -218,8 +216,10 @@ column_name:                  # label of the column, str
 **```fig```** :&ensp;**matplotlib.figure.Figure**
 :   Figure with plotted simulations, mean values and limit boundaries.
 
----
-#### Examples
+
+</details>
+<details>
+  <summary>Examples</summary>
 
 Import validation and data_analysis packages:
 
@@ -338,7 +338,6 @@ def norm_test(
 
 Test whether norm of the each simulation is less than the given limit.
 
----
 #### Parameters
 
 **```norm_type```** :&ensp;`{'L2', 'Linf'}`, default `'L2'`
@@ -358,7 +357,6 @@ Test whether norm of the each simulation is less than the given limit.
    - if the data has multiple columns, limits may be set for each of the column separately as a list.
     That way list length must be equal to number of the columns.
 
----
 #### Returns
 
 **```log```** :&ensp;**[CitrosDict](../data_access/citros_dict.md#citros_data_analysis.data_access.citros_dict.CitrosDict "citros_data_analysis.data_access.citros_dict.CitrosDict")**
@@ -383,8 +381,10 @@ column_name :                       # label of the column, str
 **```fig```** :&ensp;**matplotlib.figure.Figure**
 :   Figure with plotted norm value and limits.
 
----
-#### Examples
+
+</details>
+<details>
+  <summary>Examples</summary>
 
 Import validation and data_analysis packages:
 
@@ -479,7 +479,6 @@ def set_tests(
 
 Perform tests on the data.
 
----
 #### Parameters
 
 **```tests_method```** :&ensp;**dict**
@@ -600,7 +599,6 @@ Test parameters are stored as the dict:
 
 </details>
 
----
 #### Returns
 
 **```log```** :&ensp;**[CitrosDict](../data_access/citros_dict.md#citros_data_analysis.data_access.citros_dict.CitrosDict "citros_data_analysis.data_access.citros_dict.CitrosDict")**
@@ -614,13 +612,14 @@ Test parameters are stored as the dict:
 **```figures```** :&ensp;**dict**
 :   Dictionary with test methods as keys and matplotlib.figure.Figure with test results as values.
 
----
 #### See Also
 
 **[Validation.std_bound_test()](#citros_data_analysis.validation.validation.Validation.std_bound_test "citros_data_analysis.validation.validation.Validation.std_bound_test")**, **[Validation.mean_test()](#citros_data_analysis.validation.validation.Validation.mean_test "citros_data_analysis.validation.validation.Validation.mean_test")**, **[Validation.sid_test()](#citros_data_analysis.validation.validation.Validation.sid_test "citros_data_analysis.validation.validation.Validation.sid_test")**, **[Validation.norm_test()](#citros_data_analysis.validation.validation.Validation.norm_test "citros_data_analysis.validation.validation.Validation.norm_test")**
 
----
-#### Examples
+
+</details>
+<details>
+  <summary>Examples</summary>
 
 Import validation and data_analysis packages:
 
@@ -770,7 +769,6 @@ def sid_test(
 
 Test whether all simulations are within the given limits.
 
----
 #### Parameters
 
 **```limits```** :&ensp;**float** or **list**, default **1.0**
@@ -790,7 +788,6 @@ Test whether all simulations are within the given limits.
 **```nan_passed```** :&ensp;**bool**, default **True**
 :   If True, the NaN values will pass the test.
 
----
 #### Returns
 
 **```log```** :&ensp;**[CitrosDict](../data_access/citros_dict.md#citros_data_analysis.data_access.citros_dict.CitrosDict "citros_data_analysis.data_access.citros_dict.CitrosDict")**
@@ -817,8 +814,10 @@ column_name:                        # label of the column, str
 **```fig```** :&ensp;**matplotlib.figure.Figure**
 :   Figure with plotted simulations, mean values and limit boundaries.
 
----
-#### Examples
+
+</details>
+<details>
+  <summary>Examples</summary>
 
 Import validation and data_analysis packages:
 
@@ -942,7 +941,6 @@ def std_bound_test(
 
 Test whether **n_std**-standard deviation boundary is within the given limits.
 
----
 #### Parameters
 
 **```limits```** :&ensp;**float** or **list**, default **1.0**
@@ -966,7 +964,6 @@ Test whether **n_std**-standard deviation boundary is within the given limits.
 **```nan_passed```** :&ensp;**bool**, default **True**
 :   If True, the NaN values of standard deviation will pass the test.
 
----
 #### Returns
 
 **```log```** :&ensp;**[CitrosDict](../data_access/citros_dict.md#citros_data_analysis.data_access.citros_dict.CitrosDict "citros_data_analysis.data_access.citros_dict.CitrosDict")**
@@ -994,7 +991,6 @@ column_name:                  # label of the column, str
 **```fig```** :&ensp;**matplotlib.figure.Figure**
 :   Figure with plotted simulations, mean values, standard deviation boundaries and limit boundaries.
 
----
 #### Other Parameters
 
 **```std_color```** :&ensp;**str**, default `'b'`
@@ -1013,13 +1009,14 @@ column_name:                  # label of the column, str
 **```std_lines```** :&ensp;**bool**, default **True**
 :   If False, remove standard deviation boundary lines.
 
----
 #### See Also
 
 **pandas.DataFrame**, **pandas.Series**
 
----
-#### Examples
+
+</details>
+<details>
+  <summary>Examples</summary>
 
 Import validation and data_analysis packages:
 
@@ -1152,7 +1149,6 @@ def std_test(
 
 Test whether **n_std**-standard deviation does not exceed the given limits.
 
----
 #### Parameters
 
 **```limits```** :&ensp;**float** or **list**, default **1.0**
@@ -1175,7 +1171,6 @@ Test whether **n_std**-standard deviation does not exceed the given limits.
 **```nan_passed```** :&ensp;**bool**, default **True**
 :   If True, the NaN values of standard deviation will pass the test.
 
----
 #### Returns
 
 **```log```** :&ensp;**[CitrosDict](../data_access/citros_dict.md#citros_data_analysis.data_access.citros_dict.CitrosDict "citros_data_analysis.data_access.citros_dict.CitrosDict")**
@@ -1203,7 +1198,6 @@ column_name:                  # label of the column, str
 **```fig```** :&ensp;**matplotlib.figure.Figure**
 :   Figure with plotted simulations, mean values, standard deviation boundaries and limit boundaries.
 
----
 #### Other Parameters
 
 **```std_color```** :&ensp;**str**, default `'b'`
@@ -1222,13 +1216,14 @@ column_name:                  # label of the column, str
 **```std_lines```** :&ensp;**bool**, default **True**
 :   If False, remove standard deviation boundary lines.
 
----
 #### See Also
 
 **pandas.DataFrame**, **pandas.Series**
 
----
-#### Examples
+
+</details>
+<details>
+  <summary>Examples</summary>
 
 Import validation and data_analysis packages:
 
