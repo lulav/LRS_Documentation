@@ -2,7 +2,15 @@
 
 ## Description
 
-The first step to work with CITROS is registration (or login). This is a step-by-stpe guide of the registering and/or logging process into [CITROS](http://citros.io/) account.
+The first step to work with CITROS is registration and login. 
+This is a step-by-stpe guide to account registration an login into [CITROS](http://citros.io/) account.
+
+## Table Of Contents
+1. [Account Registration](#account-registration)
+2. [Logging into CITROS](#logging-into-citros)
+3. [Invite a New User to Your Organization](#invite-a-new-user-to-your-organization)
+4. [Account Reegistration by Invitation](#account-reegistration-by-invitation)
+5. [Reset Password](#reset-password)
 
 ## Account Registration
 
@@ -32,6 +40,7 @@ The first step to work with CITROS is registration (or login). This is a step-by
 ![image](img/account_success.png)
 
 6. You shuold receive an email notifying that we have received your registration request.
+
 **This is not an activation email**
 
 ![image](img/account_welcome.png)
@@ -52,7 +61,9 @@ The first step to work with CITROS is registration (or login). This is a step-by
 
 3. Enter your email and password and click "Login".
 
-## Inviting a New User to Your Organization (Admin Users Only)
+## Invite a New User to Your Organization
+
+This option is available to **Admin Users Only**.
 
 1. Open the "Settings" tab on the main CITROS page.
 
@@ -93,3 +104,7 @@ The first step to work with CITROS is registration (or login). This is a step-by
 ![image](img/RegistrationByInvitation.png)
 
 4. You can now login into [CITROS](https://citros.io/auth/login) account with the email and password you enterd in registration
+
+## Reset Password
+
+For security reasons, if you ure unable to login to your account and need to reste your password, please contact our support team directly at [support@citros.io](mailto:support@citros.io)
