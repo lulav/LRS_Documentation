@@ -1,81 +1,95 @@
-<!-- ---
-sidebar_label: 'Documentation'
-description: 'Documentation'
-hide_title: true
---- -->
-
 # Account Entrance
 
-### Description
+## Description
 
-The first step to work with CITROS is registration (or login). This guide will take you through the process of registering and/or logging into your account step by step.
+The first step to work with CITROS is registration (or login). This is a step-by-stpe guide of the registering and/or logging process into [CITROS](http://citros.io/) account.
 
-## Account Reegistration
-- Open [CITROS](http://citros.io/) website.
+## Account Registration
 
-![image](https://github.com/lulav/citros_doc/assets/81993438/bb25b31a-ceb5-41e2-8452-ac87a4eb093c)
+1. Open [CITROS](http://citros.io/) website.
 
-- Click on the "Get Started" button, and you will be redirected to the registration page.
+2. Click on the "Get Started" button.
 
-![image](https://github.com/lulav/citros_doc/assets/81993438/f0806c3f-b6ec-413f-bdca-2deed7f908a3)
+![image](img/account_getstarted.png)
 
-- Enter your First Name, Last Name, Email, Organization Name, and Organization Slug (the lowercase version of the organization name; it should contain only lowercase letters or numbers). Finally, set your password. Click on "Create Account", and if all fields are correctly filled, you will be redirected to this page:
+3. Enter details, all fields required
+  - First Name, 
+  - Last Name
+  - Email
+  - Organization Name or Company name
+  - Organization Slug
+  :::note
+  *Organization slug is the unique identifier of the organization.*
+  *For example: Lulav Space slug is: lulav-space*
+  :::
+  - Password
+  - Repeat Password
 
-![image](https://github.com/lulav/citros_doc/assets/81993438/c89dc7e6-31db-48a1-9dd9-1723c93d5c64)
+4. Click on "Create Account"
 
-- You will receive an email notifying you that we have received your registration request.
+5. Success message will appear
 
-![image](https://github.com/lulav/citros_doc/assets/81993438/3a558399-361b-4ef2-b268-47bc52bc7d6d)
+![image](img/account_success.png)
 
+6. You shuold receive an email notifying that we have received your registration request.
+**This is not an activation email**
 
-- At this step, the CITROS team will be notified of a new User and Organization. We will review the information and confirm the request. Shortly after, you will receive a confirmation email.
+![image](img/account_welcome.png)
 
-![image](https://github.com/lulav/citros_doc/assets/81993438/c8a11f76-934d-4a6f-860b-fd36cc31477a)
+7. the CITROS team will be notified of a new User and Organization. We will review the information and confirm the request. Shortly after, you will receive a confirmation email.
 
-- Then, you can return to the [CITROS](http://citros.io/) website and log in.
+![image](img/account_activated.png)
+
+8. You can now login into [CITROS](https://citros.io/auth/login) account with the email and password you enterd in registration
 
 ## Logging into CITROS
 
-- Open [CITROS](http://citros.io/) website.
+1. Open [CITROS](http://citros.io/) website.
 
-- Click on the "Sign In" button, and you will be redirected to the login page.
+2. Click the "Sign In" button
 
-  ![image](https://github.com/lulav/citros_doc/assets/81993438/338f6356-c56e-4023-9d47-5944bf68bf08)
+  ![image](img/account_login.png)
 
-- Enter your email and password and click "Login".
-- If the data you entered is correct, you will be logged into CITROS.
+3. Enter your email and password and click "Login".
 
-## Inviting a New User to Your Organization (For admin users only)
+## Inviting a New User to Your Organization (Admin Users Only)
 
-- Open the "Settings" tab on the main CITROS page.
+1. Open the "Settings" tab on the main CITROS page.
 
-![image](https://github.com/lulav/citros_doc/assets/81993438/0dbc3fb6-6b4b-454e-9d14-e5839b07788c)
- 
-- Click on the "Invite User" button at the top right of the tab. The user invitation drawer will appear.
+![image](img/UserList.png)
 
-![image](https://github.com/lulav/citros_doc/assets/81993438/1531af04-de5c-451f-8070-d78dc712e5a4)
+2. Click on the "Invite User" button at the top right of the tab. The user invitation drawer will appear.
 
-- Enter the email address of the user you wish to invite in the "Email address" field and click "Invite User". Right after, a confirmation dialog will pop up. Double-check the email address you entered and if it's correct, click "Confirm".
+![image](img/UserListWithDrawer.png)
 
- ![image](https://github.com/lulav/citros_doc/assets/81993438/26314e3f-5718-490d-9001-438e5dcd7860)
+3. Enter the email address of the user you wish to invite.
 
-- Afterward, an invitation email will be sent to the address you provided. You will see a snack bar confirming that the user invitation was successful.
+4. click "Invite User". 
 
-![image](https://github.com/lulav/citros_doc/assets/81993438/95630435-25ee-4e4e-8b0d-3f1f43f7bdbe)
+5. click "Confirm" the email appears in dialog or "Cancel" to change address.
 
-## Account Reegistration by invitation
+![image](img/InviteDialog.png)
 
-- If you have been invited to CITROS, you will receive an invitation email.
+6. Success notification will pop-up.
 
-![image](https://github.com/lulav/citros_doc/assets/81993438/92a1c079-874f-468c-8cbd-69e63d6e689f)
+![image](img/UserListSnackBar.png)
 
-- Click "Log In" to proceed to the registration page.
+7. Invitation email will be sent to the address you provided. 
 
-![image](https://github.com/lulav/citros_doc/assets/81993438/f1e1d6ce-5638-4018-8920-1ec84470e16f)
+## Account Reegistration by Invitation
 
-- Enter your First Name, Last Name, and password. Click on "Create Account" and if all fields are filled correctly, you will be redirected to the Login page.
+1. Click "LOG IN" button in your invitaation email.
 
-![image](https://github.com/lulav/citros_doc/assets/81993438/1af24c28-a50b-4194-b4da-6f069640eddf)
+![image](img/YouHaveBeenInvited.png)
 
-- Log into CITROS.
+2. Enter details, all fields required
+  - First Name, 
+  - Last Name
+  - Password
+  - Repeat Password
 
+3. Click on "Create Account".
+
+![image](img/RegistrationByInvitation.png)
+
+4. You can now login into [CITROS](https://citros.io/auth/login) account with the email and password you enterd in registration
