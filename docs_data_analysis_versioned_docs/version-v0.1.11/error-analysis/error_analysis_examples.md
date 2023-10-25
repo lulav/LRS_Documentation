@@ -18,7 +18,7 @@ But first of all, let's have a quick look at [data_access](../data-access/data_a
 
 ## Query data
 
-To get access to a Citros database, create [**CitrosDB**](../data-access/data_access_description.md#citros_data_analysis.data_access.CitrosDB) object:
+To get access to a CITROS database, create [**CitrosDB**](../data-access/data_access_description.md#citros_data_analysis.data_access.CitrosDB) object:
 
 ```python
 from citros_data_analysis import data_access as da

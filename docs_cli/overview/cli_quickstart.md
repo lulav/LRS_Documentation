@@ -2,7 +2,7 @@
 
 ## Run Locally
 
-In essence, the Citros CLI is a collection of numerous commands, but to quickly get started with running a simulation once using the default parameter values, only two straightforward commands are required:
+In essence, the CITROS CLI is a collection of numerous commands, but to quickly get started with running a simulation once using the default parameter values, only two straightforward commands are required:
 
     $ citros init
     User is not logged in. Initialzing Citros locally.
@@ -17,20 +17,20 @@ The second command, `citros run`, executes a simulation of the provided name a d
 
 In order to run your simulation on the cloud, two (possibly three) additional steps are required:
 
-1. First of all, you would need to login to citros by running `citros login`. 
-2. After logging in, and before running `citros init`, **if you haven't done so already**, you would need to setup your ssh keys in order communicate with the Citros server. One way to do this is through the [Citros](https://citros.io) web GUI (which provides detailed instructions), but this may also be done through the CLI by running `citros setup-ssh`. see details [here](../commands/cli_commands.md#command-setup-ssh).
+1. First of all, you would need to login to CITROS by running `citros login`. 
+2. After logging in, and before running `citros init`, **if you haven't done so already**, you would need to setup your ssh keys in order communicate with the CITROS server. One way to do this is through the [CITROS](https://citros.io) web GUI (which provides detailed instructions), but this may also be done through the CLI by running `citros setup-ssh`. see details [here](../commands/cli_commands.md#command-setup-ssh).
 
-3. Once ssh is setup, you may run `citros init`. This will pull an existing Citros repository from the Citros server, or create a new one.
+3. Once ssh is setup, you may run `citros init`. This will pull an existing CITROS repository from the CITROS server, or create a new one.
 
-4. Now, you will need to build a docker image of your simulation and upload it Citros, by running `citros docker-build-push`.
+4. Now, you will need to build a docker image of your simulation and upload it CITROS, by running `citros docker-build-push`.
 
 5. Finally, you may run your simulation on the cloud by simply adding `-r` to the `citros run` command. The image you uploaded in the previous step will be run the number of times you specified.
 
-To sum up, assuming you have already setup your ssh keys, the following example will run a simulation 10 times on the Citros cloud:
+To sum up, assuming you have already setup your ssh keys, the following example will run a simulation 10 times on the CITROS cloud:
 
     $ citros login
     $ citros init
     $ citros docker-build-push
     $ citros run -n "some_batch_name" -m "some message" -r -c 10
 
-**Note:** for clarity, the citros output was not given in the above example. See individual commands.
+**Note:** for clarity, the CITROS output was not given in the above example. See individual commands.

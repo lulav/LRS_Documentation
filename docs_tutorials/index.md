@@ -117,7 +117,7 @@ Output example:
 
 ## Working with CITROS CLI - Offline
 
-Working with the CITROS CLI offline is pretty straight forward, since there are only two thinks you need to do - initialze your CITROS repository, and run your project. Additionaly, you may configure your CITROS repository to fit your simulation needs, but if all you want to do is run your project via CITROS with the default configuration, than only two commands are necessary.
+Working with the CITROS CLI offline is pretty straight forward, since there are only two things you need to do - initialze your CITROS repository, and run your project. Additionaly, you may configure your CITROS repository to fit your simulation needs, but if all you want to do is to run your project via CITROS with the default configuration, than only two commands are necessary.
 
 ### Prerequisites
 But first, let's make sure all the prerequisites for running CITROS have been met:
@@ -268,7 +268,7 @@ As you can see, a lot more is happening when you initialize your repository whil
 
 :::note
 
- **Important**: the `.citros` directory can only be initialized once. If you try to run `init` while a `.citros` directory alrerady exist in your project, you will get a response similar to this:
+ **Important**: the `.citros` directory can only be initialized once. If you try to run `init` while a `.citros` directory already exist in your project, you will get a response similar to this:
 ```bash
 $ citros init
 The directory /workspaces/cannon has already been initialized.
@@ -281,7 +281,7 @@ working remotely with [git@citros.io:lulav/cannon.git].
  citros add-remote
  ```
 
- which will add the CITROS server as a remote for your CITROS repo on your behalf, and take care of a few other detalis that are handled when initializing while being logged in.
+ which will add the CITROS server as a remote for your CITROS repo on your behalf, and take care of a few other details that are handled when initializing while being logged in.
 
  At this point it is recommended you commit and push your changes to the remote by running:
  ```bash
@@ -292,7 +292,7 @@ working remotely with [git@citros.io:lulav/cannon.git].
 
 ### Building and Pushing a Docker Image
 
-Now that our CITROS repository is initialized and synched with the CITROS remote, we have one more imported thing we need to do before we can run our simulation on the cloud - we need to build a docker image of our ROS project, tag it with the current commit hash for the project, and upload it to CITROS. Sounds complicated? Not to worry - all this is accomplished by running a single command:
+Now that our CITROS repository is initialized and synched with the CITROS remote, we have one more important thing we need to do before we can run our simulation on the cloud - we need to build a docker image of our ROS project, tag it with the current commit hash for the project, and upload it to CITROS. Sounds complicated? Not to worry - all this is accomplished by running a single command:
 ```bash
 citros docker-build-push
 ``` 
