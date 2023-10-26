@@ -251,7 +251,7 @@ module.exports = {
         },
         {
           type: 'doc',
-          label: 'Batch Page Overview',
+          label: 'Batch Page ',
           id: 'simulations/sim_batch_page',
         },
         {

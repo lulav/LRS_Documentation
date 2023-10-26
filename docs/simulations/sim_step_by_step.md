@@ -1,6 +1,3 @@
-<!-- ## Access Runs
- 1. make sure logged in (with reference link)
-  2. go to... -->
 # Run Simulation
 
 To run a Simulation using CITROS Web please follow next steps:

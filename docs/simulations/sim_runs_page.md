@@ -1,24 +1,3 @@
-<!-- 
-This page should describe runs page
-#(Title) Batch Run
-
-##Introduction
-
-## Batch Runs List
-//explanations about it
-
-### Runs details
- //list all details and explain each of them
-### Run status
-
-## Available actions
-### new simulation
-### filter
-...
-###
-
- -->
-
 # Runs page
 
 ## Introduction
