@@ -247,17 +247,22 @@ module.exports = {
         {
           type: 'doc',
           label: 'Batch Runs',
-          id: 'simulations/sim_batch_runs',
+          id: 'simulations/sim_runs_page',
+        },
+        {
+          type: 'doc',
+          label: 'Batch Page Overview',
+          id: 'simulations/sim_batch_page',
         },
         {
           type: 'doc',
           label: 'Batch Run',
-          id: 'simulations/sim_batch_run',
+          id: 'simulations/sim_run_page',
         },
         {
           type: 'doc',
           label: 'Simulation Run',
-          id: 'simulations/sim_run',
+          id: 'simulations/sim_step_by_step',
         },
       ],
     },
