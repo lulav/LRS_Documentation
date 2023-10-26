@@ -1,20 +1,20 @@
-# Settings Overview
+# Settings
 
 Settings screen contains a few tabs which represent eaach option a user has.
 Some of the settings are open only to admin users.
 
 ## Table of Contents
-1. [Access to Settings Screen](#access-to-settings-screen)
-2. [General Screen](#general-screen)
-3. [Organization](#organization-screen)
-4. [Users](#users-screen)
-5. [Change Password](#change-password-screen)
+1. [Access to Settings](#access-to-settings)
+2. [General Screen](#general)
+3. [Organization](#organization)
+4. [Users](#users)
+5. [Change Password](#change-password)
 6. [SSH Keys](#ssh-keys)
 
 ## Access to Settings Screen
 The settings screen can be entered in two ways
 
-1. from the gear in the top right corner of the screen. this option is avaialable throughout all screen.
+1. from the gear in the top right corner of the screen. this option is available throughout all screens.
 
     1. Click on Gear icon
     2. Choose Settings
@@ -61,29 +61,46 @@ Each list item contains
 - Last Name
 - Email
 - User Type (user or admin)
-- User Activation Toggle
+- User Activation Toggle (Can be changed only by admin)
 - User Status Active/ Inactive
-- Date added to organiztion
+- Date added to organization
 
 ![image](img/users_list.png)
 
-### Options
+### Search Box
 
-#### Search Box
+This allows to search a user by entering an email in the text box.
 
-This allows to search a user by enetering an email in the text box.
+### Invite Users
 
-#### Admin Only Options
-
-##### Invite Users
-
+:::note
+Only admin can invite users
+:::
 1. Click on "Invite User" button
 
 ![image](img/users_invite.png)
 
-2. Follow the guide to [Invite a New User](/docs/authentication/account/account_login#invite-a-new-user-to-your-organization)
+2. Enter the email address of the user you wish to invite.
 
-##### User Activation
+![image](img/UserListWithDrawer.png)
+
+3. click "Invite User". 
+
+4. click "Confirm" the email appears in dialog or "Cancel" to change address.
+
+![image](img/InviteDialog.png)
+
+5. Success notification will pop-up.
+
+![image](img/UserListSnackBar.png)
+
+6. Invitation email will be sent to the address you provided. 
+
+### User Activation
+
+:::note
+Only admin can change user activation state
+:::
 
 Toggle to activate or deactivate the user in the user list.
 

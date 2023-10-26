@@ -42,11 +42,11 @@ module.exports = {
       type: 'category',
       label: 'Account',
       items: [
-        {
-          type: 'doc',
-          label: 'Overview',
-          id: 'authentication/account/account_overview',
-        },
+        // {
+        //   type: 'doc',
+        //   label: 'Overview',
+        //   id: 'authentication/account/account_overview',
+        // },
         {
           type: 'doc',
           label: 'Account Registration',
