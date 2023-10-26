@@ -10,7 +10,7 @@ The Batch page provides a comprehensive dashboard that allows users to monitor a
 The top of this page contains the Batch Run Info for quick review of the context and purpose of the current batch simulation. It includes:
 * Repository Name
 * Batch Name
-* Sumulation Name
+* Simulation Name
 * Run number
 * User-defined message
 * Batch ID
@@ -22,8 +22,8 @@ The top of this page contains the Batch Run Info for quick review of the context
 The Simulation Runs Table contains all the runs of the batch . You can observe it to monitor the status and progress of individual simulations in the batch. Click on specific simulation IDs or rows to navigate to detailed run page. This table has 4 columns:
 
 * Run number
-* [Last Event of the Run](https://citros.io/doc/docs/simulations/sim_run_page)
-* [Status](https://citros.io/doc/docs/simulations/sim_runs_page)
+* [Last Event of the Run](/docs/simulations/sim_run_page#events)
+* [Status](/docs/simulations/sim_runs_page#simulation-data-status)
 * Timestamp of creation
 
 ![png](img/batch2.png "Simulation Run Table")
@@ -32,7 +32,7 @@ The Simulation Runs Table contains all the runs of the batch . You can observe i
 
 The Info section contains all the information about the batch, it contains the following fields:
 
-* Status: general batch status. Depends on statuses of all related simulations. See [Batch Statuses](#batch-status) for additional info.
+* Status: general batch status. Depends on statuses of all related simulations. See [Batch Status](#batch-status) for additional info.
 * Timestamp of creation
 * Progress: the number of Runs in DONE status in relation to the total number of Runs in the Batch
 * Created by: nickname of the user, who created this Batch
@@ -40,7 +40,7 @@ The Info section contains all the information about the batch, it contains the f
 * Commit: commit ID
 * CITROS commit: CITROS commit ID
 * Image: link to the used image
-* [Data status](https://citros.io/doc/docs/simulations/sim_runs_page)
+* [Data status](/docs/simulations/sim_runs_page.md#simulation-data-status)
 * Link to the data of the Batch.
 
 ![png](img/batch3.png "Batch Information")
@@ -52,7 +52,7 @@ Use this information for troubleshooting, understanding the developer context, a
 The Batch may exist in one of the following states: 
 * SCHEDULE: The first stage of the batch run. Batch runs are initializing
 * RUNNING: All simulations are running
-* TERMINATING: the simulaitons theirself finished, but other operational proccesses (e.g. uploading data to the Database) need to finish
+* TERMINATING: the simulations themselves finished, but other operational processes (e.g. uploading data to the Database) need to finish
 * DONE: All related simulation runs are in DONE state
 * All related simulation runs are in DONE, but at least one of them is in ERROR status.
 

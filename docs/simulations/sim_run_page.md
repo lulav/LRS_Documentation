@@ -11,7 +11,7 @@ The top of this page is dedicated for general simulation information. It include
 
 * Repository Name
 * Batch Name
-* Sumulation Name
+* Simulation Name
 * Run number
 * User-defined message
 

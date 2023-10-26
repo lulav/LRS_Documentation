@@ -25,4 +25,4 @@ To run a Simulation using CITROS Web please follow next steps:
    ![png](img/quick4.png "Lift-Off!")
 
 Congratulations! You have successfully launched your first simulation batch via CITROS Web!
-Your batch now appears at the top of the [batch list](/docs/simulations/sim_runs_page.md), indicated by a Loading status. You may initiate another simulation or visit the [Batch Page](https://citros.io/doc/docs_citros_web/simulations/sim_batch_page) to monitor its progress.
+Your batch now appears at the top of the [batch list](/docs/simulations/sim_runs_page.md), indicated by a Loading status. 

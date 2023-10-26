@@ -6,7 +6,7 @@ The `Runs` page is comprized of a list of your team's simulation runs. It allows
 ![png](img/runs0.png "Batch Runs List overview")
 
 ## Batch Runs List
-Each list item represents a batches run. it contains the following fileds:
+Each list item represents a batches run. it contains the following fields:
 
    * Project name;
    * Simulation JSON file (corresponding to the ROS Launch file);
@@ -21,10 +21,10 @@ Each list item represents a batches run. it contains the following fileds:
 
 ![png](img/runs1.png "Batch Runs List")
 
-#### Simulation Data Status 
+### Simulation Data Status 
 
 The status of simulation results can be one of several states:
-   - **UNKNOWN:** Unsynced with the Database.
+   - **UNKNOWN:** Un-synced with the Database.
    - **UNLOADED:** The batch run data is unloaded from the Database.
    - **LOADED:** The batch run data is loaded to the data DB and available for querying.
    - **LOADING:** The data is being loaded and should be available soon.
@@ -32,16 +32,14 @@ The status of simulation results can be one of several states:
 
 ![png](img/runs3.png "Simulation Status")
 
-## Available Actions
-
-### Search Box
+## Search Box
 
    The search field is available right above the Batch Run List. You can search by project's name, batch name, batch message etc. This allows to search a batch run name by entering it in the text box.
 
-### Run Simulation Button
+## Run Simulation Button
 
-   Pressing on the button opens a window to define and run a new simulation. For more information follow this [Step-By-Step Simulation tutorial](/docs/simulations/sim_step_by_step.md).
+   Pressing on the button opens a window to define and run a new simulation. For more information follow this [Run New Simulation tutorial](/docs/simulations/sim_step_by_step.md).
 
-### CLI Button
+## CLI Button
 
    Pressing on the button opens a window with a step-by-step instructions to run a new simulation using CITROS CLI.
