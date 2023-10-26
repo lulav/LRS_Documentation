@@ -47,7 +47,7 @@ Each line of the list contains extensive batch information and status:
 
 ![png](img/runs2.png "Batch Details")
 
-Check [Overview Page](https://citros.io/doc/docs/simulations/sim_overview) for additional explanation of Simulation workflow.
+Check [Overview Page](https://citros.io/doc/docs/simulations/sim_step_by_step) for additional explanation of Simulation workflow.
 
 #### Simulation Data Status 
 
@@ -64,16 +64,10 @@ The status of simulation results can be one of several states:
 
 ### Running a New Simulation
 
-   To run a new simulation, click the "Run Simulation" button. Fill in the required parameters and configurations in the simulation setup form. Click "Run Simulation" to initiate the simulation. You can monitor the progress of the simulation on the list page.
+   To run a new simulation, click the "Run Simulation" button. Fill in the required parameters and configurations in the simulation setup form. Click "Run Simulation" to initiate the simulation. You can monitor the progress of the simulation on the list page. Check our [Step-By-Step Simulation tutorial](https://citros.io/doc/docs/simulations/sim_step_by_step) for additional information.
+
+![png](img/runs4.png "Run Simulation")
 
 ### Searching the Simulations
 
-<!-- Not working yet, TODO -->
-
-   The search field is available right above the Batch Run List. You can search by project's name, batch name, batch message etc. 
-
-### Filtering the Batch Run List
-
-<!-- Not working yet, TODO -->
-
-   To find specific simulations quickly, you can use the filtering options. Click on the "Filter" button, and a filter panel will appear on the side. Here, you can filter simulations based on various criteria like name, status, or date.
+   The search field is available right above the Batch Run List. You can search by project's name, batch name, batch message etc. Simply enter the text for search in the field and the search results will be shown automaticly.

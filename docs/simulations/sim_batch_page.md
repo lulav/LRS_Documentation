@@ -26,8 +26,8 @@ The top of this page contains the Batch Run Info for quick review of the context
 The Simulation Runs Table is located in the center of the page. You can observe it to monitor the status and progress of individual simulations in the batch. Click on specific simulation IDs or rows to navigate to detailed run page. This table has 4 columns:
 
 * Run number
-* [Last Event of the Run](https://citros.io/doc/docs/simulations/sim_batch_runs)
-* [Status](https://citros.io/doc/docs/simulations/sim_batch_run)
+* [Last Event of the Run](https://citros.io/doc/docs/simulations/sim_run_page)
+* [Status](https://citros.io/doc/docs/simulations/sim_runs_page)
 * Timestamp of creation
 
 ![png](img/batch2.png "Simulation Run Table")
