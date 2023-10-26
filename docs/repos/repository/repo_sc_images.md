@@ -22,7 +22,7 @@ The table is sorted by date
 
 ### Search Box
 
-This allows to search an image name or tag by enetering it in the text box
+This allows to search an image name or tag by entering it in the text box
 
 ### Upload Image Button
 

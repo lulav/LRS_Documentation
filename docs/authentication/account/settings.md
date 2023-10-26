@@ -1,6 +1,6 @@
 # Settings
 
-Settings screen contains a few tabs which represent eaach option a user has.
+Settings screen contains a few tabs which represent each option a user has.
 Some of the settings are open only to admin users.
 
 ## Table of Contents
@@ -32,7 +32,7 @@ General screen contains general details
 - Last Name 
 - Email address
 
-The first and last name are changable
+The first and last name are changeable
 1. Click on the box to edit
 2. After editing is done, Click "Save Changes" button
 
@@ -136,7 +136,7 @@ SSH Keys screen contains a list of all SSH Keys added to your CITROS account
 
 4. Enter SSH key name.
 
-5. Paste the SSH key copied to clipbord.
+5. Paste the SSH key copied to clipboard.
 
 6. Click "Add" button to add the SSH Key to the account.
 

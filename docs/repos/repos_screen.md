@@ -10,7 +10,7 @@ It allows you to manage and monitor repositories easily and efficiently.
 
 ## Repositories List
 
-Each list item represents a repository. it contains the following fileds
+Each list item represents a repository. it contains the following fields
 - Repository Name
 - Uploader name - The team member who uploaded the project
 - Number of successful runs
@@ -22,7 +22,7 @@ Each list item represents a repository. it contains the following fileds
 
 ### Search Box
 
-This allows to search a repository name by enetering it in the text box
+This allows to search a repository name by entering it in the text box
 
 ### New Repository Button
 

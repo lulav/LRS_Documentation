@@ -31,8 +31,8 @@ Option|Description
 Example 1 - Initializing while logged out:
 
     $ citros init
-    User is not logged in. Initialzing Citros locally.
-    Intialized Citros repository.
+    User is not logged in. Initializing Citros locally.
+    Initialized Citros repository.
 
 Example 2 - Initializing while logged in:
     
@@ -44,7 +44,7 @@ Example 2 - Initializing while logged in:
     Citros repo successfully cloned from remote.
     Citros successfully synched with local project.
     You may review your changes via `citros status` and commit them via `citros commit`.
-    Intialized Citros repository.
+    Initialized Citros repository.
 
 Note: The init command can only be executed with effect once per project. If you attempt to initialize an existing Citros repository, you will be notified that the action is redundant, and no changes will be made. 
 Example:
@@ -385,7 +385,7 @@ In the following example we attempt to merge the branch `master` into the curren
     Please resolve the conflicts manually.
     ...
 
-If you are not running inside a dev-container, an instance of VS-Code will be automatically opened (pending your aproval) for you to use a merge tool. After all conflicts have been resolved, save the files, close VS-Code and answer `y` to indicate that all conflicts have indeed been resolved. At this point Citros will commit the merge on your behalf.
+If you are not running inside a dev-container, an instance of VS-Code will be automatically opened (pending your approval) for you to use a merge tool. After all conflicts have been resolved, save the files, close VS-Code and answer `y` to indicate that all conflicts have indeed been resolved. At this point Citros will commit the merge on your behalf.
 
 If you are running inside a dev-container, you'll have to run a few git commands by yourself, but not to worry - Citros will provide you with step-by-step instructions:
 

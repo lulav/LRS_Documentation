@@ -178,7 +178,7 @@ and choose `simulation_cannon_analytic`, the simulation will be run 10 times, an
 
 ### General Pitfalls
 
-- **Multi-Level Key References** - When referencing a dictionary key from a function, if the key is not unique across the dictionary, use a multi-level key string to differentiate it, seperating dictionary levels with `'.'`. For example: 
+- **Multi-Level Key References** - When referencing a dictionary key from a function, if the key is not unique across the dictionary, use a multi-level key string to differentiate it, separating dictionary levels with `'.'`. For example: 
 
         {
             "outer": {

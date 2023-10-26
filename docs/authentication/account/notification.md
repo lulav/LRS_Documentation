@@ -1,18 +1,18 @@
 # Notifications
 
-Notifications presents the complition of each process in CITROS within the organization. For example pdf document created, batch run finished, etc.
+Notifications presents the completion of each process in CITROS within the organization. For example pdf document created, batch run finished, etc.
 
 ## Notifications Window
 
-The Notifications tab contains a list of 5 latest notifications recieved 
+The Notifications tab contains a list of 5 latest notifications received 
 
 ### Notifications List
 
-Each list item represents a notification. it contains the following fileds:
+Each list item represents a notification. it contains the following fields:
 - Notification Title
 - Notification Description
-- Notification Type (notification, announcemnt, etc.)
-- Notificatio creation date
+- Notification Type (notification, announcement, etc.)
+- Notification creation date
 
 ![Alt text](img/notif_topfive.png)
 
@@ -41,15 +41,15 @@ Clicking on a notification redirects to the relevant location associated with th
 
 ## Notifications Screen
 
-The Notifications tab contains a list of all notifications recieved 
+The Notifications tab contains a list of all notifications received 
 
 ### Notifications List
 
-Each list item represents a notification. it contains the following fileds
+Each list item represents a notification. it contains the following fields
 - Notification Title
 - Notification Description
-- Notification Type (notification, announcemnt, etc.)
-- Notificatio creation date
+- Notification Type (notification, announcement, etc.)
+- Notification creation date
 
 ![Alt text](img/notif_list.png)
 
@@ -60,7 +60,7 @@ Each list item represents a notification. it contains the following fileds
 When new notification added the "v" icon will be green
 
 #### Search Box
-This allows to search a notification name by enetering it in the text box
+This allows to search a notification name by entering it in the text box
 
 ![Alt text](img/notif_search.png)
 

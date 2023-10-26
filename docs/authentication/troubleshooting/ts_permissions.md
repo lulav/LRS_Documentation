@@ -18,7 +18,7 @@ A "Permission denied" error means that the server rejected your connection. Ther
 You should not be using the `sudo` command or elevated privileges, such as administrator permissions, with Git. If you have a very good reason you must use `sudo`, then ensure you are using it with every command (it's probably just better to use `su` to get a shell as root at that point). If you generate SSH keys without `sudo` and then try to use a command like `sudo git push`, you won't be using the same keys that you generated.
 
 ### Check That You Are Connecting to The Correct Server
-Typing is hard, we all know it. Pay attention to what you type; you won't be able to connect to "githib.com" or "guthub.com". In some cases, a corporate network may cause issues resolving the DNS record as well.
+Typing is hard, we all know it. Pay attention to what you type; you won't be able to connect to "citrus.com" or "citrose.com". In some cases, a corporate network may cause issues resolving the DNS record as well.
 
 To make sure you are connecting to the right domain, you can enter the following command:
 
@@ -153,7 +153,7 @@ If you see an SSH key you're not familiar with on CITROS, delete it immediately 
 You should not be using the `sudo` command or elevated privileges, such as administrator permissions, with Git. If you have a very good reason you must use `sudo`, then ensure you are using it with every command (it's probably just better to use `su` to get a shell as root at that point). If you generate SSH keys without `sudo` and then try to use a command like `sudo git push`, you won't be using the same keys that you generated.
 
 ### Check That You Are Connecting to The Correct Server
-Typing is hard, we all know it. Pay attention to what you type; you won't be able to connect to "githib.com" or "guthub.com". In some cases, a corporate network may cause issues resolving the DNS record as well.
+Typing is hard, we all know it. Pay attention to what you type; you won't be able to connect to "citrus.com" or "citrose.com". In some cases, a corporate network may cause issues resolving the DNS record as well.
 
 To make sure you are connecting to the right domain, you can enter the following command:
 
@@ -287,7 +287,7 @@ If you see an SSH key you're not familiar with on CITROS, delete it immediately 
 You should not be using the `sudo` command or elevated privileges, such as administrator permissions, with Git. If you have a very good reason you must use `sudo`, then ensure you are using it with every command (it's probably just better to use `su` to get a shell as root at that point). If you generate SSH keys without `sudo` and then try to use a command like `sudo git push`, you won't be using the same keys that you generated.
 
 ### Check That You Are Connecting to The Correct Server
-Typing is hard, we all know it. Pay attention to what you type; you won't be able to connect to "githib.com" or "guthub.com". In some cases, a corporate network may cause issues resolving the DNS record as well.
+Typing is hard, we all know it. Pay attention to what you type; you won't be able to connect to "citrus.com" or "citrose.com". In some cases, a corporate network may cause issues resolving the DNS record as well.
 
 To make sure you are connecting to the right domain, you can enter the following command:
 

@@ -15,6 +15,6 @@ Pressing on the list item will open all files created under this folder.
 
 ### Filter Files
 
-This allows to filter the folders by name or extension enetering it in the text box and pressing either the filter button or Enter
+This allows to filter the folders by name or extension entering it in the text box and pressing either the filter button or Enter
 
 ![Alt text](img/data_filter.png)  

@@ -34,7 +34,7 @@ Enter passphrase (empty for no passphrase):
 ```bash
 Enter same passphrase again: 
 ```
-- If key generating suucceeded you will get the following details:
+- If key generating succeeded you will get the following details:
 1. Your identification location path.
 2. Your public key location path.
 3. The key fingerprint.
@@ -78,11 +78,11 @@ Enter file in which to save the key (/User/name/default_location/id_ssh_keyname)
 ```shell
 Enter passphrase (empty for no passphrase):
 ```
-- Re-enter passphras (or just press Enter)
+- Re-enter passphrase (or just press Enter)
 ```shell
 Enter same passphrase again: 
 ```
-- If key generating suucceeded you will get the following details:
+- If key generating succeeded you will get the following details:
 1. Your identification location path.
 2. Your public key location path.
 3. The key fingerprint.
@@ -125,11 +125,11 @@ Enter file in which to save the key (/home/YOU/.ssh/ALGORITHM):
 ```shell
 Enter passphrase (empty for no passphrase):
 ```
-- Re-enter passphras (or just press Enter)
+- Re-enter passphrase (or just press Enter)
 ```shell
 Enter same passphrase again: 
 ```
-- If key generating suucceeded you will get the following details:
+- If key generating succeeded you will get the following details:
 1. Your identification location path.
 2. Your public key location path.
 3. The key fingerprint.

@@ -186,18 +186,18 @@ this file:
 
 ### Droop Down Menu
 
-Branch drop down menu exists above the code table, lising all branches the repositoory have.
+Branch drop down menu exists above the code table, listing all branches the repository have.
 
 ### Readme File
 
-The readme.md file of the repoository shown under the coode table.
+The readme.md file of the repository shown under the code table.
 
 
 ## Detailed Code Screen
 
-Choosing a specific file or a branch from the [roop Down Menu](#droop-down-menu) opens a new view of the code which contains:
+Choosing a specific file or a branch from the [drop Down Menu](#droop-down-menu) opens a new view of the code which contains:
 
-- Code Tree - contains the direcotries and files as [described above](#directories-and-files-description).
+- Code Tree - contains the directories and files as [described above](#directories-and-files-description).
 - Preview of the directory or file chosen
 - search Box to find a file
 - Drop down menu to choose a different branch

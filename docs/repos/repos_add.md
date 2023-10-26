@@ -1,6 +1,6 @@
 # Add Repository
 
-## Prequisites
+## Prerequisites
 
 To add repository to CITROS you first need to Install CITROS
    
@@ -8,7 +8,7 @@ To add repository to CITROS you first need to Install CITROS
    pip install citros
    ```
 
-## Add Repository to CITROS From Scrach
+## Add Repository to CITROS From Scratch
 
 1. Go to your repository path
 

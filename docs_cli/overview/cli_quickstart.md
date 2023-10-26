@@ -5,13 +5,13 @@
 In essence, the CITROS CLI is a collection of numerous commands, but to quickly get started with running a simulation once using the default parameter values, only two straightforward commands are required:
 
     $ citros init
-    User is not logged in. Initialzing Citros locally.
-    Intialized Citros repository.
+    User is not logged in. Initializing Citros locally.
+    Initialized Citros repository.
     $ citros run -n "some_batch_name" -m "some_message"
 
 The first command, `citros init`, sets up a new `.citros` repository. If you are logged in, it will clone the `.citros` directory from a remote repository.
 
-The second command, `citros run`, executes a simulation of the provided name a designated number of times. If you don't specify a simulation name (not to be confused with a batch name, which is mandetory by default), an interactive menu will appear, letting you select from the available simulations. If the "completions" value, representing the number of times the simulation should run, isn't specified, a single instance of the simulation will be executed.
+The second command, `citros run`, executes a simulation of the provided name a designated number of times. If you don't specify a simulation name (not to be confused with a batch name, which is mandatory by default), an interactive menu will appear, letting you select from the available simulations. If the "completions" value, representing the number of times the simulation should run, isn't specified, a single instance of the simulation will be executed.
 
 ## Run Remotely (on the cloud)
 
