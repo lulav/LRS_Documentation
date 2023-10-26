@@ -509,7 +509,7 @@ After entering the command, if either the username or password was not given, yo
   <summary>Examples</summary>
 
     $ citros login
-    $ email: shalev@lulav.space
+    $ email: example@lulav.space
     $ Password: 
     User logged in.
 
