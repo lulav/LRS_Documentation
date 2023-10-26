@@ -1,14 +1,4 @@
-<!-- # Simulation Run
-## Introduction
-## Simulation Run Table
-the explanation you wrote
-## Simulation Events
-short explanation
-### Time
-### Type...
-
--->
-# Batch Page Overview
+# Batch Page
 
 ## Introduction
 The Batch page provides a comprehensive dashboard that allows users to monitor and manage batch simulation runs, offering detailed information about each run and overall batch status, while also providing insights into the development context in which the simulations were run.
@@ -17,13 +7,19 @@ The Batch page provides a comprehensive dashboard that allows users to monitor a
 
 ## Simulation Info
 
-The top of this page contains the Batch Run Info for quick review of the context and purpose of the current batch simulation. It includes Repository Name, Batch Name, Sumulation Name, Run number and user-defined message. The Batch ID is located on the right.
+The top of this page contains the Batch Run Info for quick review of the context and purpose of the current batch simulation. It includes:
+* Repository Name
+* Batch Name
+* Sumulation Name
+* Run number
+* User-defined message
+* Batch ID
 
 ![png](img/batch1.png "Simulation Info")
 
 ## Simulation Run Table
 
-The Simulation Runs Table is located in the center of the page. You can observe it to monitor the status and progress of individual simulations in the batch. Click on specific simulation IDs or rows to navigate to detailed run page. This table has 4 columns:
+The Simulation Runs Table contains all the runs of the batch . You can observe it to monitor the status and progress of individual simulations in the batch. Click on specific simulation IDs or rows to navigate to detailed run page. This table has 4 columns:
 
 * Run number
 * [Last Event of the Run](https://citros.io/doc/docs/simulations/sim_run_page)
@@ -34,7 +30,7 @@ The Simulation Runs Table is located in the center of the page. You can observe 
 
 ## Batch Information
 
-Review the Info section (on the right) to gain insights into the batch's status, progress, and associated development context (git branch, commit ID). The Information section provides:
+The Info section contains all the information about the batch, it contains the following fields:
 
 * Status: general batch status. Depends on statuses of all related simulations. See [Batch Statuses](#batch-status) for additional info.
 * Timestamp of creation

@@ -27,27 +27,20 @@ The `Runs` page is comprized of a list of your team's simulation runs. It allows
 ![png](img/runs0.png "Batch Runs List overview")
 
 ## Batch Runs List
-The Batch Runs list is located in the center of the page. It provides a list of all batches run by your team members. The last batch appears on the top of the list. 
-
-![png](img/runs1.png "Batch Runs List")
-
-### Batch Details
-Each line of the list contains extensive batch information and status:
+Each list item represents a batches run. it contains the following fileds:
 
    * Project name;
    * Simulation JSON file (corresponding to the ROS Launch file);
    * User-defined simulation name;
    * Batch ID;
    * Simulation launch timestamp;
-   * [Status of the simulation data (results)](#simulation-status-data);
+   * Number of runs and their status.
+   * Username;
    * Commit ID (The commit the data was created with);
    * Simulation image tag (The image used for simulation);
-   * Username;
-   * Number of runs and their status.
+   * [Status of the simulation data (results)](#simulation-status-data);
 
-![png](img/runs2.png "Batch Details")
-
-Check [Overview Page](https://citros.io/doc/docs/simulations/sim_step_by_step) for additional explanation of Simulation workflow.
+![png](img/runs1.png "Batch Runs List")
 
 #### Simulation Data Status 
 
@@ -62,12 +55,16 @@ The status of simulation results can be one of several states:
 
 ## Available Actions
 
-### Running a New Simulation
+### Search Box
 
-   To run a new simulation, click the "Run Simulation" button. Fill in the required parameters and configurations in the simulation setup form. Click "Run Simulation" to initiate the simulation. You can monitor the progress of the simulation on the list page. Check our [Step-By-Step Simulation tutorial](https://citros.io/doc/docs/simulations/sim_step_by_step) for additional information.
+   The search field is available right above the Batch Run List. You can search by project's name, batch name, batch message etc. This allows to search a batch run name by entering it in the text box.
+
+### Run Simulation Button
+
+   Pressing on the button opens a window to define and run a new simulation. For more information follow this [Step-By-Step Simulation tutorial](https://citros.io/doc/docs/simulations/sim_step_by_step).
 
 ![png](img/runs4.png "Run Simulation")
 
-### Searching the Simulations
+### CLI Button
 
-   The search field is available right above the Batch Run List. You can search by project's name, batch name, batch message etc. Simply enter the text for search in the field and the search results will be shown automaticly.
+   Pressing on the button opens a window with a step-by-step instructions to run a new simulation using CITROS CLI.
