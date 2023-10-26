@@ -234,7 +234,7 @@ Using the CITROS CLI online is very similar, from the user's standpoint, to usin
 First and foremost, we need to log in:
 ```bash
 $ citros login
-email: shalev@lulav.space
+email: example@lulav.space
 Password: 
 User logged in.
 ```
