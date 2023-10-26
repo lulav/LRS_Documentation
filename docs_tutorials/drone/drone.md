@@ -1,5 +1,5 @@
 ---
-sidebar_position: 30
+sidebar_position: 25
 sidebar_label: 'Drone'
 
 ---
@@ -66,7 +66,7 @@ Now you can see `.citros` folder in the explorer.
 2. Configuring the params setup.  
 
 You can find the default setup in `.citros/parameter_setups/default_param_setup.json`.  
-[citros_cli](docs_cli/configuration/config_params.md) provides more information about how to change the parameters by the user.
+[citros_cli](/docs_cli/configuration/config_params) provides more information about how to change the parameters by the user.
 
 ### Parameters 	
 This is a list of all the ROS 2 parameters that can be control by the user wish:
