@@ -22,7 +22,7 @@ module.exports = {
   gettingStartedSidebar: [
     {
       type: "category",
-      label: "CITRSO Web",
+      label: "CITROS Web",
       link: {
         type: "doc",
         id: "index",
@@ -42,57 +42,27 @@ module.exports = {
       type: 'category',
       label: 'Account',
       items: [
+        // {
+        //   type: 'doc',
+        //   label: 'Overview',
+        //   id: 'authentication/account/account_overview',
+        // },
         {
           type: 'doc',
-          label: 'Overview',
-          id: 'authentication/account/account_overview',
-        },
-        {
-          type: 'doc',
-          label: 'Account Registration',
+          label: 'Registration',
           id: 'authentication/account/account_login',
         },
         {
           type: 'doc',
-          label: 'Change Password',
-          id: 'authentication/account/account_password',
+          label: 'Notifications',
+          id: 'authentication/account/notification',
         },
         {
           type: 'doc',
-          label: 'Notifications',
-          id: 'authentication/account/notification_settings',
-        },
-        {
-          type: 'category',
           label: 'Settings',
-          items: [
-            {
-              type: 'doc',
-              label: 'General',
-              id: 'authentication/account/profile/pr_general',
-            },
-            {
-              type: 'doc',
-              label: 'Organization',
-              id: 'authentication/account/profile/pr_org',
-            },
-            {
-              type: 'doc',
-              label: 'Users',
-              id: 'authentication/account/profile/pr_users',
-            },
-            {
-              type: 'doc',
-              label: 'Change Password',
-              id: 'authentication/account/profile/pr_pass',
-            },
-            {
-              type: 'doc',
-              label: 'SSH Keys',
-              id: 'authentication/account/profile/pr_ssh',
-            },
-              ]
-            },
+          id: 'authentication/account/settings',
+        }
+
           ]
         },
     {
@@ -194,7 +164,7 @@ module.exports = {
         },
         {
           type: 'category',
-          label: 'Repositry Tabs',
+          label: 'Repository Tabs',
           items: [
             {
               type: 'doc',

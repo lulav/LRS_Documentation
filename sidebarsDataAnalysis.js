@@ -18,7 +18,7 @@ module.exports = {
   dataAnalysisSidebar: [
     {
       type: 'category',
-      label: 'Citros Data Analysis',
+      label: 'CITROS Data Analysis',
       link: {
         type: 'doc',
         id: "index",
