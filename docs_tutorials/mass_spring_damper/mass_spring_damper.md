@@ -58,7 +58,7 @@ you can tune the controller gains, $k_p$, $k_i$, $k_d$, configured as ROS 2 para
 ## CITROS Usage
 
 ### CITROS Installation
-First of all, to use all the powerfull CITROS features usage requires CITROS installation: follow the instructions on the CITROS CLI [documentation](https://citros.io/doc/docs_cli/)
+First of all, to use all the powerful CITROS features usage requires CITROS installation: follow the instructions on the CITROS CLI [documentation](https://citros.io/doc/docs_cli/)
 
 ### Configuring The Project
 
@@ -75,7 +75,7 @@ After all the prerequisites done, we can start configuring our project. Open the
 |m | dynamics | The mass of the system
 |k | dynamics | The spring coefficient
 |c | dynamics | The damper coefficient
-|x | dynamics | The mass initial poisition
+|x | dynamics | The mass initial position
 |v | dynamics | The mass initial velocity
 |a | dynamics | The mass initial acceleration
 
@@ -107,7 +107,7 @@ Follow the [guide](https://citros.io/doc/docs/cli/cli_commands/cli_sync) for syn
 
 Supposed we tune the PID gains of the controller for the nominal mass, and we reached a satisfying results.
 
-Now we want to know how robust was the tuning for a normal distributd mass:
+Now we want to know how robust was the tuning for a normal distributed mass:
 
 $$ 
 m = N(\mu, \sigma)

@@ -50,11 +50,11 @@ for more information see [Soft Landing](https://github.com/CITROS-garden/soft_la
 
 
 ## CITROS Integration
-To use all the powerfull CITROS features usage requires CITROS installation:  
+To use all the powerful CITROS features usage requires CITROS installation:  
 (from the instructions on the CITROS CLI [GitHub page](https://github.com/lulav/CITROS_cli))
 
 
-**First,reopen the folder localy** then follow the instructions:
+**First,reopen the folder locally** then follow the instructions:
 ```
 pip install citros
 ```  
@@ -123,10 +123,10 @@ The parameters are:
 | e | stoping condition value | controller |
 | dt | time interval | controller |
 
-**All of the above are ROS 2 parameters that could easly change by the user as wish.**  
+**All of the above are ROS 2 parameters that could easily change by the user as wish.**  
 
 
-After completing the CITROS interagition setup we can cheack CITROS by running a test simulation.  
+After completing the CITROS integration setup we can check CITROS by running a test simulation.  
 
 First, set up the parameter of the simulation in the file   `default_param_setup.json` in `.CITROS/parameter_setups` folder.  
 Don't forget to save the file!  
@@ -155,10 +155,10 @@ There are two option:
 
 The `simulation_dynamics_controller` launch the dynamics with the controller and `simulation_dynamics` launch only the dynamics.  
 Select the launch file by pressing ```Enter``` button and wait for the output in the terminal.  
-If the simulation ran perfectly you can run the simlulation in the cloud.
+If the simulation ran perfectly you can run the simulation in the cloud.
 
 ### Run a Test Simulation in The Web with CITROS
-Befor uploading the simulation to the cloud check that the parameter file, `default_param_setup.json`  in `.CITROS/parameter_setups` folder is set as you wish and saved.  
+Before uploading the simulation to the cloud check that the parameter file, `default_param_setup.json`  in `.CITROS/parameter_setups` folder is set as you wish and saved.  
 That you have build and sourced the project.  
 And you have sync the project settings with CITROS server (CITROS commit , CITROS push).  
 
@@ -171,7 +171,7 @@ citros docker-build-push
 ```bash 
 citros run -n 'test' -m 'testytest' -r
 ```
-Select the launch file you want by pressing ```Enter``` button. Now the simulation is running in the CITROS server, and it will upload results to the CITROS database automaticly.
+Select the launch file you want by pressing ```Enter``` button. Now the simulation is running in the CITROS server, and it will upload results to the CITROS database automatically.
 
 Now we all set to run simulations from the web itself.  
 At the web,go to the soft landing repo and then to the `Runs` tab.  
@@ -187,9 +187,9 @@ Then i clicked on *Run Simulation*.
 The results were:  
 ![Alt text](img/image-7.png)
 
-And by getting the miss distance and miss velociy i could show a figure of all the runs.  
+And by getting the miss distance and miss velocity i could show a figure of all the runs.  
 ![Alt text](img/image-8.png)  
-The full report with the data acces and error anlyisis you can watch it [here](https://CITROS.io/soft_landing/blob/main/notebooks/Soft_landing_analysis.ipynb).
+The full report with the data access and error analysis you can watch it [here](https://CITROS.io/soft_landing/blob/main/notebooks/Soft_landing_analysis.ipynb).
 
 
 

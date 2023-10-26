@@ -103,7 +103,7 @@ $ citros docker-build-push
 ```
 
 #### Run Simulation in The Cloud
-Simillar to [running simulation locally](#run-simulation), but with an additional `-r` key:
+Similar to [running simulation locally](#run-simulation), but with an additional `-r` key:
 ```bash
 $ citros run -n "galactic orbits" -m "first run" -c 5 -r
 ```
@@ -162,7 +162,7 @@ Parameters are listed in file `.citros/parameter_setups/default_param_setup.json
 }
 ```
 
-The table with the paramaters for the 115 globular clusters may be found in article, mentioned above: [Globular Clusters: Absolute Proper Motions and Galactic Orbits](https://link.springer.com/article/10.1134/S1990341318020049), [arXiv](https://arxiv.org/pdf/1804.07086.pdf).
+The table with the parameters for the 115 globular clusters may be found in article, mentioned above: [Globular Clusters: Absolute Proper Motions and Galactic Orbits](https://link.springer.com/article/10.1134/S1990341318020049), [arXiv](https://arxiv.org/pdf/1804.07086.pdf).
 
 Function *my_func.py:return_next_value* returns the next listed in `args` value for each subsequent simulation. It is written in file `.citros/parameter_setups/functions/my_func.py`:
 

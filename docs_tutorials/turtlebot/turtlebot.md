@@ -38,7 +38,7 @@ Although you can get simulation results using FoxGlove, the best way to work wit
 
 ### CITROS Installation
 
-First of all, to use all the powerfull CITROS features the CLI installation is required: follow the instructions on the CITROS CLI [documentation page](https://citros.io/doc/docs_cli).
+First of all, to use all the powerful CITROS features the CLI installation is required: follow the instructions on the CITROS CLI [documentation page](https://citros.io/doc/docs_cli).
 
 ### Configuring The Project
 After all the prerequisites are met, we can start configuring our project. The starting point is the TurtleBot3 devcontainer loaded and running, CITROS CLI is installed and ready.
@@ -70,7 +70,7 @@ Now you can see ```.citros``` folder in the explorer.
     check_forward_dist_param	|turtlebot3_gazebo	|forward checking distance for Autonomous Collision Avoidance	
     check_side_dist_param	|turtlebot3_gazebo	|side checking distance for Autonomous Collision Avoidance	
 
-4. Launch files. This project contains two launch files, but we will use only ```turtlebot3_sim_cont.launch.py```, and the second one launches automaticly (it's neccessary for publishing states).
+4. Launch files. This project contains two launch files, but we will use only ```turtlebot3_sim_cont.launch.py```, and the second one launches automatically (it's necessary for publishing states).
 
     |Launch File	|Package	|Description
     |--|--|--
@@ -135,11 +135,11 @@ created new batch_id: <your-batch-id-here>. Running on Citros cluster. See https
 The best way to use all the innovative capabilities of CITROS is through it's Web interface. Follow [this manual](https://citros.io/doc/docs/simulations/sim_overview) to easily launch a simulation on CITROS Web platform.
 
 #### Working with Integrated Jupiter Notebooks and Data Analysis
-CITROS Web provides a powerfull data analysis package, which is a comprehensive solution for data query, analysis and visualization. With its extensive features, you can quickly and easily extract valuable insights from your data. To use it, Jupiter Notebook support is built-in. 
+CITROS Web provides a powerful data analysis package, which is a comprehensive solution for data query, analysis and visualization. With its extensive features, you can quickly and easily extract valuable insights from your data. To use it, Jupiter Notebook support is built-in. 
 Navigate to our ```Code``` project page, open the Notebooks folder and click on the notebook file. Here you can see the usual Jupiter editor interface: you can add blocks of code or built-in Markdown engine, run and save notebook and control the Python kernel.
 
 :::note
-You can find all the data analisys package guides and API reference [here](https://citros.io/doc/docs_data_analysis).
+You can find all the data analysis package guides and API reference [here](https://citros.io/doc/docs_data_analysis).
 :::
 
 
@@ -189,7 +189,7 @@ The last command returns general batch info:
 ```
 As you can see in the output above, we've got some information about our simulation run (batch): data size, sid information and a list of topics. 
 
-Now we are ready to do some simple research and draw some plots. All MatPlotLib capabilities available here, but the [CITROS Data Analisys](https://citros.io/doc/docs_data_analysis) package provides it's own powerful plotting functions (also based on MatPlotLib):
+Now we are ready to do some simple research and draw some plots. All MatPlotLib capabilities available here, but the [CITROS Data Analysis](https://citros.io/doc/docs_data_analysis) package provides it's own powerful plotting functions (also based on MatPlotLib):
 
 ```python
 citros.xy_plot(ax1, 
@@ -203,7 +203,7 @@ As you can see, the travelled trajectory varies for different sids:
 ![png](img/citros2.png "CITROS example")
 
 
-Let's perform some error analisys!
+Let's perform some error analysis!
 
 To analyze data of multiple simulations it is necessary to establish a correspondence between the values of the data from these different simulations. One approach is to select an independent variable, define a scale that is common to all simulations and assign indexes on this scale. Then, the values of variables from different simulations will be connected by this independent variable.
 

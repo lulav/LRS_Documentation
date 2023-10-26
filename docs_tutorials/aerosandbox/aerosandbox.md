@@ -9,7 +9,7 @@ The project is a simulation tool developed using ROS (Robot Operating System) no
 
 The user provides flight parameters as input parameters to configure the simulation. These parameters are essential for defining the initial conditions of the simulated flight.
 
-Once the simulation is initiated, the ROS nodes orchestrate the execution. The simulation takes into account various flight dynamics and aerodynamic factors to model the gliding behavior of the Cessna 152. The maximum gliding distance depends on plane's aerodynamic parameters, initial altitude and initial velocity. To find it this code uses iPOPT optimal problem solver under the hood (IPOPT included into AeroSandbox).
+Once the simulation is initiated, the ROS nodes orchestrate the execution. The simulation takes into account various flight dynamics and aerodynamic factors to model the gliding behavior of the Cessna 152. The maximum gliding distance depends on plane's aerodynamic parameters, initial altitude and initial velocity. To find it this code uses iPOPT optimal problem solver under the hood (iPOPT included into AeroSandbox).
 
 The output of the simulation comprises critical flight data, such as altitude, velocity, and other relevant parameters, recorded over time intervals. These results are published via ROS topics, allowing for real-time data visualization, analysis, and integration with other ROS-based systems.
 
@@ -35,7 +35,7 @@ Although you can get simulation results using FoxGlove, the best way to work wit
 
 ### CITROS Installation
 
-First of all, to use all the powerfull CITROS features the CLI installation is required: follow the instructions on the CITROS CLI [documentation page](https://citros.io/doc/docs_cli).
+First of all, to use all the powerful CITROS features the CLI installation is required: follow the instructions on the CITROS CLI [documentation page](https://citros.io/doc/docs_cli).
 
 ### Configuring The Project
 After all the prerequisites are met, we can start configuring our project. The starting point is the Poliastro devcontainer loaded and running, CITROS CLI is installed and ready.
@@ -52,17 +52,17 @@ Creating an initial commit.
 Default branch of remote 'origin' set to: master
 Citros successfully synched with local project.
 You may review your changes via `citros status` and commit them via `citros commit`.
-Intialized Citros repository.
+Initialized Citros repository.
 ```
 Now you can see ```.citros``` folder in the explorer.
 
 2. Configuring the setup. We need to set up the maximum performance available: timeout, CPU, GPU and Memory. To perform it, we need to define them in ```.citros/simulations/simulation_aerosandbox_cessna.json```. The recommended setup is minimum 180 seconds timeout, 2 CPU, 2 GPU and 1024 MB of Memory. Don't forget to save the file!
 
-3. Configuring the params setup. You can find the default setup in ```.citros/parameter_setups/default_param_setup.json```. [CITROS CLI](https://citros.io/doc/docs_cli) provides an opportunity to use basic NumPy functions (such as distributions) and even user-defined functions, but let's keep it default for now. The Aerosanbox simulation has the following ROS parameters:
+3. Configuring the params setup. You can find the default setup in ```.citros/parameter_setups/default_param_setup.json```. [CITROS CLI](https://citros.io/doc/docs_cli) provides an opportunity to use basic NumPy functions (such as distributions) and even user-defined functions, but let's keep it default for now. The Aerosandbox simulation has the following ROS parameters:
 
     |Parameter	|Package	|Description
     |--|--|--
-    h_0	|aerosandbox_cessna	|Initial alitude (m)	
+    h_0	|aerosandbox_cessna	|Initial altitude (m)	
     v_0	|aerosandbox_cessna	|Initial velocity (knots)
     publish_freq	|aerosandbox_cessna	|Frequency of publishing
 
@@ -135,10 +135,10 @@ The best way to use all the innovative capabilities of CITROS is through it's We
 
 
 #### Working with Integrated Jupiter Notebooks and Data Analysis
-CITROS Web provides a powerfull data analysis package, which is a comprehensive solution for data query, analysis and visualization. With its extensive features, you can quickly and easily extract valuable insights from your data. To use it, Jupiter Notebook support is built-in. 
+CITROS Web provides a powerful data analysis package, which is a comprehensive solution for data query, analysis and visualization. With its extensive features, you can quickly and easily extract valuable insights from your data. To use it, Jupiter Notebook support is built-in. 
 Navigate to our ```Code``` project page, open the Notebooks folder and click on the notebook file. Here you can see the usual Jupiter editor interface: you can add blocks of code or built-in Markdown engine, run and save notebook and control the Python kernel.
 
-You can find all the data analisys package guides and API reference [here](https://citros.io/doc/docs_data_analysis).
+You can find all the data analysis package guides and API reference [here](https://citros.io/doc/docs_data_analysis).
 
 
 Let's quickly go through the key points of using a Jupiter Notebook and fetching data from a database. But to try some brief examples of data analysis using the built-in package, we need to launch a batch with several simulations and a distribution for one of the ROS parameters (initial altitude, in our case). This parameter will be different for each simulation:
@@ -195,7 +195,7 @@ The last command returns general batch info:
 ```
 As you can see in the output above, we've got some information about our simulation run (batch): data size, sid information and a list of topics. 
 
-Now we are ready to do some simple research and draw some plots. All MatPlotLib capabilities available here, but the [CITROS Data Analisys](https://citros.io/doc/docs_data_analysis) package provides it's own powerful plotting functions (also based on MatPlotLib):
+Now we are ready to do some simple research and draw some plots. All MatPlotLib capabilities available here, but the [CITROS Data Analysis](https://citros.io/doc/docs_data_analysis) package provides it's own powerful plotting functions (also based on MatPlotLib):
 
 ```python
 fig1, ax1 = plt.subplots()

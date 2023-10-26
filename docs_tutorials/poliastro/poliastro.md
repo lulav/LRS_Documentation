@@ -32,7 +32,7 @@ Although you can get simulation results using FoxGlove, the best way to work wit
 
 ### CITROS Installation
 
-First of all, to use all the powerfull CITROS features the CLI installation is required: follow the instructions on the CITROS CLI [documentation page](https://citros.io/doc/docs_cli).
+First of all, to use all the powerful CITROS features the CLI installation is required: follow the instructions on the CITROS CLI [documentation page](https://citros.io/doc/docs_cli).
 
 ### Configuring The Project
 After all the prerequisites are met, we can start configuring our project. The starting point is the Poliastro devcontainer loaded and running, CITROS CLI is installed and ready.
@@ -77,8 +77,8 @@ Now you can see ```.citros``` folder in the explorer.
 
     |Parameter	|Package	|Description
     |--|--|--
-    apo_r	|poliastro_simple_orbit	|Apoapsis alitude	
-    peri_r	|poliastro_simple_orbit	|Periapsis alitude	
+    apo_r	|poliastro_simple_orbit	|Apoapsis altitude	
+    peri_r	|poliastro_simple_orbit	|Periapsis altitude	
     start_t	|poliastro_simple_orbit	|Start date and time	
     finish_t	|poliastro_simple_orbit	|Final date and time	
     publish_freq	|poliastro_simple_orbit	|Frequency of publishing
@@ -169,10 +169,10 @@ The best way to use all the innovative capabilities of CITROS is through it's We
 ![png](img/citros2.png "CITROS example")
 
 #### Working with Integrated Jupiter Notebooks and Data Analysis
-CITROS Web provides a powerfull data analysis package, which is a comprehensive solution for data query, analysis and visualization. With its extensive features, you can quickly and easily extract valuable insights from your data. To use it, Jupiter Notebook support is built-in. 
+CITROS Web provides a powerful data analysis package, which is a comprehensive solution for data query, analysis and visualization. With its extensive features, you can quickly and easily extract valuable insights from your data. To use it, Jupiter Notebook support is built-in. 
 Navigate to our ```Code``` project page, open the Notebooks folder and click on the notebook file. Here you can see the usual Jupiter editor interface: you can add blocks of code or built-in Markdown engine, run and save notebook and control the Python kernel.
 
-You can find all the data analisys package guides and API reference [here](https://citros.io/doc/docs_data_analysis).
+You can find all the data analysis package guides and API reference [here](https://citros.io/doc/docs_data_analysis).
 
 Let's quickly go through the key points of using a Jupiter Notebook and fetching data from a database. But to try some brief examples of data analysis using the built-in package, we need to launch a batch with several simulations and a distribution for one of the ROS parameters (Drag coefficient, in our case). This parameter will be different for each simulation:
 
@@ -230,7 +230,7 @@ The last command returns general batch info:
 ```
 As you can see in the output above, we've got some information about our simulation run (batch): data size, sid information and a list of topics. 
 
-Now we are ready to do some simple research and draw some plots. All MatPlotLib capabilities available here, but the [CITROS Data Analisys](https://citros.io/doc/docs_data_analysis) package provides it's own powerful plotting functions (also based on MatPlotLib):
+Now we are ready to do some simple research and draw some plots. All MatPlotLib capabilities available here, but the [CITROS Data Analysis](https://citros.io/doc/docs_data_analysis) package provides it's own powerful plotting functions (also based on MatPlotLib):
 
 ```python
 citros.xy_plot(ax2, 

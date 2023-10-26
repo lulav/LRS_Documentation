@@ -22,7 +22,7 @@ module.exports = {
   gettingStartedSidebar: [
     {
       type: "category",
-      label: "CITRSO Web",
+      label: "CITROS Web",
       link: {
         type: "doc",
         id: "index",
@@ -164,7 +164,7 @@ module.exports = {
         },
         {
           type: 'category',
-          label: 'Repositry Tabs',
+          label: 'Repository Tabs',
           items: [
             {
               type: 'doc',
