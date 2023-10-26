@@ -49,7 +49,7 @@ module.exports = {
         // },
         {
           type: 'doc',
-          label: 'Account Registration',
+          label: 'Registration',
           id: 'authentication/account/account_login',
         },
         {
