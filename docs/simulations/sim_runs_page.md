@@ -1,4 +1,4 @@
-# Runs page
+# Batch Runs
 
 ## Introduction
 The `Runs` page is comprized of a list of your team's simulation runs. It allows you to manage and monitor simulations easily and efficiently.
@@ -17,7 +17,7 @@ Each list item represents a batches run. it contains the following fileds:
    * Username;
    * Commit ID (The commit the data was created with);
    * Simulation image tag (The image used for simulation);
-   * [Status of the simulation data (results)](#simulation-status-data);
+   * [Status of the simulation data (results)](#simulation-data-status);
 
 ![png](img/runs1.png "Batch Runs List")
 
@@ -40,9 +40,7 @@ The status of simulation results can be one of several states:
 
 ### Run Simulation Button
 
-   Pressing on the button opens a window to define and run a new simulation. For more information follow this [Step-By-Step Simulation tutorial](https://citros.io/doc/docs/simulations/sim_step_by_step).
-
-![png](img/runs4.png "Run Simulation")
+   Pressing on the button opens a window to define and run a new simulation. For more information follow this [Step-By-Step Simulation tutorial](/docs/simulations/sim_step_by_step.md).
 
 ### CLI Button
 

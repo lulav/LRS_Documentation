@@ -251,17 +251,17 @@ module.exports = {
         },
         {
           type: 'doc',
-          label: 'Batch Page ',
+          label: 'Batch Run',
           id: 'simulations/sim_batch_page',
         },
         {
           type: 'doc',
-          label: 'Batch Run',
+          label: 'Simulation Run',
           id: 'simulations/sim_run_page',
         },
         {
           type: 'doc',
-          label: 'Simulation Run',
+          label: 'Run New Simulation',
           id: 'simulations/sim_step_by_step',
         },
       ],

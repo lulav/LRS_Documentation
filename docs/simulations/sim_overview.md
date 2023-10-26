@@ -13,7 +13,7 @@ This page provides an overview of the main terms of the CITROS Simulation Workfl
    Simulation Run |A singular execution of a simulation model, performed with a specific set of parameters and conditions to analyze and observe system behavior in a specific scenario or iteration.
 
 ## Table of Contents
-1. [Main Runs Page](/docs/simulations/sim_runs_page.md)
-2. [Batch Page](/docs/simulations/sim_batch_page.md)
-3. [Run Page](/docs/simulations/sim_run_page.md)
-4. [Step-By-Step Tutorial](/docs/simulations/sim_step_by_step.md)
+1. [Batch Runs](/docs/simulations/sim_runs_page.md)
+2. [Batch Run](/docs/simulations/sim_batch_page.md)
+3. [Simulation Run](/docs/simulations/sim_run_page.md)
+4. [Run New Simulation](/docs/simulations/sim_step_by_step.md)

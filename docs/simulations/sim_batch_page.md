@@ -1,4 +1,4 @@
-# Batch Page
+# Batch Run
 
 ## Introduction
 The Batch page provides a comprehensive dashboard that allows users to monitor and manage batch simulation runs, offering detailed information about each run and overall batch status, while also providing insights into the development context in which the simulations were run.
