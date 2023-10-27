@@ -124,9 +124,7 @@ To change password:
 
 SSH Keys screen contains a list of all SSH Keys added to your CITROS account
 
-### Options
-
-#### Add SSH Key to List
+### Add SSH Key to List
 
 1. [Generate SSH Key](/docs/authentication/ssh/ssh_generate_key.md)
 
@@ -142,7 +140,7 @@ SSH Keys screen contains a list of all SSH Keys added to your CITROS account
 
 7. The new key will be added to the list item
 
-#### Delete Key 
+### Delete Key 
 
 1. Click the Delete Button to the right of the key.
 

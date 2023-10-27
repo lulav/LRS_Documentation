@@ -1,6 +1,8 @@
 # Quick Start
 
-## Run Locally
+<Tabs>
+
+<TabItem value="Locally" label="Run Locally">
 
 In essence, the CITROS CLI is a collection of numerous commands, but to quickly get started with running a simulation once using the default parameter values, only two straightforward commands are required:
 
@@ -13,7 +15,9 @@ The first command, `citros init`, sets up a new `.citros` repository. If you are
 
 The second command, `citros run`, executes a simulation of the provided name a designated number of times. If you don't specify a simulation name (not to be confused with a batch name, which is mandatory by default), an interactive menu will appear, letting you select from the available simulations. If the "completions" value, representing the number of times the simulation should run, isn't specified, a single instance of the simulation will be executed.
 
-## Run Remotely (on the cloud)
+</TabItem>
+
+<TabItem value="Remotely" label="Run Remotely">
 
 In order to run your simulation on the cloud, two (possibly three) additional steps are required:
 
@@ -34,3 +38,11 @@ To sum up, assuming you have already setup your ssh keys, the following example 
     $ citros run -n "some_batch_name" -m "some message" -r -c 10
 
 **Note:** for clarity, the CITROS output was not given in the above example. See individual commands.
+
+</TabItem>
+</Tabs>
+
+
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';

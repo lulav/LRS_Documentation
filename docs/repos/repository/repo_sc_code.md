@@ -182,13 +182,11 @@ this file:
 
 </details>
 
-## Other Options
-
-### Droop Down Menu
+## Droop Down Menu
 
 Branch drop down menu exists above the code table, listing all branches the repository have.
 
-### Readme File
+## Readme File
 
 The readme.md file of the repository shown under the code table.
 

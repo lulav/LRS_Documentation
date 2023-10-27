@@ -18,13 +18,11 @@ The images table contains the following fields:
 
 The table is sorted by date
 
-## Other Options
-
-### Search Box
+## Search Box
 
 This allows to search an image name or tag by entering it in the text box
 
-### Upload Image Button
+## Upload Image Button
 
 Pressing on the button opens a window with a step-by-step instructions to upload a new image to CITROS
 

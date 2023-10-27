@@ -18,13 +18,11 @@ Each list item represents a repository. it contains the following fields
 
 ![Alt text](img/repos_screen_list.png)
 
-## Other Options
-
-### Search Box
+## Search Box
 
 This allows to search a repository name by entering it in the text box
 
-### New Repository Button
+## New Repository Button
 
 Pressing on the button opens a window with a step-by-step instructions to upload a new repository
 

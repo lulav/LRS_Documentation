@@ -16,25 +16,23 @@ Each list item represents a notification. it contains the following fields:
 
 ![Alt text](img/notif_topfive.png)
 
-### Other Options
-
-#### New Notification
+### New Notification
 When new notification added the bell icon will have a red indicator with number indicating how many notifications are unread.
 
 ![image](img/notifications_bell2.png)
 
-#### Notifications Indicator
+### Notifications Indicator
 
 Text indicates how many unread notifications exist.
 
 ![Alt text](img/notif_indicator.png)
 
-#### View All Button
+### View All Button
 
 "View All" button redirects to the [notifications screen](#notifications-screen).
 ![Alt text](img/notif_viewall.png)
 
-#### Click On Notification
+### Click On Notification
 
 Clicking on a notification redirects to the relevant location associated with the notification
 
@@ -53,24 +51,22 @@ Each list item represents a notification. it contains the following fields
 
 ![Alt text](img/notif_list.png)
 
-### Other Options
-
-#### New Notification
+### New Notification
 
 When new notification added the "v" icon will be green
 
-#### Search Box
+### Search Box
 This allows to search a notification name by entering it in the text box
 
 ![Alt text](img/notif_search.png)
 
-#### Mark as Read Button
+### Mark as Read Button
 
 Pressing on the button marks all notifications as read
 
 ![Alt text](img/notif_mark_read.png)
 
-#### Click On Notification
+### Click On Notification
 
 Clicking on a notification redirects to the relevant location associated with the notification
 
