@@ -8,16 +8,16 @@ The `Runs` page is comprized of a list of your team's simulation runs. It allows
 ## Batch Runs List
 Each list item represents a batches run. it contains the following fields:
 
-   * Project name;
-   * Simulation JSON file (corresponding to the ROS Launch file);
-   * User-defined simulation name;
-   * Batch ID;
-   * Simulation launch timestamp;
-   * Number of runs and their status.
-   * Username;
-   * Commit ID (The commit the data was created with);
-   * Simulation image tag (The image used for simulation);
-   * [Status of the simulation data (results)](#simulation-data-status);
+   * Project name
+   * Simulation JSON file (corresponding to the ROS Launch file)
+   * User-defined simulation name
+   * Batch ID
+   * Simulation launch timestamp
+   * Number of runs and their status
+   * Username
+   * Commit ID (The commit the data was created with)
+   * Simulation image tag (The image used for simulation)
+   * [Status of the simulation data (results)](#simulation-data-status)
 
 ![png](img/runs1.png "Batch Runs List")
 
