@@ -49,32 +49,91 @@ Edit icon opens to edit the raw file.
 
 ![Alt text](img/actions_edit.png)
 
-Press **Commit Changes** to add them into the repository
+Press **Commit Changes** to commit them into the repository
 
 Press **Cancel Changes** to close without committing changes
 
 ![Alt text](img/actions_commit.png)
 
-In addition, **ipynb (Jupyter Notebook) files** has also the following actions:
+
+**ipynb (Jupyter Notebook) files** has a bigger variety of actions:
 
 #### Start 
-#### Disconnect
+
+Press the start kernel button to be able to run Python notebook.
+
+![Alt text](img/actions_kernel_start.png)
+
+#### Stop
+
+Press the stop button to stop the kernel.
+
+![Alt text](img/actions_kernel_stop.png)
+
+#### Choose Kernel
+
+Open Drop down menu to choose a kernel type.
+
+![Alt text](img/actions_dropdown.png)
+
+:::note
+At the moment CITROS supports only Python kernel
+:::
+
+#### Kernel Indicator
+
+Indicates whether kernel is connected and in which state
+
+Green circle and state for connected
+Red circle for disconnected
+
+![Alt text](img/actions_kernel_indicator.png)
+
 #### Documentation
 
 Press **Documentation** to open CITROS Docs as wizard
 
+![Alt text](img/actions_documentaion.png)
+
 #### Batch Runs 
+
+Press **Batch Runs** to open all the run of the repository as wizard
+
+![Alt text](img/actions_batchruns.png)
+
 #### Data Analysis Snippets
 
-#### +Code
-#### +Markdown
+![Alt text](img/actions_data.png)
+
+
+
+#### Edit Icon
+
+Press the **Edit icon** to edit the raw file.
+
+Press **+Code** to commit them into the repository
+
+Press **+Markdown** to commit them into the repository
+
+Press **Commit Changes** to commit them into the repository
+
+Press **Cancel Changes** to close without committing changes
+
 #### Export to PDF
+
+![Alt text](img/actions_pdf.png)
+
+
 #### Execute all Cells
+
+![Alt text](img/actions_execute.png)
+
 #### Clear all Outputs
 
+![Alt text](img/actions_outputs.png)
 
 
-![Alt text](img/actions_ipynb.png)
+
 </details>
 
 
@@ -115,7 +174,7 @@ Edit icon opens to edit the raw file.
 
 ![Alt text](img/actions_edit.png)
 
-Press **Commit Changes** to add them into the repository
+Press **Commit Changes** to commit them into the repository
 
 Press **Cancel Changes** to close without committing changes
 
@@ -171,14 +230,6 @@ You can modify these fields to suit your simulation needs, just remember to save
 
 The Files nested under `Simulations` directory has the following actions:
 
-#### Documentation
-
-
-Press **Documentation** to open CITROS Docs as wizard
-:::note
-This actions available only to json type files
-:::
-
 #### Preview
 
 Press the **Preview** to view the rendered code file
@@ -195,7 +246,7 @@ Edit icon opens to edit the raw file.
 
 ![Alt text](img/actions_edit.png)
 
-Press **Commit Changes** to add them into the repository
+Press **Commit Changes** to commit them into the repository
 
 Press **Cancel Changes** to close without committing changes
 
@@ -246,7 +297,7 @@ Edit icon opens to edit the raw file.
 
 ![Alt text](img/actions_edit.png)
 
-Press **Commit Changes** to add them into the repository
+Press **Commit Changes** to commit them into the repository
 
 Press **Cancel Changes** to close without committing changes
 
@@ -340,7 +391,7 @@ Edit icon opens to edit the raw file.
 
 ![Alt text](img/actions_edit.png)
 
-Press **Commit Changes** to add them into the repository
+Press **Commit Changes** to commit them into the repository
 
 Press **Cancel Changes** to close without committing changes
 
@@ -383,7 +434,7 @@ Edit icon opens to edit the raw file.
 
 ![Alt text](img/actions_edit.png)
 
-Press **Commit Changes** to add them into the repository
+Press **Commit Changes** to commit them into the repository
 
 Press **Cancel Changes** to close without committing changes
 
