@@ -41,53 +41,23 @@ Validation class.
 
 #### Parameters
 
-**```df```** :&ensp;**pandas.DataFrame**
-:   Data table to perform validation tests on.
-
-
-**```data_label```** :&ensp;**str** or **list** of **str**
-:   Specifies the label(s) of the data column(s) in data table.
-
-
-**```param_label```** :&ensp;**str**
-:   Specifies the label of the column used to calculate the indices.
-
-
-**```method```** :&ensp;`{'scale', 'bin'}`, default `'scale'`
-:   Method of data preparation: scaling to [0,1] interval or binning.
-
-
-**```num```** :&ensp;**int**, default **100**
-:   Number of points in a new scale that will be used for interpolation if the **method** is 'scale' 
-    or number of bins if the **method** is 'bin'.
-
-
-**```units```** :&ensp;**str**, optional
-:   Specifies units of the data.
-
-
-**```omit_nan_rows```** :&ensp;**bool**
-:   If True, rows with one or more NaN values will be omitted from the analysis.
-    If not specified, considered to be True.
-
-
-**```inf_vals```** :&ensp;**None** or **float**, default **1e308**
-:   If specified, all values from **data_label** column that exceed the provided value in absolute terms 
-    will be treated as NaN values. If this functionality is not required, set inf_vals = None.
-
+name|type|description
+--|--|--
+|**```df```**|**pandas.DataFrame**|Data table to perform validation tests on.
+|**```data_label```**|**str** or **list** of **str**|Specifies the label(s) of the data column(s) in data table.
+|**```param_label```**|**str**|Specifies the label of the column used to calculate the indices.
+|**```method```**|`{'scale', 'bin'}`, default `'scale'`|Method of data preparation: scaling to [0,1] interval or binning.
+|**```num```**|**int**, default **100**|Number of points in a new scale that will be used for interpolation if the **method** is 'scale' <br />    or number of bins if the **method** is 'bin'.
+|**```units```**|**str**, optional|Specifies units of the data.
+|**```omit_nan_rows```**|**bool**|If True, rows with one or more NaN values will be omitted from the analysis.<br />    If not specified, considered to be True.
+|**```inf_vals```**|**None** or **float**, default **1e308**|If specified, all values from **data_label** column that exceed the provided value in absolute terms <br />    will be treated as NaN values. If this functionality is not required, set inf_vals = None.
 #### Attributes
 
-**```df```** :&ensp;**pandas.DataFrame** or **None**
-:   Data table to perform validation tests on.
-
-
-**```db```** :&ensp;**[CitrosData](../error_analysis/citros_data.md#citros_data_analysis.error_analysis.citros_data.CitrosData "citros_data_analysis.error_analysis.citros_data.CitrosData")** or **None**
-:   CitrosData object after binning or scaling.
-
-
-**```stat```** :&ensp;**[CitrosStat](../error_analysis/citros_stat.md#citros_data_analysis.error_analysis.citros_stat.CitrosStat "citros_data_analysis.error_analysis.citros_stat.CitrosStat")** or **None**
-:   CitrosStat object that stores mean, stndard deviation and covarian matrix as attributes.
-
+name|type|description
+--|--|--
+|**```df```**|**pandas.DataFrame** or **None**|Data table to perform validation tests on.
+|**```db```**|**[CitrosData](../error_analysis/citros_data.md#citros_data_analysis.error_analysis.citros_data.CitrosData "citros_data_analysis.error_analysis.citros_data.CitrosData")** or **None**|CitrosData object after binning or scaling.
+|**```stat```**|**[CitrosStat](../error_analysis/citros_stat.md#citros_data_analysis.error_analysis.citros_stat.CitrosStat "citros_data_analysis.error_analysis.citros_stat.CitrosStat")** or **None**|CitrosStat object that stores mean, stndard deviation and covarian matrix as attributes.
 
 </details>
 <details>
@@ -174,31 +144,8 @@ def mean_test(
 
 Test whether mean is within the given limits.
 
-#### Parameters
-
-**```limits```** :&ensp;**float** or **list**, default **1.0**
-:   Limit to test mean. Limits may be set as:
-
-
-   - one value and it will be treated as an +- interval: value -> [-value, value];
-   - list of lower and upper limits: [lower_limit, upper_limit];
-   - If the data has multiple columns, limits may be set for each of the column.
-    That way list length must be equal to number of columns. For example, for the 3-dimensional vector
-    with corresponding mean vector [mean_1, mean_2, mean_3]:
-    [[**limit_lower**, **limit_upper**], **value_1**, **value_2**] will be processed as: <br />
-    **limit_lower** < mean_1 < **limit_upper**,<br />
-    -**value_1** < mean_2 < **value_1**,<br />
-    -**value_2** < mean_2 < **value_2**.
-
-**```nan_passed```** :&ensp;**bool**, default **True**
-:   If True, the NaN values of the mean will pass the test.
-
-#### Returns
-
-**```log```** :&ensp;**[CitrosDict](../data_access/citros_dict.md#citros_data_analysis.data_access.citros_dict.CitrosDict "citros_data_analysis.data_access.citros_dict.CitrosDict")**
-:   Dictionary with the following structure:
-
-
+The output is:
+- dictionary with summary of the test results, with the following structure:
 ```python
 {
 'test_param' : list,          # initial tests parameters
@@ -209,13 +156,25 @@ column_name:                  # label of the column, str
         {x_index: x_value}},  # indexes and values of the x coordinate of the 
 }                             #   points that fail the test {int: float}   
 ```
-**```table```** :&ensp;**pandas.DataFrame**
-:   Table with test results for each of the mean point, indicating whether it passes or fails the test.
 
+- table that provides test results for each of the mean point, 
+using a boolean value to indicate whether it passed or failed the test;
 
-**```fig```** :&ensp;**matplotlib.figure.Figure**
-:   Figure with plotted simulations, mean values and limit boundaries.
+- figure with plotted simulations, mean values and limit boundaries.
 
+#### Parameters
+
+name|type|description
+--|--|--
+|**```limits```**|**float** or **list**, default **1.0**|Limit to test mean. Limits may be set as:<br />      &#8226; one value and it will be treated as an +- interval: value -> [-value, value];<br />      &#8226; list of lower and upper limits: [lower_limit, upper_limit];<br />      &#8226; If the data has multiple columns, limits may be set for each of the column.<br />    That way list length must be equal to number of columns. For example, for the 3-dimensional vector with corresponding mean vector [mean_1, mean_2, mean_3]:<br />    [[**limit_lower**, **limit_upper**], **value_1**, **value_2**] will be processed as: <br />    **limit_lower** < mean_1 < **limit_upper**,<br />    -**value_1** < mean_2 < **value_1**,<br />    -**value_2** < mean_2 < **value_2**.
+|**```nan_passed```**|**bool**, default **True**|If True, the NaN values of the mean will pass the test.
+#### Returns
+
+name|type|description
+--|--|--
+|**```log```**|**[CitrosDict](../data_access/citros_dict.md#citros_data_analysis.data_access.citros_dict.CitrosDict "citros_data_analysis.data_access.citros_dict.CitrosDict")**|Dictionary with validation test results.
+|**```table```**|**pandas.DataFrame**|Table with test results for each of the mean point, indicating whether it passes or fails the test.
+|**```fig```**|**matplotlib.figure.Figure**|Figure with plotted simulations, mean values and limit boundaries.
 
 </details>
 <details>
@@ -338,31 +297,8 @@ def norm_test(
 
 Test whether norm of the each simulation is less than the given limit.
 
-#### Parameters
-
-**```norm_type```** :&ensp;`{'L2', 'Linf'}`, default `'L2'`
-:   Norm type. Norm is calculated for each of the simulation. If data is a multidimensional vector, it is calculated
-    for each simulation of the each vector element.
-    Type of the norm:
-
-
-   - 'L2' - Euclidean norm, square root of the sum of the squares.
-   - 'Linf' - absolute maximum.
-
-**```limits```** :&ensp;**float** or **list**, default **1.0**
-:   Limits on the simulation norm. Limits may be set as:
-
-
-   - one value;
-   - if the data has multiple columns, limits may be set for each of the column separately as a list.
-    That way list length must be equal to number of the columns.
-
-#### Returns
-
-**```log```** :&ensp;**[CitrosDict](../data_access/citros_dict.md#citros_data_analysis.data_access.citros_dict.CitrosDict "citros_data_analysis.data_access.citros_dict.CitrosDict")**
-:   Dictionary with the following structure:
-
-
+The output is:
+- dictionary with summary of the test results, with the following structure:
 ```python
 {
 'test_param' : list,                # initial tests parameters
@@ -374,13 +310,25 @@ column_name :                       # label of the column, str
     {'failed' : list}               # sid that fail the test
 }
 ```
-**```table```** :&ensp;**pandas.DataFrame**
-:   Table with test results for each simulation, indicating whether it passes or fails the test.
 
+- table that provides test results for each simulation, 
+using a boolean value to indicate whether it passed or failed the test;
 
-**```fig```** :&ensp;**matplotlib.figure.Figure**
-:   Figure with plotted norm value and limits.
+- figure with plotted norm value and limits.
 
+#### Parameters
+
+name|type|description
+--|--|--
+|**```norm_type```**|`{'L2', 'Linf'}`, default `'L2'`|Norm type. Norm is calculated for each of the simulation. If data is a multidimensional vector, it is calculated<br />    for each simulation of the each vector element.<br />    Type of the norm:<br />      &#8226; 'L2' - Euclidean norm, square root of the sum of the squares.<br />      &#8226; 'Linf' - absolute maximum.
+|**```limits```**|**float** or **list**, default **1.0**|Limits on the simulation norm. Limits may be set as:<br />      &#8226; one value;<br />      &#8226; if the data has multiple columns, limits may be set for each of the column separately as a list.<br />    That way list length must be equal to number of the columns.
+#### Returns
+
+name|type|description
+--|--|--
+|**```log```**|**[CitrosDict](../data_access/citros_dict.md#citros_data_analysis.data_access.citros_dict.CitrosDict "citros_data_analysis.data_access.citros_dict.CitrosDict")**|Dictionary with validation test results.
+|**```table```**|**pandas.DataFrame**|Table with test results for each simulation, indicating whether it passes or fails the test.
+|**```fig```**|**matplotlib.figure.Figure**|Figure with plotted norm value and limits.
 
 </details>
 <details>
@@ -479,13 +427,7 @@ def set_tests(
 
 Perform tests on the data.
 
-#### Parameters
-
-**```tests_method```** :&ensp;**dict**
-:   Keys define test methods and corresponding test parameters are stored as values.
-    Possible test methods are:
-
-
+Possible test methods are: 
 <details>
     <summary>'std_bound'</summary>
 
@@ -496,11 +438,10 @@ Test parameters are stored as the dict with the following keys:
    - one value and it will be treated as an +- interval: value -> [-value, value];
    - list of lower and upper limits: [lower_limit, upper_limit];
    - If the data has multiple columns, limits may be set for each of the column.
-    That way list length must be equal to number of columns. For example, for the 3-dimensional vector
-    with corresponding standard deviation boundaries [std_bound_1, std_bound_2, std_bound_3]:
-    [[**limit_lower**, **limit_upper**], **value_1**, **value_2**] will be processed as: <br />
-    **limit_lower** < std_bound_1 < **limit_upper**, <br />
-    -**value_1** < std_bound_2 < **value_1**, <br />
+    That way list length must be equal to number of columns. For example, for the 3-dimensional vector with corresponding standard deviation boundaries [std_bound_1, std_bound_2, std_bound_3]:
+    [[**limit_lower**, **limit_upper**], **value_1**, **value_2**] will be processed as: 
+    **limit_lower** < std_bound_1 < **limit_upper**, 
+    -**value_1** < std_bound_2 < **value_1**, 
     -**value_2** < std_bound_2 < **value_2**.
 - 'n_std' : int, default 3
     The parameter specifies the number of standard deviations to be within limits.
@@ -521,9 +462,9 @@ Test parameters are stored as the dict:
    - If the data has multiple columns, limits may be set for each of the column.
     That way list length must be equal to number of columns. For example, for the 3-dimensional vector
     with corresponding mean vector [mean_1, mean_2 and mean_3]:
-    [[**limit_lower**, **limit_upper**], **value_1**, **value_2**] will be processed as: <br />
-    **limit_lower** < mean_1 < **limit_upper**, <br />
-    -**value_1** < mean_2 < **value_1**, <br />
+    [[**limit_lower**, **limit_upper**], **value_1**, **value_2**] will be processed as: 
+    **limit_lower** < mean_1 < **limit_upper**, 
+    -**value_1** < mean_2 < **value_1**, 
     -**value_2** < mean_2 < **value_2**.
 - 'nan_passed' : bool, default True
     If True, the NaN values of the mean will pass the test.
@@ -541,9 +482,9 @@ Test parameters are stored as the dict:
    - If the data has multiple columns, limits may be set for each of the column.
     That way list length must be equal to number of columns. For example, for the 3-dimensional vector
     with corresponding standard deviation vectors [std_1, std_2, std_3]:
-    limits = [**value_1**, **value_2**, **value_3**] will be processed as: <br />
-    std_1 < **value_1**,<br />
-    std_2 < **value_2**,<br />
+    limits = [**value_1**, **value_2**, **value_3**] will be processed as: 
+    std_1 < **value_1**,
+    std_2 < **value_2**,
     std_2 < **value_3**.
 - 'n_std' : int, default 3
     The parameter specifies the number of standard deviations to be less then limits.
@@ -564,9 +505,9 @@ Test parameters are stored as the dict:
    - If the data has multiple columns, limits may be set for each of the column.
     That way list length must be equal to number of columns. For example, for the 3-dimensional vector that
     containes v1, v2, v3 columns and numbers N simulations:
-    [[**limit_lower**, **limit_upper**], **value_1**, **value_2**] will be processed as: <br />
-    **limit_lower** < v1 < **limit_upper**, <br />
-    -**value_1** < v2 < **value_1**, <br />
+    [[**limit_lower**, **limit_upper**], **value_1**, **value_2**] will be processed as: 
+    **limit_lower** < v1 < **limit_upper**, 
+    -**value_1** < v2 < **value_1**, 
     -**value_2** < v3 < **value_2** for each of the N simulations.
 - 'nan_passed' : bool, default True
     If True, the NaN values will pass the test.
@@ -599,19 +540,18 @@ Test parameters are stored as the dict:
 
 </details>
 
+#### Parameters
+
+name|type|description
+--|--|--
+|**```tests_method```**|**dict**|Keys define test methods and corresponding test parameters are stored as values.
 #### Returns
 
-**```log```** :&ensp;**[CitrosDict](../data_access/citros_dict.md#citros_data_analysis.data_access.citros_dict.CitrosDict "citros_data_analysis.data_access.citros_dict.CitrosDict")**
-:   Dictionary with the test results.
-
-
-**```tables```** :&ensp;**dict**
-:   Dictionary with test methods as keys and pandas.DataFrame table with results of the test as values.
-
-
-**```figures```** :&ensp;**dict**
-:   Dictionary with test methods as keys and matplotlib.figure.Figure with test results as values.
-
+name|type|description
+--|--|--
+|**```log```**|**[CitrosDict](../data_access/citros_dict.md#citros_data_analysis.data_access.citros_dict.CitrosDict "citros_data_analysis.data_access.citros_dict.CitrosDict")**|Dictionary with the test results.
+|**```tables```**|**dict**|Dictionary with test methods as keys and pandas.DataFrame table with results of the test as values.
+|**```figures```**|**dict**|Dictionary with test methods as keys and matplotlib.figure.Figure with test results as values.
 #### See Also
 
 **[Validation.std_bound_test()](#citros_data_analysis.validation.validation.Validation.std_bound_test "citros_data_analysis.validation.validation.Validation.std_bound_test")**, **[Validation.mean_test()](#citros_data_analysis.validation.validation.Validation.mean_test "citros_data_analysis.validation.validation.Validation.mean_test")**, **[Validation.sid_test()](#citros_data_analysis.validation.validation.Validation.sid_test "citros_data_analysis.validation.validation.Validation.sid_test")**, **[Validation.norm_test()](#citros_data_analysis.validation.validation.Validation.norm_test "citros_data_analysis.validation.validation.Validation.norm_test")**
@@ -769,31 +709,8 @@ def sid_test(
 
 Test whether all simulations are within the given limits.
 
-#### Parameters
-
-**```limits```** :&ensp;**float** or **list**, default **1.0**
-:   Limit to test simulation results. Limits may be set as:
-
-
-   - one value and it will be treated as an +- interval: value -> [-value, value];
-   - list of lower and upper limits: [lower_limit, upper_limit];
-   - If the data has multiple columns, limits may be set for each of the column.
-    That way list length must be equal to number of columns. For example, for the 3-dimensional vector that
-    containes v1, v2, v3 columns and numbers N simulations:
-    [[**limit_lower**, **limit_upper**], **value_1**, **value_2**] will be processed as: <br />
-    **limit_lower** < v1 < **limit_upper**, <br />
-    -**value_1** < v2 < **value_1**, <br />
-    -**value_2** < v3 < **value_2** for each of the N simulations.
-
-**```nan_passed```** :&ensp;**bool**, default **True**
-:   If True, the NaN values will pass the test.
-
-#### Returns
-
-**```log```** :&ensp;**[CitrosDict](../data_access/citros_dict.md#citros_data_analysis.data_access.citros_dict.CitrosDict "citros_data_analysis.data_access.citros_dict.CitrosDict")**
-:   Dictionary with the following structure:
-
-
+The output is:
+- dictionary with summary of the test results, with the following structure:
 ```python
 {
 'test_param' : list,                # initial tests parameters
@@ -807,13 +724,25 @@ column_name:                        # label of the column, str
             {x_index: x_value}}},   # indexes and values of the x coordinate of the points 
 }                                   #   that fail the test {int: {int: float}}
 ```
-**```table```** :&ensp;**pandas.DataFrame**
-:   Table with test results for each point, indicating whether it passes or fails the test.
 
+- table that provides test results for for each point of the simulations, 
+using a boolean value to indicate whether it passed or failed the test;
 
-**```fig```** :&ensp;**matplotlib.figure.Figure**
-:   Figure with plotted simulations, mean values and limit boundaries.
+- figure with plotted simulations, mean values and limit boundaries.
 
+#### Parameters
+
+name|type|description
+--|--|--
+|**```limits```**|**float** or **list**, default **1.0**|Limit to test simulation results. Limits may be set as:<br />      &#8226; one value and it will be treated as an +- interval: value -> [-value, value];<br />      &#8226; list of lower and upper limits: [lower_limit, upper_limit];<br />      &#8226; If the data has multiple columns, limits may be set for each of the column.<br />    That way list length must be equal to number of columns. For example, for the 3-dimensional vector that containes v1, v2, v3 columns and numbers N simulations:<br />    [[**limit_lower**, **limit_upper**], **value_1**, **value_2**] will be processed as: <br />    **limit_lower** < v1 < **limit_upper**, <br />    -**value_1** < v2 < **value_1**, <br />    -**value_2** < v3 < **value_2** for each of the N simulations.
+|**```nan_passed```**|**bool**, default **True**|If True, the NaN values will pass the test.
+#### Returns
+
+name|type|description
+--|--|--
+|**```log```**|**[CitrosDict](../data_access/citros_dict.md#citros_data_analysis.data_access.citros_dict.CitrosDict "citros_data_analysis.data_access.citros_dict.CitrosDict")**|Dictionary with validation test results.
+|**```table```**|**pandas.DataFrame**|Table with test results for each point of the simulations, indicating whether it passes or fails the test.
+|**```fig```**|**matplotlib.figure.Figure**|Figure with plotted simulations, mean values and limit boundaries.
 
 </details>
 <details>
@@ -941,35 +870,8 @@ def std_bound_test(
 
 Test whether **n_std**-standard deviation boundary is within the given limits.
 
-#### Parameters
-
-**```limits```** :&ensp;**float** or **list**, default **1.0**
-:   Limit to test standard deviation boundary. Limits may be set as:
-
-
-   - one value and it will be treated as an +- interval: value -> [-value, value];
-   - list of lower and upper limits: [lower_limit, upper_limit];
-   - If the data has multiple columns, limits may be set for each of the column.
-    That way list length must be equal to number of columns. For example, for the 3-dimensional vector
-    with corresponding standard deviation boundaries [std_bound_1, std_bound_2, std_bound_3]:
-    [[**limit_lower**, **limit_upper**], **value_1**, **value_2**] will be processed as: <br />
-    **limit_lower** < std_bound_1 < **limit_upper**,<br />
-    -**value_1** < std_bound_2 < **value_1**,<br />
-    -**value_2** < std_bound_2 < **value_2**.
-
-**```n_std```** :&ensp;**int**, default **3**
-:   The parameter specifies the number of standard deviations to be within limits.
-
-
-**```nan_passed```** :&ensp;**bool**, default **True**
-:   If True, the NaN values of standard deviation will pass the test.
-
-#### Returns
-
-**```log```** :&ensp;**[CitrosDict](../data_access/citros_dict.md#citros_data_analysis.data_access.citros_dict.CitrosDict "citros_data_analysis.data_access.citros_dict.CitrosDict")**
-:   Dictionary with the following structure:
-
-
+The output is:
+- dictionary with summary of the test results, with the following structure:
 ```python
 {
 'test_param' : list,          # initial tests parameters
@@ -983,32 +885,33 @@ column_name:                  # label of the column, str
         {x_index: x_value}}   # indexes and values of the x coordinate of the points
 }                             #   that have NaN (Not a Number) values for standard deviation
 ```
-**```table```** :&ensp;**pandas.DataFrame**
-:   Table with test results for each of the standard deviation boundary point,
-     indicating whether it passes or fails the test.
+- table that provides test results for each standard deviation boundary point, 
+using a boolean value to indicate whether it passed or failed the test;
 
+- figure with plotted simulations, mean values, standard deviation boundaries and limit boundaries;
 
-**```fig```** :&ensp;**matplotlib.figure.Figure**
-:   Figure with plotted simulations, mean values, standard deviation boundaries and limit boundaries.
+#### Parameters
 
+name|type|description
+--|--|--
+|**```limits```**|**float** or **list**, default **1.0**|Limit to test standard deviation boundary. Limits may be set as:<br />      &#8226; one value and it will be treated as an +- interval: value -> [-value, value];<br />      &#8226; list of lower and upper limits: [lower_limit, upper_limit];<br />      &#8226; If the data has multiple columns, limits may be set for each of the column.<br />    That way list length must be equal to number of columns. For example, for the 3-dimensional vector with corresponding standard deviation boundaries [std_bound_1, std_bound_2, std_bound_3]:<br />    [[**limit_lower**, **limit_upper**], **value_1**, **value_2**] will be processed as: <br />    **limit_lower** < std_bound_1 < **limit_upper**,<br />    -**value_1** < std_bound_2 < **value_1**,<br />    -**value_2** < std_bound_2 < **value_2**.
+|**```n_std```**|**int**, default **3**|The parameter specifies the number of standard deviations to be within limits.
+|**```nan_passed```**|**bool**, default **True**|If True, the NaN values of standard deviation will pass the test.
+#### Returns
+
+name|type|description
+--|--|--
+|**```log```**|**[CitrosDict](../data_access/citros_dict.md#citros_data_analysis.data_access.citros_dict.CitrosDict "citros_data_analysis.data_access.citros_dict.CitrosDict")**|Dictionary with validation test results.
+|**```table```**|**pandas.DataFrame**|Table with test results for each of the standard deviation boundary point, indicating whether it passes or fails the test.
+|**```fig```**|**matplotlib.figure.Figure**|Figure with plotted simulations, mean values, standard deviation boundaries and limit boundaries.
 #### Other Parameters
 
-**```std_color```** :&ensp;**str**, default `'b'`
-:   Color for dispalying standard deviations, red by default.
-
-
-**```connect_nan_std```** :&ensp;**bool**, default **False**
-:   If True, all non-NaN values in standard deviation boundary line are connected, resulting in a continuous line. 
-    Otherwise, breaks are introduced in the standard deviation line whenever NaN values are encountered.
-
-
-**```std_area```** :&ensp;**bool**, default **False**
-:   Fill area within **n_std**-standard deviation lines with color.
-
-
-**```std_lines```** :&ensp;**bool**, default **True**
-:   If False, remove standard deviation boundary lines.
-
+name|type|description
+--|--|--
+|**```std_color```**|**str**, default `'b'`|Color for dispalying standard deviations, blue by default.
+|**```connect_nan_std```**|**bool**, default **False**|If True, all non-NaN values in standard deviation boundary line are connected, resulting in a continuous line. <br />    Otherwise, breaks are introduced in the standard deviation line whenever NaN values are encountered.
+|**```std_area```**|**bool**, default **False**|Fill area within **n_std**-standard deviation lines with color.
+|**```std_lines```**|**bool**, default **True**|If False, remove standard deviation boundary lines.
 #### See Also
 
 **pandas.DataFrame**, **pandas.Series**
@@ -1149,34 +1052,8 @@ def std_test(
 
 Test whether **n_std**-standard deviation does not exceed the given limits.
 
-#### Parameters
-
-**```limits```** :&ensp;**float** or **list**, default **1.0**
-:   Limit to test standard deviation. Limits may be set as:
-
-
-   - one value;
-   - If the data has multiple columns, limits may be set for each of the column.
-    That way list length must be equal to number of columns. For example, for the 3-dimensional vector
-    with corresponding standard deviation vectors [std_1, std_2, std_3]:
-    limits = [**value_1**, **value_2**, **value_3**] will be processed as: <br />
-    std_1 < **value_1**,<br />
-    std_2 < **value_2**,<br />
-    std_2 < **value_3**.
-
-**```n_std```** :&ensp;**int**, default **3**
-:   The parameter specifies the number of standard deviations to be less then limits.
-
-
-**```nan_passed```** :&ensp;**bool**, default **True**
-:   If True, the NaN values of standard deviation will pass the test.
-
-#### Returns
-
-**```log```** :&ensp;**[CitrosDict](../data_access/citros_dict.md#citros_data_analysis.data_access.citros_dict.CitrosDict "citros_data_analysis.data_access.citros_dict.CitrosDict")**
-:   Dictionary with the following structure:
-
-
+The output is:
+- dictionary with summary of the test results, with the following structure:
 ```python
 {
 'test_param' : list,          # initial tests parameters
@@ -1190,32 +1067,34 @@ column_name:                  # label of the column, str
         {x_index: x_value}}   # indexes and values of the x coordinate of the points
 }                             #   that have NaN (Not a Number) values for standard deviation
 ```
-**```table```** :&ensp;**pandas.DataFrame**
-:   Table with test results for each of the standard deviation boundary point,
-     indicating whether it passes or fails the test.
 
+- table that provides test results for each standard deviation point, 
+using a boolean value to indicate whether it passed or failed the test.
 
-**```fig```** :&ensp;**matplotlib.figure.Figure**
-:   Figure with plotted simulations, mean values, standard deviation boundaries and limit boundaries.
+- figure with standard deviations and limit boundaries.
 
+#### Parameters
+
+name|type|description
+--|--|--
+|**```limits```**|**float** or **list**, default **1.0**|Limit to test standard deviation. Limits may be set as:<br />      &#8226; one value;<br />      &#8226; If the data has multiple columns, limits may be set for each of the column.<br />    That way list length must be equal to number of columns. <br />    For example, in case of 3-dimensional vector with corresponding standard deviation vector = [std_1, std_2, std_3], limits = [**value_1**, **value_2**, **value_3**] will be processed as:<br />    std_1 < **value_1**,<br />    std_2 < **value_2**,<br />    std_2 < **value_3**.
+|**```n_std```**|**int**, default **3**|The parameter specifies the number of standard deviations to be less then limits.
+|**```nan_passed```**|**bool**, default **True**|If True, the NaN values of standard deviation will pass the test.
+#### Returns
+
+name|type|description
+--|--|--
+|**```log```**|**[CitrosDict](../data_access/citros_dict.md#citros_data_analysis.data_access.citros_dict.CitrosDict "citros_data_analysis.data_access.citros_dict.CitrosDict")**|Dictionary with validation test results.
+|**```table```**|**pandas.DataFrame**|Table with test results for each of the standard deviation point, indicating whether it passes or fails the test.
+|**```fig```**|**matplotlib.figure.Figure**|Figure with standard deviations and limit boundaries.
 #### Other Parameters
 
-**```std_color```** :&ensp;**str**, default `'b'`
-:   Color for dispalying standard deviations, red by default.
-
-
-**```connect_nan_std```** :&ensp;**bool**, default **False**
-:   If True, all non-NaN values in standard deviation boundary line are connected, resulting in a continuous line. 
-    Otherwise, breaks are introduced in the standard deviation line whenever NaN values are encountered.
-
-
-**```std_area```** :&ensp;**bool**, default **False**
-:   Fill area within **n_std**-standard deviation lines with color.
-
-
-**```std_lines```** :&ensp;**bool**, default **True**
-:   If False, remove standard deviation boundary lines.
-
+name|type|description
+--|--|--
+|**```std_color```**|**str**, default `'b'`|Color for dispalying standard deviation, blue by default.
+|**```connect_nan_std```**|**bool**, default **False**|If True, all non-NaN values in standard deviation line are connected, resulting in a continuous line. <br />    Otherwise, breaks are introduced in the standard deviation line whenever NaN values are encountered.
+|**```std_area```**|**bool**, default **False**|Fill area within **n_std**-standard deviation line with color.
+|**```std_lines```**|**bool**, default **True**|If False, remove standard deviation line.
 #### See Also
 
 **pandas.DataFrame**, **pandas.Series**

@@ -25,12 +25,7 @@ To connect to the database [**CitrosDB**](../documentation/data_access/citros_db
 >>> citros = da.CitrosDB()
 ```
 
-If you are working in [web](https://citros.io/), you usually do not need to pass any arguments.
-If you are working with cloud data locally using [CLI](https://citros.io/doc/docs_cli) and properly [logged in CITROS](https://citros.io/doc/docs_tutorials#logging-in), you typically need to specify the `database` (your organization) you are going to work with:
-
-```python
->>> citros = da.CitrosDB(database = 'my_database')
-```
+When working in the [web](https://citros.io/) or with cloud data locally using [CITROS CLI](https://citros.io/doc/docs_cli), you typically don't need to pass any arguments. In the latter case, you need to be [logged in](https://citros.io/doc/docs_tutorials#logging-in) first.
 
 <details>
   <summary>Advanced CitrosDB parameters</summary>
@@ -44,6 +39,8 @@ If no parameters are passed, the following predefined ENV parameters are used:
  - batch: 'bid', 
  - port: 'PG_PORT', or '5432' if 'PG_PORT' is not specified,
  - sid: 'CITROS_SIMULATION_RUN_ID'
+
+If user, password, database ENV parameters are not defined, they are tried to set using 'auth' file.
 
 Say, we would like to connect to a database "myDatabase" with the user name "user" and password "myPassword", to work with batch "batchName" which is located in the schema "mySchema", using port '5432':
 

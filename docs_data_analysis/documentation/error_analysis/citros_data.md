@@ -45,51 +45,25 @@ and all other additional columns - 'addData'. Both 'data' and 'addData' attribut
 
 #### Parameters
 
-**```db```** :&ensp;**DataFrame** or **tuple** of **two DataFrames** or **None**, optional
-:   If **db** is a DataFrame, column **data_label** is supposed to be a data sample and 
-    set to a 'data' attribute of a CitrosData object.
-    The additional information about data may be extracted from columns labeled as:
-        'type_name' - specify type of the data, set to the 'type' attribute,
-        'units' - data units, set to the 'units' attribute.
-        'parameter_label' - column with dict, specifying the parameters.
-            If present, the first row is set as parameters.
-    All other columns are assigned to 'addData' attribute.
+name|type|description
+--|--|--
+|**```db```**|**DataFrame** or **tuple** of **two DataFrames** or **None**, optional|If **db** is a DataFrame, column **data_label** is supposed to be a data sample and set to a 'data' attribute of a CitrosData object.<br />    The additional information about data may be extracted from columns labeled as:<br />        'type_name' - specify type of the data, set to the 'type' attribute,<br />        'units' - data units, set to the 'units' attribute.<br />        'parameter_label' - column with dict, specifying the parameters, if it is presented, the first row is set as parameters.<br />    All other columns are assigned to 'addData' attribute.
+|**```type_name```**|**str**, optional|Specifies type of the data.
+|**```units```**|**str**, optional|Specifies units of the data.
+|**```data_label```**|**str** or **list** of **str**, default `'data'`|Specifies label of the data in DataFrame
+|**```parameters```**|**dict**|Parameters. Mostly used in regression analysis.
+|**```parameter_label```**|**str** or **list** of **str**|Specify label of a column in a pandas DataFrame, where the parameters are written as a dict.<br />    Used only if **db** is a pandas DataFrame and **parameters** is not specified.
+|**```sid_label```**|**str**, default `'sid'`|label of the sim run id column (usually 'sim_run_id' or 'sid').
+|**```omit_nan_rows```**|**bool**, default **None**|If True, any rows containing one or more NaN values will be excluded from the analysis, see **Notes**.
+|**```inf_vals```**|**None** or **float**, default **1e308**|If specified, all values from **data_label** column that exceed the provided value in absolute terms <br />    will be treated as NaN values. If this functionality is not required, set inf_vals = None.
+#### Notes
 
-
-**```type_name```** :&ensp;**str**, optional
-:   Specifies type of the data.
-
-
-**```units```** :&ensp;**str**, optional
-:   Specifies units of the data.
-
-
-**```data_label```** :&ensp;**str** or **list** of **str**, default `'data'`
-:   Specifies label of the data in DataFrame
-
-
-**```parameters```** :&ensp;**dict**
-:   Parameters. Mostly used in regression analysis.
-
-
-**```parameter_label```** :&ensp;**str** or **list** of **str**
-:   Specify label of a column in a pandas DataFrame, where the parameters are written as a dict.
-    Used only if **db** is a pandas DataFrame and **parameters** is not specified.
-
-
-**```sid_label```** :&ensp;**str**
-:   label of the sim run id column (usually 'sim_run_id' or 'sid').
-
-
-**```omit_nan_rows```** :&ensp;**bool**
-:   If True, any rows containing one or more NaN values will be excluded from the analysis. 
-    For multidimensional vectors, this means that the mean and covariance matrices will only be calculated 
-    for rows that do not contain NaN values in all columns of the vector.
-    Otherwise, if omit_nan_rows is set to False, columns are treated individually. 
-    The mean values are computed over non-NaN values within each column, and the elements of the covariance 
-    matrices are calculated pairwise, for rows without NaN values.
-    For example, for 3-dimensional vector:
-
+If **omit_nan_rows** set True in case of multidimensional vectors, the mean and covariance matrices will be calculated 
+only for rows that do not contain NaN values in all columns of the vector.
+Otherwise, if **omit_nan_rows** is set to False, columns are treated individually.
+The mean values are computed over non-NaN values within each column, and the elements of the covariance 
+matrices are calculated pairwise, for rows without NaN values.
+For example, for 3-dimensional vector:
 
 ```code
 +----+-----+-----+
@@ -105,9 +79,9 @@ and all other additional columns - 'addData'. Both 'data' and 'addData' attribut
 +----+-----+-----+
 ```
 
-   if **omit_nan_rows** set True, the first and the second rows will be omitted from all calculations, while 
-   in case **omit_nan_rows** set False, NaN values will be omitted only when the column is used in calculations. 
-   For example, for mean calculations difference is the follows:
+if **omit_nan_rows** set True, the first and the second rows will be omitted from all calculations, while 
+in case **omit_nan_rows** set False, NaN values will be omitted only when the column is used in calculations. 
+For example, for mean calculations difference is the follows:
 
 ```code
     omit_nan_rows = True   omit_nan_rows = False
@@ -116,13 +90,7 @@ and all other additional columns - 'addData'. Both 'data' and 'addData' attribut
 +=====+===+=====+      +=====+===+===+
 | 3.5 | 6 | 6.5 |      | 2.5 | 5 | 6 |
 +-----+---+-----+      +-----+---+---+
-```     
-
-**```inf_vals```** :&ensp;**None** or **float**, default **1e308**
-:   If specified, all values from **data_label** column that exceed the provided value in absolute terms 
-    will be treated as NaN values. If this functionality is not required, set inf_vals = None.
-
-
+```
 </details>
 
 
@@ -154,13 +122,10 @@ Add column to 'addData' attribute.
 
 #### Parameters
 
-**```column```** :&ensp;`array-like object`
-:   Column to add.
-
-
-**```column_label```** :&ensp;**str**
-:   Label of the new column in 'addData'.
-
+name|type|description
+--|--|--
+|**```column```**|`array-like object`|Column to add.
+|**```column_label```**|**str**|Label of the new column in 'addData'.
 
 </details>
 
@@ -197,32 +162,18 @@ with id values from binning as the first level and 'sid' as the second one.
 
 #### Parameters
 
-**```n_bins```** :&ensp;**int**, default **10**
-:   Number of bins.
-
-
-**```param_label```** :&ensp;**str**, default `'rid'`
-:   Label of column on the basis of which the indixes will be calculated.
-
-
-**```min_lim```** :&ensp;**float**
-:   The minimum value of the range for binning, **min_lim** < **max_lim**.
-    If None then the minimum value of the entire range is selected.
-
-
-**```max_lim```** :&ensp;**float**
-:   The maximum value of the range for binning, **min_lim** < **max_lim**.
-    If None then the maximum value of the entire range is selected.
-
-
-**```show_fig```** :&ensp;**bool**, default **False**
-:   If the histogram that represents the distibution of the values in **param_label** should be shown.
-
+name|type|description
+--|--|--
+|**```n_bins```**|**int**, default **10**|Number of bins.
+|**```param_label```**|**str**, default `'rid'`|Label of column on the basis of which the indixes will be calculated.
+|**```min_lim```**|**float**|The minimum value of the range for binning, **min_lim** < **max_lim**.<br />    If None then the minimum value of the entire range is selected.
+|**```max_lim```**|**float**|The maximum value of the range for binning, **min_lim** < **max_lim**.<br />    If None then the maximum value of the entire range is selected.
+|**```show_fig```**|**bool**, default **False**|If the histogram that represents the distibution of the values in **param_label** should be shown.
 #### Returns
 
-&ensp;**[CitrosData](#citros_data_analysis.error_analysis.citros_data.CitrosData "citros_data_analysis.error_analysis.citros_data.CitrosData")**
-:   New CitrosData object with two levels of indexes in 'addData' and 'data' attributes.
-
+name|type|description
+--|--|--
+|**```out```**|**[CitrosData](#citros_data_analysis.error_analysis.citros_data.CitrosData "citros_data_analysis.error_analysis.citros_data.CitrosData")**|New CitrosData object with two levels of indexes in 'addData' and 'data' attributes.
 
 </details>
 <details>
@@ -299,9 +250,9 @@ Delete column from 'addData' attribute.
 
 #### Parameters
 
-**```column_label```** :&ensp;**str**
-:   Label of the column to delete .
-
+name|type|description
+--|--|--
+|**```column_label```**|**str**|Label of the column to delete .
 
 </details>
 
@@ -326,9 +277,9 @@ Delete parameter labeled **key** and associated value.
 
 #### Parameters
 
-**```key```** :&ensp;**str**
-:   Label of the parameter to remove.
-
+name|type|description
+--|--|--
+|**```key```**|**str**|Label of the parameter to remove.
 
 </details>
 
@@ -353,24 +304,14 @@ Return table with statistics for CitrosData object.
 
 #### Parameters
 
-**```return_format```** :&ensp;`{'pandas', 'citrosStat',}`, default `'pandas'`
-:   Returning format.
-
+name|type|description
+--|--|--
+|**```return_format```**|`{'pandas', 'citrosStat'}`, default `'pandas'`|Returning format.
 #### Returns
 
-**```Statistics```** :&ensp;**pandas.DataFrame** or **[CitrosStat](citros_stat.md#citros_data_analysis.error_analysis.citros_stat.CitrosStat "citros_data_analysis.error_analysis.citros_stat.CitrosStat")**
-:   Collected statistics.
-    If **return_format** is 'pandas', then returns pandas.DataFrame with the following columns:
-
-
-   - (1) the independent variable column, its label matches **x_label** attribute; 
-   - (2) column with mean values;
-   - (3) column with the covariance matrixes; 
-   - (4) column with the square roots of the diagonal elements of the covariance matrix: ( sqrt(s1), sqrt(s2), sqrt(s3) ), 
-     where s1,s2,s3 - diagonal of the covariance matrix. <br />
-    If **return_format** is 'citrosStat', then returns CitrosStat object with 'x', 'mean', 'covar_matrix' and 'sigma' attributes,
-    that corresponds to (1)-(4) items, but in the form of pandas.DataFrames.
-
+name|type|description
+--|--|--
+|**```Statistics```**|**pandas.DataFrame** or **[CitrosStat](citros_stat.md#citros_data_analysis.error_analysis.citros_stat.CitrosStat "citros_data_analysis.error_analysis.citros_stat.CitrosStat")**|Collected statistics.<br />    If **return_format** is 'pandas', then returns pandas.DataFrame with the following columns:<br />      &#8226; (1) the independent variable column, its label matches **x_label** attribute; <br />      &#8226; (2) column with mean values;<br />      &#8226; (3) column with the covariance matrixes; <br />      &#8226; (4) column with the square roots of the diagonal elements of the covariance matrix: ( sqrt(s1), sqrt(s2), sqrt(s3) ), <br />    where s1,s2,s3 - diagonal of the covariance matrix. <br />    <br />    If **return_format** is 'citrosStat', then returns CitrosStat object with 'x', 'mean', 'covar_matrix' and 'sigma' attributes,<br />    that corresponds to (1)-(4) items, but in the form of pandas.DataFrames.
 #### See Also
 
 **[CitrosData.bin_data()](#citros_data_analysis.error_analysis.citros_data.CitrosData.bin_data "citros_data_analysis.error_analysis.citros_data.CitrosData.bin_data")**, **[CitrosData.scale_data()](#citros_data_analysis.error_analysis.citros_data.CitrosData.scale_data "citros_data_analysis.error_analysis.citros_data.CitrosData.scale_data")**, **[CitrosData.show_statistics()](#citros_data_analysis.error_analysis.citros_data.CitrosData.show_statistics "citros_data_analysis.error_analysis.citros_data.CitrosData.show_statistics")**
@@ -547,29 +488,17 @@ with id values from scaling as the first level and 'sid' as the second one.
 
 #### Parameters
 
-**```n_points```** :&ensp;**int**, default **10**
-:   Number of points in a new scale, which will be used for interpolation.
-
-
-**```param_label```** :&ensp;**str**, default `'rid'`
-:   Label of the parameter to scale
-
-
-**```show_fig```** :&ensp;**bool**, default **False**
-:   If the figures with the results of interpolation should be shown.
-    If the 'sid' exceed 5, only first 5 will be shown.
-    If data consists of several vectors, for each of them the separate figure will be plotted.
-
-
-**```intr_kind```** :&ensp;**str**, default `'linear'`
-:   Type of the interpolation, see scipy.interpolate.interp1d.
-
+name|type|description
+--|--|--
+|**```n_points```**|**int**, default **10**|Number of points in a new scale, which will be used for interpolation.
+|**```param_label```**|**str**, default `'rid'`|Label of the parameter to scale
+|**```show_fig```**|**bool**, default **False**|If the figures with the results of interpolation should be shown.<br />    If the 'sid' exceed 5, only first 5 will be shown.<br />    If data consists of several vectors, for each of them the separate figure will be plotted.
+|**```intr_kind```**|**str**, default `'linear'`|Type of the interpolation, see scipy.interpolate.interp1d.
 #### Returns
 
-&ensp;**[CitrosData](#citros_data_analysis.error_analysis.citros_data.CitrosData "citros_data_analysis.error_analysis.citros_data.CitrosData")**
-:   CitrosData object with multiindexing: the first level stores ids of the points of the new scale, the second one - 'sid'.
-    Values of the new scale are stored in 'addData' attribute.
-
+name|type|description
+--|--|--
+|**```out```**|**[CitrosData](#citros_data_analysis.error_analysis.citros_data.CitrosData "citros_data_analysis.error_analysis.citros_data.CitrosData")**|CitrosData object with multiindexing: the first level stores ids of the points of the new scale, the second one - 'sid'.<br />    Values of the new scale are stored in 'addData' attribute.
 
 </details>
 <details>
@@ -648,17 +577,11 @@ Set parameter value to a CitrosData object.
 
 #### Parameters
 
-**```key```** :&ensp;**str**
-:   Label of the parameter.
-
-
-**```value```** :&ensp;**int** or **float**
-:   Parameter value.
-
-
-**```item```** :&ensp;**dict**
-:   Dictionary with parameters.
-
+name|type|description
+--|--|--
+|**```key```**|**str**|Label of the parameter.
+|**```value```**|**int** or **float**|Parameter value.
+|**```item```**|**dict**|Dictionary with parameters.
 
 </details>
 
@@ -699,86 +622,32 @@ is supposed to be plotted along x-axis and the data from **db2** is supposed to 
 
 #### Parameters
 
-**```db2```** :&ensp;**[CitrosData](#citros_data_analysis.error_analysis.citros_data.CitrosData "citros_data_analysis.error_analysis.citros_data.CitrosData")**
-:   Additional CitrosData object.
-
-
-**```x_col```** :&ensp;`int >=0` or **str**, optional
-:   If int - index of column to plot along x axis, >=0.
-    If str - label of the column to plot along y axis
-    If data is multidimensional, must be specified, otherwise data is supposed to be 1-dimensional.
-
-
-**```y_col```** :&ensp;`int >=0`  or **str**, optional
-:   If int - index of column to plot along y axis, >=0.
-    If str - label of the column to plot along y axis
-    If data is multidimensional, must be specified, otherwise data is supposed to be 1-dimensional.
-
-
-**```slice_id```** :&ensp;**int**
-:   id of the slice.
-
-
-**```slice_val```** :&ensp;**float**
-:   Value, for which the nearest slice_id is search.
-    Used only if slice_id is None.
-
-
-**```n_std```** :&ensp;**list** or **int**, default **3**
-:   Radius or list of radii of the confidence ellipses in sigmas, 3 by default.
-
-
-**```bounding_error```** :&ensp;**bool**, default **False**
-:   If the bounding error should be depicted.
-
-
-**```fig```** :&ensp;**matplotlib.figure.Figure**, optional
-:   figure to plot on. If None, then the new one is created.
-
-
+name|type|description
+--|--|--
+|**```db2```**|**[CitrosData](#citros_data_analysis.error_analysis.citros_data.CitrosData "citros_data_analysis.error_analysis.citros_data.CitrosData")**|Additional CitrosData object.
+|**```x_col```**|`int >=0` or **str**, optional|      &#8226; If **int** - index of column to plot along x axis, >=0.<br />      &#8226; If **str** - label of the column to plot along y axis<br />      &#8226; If data is multidimensional, must be specified, otherwise data is supposed to be 1-dimensional.
+|**```y_col```**|`int >=0`  or **str**, optional|      &#8226; If **int** - index of column to plot along y axis, >=0.<br />      &#8226; If **str** - label of the column to plot along y axis<br />      &#8226; If data is multidimensional, must be specified, otherwise data is supposed to be 1-dimensional.
+|**```slice_id```**|**int**|id of the slice.
+|**```slice_val```**|**float**|Value, for which the nearest slice_id is search.<br />    Used only if slice_id is None.
+|**```n_std```**|**list** or **int**, default **3**|Radius or list of radii of the confidence ellipses in sigmas, 3 by default.
+|**```bounding_error```**|**bool**, default **False**|If the bounding error should be depicted.
+|**```fig```**|**matplotlib.figure.Figure**, optional|figure to plot on. If None, then the new one is created.
 return_fig : bool, default False.
     If the fig, ax should be returned.
-**```display_id```** :&ensp;**bool**, default **True**
-:   Whether to print the pair of **slice_id** **slice_val** or not.
-
-
-**```return_ellipse_param```** :&ensp;**bool**, default **False**
-:   If True, returns ellipse parameters.
-
+|**```display_id```**|**bool**, default **True**|Whether to print the pair of **slice_id** **slice_val** or not.
+|**```return_ellipse_param```**|**bool**, default **False**|If True, returns ellipse parameters.
 #### Other Parameters
 
-**```kwargs```** :&ensp;**dict**, optional
-:   see matplotlib.patches.Ellipse.
-
+name|type|description
+--|--|--
+|**```kwargs```**|**dict**, optional|see matplotlib.patches.Ellipse.
 #### Returns
 
-**```fig```** :&ensp;**matplotlib.figure.Figure**
-:   if **return_fig** set to True
-
-
-**```ax```** :&ensp;**matplotlib.axes.Axes**
-:   if **return_fig** set to True
-
-
-**```ellipse_param```** :&ensp;**dict** or **list** of **dict**
-:   Ellipse parameters if **return_ellipse_param** set True.<br />
-    Parameters of the ellipse:
-
-
-  - x : float
-      x coordinate of the center.
-  - y : float
-      y coordinate of the center.
-  - width : float
-      Total ellipse width (diameter along the longer axis).
-  - height : float
-      Total ellipse height (diameter along the shorter axis).
-  - alpha : float
-      Angle of rotation, in degrees anti-clockwise from the minor axis.<br />
-    If bounding_error set True:
-  - bounding_error : float
-      Radius of the error circle.
-
+name|type|description
+--|--|--
+|**```fig```**|**matplotlib.figure.Figure**|if **return_fig** set to True
+|**```ax```**|**matplotlib.axes.Axes**|if **return_fig** set to True
+|**```ellipse_param```**|**dict** or **list** of **dict**|Ellipse parameters if **return_ellipse_param** set True.<br />    Parameters of the ellipse:<br />      &#8226; x : float - x coordinate of the center.<br />      &#8226; y : float - y coordinate of the center.<br />      &#8226; width : float - total ellipse width (diameter along the longer axis).<br />      &#8226; height : float - total ellipse height (diameter along the shorter axis).<br />      &#8226; alpha : float - angle of rotation, in degrees anti-clockwise from the minor axis.<br /><br />    If bounding_error set True:<br />      &#8226; bounding_error : float - radius of the error circle.
 
 </details>
 <details>
@@ -860,52 +729,23 @@ Collect statistics for CitrosData object and plot it.
 
 #### Parameters
 
-**```fig```** :&ensp;**matplotlib.figure.Figure**
-:   figure to plot on. If None, the new one will be created.
-
-
-**```show_fig```** :&ensp;**bool**
-:   If the fugure should be shown, True by default.
-
-
-**```return_fig```** :&ensp;**bool**
-:   If the figure parameters fig, ax should be returned; 
-    fig is matplotlib.figure.Figure and ax is matplotlib.axes.Axes
-
-
-**```n_std```** :&ensp;**int**, default **3**
-:   Error interval to display in standard deviations.
-
-
-**```fig_title```** :&ensp;**str**, default `'Statistics'`
-:   Title of the figure.
-
-
-**```std_color```** :&ensp;**str**, default `'r'`
-:   Color for dispalying standard deviations, red by default.
-
-
-**```connect_nan_std```** :&ensp;**bool**, default **True**
-:   If True, all non-NaN values in standard deviation boundary line are connected, resulting in a continuous line. 
-    Otherwise, breaks are introduced in the standard deviation line whenever NaN values are encountered.
-
-
-**```std_area```** :&ensp;**bool**, default **False**
-:   Fill area within **n_std**-standard deviation lines with color.
-
-
-**```std_lines```** :&ensp;**bool**, default **True**
-:   If False, remove standard deviation boundary lines.
-
+name|type|description
+--|--|--
+|**```fig```**|**matplotlib.figure.Figure**|figure to plot on. If None, the new one will be created.
+|**```show_fig```**|**bool**|If the fugure should be shown, True by default.
+|**```return_fig```**|**bool**|If the figure parameters fig, ax should be returned; <br />    fig is matplotlib.figure.Figure and ax is matplotlib.axes.Axes
+|**```n_std```**|**int**, default **3**|Error interval to display in standard deviations.
+|**```fig_title```**|**str**, default `'Statistics'`|Title of the figure.
+|**```std_color```**|**str**, default `'r'`|Color for dispalying standard deviations, red by default.
+|**```connect_nan_std```**|**bool**, default **True**|If True, all non-NaN values in standard deviation boundary line are connected, resulting in a continuous line. <br />    Otherwise, breaks are introduced in the standard deviation line whenever NaN values are encountered.
+|**```std_area```**|**bool**, default **False**|Fill area within **n_std**-standard deviation lines with color.
+|**```std_lines```**|**bool**, default **True**|If False, remove standard deviation boundary lines.
 #### Returns
 
-**```fig```** :&ensp;**matplotlib.figure.Figure**
-:   if **return_fig** set to True
-
-
-**```ax```** :&ensp;**numpy.ndarray** of **matplotlib.axes.Axes**
-:   if **return_fig** set to True
-
+name|type|description
+--|--|--
+|**```fig```**|**matplotlib.figure.Figure**|if **return_fig** set to True
+|**```ax```**|**numpy.ndarray** of **matplotlib.axes.Axes**|if **return_fig** set to True
 #### See Also
 
 **[CitrosData.get_statistics()](#citros_data_analysis.error_analysis.citros_data.CitrosData.get_statistics "citros_data_analysis.error_analysis.citros_data.CitrosData.get_statistics")**, **[CitrosData.bin_data()](#citros_data_analysis.error_analysis.citros_data.CitrosData.bin_data "citros_data_analysis.error_analysis.citros_data.CitrosData.bin_data")**, **[CitrosData.scale_data()](#citros_data_analysis.error_analysis.citros_data.CitrosData.scale_data "citros_data_analysis.error_analysis.citros_data.CitrosData.scale_data")**
@@ -974,8 +814,8 @@ Concatenate **data** and **addData** attributes and return the result table as a
 
 #### Returns
 
-&ensp;**pandas.DataFrame**
-:   Concatenated table.
-
+name|type|description
+--|--|--
+|**```df```**|**pandas.DataFrame**|Concatenated table.
 
 </details>

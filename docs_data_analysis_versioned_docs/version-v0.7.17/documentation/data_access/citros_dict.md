@@ -99,9 +99,9 @@ Convert to json string.
 
 #### Returns
 
-&ensp;**str**
-:   json_str
-
+name|type|description
+--|--|--
+|**```out```**|**str**|json_str
 
 </details>
 <details>

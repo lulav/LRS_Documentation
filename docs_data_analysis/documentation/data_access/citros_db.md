@@ -44,60 +44,19 @@ CitrosDB object, that allows to get general information about the batch and make
 
 #### Parameters
 
-**```host```** :&ensp;**str**
-:   Database host adress.
-    If None, uses predefined ENV parameter "PG_HOST".
-
-
-**```user```** :&ensp;**str**
-:   User name.
-    If not specified, uses predefined ENV parameter "PG_USER" or try to define using .citros/auth.
-
-
-**```password```** :&ensp;**str**
-:   Password.
-    If not specified, uses predefined ENV parameter "PG_PASSWORD" or try to define using .citros/auth.
-
-
-**```database```** :&ensp;**str**
-:   Database name.
-    If not specified, uses predefined ENV parameter "PG_DATABASE".
-
-
-**```schema```** :&ensp;**str**
-:   If None, uses predefined ENV parameter "PG_SCHEMA".
-
-
-**```repo```** :&ensp;**str** or **int**, optional
-:   Repository name or id. If there are several repositories with names containing the provided word, the repository will not be set, 
-    try repo_info() or repo() methods.
-    If an integer value is provided, it determines the selection based on the order of repository creation (-1 for the last created, 0 for the first).
-
-
-**```batch```** :&ensp;**str** or **int**, optional
-:   Batch name or id. If there are several batches with names containing the provided word, the batch will not be set, 
-    try batch_info() or batch() methods.
-    If an integer value is provided, it determines the selection based on the order of batch creation (-1 for the last created, 0 for the first).
-    If not specified, uses predefined ENV parameter "bid".
-
-
-**```simulation```** :&ensp;**str**, optional
-:   Name of the simulation. If not specified, uses predefined ENV parameter "CITROS_SIMULATION".
-
-
-**```port```** :&ensp;**str**
-:   If None, uses predefined ENV parameter "PG_PORT".
-
-
-**```sid```** :&ensp;**int**, optional
-:   Default sid.
-    If not specified, uses predefined ENV parameter "CITROS_SIMULATION_RUN_ID" if it exists or None.
-
-
-**```debug_flag```** :&ensp;**bool**, default **False**
-:   If False, program will try to handle errors and only print error messages without code breaking.
-    If True, this will cause the code to abort if an error occurs.
-
+name|type|description
+--|--|--
+|**```host```**|**str**|Database host adress.<br />    If None, uses predefined ENV parameter "PG_HOST".
+|**```user```**|**str**|User name.<br />    If not specified, uses predefined ENV parameter "PG_USER" or try to define using 'auth' file.
+|**```password```**|**str**|Password.<br />    If not specified, uses predefined ENV parameter "PG_PASSWORD" or try to define using 'auth' file.
+|**```database```**|**str**|Database name.<br />    If not specified, uses predefined ENV parameter "PG_DATABASE" or try to define using 'auth' file.
+|**```schema```**|**str**|If None, uses predefined ENV parameter "PG_SCHEMA".
+|**```repo```**|**str** or **int**, optional|Repository name or id. If there are several repositories with names containing the provided word, the repository will not be set, <br />    try repo_info() or repo() methods.<br />    If an integer value is provided, it determines the selection based on the order of repository creation (-1 for the last created, 0 for the first).
+|**```batch```**|**str** or **int**, optional|Batch name or id. If there are several batches with names containing the provided word, the batch will not be set, <br />    try batch_info() or batch() methods.<br />    If an integer value is provided, it determines the selection based on the order of batch creation (-1 for the last created, 0 for the first).<br />    If not specified, uses predefined ENV parameter "bid".
+|**```simulation```**|**str**, optional|Name of the simulation. If not specified, uses predefined ENV parameter "CITROS_SIMULATION".
+|**```port```**|**str**|If None, uses predefined ENV parameter "PG_PORT".
+|**```sid```**|**int**, optional|Default sid.<br />    If not specified, uses predefined ENV parameter "CITROS_SIMULATION_RUN_ID" if it exists or None.
+|**```debug_flag```**|**bool**, default **False**|If False, program will try to handle errors and only print error messages without code breaking.<br />    If True, this will cause the code to abort if an error occurs.
 
 </details>
 
@@ -132,14 +91,14 @@ The value in 'rid' column is set as a minimum value among the 'rid' values of th
 
 #### Parameters
 
-**```n_avg```** :&ensp;**int**
-:   Number of messages to average.
-
+name|type|description
+--|--|--
+|**```n_avg```**|**int**|Number of messages to average.
 #### Returns
 
-&ensp;**[CitrosDB](#citros_data_analysis.data_access.citros_db.CitrosDB "citros_data_analysis.data_access.citros_db.CitrosDB")**
-:   CitrosDB with parameters set for sampling method 'avg'.
-
+name|type|description
+--|--|--
+|**```out```**|**[CitrosDB](#citros_data_analysis.data_access.citros_db.CitrosDB "citros_data_analysis.data_access.citros_db.CitrosDB")**|CitrosDB with parameters set for sampling method 'avg'.
 
 </details>
 <details>
@@ -178,32 +137,20 @@ Set batch to the CitrosDB object.
 
 #### Parameters
 
-**```batch```** :&ensp;**int** or **str**
-:   &nbsp;
-
-
-   - To set the batch with the exact id, provide the batch id as str.
-   - To set a batch using its name, provide the name as a string. If the provided string matches multiple batch names, check the whole list by **batch_info()** method.
-   - To query the first created / second created / etc batch, set **batch** = 0, **batch** = 1, etc.
-   - To query the the last created / the second-to-last created / etc batch, set **batch** = -1, **batch** = -2, etc.
-**```inplace```** :&ensp;**bool**, default **False**
-:   If True, set batch id to the current CitrosDB object, otherwise returns new CitrosDB object with
-    set batch id.
-
-
-**```exact_match```** :&ensp;**bool**, default **False**
-:   If True, search for the batch with exact match in name field. 
-    If False, searches for the occurance of the provided string within the name field.
-
-
-**```user```** :&ensp;**str**, default `'all'`
-:   Set **user** = 'me' to search only among batches that were created by you. 
-    To display batches that were created by another user, provide the user's email.
-
+name|type|description
+--|--|--
+|**```batch```**|**int** or **str**|      &#8226; To set the batch with the exact id, provide the batch id as str.<br />      &#8226; To set a batch using its name, provide the name as a string. If the provided string matches multiple batch names, check the whole list by batch_info() method.<br />      &#8226; To query the first created / second created / etc batch, set **batch** = 0, **batch** = 1, etc.<br />      &#8226; To query the the last created / the second-to-last created / etc batch, set **batch** = -1, **batch** = -2, etc.
+|**```inplace```**|**bool**, default **False**|If True, set batch id to the current CitrosDB object, otherwise returns new CitrosDB object with<br />    set batch id.
+|**```exact_match```**|**bool**, default **False**|If True, search for the batch with exact match in name field. <br />    If False, searches for the occurance of the provided string within the name field.
+|**```user```**|**str**, default `'all'`|Set **user** = 'me' to search only among batches that were created by you. <br />    To display batches that were created by another user, provide the user's email.
 #### Returns
 
-&ensp;**[CitrosDB](#citros_data_analysis.data_access.citros_db.CitrosDB "citros_data_analysis.data_access.citros_db.CitrosDB")**
-:   CitrosDB with set batch id or None, if inplace = True.
+name|type|description
+--|--|--
+|**```out```**|**[CitrosDB](#citros_data_analysis.data_access.citros_db.CitrosDB "citros_data_analysis.data_access.citros_db.CitrosDB")**|CitrosDB with set batch id or None, if **inplace** = True.
+#### See Also
+
+**[CitrosDB.batch_info()](#citros_data_analysis.data_access.citros_db.CitrosDB.batch_info "citros_data_analysis.data_access.citros_db.CitrosDB.batch_info")**
 
 
 </details>
@@ -282,84 +229,19 @@ and batch ids, list of corresponding simulation ids and date of creation as dict
 
 #### Parameters
 
-**```search```** :&ensp;**str, int** or **float**
-:   &nbsp;
-
-
-   - To search for the batch with the exact id, provide the batch id as str.
-   - To search by batch name or by words that occurred in the batch name, provide the corresponding word as str. For the exact match set **exact_match** = True.
-   - To query the first created / second created / etc batch, set **search** = 0, **search** = 1, etc.
-   - To query the the last created / the second-to-last created / etc batch, set **search** = -1, **search** = -2, etc.
-   To use another field for search, set the appropriate **search_by** parameter
-
-**```search_by```** :&ensp;**str**
-:   By default, the search is conducted based on name, batch id or ordinal number according to the creation time.
-    To perform a search using an another field, set the **search_by** parameter to one of the following
-    and provide the appropriate format to **search** field: <br />
-    Provide **search** as a str for the following fields (looking for the accurance of **search**, for the exact match set **exact_match** = True):
-
-
-   - 'simulation'
-   - 'tag'
-   - 'message'<br />
-    Search by the batch status: set **search_by** = 'status' and 
-    **search** = 'DONE', 'SCHEDULE', 'RUNNING', 'TERMINATING' or 'ERROR'<br />
-    Provide **search** as str that may containes date, time and timezone information, like: 'dd-mm-yyyy hh:mm:ss +hh:mm', 
-    or only date and time without timezone: 'dd-mm-yyyy hh:mm:ss', or only date: 'dd-mm-yyyy' / 'dd-mm' / 'dd'
-    or only time: 'hh:mm:ss' / 'hh:mm' with or without timezone. 
-    Any missing date information is automatically set to today's date, and any missing time information is set to 0:
-   - 'created_after'
-   - 'created_before'
-   - 'updated_after'
-   - 'updated_before'<br />
-   Provide **search** as an int for:
-   - 'parallelism'
-   - 'completions'
-   - 'memory'<br />
-   Provide **search** as float for:
-   - 'cpu'
-   - 'gpu'
-
-**```sid_status```** :&ensp;**str**, optional
-:   Select batches with the exact status of the simulation run: 'DONE', 'SCHEDULE', 'ERROR', 'CREATING', 'INIT', 'STARTING', 'RUNNING', 'TERMINATING' or 'STOPPING'.
-    If the status is not specified, returns batches with sids with all statuses.
-
-
-**```order_by```** :&ensp;**str** or **list** or **dict**
-:   To obtain the output in ascending order, provide one or more of the following options as either a single str or a as a list:
-
-
-   - 'name'
-   - 'batch_id' 
-   - 'simulation'
-   - 'status'
-   - 'tag' 
-   - 'message'
-   - 'created_at'
-   - 'updated_at'
-   - 'parallelism'
-   - 'completions'
-   - 'cpu'
-   - 'gpu'
-   - 'memory'<br />           
-    To specify whether to use descending or ascending order, create a dictionary where the keys correspond to the options mentioned above, 
-    and the values are either 'asc' for ascending or 'desc' for descending. For instance: {'name': 'asc', 'created_at': 'desc'}"
-
-**```exact_match```** :&ensp;**bool**, default **False**
-:   If True and **search** is str, looks for an exact match in the field defined by the 'search_by' parameter.
-    If **search_by** is not defined, search is perfomed by name.
-    If set to False, searches for the occurrences of the provided string within the field defined by the 'search_by' parameter.
-
-
-**```user```** :&ensp;**str**, default `'all'`
-:   Set **user** = 'me' to filter and display only the batches that belong to you. 
-    To display batches that were created by another user, provide the user's email.
-
+name|type|description
+--|--|--
+|**```search```**|**str, int** or **float**|      &#8226; To search for the batch with the exact id, provide the batch id as str.<br />      &#8226; To search by batch name or by words that occurred in the batch name, provide the corresponding word as str. For the exact match set **exact_match** = True.<br />      &#8226; To query the first created / second created / etc batch, set **search** = 0, **search** = 1, etc.<br />      &#8226; To query the the last created / the second-to-last created / etc batch, set **search** = -1, **search** = -2, etc.<br />    <br />    To use another field for search, set the appropriate **search_by** parameter
+|**```search_by```**|**str**|By default, the search is conducted based on name, batch id or ordinal number according to the creation time.<br />    To perform a search using an another field, set the **search_by** parameter to one of the following<br />    and provide the appropriate format to **search** field:<br />    <br />    Provide **search** as a str for the following fields (looking for the accurance of **search**, for the exact match set **exact_match** = True):<br />      &#8226; 'simulation'<br />      &#8226; 'tag'<br />      &#8226; 'message'<br /><br />      &#8226; 'status': search by the batch status: set **search_by** = 'status' and <br />    **search** = 'DONE', 'SCHEDULE', 'RUNNING', 'TERMINATING' or 'ERROR'<br />    <br />    Provide **search** as **str** that may containes date, time and timezone information, like: 'dd-mm-yyyy hh:mm:ss +hh:mm', <br />    or only date and time without timezone: 'dd-mm-yyyy hh:mm:ss', or only date: 'dd-mm-yyyy' / 'dd-mm' / 'dd'<br />    or only time: 'hh:mm:ss' / 'hh:mm' with or without timezone. <br />    Any missing date information is automatically set to today's date, and any missing time information is set to 0:<br />      &#8226; 'created_after'<br />      &#8226; 'created_before'<br />      &#8226; 'updated_after'<br />      &#8226; 'updated_before'<br /><br />    Provide **search** as an int for:<br />      &#8226; 'parallelism'<br />      &#8226; 'completions'<br />      &#8226; 'memory'<br /><br />    Provide **search** as float for:<br />      &#8226; 'cpu'<br />      &#8226; 'gpu'
+|**```sid_status```**|**str**, optional|Select batches with the exact status of the simulation run: 'DONE', 'SCHEDULE', 'ERROR', 'CREATING', 'INIT', 'STARTING', 'RUNNING', 'TERMINATING' or 'STOPPING'.<br />    If the status is not specified, returns batches with sids with all statuses.
+|**```order_by```**|**str** or **list** or **dict**|To obtain the output in ascending order, provide one or more of the following options as either a single str or a as a list:<br />      &#8226; 'name'<br />      &#8226; 'batch_id' <br />      &#8226; 'simulation'<br />      &#8226; 'status'<br />      &#8226; 'tag' <br />      &#8226; 'message'<br />      &#8226; 'created_at'<br />      &#8226; 'updated_at'<br />      &#8226; 'parallelism'<br />      &#8226; 'completions'<br />      &#8226; 'cpu'<br />      &#8226; 'gpu'<br />      &#8226; 'memory'           <br />    <br />    To specify whether to use descending or ascending order, create a dictionary where the keys correspond to the options mentioned above, <br />    and the values are either 'asc' for ascending or 'desc' for descending. For instance: {'name': 'asc', 'created_at': 'desc'}"
+|**```exact_match```**|**bool**, default **False**|If True and **search** is a **str**, looks for an exact match in the field defined by the 'search_by' parameter.<br />    If **search_by** is not defined, search is perfomed by name.<br />    If set to False, searches for the occurrences of the provided string within the field defined by the 'search_by' parameter.
+|**```user```**|**str**, default `'all'`|Set **user** = 'me' to filter and display only the batches that belong to you. <br />    To display batches that were created by another user, provide the user's email.
 #### Returns
 
-&ensp;**[CitrosDict](citros_dict.md#citros_data_analysis.data_access.citros_dict.CitrosDict "citros_data_analysis.data_access.citros_dict.CitrosDict")**
-:   Information about the batches.
-
+name|type|description
+--|--|--
+|**```out```**|**[CitrosDict](citros_dict.md#citros_data_analysis.data_access.citros_dict.CitrosDict "citros_data_analysis.data_access.citros_dict.CitrosDict")**|Information about the batches.
 
 </details>
 <details>
@@ -632,14 +514,14 @@ and one of the aggrative method skip(), avg() or move_avg().
 
 #### Parameters
 
-**```data_names```** :&ensp;**list**, optional
-:   Labels of the columns from json data column.
-
+name|type|description
+--|--|--
+|**```data_names```**|**list**, optional|Labels of the columns from json data column.
 #### Returns
 
-&ensp;**pandas.DataFrame**
-:   Table with selected data.
-
+name|type|description
+--|--|--
+|**```out```**|**pandas.DataFrame**|Table with selected data.
 
 </details>
 <details>
@@ -695,9 +577,9 @@ Get the name of the current batch if the batch is set.
 
 #### Returns
 
-&ensp;**str**
-:   Name of the current batch. If the batch is not set, return None.
-
+name|type|description
+--|--|--
+|**```name```**|**str**|Name of the current batch. If the batch is not set, return None.
 
 </details>
 <details>
@@ -732,9 +614,9 @@ Get the id of the current batch if the batch is set.
 
 #### Returns
 
-&ensp;**str**
-:   id of the current batch. If the batch is not set, return None.
-
+name|type|description
+--|--|--
+|**```id```**|**str**|id of the current batch. If the batch is not set, return None.
 
 </details>
 <details>
@@ -813,30 +695,17 @@ Return number of the rows in the column **column_name**.
 
 #### Parameters
 
-**```column_name```** :&ensp;**str**
-:   Label of the column.
-
-
-**```group_by```** :&ensp;**list**, optional
-:   Labels of the columns to group by. If blank, do not group.
-
-
-**```filter_by```** :&ensp;**dict**, optional
-:   Constraints to apply on columns: {key_1: value_1, key_2: value_2, ...}.<br />
-    key_n - must match labels of the columns, <br />
-    value_n  - in the case of equality: list of exact values, <br />
-               in the case of inequality: dict with ">", ">=", "<" or "<=".<br />
-    Conditions, passed here, have higher priority over those defined by **topic()**, **rid()**, **sid()**, **time()** and **set_filter()** and will override them.
-
-
-**```nan_exclude```** :&ensp;**bool**, default **False**
-:   If True, nan values are excluded from the count.
-
+name|type|description
+--|--|--
+|**```column_name```**|**str**|Label of the column.
+|**```group_by```**|**list**, optional|Labels of the columns to group by. If blank, do not group.
+|**```filter_by```**|**dict**, optional|Constraints to apply on columns: {key_1: value_1, key_2: value_2, ...}, where:<br />      &#8226; key_n - must match labels of the columns,<br />      &#8226; value_n  - in the case of equality: list of exact values,<br />               in the case of inequality: dict with ">", ">=", "<" or "<=".<br />    Conditions, passed here, have higher priority over those defined by **topic()**, **rid()**, **sid()**, **time()** and **set_filter()** and will override them.
+|**```nan_exclude```**|**bool**, default **False**|If True, nan values are excluded from the count.
 #### Returns
 
-&ensp;**list** of **tuples** or **None**
-:   Number of rows in **column_name**.
-
+name|type|description
+--|--|--
+|**```out```**|**list** of **tuples** or **None**|Number of rows in **column_name**.
 
 </details>
 <details>
@@ -966,12 +835,9 @@ Each tuple conatains topic and type names, structure of the corresponding data a
 
 #### Parameters
 
-**```topic```** :&ensp;**list** or **list** of **str**, optional
-:   list of the topics to show data structure for.
-    Have higher priority, than those defined by **topic()** and **set_filter()** methods 
-    and will override them.
-    If not specified, shows data structure for all topics.
-
+name|type|description
+--|--|--
+|**```topic```**|**list** or **list** of **str**, optional|list of the topics to show data structure for.<br />    Have higher priority, than those defined by **topic()** and **set_filter()** methods <br />    and will override them.<br />    If not specified, shows data structure for all topics.
 
 </details>
 <details>
@@ -1041,34 +907,18 @@ Return maximum value of the column **column_name**.
 
 #### Parameters
 
-**```column_name```** :&ensp;**str**
-:   Label of the column.
-
-
-**```filter_by```** :&ensp;**dict**, optional
-:   Constraints to apply on columns: {key_1: value_1, key_2: value_2, ...}.<br />
-    key_n - must match labels of the columns, <br />
-    value_n  - in the case of equality: list of exact values,<br />
-               in the case of inequality: dict with ">", ">=", "<" or "<=".<br />
-    Conditions, passed here, have higher priority over those defined by **topic()**, **rid()**, **sid()**, **time()** and **set_filter()** and will override them.
-
-
-**```return_index```** :&ensp;**bool**, default **False**
-:   If True, the pair of sid and rid corresponding to the obtained maximum value is also returned.
-
+name|type|description
+--|--|--
+|**```column_name```**|**str**|Label of the column.
+|**```filter_by```**|**dict**, optional|Constraints to apply on columns: {key_1: value_1, key_2: value_2, ...}, where:<br />      &#8226; key_n - must match labels of the columns,<br />      &#8226; value_n  - in the case of equality: list of exact values,<br />               in the case of inequality: dict with ">", ">=", "<" or "<=".<br />    Conditions, passed here, have higher priority over those defined by **topic()**, **rid()**, **sid()**, **time()** and **set_filter()** and will override them.
+|**```return_index```**|**bool**, default **False**|If True, the pair of sid and rid corresponding to the obtained maximum value is also returned.
 #### Returns
 
-**```value```** :&ensp;**int, float, str** or **None**
-:   Maximum value of the column **column_name**.
-
-
-**```sid```** :&ensp;**int** or **list**
-:   Corresponding to the maximum value's sid. Returns only if **return_index** is set to True.
-
-
-**```rid```** :&ensp;**int** or **list**
-:   Corresponding to the maximum value's rid. Returns only if **return_index** is set to True
-
+name|type|description
+--|--|--
+|**```value```**|**int, float, str** or **None**|Maximum value of the column **column_name**.
+|**```sid```**|**int** or **list**|Corresponding to the maximum value's sid. Returns only if **return_index** is set to True.
+|**```rid```**|**int** or **list**|Corresponding to the maximum value's rid. Returns only if **return_index** is set to True
 
 </details>
 <details>
@@ -1135,36 +985,18 @@ Return minimum value of the column **column_name**.
 
 #### Parameters
 
-**```column_name```** :&ensp;**str**
-:   Label of the column.
-
-
-**```filter_by```** :&ensp;**dict**, optional
-:   Constraints to apply on columns: {key_1: value_1, key_2: value_2, ...}.<br />
-    key_n - must match labels of the columns, <br />
-    value_n  - in the case of equality: list of exact values, <br />
-               in the case of inequality: dict with ">", ">=", "<" or "<=".<br />
-    Conditions, passed here, have higher priority over those defined by **topic()**, **rid()**, **sid()**, **time()** and **set_filter()** and will override them.
-
-
-**```return_index```** :&ensp;**bool**, default **False**
-:   If True, the pair of sid and rid corresponding to the obtained minimum value is also returned.
-    If there are several cases when the maximum or minimum value is reached, the lists of corresponding 
-    sids and rids are returned.
-
+name|type|description
+--|--|--
+|**```column_name```**|**str**|Label of the column.
+|**```filter_by```**|**dict**, optional|Constraints to apply on columns: {key_1: value_1, key_2: value_2, ...}, where:<br />      &#8226; key_n - must match labels of the columns,<br />      &#8226; value_n  - in the case of equality: list of exact values,<br />               in the case of inequality: dict with ">", ">=", "<" or "<=".<br />    Conditions, passed here, have higher priority over those defined by **topic()**, **rid()**, **sid()**, **time()** and **set_filter()** and will override them.
+|**```return_index```**|**bool**, default **False**|If True, the pair of sid and rid corresponding to the obtained minimum value is also returned.<br />    If there are several cases when the maximum or minimum value is reached, the lists of corresponding sids and rids are returned.
 #### Returns
 
-**```value```** :&ensp;**int, float, str** or **None**
-:   Minimum value of the column **column_name**.
-
-
-**```sid```** :&ensp;**int** or **list**
-:   Corresponding to the minimum value's sid. Returns only if **return_index** is set to True.
-
-
-**```rid```** :&ensp;**int** or **list**
-:   Corresponding to the minimum value's rid. Returns only if **return_index** is set to True.
-
+name|type|description
+--|--|--
+|**```value```**|**int, float, str** or **None**|Minimum value of the column **column_name**.
+|**```sid```**|**int** or **list**|Corresponding to the minimum value's sid. Returns only if **return_index** is set to True.
+|**```rid```**|**int** or **list**|Corresponding to the minimum value's rid. Returns only if **return_index** is set to True.
 
 </details>
 <details>
@@ -1227,9 +1059,9 @@ Get the current repository name if the repository is set.
 
 #### Returns
 
-&ensp;**str**
-:   Name of the current repository. If the repository is not set, return None.
-
+name|type|description
+--|--|--
+|**```name```**|**str**|Name of the current repository. If the repository is not set, return None.
 
 </details>
 <details>
@@ -1264,9 +1096,9 @@ Get the current repository id if the repository is set.
 
 #### Returns
 
-&ensp;**str**
-:   id of the current repository. If the repository is not set, return None.
-
+name|type|description
+--|--|--
+|**```id```**|**str**|id of the current repository. If the repository is not set, return None.
 
 </details>
 <details>
@@ -1310,60 +1142,21 @@ Return dict of tables, each of the tables corresponds to exact value of sid.
 
 #### Parameters
 
-**```data_query```** :&ensp;**list**, optional
-:   Labels of the data to download from the json-format column "data".
-    If blank list, then all columns are are downloaded.
-
-
-**```topic```** :&ensp;**str** or **list** of **str**
-:   Name of the topic.
-    Have higher priority than defined by **topic()**.
-    May be overrided by **filter_by** argument.
-
-
-**```additional_columns```** :&ensp;**list**, optional
-:   Columns to download outside the json "data".
-    If blank list, then all columns are are downloaded.
-
-
-**```filter_by```** :&ensp;**dict**, optional
-:   Constraints to apply on columns: {key_1: value_1, key_2: value_2, ...}.<br />
-    key_n - must match labels of the columns, <br />
-    value_n  - in the case of equality: list of exact values<br />
-               in the case of inequality: dict with ">", ">=", "<" or "<=".<br />
-    Conditions, passed here, have higher priority over those defined by **topic()**, **rid()**, **sid()**, **time()** and **set_filter()** and will override them.
-
-
-**```order_by```** :&ensp;**str** or **list** of **str** or **dict**, optional
-:   If **order_by** is a single string or a list of strings, it represents the column label(s) by which the result is sorted in ascending order.
-    For more control, use a dictionary with column labels as keys and values ('asc' for ascending, 'desc' for descending) to define the sorting order.
-    Conditions, passed here, have higher priority over those defined by **set_order()** and will override them.
-
-
-**```method```** :&ensp;`{'', 'avg', 'move_avg', 'skip'}`, optional
-:   Method of sampling:
-    'avg' - average - average **n_avg** rows;
-    'move_avg' - moving average - average **n_avg** rows and return every **n_skip**-th row;
-    'skip' - skiping **n_skip** rows;
-    '' - no sampling.
-    If not specified, no sampling is applied
-
-
-**```n_avg```** :&ensp;**int**
-:   Used only if **method** is 'move_avg' or 'avg'.
-    Number of rows for averaging.
-
-
-**```n_skip```** :&ensp;**int**
-:   Used only if **method** is 'move_avg' or 'skip'.
-    Number of rows to skip in a result output. 
-    For example, if skip = 2, only every second row will be returned.
-
+name|type|description
+--|--|--
+|**```data_query```**|**list**, optional|Labels of the data to download from the json-format column "data".<br />    If blank list, then all columns are are downloaded.
+|**```topic```**|**str** or **list** of **str**|Name of the topic.<br />    Have higher priority than defined by **topic()**.<br />    May be overrided by **filter_by** argument.
+|**```additional_columns```**|**list**, optional|Columns to download outside the json "data".<br />    If blank list, then all columns are are downloaded.
+|**```filter_by```**|**dict**, optional|Constraints to apply on columns: {key_1: value_1, key_2: value_2, ...}, where:<br />      &#8226; key_n - must match labels of the columns,<br />      &#8226; value_n - in the case of equality: list of exact values<br />                in the case of inequality: dict with ">", ">=", "<" or "<=".<br />    Conditions, passed here, have higher priority over those defined by **topic()**, **rid()**, **sid()**, **time()** and **set_filter()** and will override them.
+|**```order_by```**|**str** or **list** of **str** or **dict**, optional|If **order_by** is a single string or a list of strings, it represents the column label(s) by which the result is sorted in ascending order.<br />    For more control, use a dictionary with column labels as keys and values ('asc' for ascending, 'desc' for descending) to define the sorting order.<br />    Conditions, passed here, have higher priority over those defined by **set_order()** and will override them.
+|**```method```**|`{'', 'avg', 'move_avg', 'skip'}`, optional|Method of sampling:<br />    'avg' - average - average **n_avg** rows;<br />    'move_avg' - moving average - average **n_avg** rows and return every **n_skip**-th row;<br />    'skip' - skiping **n_skip** rows;<br />    '' - no sampling.<br />    If not specified, no sampling is applied
+|**```n_avg```**|**int**, default **1**|Used only if **method** is 'move_avg' or 'avg'.<br />    Number of rows for averaging.
+|**```n_skip```**|**int**, default **1**|Used only if **method** is 'move_avg' or 'skip'.<br />    Number of rows to skip in a result output. <br />    For example, if skip = 2, only every second row will be returned.
 #### Returns
 
-&ensp;**dict** of **pandas.DataFrames**
-:   dict with tables, key is a value of sid.
-
+name|type|description
+--|--|--
+|**```out```**|**dict** of **pandas.DataFrames**|dict with tables, key is a value of sid.
 
 </details>
 <details>
@@ -1428,9 +1221,9 @@ Get the simulation name if the simulation is set.
 
 #### Returns
 
-&ensp;**str**
-:   Name of the simulation. If the simulation is not set, return None.
-
+name|type|description
+--|--|--
+|**```name```**|**str**|Name of the simulation. If the simulation is not set, return None.
 
 </details>
 <details>
@@ -1470,30 +1263,17 @@ Return number of the unique values in the column **column_name**.
 
 #### Parameters
 
-**```column_name```** :&ensp;**str**
-:   Column to count its unique values.
-
-
-**```group_by```** :&ensp;**list**, optional
-:   Labels of the columns to group by. If blank, do not group.
-
-
-**```filter_by```** :&ensp;**dict**, optional
-:   Constraints to apply on columns: {key_1: value_1, key_2: value_2, ...}.<br />
-    key_n - must match labels of the columns, <br />
-    value_n  - in the case of equality: list of exact values, <br />
-               in the case of inequality: dict with ">", ">=", "<" or "<=".<br />
-    Conditions, passed here, have higher priority over those defined by **topic()**, **rid()**, **sid()**, **time()** and **set_filter()** and will override them.
-
-
-**```nan_exclude```** :&ensp;**bool**, default **False**
-:   If True, nan values are excluded from the count.
-
+name|type|description
+--|--|--
+|**```column_name```**|**str**|Column to count its unique values.
+|**```group_by```**|**list**, optional|Labels of the columns to group by. If blank, do not group.
+|**```filter_by```**|**dict**, optional|Constraints to apply on columns: {key_1: value_1, key_2: value_2, ...}, where:<br />      &#8226; key_n - must match labels of the columns,<br />      &#8226; value_n  - in the case of equality: list of exact values,<br />               in the case of inequality: dict with ">", ">=", "<" or "<=".<br />    Conditions, passed here, have higher priority over those defined by **topic()**, **rid()**, **sid()**, **time()** and **set_filter()** and will override them.
+|**```nan_exclude```**|**bool**, default **False**|If True, nan values are excluded from the count.
 #### Returns
 
-&ensp;**list** of **tuples** or **None**
-:   Counts of the unique values in **column_name**.
-
+name|type|description
+--|--|--
+|**```out```**|**list** of **tuples** or **None**|Counts of the unique values in **column_name**.
 
 </details>
 <details>
@@ -1566,22 +1346,15 @@ Return unique values of the columns **column_names**.
 
 #### Parameters
 
-**```column_names```** :&ensp;**str** or **list** of **str**
-:   Columns for which the unique combinations of the values will be found.
-
-
-**```filter_by```** :&ensp;**dict**, optional
-:   Constraints to apply on columns: {key_1: value_1, key_2: value_2, ...}.<br />
-    key_n - must match labels of the columns, <br />
-    value_n  - in the case of equality: list of exact values,<br />
-               in the case of inequality: dict with ">", ">=", "<" or "<=".<br />
-    Conditions, passed here, have higher priority over those defined by **topic()**, **rid()**, **sid()**, **time()** and **set_filter()** and will override them.
-
+name|type|description
+--|--|--
+|**```column_names```**|**str** or **list** of **str**|Columns for which the unique combinations of the values will be found.
+|**```filter_by```**|**dict**, optional|Constraints to apply on columns: {key_1: value_1, key_2: value_2, ...}, where:<br />      &#8226; key_n - must match labels of the columns,<br />      &#8226; value_n  - in the case of equality: list of exact values,<br />               in the case of inequality: dict with ">", ">=", "<" or "<=".<br />    Conditions, passed here, have higher priority over those defined by **topic()**, **rid()**, **sid()**, **time()** and **set_filter()** and will override them.
 #### Returns
 
-&ensp;**list** or **list** of **tuples**
-:   Each tuple contains unique combinations of the values for **column_names**.
-
+name|type|description
+--|--|--
+|**```out```**|**list** or **list** of **tuples**|Each tuple contains unique combinations of the values for **column_names**.
 
 </details>
 <details>
@@ -1714,9 +1487,9 @@ their data structure types and numbered as "type_group_0", "type_group_1", and s
 
 #### Returns
 
-&ensp;**[CitrosDict](citros_dict.md#citros_data_analysis.data_access.citros_dict.CitrosDict "citros_data_analysis.data_access.citros_dict.CitrosDict")**
-:   Information about the batch.
-
+name|type|description
+--|--|--
+|**```out```**|**[CitrosDict](citros_dict.md#citros_data_analysis.data_access.citros_dict.CitrosDict "citros_data_analysis.data_access.citros_dict.CitrosDict")**|Information about the batch.
 
 </details>
 <details>
@@ -1869,19 +1642,15 @@ The value in 'rid' column is set as a minimum value among the 'rid' values of th
 
 #### Parameters
 
-**```n_avg```** :&ensp;**int**, optional
-:   Number of messages to average.
-
-
-**```n_skip```** :&ensp;**int**, default **1**
-:   Number of the messages to skip.
-    For example, if **skip** = 3, the 1th, the 4th, the 7th ... messages will be selected
-
+name|type|description
+--|--|--
+|**```n_avg```**|**int**, optional|Number of messages to average.
+|**```n_skip```**|**int**, default **1**|Number of the messages to skip.<br />    For example, if **skip** = 3, the 1th, the 4th, the 7th ... messages will be selected
 #### Returns
 
-&ensp;**[CitrosDB](#citros_data_analysis.data_access.citros_db.CitrosDB "citros_data_analysis.data_access.citros_db.CitrosDB")**
-:   CitrosDB with parameters set for sampling method 'move_avg'.
-
+name|type|description
+--|--|--
+|**```out```**|**[CitrosDB](#citros_data_analysis.data_access.citros_db.CitrosDB "citros_data_analysis.data_access.citros_db.CitrosDB")**|CitrosDB with parameters set for sampling method 'move_avg'.
 
 </details>
 <details>
@@ -1932,65 +1701,30 @@ Different colors correspond to different sids.
 
 #### Parameters
 
-**```df```** :&ensp;**pandas.DataFrame**
-:   Data table.
-
-
-**```x_label```** :&ensp;**str**
-:   Label of the column to plot along x-axis.
-
-
-**```y_labels```** :&ensp;**list** of **str**
-:   Labels of the columns to plot along y-axis.
-
-
-**```*args```** :&ensp;**Any**
-:   Additional arguments to style lines, set color, etc, 
-    see **[matplotlib.axes.Axes.plot](https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.plot.html)**.
-
-
-**```fig```** :&ensp;**matplotlib.figure.Figure**, optional
-:   If None, a new Figure will be created.
-
-
-**```legend```** :&ensp;**bool**, default **True**
-:   If True, show the legend with sids.
-
-
-**```title```** :&ensp;**str**
-:   Set title of the plot.
-
-
-**```set_x_label```** :&ensp;**str**, default **None**
-:   Label to set to the x-axis. If None, label is set according to **x_label**.
-
-
-**```set_y_label```** :&ensp;**list** of **str**, default **None**
-:   Labels to set to the y-axis. If None, label is set according to **y_labels**.
-
-
-**```remove_nan```** :&ensp;**bool**, default **True**
-:   If True, NaN values will be removed before plotting.
-
-
-**```inf_vals```** :&ensp;**None** or **float**, default **1e308**
-:   If specified, all values that exceed the provided value in absolute terms will be removed before plotting.
-    If this functionality is not required, set inf_vals = None.
-
+name|type|description
+--|--|--
+|**```df```**|**pandas.DataFrame**|Data table.
+|**```x_label```**|**str**|Label of the column to plot along x-axis.
+|**```y_labels```**|**list** of **str**|Labels of the columns to plot along y-axis.
+|**```*args```**|**Any**|Additional arguments to style lines, set color, etc, <br />    see **[matplotlib.axes.Axes.plot](https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.plot.html)**.
+|**```fig```**|**matplotlib.figure.Figure**, optional|If None, a new Figure will be created.
+|**```legend```**|**bool**, default **True**|If True, show the legend with sids.
+|**```title```**|**str**|Set title of the plot.
+|**```set_x_label```**|**str**, default **None**|Label to set to the x-axis. If None, label is set according to **x_label**.
+|**```set_y_label```**|**list** of **str**, default **None**|Labels to set to the y-axis. If None, label is set according to **y_labels**.
+|**```remove_nan```**|**bool**, default **True**|If True, NaN values will be removed before plotting.
+|**```inf_vals```**|**None** or **float**, default **1e308**|If specified, all values that exceed the provided value in absolute terms will be removed before plotting.<br />    If this functionality is not required, set inf_vals = None.
 #### Returns
 
-**```fig```** :&ensp;**matplotlib.figure.Figure**
-:   Created figure if **fig** is not passed.
-
-
-**```ax```** :&ensp;**numpy.ndarray** of **matplotlib.axes.Axes**
-:   Created axis if **fig** is not passed.
-
+name|type|description
+--|--|--
+|**```fig```**|**matplotlib.figure.Figure**|Created figure if **fig** is not passed.
+|**```ax```**|**numpy.ndarray** of **matplotlib.axes.Axes**|Created axis if **fig** is not passed.
 #### Other Parameters
 
-**```kwargs```** :&ensp;**dict**, optional
-:   Other keyword arguments, see **[matplotlib.axes.Axes.plot](https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.plot.html)**.
-
+name|type|description
+--|--|--
+|**```kwargs```**|**dict**, optional|Other keyword arguments, see **[matplotlib.axes.Axes.plot](https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.plot.html)**.
 
 </details>
 <details>
@@ -2057,77 +1791,33 @@ For non-diagonal graphs, colors are assigned to points according to sids.
 
 #### Parameters
 
-**```df```** :&ensp;**pandas.DataFrame**
-:   Data table.
-
-
-**```labels```** :&ensp;**list** of **str**
-:   Labels of the columns to plot.
-
-
-**```*args```** :&ensp;**Any**
-:   Additional arguments to style lines, set color, etc, 
-    see **[matplotlib.axes.Axes.plot](https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.plot.html)**.
-
-
-**```scale```** :&ensp;**bool**, default **True**
-:   Specify whether the axis range should be the same for x and y axes.
-
-
-**```fig```** :&ensp;**matplotlib.figure.Figure**, optional
-:   If None, a new Figure will be created.
-
-
-**```legend```** :&ensp;**bool**, default **True**
-:   If True, show the legend with sids.
-
-
-**```title```** :&ensp;**str**
-:   Set title of the plot.
-
-
-**```set_x_label```** :&ensp;**list** of **str**
-:   Labels to set to the x-axis. If None, label is set according to **labels**.
-
-
-**```set_y_label```** :&ensp;**list** of **str**
-:   Labels to set to the y-axis. If None, label is set according to **labels**.
-
-
-**```remove_nan```** :&ensp;**bool**, default **True**
-:   If True, NaN values will be removed before plotting.
-
-
-**```inf_vals```** :&ensp;**None** or **float**, default **1e308**
-:   If specified, all values that exceed the provided value in absolute terms will be removed before plotting.
-    If this functionality is not required, set inf_vals = None.
-
-
-**```label_all_xaxis```** :&ensp;**bool**, default **False**
-:   If True, x labels are set to the x-axes of the all graphs, otherwise only to the graphs in the bottom row.
-
-
-**```label_all_yaxis```** :&ensp;**bool**, default **False**
-:   If True, y labels are set to the y-axes of the all graphs, otherwise only to the graphs in the first column.
-
-
-**```num```** :&ensp;**int**, default **5**
-:   Number of bins in the histogram on the diogonal.
-
+name|type|description
+--|--|--
+|**```df```**|**pandas.DataFrame**|Data table.
+|**```labels```**|**list** of **str**|Labels of the columns to plot.
+|**```*args```**|**Any**|Additional arguments to style lines, set color, etc, <br />    see **[matplotlib.axes.Axes.plot](https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.plot.html)**.
+|**```scale```**|**bool**, default **True**|Specify whether the axis range should be the same for x and y axes.
+|**```fig```**|**matplotlib.figure.Figure**, optional|If None, a new Figure will be created.
+|**```legend```**|**bool**, default **True**|If True, show the legend with sids.
+|**```title```**|**str**|Set title of the plot.
+|**```set_x_label```**|**list** of **str**|Labels to set to the x-axis. If None, label is set according to **labels**.
+|**```set_y_label```**|**list** of **str**|Labels to set to the y-axis. If None, label is set according to **labels**.
+|**```remove_nan```**|**bool**, default **True**|If True, NaN values will be removed before plotting.
+|**```inf_vals```**|**None** or **float**, default **1e308**|If specified, all values that exceed the provided value in absolute terms will be removed before plotting.<br />    If this functionality is not required, set inf_vals = None.
+|**```label_all_xaxis```**|**bool**, default **False**|If True, x labels are set to the x-axes of the all graphs, otherwise only to the graphs in the bottom row.
+|**```label_all_yaxis```**|**bool**, default **False**|If True, y labels are set to the y-axes of the all graphs, otherwise only to the graphs in the first column.
+|**```num```**|**int**, default **5**|Number of bins in the histogram on the diogonal.
 #### Returns
 
-**```fig```** :&ensp;**matplotlib.figure.Figure**
-:   Created figure if **fig** is not passed.
-
-
-**```ax```** :&ensp;**numpy.ndarray** of **matplotlib.axes.Axes**
-:   Created axis if **fig** is not passed.
-
+name|type|description
+--|--|--
+|**```fig```**|**matplotlib.figure.Figure**|Created figure if **fig** is not passed.
+|**```ax```**|**numpy.ndarray** of **matplotlib.axes.Axes**|Created axis if **fig** is not passed.
 #### Other Parameters
 
-**```kwargs```** :&ensp;**dict**, optional
-:   Other keyword arguments, see **[matplotlib.axes.Axes.plot](https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.plot.html)**.
-
+name|type|description
+--|--|--
+|**```kwargs```**|**dict**, optional|Other keyword arguments, see **[matplotlib.axes.Axes.plot](https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.plot.html)**.
 
 </details>
 <details>
@@ -2187,73 +1877,32 @@ are the labels of columns of the pandas.DataFrame **df**.
 
 #### Parameters
 
-**```df```** :&ensp;**pandas.DataFrame**
-:   Data table.
-
-
-**```x_label```** :&ensp;**str**
-:   Label of the column to plot along x-axis.
-
-
-**```y_label```** :&ensp;**str**
-:   Label of the column to plot along y-axis.
-
-
-**```*args```** :&ensp;**Any**
-:   Additional arguments to style lines, set color, etc, 
-    see **[matplotlib.axes.Axes.plot](https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.plot.html)**.
-
-
-**```ax```** :&ensp;**matplotlib.axes.Axes**
-:   Figure axis to plot on. If not specified, the new pair of fig, ax will be created.
-
-
-**```scale```** :&ensp;**bool**, default **True**
-:   Specify whether the axis range should be the same for all axes.
-
-
-**```legend```** :&ensp;**bool**, default **True**
-:   If True, show the legend with sids.
-
-
-**```title```** :&ensp;**str**
-:   Set title of the plot.
-
-
-**```set_x_label```** :&ensp;**str**, default **None**
-:   Label to set to the x-axis. If None, label is set according to **x_label**.
-
-
-**```set_y_label```** :&ensp;**str**, default **None**
-:   Label to set to the y-axis. If None, label is set according to **y_label**.
-
-
-**```set_z_label```** :&ensp;**str**, default **None**
-:   Label to set to the z-axis. If None, label is set according to **z_label**.
-
-
-**```remove_nan```** :&ensp;**bool**, default **True**
-:   If True, NaN values will be removed before plotting.
-
-
-**```inf_vals```** :&ensp;**None** or **float**, default **1e308**
-:   If specified, all values that exceed the provided value in absolute terms will be removed before plotting.
-    If this functionality is not required, set inf_vals = None.
-
+name|type|description
+--|--|--
+|**```df```**|**pandas.DataFrame**|Data table.
+|**```x_label```**|**str**|Label of the column to plot along x-axis.
+|**```y_label```**|**str**|Label of the column to plot along y-axis.
+|**```*args```**|**Any**|Additional arguments to style lines, set color, etc, <br />    see **[matplotlib.axes.Axes.plot](https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.plot.html)**.
+|**```ax```**|**matplotlib.axes.Axes**|Figure axis to plot on. If not specified, the new pair of fig, ax will be created.
+|**```scale```**|**bool**, default **True**|Specify whether the axis range should be the same for all axes.
+|**```legend```**|**bool**, default **True**|If True, show the legend with sids.
+|**```title```**|**str**|Set title of the plot.
+|**```set_x_label```**|**str**, default **None**|Label to set to the x-axis. If None, label is set according to **x_label**.
+|**```set_y_label```**|**str**, default **None**|Label to set to the y-axis. If None, label is set according to **y_label**.
+|**```set_z_label```**|**str**, default **None**|Label to set to the z-axis. If None, label is set according to **z_label**.
+|**```remove_nan```**|**bool**, default **True**|If True, NaN values will be removed before plotting.
+|**```inf_vals```**|**None** or **float**, default **1e308**|If specified, all values that exceed the provided value in absolute terms will be removed before plotting.<br />    If this functionality is not required, set inf_vals = None.
 #### Returns
 
-**```fig```** :&ensp;**matplotlib.figure.Figure**
-:   Created figure if **ax** is not passed.
-
-
-**```ax```** :&ensp;**matplotlib.axes.Axes**
-:   Created axis if **ax** is not passed.
-
+name|type|description
+--|--|--
+|**```fig```**|**matplotlib.figure.Figure**|Created figure if **ax** is not passed.
+|**```ax```**|**matplotlib.axes.Axes**|Created axis if **ax** is not passed.
 #### Other Parameters
 
-**```kwargs```** :&ensp;**dict**, optional
-:   Other keyword arguments, see **[matplotlib.axes.Axes.plot](https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.plot.html)**.
-
+name|type|description
+--|--|--
+|**```kwargs```**|**dict**, optional|Other keyword arguments, see **[matplotlib.axes.Axes.plot](https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.plot.html)**.
 
 </details>
 <details>
@@ -2318,65 +1967,30 @@ are the labels of columns of the pandas.DataFrame **df**.
 
 #### Parameters
 
-**```df```** :&ensp;**pandas.DataFrame**
-:   Data table.
-
-
-**```x_label```** :&ensp;**str**
-:   Label of the column to plot along x-axis.
-
-
-**```y_label```** :&ensp;**str**
-:   Label of the column to plot along y-axis.
-
-
-**```*args```** :&ensp;**Any**
-:   Additional arguments to style lines, set color, etc, 
-    see **[matplotlib.axes.Axes.plot](https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.plot.html)**.
-
-
-**```ax```** :&ensp;**matplotlib.axes.Axes**
-:   Figure axis to plot on. If not specified, the new pair of fig, ax will be created.
-
-
-**```legend```** :&ensp;**bool**, default **True**
-:   If True, show the legend with sids.
-
-
-**```title```** :&ensp;**str**
-:   Set title of the plot.
-
-
-**```set_x_label```** :&ensp;**str**, default **None**
-:   Label to set to the x-axis. If None, label is set according to **x_label**.
-
-
-**```set_y_label```** :&ensp;**str**, default **None**
-:   Label to set to the y-axis. If None, label is set according to **y_label**.
-
-
-**```remove_nan```** :&ensp;**bool**, default **True**
-:   If True, NaN values will be removed before plotting.
-
-
-**```inf_vals```** :&ensp;**None** or **float**, default **1e308**
-:   If specified, all values that exceed the provided value in absolute terms will be removed before plotting.
-    If this functionality is not required, set inf_vals = None.
-
+name|type|description
+--|--|--
+|**```df```**|**pandas.DataFrame**|Data table.
+|**```x_label```**|**str**|Label of the column to plot along x-axis.
+|**```y_label```**|**str**|Label of the column to plot along y-axis.
+|**```*args```**|**Any**|Additional arguments to style lines, set color, etc, <br />    see **[matplotlib.axes.Axes.plot](https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.plot.html)**.
+|**```ax```**|**matplotlib.axes.Axes**|Figure axis to plot on. If not specified, the new pair of fig, ax will be created.
+|**```legend```**|**bool**, default **True**|If True, show the legend with sids.
+|**```title```**|**str**|Set title of the plot.
+|**```set_x_label```**|**str**, default **None**|Label to set to the x-axis. If None, label is set according to **x_label**.
+|**```set_y_label```**|**str**, default **None**|Label to set to the y-axis. If None, label is set according to **y_label**.
+|**```remove_nan```**|**bool**, default **True**|If True, NaN values will be removed before plotting.
+|**```inf_vals```**|**None** or **float**, default **1e308**|If specified, all values that exceed the provided value in absolute terms will be removed before plotting.<br />    If this functionality is not required, set inf_vals = None.
 #### Returns
 
-**```fig```** :&ensp;**matplotlib.figure.Figure**
-:   Created figure if **ax** is not passed.
-
-
-**```ax```** :&ensp;**matplotlib.axes.Axes**
-:   Created axis if **ax** is not passed.
-
+name|type|description
+--|--|--
+|**```fig```**|**matplotlib.figure.Figure**|Created figure if **ax** is not passed.
+|**```ax```**|**matplotlib.axes.Axes**|Created axis if **ax** is not passed.
 #### Other Parameters
 
-**```kwargs```** :&ensp;**dict**, optional
-:   Other keyword arguments, see **[matplotlib.axes.Axes.plot](https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.plot.html)**.
-
+name|type|description
+--|--|--
+|**```kwargs```**|**dict**, optional|Other keyword arguments, see **[matplotlib.axes.Axes.plot](https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.plot.html)**.
 
 </details>
 <details>
@@ -2449,91 +2063,29 @@ Plot sigma ellipses for the set of data.
 
 #### Parameters
 
-**```df```** :&ensp;**pandas.DataFrame**
-:   Data table.
-
-
-**```x_label```** :&ensp;**str**
-:   Label of the column to plot along x-axis.
-
-
-**```y_labels```** :&ensp;**list** of **str**
-:   Labels of the columns to plot along y-axis.
-
-
-**```ax```** :&ensp;**matplotlib.axes.Axes**
-:   Figure axis to plot on. If not specified, the new pair of fig, ax will be created and returned.
-
-
-**```n_std```** :&ensp;**int** or **list** of **ints**
-:   Radius of ellipses in sigmas.
-
-
-**```plot_origin```** :&ensp;**bool**, default **True**
-:   If True, depicts origin (0, 0) with black cross.
-
-
-**```bounding_error```** :&ensp;**bool**, default **False**
-:   If True, plots bounding error circle for each of the ellipses.
-
-
-**```inf_vals```** :&ensp;**None** or **float**, default **1e308**
-:   If specified, all values that exceed the provided value in absolute terms will be removed before plotting.
-    If this functionality is not required, set inf_vals = None.
-
-
-**```legend```** :&ensp;**bool**, default **True**
-:   If True, show the legend.
-
-
-**```title```** :&ensp;**str**, optional
-:   Set title. If None, title is set as '**x_label** vs. **y_label**'.
-
-
-**```set_x_label```** :&ensp;**str**, optional
-:   Set label of the x-axis. If None, label is set according to **x_label**.
-
-
-**```set_y_label```** :&ensp;**str**, optional
-:   Set label of the y-axis. If None, label is set according to **y_label**.
-
-
-**```scale```** :&ensp;**bool**, default **False**
-:   Specify whether the axis range should be the same for x and y axes.
-
-
-**```return_ellipse_param```** :&ensp;**bool**, default **False**
-:   If True, returns ellipse parameters.
-
+name|type|description
+--|--|--
+|**```df```**|**pandas.DataFrame**|Data table.
+|**```x_label```**|**str**|Label of the column to plot along x-axis.
+|**```y_labels```**|**list** of **str**|Labels of the columns to plot along y-axis.
+|**```ax```**|**matplotlib.axes.Axes**|Figure axis to plot on. If not specified, the new pair of fig, ax will be created and returned.
+|**```n_std```**|**int** or **list** of **ints**|Radius of ellipses in sigmas.
+|**```plot_origin```**|**bool**, default **True**|If True, depicts origin (0, 0) with black cross.
+|**```bounding_error```**|**bool**, default **False**|If True, plots bounding error circle for each of the ellipses.
+|**```inf_vals```**|**None** or **float**, default **1e308**|If specified, all values that exceed the provided value in absolute terms will be removed before plotting.<br />    If this functionality is not required, set inf_vals = None.
+|**```legend```**|**bool**, default **True**|If True, show the legend.
+|**```title```**|**str**, optional|Set title. If None, title is set as '**x_label** vs. **y_label**'.
+|**```set_x_label```**|**str**, optional|Set label of the x-axis. If None, label is set according to **x_label**.
+|**```set_y_label```**|**str**, optional|Set label of the y-axis. If None, label is set according to **y_label**.
+|**```scale```**|**bool**, default **False**|Specify whether the axis range should be the same for x and y axes.
+|**```return_ellipse_param```**|**bool**, default **False**|If True, returns ellipse parameters.
 #### Returns
 
-**```fig```** :&ensp;**matplotlib.figure.Figure**
-:   Created figure if **ax** is not passed.
-
-
-**```ax```** :&ensp;**numpy.ndarray** of **matplotlib.axes.Axes**
-:   Created axis if **ax** is not passed.
-
-
-**```ellipse_param```** :&ensp;**dict** or **list** of **dict**
-:   Ellipse parameters if **return_ellipse_param** set True.<br />
-    Parameters of the ellipse:
-
-
-  - x : float
-      x coordinate of the center.
-  - y : float
-      y coordinate of the center.
-  - width : float
-      Total ellipse width (diameter along the longer axis).
-  - height : float
-      Total ellipse height (diameter along the shorter axis).
-  - alpha : float
-      Angle of rotation, in degrees, anti-clockwise from the shorter axis.<br />
-    If bounding_error set True:
-  - bounding_error : float
-      Radius of the error circle.
-
+name|type|description
+--|--|--
+|**```fig```**|**matplotlib.figure.Figure**|Created figure if **ax** is not passed.
+|**```ax```**|**numpy.ndarray** of **matplotlib.axes.Axes**|Created axis if **ax** is not passed.
+|**```ellipse_param```**|**dict** or **list** of **dict**|Ellipse parameters if **return_ellipse_param** set True.<br />    Parameters of the ellipse:<br />      &#8226; x : float - x coordinate of the center.<br />      &#8226; y : float - y coordinate of the center.<br />      &#8226; width : float - total ellipse width (diameter along the longer axis).<br />      &#8226; height : float - total ellipse height (diameter along the shorter axis).<br />      &#8226; alpha : float - angle of rotation, in degrees, anti-clockwise from the shorter axis.<br /><br />    If bounding_error set True:<br />      &#8226; bounding_error : float - radius of the error circle.
 
 </details>
 <details>
@@ -2591,27 +2143,19 @@ Set repository to the CitrosDB object.
 
 #### Parameters
 
-**```repo```** :&ensp;**int** or **str**
-:   &nbsp;
-
-
-   - To set the repository with the exact id, provide the repository id as str.
-   - To set a repository using its name, provide the name as a string. If the provided string matches multiple repository names, check the whole list by **repo_info()** method.
-   - To query the first created / second created / etc repository, set **repo** = 0, **repo** = 1, etc.
-   - To query the the last created / the second-to-last created / etc repository, set **repo** = -1, **repo** = -2, etc.
-**```inplace```** :&ensp;**bool**, default **False**
-:   If True, set repository id to the current CitrosDB object, otherwise returns new CitrosDB object with
-    set repository id.
-
-
-**```exact_match```** :&ensp;**bool**, default **False**
-:   If True, search for the repository with exact match in name field.
-    If False, searches for the occurance of the provided string within the name field.
-
+name|type|description
+--|--|--
+|**```repo```**|**int** or **str**|      &#8226; To set the repository with the exact id, provide the repository id as str.<br />      &#8226; To set a repository using its name, provide the name as a string. If the provided string matches multiple repository names, check the whole list by **repo_info()** method.<br />      &#8226; To query the first created / second created / etc repository, set **repo** = 0, **repo** = 1, etc.<br />      &#8226; To query the the last created / the second-to-last created / etc repository, set **repo** = -1, **repo** = -2, etc.
+|**```inplace```**|**bool**, default **False**|If True, set repository id to the current CitrosDB object, otherwise returns new CitrosDB object with<br />    set repository id.
+|**```exact_match```**|**bool**, default **False**|If True, search for the repository with exact match in name field.<br />    If False, searches for the occurance of the provided string within the name field.
 #### Returns
 
-&ensp;**[CitrosDB](#citros_data_analysis.data_access.citros_db.CitrosDB "citros_data_analysis.data_access.citros_db.CitrosDB")**
-:   CitrosDB with set repository id or None, if inplace = True.
+name|type|description
+--|--|--
+|**```out```**|**[CitrosDB](#citros_data_analysis.data_access.citros_db.CitrosDB "citros_data_analysis.data_access.citros_db.CitrosDB")**|CitrosDB with set repository id or None, if **inplace** = True.
+#### See Also
+
+**[CitrosDB.repo_info()](#citros_data_analysis.data_access.citros_db.CitrosDB.repo_info "citros_data_analysis.data_access.citros_db.CitrosDB.repo_info")**
 
 
 </details>
@@ -2740,62 +2284,18 @@ and repository ids, list of corresponding simulation ids and date of creation as
 
 #### Parameters
 
-**```search```** :&ensp;**int** or **str**
-:   &nbsp;
-
-
-   - To search for the  repository with the exact id, provide the repository id as str.
-   - To search by  repository name or by words that partially match the  repository name, provide the corresponding word as str.
-   - To query the first created / second created / etc  repository, set **search** = 0, **search** = 1, etc.
-   - To query the the last created / the second-to-last created / etc  repository, set **search** = -1, **search** = -2, etc.
-   To use another field for search, set the appropriate **search_by** parameter
-
-**```search_by```** :&ensp;**str**
-:   By default, the search is conducted based on name, repository id or ordinal number according to the creation time.
-    To perform a search using an another field, set the **search_by** parameter to one of the following 
-    and provide the appropriate format to **search** field:
-    Provide **search** as a str for the following fields:
-
-
-   - 'description'
-   - 'git'<br />
-    Provide **search** as str that may containes date, time and timezone information, like: 'dd-mm-yyyy hh:mm:ss +hh:mm',
-    or only date and time without timezone: 'dd-mm-yyyy hh:mm:ss', or only date: 'dd-mm-yyyy' / 'dd-mm' / 'dd'
-    or only time: 'hh:mm:ss' / 'hh:mm' with or without timezone. 
-    Any missing date information is automatically set to today's date, and any missing time information is set to 0.
-   - 'created_after'
-   - 'created_before'
-   - 'updated_after'
-   - 'updated_before'
-
-**```order_by```** :&ensp;**str** or **list** or **dict**
-:   To obtain the output in ascending order, provide one or more of the following options as either a single value as str or a as a list:
-
-
-   - 'name'
-   - 'repo_id' 
-   - 'description'
-   - 'created_at'
-   - 'updated_at'
-   - 'git'<br />
-    To specify whether to use descending or ascending order, create a dictionary where the keys correspond to the options mentioned above, 
-    and the values are either 'asc' for ascending or 'desc' for descending. For instance: {'name': 'asc', 'created_at': 'desc'}"
-
-**```exact_match```** :&ensp;**bool**, default **False**
-:   If True and **search** is str, looks for an exact match in the field defined by the 'search_by' parameter.
-    If **search_by** is not defined, search is perfomed by name.
-    If set to False, searches for the occurrences of the provided string within the field defined by the 'search_by' parameter.
-
-
-**```user```** :&ensp;**str**, default `'all'`
-:   Set **user** as 'me' to filter and display only the repositories that belong to you.
-    To get the repositories that were created by another user, provide the email.
-
+name|type|description
+--|--|--
+|**```search```**|**int** or **str**|      &#8226; To search for the  repository with the exact id, provide the repository id as str.<br />      &#8226; To search by  repository name or by words that partially match the  repository name, provide the corresponding word as str.<br />      &#8226; To query the first created / second created / etc  repository, set **search** = 0, **search** = 1, etc.<br />      &#8226; To query the the last created / the second-to-last created / etc  repository, set **search** = -1, **search** = -2, etc.<br />    <br />    To use another field for search, set the appropriate **search_by** parameter
+|**```search_by```**|**str**|By default, the search is conducted based on name, repository id or ordinal number according to the creation time.<br />    To perform a search using an another field, set the **search_by** parameter to one of the following <br />    and provide the appropriate format to **search** field:<br />    Provide **search** as a **str** for the following fields:<br />      &#8226; 'description'<br />      &#8226; 'git'<br /><br />    Provide **search** as **str** that may containes date, time and timezone information, like: 'dd-mm-yyyy hh:mm:ss +hh:mm',<br />    or only date and time without timezone: 'dd-mm-yyyy hh:mm:ss', or only date: 'dd-mm-yyyy' / 'dd-mm' / 'dd'<br />    or only time: 'hh:mm:ss' / 'hh:mm' with or without timezone. <br />    Any missing date information is automatically set to today's date, and any missing time information is set to 0.<br />      &#8226; 'created_after'<br />      &#8226; 'created_before'<br />      &#8226; 'updated_after'<br />      &#8226; 'updated_before'
+|**```order_by```**|**str** or **list** or **dict**|To obtain the output in ascending order, provide one or more of the following options as either a single value as str or a as a list:<br />      &#8226; 'name'<br />      &#8226; 'repo_id' <br />      &#8226; 'description'<br />      &#8226; 'created_at'<br />      &#8226; 'updated_at'<br />      &#8226; 'git'<br /><br />    To specify whether to use descending or ascending order, create a dictionary where the keys correspond to the options mentioned above, <br />    and the values are either 'asc' for ascending or 'desc' for descending. For instance: {'name': 'asc', 'created_at': 'desc'}"
+|**```exact_match```**|**bool**, default **False**|If True and **search** is str, looks for an exact match in the field defined by the 'search_by' parameter.<br />    If **search_by** is not defined, search is perfomed by name.<br />    If set to False, searches for the occurrences of the provided string within the field defined by the 'search_by' parameter.
+|**```user```**|**str**, default `'all'`|Set **user** as 'me' to filter and display only the repositories that belong to you.<br />    To get the repositories that were created by another user, provide the email.
 #### Returns
 
-&ensp;**[CitrosDict](citros_dict.md#citros_data_analysis.data_access.citros_dict.CitrosDict "citros_data_analysis.data_access.citros_dict.CitrosDict")**
-:   Information about the repositories.
-
+name|type|description
+--|--|--
+|**```out```**|**[CitrosDict](citros_dict.md#citros_data_analysis.data_access.citros_dict.CitrosDict "citros_data_analysis.data_access.citros_dict.CitrosDict")**|Information about the repositories.
 
 </details>
 <details>
@@ -3052,27 +2552,17 @@ Set constraints on rid.
 
 #### Parameters
 
-**```value```** :&ensp;**int** or **list** of **ints**, optional
-:   Exact values of rid.
-
-
-**```start```** :&ensp;**int**, default **0**
-:   The lower limit for rid values.
-
-
-**```end```** :&ensp;**int**, optional
-:   The higher limit for rid, the end is included.
-
-
-**```count```** :&ensp;**int**, optional
-:   Used only if the **end** is not set.
-    Number of rid to return in the query, starting form the **start**.
-
+name|type|description
+--|--|--
+|**```value```**|**int** or **list** of **ints**, optional|Exact values of rid.
+|**```start```**|**int**, default **0**|The lower limit for rid values.
+|**```end```**|**int**, optional|The higher limit for rid, the end is included.
+|**```count```**|**int**, optional|Used only if the **end** is not set.<br />    Number of rid to return in the query, starting form the **start**.
 #### Returns
 
-&ensp;**[CitrosDB](#citros_data_analysis.data_access.citros_db.CitrosDB "citros_data_analysis.data_access.citros_db.CitrosDB")**
-:   CitrosDB with set 'rid' parameter.
-
+name|type|description
+--|--|--
+|**```out```**|**[CitrosDB](#citros_data_analysis.data_access.citros_db.CitrosDB "citros_data_analysis.data_access.citros_db.CitrosDB")**|CitrosDB with set 'rid' parameter.
 
 </details>
 <details>
@@ -3132,20 +2622,14 @@ Allows to set constraints on json-data columns.
 
 #### Parameters
 
-**```filter_by```** :&ensp;**dict**
-:   Constraints to apply on columns: {key_1: value_1, key_2: value_2, ...}.<br />
-    key_n - must match labels of the columns, <br />
-    value_n  - in the case of equality: list of exact values,<br />
-               in the case of inequality: dict with ">", ">=", "<" or "<=".<br />
-    Conditions, passed here, have higher priority over those defined by **topic()**, **rid()**, **sid()** and **time()** and will override them.
-    If sampling method is used, constraints on additional columns are applied BEFORE sampling while
-    constraints on columns from json-data are applied AFTER sampling.
-
+name|type|description
+--|--|--
+|**```filter_by```**|**dict**|Constraints to apply on columns: {key_1: value_1, key_2: value_2, ...}, where:<br />      &#8226; key_n - must match labels of the columns,<br />      &#8226; value_n  - in the case of equality: list of exact values,<br />               in the case of inequality: dict with ">", ">=", "<" or "<=".<br />    Conditions, passed here, have higher priority over those defined by **topic()**, **rid()**, **sid()** and **time()** and will override them.<br />    If sampling method is used, constraints on additional columns are applied BEFORE sampling while<br />    constraints on columns from json-data are applied AFTER sampling.
 #### Returns
 
-&ensp;**[CitrosDB](#citros_data_analysis.data_access.citros_db.CitrosDB "citros_data_analysis.data_access.citros_db.CitrosDB")**
-:   CitrosDB with set constraints.
-
+name|type|description
+--|--|--
+|**```out```**|**[CitrosDB](#citros_data_analysis.data_access.citros_db.CitrosDB "citros_data_analysis.data_access.citros_db.CitrosDB")**|CitrosDB with set constraints.
 #### See Also
 
 **[CitrosDB.topic()](#citros_data_analysis.data_access.citros_db.CitrosDB.topic "citros_data_analysis.data_access.citros_db.CitrosDB.topic")**
@@ -3211,10 +2695,9 @@ Sort the result of the query in ascending or descending order.
 
 #### Parameters
 
-**```order_by```** :&ensp;**str, list** of **str** or **dict**, optional
-:   If **order_by** is a single string or a list of strings, it represents the column label(s) by which the result is sorted in ascending order.
-    For more control, use a dictionary with column labels as keys and values ('asc' for ascending, 'desc' for descending) to define the sorting order.
-
+name|type|description
+--|--|--
+|**```order_by```**|**str, list** of **str** or **dict**, optional|If **order_by** is a single string or a list of strings, it represents the column label(s) by which the result is sorted in ascending order.<br />    For more control, use a dictionary with column labels as keys and values ('asc' for ascending, 'desc' for descending) to define the sorting order.
 
 </details>
 <details>
@@ -3261,29 +2744,17 @@ Set constraints on sid.
 
 #### Parameters
 
-**```value```** :&ensp;**int** or **list** of **ints**, optional
-:   Exact values of sid.
-    If nothing is passed, then the default value of sid is used (ENV parameter "CITROS_SIMULATION_RUN_ID").
-    If the default value does not exist, no limits for sid are applied.
-
-
-**```start```** :&ensp;**int**, default **0**
-:   The lower limit for sid values.
-
-
-**```end```** :&ensp;**int**, optional
-:   The higher limit for sid, the end is included.
-
-
-**```count```** :&ensp;**int**, optional
-:   Used only if the **end** is not set.
-    Number of sid to return in the query, starting form the **start**.
-
+name|type|description
+--|--|--
+|**```value```**|**int** or **list** of **ints**, optional|Exact values of sid.<br />    If nothing is passed, then the default value of sid is used (ENV parameter "CITROS_SIMULATION_RUN_ID").<br />    If the default value does not exist, no limits for sid are applied.
+|**```start```**|**int**, default **0**|The lower limit for sid values.
+|**```end```**|**int**, optional|The higher limit for sid, the end is included.
+|**```count```**|**int**, optional|Used only if the **end** is not set.<br />    Number of sid to return in the query, starting form the **start**.
 #### Returns
 
-&ensp;**[CitrosDB](#citros_data_analysis.data_access.citros_db.CitrosDB "citros_data_analysis.data_access.citros_db.CitrosDB")**
-:   CitrosDB with set 'sid' parameter.
-
+name|type|description
+--|--|--
+|**```out```**|**[CitrosDB](#citros_data_analysis.data_access.citros_db.CitrosDB "citros_data_analysis.data_access.citros_db.CitrosDB")**|CitrosDB with set 'sid' parameter.
 
 </details>
 <details>
@@ -3342,15 +2813,15 @@ Set batch to the CitrosDB object.
 
 #### Parameters
 
-**```simulation```** :&ensp;**str**
-:   &nbsp;
+name|type|description
+--|--|--
+|**```simulation```**|**str**|Name of the simulation.
+|**```inplace```**|**bool**, default **False**|If True, set simulation name to the current CitrosDB object, otherwise returns new CitrosDB <br />    object with set simulation.
+#### Returns
 
-
-   Name of the simulation.
-**```inplace```** :&ensp;**bool**, default **False**
-:   If True, set simulation name to the current CitrosDB object, otherwise returns new CitrosDB 
-    object with set simulation.
-
+name|type|description
+--|--|--
+|**```out```**|**[CitrosDB](#citros_data_analysis.data_access.citros_db.CitrosDB "citros_data_analysis.data_access.citros_db.CitrosDB")**|CitrosDB with set simulation or None, if **inplace** = True.
 
 </details>
 <details>
@@ -3399,14 +2870,14 @@ Messages with different sids are selected separately.
 
 #### Parameters
 
-**```skip```** :&ensp;**int**, optional
-:   Control number of the messages to skip.
-
+name|type|description
+--|--|--
+|**```skip```**|**int**, optional|Control number of the messages to skip.
 #### Returns
 
-&ensp;**[CitrosDB](#citros_data_analysis.data_access.citros_db.CitrosDB "citros_data_analysis.data_access.citros_db.CitrosDB")**
-:   CitrosDB with parameters set for sampling method 'skip'.
-
+name|type|description
+--|--|--
+|**```out```**|**[CitrosDB](#citros_data_analysis.data_access.citros_db.CitrosDB "citros_data_analysis.data_access.citros_db.CitrosDB")**|CitrosDB with parameters set for sampling method 'skip'.
 
 </details>
 <details>
@@ -3446,23 +2917,16 @@ Set constraints on time.
 
 #### Parameters
 
-**```start```** :&ensp;**int**, default **0**
-:   The lower limit for time values.
-
-
-**```end```** :&ensp;**int**, optional
-:   The higher limit for time, the end is included.
-
-
-**```duration```** :&ensp;**int**, optional
-:   Used only if the **end** is not set.
-    Time interval to return in the query, starting form the **start**.
-
+name|type|description
+--|--|--
+|**```start```**|**int**, default **0**|The lower limit for time values.
+|**```end```**|**int**, optional|The higher limit for time, the end is included.
+|**```duration```**|**int**, optional|Used only if the **end** is not set.<br />    Time interval to return in the query, starting form the **start**.
 #### Returns
 
-&ensp;**[CitrosDB](#citros_data_analysis.data_access.citros_db.CitrosDB "citros_data_analysis.data_access.citros_db.CitrosDB")**
-:   CitrosDB with set 'time' parameter.
-
+name|type|description
+--|--|--
+|**```out```**|**[CitrosDB](#citros_data_analysis.data_access.citros_db.CitrosDB "citros_data_analysis.data_access.citros_db.CitrosDB")**|CitrosDB with set 'time' parameter.
 
 </details>
 <details>
@@ -3523,57 +2987,24 @@ Plot **var_name** vs. **Time** for each of the sids, where **Time** = **time_ste
 
 #### Parameters
 
-**```ax```** :&ensp;**matplotlib.axes.Axes**
-:   Figure axis to plot on.
-
-
-**```*args```** :&ensp;**Any**
-:   Additional arguments to style lines, set color, etc, 
-    see **[matplotlib.axes.Axes.plot](https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.plot.html)**.
-
-
-**```topic_name```** :&ensp;**str**
-:   Input topic name. If specified, will override value that was set by **topic()** method.
-
-
-**```var_name```** :&ensp;**str**
-:   Name of the variable to plot along y-axis.
-
-
-**```time_step```** :&ensp;**float** or **int**, default **1.0**
-:   Time step, **Time** = **time_step** * rid.
-
-
-**```sids```** :&ensp;**list**
-:   List of the sids. If specified, will override values that were set by **sid()** method.
-    If not specified, data for all sids is used.
-
-
-**```y_label```** :&ensp;**str**
-:   Label to set to y-axis. Default **var_name**.
-
-
-**```title_text```** :&ensp;**str**
-:   Title of the figure. Default '**var_y_name** vs. Time'.
-
-
-**```legend```** :&ensp;**bool**
-:   If True, show the legend with sids.
-
-
-**```remove_nan```** :&ensp;**bool**, default **True**
-:   If True, NaN values will be removed before plotting.
-
-
-**```inf_vals```** :&ensp;**None** or **float**, default **1e308**
-:   If specified, all values that exceed the provided value in absolute terms will be removed before plotting.
-    If this functionality is not required, set inf_vals = None.
-
+name|type|description
+--|--|--
+|**```ax```**|**matplotlib.axes.Axes**|Figure axis to plot on.
+|**```*args```**|**Any**|Additional arguments to style lines, set color, etc, <br />    see **[matplotlib.axes.Axes.plot](https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.plot.html)**.
+|**```topic_name```**|**str**|Input topic name. If specified, will override value that was set by **topic()** method.
+|**```var_name```**|**str**|Name of the variable to plot along y-axis.
+|**```time_step```**|**float** or **int**, default **1.0**|Time step, **Time** = **time_step** * rid.
+|**```sids```**|**list**|List of the sids. If specified, will override values that were set by **sid()** method.<br />    If not specified, data for all sids is used.
+|**```y_label```**|**str**|Label to set to y-axis. Default **var_name**.
+|**```title_text```**|**str**|Title of the figure. Default '**var_y_name** vs. Time'.
+|**```legend```**|**bool**, default **True**|If True, show the legend with sids.
+|**```remove_nan```**|**bool**, default **True**|If True, NaN values will be removed before plotting.
+|**```inf_vals```**|**None** or **float**, default **1e308**|If specified, all values that exceed the provided value in absolute terms will be removed before plotting.<br />    If this functionality is not required, set inf_vals = None.
 #### Other Parameters
 
-**```kwargs```** :&ensp;**dict**, optional
-:   Other keyword arguments, see **[matplotlib.axes.Axes.plot](https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.plot.html)**.
-
+name|type|description
+--|--|--
+|**```kwargs```**|**dict**, optional|Other keyword arguments, see **[matplotlib.axes.Axes.plot](https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.plot.html)**.
 
 </details>
 <details>
@@ -3633,14 +3064,14 @@ Select topic.
 
 #### Parameters
 
-**```topic_name```** :&ensp;**str** or **list** of **str**
-:   Name of the topic.
-
+name|type|description
+--|--|--
+|**```topic_name```**|**str** or **list** of **str**|Name of the topic.
 #### Returns
 
-&ensp;**[CitrosDB](#citros_data_analysis.data_access.citros_db.CitrosDB "citros_data_analysis.data_access.citros_db.CitrosDB")**
-:   CitrosDB with set 'topic' parameter.
-
+name|type|description
+--|--|--
+|**```out```**|**[CitrosDB](#citros_data_analysis.data_access.citros_db.CitrosDB "citros_data_analysis.data_access.citros_db.CitrosDB")**|CitrosDB with set 'topic' parameter.
 
 </details>
 <details>
@@ -3692,38 +3123,16 @@ about the user who created that specific batch.
 
 #### Parameters
 
-**```search```** :&ensp;**str**, optional
-:   &nbsp;
-
-
-   - By default, it displays information about all users within the organization.
-   - Provide email to display information about the exact user.
-   - To search user by their name, provide user's name and set **search_by** = 'name'
-   - To search by the last name, provide user's last name and set **search_by** = 'last_name'
-
-**```search```** :&ensp;**str**, optional
-:   &nbsp;
-
-
-   - By default, if the **search** is provided, performs search by email.
-   - To search by the name, set **search_by** = 'name'.
-   - To search by the last name, set **search_by** = 'last_name'.
-
-**```order_by```** :&ensp;**str** or **list** or **dict**
-:   To obtain the output in ascending order, provide one or more of the following options as either a single str or a as a list:
-
-
-   - 'name'
-   - 'last_name' 
-   - 'email'<br />           
-    To specify whether to use descending or ascending order, create a dictionary where the keys correspond to the options mentioned above, 
-    and the values are either 'asc' for ascending or 'desc' for descending. For instance: {'name': 'asc', 'last_name': 'desc'}"
-
+name|type|description
+--|--|--
+|**```search```**|**str**, optional|      &#8226; By default, it displays information about all users within the organization.<br />      &#8226; Provide email to display information about the exact user.<br />      &#8226; To search user by their name, provide user's name and set **search_by** = 'name'<br />      &#8226; To search by the last name, provide user's last name and set **search_by** = 'last_name'
+|**```search```**|**str**, optional|      &#8226; By default, if the **search** is provided, performs search by email.<br />      &#8226; To search by the name, set **search_by** = 'name'.<br />      &#8226; To search by the last name, set **search_by** = 'last_name'.
+|**```order_by```**|**str** or **list** or **dict**|To obtain the output in ascending order, provide one or more of the following options as either a single str or a as a list:<br />      &#8226; 'name'<br />      &#8226; 'last_name' <br />      &#8226; 'email'           <br />    <br />    To specify whether to use descending or ascending order, create a dictionary where the keys correspond to the options mentioned above, <br />    and the values are either 'asc' for ascending or 'desc' for descending. For instance: {'name': 'asc', 'last_name': 'desc'}"
 #### Returns
 
-&ensp;**[CitrosDict](citros_dict.md#citros_data_analysis.data_access.citros_dict.CitrosDict "citros_data_analysis.data_access.citros_dict.CitrosDict")**
-:   Information about the users.
-
+name|type|description
+--|--|--
+|**```out```**|**[CitrosDict](citros_dict.md#citros_data_analysis.data_access.citros_dict.CitrosDict "citros_data_analysis.data_access.citros_dict.CitrosDict")**|Information about the users.
 
 </details>
 <details>
@@ -3846,61 +3255,25 @@ Plot **var_y_name** vs. **var_x_name** for each of the sids.
 
 #### Parameters
 
-**```ax```** :&ensp;**matplotlib.axes.Axes**
-:   Figure axis to plot on.
-
-
-**```*args```** :&ensp;**Any**
-:   Additional arguments to style lines, set color, etc, 
-    see **[matplotlib.axes.Axes.plot](https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.plot.html)**.
-
-
-**```topic_name```** :&ensp;**str**
-:   Input topic name. If specified, will override value that was set by **topic()** method.
-
-
-**```var_x_name```** :&ensp;**str**
-:   Name of the variable to plot along x-axis.
-
-
-**```var_y_name```** :&ensp;**str**
-:   Name of the variable to plot along y-axis.
-
-
-**```sids```** :&ensp;**int** or **list** of **int**, optional
-:   List of the sids. If specified, will override values that were set by **sid()** method.
-    If not specified, data for all sids is used.
-
-
-**```x_label```** :&ensp;**str**, optional
-:   Label to set to x-axis. Default **var_x_name**.
-
-
-**```y_label```** :&ensp;**str**, optional
-:   Label to set to y-axis. Default **var_y_name**.
-
-
-**```title_text```** :&ensp;**str**, optional
-:   Title of the figure. Default '**var_y_name** vs. **var_x_name**'.
-
-
-**```legend```** :&ensp;**bool**
-:   If True, show the legend with sids.
-
-
-**```remove_nan```** :&ensp;**bool**, default **True**
-:   If True, NaN values will be removed before plotting.
-
-
-**```inf_vals```** :&ensp;**None** or **float**, default **1e308**
-:   If specified, all values that exceed the provided value in absolute terms will be removed before plotting.
-    If this functionality is not required, set inf_vals = None.
-
+name|type|description
+--|--|--
+|**```ax```**|**matplotlib.axes.Axes**|Figure axis to plot on.
+|**```*args```**|**Any**|Additional arguments to style lines, set color, etc, <br />    see **[matplotlib.axes.Axes.plot](https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.plot.html)**.
+|**```topic_name```**|**str**|Input topic name. If specified, will override value that was set by **topic()** method.
+|**```var_x_name```**|**str**|Name of the variable to plot along x-axis.
+|**```var_y_name```**|**str**|Name of the variable to plot along y-axis.
+|**```sids```**|**int** or **list** of **int**, optional|List of the sids. If specified, will override values that were set by **sid()** method.<br />    If not specified, data for all sids is used.
+|**```x_label```**|**str**, optional|Label to set to x-axis. Default **var_x_name**.
+|**```y_label```**|**str**, optional|Label to set to y-axis. Default **var_y_name**.
+|**```title_text```**|**str**, optional|Title of the figure. Default '**var_y_name** vs. **var_x_name**'.
+|**```legend```**|**bool**, default **True**|If True, show the legend with sids.
+|**```remove_nan```**|**bool**, default **True**|If True, NaN values will be removed before plotting.
+|**```inf_vals```**|**None** or **float**, default **1e308**|If specified, all values that exceed the provided value in absolute terms will be removed before plotting.<br />    If this functionality is not required, set inf_vals = None.
 #### Other Parameters
 
-**```kwargs```** :&ensp;**dict**, optional
-:   Other keyword arguments, see **[matplotlib.axes.Axes.plot](https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.plot.html)**.
-
+name|type|description
+--|--|--
+|**```kwargs```**|**dict**, optional|Other keyword arguments, see **[matplotlib.axes.Axes.plot](https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.plot.html)**.
 
 </details>
 <details>

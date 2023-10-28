@@ -34,9 +34,9 @@ Store CitrosData objects in a "dbs" attribute for regression analysis.
 
 #### Parameters
 
-**```dbs```** :&ensp;**list**
-:   list of CitrosData objects
-
+name|type|description
+--|--|--
+|**```dbs```**|**list**|list of CitrosData objects
 
 </details>
 
@@ -68,9 +68,9 @@ Add one CitrosData object to CitrosDataArray.
 
 #### Parameters
 
-**```db```** :&ensp;**[CitrosData](citros_data.md#citros_data_analysis.error_analysis.citros_data.CitrosData "citros_data_analysis.error_analysis.citros_data.CitrosData")**
-:   CitrosData object to add to storage.
-
+name|type|description
+--|--|--
+|**```db```**|**[CitrosData](citros_data.md#citros_data_analysis.error_analysis.citros_data.CitrosData "citros_data_analysis.error_analysis.citros_data.CitrosData")**|CitrosData object to add to storage.
 
 </details>
 
@@ -95,9 +95,9 @@ Add list of CitrosData objects to CitrosDataArray.
 
 #### Parameters
 
-**```dbs```** :&ensp;**list **
-:   list of CitrosData objects to add to storage.
-
+name|type|description
+--|--|--
+|**```dbs```**|**list**|list of CitrosData objects to add to storage.
 
 </details>
 
@@ -125,9 +125,9 @@ if **value** is a CitrosData object, then removes it if it exists in CitrosDataA
 
 #### Parameters
 
-**```value```** :&ensp;**int** or **[CitrosData](citros_data.md#citros_data_analysis.error_analysis.citros_data.CitrosData "citros_data_analysis.error_analysis.citros_data.CitrosData")**
-:   &nbsp;
-
+name|type|description
+--|--|--
+|**```value```**|**int** or **[CitrosData](citros_data.md#citros_data_analysis.error_analysis.citros_data.CitrosData "citros_data_analysis.error_analysis.citros_data.CitrosData")**|Object or index of object to remove.
 
 </details>
 
@@ -163,75 +163,31 @@ Show the predictions based on the results of the regression solution, neural net
 
 #### Parameters
 
-**```parameters```** :&ensp;**dict**
-:   Names of the independent parameters and their values to calculate the prediction.
-
-
-**```method```** :&ensp;**str** or **list** of **str**, default `'regression'`
-:   If the **method** is 'poly', the polinomial regression is solved.
-    If the **method** is 'neural_net', the solution is finding by sklearn.neural_network.MLPRegressor.
-    If the **method** is 'gmm', the gaussian mixture model is built and used for the prediction.
-
-
-**```n_poly```** :&ensp;**int**, default **2**
-:   Only used if **method** = 'poly'.
-    The highest degree of the polynomial (1 for linear, 2 for quadratic, etc).
-
-
-**```activation```** :&ensp;`{'relu', 'identity', 'logistic'` or `'tanh'}`, default `'relu'`
-:   Only used if **method** = 'neural_net'.
-    Activation function for the hidden layer, see sklearn.neural_network.MLPRegressor
-
-
-**```max_iter```** :&ensp;**int**, default **500**
-:   Only used if **method** = 'neural_net'.
-    Maximum number of iterations.
-
-
-**```solver```** :&ensp;`{'lbfgs', 'sgd', 'adam'}`, default `'lbfgs'`
-:   Only used if **method** = 'neural_net'.
-    The solver for weight optimization.
-
-
-**```hidden_layer_sizes```** :&ensp;`array-like` of `shape(n_layers - 2,)`, default=**(10,)**
-:   Only used if **method** = 'neural_net'.
-    The ith element represents the number of neurons in the ith hidden layer.
-
-
-**```alpha```** :&ensp;**float**, default `1e-16`
-:   Only used if **method** = 'gmm'.
-    Value of the covariance element of parameters.
-
-
-**```fig```** :&ensp;**matplotlib.figure.Figure**, optional
-:   figure to plot on. If None, then the new one is created.
-
-
-**```show_fig```** :&ensp;**bool**, default **True**
-:   If the figure will be shown.
-
-
-**```return_fig```** :&ensp;**bool**, default **False**
-:   If True, the figure and ax (or list of ax) will be returned.
-
+name|type|description
+--|--|--
+|**```parameters```**|**dict**|Names of the independent parameters and their values to calculate the prediction.
+|**```method```**|**str** or **list** of **str**, default `'poly'`|      &#8226; 'poly' - the polinomial regression.<br />      &#8226; 'neural_net' - the solution is finding based on [sklearn.neural_network.MLPRegressor](https://scikit-learn.org/stable/modules/generated/sklearn.neural_network.MLPRegressor.html).<br />      &#8226; 'gmm' - the gaussian mixture model is built and used for the prediction.
+|**```n_poly```**|**int**, default **2**|Only used if **method** = 'poly'.<br />    The highest degree of the polynomial (1 for linear, 2 for quadratic, etc).
+|**```activation```**|`{'relu', 'identity', 'logistic'` or `'tanh'}`, default `'relu'`|Only used if **method** = 'neural_net'.<br />    Activation function for the hidden layer, see sklearn.neural_network.MLPRegressor
+|**```max_iter```**|**int**, default **500**|Only used if **method** = 'neural_net'.<br />    Maximum number of iterations.
+|**```solver```**|`{'lbfgs', 'sgd', 'adam'}`, default `'lbfgs'`|Only used if **method** = 'neural_net'.<br />    The solver for weight optimization.
+|**```hidden_layer_sizes```**|`array-like` of `shape(n_layers - 2,)`, default=**(10,)**|Only used if **method** = 'neural_net'.<br />    The ith element represents the number of neurons in the ith hidden layer.
+|**```alpha```**|**float**, default `1e-16`|Only used if **method** = 'gmm'.<br />    Value of the covariance element of parameters.
+|**```fig```**|**matplotlib.figure.Figure**, optional|figure to plot on. If None, then the new one is created.
+|**```show_fig```**|**bool**, default **True**|If the figure will be shown.
+|**```return_fig```**|**bool**, default **False**|If True, the figure and ax (or list of ax) will be returned.
 #### Other Parameters
 
-**```kwargs```** :&ensp;**dict**, optional
-:   Other keyword arguments for **method** = 'neural_net', see sklearn.neural_network.MLPRegressor.
-
+name|type|description
+--|--|--
+|**```kwargs```**|**dict**, optional|Other keyword arguments for **method** = 'neural_net', see [sklearn.neural_network.MLPRegressor](https://scikit-learn.org/stable/modules/generated/sklearn.neural_network.MLPRegressor.html).
 #### Returns
 
-**```result```** :&ensp;**pandas.DataFrame**
-:   Predicted table
-
-
-**```fig```** :&ensp;**matplotlib.figure.Figure**
-:   if **return_fig** set to True
-
-
-**```ax```** :&ensp;**matplotlib.axes.Axes** or **list** of **matplotlib.axes.Axes**
-:   if **return_fig** set to True
-
+name|type|description
+--|--|--
+|**```result```**|**pandas.DataFrame**|Predicted table
+|**```fig```**|**matplotlib.figure.Figure**|if **return_fig** set to True
+|**```ax```**|**matplotlib.axes.Axes** or **list** of **matplotlib.axes.Axes**|if **return_fig** set to True
 
 </details>
 <details>

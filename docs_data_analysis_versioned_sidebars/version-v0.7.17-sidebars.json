@@ -9,6 +9,11 @@
       },
       "items": [
         {
+          "type": "doc",
+          "label": "Snippets",
+          "id": "snippets/snippets"
+        },
+        {
           "type": "category",
           "label": "Data access",
           "items": [
@@ -19,10 +24,6 @@
             {
               "type": "category",
               "label": "Examples",
-              "link": {
-                "type": "doc",
-                "id": "data_access/data_access_examples"
-              },
               "items": [
                 "data_access/getting_started",
                 "data_access/repository_overview",
@@ -36,10 +37,6 @@
             {
               "type": "category",
               "label": "Documentation",
-              "link": {
-                "type": "doc",
-                "id": "data_access/data_access_documentation"
-              },
               "items": [
                 "documentation/data_access/citros_db",
                 "documentation/data_access/citros_dict",
@@ -59,10 +56,6 @@
             {
               "type": "category",
               "label": "Examples",
-              "link": {
-                "type": "doc",
-                "id": "error_analysis/error_analysis_examples"
-              },
               "items": [
                 "error_analysis/getting_started_query_data",
                 "error_analysis/statistics",
@@ -73,10 +66,6 @@
             {
               "type": "category",
               "label": "Documentation",
-              "link": {
-                "type": "doc",
-                "id": "error_analysis/error_analysis_documentation"
-              },
               "items": [
                 "documentation/error_analysis/citros_data",
                 "documentation/error_analysis/citros_data_array",
@@ -96,10 +85,6 @@
             {
               "type": "category",
               "label": "Examples",
-              "link": {
-                "type": "doc",
-                "id": "validation/validation_examples"
-              },
               "items": [
                 "validation/getting_started",
                 "validation/standard_deviation_boundary_test",
@@ -113,10 +98,6 @@
             {
               "type": "category",
               "label": "Documentation",
-              "link": {
-                "type": "doc",
-                "id": "validation/validation_documentation"
-              },
               "items": [
                 "documentation/validation/validation"
               ]
