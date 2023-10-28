@@ -27,9 +27,107 @@ The `notebooks` directory in your CITROS simulation contains all the Jupyter-Not
 The advantages of IPYNB files is that they are human-readable, as plain text files formatted using JSON (JavaScript Object Notation), which makes them easy to read. Additionally, IPYNB files are saved in an open standard file format, which means they are accessible to anyone. Furthermore, IPYNB files can easily be converted to other formats such as HTML, PDF, reStructuredText, and LateX formats.
 
 For further information on how to process the data and analyze the results you can see [here](../docs_data_analysis/data_access/getting_started.md).
+</details>
+<details>
+  <summary>Available Actions</summary>  
 
+The ipynb (Jupyter Notebook) files nested under `notebooks` directory has the following actions:
+
+#### Start 
+
+Press the start kernel button to be able to run Python notebook.
+
+![Alt text](img/actions_kernel_start.png)
+
+#### Stop
+
+Press the stop button to stop the kernel.
+
+![Alt text](img/actions_kernel_stop.png)
+
+#### Choose Kernel
+
+Open Drop down menu to choose a kernel type.
+
+![Alt text](img/actions_dropdown.png)
+
+:::note
+At the moment CITROS supports only Python kernel
+:::
+
+#### Kernel Indicator
+
+Indicates whether kernel is connected and in which state
+
+Green circle and state for connected
+Red circle for disconnected
+
+![Alt text](img/actions_kernel_indicator.png)
+
+#### Documentation
+
+Press **Documentation** to open CITROS Docs as wizard
+
+![Alt text](img/actions_documentaion.png)
+
+#### Batch Runs 
+
+Press **Batch Runs** to open all the run of the repository as wizard
+
+![Alt text](img/actions_batchruns.png)
+
+#### Data Analysis Snippets
+
+![Alt text](img/actions_data.png)
+
+#### Edit Icon
+
+Press the **Edit icon** to edit the raw file.
+
+![Alt text](img/actions_edit.png)
+
+Press **+Code** to add code type cell.
+
+Press **+Markdown** to add markdown type cell.
+
+![Alt text](img/actions_codemark.png)
+
+Press **Commit Changes** to commit them into the repository.
+
+Press **Cancel Changes** to close without committing changes.
+
+![Alt text](img/actions_commit.png)
+
+#### Export to PDF
+
+Press the **Export to PDF** button to export notebook.
+Once PDF will be exported, a notification will be received.
+
+![Alt text](img/actions_pdf.png)
+
+
+#### Execute all Cells
+
+Press the **Execute all Cells** to execute the whole python notebook.
+
+![Alt text](img/actions_execute.png)
+
+#### Clear all Outputs
+
+Press the **Clear all Outputs** to clear all executed outputs.
+
+![Alt text](img/actions_outputs.png)
+
+#### Auto Scroll
+
+Toggle **Auto Scroll** to scroll automatically to the currently executed cell. 
+
+Press icon setting --> Auto Scroll togel
+
+![Alt text](img/actions_scroll.png)
 
 </details>
+
 
 ### Directory `parameter_setups`
 <details>
@@ -42,7 +140,37 @@ The file `default_param_setup.json` will not be overwritten during citros `init`
     
 The structured format of the parameter setup files streamlines both the understanding and alteration of parameters for each node in your ROS project. This becomes especially valuable when you're keen to explore the influence of different parameter values on your ROS project's behavior. Take, for instance, a static parameter value like 42. Instead of hard-coding it, you could use a *function object* to derive a value from a normal distribution centered at 42. The introduction of function objects broadens your horizons, enabling you to use any numpy function or even craft user-defined functions for meticulous computational adjustments. A prime example is when parameter values are intricate, making them cumbersome to hard-code; in such scenarios, you can devise a function to fetch them from a file. In essence, this newfound flexibility paves the way for limitless computational and manipulative possibilities for your parameters.
 
-<!-- To learn more about how to include functions in the parameter file, you can find detailed information on the process [here](/docs_cli/configuration/config_params.md). -->
+To learn more about how to include functions in the parameter file, you can find detailed information on the process [here](/docs_cli/configuration/config_params).
+
+</details>
+
+
+<details>
+  <summary>Available Actions</summary>  
+
+The Files nested under `parameter_setups` directory has the following actions:
+
+#### Preview
+
+Press the **Preview** to view the rendered code file
+
+#### Code
+
+Press the **Code** to view the raw code file. 
+
+![Alt text](img/actions_code_prev.png)
+
+#### Edit Icon
+
+Edit icon opens to edit the raw file.
+
+![Alt text](img/actions_edit.png)
+
+Press **Commit Changes** to commit them into the repository
+
+Press **Cancel Changes** to close without committing changes
+
+![Alt text](img/actions_commit.png)
 
 </details>
 
@@ -50,6 +178,12 @@ The structured format of the parameter setup files streamlines both the understa
 <details>
   <summary>Description</summary>
   TODO
+</details>
+
+
+<details>
+  <summary>Available Actions</summary>  
+TODO
 </details>
 
 ### Directory `simulations`
@@ -82,6 +216,37 @@ You can modify these fields to suit your simulation needs, just remember to save
 
 </details>
 
+
+<details>
+  <summary>Available Actions</summary>  
+
+The Files nested under `Simulations` directory has the following actions:
+
+#### Preview
+
+Press the **Preview** to view the rendered code file
+
+#### Code
+
+Press the **Code** to view the raw code file. 
+
+![Alt text](img/actions_code_prev.png)
+
+#### Edit Icon
+
+Edit icon opens to edit the raw file.
+
+![Alt text](img/actions_edit.png)
+
+Press **Commit Changes** to commit them into the repository
+
+Press **Cancel Changes** to close without committing changes
+
+![Alt text](img/actions_commit.png)
+
+
+</details>
+
 ### Directory `workflows`
 <details>
 <summary>Description</summary>
@@ -99,6 +264,37 @@ A flow.json file (e.g. `default_flow.json` which is auto-generated during `citro
 - `recipients`: This is a list of email addresses that will receive the reports generated from the notebooks' analysis.
 
 The flow.json file helps to streamline and automate your citros repository by tying together simulation runs, data analysis, and report distribution into a single manageable file. You can customize it to suit the specifics of your project.
+
+</details>
+
+
+<details>
+  <summary>Available Actions</summary>  
+
+The Files nested under `Workflows` directory has the following actions:
+
+#### Preview
+
+Press the **Preview** to view the rendered code file
+
+#### Code
+
+Press the **Code** to view the raw code file. 
+
+![Alt text](img/actions_code_prev.png)
+
+#### Edit Icon
+
+Edit icon opens to edit the raw file.
+
+![Alt text](img/actions_edit.png)
+
+Press **Commit Changes** to commit them into the repository
+
+Press **Cancel Changes** to close without committing changes
+
+![Alt text](img/actions_commit.png)
+
 
 </details>
 
@@ -167,6 +363,35 @@ The `nodes` array contains objects that describe the ROS nodes within a package.
 
 </details>
 
+
+<details>
+  <summary>Available Actions</summary>  
+
+#### Preview
+
+Press the **Preview** to view the rendered code file
+
+#### Code
+
+Press the **Code** to view the raw code file. 
+
+![Alt text](img/actions_code_prev.png)
+
+#### Edit Icon
+
+Edit icon opens to edit the raw file.
+
+![Alt text](img/actions_edit.png)
+
+Press **Commit Changes** to commit them into the repository
+
+Press **Cancel Changes** to close without committing changes
+
+![Alt text](img/actions_commit.png)
+
+
+</details>
+
 ### File `settings.json`
 <details>
 <summary>Description</summary>
@@ -182,7 +407,35 @@ this file:
 
 </details>
 
-## Droop Down Menu
+<details>
+  <summary>Available Actions</summary>  
+
+#### Preview
+
+Press the **Preview** to view the rendered code file
+
+#### Code
+
+Press the **Code** to view the raw code file. 
+
+![Alt text](img/actions_code_prev.png)
+
+#### Edit Icon
+
+Edit icon opens to edit the raw file.
+
+![Alt text](img/actions_edit.png)
+
+Press **Commit Changes** to commit them into the repository
+
+Press **Cancel Changes** to close without committing changes
+
+![Alt text](img/actions_commit.png)
+
+
+</details>
+
+## Drop Down Menu
 
 Branch drop down menu exists above the code table, listing all branches the repository have.
 
