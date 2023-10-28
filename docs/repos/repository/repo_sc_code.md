@@ -31,32 +31,7 @@ For further information on how to process the data and analyze the results you c
 <details>
   <summary>Available Actions</summary>  
 
-The Files nested under `notebooks` directory has the following actions:
-
-#### Preview
-
-Press the **Preview** to view the rendered code file
-
-#### Code
-
-Press the **Code** to view the raw code file. 
-
-![Alt text](img/actions_code_prev.png)
-
-#### Edit Icon
-
-Edit icon opens to edit the raw file.
-
-![Alt text](img/actions_edit.png)
-
-Press **Commit Changes** to commit them into the repository
-
-Press **Cancel Changes** to close without committing changes
-
-![Alt text](img/actions_commit.png)
-
-
-**ipynb (Jupyter Notebook) files** has a bigger variety of actions:
+The ipynb (Jupyter Notebook) files nested under `notebooks` directory has the following actions:
 
 #### Start 
 
@@ -105,34 +80,51 @@ Press **Batch Runs** to open all the run of the repository as wizard
 
 ![Alt text](img/actions_data.png)
 
-
-
 #### Edit Icon
 
 Press the **Edit icon** to edit the raw file.
 
-Press **+Code** to commit them into the repository
+![Alt text](img/actions_edit.png)
 
-Press **+Markdown** to commit them into the repository
+Press **+Code** to add code type cell.
 
-Press **Commit Changes** to commit them into the repository
+Press **+Markdown** to add markdown type cell.
 
-Press **Cancel Changes** to close without committing changes
+![Alt text](img/actions_codemark.png)
+
+Press **Commit Changes** to commit them into the repository.
+
+Press **Cancel Changes** to close without committing changes.
+
+![Alt text](img/actions_commit.png)
 
 #### Export to PDF
+
+Press the **Export to PDF** button to export notebook.
+Once PDF will be exported, a notification will be received.
 
 ![Alt text](img/actions_pdf.png)
 
 
 #### Execute all Cells
 
+Press the **Execute all Cells** to execute the whole python notebook.
+
 ![Alt text](img/actions_execute.png)
 
 #### Clear all Outputs
 
+Press the **Clear all Outputs** to clear all executed outputs.
+
 ![Alt text](img/actions_outputs.png)
 
+#### Auto Scroll
 
+Toggle **Auto Scroll** to scroll automatically to the currently executed cell. 
+
+Press icon setting --> Auto Scroll togel
+
+![Alt text](img/actions_scroll.png)
 
 </details>
 
