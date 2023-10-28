@@ -25,11 +25,6 @@ module.exports = {
       },
       items: [
         {
-          type: 'doc',
-          label: 'Snippets',
-          id: 'snippets/snippets'
-        },
-        {
           type: 'category',
           label: 'Data access',
           items: [

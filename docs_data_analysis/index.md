@@ -3,28 +3,15 @@ sidebar_position: 1
 sidebar_label: 'Package Overview'
 hide_title: true
 ---
-## Data Analysis Overview
+# Data Analysis Overview
 
 This package is a comprehensive solution for data query, analysis and visualization. It is designed to work with data from your simulations that you set and ran in the cloud [remotely](https://citros.io/doc/docs_tutorials#working-with-citros-cli---online) or throug [web](https://citros.io/). With the extensive features of **citros_data_analysis** package, you can quickly and easily extract valuable insights from your data.
 
 The package is devided into three modules: [Data access](data_access/index.md), [Error analysis](error_analysis/index.md) and [Validation](validation/index.md).
 
-## Installation
-
-If you are working in [web](https://citros.io/), the **citros_data_analysis** package is already installed and may be used in the notebooks.
-
-If you wish to work with cloud data remotely, for example using Visual Studio Code, the installation of [CITROS CLI](https://citros.io/doc/docs_cli/overview/cli_install) is required. The **citros_data_analysis** package will be installed alongside it. To use **citros_data_analysis** package you need to be [logged in](https://citros.io/doc/docs_cli/overview/cli_quickstart#run-remotely-on-the-cloud) in your CITROS account.
-
-To update **citros_data_analysis** package without reinstalling CITROS CLI, use pip:
-
-```bash
-$ pip install -U citros-data-analysis
-```
-
 ## Table of Contents
 
-1. [Snippets](snippets/snippets.md)
-2. [Data access](data_access/index.md)
+1. [Data access](data_access/index.md)
     1. [Examples](data_access/getting_started.md)
         1. [Getting Started](data_access/getting_started.md)
         2. [Repository Overview](data_access/repository_overview.md)
@@ -37,7 +24,7 @@ $ pip install -U citros-data-analysis
         1. [Class CitrosDB](documentation/data_access/citros_db.md)
         2. [Class CitrosDict](documentation/data_access/citros_dict.md)
         3. [Class Ref](documentation/data_access/references.md)
-3. [Error analysis](error_analysis/index.md)
+2. [Error analysis](error_analysis/index.md)
     1. [Examples](error_analysis/getting_started_query_data.md)
         1. [Getting Started: Query Data](error_analysis/getting_started_query_data.md)
         2. [Bin, Interpolate and Calculate Statistics](error_analysis/statistics.md)
@@ -47,7 +34,7 @@ $ pip install -U citros-data-analysis
         1. [Class CitrosData](documentation/error_analysis/citros_data.md)
         2. [Class CitrosDataArray](documentation/error_analysis/citros_data_array.md)
         3. [Class CitrosStat](documentation/error_analysis/citros_stat.md)
-4. [Validation](validation/index.md)
+3. [Validation](validation/index.md)
     1. [Examples](validation/getting_started.md)
         1. [Getting Started](validation/getting_started.md)
         2. [Standard Deviation Boundary Test](validation/standard_deviation_boundary_test.md)

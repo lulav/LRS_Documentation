@@ -6,6 +6,7 @@ hide_title: true
 description: 'Documentation'
 ---
 
+# Class CitrosStat
 
 
 
@@ -36,14 +37,14 @@ Object to store statistics.
 
 #### Parameters
 
-name|type|description
+Name|Type|Description
 --|--|--
 |**```F```**|**pandas.DataFrame**|Table with statistics.
 |**```labels```**|`array-like`|Labels of the data columns.
 |**```x_label```**|**str**|Label of the independent variable.
 #### Attributes
 
-name|type|description
+Name|Type|Description
 --|--|--
 |**```x```**|**pandas.DataFrame**|Table with independent variable.
 |**```mean```**|**pandas.DataFrame**|Table with mean values. If statistics was collected for a vector, columns correspond to vector elements.
@@ -61,7 +62,7 @@ name|type|description
 
 
     
-### Method `plot` {#citros_data_analysis.error_analysis.citros_stat.CitrosStat.plot}
+## Method `plot` {#citros_data_analysis.error_analysis.citros_stat.CitrosStat.plot}
 
 
 
@@ -85,7 +86,7 @@ Plot mean values and standard deviations.
 
 #### Parameters
 
-name|type|description
+Name|Type|Description
 --|--|--
 |**```fig```**|**matplotlib.figure.Figure**|figure to plot on. If None, the new one will be created.
 |**```show_fig```**|**bool**|If the fugure should be shown, True by default.
@@ -95,7 +96,7 @@ name|type|description
 |**```std_color```**|**str**, default `'r'`|Color for dispalying standard deviations, red by default.
 #### Returns
 
-name|type|description
+Name|Type|Description
 --|--|--
 |**```fig```**|**matplotlib.figure.Figure**|if **return_fig** set to True
 |**```ax```**|**list** of **matplotlib.axes.Axes**|if **return_fig** set to True
@@ -104,7 +105,7 @@ name|type|description
 
 
     
-### Method `to_pandas` {#citros_data_analysis.error_analysis.citros_stat.CitrosStat.to_pandas}
+## Method `to_pandas` {#citros_data_analysis.error_analysis.citros_stat.CitrosStat.to_pandas}
 
 
 
@@ -121,7 +122,7 @@ Convert CitrosStat object back to pandas DataFrame.
 
 #### Returns
 
-name|type|description
+Name|Type|Description
 --|--|--
 |**```df```**|**pandas.DataFrame**|Converted to pandas DataFrame.
 

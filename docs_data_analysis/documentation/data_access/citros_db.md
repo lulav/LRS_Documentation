@@ -6,6 +6,7 @@ hide_title: true
 description: 'Documentation'
 ---
 
+# Class CitrosDB
 
 
 
@@ -44,7 +45,7 @@ CitrosDB object, that allows to get general information about the batch and make
 
 #### Parameters
 
-name|type|description
+Name|Type|Description
 --|--|--
 |**```host```**|**str**|Database host adress.<br />    If None, uses predefined ENV parameter "PG_HOST".
 |**```user```**|**str**|User name.<br />    If not specified, uses predefined ENV parameter "PG_USER" or try to define using 'auth' file.
@@ -69,7 +70,7 @@ name|type|description
 
 
     
-### Method `avg` {#citros_data_analysis.data_access.citros_db.CitrosDB.avg}
+## Method `avg` {#citros_data_analysis.data_access.citros_db.CitrosDB.avg}
 
 
 
@@ -91,12 +92,12 @@ The value in 'rid' column is set as a minimum value among the 'rid' values of th
 
 #### Parameters
 
-name|type|description
+Name|Type|Description
 --|--|--
 |**```n_avg```**|**int**|Number of messages to average.
 #### Returns
 
-name|type|description
+Name|Type|Description
 --|--|--
 |**```out```**|**[CitrosDB](#citros_data_analysis.data_access.citros_db.CitrosDB "citros_data_analysis.data_access.citros_db.CitrosDB")**|CitrosDB with parameters set for sampling method 'avg'.
 
@@ -115,7 +116,7 @@ To average each 3 messages of the topic 'A' and get the result:
 
 
     
-### Method `batch` {#citros_data_analysis.data_access.citros_db.CitrosDB.batch}
+## Method `batch` {#citros_data_analysis.data_access.citros_db.CitrosDB.batch}
 
 
 
@@ -137,7 +138,7 @@ Set batch to the CitrosDB object.
 
 #### Parameters
 
-name|type|description
+Name|Type|Description
 --|--|--
 |**```batch```**|**int** or **str**|      &#8226; To set the batch with the exact id, provide the batch id as str.<br />      &#8226; To set a batch using its name, provide the name as a string. If the provided string matches multiple batch names, check the whole list by batch_info() method.<br />      &#8226; To query the first created / second created / etc batch, set **batch** = 0, **batch** = 1, etc.<br />      &#8226; To query the the last created / the second-to-last created / etc batch, set **batch** = -1, **batch** = -2, etc.
 |**```inplace```**|**bool**, default **False**|If True, set batch id to the current CitrosDB object, otherwise returns new CitrosDB object with<br />    set batch id.
@@ -145,7 +146,7 @@ name|type|description
 |**```user```**|**str**, default `'all'`|Set **user** = 'me' to search only among batches that were created by you. <br />    To display batches that were created by another user, provide the user's email.
 #### Returns
 
-name|type|description
+Name|Type|Description
 --|--|--
 |**```out```**|**[CitrosDB](#citros_data_analysis.data_access.citros_db.CitrosDB "citros_data_analysis.data_access.citros_db.CitrosDB")**|CitrosDB with set batch id or None, if **inplace** = True.
 #### See Also
@@ -202,7 +203,7 @@ Set batch id '00000000-1111-2222-3333-444444444444' to the already existing **[C
 
 
     
-### Method `batch_info` {#citros_data_analysis.data_access.citros_db.CitrosDB.batch_info}
+## Method `batch_info` {#citros_data_analysis.data_access.citros_db.CitrosDB.batch_info}
 
 
 
@@ -229,7 +230,7 @@ and batch ids, list of corresponding simulation ids and date of creation as dict
 
 #### Parameters
 
-name|type|description
+Name|Type|Description
 --|--|--
 |**```search```**|**str, int** or **float**|      &#8226; To search for the batch with the exact id, provide the batch id as str.<br />      &#8226; To search by batch name or by words that occurred in the batch name, provide the corresponding word as str. For the exact match set **exact_match** = True.<br />      &#8226; To query the first created / second created / etc batch, set **search** = 0, **search** = 1, etc.<br />      &#8226; To query the the last created / the second-to-last created / etc batch, set **search** = -1, **search** = -2, etc.<br />    <br />    To use another field for search, set the appropriate **search_by** parameter
 |**```search_by```**|**str**|By default, the search is conducted based on name, batch id or ordinal number according to the creation time.<br />    To perform a search using an another field, set the **search_by** parameter to one of the following<br />    and provide the appropriate format to **search** field:<br />    <br />    Provide **search** as a str for the following fields (looking for the accurance of **search**, for the exact match set **exact_match** = True):<br />      &#8226; 'simulation'<br />      &#8226; 'tag'<br />      &#8226; 'message'<br /><br />      &#8226; 'status': search by the batch status: set **search_by** = 'status' and <br />    **search** = 'DONE', 'SCHEDULE', 'RUNNING', 'TERMINATING' or 'ERROR'<br />    <br />    Provide **search** as **str** that may containes date, time and timezone information, like: 'dd-mm-yyyy hh:mm:ss +hh:mm', <br />    or only date and time without timezone: 'dd-mm-yyyy hh:mm:ss', or only date: 'dd-mm-yyyy' / 'dd-mm' / 'dd'<br />    or only time: 'hh:mm:ss' / 'hh:mm' with or without timezone. <br />    Any missing date information is automatically set to today's date, and any missing time information is set to 0:<br />      &#8226; 'created_after'<br />      &#8226; 'created_before'<br />      &#8226; 'updated_after'<br />      &#8226; 'updated_before'<br /><br />    Provide **search** as an int for:<br />      &#8226; 'parallelism'<br />      &#8226; 'completions'<br />      &#8226; 'memory'<br /><br />    Provide **search** as float for:<br />      &#8226; 'cpu'<br />      &#8226; 'gpu'
@@ -239,7 +240,7 @@ name|type|description
 |**```user```**|**str**, default `'all'`|Set **user** = 'me' to filter and display only the batches that belong to you. <br />    To display batches that were created by another user, provide the user's email.
 #### Returns
 
-name|type|description
+Name|Type|Description
 --|--|--
 |**```out```**|**[CitrosDict](citros_dict.md#citros_data_analysis.data_access.citros_dict.CitrosDict "citros_data_analysis.data_access.citros_dict.CitrosDict")**|Information about the batches.
 
@@ -492,7 +493,7 @@ Get list of the all existing batches names as a list:
 
 
     
-### Method `data` {#citros_data_analysis.data_access.citros_db.CitrosDB.data}
+## Method `data` {#citros_data_analysis.data_access.citros_db.CitrosDB.data}
 
 
 
@@ -514,12 +515,12 @@ and one of the aggrative method skip(), avg() or move_avg().
 
 #### Parameters
 
-name|type|description
+Name|Type|Description
 --|--|--
 |**```data_names```**|**list**, optional|Labels of the columns from json data column.
 #### Returns
 
-name|type|description
+Name|Type|Description
 --|--|--
 |**```out```**|**pandas.DataFrame**|Table with selected data.
 
@@ -560,7 +561,7 @@ To get the whole 'data' column as a json-object:
 
 
     
-### Method `get_batch` {#citros_data_analysis.data_access.citros_db.CitrosDB.get_batch}
+## Method `get_batch` {#citros_data_analysis.data_access.citros_db.CitrosDB.get_batch}
 
 
 
@@ -577,7 +578,7 @@ Get the name of the current batch if the batch is set.
 
 #### Returns
 
-name|type|description
+Name|Type|Description
 --|--|--
 |**```name```**|**str**|Name of the current batch. If the batch is not set, return None.
 
@@ -597,7 +598,7 @@ Get name of the batch that was created the last:
 
 
     
-### Method `get_batch_id` {#citros_data_analysis.data_access.citros_db.CitrosDB.get_batch_id}
+## Method `get_batch_id` {#citros_data_analysis.data_access.citros_db.CitrosDB.get_batch_id}
 
 
 
@@ -614,7 +615,7 @@ Get the id of the current batch if the batch is set.
 
 #### Returns
 
-name|type|description
+Name|Type|Description
 --|--|--
 |**```id```**|**str**|id of the current batch. If the batch is not set, return None.
 
@@ -634,7 +635,7 @@ Get id of the batch 'dynamics':
 
 
     
-### Method `get_batch_size` {#citros_data_analysis.data_access.citros_db.CitrosDB.get_batch_size}
+## Method `get_batch_size` {#citros_data_analysis.data_access.citros_db.CitrosDB.get_batch_size}
 
 
 
@@ -673,7 +674,7 @@ Print the table with information about batch sizes:
 
 
     
-### Method `get_counts` {#citros_data_analysis.data_access.citros_db.CitrosDB.get_counts}
+## Method `get_counts` {#citros_data_analysis.data_access.citros_db.CitrosDB.get_counts}
 
 
 
@@ -695,7 +696,7 @@ Return number of the rows in the column **column_name**.
 
 #### Parameters
 
-name|type|description
+Name|Type|Description
 --|--|--
 |**```column_name```**|**str**|Label of the column.
 |**```group_by```**|**list**, optional|Labels of the columns to group by. If blank, do not group.
@@ -703,7 +704,7 @@ name|type|description
 |**```nan_exclude```**|**bool**, default **False**|If True, nan values are excluded from the count.
 #### Returns
 
-name|type|description
+Name|Type|Description
 --|--|--
 |**```out```**|**list** of **tuples** or **None**|Number of rows in **column_name**.
 
@@ -776,7 +777,7 @@ The same, but passing all constraintes by **filter_by** parameter:
 
 
     
-### Method `get_current_batch_size` {#citros_data_analysis.data_access.citros_db.CitrosDB.get_current_batch_size}
+## Method `get_current_batch_size` {#citros_data_analysis.data_access.citros_db.CitrosDB.get_current_batch_size}
 
 
 
@@ -814,7 +815,7 @@ Print the table with information about batch sizes:
 
 
     
-### Method `get_data_structure` {#citros_data_analysis.data_access.citros_db.CitrosDB.get_data_structure}
+## Method `get_data_structure` {#citros_data_analysis.data_access.citros_db.CitrosDB.get_data_structure}
 
 
 
@@ -835,7 +836,7 @@ Each tuple conatains topic and type names, structure of the corresponding data a
 
 #### Parameters
 
-name|type|description
+Name|Type|Description
 --|--|--
 |**```topic```**|**list** or **list** of **str**, optional|list of the topics to show data structure for.<br />    Have higher priority, than those defined by **topic()** and **set_filter()** methods <br />    and will override them.<br />    If not specified, shows data structure for all topics.
 
@@ -886,7 +887,7 @@ or
 
 
     
-### Method `get_max_value` {#citros_data_analysis.data_access.citros_db.CitrosDB.get_max_value}
+## Method `get_max_value` {#citros_data_analysis.data_access.citros_db.CitrosDB.get_max_value}
 
 
 
@@ -907,14 +908,14 @@ Return maximum value of the column **column_name**.
 
 #### Parameters
 
-name|type|description
+Name|Type|Description
 --|--|--
 |**```column_name```**|**str**|Label of the column.
 |**```filter_by```**|**dict**, optional|Constraints to apply on columns: {key_1: value_1, key_2: value_2, ...}, where:<br />      &#8226; key_n - must match labels of the columns,<br />      &#8226; value_n  - in the case of equality: list of exact values,<br />               in the case of inequality: dict with ">", ">=", "<" or "<=".<br />    Conditions, passed here, have higher priority over those defined by **topic()**, **rid()**, **sid()**, **time()** and **set_filter()** and will override them.
 |**```return_index```**|**bool**, default **False**|If True, the pair of sid and rid corresponding to the obtained maximum value is also returned.
 #### Returns
 
-name|type|description
+Name|Type|Description
 --|--|--
 |**```value```**|**int, float, str** or **None**|Maximum value of the column **column_name**.
 |**```sid```**|**int** or **list**|Corresponding to the maximum value's sid. Returns only if **return_index** is set to True.
@@ -964,7 +965,7 @@ The same as in the first example, but passing all constraintes by **filter_by** 
 
 
     
-### Method `get_min_value` {#citros_data_analysis.data_access.citros_db.CitrosDB.get_min_value}
+## Method `get_min_value` {#citros_data_analysis.data_access.citros_db.CitrosDB.get_min_value}
 
 
 
@@ -985,14 +986,14 @@ Return minimum value of the column **column_name**.
 
 #### Parameters
 
-name|type|description
+Name|Type|Description
 --|--|--
 |**```column_name```**|**str**|Label of the column.
 |**```filter_by```**|**dict**, optional|Constraints to apply on columns: {key_1: value_1, key_2: value_2, ...}, where:<br />      &#8226; key_n - must match labels of the columns,<br />      &#8226; value_n  - in the case of equality: list of exact values,<br />               in the case of inequality: dict with ">", ">=", "<" or "<=".<br />    Conditions, passed here, have higher priority over those defined by **topic()**, **rid()**, **sid()**, **time()** and **set_filter()** and will override them.
 |**```return_index```**|**bool**, default **False**|If True, the pair of sid and rid corresponding to the obtained minimum value is also returned.<br />    If there are several cases when the maximum or minimum value is reached, the lists of corresponding sids and rids are returned.
 #### Returns
 
-name|type|description
+Name|Type|Description
 --|--|--
 |**```value```**|**int, float, str** or **None**|Minimum value of the column **column_name**.
 |**```sid```**|**int** or **list**|Corresponding to the minimum value's sid. Returns only if **return_index** is set to True.
@@ -1042,7 +1043,7 @@ The same as in the first example, but passing all constraintes by **filter_by** 
 
 
     
-### Method `get_repo` {#citros_data_analysis.data_access.citros_db.CitrosDB.get_repo}
+## Method `get_repo` {#citros_data_analysis.data_access.citros_db.CitrosDB.get_repo}
 
 
 
@@ -1059,7 +1060,7 @@ Get the current repository name if the repository is set.
 
 #### Returns
 
-name|type|description
+Name|Type|Description
 --|--|--
 |**```name```**|**str**|Name of the current repository. If the repository is not set, return None.
 
@@ -1079,7 +1080,7 @@ Get the name of the last created repository:
 
 
     
-### Method `get_repo_id` {#citros_data_analysis.data_access.citros_db.CitrosDB.get_repo_id}
+## Method `get_repo_id` {#citros_data_analysis.data_access.citros_db.CitrosDB.get_repo_id}
 
 
 
@@ -1096,7 +1097,7 @@ Get the current repository id if the repository is set.
 
 #### Returns
 
-name|type|description
+Name|Type|Description
 --|--|--
 |**```id```**|**str**|id of the current repository. If the repository is not set, return None.
 
@@ -1116,7 +1117,7 @@ Get id of the repository 'citros_project':
 
 
     
-### Method `get_sid_tables` {#citros_data_analysis.data_access.citros_db.CitrosDB.get_sid_tables}
+## Method `get_sid_tables` {#citros_data_analysis.data_access.citros_db.CitrosDB.get_sid_tables}
 
 
 
@@ -1142,7 +1143,7 @@ Return dict of tables, each of the tables corresponds to exact value of sid.
 
 #### Parameters
 
-name|type|description
+Name|Type|Description
 --|--|--
 |**```data_query```**|**list**, optional|Labels of the data to download from the json-format column "data".<br />    If blank list, then all columns are are downloaded.
 |**```topic```**|**str** or **list** of **str**|Name of the topic.<br />    Have higher priority than defined by **topic()**.<br />    May be overrided by **filter_by** argument.
@@ -1154,7 +1155,7 @@ name|type|description
 |**```n_skip```**|**int**, default **1**|Used only if **method** is 'move_avg' or 'skip'.<br />    Number of rows to skip in a result output. <br />    For example, if skip = 2, only every second row will be returned.
 #### Returns
 
-name|type|description
+Name|Type|Description
 --|--|--
 |**```out```**|**dict** of **pandas.DataFrames**|dict with tables, key is a value of sid.
 
@@ -1204,7 +1205,7 @@ sid values are: [1, 2, 3, 4]
 
 
     
-### Method `get_simulation` {#citros_data_analysis.data_access.citros_db.CitrosDB.get_simulation}
+## Method `get_simulation` {#citros_data_analysis.data_access.citros_db.CitrosDB.get_simulation}
 
 
 
@@ -1221,7 +1222,7 @@ Get the simulation name if the simulation is set.
 
 #### Returns
 
-name|type|description
+Name|Type|Description
 --|--|--
 |**```name```**|**str**|Name of the simulation. If the simulation is not set, return None.
 
@@ -1241,7 +1242,7 @@ Get the name of the imulation that was set in initialization:
 
 
     
-### Method `get_unique_counts` {#citros_data_analysis.data_access.citros_db.CitrosDB.get_unique_counts}
+## Method `get_unique_counts` {#citros_data_analysis.data_access.citros_db.CitrosDB.get_unique_counts}
 
 
 
@@ -1263,7 +1264,7 @@ Return number of the unique values in the column **column_name**.
 
 #### Parameters
 
-name|type|description
+Name|Type|Description
 --|--|--
 |**```column_name```**|**str**|Column to count its unique values.
 |**```group_by```**|**list**, optional|Labels of the columns to group by. If blank, do not group.
@@ -1271,7 +1272,7 @@ name|type|description
 |**```nan_exclude```**|**bool**, default **False**|If True, nan values are excluded from the count.
 #### Returns
 
-name|type|description
+Name|Type|Description
 --|--|--
 |**```out```**|**list** of **tuples** or **None**|Counts of the unique values in **column_name**.
 
@@ -1326,7 +1327,7 @@ The same, but passing all constraintes by **filter_by** parameter:
 
 
     
-### Method `get_unique_values` {#citros_data_analysis.data_access.citros_db.CitrosDB.get_unique_values}
+## Method `get_unique_values` {#citros_data_analysis.data_access.citros_db.CitrosDB.get_unique_values}
 
 
 
@@ -1346,13 +1347,13 @@ Return unique values of the columns **column_names**.
 
 #### Parameters
 
-name|type|description
+Name|Type|Description
 --|--|--
 |**```column_names```**|**str** or **list** of **str**|Columns for which the unique combinations of the values will be found.
 |**```filter_by```**|**dict**, optional|Constraints to apply on columns: {key_1: value_1, key_2: value_2, ...}, where:<br />      &#8226; key_n - must match labels of the columns,<br />      &#8226; value_n  - in the case of equality: list of exact values,<br />               in the case of inequality: dict with ">", ">=", "<" or "<=".<br />    Conditions, passed here, have higher priority over those defined by **topic()**, **rid()**, **sid()**, **time()** and **set_filter()** and will override them.
 #### Returns
 
-name|type|description
+Name|Type|Description
 --|--|--
 |**```out```**|**list** or **list** of **tuples**|Each tuple contains unique combinations of the values for **column_names**.
 
@@ -1387,7 +1388,7 @@ The same, but passing all constraintes by **filter_by** parameter:
 
 
     
-### Method `get_users` {#citros_data_analysis.data_access.citros_db.CitrosDB.get_users}
+## Method `get_users` {#citros_data_analysis.data_access.citros_db.CitrosDB.get_users}
 
 
 
@@ -1425,7 +1426,7 @@ Print information about users in a table:
 
 
     
-### Method `info` {#citros_data_analysis.data_access.citros_db.CitrosDB.info}
+## Method `info` {#citros_data_analysis.data_access.citros_db.CitrosDB.info}
 
 
 
@@ -1487,7 +1488,7 @@ their data structure types and numbered as "type_group_0", "type_group_1", and s
 
 #### Returns
 
-name|type|description
+Name|Type|Description
 --|--|--
 |**```out```**|**[CitrosDict](citros_dict.md#citros_data_analysis.data_access.citros_dict.CitrosDict "citros_data_analysis.data_access.citros_dict.CitrosDict")**|Information about the batch.
 
@@ -1619,7 +1620,7 @@ name|type|description
 
 
     
-### Method `move_avg` {#citros_data_analysis.data_access.citros_db.CitrosDB.move_avg}
+## Method `move_avg` {#citros_data_analysis.data_access.citros_db.CitrosDB.move_avg}
 
 
 
@@ -1642,13 +1643,13 @@ The value in 'rid' column is set as a minimum value among the 'rid' values of th
 
 #### Parameters
 
-name|type|description
+Name|Type|Description
 --|--|--
 |**```n_avg```**|**int**, optional|Number of messages to average.
 |**```n_skip```**|**int**, default **1**|Number of the messages to skip.<br />    For example, if **skip** = 3, the 1th, the 4th, the 7th ... messages will be selected
 #### Returns
 
-name|type|description
+Name|Type|Description
 --|--|--
 |**```out```**|**[CitrosDB](#citros_data_analysis.data_access.citros_db.CitrosDB "citros_data_analysis.data_access.citros_db.CitrosDB")**|CitrosDB with parameters set for sampling method 'move_avg'.
 
@@ -1668,7 +1669,7 @@ and select every second row of the result:
 
 
     
-### Method `multiple_y_plot` {#citros_data_analysis.data_access.citros_db.CitrosDB.multiple_y_plot}
+## Method `multiple_y_plot` {#citros_data_analysis.data_access.citros_db.CitrosDB.multiple_y_plot}
 
 
 
@@ -1701,7 +1702,7 @@ Different colors correspond to different sids.
 
 #### Parameters
 
-name|type|description
+Name|Type|Description
 --|--|--
 |**```df```**|**pandas.DataFrame**|Data table.
 |**```x_label```**|**str**|Label of the column to plot along x-axis.
@@ -1716,13 +1717,13 @@ name|type|description
 |**```inf_vals```**|**None** or **float**, default **1e308**|If specified, all values that exceed the provided value in absolute terms will be removed before plotting.<br />    If this functionality is not required, set inf_vals = None.
 #### Returns
 
-name|type|description
+Name|Type|Description
 --|--|--
 |**```fig```**|**matplotlib.figure.Figure**|Created figure if **fig** is not passed.
 |**```ax```**|**numpy.ndarray** of **matplotlib.axes.Axes**|Created axis if **fig** is not passed.
 #### Other Parameters
 
-name|type|description
+Name|Type|Description
 --|--|--
 |**```kwargs```**|**dict**, optional|Other keyword arguments, see **[matplotlib.axes.Axes.plot](https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.plot.html)**.
 
@@ -1755,7 +1756,7 @@ Plot scatter graph:
 
 
     
-### Method `multiplot` {#citros_data_analysis.data_access.citros_db.CitrosDB.multiplot}
+## Method `multiplot` {#citros_data_analysis.data_access.citros_db.CitrosDB.multiplot}
 
 
 
@@ -1791,7 +1792,7 @@ For non-diagonal graphs, colors are assigned to points according to sids.
 
 #### Parameters
 
-name|type|description
+Name|Type|Description
 --|--|--
 |**```df```**|**pandas.DataFrame**|Data table.
 |**```labels```**|**list** of **str**|Labels of the columns to plot.
@@ -1809,13 +1810,13 @@ name|type|description
 |**```num```**|**int**, default **5**|Number of bins in the histogram on the diogonal.
 #### Returns
 
-name|type|description
+Name|Type|Description
 --|--|--
 |**```fig```**|**matplotlib.figure.Figure**|Created figure if **fig** is not passed.
 |**```ax```**|**numpy.ndarray** of **matplotlib.axes.Axes**|Created axis if **fig** is not passed.
 #### Other Parameters
 
-name|type|description
+Name|Type|Description
 --|--|--
 |**```kwargs```**|**dict**, optional|Other keyword arguments, see **[matplotlib.axes.Axes.plot](https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.plot.html)**.
 
@@ -1843,7 +1844,7 @@ correlation between them; plot by dots and scale x and y axes ranges to oneintre
 
 
     
-### Method `plot_3dgraph` {#citros_data_analysis.data_access.citros_db.CitrosDB.plot_3dgraph}
+## Method `plot_3dgraph` {#citros_data_analysis.data_access.citros_db.CitrosDB.plot_3dgraph}
 
 
 
@@ -1877,7 +1878,7 @@ are the labels of columns of the pandas.DataFrame **df**.
 
 #### Parameters
 
-name|type|description
+Name|Type|Description
 --|--|--
 |**```df```**|**pandas.DataFrame**|Data table.
 |**```x_label```**|**str**|Label of the column to plot along x-axis.
@@ -1894,13 +1895,13 @@ name|type|description
 |**```inf_vals```**|**None** or **float**, default **1e308**|If specified, all values that exceed the provided value in absolute terms will be removed before plotting.<br />    If this functionality is not required, set inf_vals = None.
 #### Returns
 
-name|type|description
+Name|Type|Description
 --|--|--
 |**```fig```**|**matplotlib.figure.Figure**|Created figure if **ax** is not passed.
 |**```ax```**|**matplotlib.axes.Axes**|Created axis if **ax** is not passed.
 #### Other Parameters
 
-name|type|description
+Name|Type|Description
 --|--|--
 |**```kwargs```**|**dict**, optional|Other keyword arguments, see **[matplotlib.axes.Axes.plot](https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.plot.html)**.
 
@@ -1936,7 +1937,7 @@ Make 3D plot with dashed lines; **scale** = True aligns all axes to have the sam
 
 
     
-### Method `plot_graph` {#citros_data_analysis.data_access.citros_db.CitrosDB.plot_graph}
+## Method `plot_graph` {#citros_data_analysis.data_access.citros_db.CitrosDB.plot_graph}
 
 
 
@@ -1967,7 +1968,7 @@ are the labels of columns of the pandas.DataFrame **df**.
 
 #### Parameters
 
-name|type|description
+Name|Type|Description
 --|--|--
 |**```df```**|**pandas.DataFrame**|Data table.
 |**```x_label```**|**str**|Label of the column to plot along x-axis.
@@ -1982,13 +1983,13 @@ name|type|description
 |**```inf_vals```**|**None** or **float**, default **1e308**|If specified, all values that exceed the provided value in absolute terms will be removed before plotting.<br />    If this functionality is not required, set inf_vals = None.
 #### Returns
 
-name|type|description
+Name|Type|Description
 --|--|--
 |**```fig```**|**matplotlib.figure.Figure**|Created figure if **ax** is not passed.
 |**```ax```**|**matplotlib.axes.Axes**|Created axis if **ax** is not passed.
 #### Other Parameters
 
-name|type|description
+Name|Type|Description
 --|--|--
 |**```kwargs```**|**dict**, optional|Other keyword arguments, see **[matplotlib.axes.Axes.plot](https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.plot.html)**.
 
@@ -2031,7 +2032,7 @@ Generate a new figure and plot the previous graph but using a dotted line:
 
 
     
-### Method `plot_sigma_ellipse` {#citros_data_analysis.data_access.citros_db.CitrosDB.plot_sigma_ellipse}
+## Method `plot_sigma_ellipse` {#citros_data_analysis.data_access.citros_db.CitrosDB.plot_sigma_ellipse}
 
 
 
@@ -2063,7 +2064,7 @@ Plot sigma ellipses for the set of data.
 
 #### Parameters
 
-name|type|description
+Name|Type|Description
 --|--|--
 |**```df```**|**pandas.DataFrame**|Data table.
 |**```x_label```**|**str**|Label of the column to plot along x-axis.
@@ -2081,7 +2082,7 @@ name|type|description
 |**```return_ellipse_param```**|**bool**, default **False**|If True, returns ellipse parameters.
 #### Returns
 
-name|type|description
+Name|Type|Description
 --|--|--
 |**```fig```**|**matplotlib.figure.Figure**|Created figure if **ax** is not passed.
 |**```ax```**|**numpy.ndarray** of **matplotlib.axes.Axes**|Created axis if **ax** is not passed.
@@ -2122,7 +2123,7 @@ between the ellipse points and the origin), set custom labels and title to the p
 
 
     
-### Method `repo` {#citros_data_analysis.data_access.citros_db.CitrosDB.repo}
+## Method `repo` {#citros_data_analysis.data_access.citros_db.CitrosDB.repo}
 
 
 
@@ -2143,14 +2144,14 @@ Set repository to the CitrosDB object.
 
 #### Parameters
 
-name|type|description
+Name|Type|Description
 --|--|--
 |**```repo```**|**int** or **str**|      &#8226; To set the repository with the exact id, provide the repository id as str.<br />      &#8226; To set a repository using its name, provide the name as a string. If the provided string matches multiple repository names, check the whole list by **repo_info()** method.<br />      &#8226; To query the first created / second created / etc repository, set **repo** = 0, **repo** = 1, etc.<br />      &#8226; To query the the last created / the second-to-last created / etc repository, set **repo** = -1, **repo** = -2, etc.
 |**```inplace```**|**bool**, default **False**|If True, set repository id to the current CitrosDB object, otherwise returns new CitrosDB object with<br />    set repository id.
 |**```exact_match```**|**bool**, default **False**|If True, search for the repository with exact match in name field.<br />    If False, searches for the occurance of the provided string within the name field.
 #### Returns
 
-name|type|description
+Name|Type|Description
 --|--|--
 |**```out```**|**[CitrosDB](#citros_data_analysis.data_access.citros_db.CitrosDB "citros_data_analysis.data_access.citros_db.CitrosDB")**|CitrosDB with set repository id or None, if **inplace** = True.
 #### See Also
@@ -2258,7 +2259,7 @@ Assign the 'projects' repository to the existing CitrosDB object and show detail
 
 
     
-### Method `repo_info` {#citros_data_analysis.data_access.citros_db.CitrosDB.repo_info}
+## Method `repo_info` {#citros_data_analysis.data_access.citros_db.CitrosDB.repo_info}
 
 
 
@@ -2284,7 +2285,7 @@ and repository ids, list of corresponding simulation ids and date of creation as
 
 #### Parameters
 
-name|type|description
+Name|Type|Description
 --|--|--
 |**```search```**|**int** or **str**|      &#8226; To search for the  repository with the exact id, provide the repository id as str.<br />      &#8226; To search by  repository name or by words that partially match the  repository name, provide the corresponding word as str.<br />      &#8226; To query the first created / second created / etc  repository, set **search** = 0, **search** = 1, etc.<br />      &#8226; To query the the last created / the second-to-last created / etc  repository, set **search** = -1, **search** = -2, etc.<br />    <br />    To use another field for search, set the appropriate **search_by** parameter
 |**```search_by```**|**str**|By default, the search is conducted based on name, repository id or ordinal number according to the creation time.<br />    To perform a search using an another field, set the **search_by** parameter to one of the following <br />    and provide the appropriate format to **search** field:<br />    Provide **search** as a **str** for the following fields:<br />      &#8226; 'description'<br />      &#8226; 'git'<br /><br />    Provide **search** as **str** that may containes date, time and timezone information, like: 'dd-mm-yyyy hh:mm:ss +hh:mm',<br />    or only date and time without timezone: 'dd-mm-yyyy hh:mm:ss', or only date: 'dd-mm-yyyy' / 'dd-mm' / 'dd'<br />    or only time: 'hh:mm:ss' / 'hh:mm' with or without timezone. <br />    Any missing date information is automatically set to today's date, and any missing time information is set to 0.<br />      &#8226; 'created_after'<br />      &#8226; 'created_before'<br />      &#8226; 'updated_after'<br />      &#8226; 'updated_before'
@@ -2293,7 +2294,7 @@ name|type|description
 |**```user```**|**str**, default `'all'`|Set **user** as 'me' to filter and display only the repositories that belong to you.<br />    To get the repositories that were created by another user, provide the email.
 #### Returns
 
-name|type|description
+Name|Type|Description
 --|--|--
 |**```out```**|**[CitrosDict](citros_dict.md#citros_data_analysis.data_access.citros_dict.CitrosDict "citros_data_analysis.data_access.citros_dict.CitrosDict")**|Information about the repositories.
 
@@ -2530,7 +2531,7 @@ Get list of the all existing repositories names as a list:
 
 
     
-### Method `rid` {#citros_data_analysis.data_access.citros_db.CitrosDB.rid}
+## Method `rid` {#citros_data_analysis.data_access.citros_db.CitrosDB.rid}
 
 
 
@@ -2552,7 +2553,7 @@ Set constraints on rid.
 
 #### Parameters
 
-name|type|description
+Name|Type|Description
 --|--|--
 |**```value```**|**int** or **list** of **ints**, optional|Exact values of rid.
 |**```start```**|**int**, default **0**|The lower limit for rid values.
@@ -2560,7 +2561,7 @@ name|type|description
 |**```count```**|**int**, optional|Used only if the **end** is not set.<br />    Number of rid to return in the query, starting form the **start**.
 #### Returns
 
-name|type|description
+Name|Type|Description
 --|--|--
 |**```out```**|**[CitrosDB](#citros_data_analysis.data_access.citros_db.CitrosDB "citros_data_analysis.data_access.citros_db.CitrosDB")**|CitrosDB with set 'rid' parameter.
 
@@ -2601,7 +2602,7 @@ For rid >= 5:
 
 
     
-### Method `set_filter` {#citros_data_analysis.data_access.citros_db.CitrosDB.set_filter}
+## Method `set_filter` {#citros_data_analysis.data_access.citros_db.CitrosDB.set_filter}
 
 
 
@@ -2622,12 +2623,12 @@ Allows to set constraints on json-data columns.
 
 #### Parameters
 
-name|type|description
+Name|Type|Description
 --|--|--
 |**```filter_by```**|**dict**|Constraints to apply on columns: {key_1: value_1, key_2: value_2, ...}, where:<br />      &#8226; key_n - must match labels of the columns,<br />      &#8226; value_n  - in the case of equality: list of exact values,<br />               in the case of inequality: dict with ">", ">=", "<" or "<=".<br />    Conditions, passed here, have higher priority over those defined by **topic()**, **rid()**, **sid()** and **time()** and will override them.<br />    If sampling method is used, constraints on additional columns are applied BEFORE sampling while<br />    constraints on columns from json-data are applied AFTER sampling.
 #### Returns
 
-name|type|description
+Name|Type|Description
 --|--|--
 |**```out```**|**[CitrosDB](#citros_data_analysis.data_access.citros_db.CitrosDB "citros_data_analysis.data_access.citros_db.CitrosDB")**|CitrosDB with set constraints.
 #### See Also
@@ -2674,7 +2675,7 @@ get data where the value on the first position in the json-array 'note' equals 1
 
 
     
-### Method `set_order` {#citros_data_analysis.data_access.citros_db.CitrosDB.set_order}
+## Method `set_order` {#citros_data_analysis.data_access.citros_db.CitrosDB.set_order}
 
 
 
@@ -2695,7 +2696,7 @@ Sort the result of the query in ascending or descending order.
 
 #### Parameters
 
-name|type|description
+Name|Type|Description
 --|--|--
 |**```order_by```**|**str, list** of **str** or **dict**, optional|If **order_by** is a single string or a list of strings, it represents the column label(s) by which the result is sorted in ascending order.<br />    For more control, use a dictionary with column labels as keys and values ('asc' for ascending, 'desc' for descending) to define the sorting order.
 
@@ -2722,7 +2723,7 @@ Sort the result by sid and rid in ascending order:
 
 
     
-### Method `sid` {#citros_data_analysis.data_access.citros_db.CitrosDB.sid}
+## Method `sid` {#citros_data_analysis.data_access.citros_db.CitrosDB.sid}
 
 
 
@@ -2744,7 +2745,7 @@ Set constraints on sid.
 
 #### Parameters
 
-name|type|description
+Name|Type|Description
 --|--|--
 |**```value```**|**int** or **list** of **ints**, optional|Exact values of sid.<br />    If nothing is passed, then the default value of sid is used (ENV parameter "CITROS_SIMULATION_RUN_ID").<br />    If the default value does not exist, no limits for sid are applied.
 |**```start```**|**int**, default **0**|The lower limit for sid values.
@@ -2752,7 +2753,7 @@ name|type|description
 |**```count```**|**int**, optional|Used only if the **end** is not set.<br />    Number of sid to return in the query, starting form the **start**.
 #### Returns
 
-name|type|description
+Name|Type|Description
 --|--|--
 |**```out```**|**[CitrosDB](#citros_data_analysis.data_access.citros_db.CitrosDB "citros_data_analysis.data_access.citros_db.CitrosDB")**|CitrosDB with set 'sid' parameter.
 
@@ -2793,7 +2794,7 @@ For sid >= 7:
 
 
     
-### Method `simulation` {#citros_data_analysis.data_access.citros_db.CitrosDB.simulation}
+## Method `simulation` {#citros_data_analysis.data_access.citros_db.CitrosDB.simulation}
 
 
 
@@ -2813,13 +2814,13 @@ Set batch to the CitrosDB object.
 
 #### Parameters
 
-name|type|description
+Name|Type|Description
 --|--|--
 |**```simulation```**|**str**|Name of the simulation.
 |**```inplace```**|**bool**, default **False**|If True, set simulation name to the current CitrosDB object, otherwise returns new CitrosDB <br />    object with set simulation.
 #### Returns
 
-name|type|description
+Name|Type|Description
 --|--|--
 |**```out```**|**[CitrosDB](#citros_data_analysis.data_access.citros_db.CitrosDB "citros_data_analysis.data_access.citros_db.CitrosDB")**|CitrosDB with set simulation or None, if **inplace** = True.
 
@@ -2849,7 +2850,7 @@ Show information about the batch 'test' that was created in 'simulation_cannon_a
 
 
     
-### Method `skip` {#citros_data_analysis.data_access.citros_db.CitrosDB.skip}
+## Method `skip` {#citros_data_analysis.data_access.citros_db.CitrosDB.skip}
 
 
 
@@ -2870,12 +2871,12 @@ Messages with different sids are selected separately.
 
 #### Parameters
 
-name|type|description
+Name|Type|Description
 --|--|--
 |**```skip```**|**int**, optional|Control number of the messages to skip.
 #### Returns
 
-name|type|description
+Name|Type|Description
 --|--|--
 |**```out```**|**[CitrosDB](#citros_data_analysis.data_access.citros_db.CitrosDB "citros_data_analysis.data_access.citros_db.CitrosDB")**|CitrosDB with parameters set for sampling method 'skip'.
 
@@ -2896,7 +2897,7 @@ the 1th, the 4th, the 7th ... messages will be selected
 
 
     
-### Method `time` {#citros_data_analysis.data_access.citros_db.CitrosDB.time}
+## Method `time` {#citros_data_analysis.data_access.citros_db.CitrosDB.time}
 
 
 
@@ -2917,14 +2918,14 @@ Set constraints on time.
 
 #### Parameters
 
-name|type|description
+Name|Type|Description
 --|--|--
 |**```start```**|**int**, default **0**|The lower limit for time values.
 |**```end```**|**int**, optional|The higher limit for time, the end is included.
 |**```duration```**|**int**, optional|Used only if the **end** is not set.<br />    Time interval to return in the query, starting form the **start**.
 #### Returns
 
-name|type|description
+Name|Type|Description
 --|--|--
 |**```out```**|**[CitrosDB](#citros_data_analysis.data_access.citros_db.CitrosDB "citros_data_analysis.data_access.citros_db.CitrosDB")**|CitrosDB with set 'time' parameter.
 
@@ -2957,7 +2958,7 @@ For time >= 20:
 
 
     
-### Method `time_plot` {#citros_data_analysis.data_access.citros_db.CitrosDB.time_plot}
+## Method `time_plot` {#citros_data_analysis.data_access.citros_db.CitrosDB.time_plot}
 
 
 
@@ -2987,7 +2988,7 @@ Plot **var_name** vs. **Time** for each of the sids, where **Time** = **time_ste
 
 #### Parameters
 
-name|type|description
+Name|Type|Description
 --|--|--
 |**```ax```**|**matplotlib.axes.Axes**|Figure axis to plot on.
 |**```*args```**|**Any**|Additional arguments to style lines, set color, etc, <br />    see **[matplotlib.axes.Axes.plot](https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.plot.html)**.
@@ -3002,7 +3003,7 @@ name|type|description
 |**```inf_vals```**|**None** or **float**, default **1e308**|If specified, all values that exceed the provided value in absolute terms will be removed before plotting.<br />    If this functionality is not required, set inf_vals = None.
 #### Other Parameters
 
-name|type|description
+Name|Type|Description
 --|--|--
 |**```kwargs```**|**dict**, optional|Other keyword arguments, see **[matplotlib.axes.Axes.plot](https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.plot.html)**.
 
@@ -3045,7 +3046,7 @@ Create a new figure and plot only part of the data, where 'data.x.x_1' <= 0; plo
 
 
     
-### Method `topic` {#citros_data_analysis.data_access.citros_db.CitrosDB.topic}
+## Method `topic` {#citros_data_analysis.data_access.citros_db.CitrosDB.topic}
 
 
 
@@ -3064,12 +3065,12 @@ Select topic.
 
 #### Parameters
 
-name|type|description
+Name|Type|Description
 --|--|--
 |**```topic_name```**|**str** or **list** of **str**|Name of the topic.
 #### Returns
 
-name|type|description
+Name|Type|Description
 --|--|--
 |**```out```**|**[CitrosDB](#citros_data_analysis.data_access.citros_db.CitrosDB "citros_data_analysis.data_access.citros_db.CitrosDB")**|CitrosDB with set 'topic' parameter.
 
@@ -3097,7 +3098,7 @@ Get maximum value of the 'sid' among topics 'A' and 'B':
 
 
     
-### Method `user_info` {#citros_data_analysis.data_access.citros_db.CitrosDB.user_info}
+## Method `user_info` {#citros_data_analysis.data_access.citros_db.CitrosDB.user_info}
 
 
 
@@ -3123,14 +3124,14 @@ about the user who created that specific batch.
 
 #### Parameters
 
-name|type|description
+Name|Type|Description
 --|--|--
 |**```search```**|**str**, optional|      &#8226; By default, it displays information about all users within the organization.<br />      &#8226; Provide email to display information about the exact user.<br />      &#8226; To search user by their name, provide user's name and set **search_by** = 'name'<br />      &#8226; To search by the last name, provide user's last name and set **search_by** = 'last_name'
 |**```search```**|**str**, optional|      &#8226; By default, if the **search** is provided, performs search by email.<br />      &#8226; To search by the name, set **search_by** = 'name'.<br />      &#8226; To search by the last name, set **search_by** = 'last_name'.
 |**```order_by```**|**str** or **list** or **dict**|To obtain the output in ascending order, provide one or more of the following options as either a single str or a as a list:<br />      &#8226; 'name'<br />      &#8226; 'last_name' <br />      &#8226; 'email'           <br />    <br />    To specify whether to use descending or ascending order, create a dictionary where the keys correspond to the options mentioned above, <br />    and the values are either 'asc' for ascending or 'desc' for descending. For instance: {'name': 'asc', 'last_name': 'desc'}"
 #### Returns
 
-name|type|description
+Name|Type|Description
 --|--|--
 |**```out```**|**[CitrosDict](citros_dict.md#citros_data_analysis.data_access.citros_dict.CitrosDict "citros_data_analysis.data_access.citros_dict.CitrosDict")**|Information about the users.
 
@@ -3224,7 +3225,7 @@ If there is a batch 'velocity' in 'robot_master' repository, to show who create 
 
 
     
-### Method `xy_plot` {#citros_data_analysis.data_access.citros_db.CitrosDB.xy_plot}
+## Method `xy_plot` {#citros_data_analysis.data_access.citros_db.CitrosDB.xy_plot}
 
 
 
@@ -3255,7 +3256,7 @@ Plot **var_y_name** vs. **var_x_name** for each of the sids.
 
 #### Parameters
 
-name|type|description
+Name|Type|Description
 --|--|--
 |**```ax```**|**matplotlib.axes.Axes**|Figure axis to plot on.
 |**```*args```**|**Any**|Additional arguments to style lines, set color, etc, <br />    see **[matplotlib.axes.Axes.plot](https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.plot.html)**.
@@ -3271,7 +3272,7 @@ name|type|description
 |**```inf_vals```**|**None** or **float**, default **1e308**|If specified, all values that exceed the provided value in absolute terms will be removed before plotting.<br />    If this functionality is not required, set inf_vals = None.
 #### Other Parameters
 
-name|type|description
+Name|Type|Description
 --|--|--
 |**```kwargs```**|**dict**, optional|Other keyword arguments, see **[matplotlib.axes.Axes.plot](https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.plot.html)**.
 

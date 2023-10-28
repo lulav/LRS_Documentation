@@ -6,6 +6,7 @@ hide_title: true
 description: 'Documentation'
 ---
 
+# Class CitrosData
 
 
 
@@ -45,7 +46,7 @@ and all other additional columns - 'addData'. Both 'data' and 'addData' attribut
 
 #### Parameters
 
-name|type|description
+Name|Type|Description
 --|--|--
 |**```db```**|**DataFrame** or **tuple** of **two DataFrames** or **None**, optional|If **db** is a DataFrame, column **data_label** is supposed to be a data sample and set to a 'data' attribute of a CitrosData object.<br />    The additional information about data may be extracted from columns labeled as:<br />        'type_name' - specify type of the data, set to the 'type' attribute,<br />        'units' - data units, set to the 'units' attribute.<br />        'parameter_label' - column with dict, specifying the parameters, if it is presented, the first row is set as parameters.<br />    All other columns are assigned to 'addData' attribute.
 |**```type_name```**|**str**, optional|Specifies type of the data.
@@ -102,7 +103,7 @@ For example, for mean calculations difference is the follows:
 
 
     
-### Method `add_addData` {#citros_data_analysis.error_analysis.citros_data.CitrosData.add_addData}
+## Method `add_addData` {#citros_data_analysis.error_analysis.citros_data.CitrosData.add_addData}
 
 
 
@@ -122,7 +123,7 @@ Add column to 'addData' attribute.
 
 #### Parameters
 
-name|type|description
+Name|Type|Description
 --|--|--
 |**```column```**|`array-like object`|Column to add.
 |**```column_label```**|**str**|Label of the new column in 'addData'.
@@ -131,7 +132,7 @@ name|type|description
 
 
     
-### Method `bin_data` {#citros_data_analysis.error_analysis.citros_data.CitrosData.bin_data}
+## Method `bin_data` {#citros_data_analysis.error_analysis.citros_data.CitrosData.bin_data}
 
 
 
@@ -162,7 +163,7 @@ with id values from binning as the first level and 'sid' as the second one.
 
 #### Parameters
 
-name|type|description
+Name|Type|Description
 --|--|--
 |**```n_bins```**|**int**, default **10**|Number of bins.
 |**```param_label```**|**str**, default `'rid'`|Label of column on the basis of which the indixes will be calculated.
@@ -171,7 +172,7 @@ name|type|description
 |**```show_fig```**|**bool**, default **False**|If the histogram that represents the distibution of the values in **param_label** should be shown.
 #### Returns
 
-name|type|description
+Name|Type|Description
 --|--|--
 |**```out```**|**[CitrosData](#citros_data_analysis.error_analysis.citros_data.CitrosData "citros_data_analysis.error_analysis.citros_data.CitrosData")**|New CitrosData object with two levels of indexes in 'addData' and 'data' attributes.
 
@@ -231,7 +232,7 @@ data.time_id  sid
 
 
     
-### Method `drop_addData` {#citros_data_analysis.error_analysis.citros_data.CitrosData.drop_addData}
+## Method `drop_addData` {#citros_data_analysis.error_analysis.citros_data.CitrosData.drop_addData}
 
 
 
@@ -250,7 +251,7 @@ Delete column from 'addData' attribute.
 
 #### Parameters
 
-name|type|description
+Name|Type|Description
 --|--|--
 |**```column_label```**|**str**|Label of the column to delete .
 
@@ -258,7 +259,7 @@ name|type|description
 
 
     
-### Method `drop_parameter` {#citros_data_analysis.error_analysis.citros_data.CitrosData.drop_parameter}
+## Method `drop_parameter` {#citros_data_analysis.error_analysis.citros_data.CitrosData.drop_parameter}
 
 
 
@@ -277,7 +278,7 @@ Delete parameter labeled **key** and associated value.
 
 #### Parameters
 
-name|type|description
+Name|Type|Description
 --|--|--
 |**```key```**|**str**|Label of the parameter to remove.
 
@@ -285,7 +286,7 @@ name|type|description
 
 
     
-### Method `get_statistics` {#citros_data_analysis.error_analysis.citros_data.CitrosData.get_statistics}
+## Method `get_statistics` {#citros_data_analysis.error_analysis.citros_data.CitrosData.get_statistics}
 
 
 
@@ -304,12 +305,12 @@ Return table with statistics for CitrosData object.
 
 #### Parameters
 
-name|type|description
+Name|Type|Description
 --|--|--
 |**```return_format```**|`{'pandas', 'citrosStat'}`, default `'pandas'`|Returning format.
 #### Returns
 
-name|type|description
+Name|Type|Description
 --|--|--
 |**```Statistics```**|**pandas.DataFrame** or **[CitrosStat](citros_stat.md#citros_data_analysis.error_analysis.citros_stat.CitrosStat "citros_data_analysis.error_analysis.citros_stat.CitrosStat")**|Collected statistics.<br />    If **return_format** is 'pandas', then returns pandas.DataFrame with the following columns:<br />      &#8226; (1) the independent variable column, its label matches **x_label** attribute; <br />      &#8226; (2) column with mean values;<br />      &#8226; (3) column with the covariance matrixes; <br />      &#8226; (4) column with the square roots of the diagonal elements of the covariance matrix: ( sqrt(s1), sqrt(s2), sqrt(s3) ), <br />    where s1,s2,s3 - diagonal of the covariance matrix. <br />    <br />    If **return_format** is 'citrosStat', then returns CitrosStat object with 'x', 'mean', 'covar_matrix' and 'sigma' attributes,<br />    that corresponds to (1)-(4) items, but in the form of pandas.DataFrames.
 #### See Also
@@ -458,7 +459,7 @@ is a data dimension:
 
 
     
-### Method `scale_data` {#citros_data_analysis.error_analysis.citros_data.CitrosData.scale_data}
+## Method `scale_data` {#citros_data_analysis.error_analysis.citros_data.CitrosData.scale_data}
 
 
 
@@ -488,7 +489,7 @@ with id values from scaling as the first level and 'sid' as the second one.
 
 #### Parameters
 
-name|type|description
+Name|Type|Description
 --|--|--
 |**```n_points```**|**int**, default **10**|Number of points in a new scale, which will be used for interpolation.
 |**```param_label```**|**str**, default `'rid'`|Label of the parameter to scale
@@ -496,7 +497,7 @@ name|type|description
 |**```intr_kind```**|**str**, default `'linear'`|Type of the interpolation, see scipy.interpolate.interp1d.
 #### Returns
 
-name|type|description
+Name|Type|Description
 --|--|--
 |**```out```**|**[CitrosData](#citros_data_analysis.error_analysis.citros_data.CitrosData "citros_data_analysis.error_analysis.citros_data.CitrosData")**|CitrosData object with multiindexing: the first level stores ids of the points of the new scale, the second one - 'sid'.<br />    Values of the new scale are stored in 'addData' attribute.
 
@@ -556,7 +557,7 @@ data.time_id  sid
 
 
     
-### Method `set_parameter` {#citros_data_analysis.error_analysis.citros_data.CitrosData.set_parameter}
+## Method `set_parameter` {#citros_data_analysis.error_analysis.citros_data.CitrosData.set_parameter}
 
 
 
@@ -577,7 +578,7 @@ Set parameter value to a CitrosData object.
 
 #### Parameters
 
-name|type|description
+Name|Type|Description
 --|--|--
 |**```key```**|**str**|Label of the parameter.
 |**```value```**|**int** or **float**|Parameter value.
@@ -587,7 +588,7 @@ name|type|description
 
 
     
-### Method `show_correlation` {#citros_data_analysis.error_analysis.citros_data.CitrosData.show_correlation}
+## Method `show_correlation` {#citros_data_analysis.error_analysis.citros_data.CitrosData.show_correlation}
 
 
 
@@ -622,7 +623,7 @@ is supposed to be plotted along x-axis and the data from **db2** is supposed to 
 
 #### Parameters
 
-name|type|description
+Name|Type|Description
 --|--|--
 |**```db2```**|**[CitrosData](#citros_data_analysis.error_analysis.citros_data.CitrosData "citros_data_analysis.error_analysis.citros_data.CitrosData")**|Additional CitrosData object.
 |**```x_col```**|`int >=0` or **str**, optional|      &#8226; If **int** - index of column to plot along x axis, >=0.<br />      &#8226; If **str** - label of the column to plot along y axis<br />      &#8226; If data is multidimensional, must be specified, otherwise data is supposed to be 1-dimensional.
@@ -638,12 +639,12 @@ return_fig : bool, default False.
 |**```return_ellipse_param```**|**bool**, default **False**|If True, returns ellipse parameters.
 #### Other Parameters
 
-name|type|description
+Name|Type|Description
 --|--|--
 |**```kwargs```**|**dict**, optional|see matplotlib.patches.Ellipse.
 #### Returns
 
-name|type|description
+Name|Type|Description
 --|--|--
 |**```fig```**|**matplotlib.figure.Figure**|if **return_fig** set to True
 |**```ax```**|**matplotlib.axes.Axes**|if **return_fig** set to True
@@ -702,7 +703,7 @@ slice_val = 0.2632
 
 
     
-### Method `show_statistics` {#citros_data_analysis.error_analysis.citros_data.CitrosData.show_statistics}
+## Method `show_statistics` {#citros_data_analysis.error_analysis.citros_data.CitrosData.show_statistics}
 
 
 
@@ -729,7 +730,7 @@ Collect statistics for CitrosData object and plot it.
 
 #### Parameters
 
-name|type|description
+Name|Type|Description
 --|--|--
 |**```fig```**|**matplotlib.figure.Figure**|figure to plot on. If None, the new one will be created.
 |**```show_fig```**|**bool**|If the fugure should be shown, True by default.
@@ -742,7 +743,7 @@ name|type|description
 |**```std_lines```**|**bool**, default **True**|If False, remove standard deviation boundary lines.
 #### Returns
 
-name|type|description
+Name|Type|Description
 --|--|--
 |**```fig```**|**matplotlib.figure.Figure**|if **return_fig** set to True
 |**```ax```**|**numpy.ndarray** of **matplotlib.axes.Axes**|if **return_fig** set to True
@@ -797,7 +798,7 @@ Show statistics plot:
 
 
     
-### Method `to_pandas` {#citros_data_analysis.error_analysis.citros_data.CitrosData.to_pandas}
+## Method `to_pandas` {#citros_data_analysis.error_analysis.citros_data.CitrosData.to_pandas}
 
 
 
@@ -814,7 +815,7 @@ Concatenate **data** and **addData** attributes and return the result table as a
 
 #### Returns
 
-name|type|description
+Name|Type|Description
 --|--|--
 |**```df```**|**pandas.DataFrame**|Concatenated table.
 

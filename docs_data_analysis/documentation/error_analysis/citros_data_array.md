@@ -6,6 +6,7 @@ hide_title: true
 description: 'Documentation'
 ---
 
+# Class CitrosDataArray
 
 
 
@@ -34,7 +35,7 @@ Store CitrosData objects in a "dbs" attribute for regression analysis.
 
 #### Parameters
 
-name|type|description
+Name|Type|Description
 --|--|--
 |**```dbs```**|**list**|list of CitrosData objects
 
@@ -49,7 +50,7 @@ name|type|description
 
 
     
-### Method `add_db` {#citros_data_analysis.error_analysis.citros_data_array.CitrosDataArray.add_db}
+## Method `add_db` {#citros_data_analysis.error_analysis.citros_data_array.CitrosDataArray.add_db}
 
 
 
@@ -68,7 +69,7 @@ Add one CitrosData object to CitrosDataArray.
 
 #### Parameters
 
-name|type|description
+Name|Type|Description
 --|--|--
 |**```db```**|**[CitrosData](citros_data.md#citros_data_analysis.error_analysis.citros_data.CitrosData "citros_data_analysis.error_analysis.citros_data.CitrosData")**|CitrosData object to add to storage.
 
@@ -76,7 +77,7 @@ name|type|description
 
 
     
-### Method `add_dbs` {#citros_data_analysis.error_analysis.citros_data_array.CitrosDataArray.add_dbs}
+## Method `add_dbs` {#citros_data_analysis.error_analysis.citros_data_array.CitrosDataArray.add_dbs}
 
 
 
@@ -95,7 +96,7 @@ Add list of CitrosData objects to CitrosDataArray.
 
 #### Parameters
 
-name|type|description
+Name|Type|Description
 --|--|--
 |**```dbs```**|**list**|list of CitrosData objects to add to storage.
 
@@ -103,7 +104,7 @@ name|type|description
 
 
     
-### Method `drop_db` {#citros_data_analysis.error_analysis.citros_data_array.CitrosDataArray.drop_db}
+## Method `drop_db` {#citros_data_analysis.error_analysis.citros_data_array.CitrosDataArray.drop_db}
 
 
 
@@ -125,7 +126,7 @@ if **value** is a CitrosData object, then removes it if it exists in CitrosDataA
 
 #### Parameters
 
-name|type|description
+Name|Type|Description
 --|--|--
 |**```value```**|**int** or **[CitrosData](citros_data.md#citros_data_analysis.error_analysis.citros_data.CitrosData "citros_data_analysis.error_analysis.citros_data.CitrosData")**|Object or index of object to remove.
 
@@ -133,7 +134,7 @@ name|type|description
 
 
     
-### Method `get_prediction` {#citros_data_analysis.error_analysis.citros_data_array.CitrosDataArray.get_prediction}
+## Method `get_prediction` {#citros_data_analysis.error_analysis.citros_data_array.CitrosDataArray.get_prediction}
 
 
 
@@ -163,7 +164,7 @@ Show the predictions based on the results of the regression solution, neural net
 
 #### Parameters
 
-name|type|description
+Name|Type|Description
 --|--|--
 |**```parameters```**|**dict**|Names of the independent parameters and their values to calculate the prediction.
 |**```method```**|**str** or **list** of **str**, default `'poly'`|      &#8226; 'poly' - the polinomial regression.<br />      &#8226; 'neural_net' - the solution is finding based on [sklearn.neural_network.MLPRegressor](https://scikit-learn.org/stable/modules/generated/sklearn.neural_network.MLPRegressor.html).<br />      &#8226; 'gmm' - the gaussian mixture model is built and used for the prediction.
@@ -178,12 +179,12 @@ name|type|description
 |**```return_fig```**|**bool**, default **False**|If True, the figure and ax (or list of ax) will be returned.
 #### Other Parameters
 
-name|type|description
+Name|Type|Description
 --|--|--
 |**```kwargs```**|**dict**, optional|Other keyword arguments for **method** = 'neural_net', see [sklearn.neural_network.MLPRegressor](https://scikit-learn.org/stable/modules/generated/sklearn.neural_network.MLPRegressor.html).
 #### Returns
 
-name|type|description
+Name|Type|Description
 --|--|--
 |**```result```**|**pandas.DataFrame**|Predicted table
 |**```fig```**|**matplotlib.figure.Figure**|if **return_fig** set to True
