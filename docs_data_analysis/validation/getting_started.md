@@ -5,7 +5,7 @@ hide_title: true
 sidebar_position: 1
 description: 'Quick start'
 ---
-# Validation
+# Getting Started
 
 The [**validation**](../documentation/validation/validation.md) module provides a set of tests check the simulation results. These tests include:
 

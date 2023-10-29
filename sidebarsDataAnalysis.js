@@ -26,7 +26,7 @@ module.exports = {
       items: [
         {
           type: 'category',
-          label: 'Data access',
+          label: 'Data Access',
           items: [
             {
               type: 'doc',
@@ -49,7 +49,7 @@ module.exports = {
         },
         {
           type: 'category',
-          label: 'Error analysis',
+          label: 'Error Analysis',
           items: [
             {
               type: 'doc',

@@ -10,7 +10,7 @@
       "items": [
         {
           "type": "category",
-          "label": "Data access",
+          "label": "Data Access",
           "items": [
             {
               "type": "doc",
@@ -42,7 +42,7 @@
         },
         {
           "type": "category",
-          "label": "Error analysis",
+          "label": "Error Analysis",
           "items": [
             {
               "type": "doc",

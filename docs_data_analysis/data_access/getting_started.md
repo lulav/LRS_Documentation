@@ -5,7 +5,7 @@ hide_title: true
 description: 'Getting started'
 sidebar_position: 1
 ---
-# Data Access
+# Getting Started
 
 In order to get information about the data of the specific table in the database, to look through the main features and to query the selected parts the module **data_access** from the package **citros_data_analysis** is used. Module is imported by:
 

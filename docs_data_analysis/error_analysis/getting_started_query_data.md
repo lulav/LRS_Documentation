@@ -5,7 +5,7 @@ hide_title: true
 sidebar_position: 1
 description: 'Quick start'
 ---
-# Error Analysis
+# Getting Started: Query Data
 
 For performing error analysis module [error_analysis](../documentation/error_analysis/citros_data.md) is used. To download module:
 
