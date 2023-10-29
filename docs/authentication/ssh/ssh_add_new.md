@@ -101,7 +101,7 @@ Before adding a new SSH key to your account on citros.io, complete the following
 
 2. [Generate a new SSH](/docs/authentication/ssh/ssh_generate_key.md).
 
-## Add SSH Key to CITROS Account
+## Add SSH Key via CITROS Account
 
 1. Copy the SSH public key to your clipboard.
 
@@ -133,6 +133,35 @@ $ clip < ~/.ssh/id_ed25519.pub
 </TabItem>
 
 <TabItem value="local" label="Add via CITROS CLI">
+
+## Prerequisites
+
+1. [CITROS CLI installed](/docs_cli/overview/cli_install).
+
+## Add SSH Key via CITROS CLI
+
+1. Login to CITROS
+    
+
+    citros login
+
+2. Generate and add new SSH key to CITROS
+
+
+    citros setup-ssh 
+    
+3. Enter a name to your new ssh key 
+
+
+    Please provide a descriptive title for the new ssh key (e.g. 'Personal laptop'):
+    Identity added: ../.ssh/citros_ed25519 (../.ssh/citros_ed25519)
+    Successfully added ssh key for 'sshExample' to Citros.
+
+
+4. You can find the new SSH key in [CITROS SSH Keys Settings](https://citros.io/settings?tab=ssh_keys).
+
+
+
 </TabItem>
 
 </Tabs>
