@@ -33,10 +33,11 @@ You may see a warning like this:
 3. Verify that the fingerprint in the message you see matches CITROS's public key fingerprint. If it does, then type yes:
 
 ```bash
-> Hi USERNAME! You've successfully authenticated, but CITROS does not
-> provide shell access.
+hello USERNAME, this is git@gitolite-gitolite-5f69568574-gd54j running gitolite3 3.6.12 on git 2.40.1
+PERMISSIONS	ORGANIZATION/REPOSITORY
 ```
-:::note[Note:] The remote command should exit with code 1.
+:::noteNote: 
+The remote command should exit with code 1.
 :::
 
 4. Verify that the resulting message contains your username. If you receive a "permission denied" message, see "Error: Permission denied (publickey)."
@@ -73,10 +74,11 @@ You may see a warning like this:
 3. Verify that the fingerprint in the message you see matches CITROS's public key fingerprint. If it does, then type yes:
 
 ```bash
-> Hi USERNAME! You've successfully authenticated, but CITROS does not
-> provide shell access.
+hello USERNAME, this is git@gitolite-gitolite-5f69568574-gd54j running gitolite3 3.6.12 on git 2.40.1
+PERMISSIONS	ORGANIZATION/REPOSITORY
 ```
-:::note[Note:] The remote command should exit with code 1.
+:::noteNote: 
+The remote command should exit with code 1.
 :::
 
 4. Verify that the resulting message contains your username. If you receive a "permission denied" message, see "Error: Permission denied (publickey)."
@@ -113,10 +115,11 @@ You may see a warning like this:
 3. Verify that the fingerprint in the message you see matches CITROS's public key fingerprint. If it does, then type yes:
 
 ```bash
-> Hi USERNAME! You've successfully authenticated, but CITROS does not
-> provide shell access.
+hello USERNAME, this is git@gitolite-gitolite-5f69568574-gd54j running gitolite3 3.6.12 on git 2.40.1
+PERMISSIONS	ORGANIZATION/REPOSITORY
 ```
-:::note[Note:] The remote command should exit with code 1.
+:::noteNote: 
+The remote command should exit with code 1.
 :::
 
 4. Verify that the resulting message contains your username. If you receive a "permission denied" message, see "Error: Permission denied (publickey)."

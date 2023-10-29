@@ -138,6 +138,8 @@ SSH Keys screen contains a list of all SSH Keys added to your CITROS account
 
 6. Click "Add" button to add the SSH Key to the account.
 
+![image](img/settings_key_details.png)
+
 7. The new key will be added to the list item
 
 ### Delete Key 

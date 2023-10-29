@@ -2,11 +2,12 @@
 
 You can access and write data in repositories on citros.io using SSH (Secure Shell Protocol). When you connect via SSH, you authenticate using a private key file on your local machine. For more information, see ["About SSH"](/docs/authentication/ssh/ssh_overview.md).
 
-<Tabs>
-
-<TabItem value="web" label="Add via CITROS Account">
 <Tabs groupId="operating-systems">
+
 <TabItem value="Windows" label="Windows">
+
+<Tabs>
+<TabItem value="web" label="Add via CITROS Account">
 
 ## Prerequisites
 
@@ -52,7 +53,20 @@ $ cat ~/.ssh/id_ed25519.pub | clip
 
 </TabItem>
 
+<TabItem value="cli" label="Add via CITROS CLI">
+
+1. tbd
+
+</TabItem>
+</Tabs>
+
+</TabItem>
+  
+
 <TabItem value="Mac" label="MacOS">
+
+<Tabs>
+<TabItem value="web" label="Add via CITROS Account">
 
 ## Prerequisites
 
@@ -91,7 +105,21 @@ $ pbcopy < ~/.ssh/id_ed25519.pub
 
 </TabItem>
 
+<TabItem value="cli" label="Add via CITROS CLI">
+
+1. tbd
+
+</TabItem>
+</Tabs>
+
+
+</TabItem>
+  
+
 <TabItem value="Linux" label="Linux">
+
+<Tabs>
+<TabItem value="web" label="Add via CITROS Account">
 
 ## Prerequisites
 
@@ -129,12 +157,15 @@ $ clip < ~/.ssh/id_ed25519.pub
 7. The new key will be added to the list item.
 
 </TabItem>
+
+<TabItem value="cli" label="Add via CITROS CLI">
+
+1. tbd
+
+</TabItem>
 </Tabs>
-</TabItem>
 
-<TabItem value="local" label="Add via CITROS CLI">
 </TabItem>
-
 </Tabs>
 
 

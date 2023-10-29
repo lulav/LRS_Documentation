@@ -1,11 +1,11 @@
-# SSH key Passphrases
+# SSH Key Passphrases
 
 You can secure your SSH keys and configure an authentication agent so that you won't have to reenter your passphrase every time you use your SSH keys.
 
-## About passphrases for SSH keys
+## About Passphrases for SSH Keys
 With SSH keys, if someone gains access to your computer, the attacker can gain access to every system that uses that key. To add an extra layer of security, you can add a passphrase to your SSH key. To avoid entering the passphrase every time you connect, you can securely save your passphrase in the SSH agent.
 
-## Adding or changing a passphrase
+## Adding or Changing a Passphrase
 You can change the passphrase for an existing private key without regenerating the keypair by typing the following command:
 ```shell
 ssh-keygen -p -f ~/.ssh/id_ed25519

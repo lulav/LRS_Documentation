@@ -83,11 +83,11 @@ module.exports = {
               label: 'SSH Agent Forwarding',
               id: 'authentication/ssh/ssh_agent_forwarding',
             },
-            {
-              type: 'doc',
-              label: 'Managing Deploy Keys',
-              id: 'authentication/ssh/ssh_mng_deploy_keys',
-            },
+            // {
+            //   type: 'doc',
+            //   label: 'Managing Deploy Keys',
+            //   id: 'authentication/ssh/ssh_mng_deploy_keys',
+            // },
             {
               type: 'doc',
               label: 'Checking for Existing SSH Keys',
@@ -115,32 +115,32 @@ module.exports = {
             }
           ]
         },
-        {
-          type: 'category',
-          label: 'Troubleshooting',
-          items: [
-            {
-              type: 'doc',
-              label: 'SSH Key Passphrases',
-              id: 'authentication/troubleshooting/ts_passphrases',
-            },
-            {
-              type: 'doc',
-              label: 'Deleted or Missing SSH Keys',
-              id: 'authentication/troubleshooting/ts_missing_key',
-            },
-            {
-              type: 'doc',
-              label: 'Errors',
-              id: 'authentication/troubleshooting/ts_errors',
-            },
-            {
-              type: 'doc',
-              label: 'Permission Denied',
-              id: 'authentication/troubleshooting/ts_permissions',
-            }
-          ]
-        },
+        // {
+        //   type: 'category',
+        //   label: 'Troubleshooting',
+        //   items: [
+        //     {
+        //       type: 'doc',
+        //       label: 'SSH Key Passphrases',
+        //       id: 'authentication/troubleshooting/ts_passphrases',
+        //     },
+        //     {
+        //       type: 'doc',
+        //       label: 'Deleted or Missing SSH Keys',
+        //       id: 'authentication/troubleshooting/ts_missing_key',
+        //     },
+        //     {
+        //       type: 'doc',
+        //       label: 'Errors',
+        //       id: 'authentication/troubleshooting/ts_errors',
+        //     },
+        //     {
+        //       type: 'doc',
+        //       label: 'Permission Denied',
+        //       id: 'authentication/troubleshooting/ts_permissions',
+        //     }
+        //   ]
+        // },
       ]
     },
   
