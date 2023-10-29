@@ -83,64 +83,64 @@ module.exports = {
               label: 'SSH Agent Forwarding',
               id: 'authentication/ssh/ssh_agent_forwarding',
             },
+            // {
+            //   type: 'doc',
+            //   label: 'Managing Deploy Keys',
+            //   id: 'authentication/ssh/ssh_mng_deploy_keys',
+            // },
             {
               type: 'doc',
-              label: 'Managing deploy keys',
-              id: 'authentication/ssh/ssh_mng_deploy_keys',
-            },
-            {
-              type: 'doc',
-              label: 'Checking for existing SSH keys',
+              label: 'Checking for Existing SSH Keys',
               id: 'authentication/ssh/ssh_chk_existing_key',
             },
             {
               type: 'doc',
-              label: 'Generate new SSH Key',
+              label: 'Generate New SSH Key',
               id: 'authentication/ssh/ssh_generate_key',
             },
             {
               type: 'doc',
-              label: 'Adding a new SSH key',
+              label: 'Adding a New SSH Key',
               id: 'authentication/ssh/ssh_add_new',
             },
             {
               type: 'doc',
-              label: 'Test your SSH connection',
+              label: 'Test Your SSH Connection',
               id: 'authentication/ssh/ssh_test_connection',
             },
             {
               type: 'doc',
-              label: 'SSH key passphrases',
+              label: 'SSH key Passphrases',
               id: 'authentication/ssh/ssh_passphrases',
             }
           ]
         },
-        {
-          type: 'category',
-          label: 'Troubleshooting',
-          items: [
-            {
-              type: 'doc',
-              label: 'SSH key passphrases',
-              id: 'authentication/troubleshooting/ts_passphrases',
-            },
-            {
-              type: 'doc',
-              label: 'Deleted or Missing SSH Keys',
-              id: 'authentication/troubleshooting/ts_missing_key',
-            },
-            {
-              type: 'doc',
-              label: 'Errors',
-              id: 'authentication/troubleshooting/ts_errors',
-            },
-            {
-              type: 'doc',
-              label: 'Permission Denied',
-              id: 'authentication/troubleshooting/ts_permissions',
-            }
-          ]
-        },
+        // {
+        //   type: 'category',
+        //   label: 'Troubleshooting',
+        //   items: [
+        //     {
+        //       type: 'doc',
+        //       label: 'SSH Key Passphrases',
+        //       id: 'authentication/troubleshooting/ts_passphrases',
+        //     },
+        //     {
+        //       type: 'doc',
+        //       label: 'Deleted or Missing SSH Keys',
+        //       id: 'authentication/troubleshooting/ts_missing_key',
+        //     },
+        //     {
+        //       type: 'doc',
+        //       label: 'Errors',
+        //       id: 'authentication/troubleshooting/ts_errors',
+        //     },
+        //     {
+        //       type: 'doc',
+        //       label: 'Permission Denied',
+        //       id: 'authentication/troubleshooting/ts_permissions',
+        //     }
+        //   ]
+        // },
       ]
     },
   

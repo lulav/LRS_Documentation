@@ -46,7 +46,7 @@ $ git clone https://citros.io/USERNAME/REPO-NAME.git
 ```
 
 #### Test From a Different Network
-If you can connect the computer to another network that doesn't have a firewall, you can try testing your SSH connection to GitHub. If everything works as it should, contact your network administrator for help on changing the firewall settings to allow your SSH connection to GitHub to succeed.
+If you can connect the computer to another network that doesn't have a firewall, you can try testing your SSH connection to CITROS. If everything works as it should, contact your network administrator for help on changing the firewall settings to allow your SSH connection to CITROS to succeed.
 
 
 ## Key Already in Use
@@ -59,7 +59,7 @@ To determine where the key has already been used, open a terminal and type the `
 ```bash
 $ ssh -T -ai ~/.ssh/id_rsa git@citros.io
 # Connect to citros.io using a specific ssh key
-> Hi USERNAME! You've successfully authenticated, but GitHub does not
+> Hi USERNAME! You've successfully authenticated, but CITROS does not
 > provide shell access.
 ```
 The username in the response is the account on citros.io that the key is currently attached to. If the response looks something like "username/repo", the key has been attached to a repository as a [deploy key](/docs/authentication/ssh/ssh_mng_deploy_keys.md).
@@ -95,7 +95,7 @@ To add your SSH private key to the ssh-agent, you can specify the path to the Ap
 
 ## SSL Certificate Problem, Verify That The Ca Cert is Ok
 
-This error means your CA root certificate is out of date. If your CA root certificate needs to be updated, you won't be able to push or pull from GitHub repositories.
+This error means your CA root certificate is out of date. If your CA root certificate needs to be updated, you won't be able to push or pull from CITROS repositories.
 
 The error you receive may look like the following:
 
@@ -152,7 +152,7 @@ You must have Homebrew installed. For more information, see the [installation gu
 ### Solving the issue
 :::warningWarning: 
 
-If you install OpenSSH, your computer will not be able to retrieve passphrases that are stored in the Apple keychain. You will need to enter your passphrase or interact with your hardware security key every time you authenticate with SSH to GitHub or another web service.
+If you install OpenSSH, your computer will not be able to retrieve passphrases that are stored in the Apple keychain. You will need to enter your passphrase or interact with your hardware security key every time you authenticate with SSH to CITROS or another web service.
 
 
 If you remove OpenSSH, the passphrases that are stored in your keychain will once again be retrievable. You can remove OpenSSH by entering the command brew uninstall openssh in Terminal.

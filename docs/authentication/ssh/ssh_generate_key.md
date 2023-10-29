@@ -1,6 +1,6 @@
 # Generate Key
 
-You can generate a new SSH key on your local machine. After you generate the key, you can add the public key to your account on GitHub.com to enable authentication for Git operations over SSH.
+You can generate a new SSH key on your local machine. After you generate the key, you can add the public key to your account on citros.io to enable authentication for Git operations over SSH.
 
 <Tabs groupId="operating-systems">
   
