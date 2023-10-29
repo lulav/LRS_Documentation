@@ -1,23 +1,21 @@
-# Managing deploy keys
+# Managing Deploy Keys
 
-You can launch projects from a repository on GitHub.com to your server by using a deploy key, which is an SSH key that grants access to a single repository. GitHub attaches the public part of the key directly to your repository instead of a personal account, and the private part of the key remains on your server.
+You can launch projects from a repository on [CITROS.io](https://citros.io/) to your server by using a deploy key, which is an SSH key that grants access to a single repository. CITROS attaches the public part of the key directly to your repository instead of a personal account, and the private part of the key remains on your server.
 
-## Set up deploy keys
+## Set Up Deploy Keys
 
-1. [Run the ssh-keygen procedure](/docs/authentication/ssh/ssh_generate_key.md) on your server, and remember where you save the generated public and private rsa key pair.
+1. [Generate SSH-Key](/docs/authentication/ssh/ssh_generate_key.md) on your server, and remember where you save the generated public and private rsa key pair.
 
-2. On citros.com, navigate to the main page of the repository.
+2. [Navigate to Settings](https://citros.io/settings).
 
-3. Under your repository name, click  Settings. If you cannot see the "Settings" tab, select the  dropdown menu, then click Settings.
+3. Open [SSH Keys Tab](https://citros.io/settings?tab=ssh_keys).
 
-4. In the sidebar, click Deploy Keys.
+4. Click "New SSH Key" button
 
-5. Click Add deploy key.
+5. Enter SSH key name.
 
-6. In the "Title" field, provide a title.
+6. Paste the public key.
 
-7. In the "Key" field, paste your public key.
+7. Click "Add" button to add the SSH Key to the account.
 
-8. Select Allow write access if you want this key to have write access to the repository. A deploy key with write access lets a deployment push to the repository.
-
-9. Click Add key.
+8. The new key will be added to the list item.

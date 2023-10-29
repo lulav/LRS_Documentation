@@ -1,6 +1,6 @@
 # Adding a new SSH key
 
-To configure your account on GitHub.com to use your new (or existing) SSH key, you'll also need to add the key to your account.
+To configure your account on citros.io to use your new (or existing) SSH key, you'll also need to add the key to your account.
 
 <Tabs groupId="operating-systems">
 
@@ -8,7 +8,7 @@ To configure your account on GitHub.com to use your new (or existing) SSH key, y
      
 ## About addition of SSH keys to your account
 
-You can access and write data in repositories on GitHub.com using SSH (Secure Shell Protocol). When you connect via SSH, you authenticate using a private key file on your local machine. For more information, see ["About SSH"](/docs/authentication/ssh/ssh_overview.md).
+You can access and write data in repositories on citros.io using SSH (Secure Shell Protocol). When you connect via SSH, you authenticate using a private key file on your local machine. For more information, see ["About SSH"](/docs/authentication/ssh/ssh_overview.md).
 
 ## Prerequisites
 
@@ -68,7 +68,7 @@ $ cat ~/.ssh/id_ed25519.pub | clip
 <TabItem value="Mac" label="MacOS">
 ## About addition of SSH keys to your account
 
-You can access and write data in repositories on GitHub.com using SSH (Secure Shell Protocol). When you connect via SSH, you authenticate using a private key file on your local machine. For more information, see ["About SSH"](/docs/authentication/ssh/ssh_overview.md).
+You can access and write data in repositories on citros.io using SSH (Secure Shell Protocol). When you connect via SSH, you authenticate using a private key file on your local machine. For more information, see ["About SSH"](/docs/authentication/ssh/ssh_overview.md).
 
 ## Prerequisites
 
@@ -120,7 +120,7 @@ If pbcopy isn't working, you can locate the hidden .ssh folder, open the file in
 
 ## About addition of SSH keys to your account
 
-You can access and write data in repositories on GitHub.com using SSH (Secure Shell Protocol). When you connect via SSH, you authenticate using a private key file on your local machine. For more information, see ["About SSH"](/docs/authentication/ssh/ssh_overview.md).
+You can access and write data in repositories on citros.io using SSH (Secure Shell Protocol). When you connect via SSH, you authenticate using a private key file on your local machine. For more information, see ["About SSH"](/docs/authentication/ssh/ssh_overview.md).
 
 ## Prerequisites
 

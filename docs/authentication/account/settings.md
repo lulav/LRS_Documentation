@@ -5,13 +5,13 @@ Some of the settings are open only to admin users.
 
 ## Table of Contents
 1. [Access to Settings](#access-to-settings)
-2. [General Screen](#general)
+2. [General](#general)
 3. [Organization](#organization)
 4. [Users](#users)
 5. [Change Password](#change-password)
 6. [SSH Keys](#ssh-keys)
 
-## Access to Settings Screen
+## Access to Settings
 The settings screen can be entered in two ways
 
 1. from the gear in the top right corner of the screen. this option is available throughout all screens.
@@ -24,7 +24,7 @@ The settings screen can be entered in two ways
 
 ![image](img/setting_intro2.png)
 
-## General Screen
+## General
 
 General screen contains general details
 
@@ -40,7 +40,7 @@ The first and last name are changeable
 
 The email address cannot be changed.
 
-## Organization Screen
+## Organization
 
 Organization screen contains organization details 
 
@@ -52,7 +52,7 @@ This details cannot be changed.
 
 ![image](img/organiztion.png)
 
-## Users Screen
+## Users
 
 Users Screen contains a list of all users in the organization.
 
@@ -104,7 +104,7 @@ Only admin can change user activation state
 
 Toggle to activate or deactivate the user in the user list.
 
-## Change Password Screen
+## Change Password
 
 The change password screen offers you to update your password.
 You must have your old password to update your password.

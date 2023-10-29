@@ -1,6 +1,6 @@
 # Testing your SSH connection
 
-After you've set up your SSH key and added it to your account on GitHub.com, you can test your connection.
+After you've set up your SSH key and added it to your account on citros.io, you can test your connection.
 
 <Tabs groupId="operating-systems">
   
@@ -19,8 +19,8 @@ When you test your connection, you'll need to authenticate this action using you
 2. Enter the following:
 
 ```bash
-$ ssh -T git@github.com
-# Attempts to ssh to GitHub
+$ ssh -T git@citros.io
+# Attempts to ssh to CITROS
 ```
 
 You may see a warning like this:
@@ -30,10 +30,10 @@ You may see a warning like this:
 > ED25519 key fingerprint is SHA256:+DiY3wvvV6TuJJhbpZisF/zLDA0zPMSvHdkr4UvCOqU.
 > Are you sure you want to continue connecting (yes/no)?
 ```
-3. Verify that the fingerprint in the message you see matches GitHub's public key fingerprint. If it does, then type yes:
+3. Verify that the fingerprint in the message you see matches CITROS's public key fingerprint. If it does, then type yes:
 
 ```bash
-> Hi USERNAME! You've successfully authenticated, but GitHub does not
+> Hi USERNAME! You've successfully authenticated, but CITROS does not
 > provide shell access.
 ```
 :::note[Note:] The remote command should exit with code 1.
@@ -59,8 +59,8 @@ When you test your connection, you'll need to authenticate this action using you
 2. Enter the following:
 
 ```bash
-$ ssh -T git@github.com
-# Attempts to ssh to GitHub
+$ ssh -T git@citros.io
+# Attempts to ssh to CITROS
 ```
 
 You may see a warning like this:
@@ -70,10 +70,10 @@ You may see a warning like this:
 > ED25519 key fingerprint is SHA256:+DiY3wvvV6TuJJhbpZisF/zLDA0zPMSvHdkr4UvCOqU.
 > Are you sure you want to continue connecting (yes/no)?
 ```
-3. Verify that the fingerprint in the message you see matches GitHub's public key fingerprint. If it does, then type yes:
+3. Verify that the fingerprint in the message you see matches CITROS's public key fingerprint. If it does, then type yes:
 
 ```bash
-> Hi USERNAME! You've successfully authenticated, but GitHub does not
+> Hi USERNAME! You've successfully authenticated, but CITROS does not
 > provide shell access.
 ```
 :::note[Note:] The remote command should exit with code 1.
@@ -99,8 +99,8 @@ When you test your connection, you'll need to authenticate this action using you
 2. Enter the following:
 
 ```bash
-$ ssh -T git@github.com
-# Attempts to ssh to GitHub
+$ ssh -T git@citros.io
+# Attempts to ssh to CITROS
 ```
 
 You may see a warning like this:
@@ -110,10 +110,10 @@ You may see a warning like this:
 > ED25519 key fingerprint is SHA256:+DiY3wvvV6TuJJhbpZisF/zLDA0zPMSvHdkr4UvCOqU.
 > Are you sure you want to continue connecting (yes/no)?
 ```
-3. Verify that the fingerprint in the message you see matches GitHub's public key fingerprint. If it does, then type yes:
+3. Verify that the fingerprint in the message you see matches CITROS's public key fingerprint. If it does, then type yes:
 
 ```bash
-> Hi USERNAME! You've successfully authenticated, but GitHub does not
+> Hi USERNAME! You've successfully authenticated, but CITROS does not
 > provide shell access.
 ```
 :::note[Note:] The remote command should exit with code 1.

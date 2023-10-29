@@ -6,7 +6,7 @@ You must be using an SSH URL to check out code
 SSH forwarding only works with SSH URLs, not HTTP(s) URLs. Check the .git/config file on your server and ensure the URL is an SSH-style URL like below:
 
     [remote "origin"]
-    url = git@github.com:YOUR_ACCOUNT/YOUR_PROJECT.git
+    url = git@citros.io:YOUR_ACCOUNT/YOUR_PROJECT.git
     fetch = +refs/heads/*:refs/remotes/origin/*
 
 ## Your SSH keys must work locally

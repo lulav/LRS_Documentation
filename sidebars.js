@@ -85,32 +85,32 @@ module.exports = {
             },
             {
               type: 'doc',
-              label: 'Managing deploy keys',
+              label: 'Managing Deploy Keys',
               id: 'authentication/ssh/ssh_mng_deploy_keys',
             },
             {
               type: 'doc',
-              label: 'Checking for existing SSH keys',
+              label: 'Checking for Existing SSH Keys',
               id: 'authentication/ssh/ssh_chk_existing_key',
             },
             {
               type: 'doc',
-              label: 'Generate new SSH Key',
+              label: 'Generate New SSH Key',
               id: 'authentication/ssh/ssh_generate_key',
             },
             {
               type: 'doc',
-              label: 'Adding a new SSH key',
+              label: 'Adding a New SSH Key',
               id: 'authentication/ssh/ssh_add_new',
             },
             {
               type: 'doc',
-              label: 'Test your SSH connection',
+              label: 'Test Your SSH Connection',
               id: 'authentication/ssh/ssh_test_connection',
             },
             {
               type: 'doc',
-              label: 'SSH key passphrases',
+              label: 'SSH key Passphrases',
               id: 'authentication/ssh/ssh_passphrases',
             }
           ]
@@ -121,7 +121,7 @@ module.exports = {
           items: [
             {
               type: 'doc',
-              label: 'SSH key passphrases',
+              label: 'SSH Key Passphrases',
               id: 'authentication/troubleshooting/ts_passphrases',
             },
             {
