@@ -26,12 +26,12 @@ module.exports = {
       items: [
         {
           type: 'category',
-          label: 'Data access',
-          link: {
-            type: 'doc',
-            id: "data_access/index",
-          },
+          label: 'Data Access',
           items: [
+            {
+              type: 'doc',
+              id: "data_access/index",
+            },
             {
               type: 'category',
               label: 'Examples',
@@ -42,18 +42,19 @@ module.exports = {
             {
               type: 'category',
               label: 'Documentation',
-              items: ['documentation/data_access/citros_db', 'documentation/data_access/citros_dict']
+              items: ['documentation/data_access/citros_db', 'documentation/data_access/citros_dict', 
+                      'documentation/data_access/references']
             },
           ]
         },
         {
           type: 'category',
-          label: 'Error analysis',
-          link: {
-            type: 'doc',
-            id: "error_analysis/index",
-          },
+          label: 'Error Analysis',
           items: [
+            {
+              type: 'doc',
+              id: "error_analysis/index",
+            },
             {
               type: 'category',
               label: 'Examples',
@@ -63,23 +64,25 @@ module.exports = {
             {
               type: 'category',
               label: 'Documentation',
-              items: ['documentation/error_analysis/citros_data', 'documentation/error_analysis/citros_data_array', 'documentation/error_analysis/citros_stat'],
+              items: ['documentation/error_analysis/citros_data', 'documentation/error_analysis/citros_data_array', 
+                      'documentation/error_analysis/citros_stat'],
             },
           ],
         },
         {
           type: 'category',
           label: 'Validation',
-          link: {
-            type: 'doc',
-            id: "validation/index",
-          },
           items: [
+            {
+              type: 'doc',
+              id: "validation/index",
+            },
             {
               type: 'category',
               label: 'Examples',
               items: ['validation/getting_started', 'validation/standard_deviation_boundary_test', 'validation/mean_value_test',
-                       'validation/norm_test', 'validation/testing_each_simulation', 'validation/set_multiple_tests'],
+                      'validation/standard_deviation_test', 'validation/norm_test', 'validation/testing_each_simulation', 
+                      'validation/set_multiple_tests'],
             },
             {
               type: 'category',
