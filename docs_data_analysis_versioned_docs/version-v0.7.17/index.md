@@ -9,6 +9,18 @@ This package is a comprehensive solution for data query, analysis and visualizat
 
 The package is devided into three modules: [Data access](data_access/index.md), [Error analysis](error_analysis/index.md) and [Validation](validation/index.md).
 
+## Installation
+
+If you are working in [web](https://citros.io/), the **citros_data_analysis** package is already installed and may be used in the notebooks.
+
+If you wish to work with cloud data remotely, for example using Visual Studio Code, the installation of [CITROS CLI](https://citros.io/doc/docs_cli/overview/cli_install) is required. The **citros_data_analysis** package will be installed alongside it. To use **citros_data_analysis** package you need to be [logged in](https://citros.io/doc/docs_cli/overview/cli_quickstart#run-remotely-on-the-cloud) in your CITROS account.
+
+To update **citros_data_analysis** package without reinstalling CITROS CLI, use pip:
+
+```bash
+$ pip install -U citros-data-analysis
+```
+
 ## Table of Contents
 
 1. [Data access](data_access/index.md)
