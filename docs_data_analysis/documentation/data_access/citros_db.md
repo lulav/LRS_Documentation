@@ -52,8 +52,8 @@ Name|Type|Description
 |**```password```**|**str**|Password.<br />    If not specified, uses predefined ENV parameter "PG_PASSWORD" or try to define using 'auth' file.
 |**```database```**|**str**|Database name.<br />    If not specified, uses predefined ENV parameter "PG_DATABASE" or try to define using 'auth' file.
 |**```schema```**|**str**|If None, uses predefined ENV parameter "PG_SCHEMA".
-|**```repo```**|**str** or **int**, optional|Repository name or id. If there are several repositories with names containing the provided word, the repository will not be set, <br />    try repo_info() or repo() methods.<br />    If an integer value is provided, it determines the selection based on the order of repository creation (-1 for the last created, 0 for the first).
-|**```batch```**|**str** or **int**, optional|Batch name or id. If there are several batches with names containing the provided word, the batch will not be set, <br />    try batch_info() or batch() methods.<br />    If an integer value is provided, it determines the selection based on the order of batch creation (-1 for the last created, 0 for the first).<br />    If not specified, uses predefined ENV parameter "bid".
+|**```repo```**|**str** or **int**, optional|Repository name or id.<br />    If name is provided, searches for the exact match.<br />    If an integer value is provided, it determines the selection based on the order of repository creation (-1 for the last created, 0 for the first).
+|**```batch```**|**str** or **int**, optional|Batch name or id.<br />    If name is provided, searches for the exact match.<br />    If an integer value is provided, it determines the selection based on the order of batch creation (-1 for the last created, 0 for the first).<br />    If not specified, uses predefined ENV parameter "bid".
 |**```simulation```**|**str**, optional|Name of the simulation. If not specified, uses predefined ENV parameter "CITROS_SIMULATION".
 |**```port```**|**str**|If None, uses predefined ENV parameter "PG_PORT".
 |**```sid```**|**int**, optional|Default sid.<br />    If not specified, uses predefined ENV parameter "CITROS_SIMULATION_RUN_ID" if it exists or None.
@@ -1412,9 +1412,6 @@ Print information about users in a table:
 
 ```python
 >>> citros.get_users()
-```
-
-
 +--------+------------+-----------------------------+
 | name   | last name  | email                       |
 +--------+------------+-----------------------------+
@@ -1422,6 +1419,8 @@ Print information about users in a table:
 | david  | gilbert    | david@mail.com              |
 | mary   | stevenson  | mary@mail.com               |
 +--------+------------+-----------------------------+
+```
+
 </details>
 
 
