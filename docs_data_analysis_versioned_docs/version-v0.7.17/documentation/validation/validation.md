@@ -58,7 +58,7 @@ Name|Type|Description
 --|--|--
 |**```df```**|**pandas.DataFrame** or **None**|Data table to perform validation tests on.
 |**```db```**|**[CitrosData](../error_analysis/citros_data.md#citros_data_analysis.error_analysis.citros_data.CitrosData "citros_data_analysis.error_analysis.citros_data.CitrosData")** or **None**|CitrosData object after binning or scaling.
-|**```stat```**|**[CitrosStat](../error_analysis/citros_stat.md#citros_data_analysis.error_analysis.citros_stat.CitrosStat "citros_data_analysis.error_analysis.citros_stat.CitrosStat")** or **None**|CitrosStat object that stores mean, stndard deviation and covarian matrix as attributes.
+|**```stat```**|**[CitrosStat](../error_analysis/citros_stat.md#citros_data_analysis.error_analysis.citros_stat.CitrosStat "citros_data_analysis.error_analysis.citros_stat.CitrosStat")** or **None**|CitrosStat object that stores mean, standard deviation and covariant matrix as attributes.
 
 </details>
 <details>
@@ -95,7 +95,7 @@ set index to each of the interval, group data according to the binning and calcu
 ```
 
 
-For topic 'A' download 3-dimensional json-data 'data.x' that containes 'data.x.x_1', 'data.x.x_2' and 'data.x.x_3' columns, 
+For topic 'A' download 3-dimensional json-data 'data.x' that contains 'data.x.x_1', 'data.x.x_2' and 'data.x.x_3' columns, 
 and column with time 'data.time'.
 ```python
 >>> df = citros.topic('A').set_order({'sid':'asc','rid':'asc'}).data(['data.x','data.time'])
@@ -256,7 +256,7 @@ mean_test: passed
 ```
 
 
-Download 3-dimensional json-data 'data.x' that containes 'data.x.x_1', 'data.x.x_2' and 'data.x.x_3' columns, and column with time 'data.time'.
+Download 3-dimensional json-data 'data.x' that contains 'data.x.x_1', 'data.x.x_2' and 'data.x.x_3' columns, and column with time 'data.time'.
 Set 'data.time' as independent variable and 'data.x' as dependent vector.
 **method** defines the method of data preparation and index assignment: method = 'scale' - scales parameter **param_label** for each of the 'sid' to [0, 1] interval 
 and interpolate data on the new scale.
@@ -387,7 +387,7 @@ sid
 ```
 
 
-Download 3-dimensional json-data 'data.x' that containes 'data.x.x_1', 'data.x.x_2' and 'data.x.x_3' columns, and column with time 'data.time'.
+Download 3-dimensional json-data 'data.x' that contains 'data.x.x_1', 'data.x.x_2' and 'data.x.x_3' columns, and column with time 'data.time'.
 Set 'data.time' as independent variable and 'data.x' as dependent vector.
 **method** defines the method of data preparation and index assignment: method = 'scale' - scales parameter **param_label** for each of the 'sid' to [0, 1] interval 
 and interpolate data on the new scale.
@@ -405,287 +405,6 @@ Set different limits on Linf norm for each of the element of the 3-dimensional v
 ```python
 >>> log, table, fig = V3.norm_test(norm_type = 'Linf', limits = [1.0, 0.1, 0.5])
 norm_test Linf: passed
-```
-
-</details>
-
-
-    
-## Method `set_tests` {#citros_data_analysis.validation.validation.Validation.set_tests}
-
-
-
-
-```python
-def set_tests(
-    test_method={'std_bound': {'limits': 1.0, 'n_std': 3, 'nan_passed': True}, 'mean': {'limits': 1.0, 'nan_passed': True}, 'sid': {'limits': 1.0, 'nan_passed': True}, 'norm_L2': {'limits': 1.0}, 'norm_Linf': {'limits': 1.0}}
-)
-```
-
-
-<details>
-  <summary>Description</summary>
-
-Perform tests on the data.
-
-Possible test methods are: 
-<details>
-    <summary>'std_bound'</summary>
-
-Test whether standard deviation is within the given limits.
-Test parameters are stored as the dict with the following keys:
-- 'limits' : float or list, default 1.0
-    Limit to test standard deviation boundary. Limits may be set as:
-   - one value and it will be treated as an +- interval: value -> [-value, value];
-   - list of lower and upper limits: [lower_limit, upper_limit];
-   - If the data has multiple columns, limits may be set for each of the column.
-    That way list length must be equal to number of columns. For example, for the 3-dimensional vector with corresponding standard deviation boundaries [std_bound_1, std_bound_2, std_bound_3]:
-    [[**limit_lower**, **limit_upper**], **value_1**, **value_2**] will be processed as: 
-    **limit_lower** < std_bound_1 < **limit_upper**, 
-    -**value_1** < std_bound_2 < **value_1**, 
-    -**value_2** < std_bound_2 < **value_2**.
-- 'n_std' : int, default 3
-    The parameter specifies the number of standard deviations to be within limits.
-- 'nan_passed' : bool, default True
-    If True, the NaN values of standard deviation will pass the test.
-
-</details>
-
-<details>
-    <summary>'mean'</summary>
-
-Test whether mean is within the given limits.
-Test parameters are stored as the dict:
-- 'limits' : float or list, default 1.0
-    Limit to test mean. Limits may be set as:
-   - one value and it will be treated as an +- interval: value -> [-value, value];
-   - list of lower and upper limits: [lower_limit, upper_limit];
-   - If the data has multiple columns, limits may be set for each of the column.
-    That way list length must be equal to number of columns. For example, for the 3-dimensional vector
-    with corresponding mean vector [mean_1, mean_2 and mean_3]:
-    [[**limit_lower**, **limit_upper**], **value_1**, **value_2**] will be processed as: 
-    **limit_lower** < mean_1 < **limit_upper**, 
-    -**value_1** < mean_2 < **value_1**, 
-    -**value_2** < mean_2 < **value_2**.
-- 'nan_passed' : bool, default True
-    If True, the NaN values of the mean will pass the test.
-
-</details>
-
-<details>
-    <summary>'std'</summary>
-
-Test whether standard deviation is less then the given limits.
-Test parameters are stored as the dict:
-- 'limits' : float or list, default 1.0
-    Limit to test standard deviation. Limits may be set as:
-   - one value;
-   - If the data has multiple columns, limits may be set for each of the column.
-    That way list length must be equal to number of columns. For example, for the 3-dimensional vector
-    with corresponding standard deviation vectors [std_1, std_2, std_3]:
-    limits = [**value_1**, **value_2**, **value_3**] will be processed as: 
-    std_1 < **value_1**,
-    std_2 < **value_2**,
-    std_2 < **value_3**.
-- 'n_std' : int, default 3
-    The parameter specifies the number of standard deviations to be less then limits.
-- 'nan_passed' : bool, default True
-    If True, the NaN values of the mean will pass the test.
-
-</details>
-
-<details>
-    <summary>'sid'</summary>
-
-Test whether all simulations are within the given limits.
-Test parameters are stored as the dict:
-- 'limits' : float or list, default 1.0
-    Limit to test simulation results. Limits may be set as:
-   - one value and it will be treated as an +- interval: value -> [-value, value];
-   - list of lower and upper limits: [lower_limit, upper_limit];
-   - If the data has multiple columns, limits may be set for each of the column.
-    That way list length must be equal to number of columns. For example, for the 3-dimensional vector that
-    containes v1, v2, v3 columns and numbers N simulations:
-    [[**limit_lower**, **limit_upper**], **value_1**, **value_2**] will be processed as: 
-    **limit_lower** < v1 < **limit_upper**, 
-    -**value_1** < v2 < **value_1**, 
-    -**value_2** < v3 < **value_2** for each of the N simulations.
-- 'nan_passed' : bool, default True
-    If True, the NaN values will pass the test.
-
-</details>
-
-<details>
-    <summary>'norm_L2'</summary>
-
-Test whether L2 norm of the each simulation is less than the given limit.
-Test parameters are stored as the dict:
-- 'limits' : float or list, default 1.0
-    Limits on the simulation norm. Limits may be set as:
-   - one value;
-   - if the data has multiple columns, limits may be set for each of the column separately as a list.
-    That way list length must be equal to number of the columns.
-
-</details>
-
-<details>
-    <summary>'norm_Linf'</summary>
-
-Test whether Linf norm of the each simulation is less than the given limit.
-Test parameters are stored as the dict:
-- 'limits' : float or list, default 1.0
-    Limits on the simulation norm. Limits may be set as:
-   - one value;
-   - if the data has multiple columns, limits may be set for each of the column separately as a list.
-    That way list length must be equal to number of the columns.
-
-</details>
-
-#### Parameters
-
-Name|Type|Description
---|--|--
-|**```tests_method```**|**dict**|Keys define test methods and corresponding test parameters are stored as values.
-#### Returns
-
-Name|Type|Description
---|--|--
-|**```log```**|**[CitrosDict](../data_access/citros_dict.md#citros_data_analysis.data_access.citros_dict.CitrosDict "citros_data_analysis.data_access.citros_dict.CitrosDict")**|Dictionary with the test results.
-|**```tables```**|**dict**|Dictionary with test methods as keys and pandas.DataFrame table with results of the test as values.
-|**```figures```**|**dict**|Dictionary with test methods as keys and matplotlib.figure.Figure with test results as values.
-#### See Also
-
-**[Validation.std_bound_test()](#citros_data_analysis.validation.validation.Validation.std_bound_test "citros_data_analysis.validation.validation.Validation.std_bound_test")**, **[Validation.mean_test()](#citros_data_analysis.validation.validation.Validation.mean_test "citros_data_analysis.validation.validation.Validation.mean_test")**, **[Validation.sid_test()](#citros_data_analysis.validation.validation.Validation.sid_test "citros_data_analysis.validation.validation.Validation.sid_test")**, **[Validation.norm_test()](#citros_data_analysis.validation.validation.Validation.norm_test "citros_data_analysis.validation.validation.Validation.norm_test")**
-
-
-</details>
-<details>
-  <summary>Examples</summary>
-
-Import validation and data_analysis packages:
-
-```python
->>> import data_analysis as da
->>> import validation as va
-```
-
-
-From topic 'A' download 3-dimensional json-data 'data.x' that containes 'data.x.x_1', 'data.x.x_2' and 'data.x.x_3' columns, 
-and column with time 'data.time'.
-
-```python
->>> citros = da.CitrosDB()
->>> df = citros.topic('A').set_order({'sid':'asc','rid':'asc'}).data(['data.x','data.time'])
->>> print(df['data.x'])
-0          {'x_1': 0.0, 'x_2': 0.08, 'x_3': 0.047}
-1       {'x_1': 0.008, 'x_2': 0.08, 'x_3': -0.003}
-2      {'x_1': 0.016, 'x_2': 0.078, 'x_3': -0.034}
-...
-```
-
-
-Set 'data.time' as independent variable and 'data.x' as dependent vector.
-**method** defines the method of data preparation and index assignment: method = 'scale' - scales parameter **param_label** for each of the 'sid' to [0, 1] interval 
-and interpolate data on the new scale.
-
-```python
->>> V = va.Validation(df, data_label = 'data.x', param_label = 'data.time', 
-...                   method = 'scale', num = 50, units = 'm')
-```
-
-
-Test whether 3 standard deviation boundary is within [-0.3, 0.3] interval (treat nan values of the
-standard deviation, if they are presented, as passed the test) and L2 norm of the each simulation is less than 12.5:
-
-```python
->>> logs, tables, figs = V.set_tests(test_method = {
-...                                    'std_bound' : {'limits' : 0.3, 'n_std': 3, 'nan_passed': True},
-...                                    'norm_L2' : {'limits' : 12.5}})
-std_bound_test: passed
-norm_test L2: passed
-```
-
-
-Print detailed standard deviation boundary test results:
-
-```python
->>> logs['std_bound'].print()
-{
- 'test_param': {
-   'limits': 0.3,
-   'n_std': 3,
-   'nan_passed': True
- },
- 'data.x.x_1': {
-   'passed': True,
-   'pass_rate': 1.0,
-   'failed': {
-   },
-   'nan_std': {
-     49: 807.942
-   }
- },
- 'data.x.x_2': {
-   'passed': True,
-   'pass_rate': 1.0,
-   'failed': {
-   },
-   'nan_std': {
-     49: 807.942
-   }
- },
- 'data.x.x_2': {
-   'passed': True,
-   'pass_rate': 1.0,
-   'failed': {
-   },
-   'nan_std': {
-     49: 807.942
-   }
-  }
-}
-```
-
-
-Print results of norm test in details:
-
-```python
->>> logs['norm_L2'].print()
-{
- 'test_param': {
-   'limits': 12.5
- },
- 'data.x.x_1': {
-   'passed': True,
-   'pass_rate': 1.0,
-   'norm_value': {
-     1: 0.39,
-     2: 0.38,
-     3: 0.38
-   },
-   'failed': []
- },
- 'data.x.x_2': {
-   'passed': True,
-   'pass_rate': 1.0,
-   'norm_value': {
-     1: 0.38,
-     2: 0.40,
-     3: 0.40
-   },
-   'failed': []
- },
- 'data.x.x_3': {
-   'passed': True,
-   'pass_rate': 1.0,
-   'norm_value': {
-     1: 0.12,
-     2: 0.11,
-     3: 0.12
-   },
-   'failed': []
- }  
-}
 ```
 
 </details>
@@ -718,10 +437,10 @@ The output is:
 column_name:                        # label of the column, str
     {'passed' : bool},              # if the tests was passed or not.
     {'pass_rate' : 
-        {'sid_fraction' : float},   # fraction of simulationsthat pass the test
+        {'sid_fraction' : float},   # fraction of simulations that pass the test
         {sid : fraction}},          # fraction of the points that pass the test for each simulation {int: float}
     {'failed' : 
-        {sid :                      # id of the simulation that containes points that failed the test
+        {sid :                      # id of the simulation that contains points that failed the test
             {x_index: x_value}}},   # indexes and values of the x coordinate of the points 
 }                                   #   that fail the test {int: {int: float}}
 ```
@@ -735,7 +454,7 @@ using a boolean value to indicate whether it passed or failed the test;
 
 Name|Type|Description
 --|--|--
-|**```limits```**|**float** or **list**, default **1.0**|Limit to test simulation results. Limits may be set as:<br />      &#8226; one value and it will be treated as an +- interval: value -> [-value, value];<br />      &#8226; list of lower and upper limits: [lower_limit, upper_limit];<br />      &#8226; If the data has multiple columns, limits may be set for each of the column.<br />    That way list length must be equal to number of columns. For example, for the 3-dimensional vector that containes v1, v2, v3 columns and numbers N simulations:<br />    [[**limit_lower**, **limit_upper**], **value_1**, **value_2**] will be processed as: <br />    **limit_lower** < v1 < **limit_upper**, <br />    -**value_1** < v2 < **value_1**, <br />    -**value_2** < v3 < **value_2** for each of the N simulations.
+|**```limits```**|**float** or **list**, default **1.0**|Limit to test simulation results. Limits may be set as:<br />      &#8226; one value and it will be treated as an +- interval: value -> [-value, value];<br />      &#8226; list of lower and upper limits: [lower_limit, upper_limit];<br />      &#8226; If the data has multiple columns, limits may be set for each of the column.<br />    That way list length must be equal to number of columns. For example, for the 3-dimensional vector that contains v1, v2, v3 columns and numbers N simulations:<br />    [[**limit_lower**, **limit_upper**], **value_1**, **value_2**] will be processed as: <br />    **limit_lower** < v1 < **limit_upper**, <br />    -**value_1** < v2 < **value_1**, <br />    -**value_2** < v3 < **value_2** for each of the N simulations.
 |**```nan_passed```**|**bool**, default **True**|If True, the NaN values will pass the test.
 #### Returns
 
@@ -824,7 +543,7 @@ sid_test: passed
 ```
 
 
-For topic 'A' download 3-dimensional json-data 'data.x' that containes 'data.x.x_1', 'data.x.x_2' and 'data.x.x_3' columns, and column with time 'data.time'.
+For topic 'A' download 3-dimensional json-data 'data.x' that contains 'data.x.x_1', 'data.x.x_2' and 'data.x.x_3' columns, and column with time 'data.time'.
 Set 'data.time' as independent variable and 'data.x' as dependent vector.
 **method** defines the method of data preparation and index assignment: method = 'scale' - scales parameter **param_label** for each of the 'sid' to [0, 1] interval 
 and interpolate data on the new scale.
@@ -1006,7 +725,7 @@ std_bound_test: passed
 ```
 
 
-Download 3-dimensional json-data 'data.x' that containes 'data.x.x_1', 'data.x.x_2' and 'data.x.x_3' columns, and column with time 'data.time'.
+Download 3-dimensional json-data 'data.x' that contains 'data.x.x_1', 'data.x.x_2' and 'data.x.x_3' columns, and column with time 'data.time'.
 Set 'data.time' as independent variable and 'data.x' as dependent vector.
 **method** defines the method of data preparation and index assignment: method = 'scale' - scales parameter **param_label** for each of the 'sid' to [0, 1] interval 
 and interpolate data on the new scale.
@@ -1092,7 +811,7 @@ Name|Type|Description
 
 Name|Type|Description
 --|--|--
-|**```std_color```**|**str**, default `'b'`|Color for dispalying standard deviation, blue by default.
+|**```std_color```**|**str**, default `'b'`|Color for displaying standard deviation, blue by default.
 |**```connect_nan_std```**|**bool**, default **False**|If True, all non-NaN values in standard deviation line are connected, resulting in a continuous line. <br />    Otherwise, breaks are introduced in the standard deviation line whenever NaN values are encountered.
 |**```std_area```**|**bool**, default **False**|Fill area within **n_std**-standard deviation line with color.
 |**```std_lines```**|**bool**, default **True**|If False, remove standard deviation line.
@@ -1162,7 +881,7 @@ std_bound_test: passed
 ```
 
 
-Download 3-dimensional json-data 'data.x' that containes 'data.x.x_1', 'data.x.x_2' and 'data.x.x_3' columns, and column with time 'data.time'.
+Download 3-dimensional json-data 'data.x' that contains 'data.x.x_1', 'data.x.x_2' and 'data.x.x_3' columns, and column with time 'data.time'.
 Set 'data.time' as independent variable and 'data.x' as dependent vector.
 **method** defines the method of data preparation and index assignment: method = 'scale' - scales parameter **param_label** for each of the 'sid' to [0, 1] interval 
 and interpolate data on the new scale.
@@ -1180,6 +899,288 @@ Set different limits on 3-dimensional vector: 1.5 for the first element, 1.5 for
 ```python
 >>> log, table, fig = V3.std_test(limits = [1.5, 1.5, 30], n_std = 3)
 std_test: passed
+```
+
+</details>
+
+
+    
+
+## Method `set_tests` {#citros_data_analysis.validation.validation.Validation.set_tests}
+
+
+
+
+```python
+def set_tests(
+    test_method={'std_bound': {'limits': 1.0, 'n_std': 3, 'nan_passed': True}, 'mean': {'limits': 1.0, 'nan_passed': True}, 'sid': {'limits': 1.0, 'nan_passed': True}, 'norm_L2': {'limits': 1.0}, 'norm_Linf': {'limits': 1.0}}
+)
+```
+
+
+<details>
+  <summary>Description</summary>
+
+Perform tests on the data.
+
+Possible test methods are: 
+<details>
+    <summary>'std_bound'</summary>
+
+Test whether standard deviation is within the given limits.
+Test parameters are stored as the dict with the following keys:
+- 'limits' : float or list, default 1.0
+    Limit to test standard deviation boundary. Limits may be set as:
+   - one value and it will be treated as an +- interval: value -> [-value, value];
+   - list of lower and upper limits: [lower_limit, upper_limit];
+   - If the data has multiple columns, limits may be set for each of the column.
+    That way list length must be equal to number of columns. For example, for the 3-dimensional vector with corresponding standard deviation boundaries [std_bound_1, std_bound_2, std_bound_3]:
+    [[**limit_lower**, **limit_upper**], **value_1**, **value_2**] will be processed as: 
+    **limit_lower** < std_bound_1 < **limit_upper**, 
+    -**value_1** < std_bound_2 < **value_1**, 
+    -**value_2** < std_bound_2 < **value_2**.
+- 'n_std' : int, default 3
+    The parameter specifies the number of standard deviations to be within limits.
+- 'nan_passed' : bool, default True
+    If True, the NaN values of standard deviation will pass the test.
+
+</details>
+
+<details>
+    <summary>'mean'</summary>
+
+Test whether mean is within the given limits.
+Test parameters are stored as the dict:
+- 'limits' : float or list, default 1.0
+    Limit to test mean. Limits may be set as:
+   - one value and it will be treated as an +- interval: value -> [-value, value];
+   - list of lower and upper limits: [lower_limit, upper_limit];
+   - If the data has multiple columns, limits may be set for each of the column.
+    That way list length must be equal to number of columns. For example, for the 3-dimensional vector
+    with corresponding mean vector [mean_1, mean_2 and mean_3]:
+    [[**limit_lower**, **limit_upper**], **value_1**, **value_2**] will be processed as: 
+    **limit_lower** < mean_1 < **limit_upper**, 
+    -**value_1** < mean_2 < **value_1**, 
+    -**value_2** < mean_2 < **value_2**.
+- 'nan_passed' : bool, default True
+    If True, the NaN values of the mean will pass the test.
+
+</details>
+
+<details>
+    <summary>'std'</summary>
+
+Test whether standard deviation is less then the given limits.
+Test parameters are stored as the dict:
+- 'limits' : float or list, default 1.0
+    Limit to test standard deviation. Limits may be set as:
+   - one value;
+   - If the data has multiple columns, limits may be set for each of the column.
+    That way list length must be equal to number of columns. For example, for the 3-dimensional vector
+    with corresponding standard deviation vectors [std_1, std_2, std_3]:
+    limits = [**value_1**, **value_2**, **value_3**] will be processed as: 
+    std_1 < **value_1**,
+    std_2 < **value_2**,
+    std_2 < **value_3**.
+- 'n_std' : int, default 3
+    The parameter specifies the number of standard deviations to be less then limits.
+- 'nan_passed' : bool, default True
+    If True, the NaN values of the mean will pass the test.
+
+</details>
+
+<details>
+    <summary>'sid'</summary>
+
+Test whether all simulations are within the given limits.
+Test parameters are stored as the dict:
+- 'limits' : float or list, default 1.0
+    Limit to test simulation results. Limits may be set as:
+   - one value and it will be treated as an +- interval: value -> [-value, value];
+   - list of lower and upper limits: [lower_limit, upper_limit];
+   - If the data has multiple columns, limits may be set for each of the column.
+    That way list length must be equal to number of columns. For example, for the 3-dimensional vector that
+    contains v1, v2, v3 columns and numbers N simulations:
+    [[**limit_lower**, **limit_upper**], **value_1**, **value_2**] will be processed as: 
+    **limit_lower** < v1 < **limit_upper**, 
+    -**value_1** < v2 < **value_1**, 
+    -**value_2** < v3 < **value_2** for each of the N simulations.
+- 'nan_passed' : bool, default True
+    If True, the NaN values will pass the test.
+
+</details>
+
+<details>
+    <summary>'norm_L2'</summary>
+
+Test whether L2 norm of the each simulation is less than the given limit.
+Test parameters are stored as the dict:
+- 'limits' : float or list, default 1.0
+    Limits on the simulation norm. Limits may be set as:
+   - one value;
+   - if the data has multiple columns, limits may be set for each of the column separately as a list.
+    That way list length must be equal to number of the columns.
+
+</details>
+
+<details>
+    <summary>'norm_Linf'</summary>
+
+Test whether Linf norm of the each simulation is less than the given limit.
+Test parameters are stored as the dict:
+- 'limits' : float or list, default 1.0
+    Limits on the simulation norm. Limits may be set as:
+   - one value;
+   - if the data has multiple columns, limits may be set for each of the column separately as a list.
+    That way list length must be equal to number of the columns.
+
+</details>
+
+#### Parameters
+
+Name|Type|Description
+--|--|--
+|**```tests_method```**|**dict**|Keys define test methods and corresponding test parameters are stored as values.
+#### Returns
+
+Name|Type|Description
+--|--|--
+|**```log```**|**[CitrosDict](../data_access/citros_dict.md#citros_data_analysis.data_access.citros_dict.CitrosDict "citros_data_analysis.data_access.citros_dict.CitrosDict")**|Dictionary with the test results.
+|**```tables```**|**dict**|Dictionary with test methods as keys and pandas.DataFrame table with results of the test as values.
+|**```figures```**|**dict**|Dictionary with test methods as keys and matplotlib.figure.Figure with test results as values.
+#### See Also
+
+**[Validation.std_bound_test()](#citros_data_analysis.validation.validation.Validation.std_bound_test "citros_data_analysis.validation.validation.Validation.std_bound_test")**, **[Validation.mean_test()](#citros_data_analysis.validation.validation.Validation.mean_test "citros_data_analysis.validation.validation.Validation.mean_test")**, **[Validation.sid_test()](#citros_data_analysis.validation.validation.Validation.sid_test "citros_data_analysis.validation.validation.Validation.sid_test")**, **[Validation.norm_test()](#citros_data_analysis.validation.validation.Validation.norm_test "citros_data_analysis.validation.validation.Validation.norm_test")**
+
+
+</details>
+<details>
+  <summary>Examples</summary>
+
+Import validation and data_analysis packages:
+
+```python
+>>> import data_analysis as da
+>>> import validation as va
+```
+
+
+From topic 'A' download 3-dimensional json-data 'data.x' that contains 'data.x.x_1', 'data.x.x_2' and 'data.x.x_3' columns, 
+and column with time 'data.time'.
+
+```python
+>>> citros = da.CitrosDB()
+>>> df = citros.topic('A').set_order({'sid':'asc','rid':'asc'}).data(['data.x','data.time'])
+>>> print(df['data.x'])
+0          {'x_1': 0.0, 'x_2': 0.08, 'x_3': 0.047}
+1       {'x_1': 0.008, 'x_2': 0.08, 'x_3': -0.003}
+2      {'x_1': 0.016, 'x_2': 0.078, 'x_3': -0.034}
+...
+```
+
+
+Set 'data.time' as independent variable and 'data.x' as dependent vector.
+**method** defines the method of data preparation and index assignment: method = 'scale' - scales parameter **param_label** for each of the 'sid' to [0, 1] interval 
+and interpolate data on the new scale.
+
+```python
+>>> V = va.Validation(df, data_label = 'data.x', param_label = 'data.time', 
+...                   method = 'scale', num = 50, units = 'm')
+```
+
+
+Test whether 3 standard deviation boundary is within [-0.3, 0.3] interval (treat nan values of the
+standard deviation, if they are presented, as passed the test) and L2 norm of the each simulation is less than 12.5:
+
+```python
+>>> logs, tables, figs = V.set_tests(test_method = {
+...                                    'std_bound' : {'limits' : 0.3, 'n_std': 3, 'nan_passed': True},
+...                                    'norm_L2' : {'limits' : 12.5}})
+std_bound_test: passed
+norm_test L2: passed
+```
+
+
+Print detailed standard deviation boundary test results:
+
+```python
+>>> logs['std_bound'].print()
+{
+ 'test_param': {
+   'limits': 0.3,
+   'n_std': 3,
+   'nan_passed': True
+ },
+ 'data.x.x_1': {
+   'passed': True,
+   'pass_rate': 1.0,
+   'failed': {
+   },
+   'nan_std': {
+     49: 807.942
+   }
+ },
+ 'data.x.x_2': {
+   'passed': True,
+   'pass_rate': 1.0,
+   'failed': {
+   },
+   'nan_std': {
+     49: 807.942
+   }
+ },
+ 'data.x.x_2': {
+   'passed': True,
+   'pass_rate': 1.0,
+   'failed': {
+   },
+   'nan_std': {
+     49: 807.942
+   }
+  }
+}
+```
+
+
+Print results of norm test in details:
+
+```python
+>>> logs['norm_L2'].print()
+{
+ 'test_param': {
+   'limits': 12.5
+ },
+ 'data.x.x_1': {
+   'passed': True,
+   'pass_rate': 1.0,
+   'norm_value': {
+     1: 0.39,
+     2: 0.38,
+     3: 0.38
+   },
+   'failed': []
+ },
+ 'data.x.x_2': {
+   'passed': True,
+   'pass_rate': 1.0,
+   'norm_value': {
+     1: 0.38,
+     2: 0.40,
+     3: 0.40
+   },
+   'failed': []
+ },
+ 'data.x.x_3': {
+   'passed': True,
+   'pass_rate': 1.0,
+   'norm_value': {
+     1: 0.12,
+     2: 0.11,
+     3: 0.12
+   },
+   'failed': []
+ }  
+}
 ```
 
 </details>

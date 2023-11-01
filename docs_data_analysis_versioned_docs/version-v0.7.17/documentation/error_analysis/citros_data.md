@@ -42,7 +42,7 @@ class CitrosData(
 Create CitrosData object, that allows to bin and interpolate data.
 
 CitrosData object has two main attributes: 'data' - the vector of depending variables, 
-and all other additional columns - 'addData'. Both 'data' and 'addData' attributes containes pandas.DataFrame.
+and all other additional columns - 'addData'. Both 'data' and 'addData' attributes contains pandas.DataFrame.
 
 #### Parameters
 
@@ -132,6 +132,91 @@ Name|Type|Description
 
 
     
+## Method `drop_addData` {#citros_data_analysis.error_analysis.citros_data.CitrosData.drop_addData}
+
+
+
+
+```python
+def drop_addData(
+    column_label
+)
+```
+
+
+<details>
+  <summary>Description</summary>
+
+Delete column from 'addData' attribute.
+
+#### Parameters
+
+Name|Type|Description
+--|--|--
+|**```column_label```**|**str**|Label of the column to delete .
+
+</details>
+
+
+    
+## Method `set_parameter` {#citros_data_analysis.error_analysis.citros_data.CitrosData.set_parameter}
+
+
+
+
+```python
+def set_parameter(
+    key=None,
+    value=None,
+    item=None
+)
+```
+
+
+<details>
+  <summary>Description</summary>
+
+Set parameter value to a CitrosData object.
+
+#### Parameters
+
+Name|Type|Description
+--|--|--
+|**```key```**|**str**|Label of the parameter.
+|**```value```**|**int** or **float**|Parameter value.
+|**```item```**|**dict**|Dictionary with parameters.
+
+</details>
+
+
+    
+## Method `drop_parameter` {#citros_data_analysis.error_analysis.citros_data.CitrosData.drop_parameter}
+
+
+
+
+```python
+def drop_parameter(
+    key=None
+)
+```
+
+
+<details>
+  <summary>Description</summary>
+
+Delete parameter labeled **key** and associated value.
+
+#### Parameters
+
+Name|Type|Description
+--|--|--
+|**```key```**|**str**|Label of the parameter to remove.
+
+</details>
+
+
+    
 ## Method `bin_data` {#citros_data_analysis.error_analysis.citros_data.CitrosData.bin_data}
 
 
@@ -169,7 +254,7 @@ Name|Type|Description
 |**```param_label```**|**str**, default `'rid'`|Label of column on the basis of which the indixes will be calculated.
 |**```min_lim```**|**float**|The minimum value of the range for binning, **min_lim** < **max_lim**.<br />    If None then the minimum value of the entire range is selected.
 |**```max_lim```**|**float**|The maximum value of the range for binning, **min_lim** < **max_lim**.<br />    If None then the maximum value of the entire range is selected.
-|**```show_fig```**|**bool**, default **False**|If the histogram that represents the distibution of the values in **param_label** should be shown.
+|**```show_fig```**|**bool**, default **False**|If the histogram that represents the distribution of the values in **param_label** should be shown.
 #### Returns
 
 Name|Type|Description
@@ -195,7 +280,7 @@ Construct CitrosData object with one data-column 'data.x.x_1':
 ```
 
 
-Devide 'data.time' values in 50 bins and assign indexes to these intervals. For each simulation group 
+Divide 'data.time' values in 50 bins and assign indexes to these intervals. For each simulation group 
 'data.x.x_1' values according to the binning and calculate mean of the each group:
 
 ```python
@@ -232,14 +317,17 @@ data.time_id  sid
 
 
     
-## Method `drop_addData` {#citros_data_analysis.error_analysis.citros_data.CitrosData.drop_addData}
+## Method `scale_data` {#citros_data_analysis.error_analysis.citros_data.CitrosData.scale_data}
 
 
 
 
 ```python
-def drop_addData(
-    column_label
+def scale_data(
+    n_points=10,
+    param_label='rid',
+    show_fig=False,
+    intr_kind='linear'
 )
 ```
 
@@ -247,40 +335,81 @@ def drop_addData(
 <details>
   <summary>Description</summary>
 
-Delete column from 'addData' attribute.
+Scale parameter **param_label** for each of the 'sid' and interpolate data on the new scale.
+
+In order to establish a correspondence between the values of the data from different simulations, 
+an independent variable **param_label** is selected and used to assign indexes. 
+First the **param_label** interval is shifted and scaled in the way that the minimum value equals 0 and the maximum is 1.
+Then the data is interpolated to a new scale, that consists of **n_points** evenly spaced points and spans from 0 to 1.
+For each 'sid' this procedure is performed separately.
+'addData' and 'data' attributes of the new CitrosData object have two levels of indexes, 
+with id values from scaling as the first level and 'sid' as the second one.
 
 #### Parameters
 
 Name|Type|Description
 --|--|--
-|**```column_label```**|**str**|Label of the column to delete .
+|**```n_points```**|**int**, default **10**|Number of points in a new scale, which will be used for interpolation.
+|**```param_label```**|**str**, default `'rid'`|Label of the parameter to scale
+|**```show_fig```**|**bool**, default **False**|If the figures with the results of interpolation should be shown.<br />    If the 'sid' exceed 5, only first 5 will be shown.<br />    If data consists of several vectors, for each of them the separate figure will be plotted.
+|**```intr_kind```**|**str**, default `'linear'`|Type of the interpolation, see scipy.interpolate.interp1d.
+#### Returns
+
+Name|Type|Description
+--|--|--
+|**```out```**|**[CitrosData](#citros_data_analysis.error_analysis.citros_data.CitrosData "citros_data_analysis.error_analysis.citros_data.CitrosData")**|CitrosData object with multi-level indexing: the first level stores ids of the points of the new scale, the second one - 'sid'.<br />    Values of the new scale are stored in 'addData' attribute.
 
 </details>
+<details>
+  <summary>Examples</summary>
 
-
-    
-## Method `drop_parameter` {#citros_data_analysis.error_analysis.citros_data.CitrosData.drop_parameter}
-
-
-
+Query some data from the topic 'A'
 
 ```python
-def drop_parameter(
-    key=None
-)
+>>> df = citros.topic('A').data(['data.x.x_1', 'data.time'])
+>>> print(df)
 ```
 
 
-<details>
-  <summary>Description</summary>
+Construct CitrosData object with one data-column 'data.x.x_1':
 
-Delete parameter labeled **key** and associated value.
+```python
+>>> dataset = analysis.CitrosData(df, data_label=['data.x.x_1'], units = 'm')
+```
 
-#### Parameters
 
-Name|Type|Description
---|--|--
-|**```key```**|**str**|Label of the parameter to remove.
+Scale 'data.time' to [0, 1] interval, define a new range of 50 points uniformly distributed from 0 to 1, 
+and interpolate data points over this new interval:
+
+```python
+>>> db = dataset.scale_data(n_points = 50, param_label = 'data.time')
+```
+
+
+The result is a CitrosData object with two levels of indexes:
+
+```python
+>>> print(db.data)
+                    data.x.x_1
+data.time_id  sid            
+0             1      0.000000
+              2     -0.057000
+              3     -0.080000
+1             1      0.025494
+...
+```
+
+
+```python
+>>> print(db.addData)
+                    data.time
+data.time_id  sid           
+0             1     0.000000
+              2     0.000000
+              3     0.000000
+1             1     0.020408
+...
+```
 
 </details>
 
@@ -410,8 +539,8 @@ Let's assume that the last variant was chosen. And now get the statistics:
 ```
 
 
-It returns CitrosStat object, that stores independent variable values, mean data values, covarian matrix and 
-standard deviation (square root of the covariant matrix diogonal elements) for each index.
+It returns CitrosStat object, that stores independent variable values, mean data values, covariant matrix and 
+standard deviation (square root of the covariant matrix diagonal elements) for each index.
 
 The mean data value, independent variable values and standard deviation are the pandas.DataFrames:
 
@@ -459,17 +588,22 @@ is a data dimension:
 
 
     
-## Method `scale_data` {#citros_data_analysis.error_analysis.citros_data.CitrosData.scale_data}
+## Method `show_statistics` {#citros_data_analysis.error_analysis.citros_data.CitrosData.show_statistics}
 
 
 
 
 ```python
-def scale_data(
-    n_points=10,
-    param_label='rid',
-    show_fig=False,
-    intr_kind='linear'
+def show_statistics(
+    fig=None,
+    show_fig=True,
+    return_fig=False,
+    n_std=3,
+    fig_title='Statistics',
+    std_color='r',
+    connect_nan_std=True,
+    std_area=False,
+    std_lines=True
 )
 ```
 
@@ -477,112 +611,73 @@ def scale_data(
 <details>
   <summary>Description</summary>
 
-Scale parameter **param_label** for each of the 'sid' and interpolate data on the new scale.
-
-In order to establish a correspondence between the values of the data from different simulations, 
-an independent variable **param_label** is selected and used to assign indexes. 
-First the **param_label** interval is shifted and scaled in the way that the minimum value equals 0 and the maximum is 1.
-Then the data is interpolated to a new scale, that consists of **n_points** evenly spaced points and spans from 0 to 1.
-For each 'sid' this procedure is performed separately.
-'addData' and 'data' attributes of the new CitrosData object have two levels of indexes, 
-with id values from scaling as the first level and 'sid' as the second one.
+Collect statistics for CitrosData object and plot it.
 
 #### Parameters
 
 Name|Type|Description
 --|--|--
-|**```n_points```**|**int**, default **10**|Number of points in a new scale, which will be used for interpolation.
-|**```param_label```**|**str**, default `'rid'`|Label of the parameter to scale
-|**```show_fig```**|**bool**, default **False**|If the figures with the results of interpolation should be shown.<br />    If the 'sid' exceed 5, only first 5 will be shown.<br />    If data consists of several vectors, for each of them the separate figure will be plotted.
-|**```intr_kind```**|**str**, default `'linear'`|Type of the interpolation, see scipy.interpolate.interp1d.
+|**```fig```**|**matplotlib.figure.Figure**|figure to plot on. If None, the new one will be created.
+|**```show_fig```**|**bool**|If the figure should be shown, True by default.
+|**```return_fig```**|**bool**|If the figure parameters fig, ax should be returned; <br />    fig is matplotlib.figure.Figure and ax is matplotlib.axes.Axes
+|**```n_std```**|**int**, default **3**|Error interval to display in standard deviations.
+|**```fig_title```**|**str**, default `'Statistics'`|Title of the figure.
+|**```std_color```**|**str**, default `'r'`|Color for displaying standard deviations, red by default.
+|**```connect_nan_std```**|**bool**, default **True**|If True, all non-NaN values in standard deviation boundary line are connected, resulting in a continuous line. <br />    Otherwise, breaks are introduced in the standard deviation line whenever NaN values are encountered.
+|**```std_area```**|**bool**, default **False**|Fill area within **n_std**-standard deviation lines with color.
+|**```std_lines```**|**bool**, default **True**|If False, remove standard deviation boundary lines.
 #### Returns
 
 Name|Type|Description
 --|--|--
-|**```out```**|**[CitrosData](#citros_data_analysis.error_analysis.citros_data.CitrosData "citros_data_analysis.error_analysis.citros_data.CitrosData")**|CitrosData object with multiindexing: the first level stores ids of the points of the new scale, the second one - 'sid'.<br />    Values of the new scale are stored in 'addData' attribute.
+|**```fig```**|**matplotlib.figure.Figure**|if **return_fig** set to True
+|**```ax```**|**numpy.ndarray** of **matplotlib.axes.Axes**|if **return_fig** set to True
+#### See Also
+
+**[CitrosData.get_statistics()](#citros_data_analysis.error_analysis.citros_data.CitrosData.get_statistics "citros_data_analysis.error_analysis.citros_data.CitrosData.get_statistics")**, **[CitrosData.bin_data()](#citros_data_analysis.error_analysis.citros_data.CitrosData.bin_data "citros_data_analysis.error_analysis.citros_data.CitrosData.bin_data")**, **[CitrosData.scale_data()](#citros_data_analysis.error_analysis.citros_data.CitrosData.scale_data "citros_data_analysis.error_analysis.citros_data.CitrosData.scale_data")**
+
 
 </details>
 <details>
   <summary>Examples</summary>
 
-Query some data from the topic 'A'
+Import 'data_access' and 'error_analysis' modules and create CitrosDB object to query data:
 
 ```python
->>> df = citros.topic('A').data(['data.x.x_1', 'data.time'])
->>> print(df)
+>>> from citros_data_analysis import data_access as da
+>>> from citros_data_analysis import error_analysis as analysis
+>>> citros = da.CitrosDB()
 ```
 
 
-Construct CitrosData object with one data-column 'data.x.x_1':
+Download json-data column 'data.x', that contains data.x.x_1, data.x.x_2 and data.x.x_3 and column 'data.time':
 
 ```python
->>> dataset = analysis.CitrosData(df, data_label=['data.x.x_1'], units = 'm')
+>>> df = citros.topic('A').data(['data.x', 'data.time'])
 ```
 
 
-Scale 'data.time' to [0, 1] interval, define a new range of 50 points uniformly distributed from 0 to 1, 
-and interpolate data points over this new interval:
+Construct CitrosData object with 3 data-columns from 'data.x':
 
 ```python
->>> db = dataset.scale_data(n_points = 50, param_label = 'data.time')
+>>> dataset = analysis.CitrosData(df, data_label=['data.x'], units = 'm')
 ```
 
 
-The result is a CitrosData object with two levels of indexes:
+Use method scale_data() or bin_data() to get correspondence between different simulation:
 
 ```python
->>> print(db.data)
-                    data.x.x_1
-data.time_id  sid            
-0             1      0.000000
-              2     -0.057000
-              3     -0.080000
-1             1      0.025494
-...
+>>> db_sc = dataset.scale_data(n_points = 150, 
+                               param_label = 'data.time', 
+                               show_fig = False)
 ```
 
 
-```python
->>> print(db.addData)
-                    data.time
-data.time_id  sid           
-0             1     0.000000
-              2     0.000000
-              3     0.000000
-1             1     0.020408
-...
-```
-
-</details>
-
-
-    
-## Method `set_parameter` {#citros_data_analysis.error_analysis.citros_data.CitrosData.set_parameter}
-
-
-
+Show statistics plot:
 
 ```python
-def set_parameter(
-    key=None,
-    value=None,
-    item=None
-)
+>>> db_sc.show_statistics()
 ```
-
-
-<details>
-  <summary>Description</summary>
-
-Set parameter value to a CitrosData object.
-
-#### Parameters
-
-Name|Type|Description
---|--|--
-|**```key```**|**str**|Label of the parameter.
-|**```value```**|**int** or **float**|Parameter value.
-|**```item```**|**dict**|Dictionary with parameters.
 
 </details>
 
@@ -697,101 +792,6 @@ Plot correlation plot for the index = 5:
 ...                        bounding_error= False)
 slice_id = 5,
 slice_val = 0.2632
-```
-
-</details>
-
-
-    
-## Method `show_statistics` {#citros_data_analysis.error_analysis.citros_data.CitrosData.show_statistics}
-
-
-
-
-```python
-def show_statistics(
-    fig=None,
-    show_fig=True,
-    return_fig=False,
-    n_std=3,
-    fig_title='Statistics',
-    std_color='r',
-    connect_nan_std=True,
-    std_area=False,
-    std_lines=True
-)
-```
-
-
-<details>
-  <summary>Description</summary>
-
-Collect statistics for CitrosData object and plot it.
-
-#### Parameters
-
-Name|Type|Description
---|--|--
-|**```fig```**|**matplotlib.figure.Figure**|figure to plot on. If None, the new one will be created.
-|**```show_fig```**|**bool**|If the fugure should be shown, True by default.
-|**```return_fig```**|**bool**|If the figure parameters fig, ax should be returned; <br />    fig is matplotlib.figure.Figure and ax is matplotlib.axes.Axes
-|**```n_std```**|**int**, default **3**|Error interval to display in standard deviations.
-|**```fig_title```**|**str**, default `'Statistics'`|Title of the figure.
-|**```std_color```**|**str**, default `'r'`|Color for dispalying standard deviations, red by default.
-|**```connect_nan_std```**|**bool**, default **True**|If True, all non-NaN values in standard deviation boundary line are connected, resulting in a continuous line. <br />    Otherwise, breaks are introduced in the standard deviation line whenever NaN values are encountered.
-|**```std_area```**|**bool**, default **False**|Fill area within **n_std**-standard deviation lines with color.
-|**```std_lines```**|**bool**, default **True**|If False, remove standard deviation boundary lines.
-#### Returns
-
-Name|Type|Description
---|--|--
-|**```fig```**|**matplotlib.figure.Figure**|if **return_fig** set to True
-|**```ax```**|**numpy.ndarray** of **matplotlib.axes.Axes**|if **return_fig** set to True
-#### See Also
-
-**[CitrosData.get_statistics()](#citros_data_analysis.error_analysis.citros_data.CitrosData.get_statistics "citros_data_analysis.error_analysis.citros_data.CitrosData.get_statistics")**, **[CitrosData.bin_data()](#citros_data_analysis.error_analysis.citros_data.CitrosData.bin_data "citros_data_analysis.error_analysis.citros_data.CitrosData.bin_data")**, **[CitrosData.scale_data()](#citros_data_analysis.error_analysis.citros_data.CitrosData.scale_data "citros_data_analysis.error_analysis.citros_data.CitrosData.scale_data")**
-
-
-</details>
-<details>
-  <summary>Examples</summary>
-
-Import 'data_access' and 'error_analysis' modules and create CitrosDB object to query data:
-
-```python
->>> from citros_data_analysis import data_access as da
->>> from citros_data_analysis import error_analysis as analysis
->>> citros = da.CitrosDB()
-```
-
-
-Download json-data column 'data.x', that containes data.x.x_1, data.x.x_2 and data.x.x_3 and column 'data.time':
-
-```python
->>> df = citros.topic('A').data(['data.x', 'data.time'])
-```
-
-
-Construct CitrosData object with 3 data-columns from 'data.x':
-
-```python
->>> dataset = analysis.CitrosData(df, data_label=['data.x'], units = 'm')
-```
-
-
-Use method scale_data() or bin_data() to get correspondence between different simulation:
-
-```python
->>> db_sc = dataset.scale_data(n_points = 150, 
-                               param_label = 'data.time', 
-                               show_fig = False)
-```
-
-
-Show statistics plot:
-
-```python
->>> db_sc.show_statistics()
 ```
 
 </details>

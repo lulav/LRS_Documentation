@@ -56,7 +56,7 @@ The output of the example above:
 ```
 ![fig2](img/fig22.png "Fig2")
 
-As it may be seen, the black line that repressents the mean value remain within the limits for the 'data.x.x_1' and 'data.x.x_2' columns, while in case of the 'data.x.x_3' column only some points meets the given constraints.
+As it may be seen, the black line that represents the mean value remain within the limits for the 'data.x.x_1' and 'data.x.x_2' columns, while in case of the 'data.x.x_3' column only some points meets the given constraints.
 
 ```python
 >>> print(table)
@@ -114,7 +114,7 @@ data.time_id||||
 }
 ```
 
-`log` containes summary of the test result: 
+`log` contains summary of the test result: 
   - initial test parameters:
 
     ```python

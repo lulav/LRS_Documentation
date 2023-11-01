@@ -30,17 +30,20 @@ When working in the [web](https://citros.io/) or with cloud data locally using [
 <details>
   <summary>Advanced CitrosDB parameters</summary>
 
-If no parameters are passed, the following predefined ENV parameters are used:
+If no parameters are passed, the following predefined ENV variables are used:
  - host: 'PG_HOST'
  - user: 'PG_USER',
  - password: 'PG_PASSWORD',
  - database: 'PG_DATABASE',
- - schema: 'PG_SCHEMA' or 'data_bucket' if 'PG_SCHEMA' not specified,
+ - schema: 'PG_SCHEMA' or 'data_bucket' if 'PG_SCHEMA' is not specified,
+ - repo: 'CITROS_REPO'
  - batch: 'bid', 
+ - simulation: 'CITROS_SIMULATION'
+ - sid: 'CITROS_SIMULATION_RUN_ID'
  - port: 'PG_PORT', or '5432' if 'PG_PORT' is not specified,
  - sid: 'CITROS_SIMULATION_RUN_ID'
 
-If user, password, database ENV parameters are not defined, they are tried to set using 'auth' file.
+When working from a local environment and user, password, database ENV variables are not defined, they are set using CITROS CLI authentication; if repo ENV variable is not set, it is retried from 'name' field of the '.citros/project.json' file.
 
 Say, we would like to connect to a database "myDatabase" with the user name "user" and password "myPassword", to work with batch "batchName" which is located in the schema "mySchema", using port '5432':
 

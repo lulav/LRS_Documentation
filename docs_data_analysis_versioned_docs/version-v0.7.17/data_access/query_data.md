@@ -28,7 +28,7 @@ flowchart LR
     classDef dot fill:#000
     class id2,id3,id4,id5,id6,id7,id8,id9 dot;
 ```
-where [**topic()**](../documentation/data_access/citros_db.md#citros_data_analysis.data_access.citros_db.CitrosDB.topic) and [**data()**](../documentation/data_access/citros_db.md#citros_data_analysis.data_access.citros_db.CitrosDB.data) methods are nessesary methods and all other are optional to use.
+where [**topic()**](../documentation/data_access/citros_db.md#citros_data_analysis.data_access.citros_db.CitrosDB.topic) and [**data()**](../documentation/data_access/citros_db.md#citros_data_analysis.data_access.citros_db.CitrosDB.data) methods are necessary methods and all other are optional to use.
 
 The method [**data()**](../documentation/data_access/citros_db.md#citros_data_analysis.data_access.citros_db.CitrosDB.data) of the [**CitrosDB**](getting_started.md#connection-to-the-database) object is dedicated to query data. Data is always querying for the specific topic, which is defined by [**topic()**](../documentation/data_access/citros_db.md#citros_data_analysis.data_access.citros_db.CitrosDB.topic) method, which must be called before [**data()**](../documentation/data_access/citros_db.md#citros_data_analysis.data_access.citros_db.CitrosDB.data) method. The result is returned as a [**DataFrame**](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.html) of the [**pandas** package](https://pandas.pydata.org/) - a widely used format in data science.
 
@@ -49,7 +49,7 @@ A pandas DataFrame.
 ...|...|...|...|...|...|...|...|...|...|...|...
 </details>
 
-If no arguments are passed to the [**data()**](../documentation/data_access/citros_db.md#citros_data_analysis.data_access.citros_db.CitrosDB.data) methods, all data from the json-data column is selected. The json-objects are splitted into columns, while json-arrays are retained as lists.
+If no arguments are passed to the [**data()**](../documentation/data_access/citros_db.md#citros_data_analysis.data_access.citros_db.CitrosDB.data) methods, all data from the json-data column is selected. The json-objects are split into columns, while json-arrays are retained as lists.
 
 If the whole json-data column is desired as a json-object:
 
@@ -138,7 +138,7 @@ To query json-data column 'data.x.x_1' of the topic 'B' with sid = 1 or 3:
 ...|...|...|...|...|...|...
 </details>
 
-Anothe way to set limits is by `start`, `end` and `count` arguments: `start` <= sid, sid <= `end` and sid < `start` + `count`.  `start`, `end` and  `count` values must be integers.
+Another way to set limits is by `start`, `end` and `count` arguments: `start` <= sid, sid <= `end` and sid < `start` + `count`.  `start`, `end` and  `count` values must be integers.
 
 To query json-data column 'data.x.x_1' of the topic 'B' for sid 3, 4, 5:
 
@@ -180,7 +180,7 @@ To define the range of limits arguments `start`, `end` and `count` are used: `st
 
 Since rid is always > 0, the default `start` being equal 0 means no constraints. 
 
-rid is always >= 0, so the default `start` = 0 means no constraints. To set the upper limit for rid, only `end` may be specified. For example, to get json-daat column 'data.x.x_1' of the topic 'B' with rid <= 15:
+rid is always >= 0, so the default `start` = 0 means no constraints. To set the upper limit for rid, only `end` may be specified. For example, to get json-data column 'data.x.x_1' of the topic 'B' with rid <= 15:
 
 ```python
 >>> citros.topic('B').rid(end = 15).data('data.x.x_1')
@@ -223,7 +223,7 @@ Instead of the `end` value the upper limit of rid may be specified by `count` ar
 To apply constraints on time column, the [**time()**](../documentation/data_access/citros_db.md#citros_data_analysis.data_access.citros_db.CitrosDB.time) method of the [**CitrosDB**](getting_started.md#connection-to-the-database) is used. It should be applied before [**data()**](../documentation/data_access/citros_db.md#citros_data_analysis.data_access.citros_db.CitrosDB.data) method. [**time()**](../documentation/data_access/citros_db.md#citros_data_analysis.data_access.citros_db.CitrosDB.time) method has `start`, `end` and  `duration` arguments to define the time limits (in nanoseconds) of the query. Briefly, they set the following constraints on time: `start` <= time, time <= `end` and time < `start` + `duration`. `start`, `end` and  `duration` values must be integers.
 
 Since time is always >= 0, the default `start` being equal 0 means no constraints. To set the upper limit in nanoseconds for the time column, define `end` argument.
-For example, for querying json-daat column 'data.x.x_1' of the topic 'B' with time <= 100ns:
+For example, for querying json-data column 'data.x.x_1' of the topic 'B' with time <= 100ns:
 
 ```python
 >>> citros.topic('B').time(end = 100).data('data.x.x_1')
@@ -260,7 +260,7 @@ Instead of the `end` value the duration (in nanoseconds) may be specified, that 
 ```python
 >>> citros.topic('B').time(start = 50, duration = 50).data('data.x.x_1')
 ```
-Note that when the `duration` istead of the `end` argumet is used, the upper limit that equals `start`+`duration` is not included in the query.
+Note that when the `duration` is used instead of the `end` argument, the upper limit that equals `start`+`duration` is not included in the query.
 
 ## JSON-Data Constraints
 
@@ -278,7 +278,7 @@ inequality|{'>': val}| > val | {'>': 5}| > 5
 || {'<=': val}| <= val | {'<=': -7}| <= -7
 
 :::note
-If one of the sampling method ([**skip()**](#skip), [**avg()**](#avarage), [**move_avg()**](#moving-average)) is used, constraints on all columns except json-data are applied BEFORE sampling while constraints on columns from json-data are applied AFTER sampling.
+If one of the sampling method ([**skip()**](#skip), [**avg()**](#average), [**move_avg()**](#moving-average)) is used, constraints on all columns except json-data are applied BEFORE sampling while constraints on columns from json-data are applied AFTER sampling.
 :::
 
 - To query json-data columns 'data.x.x_1' and 'data.note[2]' from the topic 'B' that matches the condition 'data.x.x_1' < 40:
@@ -362,7 +362,7 @@ To query json-data columns 'data.height' of the topic 'A' and to sort the result
 
 ## Sampling Methods 
 
-If the amount of output data is too huge, only part of it may be selected. It may be achived by sampling methods [**skip()**](#skip), [**avg()**](#avarage) and [**move_avg()**](#moving-average), applied before [**data()**](#query-data) method. Only one of this sampling function may be used at one query.
+If the amount of output data is too huge, only part of it may be selected. It may be achieved by sampling methods [**skip()**](#skip), [**avg()**](#average) and [**move_avg()**](#moving-average), applied before [**data()**](#query-data) method. Only one of this sampling function may be used at one query.
 
 ### Skip
 
@@ -385,7 +385,7 @@ To query only each 5th message of the topic 'B':
 ...|...|...|...|...|...|...|...
 </details>
 
-### Avarage
+### Average
 
 To average each `n` messages of the each sid, [**avg(n)**](../documentation/data_access/citros_db.md#citros_data_analysis.data_access.citros_db.CitrosDB.avg) method is used. Only numeric values may be averaged and the labels of the json-data columns with numeric content should be explicitly listed in [**data()**](#query-data). The value in 'rid' column is set as a minimum value among the 'rid' values of the averaged rows.
 
@@ -431,7 +431,7 @@ To use moving average to average each 5 messages and query every second row of t
 ## Segregate Data by sid
 
 Method [**get_sid_tables(data_query)**](../documentation/data_access/citros_db.md#citros_data_analysis.data_access.citros_db.CitrosDB.get_sid_tables) returns dict of tables, each of the tables corresponds to exact value of sid.
-The returning dictionary containes sid as dictionary keys and tables as dictionary values.
+The returning dictionary contains sid as dictionary keys and tables as dictionary values.
 
 For example, let's query json-data columns 'data.x.x_2', 'data.time' for topic 'A', where 'data.x.x_2' >= 0 and sid equals 1 or 2. And let's also average each 10 rows of the table:
 
@@ -691,7 +691,7 @@ To see the number of the unique values, the method [**get_unique_counts(column_n
 Let's find the number of unique values in column "rid", for messages, which meet the following requirements: "type" is 'a' or 'b' and "time" <= 150. To see counts for each "type" separately, `group_by` argument may be used:
 
 ```python
-#sfecify name of the column
+#specify name of the column
 column_name = 'sid'
 
 #Set "time" <= 150 and set "type" to be 'a' or 'b', group the counts by 'type':

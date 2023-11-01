@@ -67,7 +67,7 @@ The output of the example above:
 ```
 ![fig4](img/fig24.png "Fig4")
 
-The norm, calculated for each simulation of the 'data.x.x_1' and 'data.x.x_2' columns are within the esteblished limits, while norm for simulation 1 and 3 of the 'data.x.x_3' column exceed the limit.
+The norm, calculated for each simulation of the 'data.x.x_1' and 'data.x.x_2' columns are within the established limits, while norm for simulation 1 and 3 of the 'data.x.x_3' column exceed the limit.
 
 ```python
 >>> print(table)
@@ -122,7 +122,7 @@ sid||||
 }
 ```
 
-`log` containes summary of the test result: 
+`log` contains summary of the test result: 
   - initial test parameters:
   ```python
   >>> log['test_param'].print()

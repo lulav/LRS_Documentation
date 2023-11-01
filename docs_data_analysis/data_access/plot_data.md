@@ -133,7 +133,7 @@ Let's query 'data.x.x_1', 'data.x.x_2' and 'data.x.x_3' and plot them versus 'da
 
 ## multiplot()
 
-[**multiplot(df, labels, \*args, scale = True, fig = None, legend = True, title = None, set_x_label = None, set_y_label = None, remove_nan = True, inf_vals = 1e308, label_all_xaxis = False, label_all_yaxis = False, \*\*kwargs)**](../documentation/data_access/citros_db.md#citros_data_analysis.data_access.citros_db.CitrosDB.multiplot) method of the [**CitrosDB**](getting_started.md#connection-to-the-database) object plots a matrix of N x N graphs, each displaying either the histogram with values distribution (for graphs on the diogonal) or
+[**multiplot(df, labels, \*args, scale = True, fig = None, legend = True, title = None, set_x_label = None, set_y_label = None, remove_nan = True, inf_vals = 1e308, label_all_xaxis = False, label_all_yaxis = False, \*\*kwargs)**](../documentation/data_access/citros_db.md#citros_data_analysis.data_access.citros_db.CitrosDB.multiplot) method of the [**CitrosDB**](getting_started.md#connection-to-the-database) object plots a matrix of N x N graphs, each displaying either the histogram with values distribution (for graphs on the diagonal) or
 the relationship between variables listed in `labels`, with N being the length of `labels` list. For non-diagonal graphs, colors are assigned to points according to sids.
 
 ```python
@@ -184,7 +184,7 @@ If `return_ellipse_param` = True, the dictionary with ellipse parameters is also
                                     set_x_label='x, [m]', set_y_label = 'y, [m]', 
                                     title = 'Coordinates', return_ellipse_param = True)
 ```
- The output containes:
+ The output contains:
 - 'x' - x coordinate of the center;
 - 'y' - y coordinate of the center;
 - 'width' - ellipse width (along the longer axis);
@@ -194,7 +194,7 @@ If `return_ellipse_param` = True, the dictionary with ellipse parameters is also
 And if `bounding_error` set True:
 - bounding_error -radius of the error circle.
 
-If the number of error elippses more then 1, the output is the list of dict.
+If the number of error ellipses is more then 1, the output is the list of dict.
 
 ## time_plot()
 

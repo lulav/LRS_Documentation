@@ -6,7 +6,7 @@ sidebar_label: 'Regression'
 description: 'Regression'
 ---
 # Regression
-Different input parameters may vary the output, and to predict how the parameter affects the result, regressions are used. By now, three methods of regression are supported: polinomial regression ('poly'), simple neural net regression ('neural_net') and gaussian mixture model ('gmm'). To apply regression analysis, we need to construct [**CitrosDataArray**](../documentation/error_analysis/citros_data_array.md#citros_data_analysis.error_analysis.citros_data_array.CitrosDataArray) object, that stores [**CitrosData**](statistics.md#citrosdata-object) objects with different input parameters.
+Different input parameters may vary the output, and to predict how the parameter affects the result, regressions are used. By now, three methods of regression are supported: polynomial regression ('poly'), simple neural net regression ('neural_net') and gaussian mixture model ('gmm'). To apply regression analysis, we need to construct [**CitrosDataArray**](../documentation/error_analysis/citros_data_array.md#citros_data_analysis.error_analysis.citros_data_array.CitrosDataArray) object, that stores [**CitrosData**](statistics.md#citrosdata-object) objects with different input parameters.
 
 ```python
 >>> db_array = analysis.CitrosDataArray()
@@ -53,7 +53,7 @@ If a column with parameters is not presented, it is possible to put `dict` with 
                                   units = 'm', 
                                   parameters = {'data.t': t})
 ```
-or set parameters manualy by [`set_parameter(`](../documentation/error_analysis/citros_data.md#citros_data_analysis.error_analysis.citros_data.CitrosData.set_parameter) method. It accepts either setting parameter one by one by `key` and `value`:
+or set parameters manually by [`set_parameter(`](../documentation/error_analysis/citros_data.md#citros_data_analysis.error_analysis.citros_data.CitrosData.set_parameter) method. It accepts either setting parameter one by one by `key` and `value`:
 ```python
 >>> db_sc.set_parameter(key = 'data.t', value = 0)
 ```
@@ -86,7 +86,7 @@ It is a sine function with some noise added, biased by 'data.t' value.
 ![fig11](img/fig11.png "Fig11")
 </details>
 
-Let's find the solution for the case 'data.t' = 1 by [**get_prediction()**](../documentation/error_analysis/citros_data_array.md#citros_data_analysis.error_analysis.citros_data_array.CitrosDataArray.get_prediction) method. Parameter label (in our case 'data.t') and value (1), for which the prediction is desired, should be passed as `dict` by `parameters` argument. Method of regression calculation ('poly' for polinomial regression, simple  'neural_net' for neural net regression and 'gmm' for gaussian mixture model) should be stated by `method` argument.
+Let's find the solution for the case 'data.t' = 1 by [**get_prediction()**](../documentation/error_analysis/citros_data_array.md#citros_data_analysis.error_analysis.citros_data_array.CitrosDataArray.get_prediction) method. Parameter label (in our case 'data.t') and value (1), for which the prediction is desired, should be passed as `dict` by `parameters` argument. Method of regression calculation ('poly' for polynomial regression, simple  'neural_net' for neural net regression and 'gmm' for gaussian mixture model) should be stated by `method` argument.
 
 ## Polynomial Regression
 

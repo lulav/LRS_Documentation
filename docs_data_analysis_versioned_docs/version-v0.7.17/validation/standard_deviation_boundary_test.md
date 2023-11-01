@@ -62,7 +62,7 @@ Let's inspect the output of the example above:
 
 It is evident that the 3-$\sigma$ standard deviation boundaries remain within the limits for the 'data.x.x_1' and 'data.x.x_2' values, while in case of the 'data.x.x_3' column, certain points exceed the given limit.
 
-To change the standard deviation boundery style, paramters `std_area`, `std_lines` and `std_color` may be used: setting `std_area` = True to fill the area within the boundary, `std_lines` = False to remove the borders and `std_color` change the color of the standard deviation boundary:
+To change the standard deviation boundary style, parameters `std_area`, `std_lines` and `std_color` may be used: setting `std_area` = True to fill the area within the boundary, `std_lines` = False to remove the borders and `std_color` change the color of the standard deviation boundary:
 
 ```python
 >>> log, table, fig = V.std_bound_test(limits = [0.25, 0.3, [-150, 300]], n_std = 3,
@@ -130,7 +130,7 @@ data.time_id||||
 
 ```
 
-`log` containes summary of the test result: 
+`log` contains summary of the test result: 
   - initial test parameters:
   ```python
   >>> log['test_param'].print()

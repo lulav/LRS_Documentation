@@ -60,8 +60,8 @@ As for the mentioned above example, the output is:
 
 ![fig6](img/fig29.png "Fig6")
 
-Red lines show the limits, that must not be exceed by the valuses of standard deviations. In this example the test is passed.
-Like in [**std_bound_test()**](standard_deviation_boundary_test.md), to change the style of the plot, paramters `std_area`, `std_lines` and `std_color` may be used: setting `std_area` = True to fill the area within y = 0 and the standard deviation (like we did above), `std_lines` = False to remove the borders and `std_color` change the color of the standard deviation boundary.
+Red lines show the limits, that must not be exceed by the values of standard deviations. In this example the test is passed.
+Like in [**std_bound_test()**](standard_deviation_boundary_test.md), to change the style of the plot, parameters `std_area`, `std_lines` and `std_color` may be used: setting `std_area` = True to fill the area within y = 0 and the standard deviation (like we did above), `std_lines` = False to remove the borders and `std_color` change the color of the standard deviation boundary.
 
 ```python
 >>> print(table)
@@ -113,7 +113,7 @@ data.time_id||||
 }
 ```
 
-`log` containes summary of the test result: 
+`log` contains summary of the test result: 
   - initial test parameters:
   ```python
   >>> log['test_param'].print()

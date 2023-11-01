@@ -20,12 +20,12 @@ slice_id = 0,
 slice_val = 0.0
 ```
 <details>
-    <summary>Show the correalation plot:</summary>
+    <summary>Show the correlation plot:</summary>
 
 ![fig7](img/fig7.png "Fig7")
 </details>
 
-Pass to `x_col` and `y_col` either label or index of the columns to plot along x and y axis respectively. Instead of `slice_id` index the value `slice_val` may be specified. That way, the nearest `slice_id` index will be found and the corresponding to it exact value of `slice_val` will be printed. `n_std` states the radious or radii of the confidence ellipses in sigmas. If `bounding_error` = True, then the bounding error circle is added to plot.
+Pass to `x_col` and `y_col` either label or index of the columns to plot along x and y axis respectively. Instead of `slice_id` index the value `slice_val` may be specified. That way, the nearest `slice_id` index will be found and the corresponding to it exact value of `slice_val` will be printed. `n_std` states the radius or radii of the confidence ellipses in sigmas. If `bounding_error` = True, then the bounding error circle is added to plot.
 
 The following code plots first column ('data.x.x_1') vs. second ('data.x.x_2') for the id, nearest to 'data.time' = 0.2 and plots bounding error circle. Additionally, when setting `return_fig` to True, the function will return the figure (matplotlib.figure.Figure) and ax (matplotlib.axes.Axes) objects. These objects can be employed to further enhance the image with customized styling:
 
@@ -43,7 +43,7 @@ slice_id = 10,
 slice_val = 0.204
 ```
 <details>
-    <summary>Show the correalation plot with bounding error:</summary>
+    <summary>Show the correlation plot with bounding error:</summary>
 
 ![fig8](img/fig8.png "Fig8")
 </details>
@@ -66,7 +66,7 @@ If `return_ellipse_param` = True, the dictionary with ellipse parameters is also
 >>>     print(f"radius of the error circle: {ellipse_param['bounding_error']}\n")
 ```
 
- The output containes:
+ The output contains:
 - 'x' - x coordinate of the center;
 - 'y' - y coordinate of the center;
 - 'width' - ellipse width (along the longer axis);
@@ -76,7 +76,7 @@ If `return_ellipse_param` = True, the dictionary with ellipse parameters is also
 And if `bounding_error` set True:
 - bounding_error - radius of the error circle.
 
-If the number of error elippses more then 1, the output is the list of dict.
+If the number of error ellipses is more then 1, the output is the list of dict.
 
 To plot correlation between variables from different [**CitrosData**](statistics.md#citrosdata-object) objects, pass the object by `db2` parameter. This way, `x_col` is supposed to be the column of the first [**CitrosData**](statistics.md#citrosdata-object) objects, while `y_col` - the column of the `db2`. If `slice_val` is passed, then the `slice_id` is searched for each [**CitrosData**](statistics.md#citrosdata-object) objects.
 

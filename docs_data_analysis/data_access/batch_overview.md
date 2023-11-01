@@ -7,7 +7,7 @@ description: 'Information about batches'
 ---
 # Batch Overview
 
-Different simulations are identified by their *sid* numbers, with each step of the simulation being sequentially numbered by *rid*. Batches typically containe multiple topics that encapsulate related datasets.
+Different simulations are identified by their *sid* numbers, with each step of the simulation being sequentially numbered by *rid*. Batches typically contain multiple topics that encapsulate related datasets.
 
 To get the information about all the existing batches the method [**batch_info**](#batch-information) is used. The batch is set when the [**CitrosDB**](getting_started.md#connection-to-the-database) object is created or by [**batch()**](#setting-batch) method. To display the sizes of all batches within the database or the size of the current batch, the methods [**get_batch_size()**](#batch-size) and [**get_current_batch_size**](#current-batch-size) are employed, respectively. Methods [**get_batch()** and **get_batch_id()**](#current-batch-name-and-id) return the name and the id of the current batch, if it was set previously.
 
@@ -26,7 +26,7 @@ If there are infinite values in the data, they are stored as $\pm 10^{308}$.
 
 ## Batch Information
 
-Method [**batch_info**](../documentation/data_access/citros_db.md#citros_data_analysis.data_access.citros_db.CitrosDB.batch_info) is applied to show the general information about batches: its name, batch id, list of simulation ids (sids) and when the batch was created. The result is a [**CitrosDict**](../documentation/data_access/citros_dict.md#citros_data_analysis.data_access.citros_dict.CitrosDict) object, that inherits behaviour of an ordinary python dictionary, but has some additional methods, like [**print()**](../documentation/data_access/citros_dict.md#citros_data_analysis.data_access.citros_dict.CitrosDict.print) method. To display the information about all the existing batches adopt the following:
+Method [**batch_info**](../documentation/data_access/citros_db.md#citros_data_analysis.data_access.citros_db.CitrosDB.batch_info) is applied to show the general information about batches: its name, batch id, list of simulation ids (sids) and when the batch was created. The result is a [**CitrosDict**](../documentation/data_access/citros_dict.md#citros_data_analysis.data_access.citros_dict.CitrosDict) object, that inherits behavior of an ordinary python dictionary, but has some additional methods, like [**print()**](../documentation/data_access/citros_dict.md#citros_data_analysis.data_access.citros_dict.CitrosDict.print) method. To display the information about all the existing batches adopt the following:
 
 ```python
 >>> citros.batch_info().print()
@@ -283,7 +283,7 @@ To get the information about the batches that were updated before 9:00 today, do
 }
 ```
 
-The `order_by` argument enables to choose the order of the output by one of the field. To display the output in ascending order by one or more fields, list them in `order_by` argument. If the field is the only one, it may be passed directly as a str, for example, to order the output of the previous example in asccending order by name of the batches:
+The `order_by` argument enables to choose the order of the output by one of the field. To display the output in ascending order by one or more fields, list them in `order_by` argument. If the field is the only one, it may be passed directly as a str, for example, to order the output of the previous example in ascending order by name of the batches:
 
 ```python
 >>> citros.batch_info('9:00', search_by = 'updated_before', order_by = 'name').print()
@@ -407,7 +407,7 @@ In the above example, the most recently created batch is assigned.
 
 ## Setting Repository and Simulation of the Batch
 
-By default, search by name is looking not for the exact name, but for the occurence of the given words in batch name. So if there are two batches 'kinematics' and 'kinematics_1', attempt to set batch by 'kinematics' will result in warning that the batch is not set:
+By default, search by name is looking not for the exact name, but for the occurrence of the given words in batch name. So if there are two batches 'kinematics' and 'kinematics_1', attempt to set batch by 'kinematics' will result in warning that the batch is not set:
 ```python
 >>> citros = citros.batch('kinematics')
 ```
@@ -419,7 +419,7 @@ or try `batch_info()` method'
 ```
 
 So, if the the provided batch name has multiple matches, the clarification may be needed.
-This can be easily achived by setting one of the constraints:
+This can be easily achieved by setting one of the constraints:
 
 - follow the warning's suggestion and set `exact_match` to True. This will select the batch with the exact name provided (if it exists):
 ```python
@@ -444,7 +444,7 @@ Set the simulation in which the batch was created:
 ```
 
 :::note
-The mantioned constraints may be applied before [**batch_info**](#batch-information) method too. Then the information only for batch that meets all the conditions will be shown:
+The mentioned constraints may be applied before [**batch_info**](#batch-information) method too. Then the information only for batch that meets all the conditions will be shown:
 ```python
 >>> citros.repo('citros_project').simulation('simulation_parameters').batch_info('kinematics', exact_match = True).print()
 ```

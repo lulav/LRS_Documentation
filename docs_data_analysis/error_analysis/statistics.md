@@ -10,7 +10,7 @@ description: 'Get statistics across different simulations'
 ## **CitrosData** Object
 
 To perform data analysis the [**CitrosData**](../documentation/error_analysis/citros_data.md#citros_data_analysis.error_analysis.citros_data.CitrosData) object is used.
-Say, we would like to investigate the 'x' vector and its behaviour depending on the time. Let's query data:
+Say, we would like to investigate the 'x' vector and its behavior depending on the time. Let's query data:
 ```python
 >>> df = citros.topic('A').data(['data.x', 'data.time'])
 >>> print(df)
@@ -178,7 +178,7 @@ Structure of the output is similar too:
 |...|...|...
 </details>
 
-As previously in the case of [**bin_data()**](#bin-data) method, to controll if the number of point should be increased, pass `show_fig` = True and the result of interpolation for each of the vector's component will be shown. Plots are shown for the first five 'sid' values.
+Similar to the previous [**bin_data()**](#bin-data) method, if you wish to determine whether to increase or reduce the number of points, set `show_fig` to True. This will display the interpolation results for each component of the vector. Plots are shown for the first five 'sid' values.
 
 <details>
     <summary>Show the result of the interpolation for 'x_1':</summary>
@@ -226,7 +226,7 @@ It returns [**CitrosStat**](../documentation/error_analysis/citros_stat.md#citro
 0|4.11865674e-02  |4.21584313e-02| 6.96475242e+01
 ...|...|...|...
 
-Covariant matrix containes N x N numpy.ndarray, with N being the dimension of the data:
+Covariant matrix contains N x N numpy.ndarray, with N being the dimension of the data:
 ```python
 >>> print(stat.covar_matrix.iloc[0])
 ```

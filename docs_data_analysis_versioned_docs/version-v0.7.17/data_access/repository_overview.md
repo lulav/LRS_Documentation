@@ -11,7 +11,7 @@ Projects are organized and stored within *repositories*. Each repository may com
 
 ## Repository Information
 
-To display the main information about the repositories, such as repositories names, ids, times of creation and update, description and git source, method [**repo_info()**](../documentation/data_access/citros_db.md#citros_data_analysis.data_access.citros_db.CitrosDB.repo_info) is applied. The result is a [**CitrosDict**](../documentation/data_access/citros_dict.md#citros_data_analysis.data_access.citros_dict.CitrosDict) object. It inherits behaviour of an ordinary python dictionary, but has some additional methods, like [**print()**](../documentation/data_access/citros_dict.md#citros_data_analysis.data_access.citros_dict.CitrosDict.print) method. To display the information about all repositories:
+To display the main information about the repositories, such as repositories names, ids, times of creation and update, description and git source, method [**repo_info()**](../documentation/data_access/citros_db.md#citros_data_analysis.data_access.citros_db.CitrosDB.repo_info) is applied. The result is a [**CitrosDict**](../documentation/data_access/citros_dict.md#citros_data_analysis.data_access.citros_dict.CitrosDict) object. It inherits behavior of an ordinary python dictionary, but has some additional methods, like [**print()**](../documentation/data_access/citros_dict.md#citros_data_analysis.data_access.citros_dict.CitrosDict.print) method. To display the information about all repositories:
 
 ```python
 >>> citros.repo_info().print()
@@ -257,7 +257,7 @@ By default, all repositories are displayed, regardless of the creator. To exclus
 
 ## Setting Repository
 
-Althoug defining the repository is not necessary, since in different repositories there may be batches with the same name, applying method [**repo()**](../documentation/data_access/citros_db.md#citros_data_analysis.data_access.citros_db.CitrosDB.repo) ensures that only information that corresponds to the exact repository will be displayed. It also may be set when [**CitrosDB**](getting_started.md#connection-to-the-database) object is created (by passing an argument `repo`). 
+Although defining the repository is not necessary, since in different repositories there may be batches with the same name, applying method [**repo()**](../documentation/data_access/citros_db.md#citros_data_analysis.data_access.citros_db.CitrosDB.repo) ensures that only information that corresponds to the exact repository will be displayed. It also may be set when [**CitrosDB**](getting_started.md#connection-to-the-database) object is created (by passing an argument `repo`). 
 
 If the exact repository id is known, it may be passed in the following way:
 
@@ -306,7 +306,7 @@ In the above example, the most recently created repository is assigned. If the p
 
 ## Current Repository Name and ID
 
-As it was demonstarted above, the current repository name and id may be checked by methods [**get_repo()**](../documentation/data_access/citros_db.md#citros_data_analysis.data_access.citros_db.CitrosDB.get_repo) and [**get_repo_id()**](../documentation/data_access/citros_db.md#citros_data_analysis.data_access.citros_db.CitrosDB.get_repo_id), respectively:
+As it was demonstrated above, the current repository name and id may be checked by methods [**get_repo()**](../documentation/data_access/citros_db.md#citros_data_analysis.data_access.citros_db.CitrosDB.get_repo) and [**get_repo_id()**](../documentation/data_access/citros_db.md#citros_data_analysis.data_access.citros_db.CitrosDB.get_repo_id), respectively:
 
 ```python
 >>> citros = da.CitrosDB()
