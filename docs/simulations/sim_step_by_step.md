@@ -16,7 +16,7 @@ To run a Simulation using CITROS Web please follow next steps:
 
    2.4 Define in repetitions filed how many times you'd like to repeat your simulation
 
-   2.5 Define in parallelism filed, how many simulations will run in parallel in each iteration (parallelism <= repetitions).
+   2.5 Define in parallelism filed, how many simulations will run in parallel in each iteration (parallelism \<= repetitions).
 
    ![png](img/quick3.png "Ignition!")
 

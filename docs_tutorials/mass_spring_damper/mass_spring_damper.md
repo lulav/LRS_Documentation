@@ -36,10 +36,10 @@ $$
 and after laplace transformation (with zero I.C) we get a second order system:
 
 $$
-        {X \over F} = {\omega_n^2 \over s^2 +2\omega_n\zeta s + \omega_n^2}
+        \{X \over F\} = \{\omega_n^2 \over s^2 +2\omega_n\zeta s + \omega_n^2\}
 $$
 
-where the natural frequency $\omega_n = \sqrt{k \over m}$
+where the natural frequency $\omega_n = \sqrt\{k \over m\}$
 
 You can choose the system's parameters `m`, `k` and `c` and choose the initial condition `x0`, `v0` and `a0`, all configured as ROS 2 parameters.
 
@@ -50,7 +50,7 @@ You can write your own controller to try stabilize the system for a given setpoi
 the default controller is a simple PID controller with the following form:
 
 $$
-        f(t) = {k_pe(t) + k_i\int{e(t)dt}} + k_d {d\over dt}(e(t))
+        f(t) = \{k_pe(t) + k_i\int\{e(t)dt\}\} + k_d \{d\over dt\}(e(t))
 $$
 
 you can tune the controller gains, $k_p$, $k_i$, $k_d$, configured as ROS 2 parameters.
@@ -144,7 +144,7 @@ Lets run `50` simulations in the server and analyze the results:
 ![jpeg](img/analysis.jpeg)
 
 
-We can see that `43` tests were passed the requirements, `6` failed and `1` was generated invalid mass $(<0)$.
+We can see that `43` tests were passed the requirements, `6` failed and `1` was generated invalid mass $(\<0)$.
 
 The maximum mass that still meeting the requirements is equal to $1.335 [kg]$
 

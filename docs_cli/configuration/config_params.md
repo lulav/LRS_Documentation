@@ -12,12 +12,12 @@ Function objects are essentially references to functions (either from numpy or u
 
 To use a numpy function, simply provide its fully qualified name as the value in the dictionary. For example:
 
-    {
-        "my_param": {
+    \{
+        "my_param": \{
             "function": "numpy.add",
             "args": [1, 2]
-        }
-    }
+        \}
+    \}
 
 <details>
 <summary>Examples</summary>
@@ -26,35 +26,35 @@ To use a numpy function, simply provide its fully qualified name as the value in
 
 compute the product of two numbers:
 
-    {
-        "product_param": {
+    \{
+        "product_param": \{
             "function": "numpy.multiply",
             "args": [4, 7]
-        }
-    }
+        \}
+    \}
 
 #### Using Random Distribution
 
 Generating a random number from a normal distribution with a mean of 0 and standard deviation of 1:
 
-    {
-        "random_param": {
+    \{
+        "random_param": \{
             "function": "numpy.random.normal",
             "args": [0, 1]
-        }
-    }
+        \}
+    \}
 
 
 Drawing a random value between 1 and 10:
 
-    {
+    \{
         "low": 1.0,
         "high": 10.0,
-        "uniform_random_param": {
+        "uniform_random_param": \{
             "function": "numpy.random.uniform",
             "args": ["low", "high"]
-        }
-    }
+        \}
+    \}
 
 </details>
 
@@ -67,12 +67,12 @@ For user-defined functions, you need to:
 
 For instance, if you have a function named `my_function` in a file named `my_functions.py`, you would reference it as:
 
-    {
-        "my_param": {
+    \{
+        "my_param": \{
             "function": "my_functions.py:my_function",
             "args": [...]
-        }
-    }
+        \}
+    \}
 
 <details>
 <summary>Examples</summary>
@@ -90,12 +90,12 @@ Suppose you want to load a matrix from a csv file into a parameter of type list 
 
 Reference it in your parameter_setup.json as:
 
-    {
-        "matrix_param": {
+    \{
+        "matrix_param": \{
             "function": "file_utils.py:load_matrix_from_csv",
             "args": ["my_data.csv"]
-        }
-    }
+        \}
+    \}
 
 
 
@@ -108,10 +108,10 @@ Sometimes you may want to access some information that is part of the Citros con
 
 `citros_context` is a dictionary with key/value pairs describing the current Citros context. Currently the only key is `run_id`, but more may be added in the future. Then, you would call it from your `parameter_setup.json` file:
 
-    "init_speed": {
+    "init_speed": \{
         "function": "my_func.py:func_with_context",
         "args": [50.0]
-    }
+    \}
 
 Notice that the argument for `citros_context` is added automatically for you - the `args` list only contains the argument for the first parameter (`num`).
 
@@ -121,41 +121,41 @@ Notice that the argument for `citros_context` is added automatically for you - t
 
 Using the following parameter setup file, the `init_angle` parameter in the `analytic_dynamics` node of the `cannon_analytic` package (taken from the `cannon` project), will get a random value each time the simulation is run. Specifically, 60% of the evaluated values will be between 30 and 60 degrees (a standard deviation of 15 around 45). In addition, the parameter `init_speed` will be evaluated to 50.0 on the first run, and will be incremented by one for every subsequent run (see previous example for details):
 
-    {
-        "packages": {
-            "cannon_analytic": {
-                "analytic_dynamics": {
-                    "ros__parameters": {
-                        "init_speed": {
+    \{
+        "packages": \{
+            "cannon_analytic": \{
+                "analytic_dynamics": \{
+                    "ros__parameters": \{
+                        "init_speed": \{
                             "function": "my_func.py:func_with_context",
                             "args": [50.0]
-                        },
-                        "init_angle": {
+                        \},
+                        "init_angle": \{
                             "function": "numpy.random.normal",
                             "args": [45, 15]
-                        },
+                        \},
                         "dt": 0.01
-                    }
-                }
-            },
-            "cannon_numeric": {
-                "numeric_dynamics": {
-                    "ros__parameters": {
+                    \}
+                \}
+            \},
+            "cannon_numeric": \{
+                "numeric_dynamics": \{
+                    "ros__parameters": \{
                         "init_speed": 50.0,
                         "init_angle": 30.0,
                         "dt": 0.01
-                    }
-                }
-            },
-            "scheduler": {
-                "scheduler": {
-                    "ros__parameters": {
+                    \}
+                \}
+            \},
+            "scheduler": \{
+                "scheduler": \{
+                    "ros__parameters": \{
                         "dt": 0.1
-                    }
-                }
-            }
-        }
-    }
+                    \}
+                \}
+            \}
+        \}
+    \}
 
 So, for example, if you run the following command in the `cannon` project:
 
@@ -180,20 +180,20 @@ and choose `simulation_cannon_analytic`, the simulation will be run 10 times, an
 
 - **Multi-Level Key References** - When referencing a dictionary key from a function, if the key is not unique across the dictionary, use a multi-level key string to differentiate it, separating dictionary levels with `'.'`. For example: 
 
-        {
-            "outer": {
+        \{
+            "outer": \{
                 "inner_a": 5,
-                "inner_b": {
+                "inner_b": \{
                     "function": "numpy.add",
                     "args": ["inner_a", 3]
-                }
-            },
-            "sum": {
+                \}
+            \},
+            "sum": \{
                 "inner_b" : 42,
                 "function": "numpy.add",
                 "args": ["outer.inner_b", 2]
-            }
-        }
+            \}
+        \}
 
 - **Circular Dependencies** - Be wary of creating circular dependencies with key references. This will result in a runtime error.
 

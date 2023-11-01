@@ -22,11 +22,11 @@ The type of the norm may be specified by `norm_type` parameter:
 
   - `norm_type` = 'L2' - Euclidean norm or $L^2$ norm, square root of the sum of the squares:
   $$
-  \sqrt{\sum_{k=1}^{N} x_k^2}
+  \sqrt\{\sum_\{k=1\}^\{N\} x_k^2\}
   $$
   - `norm_type` = 'Linf' - absolute maximum:
   $$
-  \max_k{|x_k|}
+  \max_k\{|x_k|\}
   $$
 
 

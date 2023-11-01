@@ -3,8 +3,11 @@
 
 // const lightCodeTheme = require('prism-react-renderer/themes/github');
 // const darkCodeTheme = require('prism-react-renderer/themes/dracula');
-const lightCodeTheme = require("prism-react-renderer/themes/vsLight");
-const darkCodeTheme = require("prism-react-renderer/themes/vsDark");
+// const lightCodeTheme = require("prism-react-renderer/themes/vsLight");
+// const darkCodeTheme = require("prism-react-renderer/themes/vsDark");
+const {themes} = require('prism-react-renderer');
+const lightTheme = themes.github;
+const darkTheme = themes.dracula;
 const math = require("remark-math");
 const katex = require("rehype-katex");
 
@@ -242,8 +245,8 @@ const config = {
         copyright: `Copyright © ${new Date().getFullYear()} Lulav Space.`,
       },
       prism: {
-        theme: lightCodeTheme,
-        darkTheme: darkCodeTheme,
+        theme: lightTheme,
+        darkTheme: darkTheme,
         additionalLanguages: ["python"],
       },
     }),

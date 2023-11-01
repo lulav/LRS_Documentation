@@ -35,9 +35,9 @@ Let's assume, that data for topic 'A' looks like:
 
 ||sid	|rid	|time	|topic	|type	|data
 |--|--|--|--|--|--|--
-0	|1	|0	|312751159	|A	|a	|{'x': {'x_1': 0.0, 'x_2': 0.08, 'x_3': 154.47}, 'time': 10.0}
-1	|1	|1	|407264008	|A	|a	|{'x': {'x_1': 0.008, 'x_2': 0.08, 'x_3': 130.97}, 'time': 17.9}
-2	|1	|2	|951279608	|A	|a	|{'x': {'x_1': 0.016, 'x_2': 0.078, 'x_3': 117.66}, 'time': 20.3}
+0	|1	|0	|312751159	|A	|a	|\{'x': \{'x_1': 0.0, 'x_2': 0.08, 'x_3': 154.47\}, 'time': 10.0\}
+1	|1	|1	|407264008	|A	|a	|\{'x': \{'x_1': 0.008, 'x_2': 0.08, 'x_3': 130.97\}, 'time': 17.9\}
+2	|1	|2	|951279608	|A	|a	|\{'x': \{'x_1': 0.016, 'x_2': 0.078, 'x_3': 117.66\}, 'time': 20.3\}
 ...|...|...|...|...|...|...|
 
 A json-data column containes information about time and vector x, that has elements x_1, x_2 and x_3. Let's query these columns:
@@ -49,9 +49,9 @@ The output is a [**pandas.DataFrame**](https://pandas.pydata.org/docs/reference/
 
 ||sid	|rid	|time	|topic	|type	|data.x|	data.time
 |--|--|--|--|--|--|--|--|
-0	|1	|0	|312751159	|A	|a	|{'x_1': 0.0, 'x_2': 0.08, 'x_3': 154.47}	|10.0
-1	|1	|1	|407264008	|A	|a	|{'x_1': 0.008, 'x_2': 0.08, 'x_3': 130.97}	|17.9
-2	|1	|2	|951279608	|A	|a	|{'x_1': 0.016, 'x_2': 0.078, 'x_3': 117.66}	|20.3
+0	|1	|0	|312751159	|A	|a	|\{'x_1': 0.0, 'x_2': 0.08, 'x_3': 154.47\}	|10.0
+1	|1	|1	|407264008	|A	|a	|\{'x_1': 0.008, 'x_2': 0.08, 'x_3': 130.97\}	|17.9
+2	|1	|2	|951279608	|A	|a	|\{'x_1': 0.016, 'x_2': 0.078, 'x_3': 117.66\}	|20.3
 ...|...|...|...|...|...|...|...
 
 Analysis of data from multiple simulations may be performed if the correspondence between data values from different simulation is set. It may be done through an independent variable that is shared between simulations. Indexes are assigned based on this variable, connecting data values across the simulations.

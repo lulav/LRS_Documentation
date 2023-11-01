@@ -201,15 +201,17 @@ We can see we have 3 parameters to play around with - `init_speed`, `init_angle`
 
 Let's say we want to find out the optimal initial angle for the cannon, which will provide the maximum range. Assuming we're completely blanking out on high-school physics, let's randomize the value for this parameter, execute several simulation runs, and see where we get the maximum range. To achieve this, we can simply replace the hard-coded default value with a **function object**. Function objects are json objects comprised of two fields - `function` and `args`. They come in two flavors - numpy and user-defined. For our purposes we can use numpy's random module to generate a normal distribution around a given value:
 
-    "init_angle": {
-                    "function": "numpy.random.normal",
-                    "args": [45, 15]
-                },
+```json 
+"init_angle": {
+    "function": "numpy.random.normal",
+    "args": [45, 15]
+}
+```
 
 This will cause a normal distribution with a standard deviation of 15 around 45 to be evaluated for every simulation run.
 
 Now, if we run
-```batch
+```bash
 citros run -n "test_params" -m "testing random initial angle" -c 10
 ```
 
@@ -325,10 +327,10 @@ When working online, there are several more ways with which you can configure yo
 
 In addition there are several more useful fields, which are also relevant when working offline:
 
-    "launch": {
+    "launch": \{
         "file": "cannon_analytic.launch.py",
         "package": "scheduler"
-    },
+    \},
     "timeout": 64,
 
 The `launch` field specifies the specific launch file for this simulation and the package it resides in. You may change it according to your needs.

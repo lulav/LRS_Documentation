@@ -18,10 +18,10 @@ The initialization process involves creating a `.citros` directory within your R
 #### Options
 Option|Description
 |--|--|
-|`-dir` <folder_name> | Specifies the project's working directory. Defaults to `.`|
+|`-dir` `<folder_name>` | Specifies the project's working directory. Defaults to `.`|
 |`-d`, `--debug` | Sets the logging level to debug.|
 |`-v`, `--verbose` | Enables verbose console output.|
-|`-project_name` <proj_name> | Optional name for the project. Defaults to the last folder in the path of *dir*|
+|`-project_name` `<proj_name>` | Optional name for the project. Defaults to the last folder in the path of *dir*|
 
 </details>
 
@@ -109,7 +109,7 @@ $ citros status [-dir <folder_name>]
   #### Options
 Option|Description
 |--|--|
-|`-dir` <folder_name> | Specifies the project's working directory. Defaults to `.`|
+|`-dir` `<folder_name>` | Specifies the project's working directory. Defaults to `.`|
 |`-d`, `--debug` | Sets the logging level to debug.|
 |`-v`, `--verbose` | Enables verbose console output.|
 </details>
@@ -160,7 +160,7 @@ Furthermore, to ensure secure communication with the server, the `setup-ssh` com
 #### Options
 Option|Description
 |--|--|
-|`-dir` <folder_name> | Specifies the project's working directory. Defaults to `.`|
+|`-dir` `<folder_name>` | Specifies the project's working directory. Defaults to `.`|
 |`-d`, `--debug` | Sets the logging level to debug.|
 |`-v`, `--verbose` | Enables verbose console output.|
 
@@ -187,7 +187,7 @@ $ citros commit [-dir <folder_name>]
 
 Option|Description
 |--|--|
-|`-dir` <folder_name> | Specifies the project's working directory. Defaults to `.`|
+|`-dir` `<folder_name>` | Specifies the project's working directory. Defaults to `.`|
 |`-d`, `--debug` | Sets the logging level to debug.|
 |`-v`, `--verbose` | Enables verbose console output.|
 |`-m`, `--message` | Commit message|
@@ -216,7 +216,7 @@ The `pull` command fetches from and integrates with another Citros repository or
 #### Options
 Option|Description
 |--|--|
-|`-dir` <folder_name> | Specifies the project's working directory. Defaults to `.`|
+|`-dir` `<folder_name>` | Specifies the project's working directory. Defaults to `.`|
 |`-d`, `--debug` | Sets the logging level to debug.|
 |`-v`, `--verbose` | Enables verbose console output.|
 
@@ -249,7 +249,7 @@ $ citros push [-dir <folder_name>]
 
 Option|Description
 |--|--|
-|`-dir` <folder_name> | Specifies the project's working directory. Defaults to `.`|
+|`-dir` `<folder_name>` | Specifies the project's working directory. Defaults to `.`|
 |`-d`, `--debug` | Sets the logging level to debug.|
 |`-v`, `--verbose` | Enables verbose console output.|
 </details>
@@ -285,7 +285,7 @@ $ citros diff [-dir <folder_name>]
   #### Options
 Option|Description
 |--|--|
-|`-dir` <folder_name> | Specifies the project's working directory. Defaults to `.`|
+|`-dir` `<folder_name>` | Specifies the project's working directory. Defaults to `.`|
 |`-d`, `--debug` | Sets the logging level to debug.|
 |`-v`, `--verbose` | Enables verbose console output.|
 </details>
@@ -328,7 +328,7 @@ $ citros checkout [-dir <folder_name>]
   #### Options
 Option|Description
 |--|--|
-|`-dir` <folder_name> | Specifies the project's working directory. Defaults to `.`|
+|`-dir` `<folder_name>` | Specifies the project's working directory. Defaults to `.`|
 |`-d`, `--debug` | Sets the logging level to debug.|
 |`-v`, `--verbose` | Enables verbose console output.|
 |`-b`, `--branch` | The name of the branch to be checked out.|
@@ -366,7 +366,7 @@ $ citros merge [-dir <folder_name>]
   #### Options
 Option|Description
 |--|--|
-|`-dir` <folder_name> | Specifies the project's working directory. Defaults to `.`|
+|`-dir` `<folder_name>` | Specifies the project's working directory. Defaults to `.`|
 |`-d`, `--debug` | Sets the logging level to debug.|
 |`-v`, `--verbose` | Enables verbose console output.|
 </details>
@@ -439,7 +439,7 @@ If you'd like discard **all** changes in your working directory, effectively che
 #### Options
 Option|Description
 |--|--|
-|`-dir` <folder_name> | Specifies the project's working directory. Defaults to `.`|
+|`-dir` `<folder_name>` | Specifies the project's working directory. Defaults to `.`|
 |`-d`, `--debug` | Sets the logging level to debug.|
 |`-v`, `--verbose` | Enables verbose console output.|
 |`files` | List of files to revert.|
@@ -597,7 +597,7 @@ If you'd like to run your simulation remotely, you would also need to make sure:
 #### Options
 Option|Description
 |--|--|
-|`-dir` <folder_name> | Specifies the project's working directory. Defaults to `.`|
+|`-dir` `<folder_name>` | Specifies the project's working directory. Defaults to `.`|
 |`-d`, `--debug` | Sets the logging level to debug.|
 |`-v`, `--verbose` | Enables verbose console output.|
 |`-s`, `--simulation_name` | Identifies the simulation you want to run. This is the name of the JSON file (excluding the `json` suffix) in the `simulations` folder. If you don't provide a simulation name, an interactive menu will display allowing you to select from the available simulations.|
@@ -646,17 +646,17 @@ The `docker-build` command is used to construct a Docker image of your ROS proje
 #### Prerequisites
 If you are working inside a dev-container, make sure that the `docker-in-docker` feature is enabled in your project's `devcontainer.json`, i.e.:
 
-    "features": {
-		"ghcr.io/devcontainers/features/docker-in-docker:2": {
+    "features": \{
+		"ghcr.io/devcontainers/features/docker-in-docker:2": \{
 			"version": "latest",
 			"moby": true
-		}
-	}
+		\}
+	\}
 
 #### Options
 Option|Description
 |--|--|
-|`-dir` <folder_name> | Specifies the project's working directory. Defaults to `.`|
+|`-dir` `<folder_name>` | Specifies the project's working directory. Defaults to `.`|
 |`-d`, `--debug` | Sets the logging level to debug.|
 |`-v`, `--verbose` | Enables verbose console output.|
 |`-n`, `--image_name` | The requested image name (e.g. the project name). Defaults to the last folder in the path of dir |
@@ -691,17 +691,17 @@ Two tagged images will be built and pushed: `latest` and the ROS project's lates
 #### Prerequisites
 If you are working inside a dev-container, make sure that the `docker-in-docker` feature is enabled in your project's `devcontainer.json`, i.e.:
 
-    "features": {
-		"ghcr.io/devcontainers/features/docker-in-docker:2": {
+    "features": \{
+		"ghcr.io/devcontainers/features/docker-in-docker:2": \{
 			"version": "latest",
 			"moby": true
-		}
-	}
+		\}
+	\}
 
 #### Options
 Option|Description
 |--|--|
-|`-dir` <folder_name> | Specifies the project's working directory. Defaults to `.`|
+|`-dir` `<folder_name>` | Specifies the project's working directory. Defaults to `.`|
 |`-d`, `--debug` | Sets the logging level to debug.|
 |`-v`, `--verbose` | Enables verbose console output.|
 |`-n`, `--image_name` | The requested image name (e.g. the project name). Defaults to the last folder in the path of dir |
