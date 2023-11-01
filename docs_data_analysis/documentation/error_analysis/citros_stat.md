@@ -93,7 +93,7 @@ Name|Type|Description
 |**```return_fig```**|**bool**|If the figure parameters fig, ax should be returned; <br />    fig is matplotlib.figure.Figure and ax is matplotlib.axes.Axes
 |**```n_std```**|**int**, default **3**|Error interval to display, specified in standard deviations.
 |**```fig_title```**|**str**, default `'Statistics'`|Title of the figure.
-|**```std_color```**|**str**, default `'r'`|Color for dispalying standard deviations, red by default.
+|**```std_color```**|**str**, default `'r'`|Color for displaying standard deviations, red by default.
 #### Returns
 
 Name|Type|Description

@@ -130,7 +130,7 @@ data.time_id |sid	|		|		|		|
 }
 ```
 
-`log` containes summary of the test result: 
+`log` contains summary of the test result: 
   - initial test parameters:
   ```python
   >>> log['test_param'].print()
@@ -148,7 +148,7 @@ data.time_id |sid	|		|		|		|
       ```js
       True
       ``` 
-    - 'pass_rate' containes information about fraction of the simulations that pass the test, 0 < 'pass_rate' < 1:
+    - 'pass_rate' contains information about fraction of the simulations that pass the test, 0 < 'pass_rate' < 1:
       ```python
       >>> print(log['data.x.x_1']['pass_rate']['sid_fraction'])
       ```

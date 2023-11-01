@@ -22,7 +22,7 @@ It returns dictionary, that contains:
 * 'topic_list': list of topics
 * 'message_count': number of messages
 
-The result is a [**CitrosDict**](../documentation/data_access/citros_dict.md#citros_data_analysis.data_access.citros_dict.CitrosDict) object, that inherits behaviour of an ordinary python dictionary, but has some additional methods.
+The result is a [**CitrosDict**](../documentation/data_access/citros_dict.md#citros_data_analysis.data_access.citros_dict.CitrosDict) object, that inherits behavior of an ordinary python dictionary, but has some additional methods.
 
 <details>
   <summary>more about CitrosDict:</summary>
@@ -69,7 +69,7 @@ or printed by the method [**print()**](../documentation/data_access/citros_dict.
 </details>
 
 :::note
-It is not nessesary to call method [**batch()**](batch_overview.md#setting-batch) every time to set batch id or name. By parameter `inplace` the batch may be set to current [**CitrosDB**](getting_started.md#connection-to-the-database) object:
+It is not necessary to call method [**batch()**](batch_overview.md#setting-batch) every time to set batch id or name. By parameter `inplace` the batch may be set to current [**CitrosDB**](getting_started.md#connection-to-the-database) object:
 ```python
 >>> citros.batch('dynamics', inplace = True)
 >>> print(f"current batch name: {citros.get_batch()}")
@@ -88,7 +88,7 @@ If specific sid is set, [**citros.info()**](../documentation/data_access/citros_
                * 'message_count': number of messages
                * 'start_time': time when simulation started
                * 'end_time': time when simulation ended
-               * 'duration': duration of the simalation process
+               * 'duration': duration of the simulation process
                * 'frequency': frequency of the simulation process ('message_count'/ 'duration', in Hz)
 
 sid may be passed during [**CitrosDB** initialization](getting_started.md#connection-to-the-database) or by [**citros.sid()**](query_data.md#sid-constraints) method.
@@ -215,7 +215,7 @@ total number of messages where sid = 1 or 2: 1369
 #for sid equals 1, for topic 'A' get number of messages by 'message_count':
 num_1 = inf_12['sids'][1]['topics']['A']['message_count']
 
-#get numbe rof messages for sid = 2, topic 'A':
+#get number of messages for sid = 2, topic 'A':
 num_2 = inf_12['sids'][2]['topics']['A']['message_count']
 
 #print both numbers:

@@ -167,7 +167,7 @@ Show the predictions based on the results of the regression solution, neural net
 Name|Type|Description
 --|--|--
 |**```parameters```**|**dict**|Names of the independent parameters and their values to calculate the prediction.
-|**```method```**|**str** or **list** of **str**, default `'poly'`|      &#8226; 'poly' - the polinomial regression.<br />      &#8226; 'neural_net' - the solution is finding based on [sklearn.neural_network.MLPRegressor](https://scikit-learn.org/stable/modules/generated/sklearn.neural_network.MLPRegressor.html).<br />      &#8226; 'gmm' - the gaussian mixture model is built and used for the prediction.
+|**```method```**|**str** or **list** of **str**, default `'poly'`|      &#8226; 'poly' - the polynomial regression.<br />      &#8226; 'neural_net' - the solution is finding based on [sklearn.neural_network.MLPRegressor](https://scikit-learn.org/stable/modules/generated/sklearn.neural_network.MLPRegressor.html).<br />      &#8226; 'gmm' - the gaussian mixture model is built and used for the prediction.
 |**```n_poly```**|**int**, default **2**|Only used if **method** = 'poly'.<br />    The highest degree of the polynomial (1 for linear, 2 for quadratic, etc).
 |**```activation```**|`{'relu', 'identity', 'logistic'` or `'tanh'}`, default `'relu'`|Only used if **method** = 'neural_net'.<br />    Activation function for the hidden layer, see sklearn.neural_network.MLPRegressor
 |**```max_iter```**|**int**, default **500**|Only used if **method** = 'neural_net'.<br />    Maximum number of iterations.

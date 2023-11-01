@@ -24,7 +24,7 @@ from citros_data_analysis import data_access as da
 
 >>> citros = da.CitrosDB()
 ```
-This way [**CitrosDB**](../documentation/data_access/citros_db.md#citros_data_analysis.data_access.citros_db.CitrosDB) is created with defaults parameters. To specify connection parameters, pass correspondiong arguments:
+This way [**CitrosDB**](../documentation/data_access/citros_db.md#citros_data_analysis.data_access.citros_db.CitrosDB) is created with defaults parameters. To specify connection parameters, pass corresponding arguments:
 
 ```python
 >>> citros = da.CitrosDB(host = 'hostName',
@@ -54,7 +54,7 @@ Data is always queried for exact topic. For example, to query all data for topic
 
 The result is a [**DataFrame**](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.html) of the [**pandas** package](https://pandas.pydata.org/).
 
-Batch constists of two parts: json-data column, and all other columns.
+Batch consists of two parts: json-data column, and all other columns.
 To query exact json-objects, pass list with their labels to [**data()**](../documentation/data_access/citros_db.md#citros_data_analysis.data_access.citros_db.CitrosDB.data).
 For example, if the json-data column looks like:
 

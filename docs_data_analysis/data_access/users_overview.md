@@ -28,7 +28,7 @@ Method [**get_users()**](../documentation/data_access/citros_db.md#citros_data_a
 
 ## Dictionary with Users' Information
 
-The [**user_info()**](../documentation/data_access/citros_db.md#citros_data_analysis.data_access.citros_db.CitrosDB.user_info) method allows you to retrieve the main information about users in a [**CitrosDict**](../documentation/data_access/citros_dict.md#citros_data_analysis.data_access.citros_dict.CitrosDict) format, that inherits behaviour of an ordinary python dictionary, but has some additional methods, like method [**print()**](../documentation/data_access/citros_dict.md#citros_data_analysis.data_access.citros_dict.CitrosDict.print). The obtained information includes users' first names, last names, emails, as well as lists of repositories they've created and repositories in which they've created batches, with emails serving as the dictionary keys.
+The [**user_info()**](../documentation/data_access/citros_db.md#citros_data_analysis.data_access.citros_db.CitrosDB.user_info) method allows you to retrieve the main information about users in a [**CitrosDict**](../documentation/data_access/citros_dict.md#citros_data_analysis.data_access.citros_dict.CitrosDict) format, that inherits behavior of an ordinary python dictionary, but has some additional methods, like method [**print()**](../documentation/data_access/citros_dict.md#citros_data_analysis.data_access.citros_dict.CitrosDict.print). The obtained information includes users' first names, last names, emails, as well as lists of repositories they've created and repositories in which they've created batches, with emails serving as the dictionary keys.
 
 To view all users, sorted by their names, execute the following command:
 

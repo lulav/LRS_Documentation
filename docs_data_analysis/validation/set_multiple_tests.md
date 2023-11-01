@@ -19,7 +19,7 @@ The types of tests and corresponding parameters are provided as a dictionary by 
   - 'sid_test' - for [**sid_test()**](testing_each_simulation.md);
   - 'norm_L2' and 'norm_Linf' - set [**norm_test()**](norm_test.md).
 
-Once again, let's query data and do the neccessary data praparations (see [Getting started](getting_started.md)):
+Once again, let's query data and do the necessary data preparations (see [Getting started](getting_started.md)):
 
 ```python
 >>> df = citros.topic('A').data(['data.x.x_1', 'data.x.x_2', 'data.x.x_3', 'data.time'])
@@ -36,7 +36,7 @@ For example, to set a standard deviation boundary test and a test on norm $L^2$:
 ```
 ## Returning Parameters
 
-The method returns three dictionaris, that containes the output results of each test: 
+The method returns three dictionaries that contain the output results of each test: 
 
 - `log` : [**CitrosDict**](../documentation/data_access/citros_dict.md#citros_data_analysis.data_access.citros_dict.CitrosDict) - dictionary with test result summary for each test method;
 
@@ -107,4 +107,4 @@ To get the corresponding figure:
 ```
 ![fig4](img/fig24.png "Fig4")
 
-See [**std_bound_test()**](standard_deviation_boundary_test.md), [**mean_test()**](mean_value_test.md), [**sid_test()**](testing_each_simulation.md) and [**norm_test()**](norm_test.md) for the output detailes.
+See [**std_bound_test()**](standard_deviation_boundary_test.md), [**mean_test()**](mean_value_test.md), [**sid_test()**](testing_each_simulation.md) and [**norm_test()**](norm_test.md) for the output details.

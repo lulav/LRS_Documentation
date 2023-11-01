@@ -40,7 +40,7 @@ Let's assume, that data for topic 'A' looks like:
 2	|1	|2	|951279608	|A	|a	|{'x': {'x_1': 0.016, 'x_2': 0.078, 'x_3': 117.66}, 'time': 20.3}
 ...|...|...|...|...|...|...|
 
-A json-data column containes information about time and vector x, that has elements x_1, x_2 and x_3. Let's query these columns:
+A json-data column contains information about time and vector x, that has elements x_1, x_2 and x_3. Let's query these columns:
 
 ```python
 >>> df = citros.topic('A').data(['data.x', 'data.time'])
@@ -71,7 +71,7 @@ from citros_data_analysis import validation as va
 ```
 `units` are specified to make plots more informative.
 
-If only some of the elements of the vector 'data.x' are needed, for example 'data.x.x_1' and 'data.x.x_2', they may be quered and passed to [**Validation**](../documentation/validation/validation.md#citros_data_analysis.validation.validation.Validation) object as follows:
+If only some of the elements of the vector 'data.x' are needed, for example 'data.x.x_1' and 'data.x.x_2', they may be queried and passed to [**Validation**](../documentation/validation/validation.md#citros_data_analysis.validation.validation.Validation) object as follows:
 
 ```python
 >>> df = citros.topic('A').data(['data.x.x_1', 'data.x.x_2', 'data.time'])
@@ -79,7 +79,7 @@ If only some of the elements of the vector 'data.x' are needed, for example 'dat
                       method = 'scale', num = 20, units = 'm')
 ```
 
-After initialisation, [**Validation**](../documentation/validation/validation.md#citros_data_analysis.validation.validation.Validation) object stores statistics as a [**CitrosStat**](../documentation/error_analysis/citros_stat.md#citros_data_analysis.error_analysis.citros_stat.CitrosStat) in `stat` attribute. For example, to get mean values:
+After initialization, [**Validation**](../documentation/validation/validation.md#citros_data_analysis.validation.validation.Validation) object stores statistics as a [**CitrosStat**](../documentation/error_analysis/citros_stat.md#citros_data_analysis.error_analysis.citros_stat.CitrosStat) in `stat` attribute. For example, to get mean values:
 
 ```python
 >>> print(V.stat.mean)
@@ -92,4 +92,4 @@ data.time_id
 2             0.056261     0.043401     33.128443
 ...           ...          ...          ...
 ```
-In the same way it is possible to access scaled 'data.time' range (`V.stat.x`), standard deviation (`V.stat.sigma`) and covarian matrix (`V.stat.covar_matrix`).
+In the same way it is possible to access scaled 'data.time' range (`V.stat.x`), standard deviation (`V.stat.sigma`) and covariant matrix (`V.stat.covar_matrix`).
