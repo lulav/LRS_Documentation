@@ -42,5 +42,13 @@ Once the upload of the docker image is done, you can check on CITROS [Image](htt
 
 # Required Packages for CITROS Usage
 
-* `citros`: This will allow CITROS to run the simulation image in the servers. Install with (`RUN pip install citros`) in your Dockerfile.
-* `rosbag2-storage-mcap`(***Only for ROS 2 foxy version***): For recording bags using [`mcap`](https://mcap.dev/guides/getting-started/ros-2) format. Install with (`RUN apt-get update && apt-get install -y ros-foxy-rosbag2-storage-mcap`) in your Dockerfile.
+* `citros`: This will allow CITROS to run the simulation image in the servers. 
+Install with:
+```dockerfile
+RUN pip install citros
+```
+* `rosbag2-storage-mcap`(***Only for ROS 2 foxy version***): For recording bags using [`mcap`](https://mcap.dev/guides/getting-started/ros-2) format. 
+Install with:
+```dockerfile
+RUN apt-get update && apt-get install -y ros-foxy-rosbag2-storage-mcap`
+```
