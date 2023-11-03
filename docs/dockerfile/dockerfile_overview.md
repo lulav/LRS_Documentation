@@ -47,8 +47,8 @@ Install with:
 ```dockerfile
 RUN pip install citros
 ```
-* `rosbag2-storage-mcap`(***Only for ROS 2 foxy version***): For recording bags using [`mcap`](https://mcap.dev/guides/getting-started/ros-2) format. 
+* `rosbag2-storage-mcap`: For recording bags using [`mcap`](https://mcap.dev/guides/getting-started/ros-2) format. 
 Install with:
 ```dockerfile
-RUN apt-get update && apt-get install -y ros-foxy-rosbag2-storage-mcap`
+RUN apt-get update && apt-get install -y ros-${ROS_DISTRO}-rosbag2-storage-mcap`
 ```
