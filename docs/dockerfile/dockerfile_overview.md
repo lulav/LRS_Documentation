@@ -40,6 +40,30 @@ Once the upload of the docker image is done, you can check on CITROS [Image](htt
 
 ![jpeg](img/images.jpeg)
 
+:::tip
+
+When writing your Dockerfile, is it advice to build your ROS workspace in the Dockerfile.
+You can copy the `ros_ws/src` folder and use `colcon build` to build the code:
+
+```dockerfile
+COPY ros_ws/src ros_ws/src
+RUN cd ros_ws && colcon build
+```
+
+:::
+
+:::tip
+
+To avoid path errors, try use `WORKDIR` command to specify the container default working directory same as the local environment. 
+For example the [cannon](https://github.com/citros-garden/cannon) project:
+```dockerfile
+WORKDIR /workspaces/cannon
+COPY src src
+RUN colcon build
+```
+
+:::
+
 # Required Packages for CITROS Usage
 
 * `citros`: This will allow CITROS to run the simulation image in the servers. 
