@@ -32,7 +32,7 @@ Here are the key steps to write your Dockerfile:
 
 5. **Build the Docker Image:** Use the `docker build` command to build your Docker image, referencing your Dockerfile. This command will create an image containing your CITROS environment.
 
-6. **Run Tests**: Use the `docker run` command to locally run your simulation' image, verifying the setup works before pushing the image to CITROS.
+6. **Run Tests**: Use the `docker run` command to locally run your simulation image, verifying the setup works before pushing the image to CITROS.
 
 6. **Push Your Image to CITROS:** Use [`citros docker-build-push`](https://citros.io/doc/docs_cli/commands/cli_commands#command-docker-build-push) command to build and push your docker image to CITROS.
 
@@ -42,7 +42,7 @@ Once the upload of the docker image is done, you can check on CITROS [Image](htt
 
 :::tip
 
-When writing your Dockerfile, is it advice to build your ROS workspace in the Dockerfile.
+When writing your Dockerfile, is it adviced to build your ROS workspace in the Dockerfile.
 You can copy the `ros_ws/src` folder and use `colcon build` to build the code:
 
 ```dockerfile
@@ -54,7 +54,7 @@ RUN cd ros_ws && colcon build
 
 :::tip
 
-To avoid path errors, try use `WORKDIR` command to specify the container default working directory same as the local environment. 
+To avoid path errors, use the `WORKDIR` command to specify the container's default working directory to be the same as the local environment. 
 For example the [cannon](https://github.com/citros-garden/cannon) project:
 ```dockerfile
 WORKDIR /workspaces/cannon
@@ -66,7 +66,7 @@ RUN colcon build
 
 # Required Packages for CITROS Usage
 
-* `citros`: This will allow CITROS to run the simulation image in the servers. 
+* `citros`: This will allow CITROS to run the simulation image on the CITROS servers. 
 Install with:
 ```dockerfile
 RUN pip install citros
