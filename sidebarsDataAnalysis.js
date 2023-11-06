@@ -25,6 +25,14 @@ module.exports = {
       },
       items: [
         {
+          type: 'doc',
+          id: "snippets_doc",
+        },
+        {
+          type: 'doc',
+          id: "snippets_like_in_web",
+        },
+        {
           type: 'category',
           label: 'Data Access',
           items: [
