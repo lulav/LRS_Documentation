@@ -1,5 +1,5 @@
 #  Dockerfile Overview
-
+ 
 After configuring the simulation environment and conducting a local simulation using [citros_cli](https://citros.io/doc/docs_cli), the next step is to enhance CITROS' capabilities by deploying the simulation environment to the cloud.
 
 Cloud deployment provides the flexibility to execute multiple parallel simulations, each with predefined parameter distributions. This facilitates Monte-Carlo analysis and leverages the machine learning capabilities of CITROS.
@@ -8,10 +8,12 @@ Cloud deployment provides the flexibility to execute multiple parallel simulatio
 
 # Table Of Contents
 
-1. [About Dockerfiles](#about-dockerfiles)
-2. [Write Your Own Dockerfile](#write-your-own-dockerfile)
-3. [Required Packages for CITROS Usage](#required-packages-for-citros-usage)
-4. [Examples](#examples)
+- [Dockerfile Overview](#dockerfile-overview)
+- [Table Of Contents](#table-of-contents)
+- [About Dockerfiles](#about-dockerfiles)
+- [Write Your Own Dockerfile](#write-your-own-dockerfile)
+- [Required Packages for CITROS Usage](#required-packages-for-citros-usage)
+- [Examples](#examples)
 
 # About Dockerfiles
 
