@@ -3,10 +3,13 @@
     "cSpell.words": [
         "Aerosandbox",
         "CITROS",
+        "colcon",
         "devcontainer",
+        "Dockerfiles",
         "IPYNB",
         "numpy",
         "Poliastro",
-        "POPT"
+        "POPT",
+        "WORKDIR"
     ],
 }
