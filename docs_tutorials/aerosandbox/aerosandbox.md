@@ -3,7 +3,7 @@ sidebar_position: 20
 sidebar_label: 'Aerosandbox'
 ---
 
-## Aerosandbox
+# Aerosandbox
 
 The project is a simulation tool developed using ROS (Robot Operating System) nodes and leverages the Aerosandbox Python library for aerodynamic calculations. Its primary objective is to simulate gliding flight scenarios for a Cessna 152 aircraft in the event of engine failure.
 
