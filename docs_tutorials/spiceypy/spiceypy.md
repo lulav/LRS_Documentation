@@ -1,9 +1,9 @@
 ---
 sidebar_position: 10
-sidebar_label: 'SpiceyPy'
+sidebar_label: 'SpiceyPy Using CITROS'
 ---
 
-## SpiceyPy Using CITROS
+# SpiceyPy Using CITROS
 
 This project is developed using ROS nodes and leverages the SpiceyPy library, a Python implementation of NASA's NAIF Spice toolkit. Its primary purpose is to provide the orbital trajectory information of the Cassini spacecraft relative to Saturn's barycenter within specified time intervals.
 
@@ -23,8 +23,6 @@ You can find more information about SpiceyPy library on [SpiceyPy official websi
     5. [Uploading Docker Image to CITROS Database](#uploading-docker-image-to-citros-cloud)
     6. [Running in The Cloud](#running-in-the-cloud)
     7. [CITROS Web Usage](#citros-web-usage)
-2. [Extras](#extras)
-    1. [Foxglove Examples](#foxglove-examples)
 
 ## CITROS Usage
 Although you can get simulation results using FoxGlove, the best way to work with such simulations and process the results is CITROS! With its power, it is possible to create complex data processing scenarios, including the construction of more complex graphs, mathematical analysis and other high-level processing methods.
