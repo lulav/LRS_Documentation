@@ -31,7 +31,9 @@ You can find more information about this useful aerodynamics library on [Aerosan
     1. [Foxglove Examples](#foxglove-examples)
 
 ## CITROS Usage
-Although you can get simulation results using FoxGlove, the best way to work with such simulations and process the results is CITROS! With its power, it is possible to create complex data processing scenarios, including the construction of more complex graphs, mathematical analysis and other high-level processing methods.
+The best way to work with such simulations and process the results is CITROS! With its power, it is possible to create complex data processing scenarios, including the construction of more complex graphs, mathematical analysis and other high-level processing methods.
+
+One of the main CITROS features is an ability to launch a number of simulations in parallel. For the projects like SpiceyPy example this feature allows user to simulate many different behaviours of the model regardless of the complexity of it and without restrictions on computing power. Moreover, the amazing Data Analysis tool from CITROS allows user to process the simulation results with such useful packages as Error Analysis and Validation module!
 
 ### CITROS Installation
 
