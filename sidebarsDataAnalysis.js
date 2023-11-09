@@ -17,19 +17,25 @@
 module.exports = {
   dataAnalysisSidebar: [
     {
+      type: 'doc',
+      id: "index",
+    },
+    {
       type: 'category',
-      label: 'CITROS Data Analysis',
-      link: {
-        type: 'doc',
-        id: "index",
-      },
+      label: 'Snippets',
       items: [
         {
           type: 'category',
-          label: 'Snippets',
-          items: ["snippets_doc/snippets_data_analysis", "snippets_doc/snippets_query_data", "snippets_doc/snippets_plotting",
-           "snippets_doc/snippets_error_analysis", "snippets_doc/snippets_validation"],
+          label: 'Data Access',
+          items: ["snippets_doc/data_access/snippets_repositories", 
+                  "snippets_doc/data_access/snippets_batches",
+                  "snippets_doc/data_access/snippets_users",
+                  "snippets_doc/data_access/snippets_batch_content",
+                  "snippets_doc/data_access/snippets_query_data", 
+                  "snippets_doc/data_access/snippets_plotting"],
         },
+        "snippets_doc/snippets_error_analysis", 
+        "snippets_doc/snippets_validation"
       ]
     },
     {
