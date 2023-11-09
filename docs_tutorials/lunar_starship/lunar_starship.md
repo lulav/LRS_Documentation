@@ -29,7 +29,7 @@ Through the Lunar Starship project, researchers are paving the way for sustainab
 ## CITROS Usage
 The best way to work with such simulations and process the results is CITROS! With its power, it is possible to create complex data processing scenarios, including the construction of more complex graphs, mathematical analysis and other high-level processing methods.
 
-One of the main CITROS features is an ability to launch a number of simulations in parallel. For the projects like SpiceyPy example this feature allows user to simulate many different behaviours of the model regardless of the complexity of it and without restrictions on computing power. Moreover, the amazing Data Analysis tool from CITROS allows user to process the simulation results with such useful packages as Error Analysis and Validation module!
+CITROS stands out for its facility to run various simulations simultaneously. For initiatives akin to the Lunar Starship project, this allows for the examination of diverse model behaviors without being constrained by the intricacies of the model or computing power availability. Additionally, CITROS's advanced Data Analysis instrument equips users with robust packages, including the Error Analysis and Validation module, to adeptly handle simulation data.
 
 ### CITROS Installation
 

@@ -30,7 +30,7 @@ You can find all information about used functions and mathematical explanation o
 ## CITROS Usage
 The best way to work with such simulations and process the results is CITROS! With its power, it is possible to create complex data processing scenarios, including the construction of more complex graphs, mathematical analysis and other high-level processing methods.
 
-One of the main CITROS features is an ability to launch a number of simulations in parallel. For the projects like SpiceyPy example this feature allows user to simulate many different behaviours of the model regardless of the complexity of it and without restrictions on computing power. Moreover, the amazing Data Analysis tool from CITROS allows user to process the simulation results with such useful packages as Error Analysis and Validation module!
+The power of CITROS lies in its proficiency to initiate multiple simulations at once. With projects on the scale of Poliastro, users benefit from this feature, which empowers them to test numerous model behaviors regardless of model complexity and computational power constraints. What's more, the Data Analysis toolkit within CITROS is equipped with powerful utilities such as the Error Analysis and Validation module to streamline the processing of simulation results.
 
 ### CITROS Installation
 
