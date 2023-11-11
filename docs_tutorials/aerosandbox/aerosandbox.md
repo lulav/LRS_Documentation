@@ -14,19 +14,18 @@ You can find more information about this useful aerodynamics library on [Aerosan
 
 # Prerequisites
 
-## CITROS Installation
-
-First of all, to use all the powerful CITROS features the CLI installation is required: follow the instructions on the CITROS CLI [documentation page](https://citros.io/doc/docs_cli).
-
-You can also check our [Getting Started](https://citros.io/doc/docs/index.md) guide for additional information.
-
-We suggest to work with prepared Docker Container, which you can find in the project's [GitHub page](https://github.com/citros-garden/aerosandbox_cessna).
-
-If you want to set everything up by yourself without Docker, you have to install the ```aerosandbox[full]``` and ``` numpy``` via pip:
+- [CITROS](https://citros.io/doc/docs_cli/overview/cli_install/)
+- [numpy](https://numpy.org/)
+- [aerosandbox[full]](https://pypi.org/project/AeroSandbox/)
 
 ```bash
-python3 -m pip install aerosandbox[full] numpy
+python3 -m pip install citros aerosandbox[full] numpy 
 ```
+
+:::note
+If you use the provided docker file (or devcontainer) all packages are preinstalled so no action is needed. 
+:::
+
 
 # Table of Contents
 - [Installation](#installation)
@@ -90,7 +89,6 @@ The output of the simulation comprises critical flight data, such as altitude, v
 
 For this example, let's check how far the Cessna can glide with engine failure depending on initial altitude. To find it out, we need to set up parameters and launch CITROS simulation.
 
-# Running the scenario using CITROS
 
 After CITROS initialization we can start configuring simulation setup. For remote launch we can set up the maximum performance available: timeout, CPU, GPU and Memory. To perform it, we need to define them in ```.citros/simulations/simulation_aerosandbox_cessna.json```. The recommended setup is minimum 180 seconds timeout, 2 CPU, 2 GPU and 1024 MB of Memory. Don't forget to save the file!
 
@@ -111,6 +109,12 @@ def func_with_context(num, citros_context):
 
 This function will set the ```h_0``` parameter in range from 1000 to 1000+1000*n, where n = number of runs.
 
+# Running the scenario using CITROS
+
+<Tabs>
+
+<TabItem value="local" label="Running Locally">
+
 ## Running Locally
 Since all the preparations done, we can launch it locally (your project should be built and sourced before that):
 ```bash 
@@ -121,13 +125,17 @@ Since all the preparations done, we can launch it locally (your project should b
 Select the launch file (should be the only one here) by pressing ```Enter``` button and wait for the output in the terminal. To plot the local run results you can use FoxGlove.
 
 ```bash
-created new batch_id: <your-batch-id-here>. Running locally.
-+ running batch [<your-batch-id-here>], description: local test run, repeating simulations: [1]
+created new batch_id: <batch_run / batch name>. Running locally.
++ running batch [<batch_run / batch name>], description: local test run, repeating simulations: [1]
 + + running simulation [0]
 ...
 ```
 
 ![gif](img/gif0.gif "FoxGlove example")
+
+</TabItem>
+<TabItem value="cloud" label="Running in Cloud">
+
 
 ## Syncing Project's Setup
 CITROS account is required for cloud usage. Follow the instructions on [CITROS Website](https://citros.io/auth/login) to register a new one, or check the [CLI documentation](https://citros.io/doc/docs_cli) for logging in. To complete the following steps, it is assumed that the user is registered, logged in and has met all requirements for Web Usage.
@@ -144,23 +152,27 @@ We need to build and push a Docker container image to the CITROS server:
 Logging in to docker...
 ...
 ```
-## Running in The Cloud
-Finally, we can run it in the cloud! Simply add ```-r``` to the terminal command: 
+## Running 
+Finally, we can run it in the cloud! Simply add `-r` to the terminal command: 
 ```bash 
 citros run -n 'aerosandbox_cessna' -m 'cloud test run' -r
 ? Please choose the simulation you wish to run:
 ❯ aerosandbox_cessna
 ```
 
-Select the launch file (should be the only one here) by pressing ```Enter``` button. Now the simulation is running in the CITROS server, and the results will be automatically uploaded to the CITROS database.
+Select the launch file (should be the only one here) by pressing `Enter` button. Now the simulation is running in the CITROS server, and the results will be automatically uploaded to the CITROS database.
 
 ```bash
-created new batch_id: <your-batch-id-here>. Running on Citros cluster. See https://citros.io/batch/<your-batch-id-here>.
+created new batch_id: <batch_id / batch name>. Running on Citros cluster. See https://citros.io/batch/<batch_id / batch name>.
 ```
 
 :::tip
 The best way to use all the innovative capabilities of CITROS is through it's Web interface. Follow [this manual](https://citros.io/doc/docs/simulations/sim_overview) to easily launch a simulation on CITROS Web platform.
 :::
+
+</TabItem>
+
+</Tabs>
 
 # Results
 CITROS Web provides a powerful data analysis package, which is a comprehensive solution for data query, analysis and visualization. With its extensive features, you can quickly and easily extract valuable insights from your data. To use it, Jupiter Notebook support is built-in. 
@@ -185,7 +197,7 @@ from platform import python_version
 
 Now we can connect to the simulation database:
 ```python
-batch_id = '<your-batch-id-here>'
+batch_id = '<batch_run / batch name>'
 citros = da.CitrosDB(batch = batch_id)
 citros.info().print()
 ```
@@ -269,3 +281,7 @@ This graph shows us Maximum gliding distance depending of Initial altitude:
 
 
 
+
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
