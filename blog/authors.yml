@@ -1,20 +1,8 @@
-endi:
-  name: Endilie Yacop Sucipto
-  title: Maintainer of Docusaurus
-  url: https://github.com/endiliey
-  image_url: https://github.com/endiliey.png
-
-yangshun:
-  name: Yangshun Tay
-  title: Front End Engineer @ Facebook
-  url: https://github.com/yangshun
-  image_url: https://github.com/yangshun.png
-
-slorber:
-  name: Sébastien Lorber
-  title: Docusaurus maintainer
-  url: https://sebastienlorber.com
-  image_url: https://github.com/slorber.png
+noam:
+  name: Noam Laiter
+  title: CEO CITROS
+  url: https://github.com/noamoon
+  image_url: https://github.com/noamoon.png
   
 vovacooper:
   name: Vladimir Kouperman
@@ -46,6 +34,3 @@ iftahnaf:
   url: https://github.com/iftahnaf
   image_url: https://github.com/iftahnaf.png
 
-jd:
-  name: John Doe
-  title: tbd
