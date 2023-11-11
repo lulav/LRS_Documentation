@@ -34,7 +34,9 @@ All project installation, code overview and usage details are also available on 
 
 
 ## CITROS Usage
-Although you can get simulation results using FoxGlove, the best way to work with such simulations and process the results is CITROS! With its power, it is possible to create complex data processing scenarios, including the construction of more complex graphs, mathematical analysis and other high-level processing methods.
+The best way to work with such simulations and process the results is CITROS! With its power, it is possible to create complex data processing scenarios, including the construction of more complex graphs, mathematical analysis and other high-level processing methods.
+
+CITROS offers the distinctive feature of parallel simulation execution, which is invaluable for projects similar to Turtlebot. This feature empowers users to conduct extensive simulations of different model behaviors without being impeded by the model's complexity or a lack of computational power. The Data Analysis utility of CITROS is also exceptionally useful, coming with integrated packages such as Error Analysis and Validation, which facilitate refined processing of the simulation findings.
 
 ### CITROS Installation
 

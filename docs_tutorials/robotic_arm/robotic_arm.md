@@ -23,7 +23,9 @@ This project is designed to wrap the [Robotic Arm Simulation project](https://gi
     1. [Foxglove Examples](#foxglove-examples)
 
 ## CITROS Usage
-Although you can get simulation results using FoxGlove, the best way to work with such simulations and process the results is CITROS! With its power, it is possible to create complex data processing scenarios, including the construction of more complex graphs, mathematical analysis and other high-level processing methods.
+The best way to work with such simulations and process the results is CITROS! With its power, it is possible to create complex data processing scenarios, including the construction of more complex graphs, mathematical analysis and other high-level processing methods.
+
+CITROS is renowned for its ability to perform parallel simulations. This capability is especially beneficial for projects like Robotic Arm, where it enables the simulation of various model behaviors without being hampered by complexity or computational resource limitations. The sophisticated Data Analysis tool provided by CITROS further enhances this with comprehensive packages for Error Analysis and Validation, ensuring thorough processing of the simulations' data.
 
 ### CITROS Installation
 

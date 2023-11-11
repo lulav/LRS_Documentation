@@ -28,7 +28,9 @@ You can find all information about used functions and mathematical explanation o
     1. [Foxglove Examples](#foxglove-examples)
 
 ## CITROS Usage
-Although you can get simulation results using FoxGlove, the best way to work with such simulations and process the results is CITROS! With its power, it is possible to create complex data processing scenarios, including the construction of more complex graphs, mathematical analysis and other high-level processing methods.
+The best way to work with such simulations and process the results is CITROS! With its power, it is possible to create complex data processing scenarios, including the construction of more complex graphs, mathematical analysis and other high-level processing methods.
+
+The power of CITROS lies in its proficiency to initiate multiple simulations at once. With projects on the scale of Poliastro, users benefit from this feature, which empowers them to test numerous model behaviors regardless of model complexity and computational power constraints. What's more, the Data Analysis toolkit within CITROS is equipped with powerful utilities such as the Error Analysis and Validation module to streamline the processing of simulation results.
 
 ### CITROS Installation
 

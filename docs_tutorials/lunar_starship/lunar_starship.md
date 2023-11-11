@@ -27,7 +27,9 @@ Through the Lunar Starship project, researchers are paving the way for sustainab
     1. [Foxglove Examples](#foxglove-examples)
 
 ## CITROS Usage
-Although you can get simulation results using FoxGlove, the best way to work with such simulations and process the results is CITROS! With its power, it is possible to create complex data processing scenarios, including the construction of more complex graphs, mathematical analysis and other high-level processing methods.
+The best way to work with such simulations and process the results is CITROS! With its power, it is possible to create complex data processing scenarios, including the construction of more complex graphs, mathematical analysis and other high-level processing methods.
+
+CITROS stands out for its facility to run various simulations simultaneously. For initiatives akin to the Lunar Starship project, this allows for the examination of diverse model behaviors without being constrained by the intricacies of the model or computing power availability. Additionally, CITROS's advanced Data Analysis instrument equips users with robust packages, including the Error Analysis and Validation module, to adeptly handle simulation data.
 
 ### CITROS Installation
 

@@ -20,7 +20,9 @@ The Lunar Hopper project is a lunar exploration planning project aimed at solvin
     7. [CITROS Web Usage and Data Analysis](#citros-web-usage-and-data-analysis)
 
 ## CITROS Usage
-Although you can get simulation results using FoxGlove, the best way to work with such simulations and process the results is CITROS! With its power, it is possible to create complex data processing scenarios, including the construction of more complex graphs, mathematical analysis and other high-level processing methods.
+The best way to work with such simulations and process the results is CITROS! With its power, it is possible to create complex data processing scenarios, including the construction of more complex graphs, mathematical analysis and other high-level processing methods.
+
+A key attribute of CITROS is its capability to execute multiple simulations concurrently. In cases such as the Lunar Hopper project, this functionality grants users the capacity to explore a multitude of model behaviors, irrespective of their complexity, while circumventing limitations in computational resources. Furthermore, CITROS's remarkable Data Analysis suite provides users with access to essential tools like the Error Analysis and Validation module for efficient processing of simulation outcomes.
 
 ### CITROS Installation
 
