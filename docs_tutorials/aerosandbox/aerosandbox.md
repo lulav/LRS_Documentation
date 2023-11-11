@@ -20,6 +20,14 @@ First of all, to use all the powerful CITROS features the CLI installation is re
 
 You can also check our [Getting Started](https://citros.io/doc/docs/index.md) guide for additional information.
 
+We suggest to work with prepared Docker Container, which you can find in the project's [GitHub page](https://github.com/citros-garden/aerosandbox_cessna).
+
+If you want to set everything up by yourself without Docker, you have to install the ```aerosandbox[full]``` and ``` numpy``` via pip:
+
+```bash
+python3 -m pip install aerosandbox[full] numpy
+```
+
 # Table of Contents
 - [Installation](#installation)
 - [Workspace Overview](#workspace-overview)
@@ -37,18 +45,18 @@ git clone git@github.com:citros-garden/aerosandbox_cessna.git
 
 The Aerosandbox simulation has the following ROS parameters:
 
-    |Parameter	|Package	|Description
-    |--|--|--
-    h_0	|aerosandbox_cessna	|Initial altitude (m)	
-    v_0	|aerosandbox_cessna	|Initial velocity (knots)
-    publish_freq	|aerosandbox_cessna	|Frequency of publishing
+|Parameter	|Package	|Description
+|--|--|--
+h_0	|aerosandbox_cessna	|Initial altitude (m)	
+v_0	|aerosandbox_cessna	|Initial velocity (knots)
+publish_freq	|aerosandbox_cessna	|Frequency of publishing
 
 
 This project contains only one launch file ```aerosandbox_cessna.launch.py```. This file will be used for CITROS launch. 
 
-    |Launch File	|Package	|Description
-    |--|--|--
-    aerosandbox_cessna.launch.py	|aerosandbox_cessna	|Aerosandbox simulation launch file 
+|Launch File	|Package	|Description
+|--|--|--
+aerosandbox_cessna.launch.py	|aerosandbox_cessna	|Aerosandbox simulation launch file 
 
 
 # CITROS Initialization
@@ -80,11 +88,28 @@ Once the simulation is initiated, the ROS nodes orchestrate the execution. The s
 
 The output of the simulation comprises critical flight data, such as altitude, velocity, and other relevant parameters, recorded over time intervals. These results are published via ROS topics, allowing for real-time data visualization, analysis, and integration with other ROS-based systems.
 
+For this example, let's check how far the Cessna can glide with engine failure depending on initial altitude. To find it out, we need to set up parameters and launch CITROS simulation.
+
 # Running the scenario using CITROS
 
-After CITROS initialization we can start configuring simulation setup. You can find the default setup in ```.citros/parameter_setups/default_param_setup.json```. [CITROS CLI](https://citros.io/doc/docs_cli) provides an opportunity to use basic NumPy functions (such as distributions) and even user-defined functions, but let's keep it default for now.
+After CITROS initialization we can start configuring simulation setup. For remote launch we can set up the maximum performance available: timeout, CPU, GPU and Memory. To perform it, we need to define them in ```.citros/simulations/simulation_aerosandbox_cessna.json```. The recommended setup is minimum 180 seconds timeout, 2 CPU, 2 GPU and 1024 MB of Memory. Don't forget to save the file!
 
-For remote launch we can set up the maximum performance available: timeout, CPU, GPU and Memory. To perform it, we need to define them in ```.citros/simulations/simulation_aerosandbox_cessna.json```. The recommended setup is minimum 180 seconds timeout, 2 CPU, 2 GPU and 1024 MB of Memory. Don't forget to save the file!
+You can find the default parameter setup in ```.citros/parameter_setups/default_param_setup.json```. [CITROS CLI](https://citros.io/doc/docs_cli) provides an opportunity to use basic NumPy functions (such as distributions) and even user-defined functions. In case we want to find out how far the Cessna can glide with engine failure, we need to launch a batch with several simulations and a distribution for one of the ROS parameters (initial altitude, in this case). This parameter will be different for each simulation:
+
+```json
+"h_0": {
+    "function": "my_func.py:func_with_context",
+    "args": [1000.0]
+},
+```
+
+The ```my_func.py``` file should contain:
+```python
+def func_with_context(num, citros_context):
+    return num + float(citros_context['run_id'])*1000
+```
+
+This function will set the ```h_0``` parameter in range from 1000 to 1000+1000*n, where n = number of runs.
 
 ## Running Locally
 Since all the preparations done, we can launch it locally (your project should be built and sourced before that):
@@ -143,31 +168,11 @@ Navigate to our ```Code``` project page, open the Notebooks folder and click on 
 
 You can find all the data analysis package guides and API reference [here](https://citros.io/doc/docs_data_analysis).
 
-
-Let's quickly go through the key points of using a Jupiter Notebook and fetching data from a database. But to try some brief examples of data analysis using the built-in package, we need to launch a batch with several simulations and a distribution for one of the ROS parameters (initial altitude, in our case). This parameter will be different for each simulation:
-
-```json
-"h_0": {
-    "function": "my_func.py:func_with_context",
-    "args": [1000.0]
-},
-```
-
-All necessary things are already configured (we used a NumPy distribution function, you can read more about its usage in the [CITROS CLI](https://citros.io/doc/docs_cli) manual), so you can start the simulation from [CLI](#citros-usage-🛸) with the ```-c 10``` flag: 
-
-```
-citros run -n 'aerosandbox_cessna' -m 'cloud test run' -r -c 10
-? Please choose the simulation you wish to run:
-❯ aerosandbox_cessna
-```
-
-Or from [Web](#running-in-the-cloud-🛰️):
-
-![png](img/web0.png "CITROS example")
+Let's quickly go through the key points of using a Jupiter Notebook and fetching data from a database.
 
 Run the ```aerosandbox_cessna``` simulation and copy your batch id (we will need it later).
 
-Let's return to our Notebook and check the code: to start with, we need to import all the necessary modules:
+To start with, we need to import all the necessary modules:
 
 ```python
 import numpy as np
