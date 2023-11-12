@@ -5,37 +5,63 @@ sidebar_label: 'SpiceyPy Using CITROS'
 
 # SpiceyPy Using CITROS
 
+# Overview
 This project is developed using ROS nodes and leverages the SpiceyPy library, a Python implementation of NASA's NAIF Spice toolkit. Its primary purpose is to provide the orbital trajectory information of the Cassini spacecraft relative to Saturn's barycenter within specified time intervals.
-
-Users can input the desired time bounds, and the project utilizes SpiceyPy's powerful capabilities to retrieve accurate and precise orbital data for the Cassini spacecraft during the specified period.
 
 You can find more information about SpiceyPy library on [SpiceyPy official website](https://spiceypy.readthedocs.io/en/v2.0.0/index.html). All project installation, code overview and usage details are also available on the project's [GitHub page](https://github.com/citros-garden/spiceypy).
 
 ![png](img/Example0.png "Plot")
 
-## Table of Contents
+# Prerequisites
 
-1. [CITROS Usage](#citros-usage)
-    1. [CITROS Installation](#citros-installation)
-    2. [Configuring The Project](#configuring-the-project)
-    3. [Running Locally](#running-locally)
-    4. [Syncing Project's Setup](#syncing-projects-setup)
-    5. [Uploading Docker Image to CITROS Database](#uploading-docker-image-to-citros-cloud)
-    6. [Running in The Cloud](#running-in-the-cloud)
-    7. [CITROS Web Usage](#citros-web-usage)
+- [CITROS](https://citros.io/doc/docs_cli/overview/cli_install/)
+- [numpy](https://numpy.org/)
+- [spiceypy](https://spiceypy.readthedocs.io/en/stable/)
 
-## CITROS Usage
-The best way to work with such simulations and process the results is CITROS! With its power, it is possible to create complex data processing scenarios, including the construction of more complex graphs, mathematical analysis and other high-level processing methods.
+```bash
+python3 -m pip install citros spiceypy numpy 
+```
 
-One of the main CITROS features is an ability to launch a number of simulations in parallel. For the projects like SpiceyPy example this feature allows user to simulate many different behaviours of the model regardless of the complexity of it and without restrictions on computing power. Moreover, the amazing Data Analysis tool from CITROS allows user to process the simulation results with such useful packages as Error Analysis and Validation module!
+:::note
+If you use the provided docker file (or devcontainer) all packages are preinstalled so no action is needed. 
+:::
 
-### CITROS Installation
 
-First of all, to use all the powerful CITROS features the CLI installation is required: follow the instructions on the CITROS CLI [documentation page](https://citros.io/doc/docs_cli).
+# Table of Contents
+- [Installation](#installation)
+- [Workspace Overview](#workspace-overview)
+- [CITROS Initialization](#citros-initialization)
+- [Scenario](#scenario)
+- [Running the scenario using CITROS](#running-the-scenario-using-citros)
+- [Results](#results)
 
-### Configuring The Project
-After all the prerequisites are met, we can start configuring our project. The starting point is the Poliastro devcontainer loaded and running, CITROS CLI is installed and ready.
-1. Initialize CITROS:
+# Installation
+```bash
+git clone git@github.com:citros-garden/spiceypy.git
+```
+
+# Workspace Overview
+
+The SpiceyPy simulation has the following ROS parameters:
+
+|Parameter	|Package	|Description
+|--|--|--
+start_t	|spiceypy_cassini	|Initial date	
+finish_t	|spiceypy_cassini	|Final date	
+publish_freq	|spiceypy_cassini	|Frequency of publishing
+
+
+This project contains only one launch file ```spiceypy.launch.py```. This file will be used for CITROS launch. 
+
+|Launch File	|Package	|Description
+|--|--|--
+spiceypy_cassini.launch.py	|spiceypy_cassini	|SpiceyPy Cassini simulation launch file 	
+
+
+# CITROS Initialization
+
+After all the prerequisites are met, we can start configuring our project. The starting point is the SpiceyPy devcontainer loaded and running, CITROS CLI is installed and ready.
+
 ```bash 
 >>> citros init
 Checking internet connection...
@@ -48,59 +74,55 @@ Creating an initial commit.
 Default branch of remote 'origin' set to: master
 Citros successfully synched with local project.
 You may review your changes via `citros status` and commit them via `citros commit`.
-Intialized Citros repository.
+Initialized Citros repository.
 ```
 Now you can see ```.citros``` folder in the explorer.
 
-2. Configuring the setup. We need to set up the maximum performance available: timeout, CPU, GPU and Memory. To perform it, we need to define them in ```.citros/simulations/simulation_spiceypy_cassini.json```. The recommended setup is minimum 180 seconds timeout, 2 CPU, 2 GPU and 1024 MB of Memory. Don't forget to save the file!
+Check our [Getting Started](https://citros.io/doc/docs/index.md) guide for additional information.
 
-3. Configuring the params setup. You can find the default setup in ```.citros/parameter_setups/default_param_setup.json```. [CITROS CLI](https://citros.io/doc/docs_cli) provides an opportunity to use basic NumPy functions (such as distributions) and even user-defined functions, but let's keep it default for now. The SpiceyPy simulation has the following ROS parameters:
+# Scenario
+This simple scenatio can be used to find the Cassini Spacecraft trajectory relative to Saturn's barycenter within specified time intervals.
 
-    |Parameter	|Package	|Description
-    |--|--|--
-    start_t	|spiceypy_cassini	|Initial date	
-    finish_t	|spiceypy_cassini	|Final date	
-    publish_freq	|spiceypy_cassini	|Frequency of publishing
+Users can input the desired time bounds, and the project utilizes SpiceyPy's powerful capabilities to retrieve accurate and precise orbital data for the Cassini spacecraft during the specified period.
 
-:::note
-The date format should be 'MMM DD, YYYY'.
-:::
+The output of the simulation comprises critical flight data, such as altitude, velocity, and other relevant parameters, recorded over time intervals. These results are published via ROS topics, allowing for real-time data visualization, analysis, and integration with other ROS-based systems.
 
-Don't forget to save the file!
+This example is used to show the CITROS ability to implement any useful library, such as popular SpiceyPy NASA lib for spacecraft tracking. The project's setup is also showing how user can save all the simualtion results in one place for any number of simulations, and share these results with coworkers. 
+The other powerfull feature is Jupiter Notebook built-in, and Data analisys package, usage of which will be shown below.
 
-4. Launch files. This project contains only one launch file ```spiceypy.launch.py```. This file will be used for CITROS launch. 
+After CITROS initialization we can start configuring simulation setup. For remote launch we can set up the maximum performance available: timeout, CPU, GPU and Memory. To perform it, we need to define them in ```.citros/simulations/simulation_spiceypy_cassini.json```. The recommended setup is minimum 180 seconds timeout, 2 CPU, 2 GPU and 1024 MB of Memory. Don't forget to save the file!
 
-    |Launch File	|Package	|Description
-    |--|--|--
-    spiceypy_cassini.launch.py	|spiceypy_cassini	|SpiceyPy Cassini simulation launch file 	
+You can find the default parameter setup in ```.citros/parameter_setups/default_param_setup.json```. [CITROS CLI](https://citros.io/doc/docs_cli) provides an opportunity to use basic NumPy functions (such as distributions) and even user-defined functions. 
 
-:::tip
+# Running the scenario using CITROS
 
-CITROS CLI, in addition to other benefits, also provides an automatic ROS bag recording option, which allows user to use saved simulation results and export them! :)
+<Tabs>
 
-:::
+<TabItem value="local" label="Running Locally">
 
-### Running Locally
+## Running Locally
 Since all the preparations done, we can launch it locally (your project should be built and sourced before that):
-
 ```bash 
 >>> citros run -n 'spiceypy_cassini' -m 'local test run'
 ? Please choose the simulation you wish to run:
 ❯ spiceypy_cassini
 ```
-
 Select the launch file (should be the only one here) by pressing ```Enter``` button and wait for the output in the terminal. To plot the local run results you can use FoxGlove.
 
 ```bash
-created new batch_id: <your-batch-id-here>. Running locally.
-+ running batch [<your-batch-id-here>], description: local test run, repeating simulations: [1]
+created new batch_id: <batch_run / batch name>. Running locally.
++ running batch [<batch_run / batch name>], description: local test run, repeating simulations: [1]
 + + running simulation [0]
 ...
 ```
 
 ![png](img/Example1.png "FoxGlove example")
 
-### Syncing Project's Setup
+</TabItem>
+<TabItem value="cloud" label="Running in Cloud">
+
+
+## Syncing Project's Setup
 CITROS account is required for cloud usage. Follow the instructions on [CITROS Website](https://citros.io/auth/login) to register a new one, or check the [CLI documentation](https://citros.io/doc/docs_cli) for logging in. To complete the following steps, it is assumed that the user is registered, logged in and has met all requirements for Web Usage.
 Now we can synchronize our project settings with CITROS server:
 ```bash 
@@ -108,55 +130,46 @@ Now we can synchronize our project settings with CITROS server:
 >>> citros push
 ```
 
-### Uploading Docker Image to CITROS Cloud
+## Uploading Docker Image to CITROS Cloud
 We need to build and push a Docker container image to the CITROS server:
 ```bash 
 >>> citros docker-build-push
 Logging in to docker...
 ...
 ```
-
-### Running in The Cloud
-Finally, we can run it in the cloud! Simply add ```-r``` to the terminal command: 
-
+## Running 
+Finally, we can run it in the cloud! Simply add `-r` to the terminal command: 
 ```bash 
->>> citros run -n 'spiceypy_cassini' -m 'local test run' -r
+citros run -n 'spiceypy_cassini' -m 'cloud test run' -r
 ? Please choose the simulation you wish to run:
 ❯ spiceypy_cassini
 ```
 
-Select the launch file (should be the only one here) by pressing ```Enter``` button. Now the simulation is running in the CITROS server, and the results will be automatically uploaded to the CITROS database.
+Select the launch file (should be the only one here) by pressing `Enter` button. Now the simulation is running in the CITROS server, and the results will be automatically uploaded to the CITROS database.
 
 ```bash
-created new batch_id: <your-batch-id-here>. Running on Citros cluster. See https://citros.io/batch/<your-batch-id-here>.
+created new batch_id: <batch_id / batch name>. Running on Citros cluster. See https://citros.io/batch/<batch_id / batch name>.
 ```
 
-### CITROS Web Usage
-#### Launching Project via CITROS Web
+:::tip
 The best way to use all the innovative capabilities of CITROS is through it's Web interface. Follow [this manual](https://citros.io/doc/docs/simulations/sim_overview) to easily launch a simulation on CITROS Web platform.
+:::
 
+</TabItem>
 
-#### Working with Integrated Jupiter Notebooks and Data Analysis
+</Tabs>
+
+# Results
 CITROS Web provides a powerful data analysis package, which is a comprehensive solution for data query, analysis and visualization. With its extensive features, you can quickly and easily extract valuable insights from your data. To use it, Jupiter Notebook support is built-in. 
 Navigate to our ```Code``` project page, open the Notebooks folder and click on the notebook file. Here you can see the usual Jupiter editor interface: you can add blocks of code or built-in Markdown engine, run and save notebook and control the Python kernel.
 
 You can find all the data analysis package guides and API reference [here](https://citros.io/doc/docs_data_analysis).
 
-Let's quickly go through the key points of using a Jupiter Notebook and fetching data from a database. All necessary things are already configured, so you can start the simulation from [CLI](#citros-usage-🛸) with the ```-c 10``` flag: 
-
-```
->>> citros run -n 'spiceypy_cassini' -m 'local test run' -r
-? Please choose the simulation you wish to run:
-❯ spiceypy_cassini
-```
-
-Or from [Web](#running-in-the-cloud-🛰️):
-
-![png](img/web0.png "CITROS example")
+Let's quickly go through the key points of using a Jupiter Notebook and fetching data from a database.
 
 Run the ```spiceypy_cassini``` simulation and copy your batch id (we will need it later).
 
-Let's return to our Notebook and check the code: to start with, we need to import all the necessary modules:
+To start with, we need to import all the necessary modules:
 
 ```python
 import numpy as np
@@ -229,5 +242,9 @@ This graph shows us the Cassini altitude:
 
 ![png](img/citros3.png "CITROS example")
 
+All of this data (project setup, simulation runs as well as simulation results and notebook code) is saved into CITROS database and available not only for user, but also for all user's team, who can access these results, check the simulation setups, edit the Jupiter Notebook and export the results. 
 
 
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';

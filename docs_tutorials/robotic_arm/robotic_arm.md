@@ -3,37 +3,85 @@ sidebar_position: 40
 sidebar_label: 'Robotic Arm'
 ---
 
+
 # Robotic Arm
 
+# Overview
 This project is designed to wrap the [Robotic Arm Simulation project](https://github.com/dvalenciar/robotic_arm_environment) and integrate it with CITROS platform. The node provides ROS parameters that allow users to adjust target arm joints position. In addition, the Inverse Kinematic ROS node was added.
 
 ![png](img/arm0.png "Arm")
 
-## Table of Contents
+# Prerequisites
 
-1. [CITROS Usage](#citros-usage)
-    1. [CITROS Installation](#citros-installation)
-    2. [Configuring The Project](#configuring-the-project)
-    3. [Running Locally](#running-locally)
-    4. [Syncing Project's Setup](#syncing-projects-setup)
-    5. [Uploading Docker Image to CITROS Database](#uploading-docker-image-to-citros-database)
-    6. [Running in The Cloud](#running-in-the-cloud)
-    7. [CITROS Web Usage](#citros-web-usage)
-2. [Extras](#extras)
-    1. [Foxglove Examples](#foxglove-examples)
+- [CITROS](https://citros.io/doc/docs_cli/overview/cli_install/)
+- [numpy](https://numpy.org/)
+- [lark](https://github.com/lark-parser/lark)
+- [empy](https://pypi.org/project/empy/)
+- [catkin_pkg](https://pypi.org/project/catkin-pkg/)
+- [libfranka](https://frankaemika.github.io/docs/libfranka.html)
+- [ikpy](https://github.com/Phylliade/ikpy)
 
-## CITROS Usage
-The best way to work with such simulations and process the results is CITROS! With its power, it is possible to create complex data processing scenarios, including the construction of more complex graphs, mathematical analysis and other high-level processing methods.
+```bash
+python3 -m pip install citros numpy lark empy catkin_pkg ikpy
+```
 
-CITROS is renowned for its ability to perform parallel simulations. This capability is especially beneficial for projects like Robotic Arm, where it enables the simulation of various model behaviors without being hampered by complexity or computational resource limitations. The sophisticated Data Analysis tool provided by CITROS further enhances this with comprehensive packages for Error Analysis and Validation, ensuring thorough processing of the simulations' data.
+:::note
+If you use the provided docker file (or devcontainer) all packages are preinstalled so no action is needed. 
+:::
 
-### CITROS Installation
 
-First of all, to use all the powerful CITROS features the CLI installation is required: follow the instructions on the CITROS CLI [documentation page](https://citros.io/doc/docs_cli).
+# Table of Contents
+- [Installation](#installation)
+- [Workspace Overview](#workspace-overview)
+- [CITROS Initialization](#citros-initialization)
+- [Scenario](#scenario)
+- [Running the scenario using CITROS](#running-the-scenario-using-citros)
+- [Results](#results)
 
-### Configuring The Project
+# Installation
+```bash
+git clone git@github.com:citros-garden/robotic_arm.git
+```
+
+# Workspace Overview
+
+The Robotic Arm simulation has the following ROS parameters:
+
+For Forward Kinematic:
+
+|Parameter	|Package	|Description
+|--|--|--
+j0	|my_doosan_pkg	|First joint target position 	
+j1	|my_doosan_pkg	|Second joint target position  	
+j2	|my_doosan_pkg	|Third joint target position  
+j3	|my_doosan_pkg	|Fourth joint target position  
+j4	|my_doosan_pkg	|Fifth joint target position  
+j5	|my_doosan_pkg	|Sixth joint target position  
+
+For Inverse Kinematic:
+
+|Parameter	|Package	|Description
+|--|--|--
+pos0	|inverse_kinematic_pkg	|Arm target position by first axis	
+pos1	|inverse_kinematic_pkg	|Arm target position by second axis
+pos2	|inverse_kinematic_pkg	|Arm target position by third axis
+ori0	|inverse_kinematic_pkg	|Arm target orientation by first axis
+ori1	|inverse_kinematic_pkg	|Arm target orientation by second axis 
+ori3	|inverse_kinematic_pkg	|Arm target orientation by third axis 
+
+
+This project contains two launch files: ```simulation_my_doosan_gazebo_controller``` for Forward Kinematic or ```simulation_inverse_kinematic_pkg``` for Inverse Kinematic. These files will be used for CITROS launch. 
+
+|Launch File	|Package	|Description
+|--|--|--
+my_doosan_gazebo_controller.launch.py	|my_doosan_pkg	|Gazebo Robotic Arm launch file for Forward Kinematic
+simulation_inverse_kinematic_pkg.launch.py	|simulation_inverse_kinematic_pkg	|Gazebo Robotic Arm launch file for Inverse Kinematic
+
+
+# CITROS Initialization
+
 After all the prerequisites are met, we can start configuring our project. The starting point is the Robotic Arm devcontainer loaded and running, CITROS CLI is installed and ready.
-1. Initialize CITROS:
+
 ```bash 
 >>> citros init
 Checking internet connection...
@@ -50,64 +98,63 @@ Initialized Citros repository.
 ```
 Now you can see ```.citros``` folder in the explorer.
 
-2. Configuring the setup. We need to set up the maximum performance available: timeout, CPU, GPU and Memory. To perform it, we need to define them in ```.citros/simulations/simulation_my_doosan_gazebo_controller.json```. The recommended setup is minimum 600 seconds timeout, 4 CPU, 4 GPU and 4096 MB of Memory. Don't forget to save the file!
+Check our [Getting Started](https://citros.io/doc/docs/index.md) guide for additional information.
 
-3. Configuring the params setup. You can find the default setup in the ```.citros/simulations/simulation_my_doosan_gazebo_controller.json``` (for Forward Kinematic) or ```.citros/simulations/simulation_inverse_kinematic_pkg.json``` (for Inverse Kinematic). [CITROS CLI](https://citros.io/doc/docs_cli) provides an opportunity to use basic NumPy functions (such as distributions) and even user-defined functions, but let's keep it default for now. Don't forget to save the file! The example has the following parameters:
+# Scenario
+## Forward kinematics
+In this example user provides joints target positions as input parameters to configure the simulation. The robotic arm will change its position trying to meet the target conditions.
 
-For Forward Kinematic:
+## Inverse kinematics
+This example uses the Inverse Kinematic calculations to show more useful way to interract with robotic arm. User provides target position and target rotation of arm by three axes as input parameters to configure the simulation. The robotic arm will change its position trying to meet the target conditions.
 
-    |Parameter	|Package	|Description
-    |--|--|--
-    j0	|my_doosan_pkg	|First joint target position 	
-    j1	|my_doosan_pkg	|Second joint target position  	
-    j2	|my_doosan_pkg	|Third joint target position  
-    j3	|my_doosan_pkg	|Fourth joint target position  
-    j4	|my_doosan_pkg	|Fifth joint target position  
-    j5	|my_doosan_pkg	|Sixth joint target position  
+The output of the simulation comprises all robot's configuration data and other relevant parameters, recorded over time intervals. These results are published via ROS topics, allowing for real-time data visualization, analysis, and integration with other ROS-based systems.
 
-For Inverse Kinematic:
+For this example, let's check how the robotic arm's behavior changes depending on target position. To find it out, we need to set up parameters and launch CITROS simulation.
 
-    |Parameter	|Package	|Description
-    |--|--|--
-    pos0	|inverse_kinematic_pkg	|Arm target position by first axis	
-    pos1	|inverse_kinematic_pkg	|Arm target position by second axis
-    pos2	|inverse_kinematic_pkg	|Arm target position by third axis
-    ori0	|inverse_kinematic_pkg	|Arm target orientation by first axis
-    ori1	|inverse_kinematic_pkg	|Arm target orientation by second axis 
-    ori3	|inverse_kinematic_pkg	|Arm target orientation by third axis 
 
-4. Launch files. This project contains two launch files: ```simulation_my_doosan_gazebo_controller``` for Forward Kinematic or ```simulation_inverse_kinematic_pkg``` for Inverse Kinematic. These files will be used for CITROS launch. 
+After CITROS initialization we can start configuring simulation setup. For remote launch we can set up the maximum performance available: timeout, CPU, GPU and Memory. To perform it, we need to define them in ```.citros/simulations/simulation_my_doosan_gazebo_controller.json``` (for Forward Kinematic) or ```.citros/simulations/simulation_inverse_kinematic_pkg.json``` (for Inverse Kinematic). The recommended setup is minimum 600 seconds timeout, 4 CPU, 4 GPU and 4096 MB of Memory. Don't forget to save the file!
 
-    |Launch File	|Package	|Description
-    |--|--|--
-    my_doosan_gazebo_controller.launch.py	|my_doosan_pkg	|Gazebo Robotic Arm launch file for Forward Kinematic
-    simulation_inverse_kinematic_pkg.launch.py	|simulation_inverse_kinematic_pkg	|Gazebo Robotic Arm launch file for Inverse Kinematic
+You can find the default parameter setup in ```.citros/parameter_setups/default_param_setup.json```. [CITROS CLI](https://citros.io/doc/docs_cli) provides an opportunity to use basic NumPy functions (such as distributions) and even user-defined functions. In case we want to find out how the robotic arm's behavior changes, we need to launch a batch with several simulations and a distribution for one of the ROS parameters (last joint position, in this case). This parameter will be different for each simulation:
 
-:::tip
+```json
+"j5": {
+    "function": "numpy.random.random",
+    "args": [0.0, 0.5]
+}
+```
 
-CITROS CLI, in addition to other benefits, also provides an automatic ROS bag recording option, which allows user to use saved simulation results and export them! :)
+This function will set the ```j5``` parameter in random range from 0.0 to 0.5.
 
-:::
+# Running the scenario using CITROS
 
-### Running Locally
+<Tabs>
+
+<TabItem value="local" label="Running Locally">
+
+## Running Locally
 Since all the preparations done, we can launch it locally (your project should be built and sourced before that):
 ```bash 
 >>> citros run -n 'robotic_arm' -m 'local test run'
-? Please choose the simulation you wish to run: 
+? Please choose the simulation you wish to run:
 ❯ simulation_my_doosan_gazebo_controller
   simulation_inverse_kinematic_pkg
 ```
-Select the necessary launch file by pressing ```Enter``` button and wait for the output in the terminal. To plot the local run results you can use FoxGlove.
+Select the launch file by pressing ```Enter``` button and wait for the output in the terminal. To plot the local run results you can use FoxGlove.
+
 ```bash
-created new batch_id: <your-batch-id-here>. Running locally.
-+ running batch [<your-batch-id-here>], description: local test run, repeating simulations: [1]
+created new batch_id: <batch_run / batch name>. Running locally.
++ running batch [<batch_run / batch name>], description: local test run, repeating simulations: [1]
 + + running simulation [0]
 ...
 ```
 
 ![gif](img/foxglove1.gif "FoxGlove example")
 
-### Syncing Project's Setup
+</TabItem>
+<TabItem value="cloud" label="Running in Cloud">
+
+
+## Syncing Project's Setup
 CITROS account is required for cloud usage. Follow the instructions on [CITROS Website](https://citros.io/auth/login) to register a new one, or check the [CLI documentation](https://citros.io/doc/docs_cli) for logging in. To complete the following steps, it is assumed that the user is registered, logged in and has met all requirements for Web Usage.
 Now we can synchronize our project settings with CITROS server:
 ```bash 
@@ -115,58 +162,47 @@ Now we can synchronize our project settings with CITROS server:
 >>> citros push
 ```
 
-### Uploading Docker Image to CITROS Database
+## Uploading Docker Image to CITROS Cloud
 We need to build and push a Docker container image to the CITROS server:
 ```bash 
 >>> citros docker-build-push
 Logging in to docker...
 ...
 ```
-
-### Running in The Cloud
-Finally, we can run it in the cloud! Simply add ```-r``` to the terminal command: 
+## Running 
+Finally, we can run it in the cloud! Simply add `-r` to the terminal command: 
 ```bash 
->>> citros run -n 'robotic_arm' -m 'cloud test run' -r
-? Please choose the simulation you wish to run: 
+citros run -n 'robotic_arm' -m 'cloud test run' -r
+? Please choose the simulation you wish to run:
 ❯ simulation_my_doosan_gazebo_controller
   simulation_inverse_kinematic_pkg
 ```
-Select the necessary launch file by pressing ```Enter``` button. Now the simulation is running in the CITROS server, and the results will be automatically uploaded to the CITROS database.
+
+Select the launch file by pressing `Enter` button. Now the simulation is running in the CITROS server, and the results will be automatically uploaded to the CITROS database.
+
 ```bash
-created new batch_id: <your-batch-id-here>. Running on Citros cluster. See https://citros.io/batch/<your-batch-id-here>.
+created new batch_id: <batch_id / batch name>. Running on Citros cluster. See https://citros.io/batch/<batch_id / batch name>.
 ```
 
-
-### CITROS Web Usage
-#### Launching Project via CITROS Web
+:::tip
 The best way to use all the innovative capabilities of CITROS is through it's Web interface. Follow [this manual](https://citros.io/doc/docs/simulations/sim_overview) to easily launch a simulation on CITROS Web platform.
+:::
 
-#### Working with Integrated Jupiter Notebooks And Data Analysis
+</TabItem>
 
+</Tabs>
+
+# Results
 CITROS Web provides a powerful data analysis package, which is a comprehensive solution for data query, analysis and visualization. With its extensive features, you can quickly and easily extract valuable insights from your data. To use it, Jupiter Notebook support is built-in. 
 Navigate to our ```Code``` project page, open the Notebooks folder and click on the notebook file. Here you can see the usual Jupiter editor interface: you can add blocks of code or built-in Markdown engine, run and save notebook and control the Python kernel.
 
-:::note
 You can find all the data analysis package guides and API reference [here](https://citros.io/doc/docs_data_analysis).
-:::
 
-
-Let's quickly go through the key points of using a Jupiter Notebook and fetching data from a database. All necessary things are already configured (we used a NumPy distribution function, you can read more about its usage in the [CITROS CLI](https://citros.io/doc/docs_cli), so you can start the simulation from [CLI](#citros-usage-🛸) with the ```-c 10``` flag, which will launch 10 simulations in parallel: 
-
-```bash 
->>> citros run -n 'robotic_arm' -m 'cloud test run' -r -c 10
-? Please choose the simulation you wish to run: 
-❯ simulation_my_doosan_gazebo_controller
-  simulation_inverse_kinematic_pkg
-```
-
-Or from [Web](#running-in-the-cloud-🛰️):
-
-![png](img/web0.png "CITROS example")
+Let's quickly go through the key points of using a Jupiter Notebook and fetching data from a database.
 
 Run the ```simulation_my_doosan_gazebo_controller``` simulation and copy your batch id (we will need it later).
 
-Let's return to our Notebook and check the code: to start with, we need to import all the necessary modules:
+To start with, we need to import all the necessary modules:
 
 ```python
 import numpy as np
@@ -252,7 +288,10 @@ plt.show()
 You can see the different behavior of the last joint on these plots:
 
 ![png](img/citros3.png "CITROS example")
-## Extras
-### Foxglove Examples
-![png](img/foxglove0.png "FoxGlove example")
 
+
+
+
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
