@@ -4,7 +4,6 @@ The following document will guide you through CITROS CLI installation.
 
 ## Prerequisites
 
-- [vscode](https://code.visualstudio.com/download)
 - [Docker](https://www.docker.com/)
 - [Python3](https://www.python.org/downloads/)
 - [git](https://git-scm.com/)

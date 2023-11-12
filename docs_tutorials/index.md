@@ -1,5 +1,5 @@
 ---
-sidebar_position: 1
+sidebar_position: 2
 sidebar_label: 'Introduction to CITROS CLI'
 hide_title: true
 ---
@@ -308,7 +308,7 @@ After running the previous command, CITROS has a docker image of your ROS projec
 ```bash
 citros run -n "cloud_test" -m "running in the cloud!" -c 3 -r
 ? Please choose the simulation you wish to run: simulation_cannon_analytic
-created new batch_id: a2d7bc36-9b59-4aae-9c49-3bef5e9c5850. Running on Citros cluster. See https://citros.io/cannon/batch/a2d7bc36-9b59-4aae-9c49-3bef5e9c5850.
+created new batch_id: aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeeeee. Running on Citros cluster. See https://citros.io/cannon/batch/aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeeeee.
 ```
 
 The above command will run the `cannon_analytic` simulation 3 times on the CITROS cloud. By clicking the provided link, you can directly navigate to the *runs* tab on the CITROS website, and see your runs in action.
