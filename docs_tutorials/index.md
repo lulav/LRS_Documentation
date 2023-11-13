@@ -415,4 +415,4 @@ citros.batch(-1).topic('/cannon/state').sid([0,1,2,3,4]).\
        time_plot(ax, var_name = 'data.data[1]', time_step = 0.01, y_label = 'y', title_text = 'y vs. t')
 ```
 
-![Alt text](image.png)
+![Alt text](img/nb_sample.png)

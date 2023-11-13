@@ -34,10 +34,7 @@ To install CITROS using pip, open terminal and write the following command:
 | `CITROS_DIR` | Used by the citros cluster, do not use. | citros |
 | `CITROS_SIM_RUN_DIR` | The directory under `.citros/runs` in which all simulation data will be saved (see [runs](/docs_cli/structure/citros_structure#directory-runs)). This can be handy, if your code needs to know this location in order to access some of the files, e.g. parameter setups. | citros |
 
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
-
-## Working with CITROS CLI - Online
+## Working Online with CITROS CLI
 
 ### Prerequisites
 In addition to the prerequisites for working with the CITROS CLI offline, make sure:
