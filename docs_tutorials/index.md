@@ -1,6 +1,6 @@
 ---
-sidebar_position: 2
-sidebar_label: 'Introduction to CITROS CLI'
+sidebar_position: 5
+sidebar_label: 'Introduction to CITROS'
 hide_title: true
 ---
 <!-- 
@@ -10,7 +10,7 @@ import DocCardList from '@theme/DocCardList';
 <DocCardList />
 ``` -->
 
-# Introduction to CITROS CLI
+# Introduction to CITROS
 
 This tutorial will guide you through the CITROS CLI interface, using a simple ROS 2 example project to demonstrate the usage, while providing useful recommendations and best practices. While this is not a comprehensive guide to all CITROS CLI commands, it should get you up and running using your own projects with CITROS in no time. For further details and an exhaustive guide to the CITROS CLI, refer to the [CLI Documentation](https://citros.io/doc/docs_cli).
 
@@ -26,19 +26,13 @@ This tutorial will guide you through the CITROS CLI interface, using a simple RO
     5. [Run The Numeric Integration Solution](#run-the-numeric-integration-solution)
     6. [Implementation Overview](#implementation-overview)
     7. [Foxglove](#foxglove)
-2. [Working with CITROS CLI - Offline](#working-with-citros-cli---offline)
+2. [Working with CITROS](#working-with-citros-cli---offline)
     1. [Prerequisites](#prerequisites-1)
     2. [Initialization](#initialization)
     3. [Running a Simulation](#running-a-simulation)
     4. [Configuring a Simulation](#configuring-a-simulation)
-3. [Working with CITROS CLI - Online](#working-with-citros-cli---online)
-    1. [Prerequisites](#prerequisites-2)
-    2. [logging in](#logging-in)
-    3. [ssh](#ssh)
-    4. [Initialization](#initialization-1)
-    5. [Building and Pushing a Docker Image](#building-and-pushing-a-docker-image)
-    6. [Running on The Cloud](#running-on-the-cloud)
-    7. [Configuring a Simulation](#configuring-a-simulation-1)
+    5. [Data analysis](#data-analysis-online-only)
+
 
 
 ## The Cannon Example Project
@@ -115,9 +109,9 @@ Output example:
 
 
 
-## Working with CITROS CLI - Offline
+## Working with CITROS
 
-Working with the CITROS CLI offline is pretty straight forward, since there are only two things you need to do - initialize your CITROS repository, and run your project. Additionally, you may configure your CITROS repository to fit your simulation needs, but if all you want to do is to run your project via CITROS with the default configuration, than only two commands are necessary.
+Working with the CITROS CLI is pretty straight forward, since there are only two things you need to do - initialize your CITROS repository, and run your project. Additionally, you may configure your CITROS repository to fit your simulation needs, but if all you want to do is to run your project via CITROS with the default configuration, than only two commands are necessary.
 
 ### Prerequisites
 But first, let's make sure all the prerequisites for running CITROS have been met:
@@ -135,7 +129,7 @@ But first, let's make sure all the prerequisites for running CITROS have been me
     You can verify that the installation succeeded by running 
     ```bash
     $ citros -V
-    1.2.28
+    1.2.3
     ```
 
     to get the CITROS CLI version installed.
@@ -157,6 +151,10 @@ The `.citros` directory contains several files and folders that capture the stat
 
 ### Running a Simulation
 
+
+<Tabs>
+<TabItem value="web" label="Run Offline">
+
 After your `.citros` repository has been initialized, you're ready to run a CITROS simulation, albeit with all the default configurations, by using the `run` command:
 
 ```bash
@@ -166,61 +164,23 @@ $ citros run -n "my_first_batch" -m "my first Citros simulation!"
   simulation_cannon_numeric
 ```
 
-To fully understand what's going on, we need to familiarize ourselves with three concepts that are core to the way CITROS works:
-- **simulation** 
+:::note
 
-    Defined by a ROS 2 launch file. You may have as many launch files as you want in your project, as long as there is at least one. Each launch simulation will correspond to a launch file in your project. When you run a CITROS simulation, if you don't specify the name of the simulation (using the `-s` flag), a command-line menu will be presented, in which you can use the up and down arrows to choose the simulation you want. The simulation names will be of the form `simulation_<name of launch_file>`. In the case of the Cannon project, we have two launch files - `cannon_analytic.launch.py` and `cannon_numeric.launch.py`, and as you can see in the output above, we are prompted to choose between them. 
+This command will run the simulation on your machine, and save all the results under `.citros/runs/[simulation_name]` folder. The content of the [folder](docs_cli/structure/citros_structure#directory-runs) will contain 
+- recorded bags
+- logs from the simulation and citros itself
+- metadata about the run
+- metrics and information about the system it was running 
+- and more.
 
-    Each simulation also corresponds to a json file of the same name, which resides under the `.citros/simulations` directory. You may use this file to configure the way your simulation runs. 
+:::
 
-    When you run a CITROS simulation, a directory for that simulation is created under the `.citros/runs` directory. This directory will contain subdirectories corresponding to **batch**es, a new one created every time you run a simulation. 
-- **batch** 
+</TabItem>
 
-    Defined as a group of one or more simulation runs. Since you can specify one or more simulations runs ('*completions*') when running a CITROS simulation, a **batch** is simply a convenient way to group them together. For instance, in the case of the above example, if we choose `simulation_cannon_analytic` from the menu, the following folder structure will be created: `.citros/runs/simulation_cannon_analytic/my_first_batch/0`. The last folder - `0`, is the folder corresponding to the only run for this batch - when you don't specify the number of completions (i.e. runs) using the `-c` flag, it will default to 1, and the name of each run is a zero based index, incremented by one for each additional run.
-- **run**
-
-    Defined as a single execution of a simulation as defined by the chosen launch file. Launching CITROS simulations with multiple runs ('*completions*') is particularly advantageous when working online, in which case a large number of simulation runs can be simultaneously executed on the CITROS cloud.
-
-    The folder corresponding to a simulation run will contain all the information relevant for that run. Look through such a folder after running a simulation and see for yourself. For further details refer to the [CLI Documentation](https://citros.io/doc/docs_cli)
+<TabItem value="cli" label="Run Online">
 
 
-By default, when using the `run` command, you must provide a batch name (using the `-n` flag) and a message (using the `-m` flag). The name you provide will be used as the name of the directory in which all runs for this batch will be saved. If a batch by that name already exists - no worries, CITROS will simply add an underscore and an index to the name you provided, thereby keeping the batch directory names unique for each simulation. 
-
-Now that you understand what's going on, choose on of the simulations presented in the menu, press enter and see it run...
-
-### Configuring a Simulation
-
-We just ran a simulation a single time with all the default configurations, which is admittedly not that exciting. Let's see how we can turn things up a notch by setting up dynamic parameter evaluation for our simulation, thereby allowing each run within the same batch to have different parameter values.
-
-The `.citros/parameter_setups` directory stores your JSON-formatted parameter setup files. When you initialize your citros repository, a `default_param_setup.json` file is automatically generated. This file consolidates all the default parameters for every node across all the packages in your ROS project, providing a consolidated and easily accessible record of these parameters.
-
-The structured format of the parameter setup files streamlines both the understanding and alteration of parameters for each node in your ROS project. This becomes especially valuable when you're keen to explore the influence of different parameter values on your ROS project's behavior.
-
-In the Cannon project, we have a total of three nodes. Let's look at the parameters for the `analytic_dynamics` node in the `cannon_analytic` package, as defined in the `default_param_setup.json` file.
-We can see we have 3 parameters to play around with - `init_speed`, `init_angle` and `dt`. 
-
-Let's say we want to find out the optimal initial angle for the cannon, which will provide the maximum range. Assuming we're completely blanking out on high-school physics, let's randomize the value for this parameter, execute several simulation runs, and see where we get the maximum range. To achieve this, we can simply replace the hard-coded default value with a **function object**. Function objects are json objects comprised of two fields - `function` and `args`. They come in two flavors - numpy and user-defined. For our purposes we can use numpy's random module to generate a normal distribution around a given value:
-
-    "init_angle": {
-                    "function": "numpy.random.normal",
-                    "args": [45, 15]
-                },
-
-This will cause a normal distribution with a standard deviation of 15 around 45 to be evaluated for every simulation run.
-
-Now, if we run
-```batch
-citros run -n "test_params" -m "testing random initial angle" -c 10
-```
-
-and choose `simulation_cannon_analytic` from the menu, the simulation will run 10 times (sequentially), and each time the cannon will have a different initial angle. By looking at the results, we can hopefully come to the conclusion that 45 degrees is the optimal angle. 
-
-More options for configuring your simulation are [discussed](#configuring-a-simulation-1) in the next section. For user defined functions and further details about configuring CITROS simulations in general, refer to the [CLI Documentation](https://citros.io/doc/docs_cli). 
-
-
-## Working with CITROS CLI - Online
-
-### Prerequisites
+#### Prerequisites
 In addition to the prerequisites for working with the CITROS CLI offline, make sure:
 
 - You have a working internet connection.
@@ -229,7 +189,7 @@ In addition to the prerequisites for working with the CITROS CLI offline, make s
 
 Using the CITROS CLI online is very similar, from the user's standpoint, to using it offline. We still use the `init` and `run` commands, albeit with slight alterations or different consequences. In addition, there are a few more commands necessary to interact with the CITROS cloud.
 
-### logging in
+#### logging in
 
 First and foremost, we need to log in:
 ```bash
@@ -239,7 +199,7 @@ Password:
 User logged in.
 ```
 
-### ssh
+#### ssh
 
 Before we continue to initialize our project, there is one more prerequisite we need to check off that was not yet mentioned: setting up ssh communication with CITROS. Since this process only needs to be performed once per computer, and can be performed using the CITROS website, we will not delve into it here, except to mention that it can be performed via the CLI using the command:
 ```bash
@@ -248,7 +208,7 @@ citros setup-ssh
 for further details, see the [CLI Documentation](https://citros.io/doc/docs_cli)
 
 
-### Initialization
+#### Initialization
 
 Assuming ssh communication has been set up, we can initialize our repository:
 ```bash
@@ -290,7 +250,7 @@ working remotely with [git@citros.io:lulav/cannon.git].
  ``` 
 :::
 
-### Building and Pushing a Docker Image
+#### Building and Pushing a Docker Image
 
 Now that our CITROS repository is initialized and synched with the CITROS remote, we have one more important thing we need to do before we can run our simulation on the cloud - we need to build a docker image of our ROS project, tag it with the current commit hash for the project, and upload it to CITROS. Sounds complicated? Not to worry - all this is accomplished by running a single command:
 ```bash
@@ -302,26 +262,40 @@ As a prerequisite for this command, the working directory of your ROS project mu
 
 :::
 
-### Running on The Cloud
+#### Running on The Cloud
 
 After running the previous command, CITROS has a docker image of your ROS project, so we can finally run the simulation on the cloud (notice the `-r` flag):
 ```bash
 citros run -n "cloud_test" -m "running in the cloud!" -c 3 -r
 ? Please choose the simulation you wish to run: simulation_cannon_analytic
-created new batch_id: aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeeeee. Running on Citros cluster. See https://citros.io/cannon/batch/aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeeeee.
+created new batch_id: zzzzzzzz-xxxx-cccc-vvvv-bbbbbbbbbbbb. Running on Citros cluster. See https://citros.io/cannon/batch/zzzzzzzz-xxxx-cccc-vvvv-bbbbbbbbbbbb.
 ```
 
 The above command will run the `cannon_analytic` simulation 3 times on the CITROS cloud. By clicking the provided link, you can directly navigate to the *runs* tab on the CITROS website, and see your runs in action.
 
-### Configuring a Simulation
+#### Configuring a `runner`
 
-When working online, there are several more ways with which you can configure your simulation. Specifically, you can directly set the hardware resources that will be used on the cloud. Simply open the `.citros/simulations/simulation_cannon_analytic.json` file (for example), set the values according to your needs:
+The runner is the actual machine that will run your image, this machine can be configured and optimized for your simulation. 
+
+:::note
+
+keep in mind that this resources is not free of charge and will be charged accordingly. pleasee refer to the [pricing](https://citros.io/doc/pricing) for further details.
+
+:::
+
+When working online, there are several more ways with which you can configure your runner. Specifically, you can directly set the hardware resources that will be used on the cloud. Simply open the `.citros/simulations/simulation_cannon_analytic.json` file (for example), set the values according to your needs:
 
     "GPU": 0,
     "CPU": 2,
     "MEM": 265,
 
-**Note:** the `MEM` field denotes the amount of RAM your simulation requires when running on the cloud in *Megabytes*.
+:::note
+
+the `MEM` field denotes the amount of RAM your simulation requires when running on the cloud in *Megabytes*.
+
+the `CPU` field denotes the amount of CPU cores needed by your simulation when running on the cloud.
+
+:::
 
 In addition there are several more useful fields, which are also relevant when working offline:
 
@@ -334,3 +308,111 @@ In addition there are several more useful fields, which are also relevant when w
 The `launch` field specifies the specific launch file for this simulation and the package it resides in. You may change it according to your needs.
 
 The `timeout` field, surprisingly enough, sets a timeout (in *seconds*) for each simulation run, after which it will be automatically halted.
+
+
+</TabItem>
+</Tabs>
+
+
+
+To fully understand what's going on, we need to familiarize ourselves with three concepts that are core to the way CITROS works:
+- ## **[simulation](docs_cli/structure/citros_structure#directory-simulations)** 
+    The simulation object is defining what you want to run and how. It is a set of the launch file (the what) and the parmeter setup (the how) as well as the resources needed for it to run and after how much time it should be killed. 
+
+    Defaults simulation files defined by a ROS 2 launch file. You may have as many launch files as you want in your project, as long as there is at least one. Each simulation will correspond to a launch file in your project. When you run a CITROS simulation, if you don't specify the name of the simulation (using the `-s` flag), a command-line menu will be presented, in which you can use the up and down arrows to choose the simulation you want. The simulation names will be of the form `simulation_<name of launch_file>`. In the case of the Cannon project, we have two launch files - `cannon_analytic.launch.py` and `cannon_numeric.launch.py`, and as you can see in the output above, we are prompted to choose between them. 
+
+    Each simulation also corresponds to a json file of the same name, which resides under the [`.citros/simulations`](docs_cli/structure/citros_structure#directory-simulations) directory. You may use this file to configure the way your simulation runs. 
+
+    When you run a CITROS simulation, a directory for that simulation is created under the [`.citros/runs`](docs_cli/structure/citros_structure#directory-runs) directory. This directory will contain subdirectories corresponding to **batch**es, a new one created every time you run a simulation.
+
+- ## **batch** 
+
+    Defined as a group of one or more simulation runs. Since you can specify one or more simulations runs ('*completions*') when running a CITROS simulation, a **batch** is simply a convenient way to group them together. For instance, in the case of the above example, if we choose `simulation_cannon_analytic` from the menu, the following folder structure will be created: `.citros/runs/simulation_cannon_analytic/my_first_batch/0`. The last folder - `0`, is the folder corresponding to the only run for this batch - when you don't specify the number of completions (i.e. runs) using the `-c` flag, it will default to 1, and the name of each run is a zero based index, incremented by one for each additional run.
+
+- ## **run**
+
+    Defined as a single execution of a simulation as defined by the chosen launch file. Launching CITROS simulations with multiple runs ('*completions*') is particularly advantageous when working online, in which case a large number of simulation runs can be simultaneously executed on the CITROS cloud.
+
+    The folder corresponding to a simulation run will contain all the information relevant for that run. Look through such a folder after running a simulation and see for yourself. For further details refer to the [CLI Documentation](https://citros.io/doc/docs_cli)
+
+
+By default, when using the `run` command, you must provide a batch name (using the `-n` flag) and a message (using the `-m` flag). The name you provide will be used as the name of the directory in which all runs for this batch will be saved. If a batch by that name already exists - no worries, CITROS will simply add an underscore and an index to the name you provided, thereby keeping the batch directory names unique for each simulation. 
+
+Now that you understand what's going on, choose on of the simulations presented in the menu, press enter and see it run...
+
+### Configuring a Simulation
+
+We just ran a simulation a single time with all the default configurations, which is admittedly not that exciting. Let's see how we can turn things up a notch by setting up dynamic parameter evaluation for our simulation, thereby allowing each run within the same batch to have different parameter values.
+
+The [`.citros/parameter_setups`](docs_cli/structure/citros_structure#directory-parameter_setups) directory stores your JSON-formatted parameter setup files. When you initialize your citros repository, a `default_param_setup.json` file is automatically generated. This file consolidates all the default parameters for every node across all the packages in your ROS project, providing a consolidated and easily accessible record of these parameters.
+
+The structured format of the parameter setup files streamlines both the understanding and alteration of parameters for each node in your ROS project. This becomes especially valuable when you're keen to explore the influence of different parameter values on your ROS project's behavior.
+
+In the Cannon project, we have a total of three nodes. Let's look at the parameters for the `analytic_dynamics` node in the `cannon_analytic` package, as defined in the `default_param_setup.json` file.
+We can see we have 3 parameters to play around with - `init_speed`, `init_angle` and `dt`. 
+
+```json
+//[project]/.citros/parameter_setups/default_param_setup.json
+{
+    "packages": {
+        "cannon_analytic": {
+            "analytic_dynamics": {
+                "ros__parameters": {
+                    "init_speed": 50.0,
+                    "init_angle": 30.0,
+                    "dt": 0.01
+                }
+            }
+        },
+        ...
+    }
+}
+```
+
+Let's say we want to find out the optimal initial angle for the cannon, which will provide the maximum range. Assuming we're completely blanking out on high-school physics, let's randomize the value for this parameter, execute several simulation runs, and see where we get the maximum range. To achieve this, we can simply replace the hard-coded default value with a [**function object**](docs_cli/configuration/config_params). Function objects are json objects comprised of two fields - `function` and `args`. They come in two flavors - numpy and user-defined. For our purposes we can use numpy's random module to generate a normal distribution around a given value:
+
+    "init_angle": {
+                    "function": "numpy.random.normal",
+                    "args": [45, 15]
+                },
+
+This will cause a normal distribution with a standard deviation of 15 around 45 to be evaluated for every simulation run.
+
+Now, if we run
+```batch
+citros run -n "test_params" -m "testing random initial angle" -c 10
+```
+:::note
+
+to run online you need to add `-r` tag
+
+:::
+
+and choose `simulation_cannon_analytic` from the menu, the simulation will run 10 times (sequentially if working offline), and each time the cannon will have a different initial angle. By looking at the results, we can hopefully come to the conclusion that 45 degrees is the optimal angle. 
+
+More options for configuring your simulation are [discussed](#configuring-a-simulation-1) in the next section. For user defined functions and further details about configuring CITROS simulations in general, refer to the [CLI Documentation](https://citros.io/doc/docs_cli). 
+
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+
+### Data analysis (online only)
+
+After you run a batch run on CITROS, your data is being stored on CITROS's servers and you can accedd the data using python [citros data analysis package](https://pypi.org/project/citros-data-analysis/).
+
+The most convinient way to access the data if from [notebook](https://citros.io/cannon/blob/main/notebooks/data_analysis.ipynb) after you successfully synced you project to you account, or you can run it from your machine using VSC or jupyter from `[project]/.citros/notebooks/data_analysis.ipynb `
+
+here is a sample from the provided [notebook](https://citros.io/cannon/blob/main/notebooks/data_analysis.ipynb):
+```python
+#import matplotlib
+import matplotlib.pyplot as plt
+
+#create a figure to plot on
+fig, ax = plt.subplots()
+
+citros.batch(-1).topic('/cannon/state').sid([0,1,2,3,4]).\
+       time_plot(ax, var_name = 'data.data[1]', time_step = 0.01, y_label = 'y', title_text = 'y vs. t')
+```
+
+![Alt text](image.png)
