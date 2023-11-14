@@ -3,7 +3,9 @@ sidebar_position: 25
 sidebar_label: 'Drone'
 
 ---
-# Drone Tutorial
+## Overview
+
+![Alt text](img/Droneimg.png)
 
 This repository contains an example of a ROS 2 node which communicate with a drone using PX4 and ROS 2.
 Communication via uXRCE-DDS (PX4 version `1.14.0`).  
@@ -13,62 +15,35 @@ The repository contains launch file which launch:
 3. DDS agent for ROS 2 - PX4 communication.
 4. An Offboard node which sends setpoints for the control system.
 
-![Alt text](img/Droneimg.png)
+## Prerequisites
+Make sure you complete the [Getting Started Tutorial](https://citros.io/doc/docs_tutorials/getting_started/)
+For working without dockers **(not recommended)**, please check the [.devcontainer](https://github.com/citros-garden/drone/tree/main/.devcontainer) folder in the project's repo for dependencies (in the `Dockerfile` and `install.sh`).
 
-## Table Of Contents
-
-1. [CITROS Usage](#citros-usage)
-    1. [Configuring The Project](#configuring-the-project)
-    2. [CITROS Installation](#citros-installation)
-    3. [Parameters](#parameters)  
-2. [CITROS Web Usage](#citros-web-usage)  
-    1. [The Scenario](#the-scenario)  
-    2. [Run a Test Simulation](#run-a-test-simulation)
+## Table of Contents
+- [Installation](#installation)
+- [Workspace Overview](#workspace-overview)
+- [CITROS Initialization](#citros-initialization)
+- [Scenario](#scenario)
+- [Running the scenario using CITROS](#running-the-scenario-using-citros)
+- [Results](#results)
 
 
-## CITROS Usage
-
-### Configuring The Project
-
+## Installation
 Clone the repository from Github:
 ```sh
 git clone git@github.com:citros-garden/drone.git
 ```
 Then open the repository in VSCode's `devcontainer` with `reopen in container option`.  
+
 The Dockerfile contains all the necessary dependencies for the project, and the install script will clone PX4-Autopilot and build the firmware, along with building ROS 2 workspace.
 
-### CITROS Installation 
-To use all the powerful CITROS features usage requires CITROS installation:  
+## Workspace Overview
 
-**First, reopen the folder locally** and then follow the instructions:  
-
-Install CITROS:
-```sh
-pip install citros
-```
-
-Then login:
-```sh
-citros login 
-```
-
-### Configuring The Project 
-
-After all the prerequisites done, we can start configuring our project. 
-
-1. Initialize CITROS:
-```sh
-citros init
-```
-
-Now you can see `.citros` folder in the explorer.  
-
-2. Configuring the params setup.  
-
-You can find the default setup in `.citros/parameter_setups/default_param_setup.json`.  
-[citros_cli](/docs_cli/configuration/config_params) provides more information about how to change the parameters by the user.
+After installation the project, we can start configuring it.
+The Workspace contains the PX4-Autopilot repository (v1.14), which few modifications to the DDS setup, and a ROS 2 workspace containing the required DDS packages for the communication, along with drone-related packages for setting up different parameters and an offboard node.
 
 ### Parameters 	
+[citros_cli](/docs_cli/configuration/config_params) provides more information about how to change the parameters by the user.
 This is a list of all the ROS 2 parameters that can be control by the user wish:
 
 |     Variable     | Description | package |
@@ -118,20 +93,15 @@ This is a list of all the ROS 2 parameters that can be control by the user wish:
 | windGustDirectionMean | The mean direction of the gust wind|  world |
 | windGustDirectionVariance | The direction variance of the wind gust|  world |
 
+## CITROS Initialization
+Make sure to install and initialize CITROS by following the [Getting Started](https://citros.io/doc/docs_tutorials/getting_started/) tutorial.
 
-After setting the preferred parameters, save the file and verify the settings using the CLI command: 
-```sh
-citros status
-```
-Now we can run a simulation.
-
-## CITROS Web Usage 
-### The Scenario 
+## Scenario
 We assign four points: `p1`, `p2`, `p3`, and `p4` to the drone. The drone starts hovering at each point in order of 1-2-3-4. When it reaches point 4, it goes back to point 1 and repeats the process as many times as the value of the `repeats` parameter that we have provided.
 To make it more challenging for the drone, we want to create a wind effect on it. To test the impact of wind on the drone's performance, we will use CITROS to simulate many times the same run with the same parameters file, but with different velocity means.
 You can see the parameters file for that simulation [here](https://citros.io/drone/blob/main/parameter_setups/wind.json).
 
-### Run a Test Simulation
+## Running the scenario using CITROS
 
 After completing the configuration of the parameters file, we proceeded to execute it with CITROS.
 
@@ -154,7 +124,7 @@ citros docker-build-push
 
 For our example, we will run the [scenario](#the-scenario) 50 times. Once the simulations are complete, we can create a notebook file located [here](https://citros.io/drone/blob/main/notebooks/wind_analysis.ipynb).  
 
-The results were:  
+## Results
 
 ![Alt text](img/wind_sim_result.png)  
 
