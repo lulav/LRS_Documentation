@@ -37,7 +37,7 @@ This tutorial will guide you through the CITROS CLI interface, using a simple RO
 
 ## The Cannon Example Project
 
-This project is a ROS implementation of the [cannonball simulation](https://nasa.github.io/trick/tutorial/ATutASimpleSim) provided by NASA Johnson Space Center as part of the tutorial for the 
+This project is a ROS 2 implementation of the [cannonball simulation](https://nasa.github.io/trick/tutorial/ATutASimpleSim) provided by NASA Johnson Space Center as part of the tutorial for the 
 [Trick Simulation Environment](https://nasa.github.io/trick/).
 
 It determines the trajectory and time of impact of a cannon ball that is fired with an initial speed and initial angle, assuming a constant acceleration of gravity (g), and no aerodynamic forces.
@@ -48,17 +48,48 @@ Two versions of the simulation are provided: an analytic solution and a numeric 
 
 ### Prerequisites
 
-- [Visual Studio code](https://code.visualstudio.com/download)
-- [Docker](https://www.docker.com/)
-- [Foxglove](https://foxglove.dev/) (optional)
+- Install [Visual Studio code](https://code.visualstudio.com/download)
+- Install and Run [Docker](https://docs.docker.com/get-docker/)
+- Install [Foxglove](https://foxglove.dev/download) (optional)
 
 ### Installation
+
+Open cmd on your desktop
+
+1. Clone the project:
+
 ```bash
 $ git clone git@github.com:citros-garden/cannon.git
+```
+
+2. Change to Cannon project directory:
+
+```bash
 $ cd ~/cannon
+```
+
+3. Open Cannon project in VScode:
+
+```bash
 $ code .
 ```
-and open the repository inside a container using VScode's *reopen in container* option.
+5. Re-open in Dev Container
+
+    1. press on the bottom left corner icon.
+     
+     ![Alt text](img/container_corner.png)
+
+    2. Choose **Reopen in Container**
+     
+     ![Alt text](img/container_open_container.png)
+
+6. Open VScode terminal and make sure you are in the right location
+    
+    ros@docker-desktop:/workspaces/cannon$ 
+
+:::note
+From this point, all the actions should be typed in VScode terminal.
+:::
 
 ### Build 
 ```bash
@@ -91,9 +122,26 @@ The output of the simulation, i.e. the topic containing the calculated results, 
 The simulation will halt when `position_y` reaches zero (i.e. impact).
 
 ### Foxglove
-To view a graphical representation of the simulation, you can open [Foxglove](https://foxglove.dev/) and load the `CITROS_Cannon.json` layout file, or create your own layout.
+To view a graphical representation of the simulation:
+1. Open [Foxglove](https://foxglove.dev/) 
+2. Press on Foxglove icon at the top right
+3. Click View
+4. Click "Import layout from file"
 
-It is recommended to start the simulation in a paused state, and then, once your foxglove layout is ready, resume it via the Play/Pause button. 
+ ![Alt text](img/foxglove_open.png)
+
+6. Open a new Connection
+
+ ![Alt text](img/foxglove_connection.png)
+
+7. Choose Rosbridge and press the 'Open' button
+ 
+ ![Alt text](img/foxglove_rosbridge.png)
+
+8. Your simulation will start running automatically
+
+<!-- :::tip
+It is optional to start the simulation in a paused state, and then, once your foxglove layout is ready, resume it via the Play/Pause button. 
 
 To do that, in the `__init__` member function of the `scheduler` node (in `scheduler.py`), change the line
 
@@ -102,7 +150,11 @@ To do that, in the `__init__` member function of the `scheduler` node (in `sched
 to
 
     self.debug_mode = True
+
 You will need to build (and source) again.
+::: -->
+
+
 
 Output example:
 ![Foxglove screenshot](img/foxglove_screenshot.png)
