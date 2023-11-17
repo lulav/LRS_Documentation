@@ -278,9 +278,9 @@ Initialized Citros repository.
 ```
 As you can see, a lot more is happening when you initialize your repository while being logged in. We will not delve into all the details behind the scenes, but as always, feel free to roam through the [CLI Documentation](https://citros.io/doc/docs_cli) for further details.
 
-:::note
+:::caution Warning
 
- **Important**: the `.citros` directory can only be initialized once. If you try to run `init` while a `.citros` directory already exist in your project, you will get a response similar to this:
+ The `.citros` directory can only be **initialized once**. If you try to run `init` while a `.citros` directory already exists in your project, you will get a response similar to this:
 ```bash
 $ citros init
 The directory /workspaces/cannon has already been initialized.
@@ -288,7 +288,7 @@ working remotely with [git@citros.io:lulav/cannon.git].
 ```
  If you want to reinitialize your CITROS repository, you'll have to first delete the current `.citros` directory.
 
- If you initialized the CITROS repository offline, and it doesn't exist on the remote server yet (i.e. it has not been initialized online by you or anyone else) - then rather than deleting the `.citros` directory, you can run:
+ If you initialized the CITROS repository offline, and it [**doesn't exist on the remote server yet**](https://citros.io/cannon) (i.e. it has not been initialized online by you or anyone else) - then rather than deleting the `.citros` directory, you can run:
  ```bash
  citros add-remote
  ```
