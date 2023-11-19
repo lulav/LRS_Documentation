@@ -4,6 +4,8 @@ sidebar_label: 'Mass Spring Damper'
 
 ---
 
+## Mass-Spring-Damper
+
 ## Overview
 
 This is a simple ROS demonstration of a mass-spring-damper system.
@@ -47,12 +49,12 @@ Make sure you complete the [Getting Started Tutorial](https://citros.io/doc/docs
 For working without dockers **(not recommended)**, please check the [.devcontainer](https://github.com/citros-garden/mass-spring-damper/tree/main/.devcontainer) folder in the project's repo for dependencies (in the `Dockerfile` and `install.sh`).
 
 ## Table of Contents
-- [Installation](#installation)
-- [Workspace Overview](#workspace-overview)
-- [CITROS Initialization](#citros-initialization)
-- [Scenario](#scenario)
-- [Running the scenario using CITROS](#running-the-scenario-using-citros)
-- [Results](#results)
+1. [Installation](#installation)
+2. [Workspace Overview](#workspace-overview)
+3. [CITROS Initialization](#citros-initialization)
+4. [Scenario](#scenario)
+5. [Running the scenario using CITROS](#running-the-scenario-using-citros)
+6. [Results](#results)
 
 ## Installation
 Clone the repository from Github:
@@ -67,18 +69,18 @@ The Dockerfile contains all the necessary dependencies for the project.
 
 ### Parameters
 
-| Parameter | Package | Description
+| Parameter | Description | Package
 | --------|  --------|  --------|
-|kp | controller | p gain of the PID controller
-|ki | controller | i gain of the PID controller
-|kd | controller | d gain of the PID controller
-|setpoint | controller | Setpoint position for the controller
-|m | dynamics | The mass of the system
-|k | dynamics | The spring coefficient
-|c | dynamics | The damper coefficient
-|x | dynamics | The mass initial position
-|v | dynamics | The mass initial velocity
-|a | dynamics | The mass initial acceleration
+|kp | p gain of the PID controller |  controller
+|ki | i gain of the PID controller |  controller
+|kd | d gain of the PID controller |  controller
+|setpoint | Setpoint position for the controller |  controller
+|m | The mass of the system |  dynamics
+|k | The spring coefficient |  dynamics
+|c | The damper coefficient |  dynamics
+|x | The mass initial position |  dynamics
+|v | The mass initial velocity |  dynamics
+|a | The mass initial acceleration |  dynamics
 
 ### Launch Files
 
@@ -107,7 +109,7 @@ $$
 \sigma = 0.3 
 $$
 
-All the parameters can be set following the CITROS [parameter guide](https://citros.io/doc/docs/repos/repos_file_structure/repos_fs_param_setup).
+All the parameters can be set following the CITROS [parameter guide](https://citros.io/doc/docs_cli/structure/citros_structure#directory-parameter_setups).
 
 
 The initial condition are:
