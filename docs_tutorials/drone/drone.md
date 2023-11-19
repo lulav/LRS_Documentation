@@ -48,7 +48,7 @@ The Workspace contains the PX4-Autopilot repository (v1.14), which few modificat
 [citros_cli](/docs_cli/configuration/config_params) provides more information about how to change the parameters by the user.
 This is a list of all the ROS 2 parameters that can be control by the user wish:
 
-|     Variable     | Description | package |
+|     Parameter     | Description | Package |
 | -------- |    ------- |  ------- | 
 | MC_PITCHRATE_D | Pitch rate d | px4_config |
 | MC_PITCHRATE_I | Pitch rate i |  px4_config |
