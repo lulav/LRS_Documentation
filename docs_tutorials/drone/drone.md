@@ -101,7 +101,7 @@ Make sure to install and initialize CITROS by following the [Getting Started](ht
 ## Scenario
 We assign four points: `p1`, `p2`, `p3`, and `p4` to the drone. The drone starts hovering at each point in order of 1-2-3-4. When it reaches point 4, it goes back to point 1 and repeats the process as many times as the value of the `repeats` parameter that we have provided.
 To make it more challenging for the drone, we want to create a wind effect on it. To test the impact of wind on the drone's performance, we will use CITROS to simulate many times the same run with the same parameters file, but with different velocity means.
-You can see the parameters file for that simulation [here](https://citros.io/drone/blob/main/parameter_setups/wind.json).
+You can see the parameters file for that simulation under the code section inside the Drone project.
 
 ## Running the Scenario Using CITROS
 
