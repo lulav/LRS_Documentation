@@ -3,6 +3,8 @@ sidebar_position: 25
 sidebar_label: 'Drone'
 
 ---
+## Drone
+
 ## Overview
 
 ![Alt text](img/Droneimg.png)
@@ -20,12 +22,12 @@ Make sure you complete the [Getting Started Tutorial](https://citros.io/doc/docs
 For working without dockers **(not recommended)**, please check the [.devcontainer](https://github.com/citros-garden/drone/tree/main/.devcontainer) folder in the project's repo for dependencies (in the `Dockerfile` and `install.sh`).
 
 ## Table of Contents
-- [Installation](#installation)
-- [Workspace Overview](#workspace-overview)
-- [CITROS Initialization](#citros-initialization)
-- [Scenario](#scenario)
-- [Running the scenario using CITROS](#running-the-scenario-using-citros)
-- [Results](#results)
+1. [Installation](#installation)
+2. [Workspace Overview](#workspace-overview)
+3. [CITROS Initialization](#citros-initialization)
+4. [Scenario](#scenario)
+5. [Running the Scenario Using CITROS](#running-the-scenario-using-citros)
+6. [Results](#results)
 
 
 ## Installation
@@ -101,7 +103,7 @@ We assign four points: `p1`, `p2`, `p3`, and `p4` to the drone. The drone starts
 To make it more challenging for the drone, we want to create a wind effect on it. To test the impact of wind on the drone's performance, we will use CITROS to simulate many times the same run with the same parameters file, but with different velocity means.
 You can see the parameters file for that simulation [here](https://citros.io/drone/blob/main/parameter_setups/wind.json).
 
-## Running the scenario using CITROS
+## Running the Scenario Using CITROS
 
 After completing the configuration of the parameters file, we proceeded to execute it with CITROS.
 
@@ -117,12 +119,11 @@ citros docker-build-push
 ```
 
 - Finally, we run the simulation at the web:
-1. Go to the `Repositories` page clicking on the tab on the top.
-2. Find the drone project and open it.
-3. Navigate to the `Runs` tab.
-4. Click on the `Run Simulation` button on the right.
+1. Open the Drone project
+2. Navigate to the `Runs` tab.
+3. Click on the `Run Simulation` button on the right.
 
-For our example, we will run the [scenario](#the-scenario) 50 times. Once the simulations are complete, we can create a notebook file located [here](https://citros.io/drone/blob/main/notebooks/wind_analysis.ipynb).  
+For our example, we will run the [scenario](#scenario) 50 times. Once the simulations are complete, we can create a notebook file located [here](https://citros.io/drone/blob/main/notebooks/wind_analysis.ipynb).  
 
 ## Results
 
