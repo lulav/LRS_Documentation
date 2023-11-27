@@ -7,7 +7,7 @@ The following folder and file structure is automatically generated for you (when
     ├── notebooks
     ├── parameter_setups
         └── functions
-            └── routes.js
+            └── my_func.py
         └── default_param_setup.json
     ├── reports
     ├── runs
@@ -16,6 +16,10 @@ The following folder and file structure is automatically generated for you (when
         └── simulation_bar.json
     ├── workflows
         └──default_flow.json
+    ├── foxglove
+        ├── my_layout.json
+        └── another_layout.json
+    ├── .citrosignore
     ├── citros_repo_id
     ├── project.json
     ├── settings.json
@@ -26,7 +30,7 @@ The following folder and file structure is automatically generated for you (when
 ## Directory `notebooks`
 <details>
   <summary>Description</summary>
-  TODO
+  This folder contains Jupiter notebook files you may use for data analysis of your simulation results.
 </details>
 
 ## Directory `parameter_setups`
@@ -47,7 +51,7 @@ To learn how to add functions to parameter setups, please refer to the [Adding f
 ## Directory `reports`
 <details>
   <summary>Description</summary>
-  TODO
+  This folder holds reports describing the results of your simulation runs on the CITROS cloud.
 </details>
 
 ## Directory `runs`
@@ -65,6 +69,7 @@ The runs directory stores data and metadata about each run of your simulations. 
             ├── config
             ├── msgs
             ├── citros.log
+            ├── ros.log
             ├── environment.json
             ├── info.json
             └── metrics.csv
@@ -77,7 +82,7 @@ The runs directory stores data and metadata about each run of your simulations. 
 
 - `bag`: This sub-directory holds the recorded data from the simulation run. It includes:
 
-- bag_0.db3: This is a ROS bag file that contains all the messages that were sent during the simulation. The default bag format is `sqlite3` (hence the db3 postfix), but you may also use the `mcap` format. See [simulations](#directory-simulations).
+- bag_0.mcap: This is a ROS bag file that contains all the messages that were sent during the simulation. The default bag format is `mcap` (hence the mcap postfix), but you may also use the `sqlite3` format. See [simulations](#directory-simulations).
 
 - metadata.yaml: A file holding metadata information associated with the bag file.
 
@@ -85,8 +90,28 @@ The runs directory stores data and metadata about each run of your simulations. 
 
 - `msgs`: This sub-directory contains all the ROS msg files you may have in your project, each under yet another sub-directory with a name corresponding to the package the msg file belongs to.
             
-- `citros.log`: A standard log file that was active during the simulation run, documenting actions and events throughout the simulation.
-            
+- `citros.log`: A standard log file, documenting CITROS actions and events that took place during the execution of CITROS commands. Running a CITROS command with the `-d` flag, will change the log level (which is set to `INFO` by default), to `DEBUG`.
+
+- `ros.log`: A standard log file that was active during the simulation run, documenting ROS actions and events throughout the simulation. 
+
+    **Note:** the destination of ROS logs is controlled by the `output` parameter to `Node` instances defined in the launch file being used. There are 3 possible values this parameter can take:
+
+    - `log`: This option directs the output to log files.
+    - `screen`: This option directs the output to the console or screen, which is useful for debugging purposes.
+    - `both`: This option combines the functionalities of both `log` and `screen`, directing the output simultaneously to the log file and the screen.
+
+    For example, the ROS logger output for the following node, defined in `cannon_analytic.launch.py`, will be written to both the console and the log file:
+    ```python
+    cannon_analytic_node=Node(
+    package = 'cannon_analytic',
+    name = 'analytic_dynamics',
+    executable = 'analytic_dynamics',
+    parameters = [config_analytic],
+    output='both',
+    emulate_tty=True
+    )
+    ```
+
 - `environment.json`: A file capturing a snapshot of your environment variables and Python packages at the time of the simulation run.
 
 - `info.json`: A JSON file containing general metadata about the run, such as batch ID, batch name, datetime of the run, user's Git commit and branch information, and CITROS' Git commit and branch information, as well as a hash of the bag file.
@@ -121,7 +146,7 @@ Here's a breakdown of its typical structure and content:
 
 - `MEM`: Specifies the amount of memory required for the simulation in megabytes, e.g., 265.
 
-- `storage_type`: This setting determines the storage format for the ROS bag files generated during the simulation's runs. The possible valid value are `SQLITE3` (default) and `MCAP`.
+- `storage_type`: This setting determines the storage format for the ROS bag files generated during the simulation's runs. The possible valid value are `SQLITE3` and `MCAP` (default).
 
 You can modify these fields to suit your simulation needs, just remember to save your customized version under a different name to prevent overwriting during citros `init`, `run`, or `status` commands.
 
@@ -146,6 +171,32 @@ A flow.json file (e.g. `default_flow.json` which is auto-generated during `citro
 The flow.json file helps to streamline and automate your CITROS repository by tying together simulation runs, data analysis, and report distribution into a single manageable file. You can customize it to suit the specifics of your project.
 
 </details>
+
+## Directory `foxglove`
+<details>
+  <summary>Description</summary>
+  Foxglove layout files in this folder can be used by CITROS while running Foxglove on the CITROS cloud.
+</details>
+
+## File `.citrosignore`
+<details>
+<summary>Description</summary>
+This file may be used by the user to specify names of packages and launch files in the project that should be ignored by CITROS. These packages and launch files will not be parsed and validated. Note that a launch file from another package may still use nodes from ignored packages.
+
+To ignore a package, write the package directory path relative to the project directory. A package directory is a directory with a `package.xml` file.
+
+Example:
+
+    `src/cannon_analytic`
+
+To ignore a launch file, write the file path relative to the project directory.
+A launch file is a file of the form `*.launch.py`
+
+Example:
+
+    `src/scheduler/launch/cannon_analytic.launch.py`
+</details>
+
 
 ## File `project.json`
 <details>

@@ -39,8 +39,8 @@
   --ifm-color-info-dark: #4cd465; */
   --docusaurus-highlighted-code-line-bg: #212b36;
   --card-bg-color: #212b36;
-  background-color: #161c24;
-  --ifm-navbar-background-color: #212b36;
+  background-color: #0d1116;
+  --ifm-navbar-background-color: #05060d;
   --ifm-menu-color-background-active: #12322c;
   /*--ifm-tabs-color-active: #9a0190;
   navbar-link-active-color: #d41313;*/
@@ -67,13 +67,15 @@
 }
 
 .footer--dark {
-  --ifm-footer-background-color: #212b36;
+  --ifm-footer-background-color: #05060d;
 }
 
 .hero {
-  background-image: url("/static/img/citros_banner.png");
-  background-repeat: no-repeat;
-  background-size: cover;
+  /* background-image: url("/static/img/citros_banner.png"); */
+  background-color: #0d1116;
+  color: white;
+  /* background-repeat: no-repeat; */
+  /* background-size: cover; */
 }
 
 .card {

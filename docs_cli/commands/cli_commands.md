@@ -9,11 +9,11 @@ $ citros init [-dir <folder_name>] [-d | --debug]
 <details>
   <summary>Description</summary>
 
-The `init` command is used to initialize a Citros repository. Depending on the user's login status, this behavior varies. For logged-out users, the project initializes locally. However, logged-in users will have the `.citros` directory cloned from the Citros remote repository. If it's a new project, an empty project will be cloned.
+The `init` command is used to initialize a CITROS repository. Depending on the user's login status, this behavior varies. For logged-out users, the project initializes locally. However, logged-in users will have the `.citros` directory cloned from the CITROS remote repository. If it's a new project, an empty project will be cloned.
 
-The initialization process involves creating a `.citros` directory within your ROS project directory and generating several files and folders therein. These files are set up to allow you to run a simulation of your project with default configurations and settings. You can tailor your Citros repository to your specific needs by manually modifying these files (see the Project Configuration section for more details).
+The initialization process involves creating a `.citros` directory within your ROS project directory and generating several files and folders therein. These files are set up to allow you to run a simulation of your project with default configurations and settings. You can tailor your CITROS repository to your specific needs by manually modifying these files (see the Project Configuration section for more details).
 
-**Note:** the initialization process will also make sure that within your Citros repo, you are working on a branch whose name is the same as the current branch in your ROS project. It will do so by checking it out (and possibly creating such a branch if it does not already exist).
+**Note:** the initialization process will also make sure that within your CITROS repo, you are working on a branch whose name is the same as the current branch in your ROS project. It will do so by checking it out (and possibly creating such a branch if it does not already exist).
 
 #### Options
 Option|Description
@@ -46,14 +46,14 @@ Example 2 - Initializing while logged in:
     You may review your changes via `citros status` and commit them via `citros commit`.
     Initialized Citros repository.
 
-Note: The init command can only be executed with effect once per project. If you attempt to initialize an existing Citros repository, you will be notified that the action is redundant, and no changes will be made. 
+Note: The init command can only be executed with effect once per project. If you attempt to initialize an existing CITROS repository, you will be notified that the action is redundant, and no changes will be made. 
 Example:
 
     $ citros init
     The directory /workspaces/cannon has already been initialized.
     No remotes found and user is not logged in. Working offline.
 
-To re-initialize an existing Citros repository, you must first delete the existing .citros directory for your project.
+To re-initialize an existing CITROS repository, you must first delete the existing .citros directory for your project.
 </details>
 
 ## Command `setup-ssh`
@@ -66,7 +66,7 @@ $ citros setup-ssh [-d | --debug] [-v | --verbose]
 
 <summary>Description</summary>
 
-The `setup-ssh` command sets up SSH keys for secure communication with the remote Citros repository.
+The `setup-ssh` command sets up SSH keys for secure communication with the remote CITROS repository.
 
 Setting up your ssh keys can be done in several different ways. You can do it manually by yourself, following the instructions on the [citros.io](https://citros.io) website, or you can use the `setup-ssh` command to automate this process.
 
@@ -91,6 +91,9 @@ Option|Description
 
 <details>
   <summary>Examples</summary>
+
+    $ citros setup-ssh
+      
 </details>
 
 ## Command `status`
@@ -102,7 +105,7 @@ $ citros status [-dir <folder_name>]
 <details>
   <summary>Description</summary>
 
-  The `status` command first syncs any changes in your ROS project with your Citros repository and than retrieves the current state of your Citros repository. Essentially, it acts as a wrapper for the `git status` command specifically for your Citros repository.
+  The `status` command first syncs any changes in your ROS project with your CITROS repository and than retrieves the current state of your CITROS repository. Essentially, it acts as a wrapper for the `git status` command specifically for your CITROS repository.
   
   This command provides a quick and concise overview of the changes made to your project, giving you insights into tracked, modified, and staged files.
   
@@ -117,7 +120,7 @@ Option|Description
 <details>
   <summary>Examples</summary>
 
-  In the example below, we employ the `status` command to gain insight into the condition of our Citros repository. This becomes particularly beneficial when there's a divergence between your local and remote branches—like when the remote branch received updates you haven't pulled yet, while you've committed local changes still awaiting a push to the remote.:
+  In the example below, we employ the `status` command to gain insight into the condition of our CITROS repository. This becomes particularly beneficial when there's a divergence between your local and remote branches—like when the remote branch received updates you haven't pulled yet, while you've committed local changes still awaiting a push to the remote.:
 
     $ citros status
     On branch main
@@ -148,12 +151,12 @@ $ citros add-remote [-dir <folder_name>]
 <details>
   <summary>Description</summary>
 
-  The `add-remote` command associates a remote Citros repository, named `origin`, with your local repository. This remote repository is hosted on the Citros servers.
+  The `add-remote` command associates a remote CITROS repository, named `origin`, with your local repository. This remote repository is hosted on the CITROS servers.
   
   #### Prerequisites
   `citros setup-ssh` has already been run.
 
-**Important:** If you execute `citros init` while logged in, the `add-remote` command will automatically run in the background, making a direct call unnecessary. However, if you initially ran `citros init` while logged out and later decide to work with the online Citros system (e.g., running commands like `citros push`), you will need to manually run the `add-remote` command.
+**Important:** If you execute `citros init` while logged in, the `add-remote` command will automatically run in the background, making a direct call unnecessary. However, if you initially ran `citros init` while logged out and later decide to work with the online CITROS system (e.g., running commands like `citros push`), you will need to manually run the `add-remote` command.
 
 Furthermore, to ensure secure communication with the server, the `setup-ssh` command should be executed before running add-remote.
 
@@ -168,6 +171,9 @@ Option|Description
 
 <details>
   <summary>Examples</summary>
+
+    $ citros add-remote
+
 </details>
 
 
@@ -180,8 +186,8 @@ $ citros commit [-dir <folder_name>]
 <details>
   <summary>Description</summary>
 
-  The `commit` command captures all modifications to your local Citros repository in a snapshot, essentially serving as a wrapper for the `git commit` command, but tailored to your Citros repository.
-  By executing this command, you essentially save the current state of your project, allowing you to keep track of your progress, revert changes, and even collaborate more effectively. This forms an integral part of managing and controlling the version history of your Citros repository.
+  The `commit` command captures all modifications to your local CITROS repository in a snapshot, essentially serving as a wrapper for the `git commit` command, but tailored to your CITROS repository.
+  By executing this command, you essentially save the current state of your project, allowing you to keep track of your progress, revert changes, and even collaborate more effectively. This forms an integral part of managing and controlling the version history of your CITROS repository.
 
   #### Options
 
@@ -209,9 +215,9 @@ $ citros pull [-dir <folder_name>]
 
 <summary>Description</summary>
 
-The `pull` command fetches from and integrates with another Citros repository or a local branch. Essentially, it acts as a wrapper for the `git pull` command within the context of your Citros repo.
+The `pull` command fetches from and integrates with another CITROS repository or a local branch. Essentially, it acts as a wrapper for the `git pull` command within the context of your CITROS repo.
 
-**Note:** if there conflicts between your local copy and the remote copy that cannot be resolved automatically, than a manual merge will have to take place. Not to worry - Citros makes this process user-friendly - see [Merge](#command-merge) for details.
+**Note:** if there conflicts between your local copy and the remote copy that cannot be resolved automatically, than a manual merge will have to take place. Not to worry - CITROS makes this process user-friendly - see [Merge](#command-merge) for details.
 
 #### Options
 Option|Description
@@ -241,9 +247,9 @@ $ citros push [-dir <folder_name>]
 <details>
   <summary>Description</summary>
 
-  The `push` command transfers all committed changes in your local Citros repository to the remote repository. Essentially, it acts as a wrapper for the `git push` command within the context of your Citros repo.
+  The `push` command transfers all committed changes in your local CITROS repository to the remote repository. Essentially, it acts as a wrapper for the `git push` command within the context of your CITROS repo.
   
-  By employing the `push` command, you are synchronizing your local project modifications with the remote repository. This is crucial not only for backing up your work on the server but also for enabling seamless collaboration with other team members using the Citros platform.
+  By employing the `push` command, you are synchronizing your local project modifications with the remote repository. This is crucial not only for backing up your work on the server but also for enabling seamless collaboration with other team members using the CITROS platform.
 
   #### Options
 
@@ -321,7 +327,7 @@ $ citros checkout [-dir <folder_name>]
 <details>
   <summary>Description</summary>
 
-  The `checkout` command lets you check out a different branch than the one your are currently on. It essentially wraps the `git checkout` command. If you have any uncommitted changes in your Citros working directory, you will be asked if you want to commit those changes. If you decline, the checkout will not take place, since Citros doesn't allow checking out while the working directory is dirty.
+  The `checkout` command lets you check out a different branch than the one your are currently on. It essentially wraps the `git checkout` command. If you have any uncommitted changes in your CITROS working directory, you will be asked if you want to commit those changes. If you decline, the checkout will not take place, since CITROS doesn't allow checking out while the working directory is dirty.
   
   If the branch you're attempting to check out exists (locally or on the remote), it will be checked out. If it doesn't exist yet, you will be asked if you would like to create it. If you decline, the checkout will not take place.
   
@@ -385,9 +391,9 @@ In the following example we attempt to merge the branch `master` into the curren
     Please resolve the conflicts manually.
     ...
 
-If you are not running inside a dev-container, an instance of VS-Code will be automatically opened (pending your approval) for you to use a merge tool. After all conflicts have been resolved, save the files, close VS-Code and answer `y` to indicate that all conflicts have indeed been resolved. At this point Citros will commit the merge on your behalf.
+If you are not running inside a dev-container, an instance of VS-Code will be automatically opened (pending your approval) for you to use a merge tool. After all conflicts have been resolved, save the files, close VS-Code and answer `y` to indicate that all conflicts have indeed been resolved. At this point CITROS will commit the merge on your behalf.
 
-If you are running inside a dev-container, you'll have to run a few git commands by yourself, but not to worry - Citros will provide you with step-by-step instructions:
+If you are running inside a dev-container, you'll have to run a few git commands by yourself, but not to worry - CITROS will provide you with step-by-step instructions:
 
 
     $ citros merge
@@ -415,7 +421,7 @@ If you are running inside a dev-container, you'll have to run a few git commands
     Conflicts resolved. Committing the merge...
 
 
-**Note:** For files that Citros manages, like `project.json`, conflicts will be auto-resolved in favor of the current branch's version.
+**Note:** For files that CITROS manages, like `project.json`, conflicts will be auto-resolved in favor of the current branch's version.
 
 </details>
 
@@ -430,7 +436,7 @@ $ citros discard [-dir <folder_name>]
 <details>
   <summary>Description</summary>
 
-The `discard` command allows to you discard any uncommitted changes in your Citros working directory. Simply specify the file paths of the files you would like to discard. Notice you have to specify the file paths relative to the `.citros` directory. 
+The `discard` command allows to you discard any uncommitted changes in your CITROS working directory. Simply specify the file paths of the files you would like to discard. Notice you have to specify the file paths relative to the `.citros` directory. 
 
 If you'd like discard **all** changes in your working directory, effectively checking out the HEAD commit, instead of specifying individual file paths, you may use the --ALL flag.
 
@@ -484,14 +490,14 @@ All changes in the working directory have been reverted to the last commit.
 ```sh
 $ citros login 
 [-d | --debug] [-v | --verbose] 
-[-username] [-password]
+[-username] [-password] [--local]
 ```    
 <details>
   <summary>Description</summary>
 
-  The `login` command allows you to authenticate your session with Citros. To use this command, you must already have a registered account with [Citros](https://citros.io), including a valid username (email) and password.
+The `login` command allows you to authenticate your session with CITROS. To use this command, you must already have a registered account with [CITROS](https://citros.io), including a valid username (email) and password.
 
-By logging in, you unlock additional features such as cloud-based simulations, data analysis tools, automated report generation, and collaboration with other Citros users. Use this command to seamlessly integrate your local workspace with the Citros platform and fully utilize its capabilities.
+By logging in, you unlock additional features such as cloud-based simulations, data analysis tools, automated report generation, and collaboration with other CITROS users. Use this command to seamlessly integrate your local workspace with the CITROS platform and fully utilize its capabilities.
 
 #### Options
 Option|Description
@@ -500,6 +506,7 @@ Option|Description
 |`-v`, `--verbose` | Enables verbose console output.|
 |`-username` | The user's username (email).|
 |`-password` | The user's password|
+|`--local` | Save auth token locally (inside .citros).|
 
 After entering the command, if either the username or password was not given, you will be prompted for your email (the username) and password.
 </details>
@@ -525,7 +532,7 @@ $ citros logout
 <details>
   <summary>Description</summary>
 
-  The `logout` command terminates your active session with Citros.
+  The `logout` command terminates your active session with CITROS.
 
 #### Options
 Option|Description
@@ -550,7 +557,7 @@ $ citros list
 <details>
   <summary>Description</summary>
 
-  The `list` command displays all available simulation names. These names are derived from the filenames in the `simulations` folder within your Citros repository. Each of these files corresponds to an available launch file in your ROS project. For instance, if your ROS project contains a launch file named `foo.launch.py`, a corresponding simulation file named `simulation_foo.json` will be generated in your simulations folder.
+  The `list` command displays all available simulation names. These names are derived from the filenames in the `simulations` folder within your CITROS repository. Each of these files corresponds to an available launch file in your ROS project. For instance, if your ROS project contains a launch file named `foo.launch.py`, a corresponding simulation file named `simulation_foo.json` will be generated in your simulations folder.
 
 #### Options
 Option|Description
@@ -581,7 +588,7 @@ $ citros run [dir <folder_name>] [-d | --debug] [-v | --verbose]
 <details>
   <summary>Description</summary>
 
-  The `run` command launches a simulation either locally on your machine, or remotely on the Citros cluster.
+  The `run` command launches a simulation either locally on your machine, or remotely on the CITROS cluster.
 
 #### Prerequisites:
 Ensure that the project has been built and sourced, for example:
@@ -601,16 +608,16 @@ Option|Description
 |`-d`, `--debug` | Sets the logging level to debug.|
 |`-v`, `--verbose` | Enables verbose console output.|
 |`-s`, `--simulation_name` | Identifies the simulation you want to run. This is the name of the JSON file (excluding the `json` suffix) in the `simulations` folder. If you don't provide a simulation name, an interactive menu will display allowing you to select from the available simulations.|
-|`-b`, `--batch_id` | Batch ID. Intended for Citros internal use only - DO NOT USE.|
+|`-b`, `--batch_id` | Batch ID. Intended for CITROS internal use only - DO NOT USE.|
 |`-n`, `--batch_name` | Assigns a descriptive name for this simulation run, e.g. according to its settings and/or parameter setup. You can disable this option requirement via `settings.json`. If disabled, and no name is given, the default name will be the date and time.|
 |`-m`, `--batch_message` | Provides a descriptive message for this simulation run, e.g. according to its settings and/or parameter setup. This can also be disabled via `settings.json`.|
-|`-i`, `--run_id` | Simulation run ID. Intended for Citros internal use only - DO NOT USE.|
+|`-i`, `--run_id` | Simulation run ID. Intended for CITROS internal use only - DO NOT USE.|
 |`-c`, `--completions` | Sets the number of completions (simulation runs). Defaults to 1 if not specified.|
 |`-r`, `--remote` | Executes the simulation remotely on the cluster. See prerequisites above for details.|
-|`-k`, `--key` | Authentication key. Intended for Citros internal use only - DO NOT USE.|
+|`-k`, `--key` | Authentication key. Intended for CITROS internal use only - DO NOT USE.|
 |`-l`, `--lan_traffic` | A flag which causes the simulation to receive LAN ROS traffic.|
-|`--branch` | The git branch name citros should use when running you simulation remotely. Defaults to active branch. For remote run only, will be ignored otherwise.|
-|`--commit` | The git commit hash citros should use when running you simulation remotely. defaults to latest commit. For remote run only, will be ignored otherwise.|
+|`--branch` | The git branch name CITROS should use when running you simulation remotely. Defaults to active branch. For remote run only, will be ignored otherwise.|
+|`--commit` | The git commit hash CITROS should use when running you simulation remotely. defaults to latest commit. For remote run only, will be ignored otherwise.|
 
 
 If no simulation name was provided, an interactive session will begin, and you will be prompted to select a simulation from the list of available simulations (via up, down and enter keys). 
@@ -644,14 +651,18 @@ $ citros docker-build [-dir <folder_name>]
 The `docker-build` command is used to construct a Docker image of your ROS project. This image encapsulates your project's environment, facilitating the portability and reproducibility of your simulations across different systems.
 
 #### Prerequisites
-If you are working inside a dev-container, make sure that the `docker-in-docker` feature is enabled in your project's `devcontainer.json`, i.e.:
+1. If you are working inside a dev-container, make sure that the `docker-in-docker` feature is enabled in your project's `devcontainer.json`, i.e.:
 
+```sh
     "features": {
 		"ghcr.io/devcontainers/features/docker-in-docker:2": {
 			"version": "latest",
 			"moby": true
 		}
 	}
+  ```
+
+2. You must have an appropriate Dockerfile under the main directory of your project. An Explanation on how to write the Dockerfile such that it could be used with CITROS, may be found [here](https://citros.io/doc/docs_tutorials/dockerfile_overview/).
 
 #### Options
 Option|Description
@@ -677,26 +688,30 @@ Option|Description
 ## Command `docker-build-push`
 
 ```sh
-$ citros docker-build-push [-dir` <folder_name>] 
+$ citros docker-build-push [-dir <folder_name>] 
 [-d | --debug] [-v | --verbose] [-n | --image_name]
 ```
 
 <details>
   <summary>Description</summary>
 
-The `docker-build-push` command is used to construct a Docker image of your ROS project and upload it to Docker Hub. This image encapsulates your project's environment, facilitating the portability and reproducibility of your simulations across different systems. 
+The `docker-build-push` command is used to construct a Docker image of your ROS project and upload it to the CITROS registry. This image encapsulates your project's environment, facilitating the portability and reproducibility of your simulations across different systems. 
 
 Two tagged images will be built and pushed: `latest` and the ROS project's latest commit hash, so that it is archived in the docker registry.
 
 #### Prerequisites
-If you are working inside a dev-container, make sure that the `docker-in-docker` feature is enabled in your project's `devcontainer.json`, i.e.:
+1. If you are working inside a dev-container, make sure that the `docker-in-docker` feature is enabled in your project's `devcontainer.json`, i.e.:
 
+```sh
     "features": {
 		"ghcr.io/devcontainers/features/docker-in-docker:2": {
 			"version": "latest",
 			"moby": true
 		}
 	}
+```
+
+2. You must have an appropriate Dockerfile under the main directory of your project. An Explanation on how to write the Dockerfile such that it could be used with CITROS, may be found [here](https://citros.io/doc/docs_tutorials/dockerfile_overview/).
 
 #### Options
 Option|Description

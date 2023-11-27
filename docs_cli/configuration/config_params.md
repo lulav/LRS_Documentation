@@ -80,14 +80,14 @@ For instance, if you have a function named `my_function` in a file named `my_fun
 #### Read from a CSV File
 
 Suppose you want to load a matrix from a csv file into a parameter of type list of lists of floats. Copy the following function to a python file (let's call it `file_utils.py`) and place it in the `functions` directory:
-
-    def load_matrix_from_csv(filename):
-        import csv
-        with open(filename, 'r') as f:
-            reader = csv.reader(f)
-            matrix = [list(map(float, row)) for row in reader]
-        return matrix
-
+```python
+def load_matrix_from_csv(filename):
+    import csv
+    with open(filename, 'r') as f:
+        reader = csv.reader(f)
+        matrix = [list(map(float, row)) for row in reader]
+    return matrix
+```
 Reference it in your parameter_setup.json as:
 
     {
@@ -101,12 +101,12 @@ Reference it in your parameter_setup.json as:
 
 #### Function with CITROS Context
 
-Sometimes you may want to access some information that is part of the Citros context. For example, you may want to write a user-defined function that uses the run index of the simulation being run. In such a case, you could write a function with a parameter named `citros_context` (which must appear last in the parameter list):
+Sometimes you may want to access some information that is part of the CITROS context. For example, you may want to write a user-defined function that uses the run index of the simulation being run. In such a case, you could write a function with a parameter named `citros_context` (which must appear last in the parameter list):
 
     def func_with_context(num, citros_context):
         return num + float(citros_context['run_id'])
 
-`citros_context` is a dictionary with key/value pairs describing the current Citros context. Currently the only key is `run_id`, but more may be added in the future. Then, you would call it from your `parameter_setup.json` file:
+`citros_context` is a dictionary with key/value pairs describing the current CITROS context. Currently the only key is `run_id`, but more may be added in the future. Then, you would call it from your `parameter_setup.json` file:
 
     "init_speed": {
         "function": "my_func.py:func_with_context",
@@ -170,11 +170,23 @@ and choose `simulation_cannon_analytic`, the simulation will be run 10 times, an
 - **Import Handling** - Always perform imports inside the function. This ensures the function has all the necessary dependencies when called.
 - **Return Types** - The function should return native Python types or numpy scalars. Avoid returning non-scalar numpy values.
 - **Function Path** - Only the file name where the function is defined is needed (including the `.py` suffix). Avoid including directory paths.
-- **Citros context** - if you're using the `citros_context` parameter in your user-defined function, make sure to add it *last* in the function's parameter list.
+- **CITROS context** - if you're using the `citros_context` parameter in your user-defined function, make sure to add it *last* in the function's parameter list.
 
 ### Numpy functions
 
 - Always use the fully qualified name for numpy functions, such as numpy.random.exponential.
+
+- Make sure you use numpy functions such that a scalar is returned. For example, when using [numpy.random.rand](https://numpy.org/doc/stable/reference/random/generated/numpy.random.rand.html), make sure to have an empty argument list:
+
+    ```bash
+    "pos_x": {
+            "function": "numpy.random.rand",
+            "args": []
+        }
+    ```
+    ...since the arguments are the dimensions of the output array. No arguments will return a native scalar, which is what we want. 
+
+    If you need to return an array, you can write your own user-defined function that wraps the numpy function and converts the numpy array to a native python array.
 
 ### General Pitfalls
 
