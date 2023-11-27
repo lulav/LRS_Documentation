@@ -43,7 +43,7 @@ const FeatureList: FeatureItem[] = [
       Svg: require('@site/static/img/citros_home_analysis.svg').default,
       description: (
         <div>
-          <p>CITROS Data Analysis offers you to data query, analyse and visualize it. With its extensive features, you can easily extract valuable insights from your data.</p>
+          <p>CITROS Data Analysis allows you to query, analyse and visualize the data of your simulations. With its extensive features, you can easily extract valuable insights from your simulation runs.</p>
           <p>Read more...</p>
         </div>
       ),
