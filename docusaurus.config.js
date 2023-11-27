@@ -143,6 +143,7 @@ const config = {
           alt: "CITROS Logo",
           // src: 'img/logo.svg',
           src: "img/citros.png",
+          href: "https://citros.io",
         },
         items: [
           {
