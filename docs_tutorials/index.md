@@ -330,6 +330,10 @@ citros docker-build-push
 :::note
 
 As a prerequisite for this command, the working directory of your ROS project must be clean. If it isn't, simply commit your changes first.
+ ```bash
+ citros commit
+ citros push
+ ``` 
 
 :::
 
@@ -342,7 +346,8 @@ citros run -n "cloud_test" -m "running in the cloud!" -c 3 -r
 created new batch_id: zzzzzzzz-xxxx-cccc-vvvv-bbbbbbbbbbbb. Running on Citros cluster. See https://citros.io/cannon/batch/zzzzzzzz-xxxx-cccc-vvvv-bbbbbbbbbbbb.
 ```
 
-The above command will run the `cannon_analytic` simulation 3 times on the CITROS cloud. By clicking the provided link, you can directly navigate to the *runs* tab on the CITROS website, and see your runs in action.
+The above command will run the `cannon_analytic` simulation 3 times on the CITROS cloud.
+By clicking the provided link shown in the terminal, you can directly navigate to the *`runs`* tab on the CITROS website, and see your runs in action.
 
 #### Configuring a `runner`
 
@@ -463,10 +468,59 @@ and choose `simulation_cannon_analytic` from the menu, the simulation will run 1
 
 ### Data Analysis (Online Only)
 
-After you've run a batch run on CITROS, your data is stored on CITROS's servers and you can access the data using python [citros data analysis package](https://pypi.org/project/citros-data-analysis/).
+After you've run a batch run on CITROS, your data is stored on CITROS's servers.
+you can access the data using Python [citros data analysis package](https://pypi.org/project/citros-data-analysis/) either from the Python [notebook](https://citros.io/cannon/blob/main/notebooks/data_analysis.ipynb) or from a local kernel Python environment.
 
-The most convenient way to access the data is from a [notebook](https://citros.io/cannon/blob/main/notebooks/data_analysis.ipynb) after you've successfully synced your project to your account. Alternatively you can run it from your machine using VSC or jupyter from `[project]/.citros/notebooks/data_analysis.ipynb `
+:::note
 
+citros data analysis package is installed while running `pip install citros`, so at this point you should have this package and you don't have to download it again.
+
+:::
+
+<Tabs>
+<TabItem value="local_nb" label="Run Local Notebook">
+
+#### Use Local Kernel
+
+1. Open .citros directory
+
+2. Go to notebooks.
+
+3. Open data_analysis.ipynb
+
+4. Press `Run All` button
+
+</TabItem>
+
+<TabItem value="remote_nb" label="Run Remote Notebook">
+
+#### Use Local Kernel
+
+1. Make sure your batch run status changed to `DONE`
+
+2. Open [notebook](https://citros.io/cannon/blob/main/notebooks/data_analysis.ipynb)
+
+3. Start Kernel by pressing on `Start` button
+
+4. Press `Execute All` button
+
+</TabItem>
+
+</Tabs>
+
+<!-- After you've run a batch run on CITROS, your data is stored on CITROS's servers and you can access the data using python [citros data analysis package](https://pypi.org/project/citros-data-analysis/).
+
+:::note
+
+citros data analysis package is installed along with citros.
+
+:::
+
+The most convenient way to access the data is from a [notebook](https://citros.io/cannon/blob/main/notebooks/data_analysis.ipynb) after you've successfully synced your project to your account. Alternatively you can run it from your machine using VSC or jupyter from `[project]/.citros/notebooks/data_analysis.ipynb ` -->
+
+5. Scroll down the notebook to see the results.
+
+#### Results
 
 here is a sample from the provided [notebook](https://citros.io/cannon/blob/main/notebooks/data_analysis.ipynb):
 ```python
