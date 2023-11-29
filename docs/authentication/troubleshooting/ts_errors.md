@@ -150,7 +150,7 @@ To solve this issue on macOS, you can update your SSH client or install a new SS
 You must have Homebrew installed. For more information, see the [installation guide](https://docs.brew.sh/Installation) in the Homebrew documentation.
 
 ### Solving the issue
-:::warningWarning: 
+:::cautionWarning: 
 
 If you install OpenSSH, your computer will not be able to retrieve passphrases that are stored in the Apple keychain. You will need to enter your passphrase or interact with your hardware security key every time you authenticate with SSH to CITROS or another web service.
 

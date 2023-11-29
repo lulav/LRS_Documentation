@@ -140,7 +140,7 @@ $ ssh-add -l -E sha256
 
 If you don't see your public key in CITROS, you'll need to [add your SSH key to CITROS](/docs/authentication/ssh/ssh_add_new.md) to associate it with your computer.
 
-:::WarningWarning: 
+:::cautionWarning: 
 If you see an SSH key you're not familiar with on CITROS, delete it immediately and contact us at [contact@citros.io](mailto:contact@citros.io) for further help. An unidentified public key may indicate a possible security concern.
 :::
 
@@ -273,7 +273,7 @@ $ ssh-add -l -E sha256
 
 If you don't see your public key in CITROS, you'll need to [add your SSH key to CITROS](/docs/authentication/ssh/ssh_add_new.md) to associate it with your computer.
 
-:::WarningWarning: 
+:::cautionWarning: 
 If you see an SSH key you're not familiar with on CITROS, delete it immediately and contact us at [contact@citros.io](mailto:contact@citros.io) for further help. An unidentified public key may indicate a possible security concern.
 :::
 
