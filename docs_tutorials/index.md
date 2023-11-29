@@ -273,13 +273,13 @@ for further details, see the [CLI Documentation](https://citros.io/doc/docs_cli)
 
 ### Initialization
 
-#### Before Running `init citros`
+#### Before Running `citros init`
 
 First and foremost, the `.citros` directory can only be **initialized once**. 
 If the `.citros` directory exists in your local project and the project [**already exists on the remote server**](https://citros.io/cannon), you have to delete the `.citros` directory from your project before 
 running `init citros` command.
 
-#### Running `init citros`
+#### Running `citros init`
 
 ```bash
 $ citros init
@@ -480,8 +480,6 @@ citros data analysis package is installed while running `pip install citros`, so
 <Tabs>
 <TabItem value="local_nb" label="Run Local Notebook">
 
-#### Use Local Kernel
-
 1. Open .citros directory
 
 2. Go to notebooks.
@@ -494,8 +492,6 @@ citros data analysis package is installed while running `pip install citros`, so
 
 <TabItem value="remote_nb" label="Run Remote Notebook">
 
-#### Use Local Kernel
-
 1. Make sure your batch run status changed to `DONE`
 
 2. Open [notebook](https://citros.io/cannon/blob/main/notebooks/data_analysis.ipynb)
@@ -507,16 +503,6 @@ citros data analysis package is installed while running `pip install citros`, so
 </TabItem>
 
 </Tabs>
-
-<!-- After you've run a batch run on CITROS, your data is stored on CITROS's servers and you can access the data using python [citros data analysis package](https://pypi.org/project/citros-data-analysis/).
-
-:::note
-
-citros data analysis package is installed along with citros.
-
-:::
-
-The most convenient way to access the data is from a [notebook](https://citros.io/cannon/blob/main/notebooks/data_analysis.ipynb) after you've successfully synced your project to your account. Alternatively you can run it from your machine using VSC or jupyter from `[project]/.citros/notebooks/data_analysis.ipynb ` -->
 
 5. Scroll down the notebook to see the results.
 
