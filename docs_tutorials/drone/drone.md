@@ -3,7 +3,7 @@ sidebar_position: 25
 sidebar_label: 'Drone'
 
 ---
-## Drone
+# Drone
 
 ## Overview
 
@@ -15,7 +15,7 @@ The repository contains launch file which launch:
 1. Gazebo simulation (headless / gui options available).
 2. A PX4 instance which control the simulated drone.
 3. DDS agent for ROS 2 - PX4 communication.
-4. An Offboard node which sends setpoints for the control system.
+4. An offboard node which sends setpoints for the control system.
 
 ## Prerequisites
 Make sure you complete the [Getting Started Tutorial](https://citros.io/doc/docs_tutorials/getting_started/)
@@ -35,7 +35,7 @@ Clone the repository from Github:
 ```sh
 git clone git@github.com:citros-garden/drone.git
 ```
-Then open the repository in VSCode's `devcontainer` with `reopen in container option`.  
+Then open the repository in VSCode's `devcontainer` with `reopen in container` option.  
 
 The Dockerfile contains all the necessary dependencies for the project, and the install script will clone PX4-Autopilot and build the firmware, along with building ROS 2 workspace.
 
@@ -119,7 +119,7 @@ citros docker-build-push
 ```
 
 - Finally, we run the simulation at the web:
-1. Open the Drone project
+1. Open the drone project.
 2. Navigate to the `Runs` tab.
 3. Click on the `Run Simulation` button on the right.
 
