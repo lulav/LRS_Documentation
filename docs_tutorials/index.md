@@ -355,7 +355,7 @@ The runner is the actual machine that will run your image, this machine can be c
 
 :::note
 
-keep in mind that this resources is not free of charge and will be charged accordingly. pleasee refer to the [pricing](https://citros.io/doc/pricing) for further details.
+keep in mind that this resources is not free of charge and will be charged accordingly. please refer to the [pricing](https://citros.io/pricing) for further details.
 
 :::
 
@@ -393,7 +393,7 @@ The `timeout` field, surprisingly enough, sets a timeout (in *seconds*) for each
 
 To fully understand what's going on, we need to familiarize ourselves with three concepts that are core to the way CITROS works:
 - ## **[simulation](docs_cli/structure/citros_structure#directory-simulations)** 
-    The simulation object is defining what you want to run and how. It is a set of the launch file (the what) and the parmeter setup (the how) as well as the resources needed for it to run and after how much time it should be killed. 
+    The simulation object is defining what you want to run and how. It is a set of the launch file (the what) and the parameter setup (the how) as well as the resources needed for it to run and after how much time it should be killed. 
 
     Defaults simulation files defined by a ROS 2 launch file. You may have as many launch files as you want in your project, as long as there is at least one. Each simulation will correspond to a launch file in your project. When you run a CITROS simulation, if you don't specify the name of the simulation (using the `-s` flag), a command-line menu will be presented, in which you can use the up and down arrows to choose the simulation you want. The simulation names will be of the form `simulation_<name of launch_file>`. In the case of the Cannon project, we have two launch files - `cannon_analytic.launch.py` and `cannon_numeric.launch.py`, and as you can see in the output above, we are prompted to choose between them. 
 
