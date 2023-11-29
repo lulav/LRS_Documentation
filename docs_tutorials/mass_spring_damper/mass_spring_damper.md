@@ -4,7 +4,7 @@ sidebar_label: 'Mass Spring Damper'
 
 ---
 
-## Mass-Spring-Damper
+# Mass-Spring-Damper
 
 ## Overview
 
@@ -53,7 +53,7 @@ For working without dockers **(not recommended)**, please check the [.devcontain
 2. [Workspace Overview](#workspace-overview)
 3. [CITROS Initialization](#citros-initialization)
 4. [Scenario](#scenario)
-5. [Running the scenario using CITROS](#running-the-scenario-using-citros)
+5. [Running the Scenario using CITROS](#running-the-scenario-using-citros)
 6. [Results](#results)
 
 ## Installation
@@ -61,7 +61,7 @@ Clone the repository from Github:
 ```sh
 git clone git@github.com:citros-garden/mass-spring-damper.git
 ```
-Then open the repository in VSCode's `devcontainer` with `reopen in container option`.  
+Then open the repository in VSCode's `devcontainer` with `reopen in container` option.  
 
 The Dockerfile contains all the necessary dependencies for the project.
 
@@ -128,7 +128,7 @@ We will define the following requirements:
 * Settling time is `2.0` [sec].
 * Settling to `10%` of the steady-state value.
 
-## Running the scenario using CITROS
+## Running the Scenario using CITROS
 ```bash
 citros run -n "default" -m "default simulation"
 ```
