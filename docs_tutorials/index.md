@@ -277,7 +277,7 @@ for further details, see the [CLI Documentation](https://citros.io/doc/docs_cli)
 
 First and foremost, the `.citros` directory can only be **initialized once**. 
 If the `.citros` directory exists in your local project and the project [**already exists on the remote server**](https://citros.io/cannon), you have to delete the `.citros` directory from your project before 
-running `init citros` command.
+running `citros init` command.
 
 #### Running `citros init`
 
