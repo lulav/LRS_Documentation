@@ -509,7 +509,7 @@ def repo_info(
 
 Return information about repositories.
 
-:::warningWarning
+:::cautionWarning
 
 **Deprecated since version:&ensp;0.8.0:** 
 Use **[CitrosDB.search_repo()](#citros_data_analysis.data_access.citros_db.CitrosDB.search_repo "citros_data_analysis.data_access.citros_db.CitrosDB.search_repo")** instead.
@@ -1420,7 +1420,7 @@ def batch_info(
 
 Return information about batches.
 
-:::warningWarning
+:::cautionWarning
 
 **Deprecated since version:&ensp;0.8.0:** 
 Use **[CitrosDB.search_batch()](#citros_data_analysis.data_access.citros_db.CitrosDB.search_batch "citros_data_analysis.data_access.citros_db.CitrosDB.search_batch")** instead.
@@ -1846,7 +1846,7 @@ def get_batch_size()
 
 Print sizes of the all batches in the current schema that are downloaded in the database.
 
-:::warningWarning
+:::cautionWarning
 
 **Deprecated since version:&ensp;0.8.0:** 
 Use **[CitrosDB.search_batch()](#citros_data_analysis.data_access.citros_db.CitrosDB.search_batch "citros_data_analysis.data_access.citros_db.CitrosDB.search_batch")** or **[CitrosDB.info()](#citros_data_analysis.data_access.citros_db.CitrosDB.info "citros_data_analysis.data_access.citros_db.CitrosDB.info")** methods instead.
@@ -1896,7 +1896,7 @@ def get_current_batch_size()
 
 Print size of the current batch, if it is set.
 
-:::warningWarning
+:::cautionWarning
 
 **Deprecated since version:&ensp;0.8.0:** 
 Use **[CitrosDB.get_batch()](#citros_data_analysis.data_access.citros_db.CitrosDB.get_batch "citros_data_analysis.data_access.citros_db.CitrosDB.get_batch")** or **[CitrosDB.info()](#citros_data_analysis.data_access.citros_db.CitrosDB.info "citros_data_analysis.data_access.citros_db.CitrosDB.info")** methods instead.
@@ -2145,7 +2145,7 @@ def user_info(
 Retrieve information about users, including their first names, last names, emails and the lists of repositories 
 they have created, along with the repositories in which these users have created batches.
 
-:::warningWarning
+:::cautionWarning
 
 **Deprecated since version:&ensp;0.8.0:** 
 Use **[CitrosDB.search_user()](#citros_data_analysis.data_access.citros_db.CitrosDB.search_user "citros_data_analysis.data_access.citros_db.CitrosDB.search_user")** method instead.
@@ -3311,7 +3311,7 @@ def get_sid_tables(
 
 Return a dict where each key represents a specific sid value, and its corresponding value is a pandas.DataFrame related to that sid.
 
-:::warningWarning
+:::cautionWarning
 
 **Deprecated since version:&ensp;0.9.0:** 
 Use **[CitrosDB.data_dict()](#citros_data_analysis.data_access.citros_db.CitrosDB.data_dict "citros_data_analysis.data_access.citros_db.CitrosDB.data_dict")** instead.
