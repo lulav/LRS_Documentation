@@ -4,7 +4,9 @@ sidebar_label: 'Mass Spring Damper'
 
 ---
 
-# Mass Spring Damper
+# Mass-Spring-Damper
+
+## Overview
 
 This is a simple ROS demonstration of a mass-spring-damper system.
 
@@ -12,20 +14,7 @@ This is a simple ROS demonstration of a mass-spring-damper system.
 
 The example contains two ROS 2 packages: `dynamics` and `controller`.
 
-## Table of Contents
-  - [System Dynamics](#system-dynamics)
-  - [The Controller](#the-controller)
-  - [CITROS Usage](#citros-usage)
-    - [CITROS Installation](#citros-installation-)
-    - [Configuring The Project](#configuring-the-project)
-    - [Parameters](#parameters)
-    - [Launch Files](#launch-files)
-    - [Initialize CITROS](#initialize-citros)
-    - [Run with CITROS](#run-with-citros)
-    - [Syncing Project's Setup](#syncing-projects-setup)
-    - [Normal Distributed Mass](#normal-distributed-mass)
-
-## System Dynamics
+### System Dynamics
 
 The system's equations of motion:
 
@@ -43,7 +32,7 @@ where the natural frequency $\omega_n = \sqrt{k \over m}$
 
 You can choose the system's parameters `m`, `k` and `c` and choose the initial condition `x0`, `v0` and `a0`, all configured as ROS 2 parameters.
 
-## The Controller
+### The Controller
 
 You can write your own controller to try stabilize the system for a given setpoint.
 
@@ -55,29 +44,43 @@ $$
 
 you can tune the controller gains, $k_p$, $k_i$, $k_d$, configured as ROS 2 parameters.
 
-## CITROS Usage
+## Prerequisites
+Make sure you complete the [Getting Started Tutorial](https://citros.io/doc/docs_tutorials/getting_started/).
+For working without dockers **(not recommended)**, please check the [.devcontainer](https://github.com/citros-garden/mass-spring-damper/tree/main/.devcontainer) folder in the project's repo for dependencies (in the `Dockerfile` and `install.sh`).
 
-### CITROS Installation
-First of all, to use all the powerful CITROS features usage requires CITROS installation: follow the instructions on the CITROS CLI [documentation](https://citros.io/doc/docs_cli/)
+## Table of Contents
+1. [Installation](#installation)
+2. [Workspace Overview](#workspace-overview)
+3. [CITROS Initialization](#citros-initialization)
+4. [Scenario](#scenario)
+5. [Running the Scenario using CITROS](#running-the-scenario-using-citros)
+6. [Results](#results)
 
-### Configuring The Project
+## Installation
+Clone the repository from Github:
+```sh
+git clone git@github.com:citros-garden/mass-spring-damper.git
+```
+Then open the repository in VSCode's `devcontainer` with `reopen in container` option.  
 
-After all the prerequisites done, we can start configuring our project. Open the project's repository in `VSCode` and reopen the project in a the VSCode's `devcontainer`.
+The Dockerfile contains all the necessary dependencies for the project.
+
+## Workspace Overview
 
 ### Parameters
 
-| Parameter | Package | Description
+| Parameter | Description | Package
 | --------|  --------|  --------|
-|kp | controller | p gain of the PID controller
-|ki | controller | i gain of the PID controller
-|kd | controller | d gain of the PID controller
-|setpoint | controller | Setpoint position for the controller
-|m | dynamics | The mass of the system
-|k | dynamics | The spring coefficient
-|c | dynamics | The damper coefficient
-|x | dynamics | The mass initial position
-|v | dynamics | The mass initial velocity
-|a | dynamics | The mass initial acceleration
+|kp | p gain of the PID controller |  controller
+|ki | i gain of the PID controller |  controller
+|kd | d gain of the PID controller |  controller
+|setpoint | Setpoint position for the controller |  controller
+|m | The mass of the system |  dynamics
+|k | The spring coefficient |  dynamics
+|c | The damper coefficient |  dynamics
+|x | The mass initial position |  dynamics
+|v | The mass initial velocity |  dynamics
+|a | The mass initial acceleration |  dynamics
 
 ### Launch Files
 
@@ -86,24 +89,10 @@ After all the prerequisites done, we can start configuring our project. Open the
 |dynamics.launch.py | Launch the uncontrolled system
 |dynamics_controller.launch.py | Launch the controlled system with PID controller
 
-### Initialize CITROS
-```bash
-citros init
-```
+## CITROS Initialization
+Make sure to install and initialize CITROS by following the [Getting Started](https://citros.io/doc/docs_tutorials/getting_started/) tutorial.
 
-### Run with CITROS
-```bash
-citros run -n "default" -m "default simulation"
-```
-After running the command, choose the launch file you wish to run. The simulation will start and you could see the mass position and the control signal in the terminal's logs.
-
-### Syncing Project's Setup
-
-Follow the [guide](https://citros.io/doc/docs/cli/cli_commands/cli_sync) for syncing CITROS project with the server.
-
-
-
-### Normal Distributed Mass
+## Scenario
 
 Supposed we tune the PID gains of the controller for the nominal mass, and we reached a satisfying results.
 
@@ -120,7 +109,7 @@ $$
 \sigma = 0.3 
 $$
 
-All the parameters can be set following the CITROS [parameter guide](https://citros.io/doc/docs/repos/repos_file_structure/repos_fs_param_setup).
+All the parameters can be set following the CITROS [parameter guide](https://citros.io/doc/docs_cli/structure/citros_structure#directory-parameter_setups).
 
 
 The initial condition are:
@@ -139,6 +128,15 @@ We will define the following requirements:
 * Settling time is `2.0` [sec].
 * Settling to `10%` of the steady-state value.
 
+## Running the Scenario using CITROS
+```bash
+citros run -n "default" -m "default simulation"
+```
+After running the command, choose the launch file you wish to run. The simulation will start and you could see the mass position and the control signal in the terminal's logs.
+
+For more CLI running options check the [Introduction to CITROS](https://citros.io/doc/docs_tutorials/) tutorial.
+
+## Results
 Lets run `50` simulations in the server and analyze the results:
 
 ![jpeg](img/analysis.jpeg)
@@ -147,6 +145,5 @@ Lets run `50` simulations in the server and analyze the results:
 We can see that `43` tests were passed the requirements, `6` failed and `1` was generated invalid mass $(<0)$.
 
 The maximum mass that still meeting the requirements is equal to $1.335 [kg]$
-
 
 Can you do better?
