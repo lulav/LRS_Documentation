@@ -10,12 +10,9 @@ sidebar_label: 'Getting Started'
 
 Following are softwares you need to work with CITROS
 
-- [Visual Studio code](https://code.visualstudio.com/download) - Used for opening and working with the code
 - [Python3](https://www.python.org/downloads/)
 - [git](https://git-scm.com/)
-- [Docker](https://docs.docker.com/get-docker/) - 
-- [Foxglove](https://foxglove.dev/download) - Used for visualizing the results of your Python notebook
-
+- [Docker](https://docs.docker.com/get-docker/)
 
 ## Installation
 
@@ -23,6 +20,11 @@ To install CITROS using pip, open terminal and write the following command:
 
     $ pip install citros 
 
+You can verify that the installation succeeded by running 
+
+```bash
+$ citros -V
+```
 
 ## Initialization
 
@@ -190,7 +192,7 @@ citros setup-ssh
 for further details, see the [CLI Documentation](https://citros.io/doc/docs_cli)
 
 
-### Initialization
+### Initialize
 
 Assuming ssh communication has been set up, we can initialize our repository:
 ```bash
