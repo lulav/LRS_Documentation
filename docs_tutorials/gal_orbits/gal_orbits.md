@@ -161,6 +161,7 @@ citros run -n "galactic orbits" -m "first run" -c 5 -r
 
 Now when your simulation is complete, you're ready to check the results! Explore the notebooks in [`notebooks`](https://citros.io/gal_orbits/tree/main/notebooks). There, you'll find examples prepared using the [citros_data_analysis package](https://citros.io/doc/docs_data_analysis) on how to query, analyze and present results. Feel free to use them or create your own!
 
+Let's take a look on the results of the following [notebook](https://citros.io/gal_orbits/blob/main/notebooks/Disk%20mass%20variation.ipynb).
 We made [simulations](#scenario) of the orbits of the globular cluster NGC 6316 for 5 different masses of the Galactic disk `M_disk`. To get some qualitative idea on how the mass of the Galactic disk affect the orbits, let's first display the projections of the simulated orbits onto the Galactic disk:
 
 ```python
