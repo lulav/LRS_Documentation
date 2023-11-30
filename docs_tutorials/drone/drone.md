@@ -119,7 +119,7 @@ citros docker-build-push
 ```
 
 - Finally, we run the simulation at the web:
-1. Open the drone project.
+1. Open the [drone](https://citros.io/drone) project.
 2. Navigate to the `Runs` tab.
 3. Click on the `Run Simulation` button on the right.
 
