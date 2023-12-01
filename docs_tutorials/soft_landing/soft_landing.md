@@ -103,6 +103,13 @@ By configuring the velocity parameters using $\mu$ and $\sigma$, we can identify
 To configure the scenario described [above](#scenario), I created a `default_param_setup.json` file located in `.citros/parameter_setups` and a `function object` located in `.citros/parameter_setups/functions` to randomize the initial velocity with $\mu$ and $\sigma$ for each parameter.  
 For the initial validation of the controller, I chose random values of $\mu$ and $\sigma$.
 
+First ensure that the project has been built and sourced:
+
+```bash
+$ colcon build
+$ source install/local_setup.bash
+```
+
 you're now ready to run a CITROS simulation, by using the run command:
 ```sh
 citros run -n 'test' -m 'testytest'
@@ -158,8 +165,9 @@ The full report with the data access and error analysis was generated using the 
 
 After obtaining the results from CITROS and analyzing the data through visual graphs, we can confirm that the controller has met our demands. Most of the runs indicate that the miss distance and miss velocity are within our desired range.  
 
-In summary, for 100 simulations with different starting velocities we have 8 runs that miss the target (not within the radius 0.01[m] from the target).
-And we have 6 fail runs that land with a miss distance greater than 0.01[m] and miss velocity greater than 1[m/s]
+*In summary, for 100 simulations with different starting velocities*<br />
+*we have 8 runs that miss the target (not within the radius 0.01[m] from the target).*<br />
+*And we have 6 fail runs that land with a miss distance greater than 0.01[m] and miss velocity greater than 1[m/s]*
 
 However, it's important to note that this is just the initial validation of the controller. We will need to conduct additional simulations to further validate our findings. Additionally, we can experiment with different values of $\mu$ and $\sigma$ for each parameter.   
 
