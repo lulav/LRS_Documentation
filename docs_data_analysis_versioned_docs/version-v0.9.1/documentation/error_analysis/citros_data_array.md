@@ -50,7 +50,7 @@ Name|Type|Description
 
 
     
-## Method `add_db` {#citros_data_analysis.error_analysis.citros_data_array.CitrosDataArray.add_db}
+### Method `add_db` {#citros_data_analysis.error_analysis.citros_data_array.CitrosDataArray.add_db}
 
 
 
@@ -77,7 +77,7 @@ Name|Type|Description
 
 
     
-## Method `add_dbs` {#citros_data_analysis.error_analysis.citros_data_array.CitrosDataArray.add_dbs}
+### Method `add_dbs` {#citros_data_analysis.error_analysis.citros_data_array.CitrosDataArray.add_dbs}
 
 
 
@@ -104,7 +104,7 @@ Name|Type|Description
 
 
     
-## Method `drop_db` {#citros_data_analysis.error_analysis.citros_data_array.CitrosDataArray.drop_db}
+### Method `drop_db` {#citros_data_analysis.error_analysis.citros_data_array.CitrosDataArray.drop_db}
 
 
 
@@ -134,7 +134,7 @@ Name|Type|Description
 
 
     
-## Method `get_prediction` {#citros_data_analysis.error_analysis.citros_data_array.CitrosDataArray.get_prediction}
+### Method `get_prediction` {#citros_data_analysis.error_analysis.citros_data_array.CitrosDataArray.get_prediction}
 
 
 
