@@ -12,8 +12,6 @@ description: 'Documentation'
 
 
 
-
-
     
 ## Class `CitrosDB` {#citros_data_analysis.data_access.citros_db.CitrosDB}
 
@@ -72,9 +70,9 @@ Name|Type|Description
 
 
 
-
+## Repositories
     
-## Method `repo` {#citros_data_analysis.data_access.citros_db.CitrosDB.repo}
+### Method `repo` {#citros_data_analysis.data_access.citros_db.CitrosDB.repo}
 
 
 
@@ -216,7 +214,7 @@ Assign the 'projects' repository to the existing CitrosDB object and show detail
 
 
     
-## Method `search_repo` {#citros_data_analysis.data_access.citros_db.CitrosDB.search_repo}
+### Method `search_repo` {#citros_data_analysis.data_access.citros_db.CitrosDB.search_repo}
 
 
 
@@ -488,7 +486,7 @@ Get list of the all existing repositories names as a list:
 
 
     
-## Method `repo_info` {#citros_data_analysis.data_access.citros_db.CitrosDB.repo_info}
+### Method `repo_info` {#citros_data_analysis.data_access.citros_db.CitrosDB.repo_info}
 
 
 
@@ -771,7 +769,7 @@ Get list of the all existing repositories names as a list:
 
 
     
-## Method `get_repo` {#citros_data_analysis.data_access.citros_db.CitrosDB.get_repo}
+### Method `get_repo` {#citros_data_analysis.data_access.citros_db.CitrosDB.get_repo}
 
 
 
@@ -815,7 +813,7 @@ Get information about the current repository:
 
 
     
-## Method `get_repo_name` {#citros_data_analysis.data_access.citros_db.CitrosDB.get_repo_name}
+### Method `get_repo_name` {#citros_data_analysis.data_access.citros_db.CitrosDB.get_repo_name}
 
 
 
@@ -852,7 +850,7 @@ Get the name of the last created repository:
 
 
     
-## Method `get_repo_id` {#citros_data_analysis.data_access.citros_db.CitrosDB.get_repo_id}
+### Method `get_repo_id` {#citros_data_analysis.data_access.citros_db.CitrosDB.get_repo_id}
 
 
 
@@ -887,9 +885,9 @@ Get id of the repository 'citros_project':
 
 </details>
 
-
+## Simulations
     
-## Method `simulation` {#citros_data_analysis.data_access.citros_db.CitrosDB.simulation}
+### Method `simulation` {#citros_data_analysis.data_access.citros_db.CitrosDB.simulation}
 
 
 
@@ -945,7 +943,7 @@ Show information about the batch 'test' that was created in 'simulation_cannon_a
 
 
     
-## Method `get_simulation` {#citros_data_analysis.data_access.citros_db.CitrosDB.get_simulation}
+### Method `get_simulation` {#citros_data_analysis.data_access.citros_db.CitrosDB.get_simulation}
 
 
 
@@ -982,7 +980,7 @@ Get the name of the simulation that was set during initialization of CitrosDB ob
 
 
     
-## Method `get_simulation_name` {#citros_data_analysis.data_access.citros_db.CitrosDB.get_simulation_name}
+### Method `get_simulation_name` {#citros_data_analysis.data_access.citros_db.CitrosDB.get_simulation_name}
 
 
 
@@ -1017,9 +1015,9 @@ Get the name of the simulation that was set during initialization of CitrosDB ob
 
 </details>
 
-
+## Batches
     
-## Method `batch` {#citros_data_analysis.data_access.citros_db.CitrosDB.batch}
+### Method `batch` {#citros_data_analysis.data_access.citros_db.CitrosDB.batch}
 
 
 
@@ -1106,7 +1104,7 @@ Set batch id '00000000-1111-2222-3333-444444444444' to the already existing **[C
 
 
     
-## Method `search_batch` {#citros_data_analysis.data_access.citros_db.CitrosDB.search_batch}
+### Method `search_batch` {#citros_data_analysis.data_access.citros_db.CitrosDB.search_batch}
 
 
 
@@ -1398,7 +1396,7 @@ Get list of the all existing batches names as a list:
 
 
     
-## Method `batch_info` {#citros_data_analysis.data_access.citros_db.CitrosDB.batch_info}
+### Method `batch_info` {#citros_data_analysis.data_access.citros_db.CitrosDB.batch_info}
 
 
 
@@ -1701,7 +1699,7 @@ Get list of the all existing batches names as a list:
 
 
     
-## Method `get_batch` {#citros_data_analysis.data_access.citros_db.CitrosDB.get_batch}
+### Method `get_batch` {#citros_data_analysis.data_access.citros_db.CitrosDB.get_batch}
 
 
 
@@ -1757,7 +1755,7 @@ Get information about the current batch:
 
 
     
-## Method `get_batch_name` {#citros_data_analysis.data_access.citros_db.CitrosDB.get_batch_name}
+### Method `get_batch_name` {#citros_data_analysis.data_access.citros_db.CitrosDB.get_batch_name}
 
 
 
@@ -1794,7 +1792,7 @@ Get name of the most recently created batch:
 
 
     
-## Method `get_batch_id` {#citros_data_analysis.data_access.citros_db.CitrosDB.get_batch_id}
+### Method `get_batch_id` {#citros_data_analysis.data_access.citros_db.CitrosDB.get_batch_id}
 
 
 
@@ -1831,7 +1829,7 @@ Get id of the batch 'dynamics':
 
 
     
-## Method `get_batch_size` {#citros_data_analysis.data_access.citros_db.CitrosDB.get_batch_size}
+### Method `get_batch_size` {#citros_data_analysis.data_access.citros_db.CitrosDB.get_batch_size}
 
 
 
@@ -1881,7 +1879,7 @@ Print the table with information about batch sizes:
 
 
     
-## Method `get_current_batch_size` {#citros_data_analysis.data_access.citros_db.CitrosDB.get_current_batch_size}
+### Method `get_current_batch_size` {#citros_data_analysis.data_access.citros_db.CitrosDB.get_current_batch_size}
 
 
 
@@ -1928,9 +1926,9 @@ Print the table with information about batch sizes:
 
 </details>
 
-
+## Users
     
-## Method `get_users` {#citros_data_analysis.data_access.citros_db.CitrosDB.get_users}
+### Method `get_users` {#citros_data_analysis.data_access.citros_db.CitrosDB.get_users}
 
 
 
@@ -1987,7 +1985,7 @@ Display information about users:
 
 
     
-## Method `search_user` {#citros_data_analysis.data_access.citros_db.CitrosDB.search_user}
+### Method `search_user` {#citros_data_analysis.data_access.citros_db.CitrosDB.search_user}
 
 
 
@@ -2125,7 +2123,7 @@ If there is a batch 'velocity' in 'robot_master' repository, to show who create 
 
 
     
-## Method `user_info` {#citros_data_analysis.data_access.citros_db.CitrosDB.user_info}
+### Method `user_info` {#citros_data_analysis.data_access.citros_db.CitrosDB.user_info}
 
 
 
@@ -2261,9 +2259,9 @@ If there is a batch 'velocity' in 'robot_master' repository, to show who create 
 
 </details>
 
-
+## Filters
     
-## Method `topic` {#citros_data_analysis.data_access.citros_db.CitrosDB.topic}
+### Method `topic` {#citros_data_analysis.data_access.citros_db.CitrosDB.topic}
 
 
 
@@ -2315,7 +2313,7 @@ Get maximum value of the 'sid' among topics 'A' and 'B':
 
 
     
-## Method `sid` {#citros_data_analysis.data_access.citros_db.CitrosDB.sid}
+### Method `sid` {#citros_data_analysis.data_access.citros_db.CitrosDB.sid}
 
 
 
@@ -2386,7 +2384,7 @@ For sid >= 7:
 
 
     
-## Method `rid` {#citros_data_analysis.data_access.citros_db.CitrosDB.rid}
+### Method `rid` {#citros_data_analysis.data_access.citros_db.CitrosDB.rid}
 
 
 
@@ -2457,7 +2455,7 @@ For rid >= 5:
 
 
     
-## Method `time` {#citros_data_analysis.data_access.citros_db.CitrosDB.time}
+### Method `time` {#citros_data_analysis.data_access.citros_db.CitrosDB.time}
 
 
 
@@ -2518,7 +2516,298 @@ For time >= 20:
 
 
     
-## Method `info` {#citros_data_analysis.data_access.citros_db.CitrosDB.info}
+### Method `set_filter` {#citros_data_analysis.data_access.citros_db.CitrosDB.set_filter}
+
+
+
+
+```python
+def set_filter(
+    filter_by=None
+)
+```
+
+
+<details>
+  <summary>Description</summary>
+
+Set constraints on query.
+
+Allows to set constraints on json-data columns before querying.
+
+#### Parameters
+
+Name|Type|Description
+--|--|--
+|**```filter_by```**|**dict**|Constraints to apply on columns: {key_1: value_1, key_2: value_2, ...}, where:<br />      &#8226; key_n - must match labels of the columns,<br />      &#8226; value_n  - in the case of equality: list of exact values,<br />               in the case of inequality: dict with ">", ">=", "<" or "<=".<br />    Conditions, passed here, have higher priority over those defined by **topic()**, **rid()**, **sid()** and **time()** and will override them.<br />    If one of the sampling method is used (**skip()**, **avg()** or **move_avg()**), constraints on additional columns (rid, sid, time) are applied <br />    BEFORE sampling while constraints on columns from json-data are applied AFTER sampling.
+#### Returns
+
+Name|Type|Description
+--|--|--
+|**```out```**|**[CitrosDB](#citros_data_analysis.data_access.citros_db.CitrosDB "citros_data_analysis.data_access.citros_db.CitrosDB")**|CitrosDB with set constraints.
+#### See Also
+
+**[CitrosDB.topic()](#citros_data_analysis.data_access.citros_db.CitrosDB.topic "citros_data_analysis.data_access.citros_db.CitrosDB.topic")**
+:   set topic name to query
+
+**[CitrosDB.sid()](#citros_data_analysis.data_access.citros_db.CitrosDB.sid "citros_data_analysis.data_access.citros_db.CitrosDB.sid")**
+:   set sid values to query
+
+**[CitrosDB.rid()](#citros_data_analysis.data_access.citros_db.CitrosDB.rid "citros_data_analysis.data_access.citros_db.CitrosDB.rid")**
+:   set rid values to query
+
+**[CitrosDB.time()](#citros_data_analysis.data_access.citros_db.CitrosDB.time "citros_data_analysis.data_access.citros_db.CitrosDB.time")**
+:   set time constraints
+
+**[CitrosDB.set_order()](#citros_data_analysis.data_access.citros_db.CitrosDB.set_order "citros_data_analysis.data_access.citros_db.CitrosDB.set_order")**
+:   set order of the output
+
+
+</details>
+<details>
+  <summary>Examples</summary>
+
+If the structure of the data column is the following:
+
+```python
+{x: {x_1: 11}, note: [13, 34]}
+{x: {x_1: 22}, note: [11, 35]}
+{x: {x_1: 12}, note: [12, 36]}
+...
+```
+to get data of the batch 'testing' for topic 'A' where values of json-data column 10 < data.x.x_1 <= 20:
+
+```python
+>>> citros = da.CitrosDB()
+>>> citros.batch('testing').topic('A').set_filter({'data.x.x_1': {'>': 10, '<=': 20}}).data()
+     sid  rid  time topic type  data.x.x_1     data.note
+0      0    0  4862     A    a          11      [13, 34]
+1      0    2  7879     A    a          12      [12, 36]
+...
+```
+
+
+get data where the value on the first position in the json-array 'note' equals 11 or 12:
+
+```python
+>>> citros.batch('testing').topic('A').set_filter({'data.note[0]': [11, 12]}).data()
+     sid  rid  time topic type  data.x.x_1     data.note
+0      0    1  4862     A    a          22      [11, 35]
+1      0    2  7879     A    a          12      [12, 36]
+...
+```
+
+</details>
+
+
+    
+### Method `set_order` {#citros_data_analysis.data_access.citros_db.CitrosDB.set_order}
+
+
+
+
+```python
+def set_order(
+    order_by=None
+)
+```
+
+
+<details>
+  <summary>Description</summary>
+
+Apply sorting to the result of the data querying.
+
+Sort the result of the query in ascending or descending order.
+
+#### Parameters
+
+Name|Type|Description
+--|--|--
+|**```order_by```**|**str, list** of **str** or **dict**, optional|If **order_by** is a single string or a list of strings, it represents the column label(s) by which the result is sorted in ascending order.<br />    For more control, use a dictionary with column labels as keys and values ('asc' for ascending, 'desc' for descending) to define the sorting order.
+
+</details>
+<details>
+  <summary>Examples</summary>
+
+Get data from the batch 'aerodynamics' for topic 'A' and sort the result by sid in ascending order and by rid in descending order.
+
+```python
+>>> citros = da.CitrosDB()
+>>> df = citros.batch('aerodynamics').topic('A').set_order({'sid': 'asc', 'rid': 'desc'}).data()
+```
+
+
+Sort the result by sid and rid in ascending order:
+
+```python
+>>> citros = da.CitrosDB()
+>>> df = citros.batch('aerodynamics').topic('A').set_order(['sid', 'rid']).data()
+```
+
+</details>
+
+## Sampling
+    
+### Method `skip` {#citros_data_analysis.data_access.citros_db.CitrosDB.skip}
+
+
+
+
+```python
+def skip(
+    s=None
+)
+```
+
+
+<details>
+  <summary>Description</summary>
+
+Select each **s**-th message.
+
+**skip** is aimed to reduce the number of rows in the query output.
+This method should be called before querying methods **data()** or **data_dict()**.
+Messages with different sids are selected separately.
+If any constraints on 'sid', 'rid', 'time', 'topic' and 'type' columns are set, they are applied before sampling, while constraints on data from json column are applied after sampling.
+
+#### Parameters
+
+Name|Type|Description
+--|--|--
+|**```s```**|**int**, optional|Control number of the messages to skip, only every **s**-th message will be selected.
+#### Returns
+
+Name|Type|Description
+--|--|--
+|**```out```**|**[CitrosDB](#citros_data_analysis.data_access.citros_db.CitrosDB "citros_data_analysis.data_access.citros_db.CitrosDB")**|CitrosDB with parameters set for sampling method 'skip'.
+#### See Also
+
+**[CitrosDB.avg()](#citros_data_analysis.data_access.citros_db.CitrosDB.avg "citros_data_analysis.data_access.citros_db.CitrosDB.avg")**, **[CitrosDB.move_avg()](#citros_data_analysis.data_access.citros_db.CitrosDB.move_avg "citros_data_analysis.data_access.citros_db.CitrosDB.move_avg")**, **[CitrosDB.data()](#citros_data_analysis.data_access.citros_db.CitrosDB.data "citros_data_analysis.data_access.citros_db.CitrosDB.data")**, **[CitrosDB.data_dict()](#citros_data_analysis.data_access.citros_db.CitrosDB.data_dict "citros_data_analysis.data_access.citros_db.CitrosDB.data_dict")**
+
+
+</details>
+<details>
+  <summary>Examples</summary>
+
+Get every 3th message of the topic 'A':
+
+```python
+>>> citros = da.CitrosDB()
+>>> df = citros.topic('A').skip(3).data()
+the 1th, the 4th, the 7th ... messages will be selected
+```
+
+</details>
+
+
+    
+### Method `avg` {#citros_data_analysis.data_access.citros_db.CitrosDB.avg}
+
+
+
+
+```python
+def avg(
+    n=None
+)
+```
+
+
+<details>
+  <summary>Description</summary>
+
+Set the directive to group and average every set of **n** consecutive messages in the database before querying.
+
+**avg()** is aimed to reduce number of rows before querying.
+This method should be called before querying methods **data()** or **data_dict()**.
+Messages with different sids are processed separately. 
+While averaging, the value in the 'rid' column is determined by taking the minimum 'rid' value from the rows being averaged.
+If any constraints on 'sid', 'rid', 'time', 'topic' and 'type' columns are set, they are applied before sampling, while constraints on data from json column are applied after sampling.
+
+#### Parameters
+
+Name|Type|Description
+--|--|--
+|**```n```**|**int**|Number of messages to average.
+#### Returns
+
+Name|Type|Description
+--|--|--
+|**```out```**|**[CitrosDB](#citros_data_analysis.data_access.citros_db.CitrosDB "citros_data_analysis.data_access.citros_db.CitrosDB")**|CitrosDB with parameters set for sampling method 'avg'.
+#### See Also
+
+**[CitrosDB.skip()](#citros_data_analysis.data_access.citros_db.CitrosDB.skip "citros_data_analysis.data_access.citros_db.CitrosDB.skip")**, **[CitrosDB.move_avg()](#citros_data_analysis.data_access.citros_db.CitrosDB.move_avg "citros_data_analysis.data_access.citros_db.CitrosDB.move_avg")**, **[CitrosDB.data()](#citros_data_analysis.data_access.citros_db.CitrosDB.data "citros_data_analysis.data_access.citros_db.CitrosDB.data")**, **[CitrosDB.data_dict()](#citros_data_analysis.data_access.citros_db.CitrosDB.data_dict "citros_data_analysis.data_access.citros_db.CitrosDB.data_dict")**
+
+
+</details>
+<details>
+  <summary>Examples</summary>
+
+Average each 3 messages of the topic 'A' and then query the result:
+
+```python
+>>> citros = da.CitrosDB()
+>>> df = citros.topic('A').avg(3).data()
+```
+
+</details>
+
+
+    
+### Method `move_avg` {#citros_data_analysis.data_access.citros_db.CitrosDB.move_avg}
+
+
+
+
+```python
+def move_avg(
+    n=None,
+    s=1
+)
+```
+
+
+<details>
+  <summary>Description</summary>
+
+Set the directive to compute moving average with the window size equals **n** and then during querying select each **s**-th message of the result.
+
+**move_avg()** is aimed to smooth data and reduce number of rows in the query output.
+This method should be called before querying methods **data()** or **data_dict()**.
+Messages with different sids are processed separately.
+While averaging, the value in the 'rid' column is determined by taking the minimum 'rid' value from the rows being averaged.
+If any constraints on 'sid', 'rid', 'time', 'topic' and 'type' columns are set, they are applied before sampling, while constraints on data from json column are applied after sampling.
+
+#### Parameters
+
+Name|Type|Description
+--|--|--
+|**```n```**|**int**, optional|Number of messages to average.
+|**```s```**|**int**, default **1**|Control number of the messages to skip, only every **s**-th message will be selected.
+#### Returns
+
+Name|Type|Description
+--|--|--
+|**```out```**|**[CitrosDB](#citros_data_analysis.data_access.citros_db.CitrosDB "citros_data_analysis.data_access.citros_db.CitrosDB")**|CitrosDB with parameters set for sampling method 'move_avg'.
+
+</details>
+<details>
+  <summary>Examples</summary>
+
+For data in topic 'A' calculate moving average with the window equals 5 
+and select every second row of the result:
+
+```python
+>>> citros = da.CitrosDB()
+>>> df = citros.topic('A').move_avg(5,2).data()
+```
+
+</details>
+
+## Data Information
+    
+### Method `info` {#citros_data_analysis.data_access.citros_db.CitrosDB.info}
 
 
 
@@ -2720,7 +3009,7 @@ Display information about simulation run 1 and 2 of the topic 'C' of the batch '
 
 
     
-## Method `get_data_structure` {#citros_data_analysis.data_access.citros_db.CitrosDB.get_data_structure}
+### Method `get_data_structure` {#citros_data_analysis.data_access.citros_db.CitrosDB.get_data_structure}
 
 
 
@@ -2794,300 +3083,9 @@ or
 
 </details>
 
-
+## Query
     
-## Method `set_filter` {#citros_data_analysis.data_access.citros_db.CitrosDB.set_filter}
-
-
-
-
-```python
-def set_filter(
-    filter_by=None
-)
-```
-
-
-<details>
-  <summary>Description</summary>
-
-Set constraints on query.
-
-Allows to set constraints on json-data columns before querying.
-
-#### Parameters
-
-Name|Type|Description
---|--|--
-|**```filter_by```**|**dict**|Constraints to apply on columns: {key_1: value_1, key_2: value_2, ...}, where:<br />      &#8226; key_n - must match labels of the columns,<br />      &#8226; value_n  - in the case of equality: list of exact values,<br />               in the case of inequality: dict with ">", ">=", "<" or "<=".<br />    Conditions, passed here, have higher priority over those defined by **topic()**, **rid()**, **sid()** and **time()** and will override them.<br />    If one of the sampling method is used (**skip()**, **avg()** or **move_avg()**), constraints on additional columns (rid, sid, time) are applied <br />    BEFORE sampling while constraints on columns from json-data are applied AFTER sampling.
-#### Returns
-
-Name|Type|Description
---|--|--
-|**```out```**|**[CitrosDB](#citros_data_analysis.data_access.citros_db.CitrosDB "citros_data_analysis.data_access.citros_db.CitrosDB")**|CitrosDB with set constraints.
-#### See Also
-
-**[CitrosDB.topic()](#citros_data_analysis.data_access.citros_db.CitrosDB.topic "citros_data_analysis.data_access.citros_db.CitrosDB.topic")**
-:   set topic name to query
-
-**[CitrosDB.sid()](#citros_data_analysis.data_access.citros_db.CitrosDB.sid "citros_data_analysis.data_access.citros_db.CitrosDB.sid")**
-:   set sid values to query
-
-**[CitrosDB.rid()](#citros_data_analysis.data_access.citros_db.CitrosDB.rid "citros_data_analysis.data_access.citros_db.CitrosDB.rid")**
-:   set rid values to query
-
-**[CitrosDB.time()](#citros_data_analysis.data_access.citros_db.CitrosDB.time "citros_data_analysis.data_access.citros_db.CitrosDB.time")**
-:   set time constraints
-
-**[CitrosDB.set_order()](#citros_data_analysis.data_access.citros_db.CitrosDB.set_order "citros_data_analysis.data_access.citros_db.CitrosDB.set_order")**
-:   set order of the output
-
-
-</details>
-<details>
-  <summary>Examples</summary>
-
-If the structure of the data column is the following:
-
-```python
-{x: {x_1: 11}, note: [13, 34]}
-{x: {x_1: 22}, note: [11, 35]}
-{x: {x_1: 12}, note: [12, 36]}
-...
-```
-to get data of the batch 'testing' for topic 'A' where values of json-data column 10 < data.x.x_1 <= 20:
-
-```python
->>> citros = da.CitrosDB()
->>> citros.batch('testing').topic('A').set_filter({'data.x.x_1': {'>': 10, '<=': 20}}).data()
-     sid  rid  time topic type  data.x.x_1     data.note
-0      0    0  4862     A    a          11      [13, 34]
-1      0    2  7879     A    a          12      [12, 36]
-...
-```
-
-
-get data where the value on the first position in the json-array 'note' equals 11 or 12:
-
-```python
->>> citros.batch('testing').topic('A').set_filter({'data.note[0]': [11, 12]}).data()
-     sid  rid  time topic type  data.x.x_1     data.note
-0      0    1  4862     A    a          22      [11, 35]
-1      0    2  7879     A    a          12      [12, 36]
-...
-```
-
-</details>
-
-
-    
-## Method `set_order` {#citros_data_analysis.data_access.citros_db.CitrosDB.set_order}
-
-
-
-
-```python
-def set_order(
-    order_by=None
-)
-```
-
-
-<details>
-  <summary>Description</summary>
-
-Apply sorting to the result of the data querying.
-
-Sort the result of the query in ascending or descending order.
-
-#### Parameters
-
-Name|Type|Description
---|--|--
-|**```order_by```**|**str, list** of **str** or **dict**, optional|If **order_by** is a single string or a list of strings, it represents the column label(s) by which the result is sorted in ascending order.<br />    For more control, use a dictionary with column labels as keys and values ('asc' for ascending, 'desc' for descending) to define the sorting order.
-
-</details>
-<details>
-  <summary>Examples</summary>
-
-Get data from the batch 'aerodynamics' for topic 'A' and sort the result by sid in ascending order and by rid in descending order.
-
-```python
->>> citros = da.CitrosDB()
->>> df = citros.batch('aerodynamics').topic('A').set_order({'sid': 'asc', 'rid': 'desc'}).data()
-```
-
-
-Sort the result by sid and rid in ascending order:
-
-```python
->>> citros = da.CitrosDB()
->>> df = citros.batch('aerodynamics').topic('A').set_order(['sid', 'rid']).data()
-```
-
-</details>
-
-
-    
-## Method `skip` {#citros_data_analysis.data_access.citros_db.CitrosDB.skip}
-
-
-
-
-```python
-def skip(
-    s=None
-)
-```
-
-
-<details>
-  <summary>Description</summary>
-
-Select each **s**-th message.
-
-**skip** is aimed to reduce the number of rows in the query output.
-This method should be called before querying methods **data()** or **data_dict()**.
-Messages with different sids are selected separately.
-If any constraints on 'sid', 'rid', 'time', 'topic' and 'type' columns are set, they are applied before sampling, while constraints on data from json column are applied after sampling.
-
-#### Parameters
-
-Name|Type|Description
---|--|--
-|**```s```**|**int**, optional|Control number of the messages to skip, only every **s**-th message will be selected.
-#### Returns
-
-Name|Type|Description
---|--|--
-|**```out```**|**[CitrosDB](#citros_data_analysis.data_access.citros_db.CitrosDB "citros_data_analysis.data_access.citros_db.CitrosDB")**|CitrosDB with parameters set for sampling method 'skip'.
-#### See Also
-
-**[CitrosDB.avg()](#citros_data_analysis.data_access.citros_db.CitrosDB.avg "citros_data_analysis.data_access.citros_db.CitrosDB.avg")**, **[CitrosDB.move_avg()](#citros_data_analysis.data_access.citros_db.CitrosDB.move_avg "citros_data_analysis.data_access.citros_db.CitrosDB.move_avg")**, **[CitrosDB.data()](#citros_data_analysis.data_access.citros_db.CitrosDB.data "citros_data_analysis.data_access.citros_db.CitrosDB.data")**, **[CitrosDB.data_dict()](#citros_data_analysis.data_access.citros_db.CitrosDB.data_dict "citros_data_analysis.data_access.citros_db.CitrosDB.data_dict")**
-
-
-</details>
-<details>
-  <summary>Examples</summary>
-
-Get every 3th message of the topic 'A':
-
-```python
->>> citros = da.CitrosDB()
->>> df = citros.topic('A').skip(3).data()
-the 1th, the 4th, the 7th ... messages will be selected
-```
-
-</details>
-
-
-    
-## Method `avg` {#citros_data_analysis.data_access.citros_db.CitrosDB.avg}
-
-
-
-
-```python
-def avg(
-    n=None
-)
-```
-
-
-<details>
-  <summary>Description</summary>
-
-Set the directive to group and average every set of **n** consecutive messages in the database before querying.
-
-**avg()** is aimed to reduce number of rows before querying.
-This method should be called before querying methods **data()** or **data_dict()**.
-Messages with different sids are processed separately. 
-While averaging, the value in the 'rid' column is determined by taking the minimum 'rid' value from the rows being averaged.
-If any constraints on 'sid', 'rid', 'time', 'topic' and 'type' columns are set, they are applied before sampling, while constraints on data from json column are applied after sampling.
-
-#### Parameters
-
-Name|Type|Description
---|--|--
-|**```n```**|**int**|Number of messages to average.
-#### Returns
-
-Name|Type|Description
---|--|--
-|**```out```**|**[CitrosDB](#citros_data_analysis.data_access.citros_db.CitrosDB "citros_data_analysis.data_access.citros_db.CitrosDB")**|CitrosDB with parameters set for sampling method 'avg'.
-#### See Also
-
-**[CitrosDB.skip()](#citros_data_analysis.data_access.citros_db.CitrosDB.skip "citros_data_analysis.data_access.citros_db.CitrosDB.skip")**, **[CitrosDB.move_avg()](#citros_data_analysis.data_access.citros_db.CitrosDB.move_avg "citros_data_analysis.data_access.citros_db.CitrosDB.move_avg")**, **[CitrosDB.data()](#citros_data_analysis.data_access.citros_db.CitrosDB.data "citros_data_analysis.data_access.citros_db.CitrosDB.data")**, **[CitrosDB.data_dict()](#citros_data_analysis.data_access.citros_db.CitrosDB.data_dict "citros_data_analysis.data_access.citros_db.CitrosDB.data_dict")**
-
-
-</details>
-<details>
-  <summary>Examples</summary>
-
-Average each 3 messages of the topic 'A' and then query the result:
-
-```python
->>> citros = da.CitrosDB()
->>> df = citros.topic('A').avg(3).data()
-```
-
-</details>
-
-
-    
-## Method `move_avg` {#citros_data_analysis.data_access.citros_db.CitrosDB.move_avg}
-
-
-
-
-```python
-def move_avg(
-    n=None,
-    s=1
-)
-```
-
-
-<details>
-  <summary>Description</summary>
-
-Set the directive to compute moving average with the window size equals **n** and then during querying select each **s**-th message of the result.
-
-**move_avg()** is aimed to smooth data and reduce number of rows in the query output.
-This method should be called before querying methods **data()** or **data_dict()**.
-Messages with different sids are processed separately.
-While averaging, the value in the 'rid' column is determined by taking the minimum 'rid' value from the rows being averaged.
-If any constraints on 'sid', 'rid', 'time', 'topic' and 'type' columns are set, they are applied before sampling, while constraints on data from json column are applied after sampling.
-
-#### Parameters
-
-Name|Type|Description
---|--|--
-|**```n```**|**int**, optional|Number of messages to average.
-|**```s```**|**int**, default **1**|Control number of the messages to skip, only every **s**-th message will be selected.
-#### Returns
-
-Name|Type|Description
---|--|--
-|**```out```**|**[CitrosDB](#citros_data_analysis.data_access.citros_db.CitrosDB "citros_data_analysis.data_access.citros_db.CitrosDB")**|CitrosDB with parameters set for sampling method 'move_avg'.
-
-</details>
-<details>
-  <summary>Examples</summary>
-
-For data in topic 'A' calculate moving average with the window equals 5 
-and select every second row of the result:
-
-```python
->>> citros = da.CitrosDB()
->>> df = citros.topic('A').move_avg(5,2).data()
-```
-
-</details>
-
-
-    
-## Method `data` {#citros_data_analysis.data_access.citros_db.CitrosDB.data}
+### Method `data` {#citros_data_analysis.data_access.citros_db.CitrosDB.data}
 
 
 
@@ -3193,7 +3191,7 @@ By default, all of them are queried. To select only particular ones, use **addit
 
 
     
-## Method `data_dict` {#citros_data_analysis.data_access.citros_db.CitrosDB.data_dict}
+### Method `data_dict` {#citros_data_analysis.data_access.citros_db.CitrosDB.data_dict}
 
 
 
@@ -3287,7 +3285,7 @@ By default, all of them are queried. To select only particular ones, use **addit
 
 
     
-## Method `get_sid_tables` {#citros_data_analysis.data_access.citros_db.CitrosDB.get_sid_tables}
+### Method `get_sid_tables` {#citros_data_analysis.data_access.citros_db.CitrosDB.get_sid_tables}
 
 
 
@@ -3381,8 +3379,7 @@ sid values are: [1, 2, 3, 4]
 </details>
 
 
-    
-## Method `get_min_value` {#citros_data_analysis.data_access.citros_db.CitrosDB.get_min_value}
+### Method `get_min_value` {#citros_data_analysis.data_access.citros_db.CitrosDB.get_min_value}
 
 
 
@@ -3460,7 +3457,7 @@ The same as in the first example, but passing all constraints by **filter_by** p
 
 
     
-## Method `get_max_value` {#citros_data_analysis.data_access.citros_db.CitrosDB.get_max_value}
+### Method `get_max_value` {#citros_data_analysis.data_access.citros_db.CitrosDB.get_max_value}
 
 
 
@@ -3538,7 +3535,7 @@ The same as in the first example, but passing all constraints by **filter_by** p
 
 
     
-## Method `get_counts` {#citros_data_analysis.data_access.citros_db.CitrosDB.get_counts}
+### Method `get_counts` {#citros_data_analysis.data_access.citros_db.CitrosDB.get_counts}
 
 
 
@@ -3641,7 +3638,7 @@ The same, but passing all constraints by **filter_by** parameter:
 
 
     
-## Method `get_unique_counts` {#citros_data_analysis.data_access.citros_db.CitrosDB.get_unique_counts}
+### Method `get_unique_counts` {#citros_data_analysis.data_access.citros_db.CitrosDB.get_unique_counts}
 
 
 
@@ -3726,7 +3723,7 @@ The same, but passing all constraints by **filter_by** parameter:
 
 
     
-## Method `get_unique_values` {#citros_data_analysis.data_access.citros_db.CitrosDB.get_unique_values}
+### Method `get_unique_values` {#citros_data_analysis.data_access.citros_db.CitrosDB.get_unique_values}
 
 
 
@@ -3785,9 +3782,9 @@ The same, but passing all constraints by **filter_by** parameter:
 
 </details>
 
-
+## Plots
     
-## Method `time_plot` {#citros_data_analysis.data_access.citros_db.CitrosDB.time_plot}
+### Method `time_plot` {#citros_data_analysis.data_access.citros_db.CitrosDB.time_plot}
 
 
 
@@ -3882,7 +3879,7 @@ Create a new figure and plot only part of the data, where 'data.x.x_1' <= 0; plo
 
 
     
-## Method `xy_plot` {#citros_data_analysis.data_access.citros_db.CitrosDB.xy_plot}
+### Method `xy_plot` {#citros_data_analysis.data_access.citros_db.CitrosDB.xy_plot}
 
 
 
@@ -3977,7 +3974,7 @@ Create new figure and plot only part of the data, where 'data.x.x_1' <= 0, sid =
 
 
     
-## Method `plot_graph` {#citros_data_analysis.data_access.citros_db.CitrosDB.plot_graph}
+### Method `plot_graph` {#citros_data_analysis.data_access.citros_db.CitrosDB.plot_graph}
 
 
 
@@ -4080,7 +4077,7 @@ returns them. Let's plot the previous image without passing **ax** argument, and
 
 
     
-## Method `plot_3dgraph` {#citros_data_analysis.data_access.citros_db.CitrosDB.plot_3dgraph}
+### Method `plot_3dgraph` {#citros_data_analysis.data_access.citros_db.CitrosDB.plot_3dgraph}
 
 
 
@@ -4179,7 +4176,7 @@ Make 3D plot with dashed lines; **scale** = True aligns all axes to have the sam
 
 
     
-## Method `multiple_y_plot` {#citros_data_analysis.data_access.citros_db.CitrosDB.multiple_y_plot}
+### Method `multiple_y_plot` {#citros_data_analysis.data_access.citros_db.CitrosDB.multiple_y_plot}
 
 
 
@@ -4275,7 +4272,7 @@ returns them. Let's make a scatter plot in this manner:
 
 
     
-## Method `multiplot` {#citros_data_analysis.data_access.citros_db.CitrosDB.multiplot}
+### Method `multiplot` {#citros_data_analysis.data_access.citros_db.CitrosDB.multiplot}
 
 
 
@@ -4370,7 +4367,7 @@ correlation between them; plot by dots and scale x and y axes ranges to one inte
 
 
     
-## Method `plot_sigma_ellipse` {#citros_data_analysis.data_access.citros_db.CitrosDB.plot_sigma_ellipse}
+### Method `plot_sigma_ellipse` {#citros_data_analysis.data_access.citros_db.CitrosDB.plot_sigma_ellipse}
 
 
 

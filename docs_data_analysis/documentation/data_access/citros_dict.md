@@ -46,7 +46,7 @@ CitrosDict is a dictionary-like object, that allows to print the content as a js
 
 
     
-## Method `to_json` {#citros_data_analysis.data_access.citros_dict.CitrosDict.to_json}
+### Method `to_json` {#citros_data_analysis.data_access.citros_dict.CitrosDict.to_json}
 
 
 
@@ -88,7 +88,7 @@ Make a CitrosDict object, convert it to json string and print it:
 
 
     
-## Method `print` {#citros_data_analysis.data_access.citros_dict.CitrosDict.print}
+### Method `print` {#citros_data_analysis.data_access.citros_dict.CitrosDict.print}
 
 
 

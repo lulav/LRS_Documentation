@@ -127,7 +127,7 @@ and interpolate data on the new scale.
 
 
     
-## Method `std_bound_test` {#citros_data_analysis.validation.validation.Validation.std_bound_test}
+### Method `std_bound_test` {#citros_data_analysis.validation.validation.Validation.std_bound_test}
 
 
 
@@ -309,7 +309,7 @@ std_bound_test: passed
 
 
     
-## Method `mean_test` {#citros_data_analysis.validation.validation.Validation.mean_test}
+### Method `mean_test` {#citros_data_analysis.validation.validation.Validation.mean_test}
 
 
 
@@ -462,7 +462,7 @@ mean_test: passed
 
 
     
-## Method `std_test` {#citros_data_analysis.validation.validation.Validation.std_test}
+### Method `std_test` {#citros_data_analysis.validation.validation.Validation.std_test}
 
 
 
@@ -618,7 +618,7 @@ std_test: passed
 
 
     
-## Method `sid_test` {#citros_data_analysis.validation.validation.Validation.sid_test}
+### Method `sid_test` {#citros_data_analysis.validation.validation.Validation.sid_test}
 
 
 
@@ -774,7 +774,7 @@ sid_test: passed
 
 
     
-## Method `norm_test` {#citros_data_analysis.validation.validation.Validation.norm_test}
+### Method `norm_test` {#citros_data_analysis.validation.validation.Validation.norm_test}
 
 
 
@@ -905,7 +905,7 @@ norm_test Linf: passed
 
 
     
-## Method `set_tests` {#citros_data_analysis.validation.validation.Validation.set_tests}
+### Method `set_tests` {#citros_data_analysis.validation.validation.Validation.set_tests}
 
 
 
