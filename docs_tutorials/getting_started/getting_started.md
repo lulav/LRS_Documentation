@@ -3,7 +3,7 @@ sidebar_position: 1
 sidebar_label: 'Getting Started'
 ---
 
-# Frequently Used 
+# Know the Basic
 
 ## Prerequisites for Working With CITROS
 
@@ -137,13 +137,27 @@ working remotely with [git@citros.io:lulav/cannon.git].
  ``` 
 :::
 
+## Work With Dev Container
 
+### Reopen in Container
 
+1. Open and run Docker.
+2. Open the project in VScode.
+3. Press on the bottom left corner icon.
 
-## Reopen in Container
+![Alt text](img/container_corner.png)
 
+4. Choose **Reopen in Container**
 
-----------------------------------------
+![Alt text](img/container_open_container.png)
+
+5. Open VScode terminal and make sure you are in the right location
+    
+ ```    
+ ros@docker-desktop:/workspaces/[Project Name]$
+ ```
+
+<!-- 
 
 
 
@@ -155,7 +169,7 @@ working remotely with [git@citros.io:lulav/cannon.git].
 | --- | --- | --- |
 | `CITROS_DOMAIN` | The main domain, defaults to `citros.io` | all packages |
 | `CITROS_DIR` | Used by the citros cluster, do not use. | citros |
-| `CITROS_SIM_RUN_DIR` | The directory under `.citros/runs` in which all simulation data will be saved (see [runs](/docs_cli/structure/citros_structure#directory-runs)). This can be handy, if your code needs to know this location in order to access some of the files, e.g. parameter setups. | citros |
+| `CITROS_SIM_RUN_DIR` | The directory under `.citros/runs` in which all simulation data will be saved (see [runs](/docs_cli/structure/citros_structure#directory-runs)). This can be handy, if your code needs to know this location in order to access some of the files, e.g. parameter setups. | citros | -->
 
 
 ## Build and Push a Docker Image

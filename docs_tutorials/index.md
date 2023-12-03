@@ -82,8 +82,10 @@ $ code .
      ![Alt text](img/container_open_container.png)
 
 6. Open VScode terminal and make sure you are in the right location
-    
-    ros@docker-desktop:/workspaces/cannon$ 
+ 
+ ```    
+ ros@docker-desktop:/workspaces/cannon$ 
+ ```
 
 :::note
 From this point, all the actions should be typed in VScode terminal.

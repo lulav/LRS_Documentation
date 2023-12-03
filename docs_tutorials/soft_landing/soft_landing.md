@@ -46,7 +46,7 @@ With CITROS, you can easily run multiple simulations and compare the results to 
  cd ~/soft_landing
  code .
  ```
-3. Open the repository in the container from VScode with `reopen in container` option.
+3. Open the repository in the container from VScode with `reopen in container` [option](/docs_tutorials/getting_started/getting_started#reopen-in-container).
 4. Build the project:
  ```bash
  $ colcon build
