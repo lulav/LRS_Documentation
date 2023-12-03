@@ -46,7 +46,7 @@ With CITROS, you can easily run multiple simulations and compare the results to 
  cd ~/soft_landing
  code .
  ```
-3. Open the repository in the container from VScode with `reopen in container` [option](/docs_tutorials/getting_started/getting_started#reopen-in-container).
+3. Open the repository in the container from VScode with `reopen in container` [option](../getting_started/getting_started.md#reopen-in-container).
 4. Build the project:
  ```bash
  $ colcon build
@@ -130,7 +130,7 @@ Wait for the output in the terminal.
  citros push
  ```
 
-2. [Build and push](../getting_started/getting_started.md#building-and-pushing-a-docker-image) to sync your project into CITROS server.
+2. [Build and push](../getting_started/getting_started.md#build-and-push-a-docker-image) to sync your project into CITROS server.
 
 ### Running on The Cloud
 
