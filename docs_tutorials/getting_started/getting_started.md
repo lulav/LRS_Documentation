@@ -50,7 +50,17 @@ You can verify that the installation succeeded by running
 ```bash
 $ citros -V
 ```
-
+:::tip
+If you ran the `pip install citros` command and you still getting 
+```bash
+ $ citros: command not found
+```
+Try running:
+```bash
+ $ source ~/.profile 
+```
+This should solve your problem and you should be able to run citros commands, otherwise [contact us](https://discord.com/).
+:::
 ## Clone CITROS Garden Project
 
 All the projects can be found [here](https://github.com/orgs/citros-garden/repositories)
@@ -106,7 +116,7 @@ User logged in.
 
 ### Set up SSH
 
-This process only needs to be performed once per computer, and can be performed either using the CITROS website or using CITROS CLI
+This process only needs to be performed once per machine, and can be performed either using the CITROS website or using CITROS CLI
 <Tabs>
 <TabItem value="citros_cli" label="SSH Setup with CITROS CLI">
 

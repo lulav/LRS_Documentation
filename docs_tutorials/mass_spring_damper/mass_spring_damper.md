@@ -48,8 +48,7 @@ you can tune the controller gains, $k_p$, $k_i$, $k_d$, configured as ROS 2 para
 
 1. Please make sure you have all the [necessary softwares](../getting_started/getting_started.md#softwares-to-work-with-citros) to work with CITROS installed on your computer.
 2. Install [Visual Studio code](https://code.visualstudio.com/download).
-3. [Install CITROS](../getting_started/getting_started.md#installation).
-4. We strongly recommend that you work with [dockers](..//dockerfile_overview/dockerfile_overview.md). However, if you wish to work without dockers, please refer to the [.devcontainer](https://github.com/citros-garden/mass-spring-damper/tree/main/.devcontainer) directory in project's repo, the dependencies you need are in the `Dockerfile` and `install.sh` files.
+3. We strongly recommend that you work with [dockers](..//dockerfile_overview/dockerfile_overview.md). However, if you wish to work without dockers, please refer to the [.devcontainer](https://github.com/citros-garden/mass-spring-damper/tree/main/.devcontainer) directory in project's repo, the dependencies you need are in the `Dockerfile` file.
 
 ## Table of Contents
 1. [Installation](#installation)
@@ -65,19 +64,8 @@ you can tune the controller gains, $k_p$, $k_i$, $k_d$, configured as ROS 2 para
  ```sh
  git clone git@github.com:citros-garden/mass_spring_damper.git
    ```
-2. Open the repository in the VScode:
- ```sh
- cd ~/mass_spring_damper
- code .
- ```
-3. Open the repository in the container from VScode with `reopen in container` [option](../getting_started/getting_started.md#reopen-in-container).<br />
+2. Open the repository in the [VScode Dec Container](../getting_started/getting_started.md#open-project-in-vscode-dev-container).<br />
 *The Dockerfile contains all the necessary dependencies for the project.*
-
-4. Build the project:
- ```bash
- $ colcon build
- $ source install/local_setup.bash
- ```
 
 ## Workspace Overview
 
@@ -105,7 +93,8 @@ you can tune the controller gains, $k_p$, $k_i$, $k_d$, configured as ROS 2 para
 
 ## CITROS Initialization
 
-Follow [these steps](/docs_tutorials/getting_started/getting_started.md#initialization) to Initialize CITROS.
+1. [Install CITROS](../getting_started/getting_started.md#installation).
+2. Follow [these steps](/docs_tutorials/getting_started/getting_started.md#initialization) to Initialize CITROS.
 
 ## Scenario
 
@@ -144,18 +133,26 @@ We will define the following requirements:
 * Settling to `10%` of the steady-state value.
 
 ## Running the Scenario using CITROS
-```bash
-citros run -n "default" -m "default simulation"
-```
-After running the command, choose the launch file you wish to run. The simulation will start and you could see the mass position and the control signal in the terminal's logs.
 
-For more CLI running options check the [Introduction to CITROS](https://citros.io/doc/docs_tutorials/) tutorial.
+1. First [upload project to CITROS Server](../getting_started/getting_started.md#upload-to-citros-server)
+
+2. Lets run `50` simulations in the server
+```bash
+citros run -n "default" -m "default simulation" -r -c 50
+? Please choose the simulation you wish to run: 
+  simulation_dynamics
+❯ simulation_dynamics_controller
+```
+After running the command, choose the launch file you wish to run (if you'ld like to see the same [results](#results), choose `simulation_dynamics_controller`). The simulation will start and you could see the mass position and the control signal in the terminal's logs.
+
+You can read more about the [simulation basic running option](../getting_started/getting_started.md#simulation-running-options) or [check all `run` command options](/docs_cli/commands/cli_commands.md#command-run)
 
 ## Results
-Lets run `50` simulations in the server and analyze the results:
+Now we can analyze the results:
 
 ![jpeg](img/analysis.jpeg)
 
+The full report with the data access and error analysis was generated using the data analysis package, can be found [here](https://citros.io/mass_spring_damper/blob/main/notebooks/normal_distributed_mass.ipynb)
 
 We can see that `43` tests were passed the requirements, `6` failed and `1` was generated invalid mass $(<0)$.
 

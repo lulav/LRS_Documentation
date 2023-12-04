@@ -7,7 +7,6 @@ sidebar_label: 'Drone'
 
 ## Overview
 
-![Alt text](img/Droneimg.png)
 
 This repository contains an example of a ROS 2 node which communicate with a drone using PX4 and ROS 2.
 Communication via uXRCE-DDS (PX4 version `1.14.0`).  
@@ -17,9 +16,14 @@ The repository contains launch file which launch:
 3. DDS agent for ROS 2 - PX4 communication.
 4. An offboard node which sends setpoints for the control system.
 
+![Alt text](img/Droneimg.png)
+
 ## Prerequisites
-Make sure you complete the [Getting Started Tutorial](https://citros.io/doc/docs_tutorials/getting_started/)
-For working without dockers **(not recommended)**, please check the [.devcontainer](https://github.com/citros-garden/drone/tree/main/.devcontainer) folder in the project's repo for dependencies (in the `Dockerfile` and `install.sh`).
+
+1. Please make sure you have all the [necessary softwares](../getting_started/getting_started.md#softwares-to-work-with-citros) to work with CITROS installed on your computer.
+2. Install [Visual Studio code](https://code.visualstudio.com/download).
+3. We strongly recommend that you work with [dockers](..//dockerfile_overview/dockerfile_overview.md). However, if you wish to work without dockers, please refer to the [.devcontainer](https://github.com/citros-garden/drone/tree/main/.devcontainer) directory in project's repo, the dependencies you need are in the `Dockerfile` and `install.sh` files.
+
 
 ## Table of Contents
 1. [Installation](#installation)
@@ -31,11 +35,12 @@ For working without dockers **(not recommended)**, please check the [.devcontain
 
 
 ## Installation
-Clone the repository from Github:
-```sh
-git clone git@github.com:citros-garden/drone.git
-```
-Then open the repository in VSCode's `devcontainer` with `reopen in container` option.  
+1. Clone the repository from Github:
+ ```sh
+ git clone git@github.com:citros-garden/drone.git
+ ```
+
+2. Open the repository in the [VScode Dec Container](../getting_started/getting_started.md#open-project-in-vscode-dev-container).
 
 The Dockerfile contains all the necessary dependencies for the project, and the install script will clone PX4-Autopilot and build the firmware, along with building ROS 2 workspace.
 
@@ -96,7 +101,8 @@ This is a list of all the ROS 2 parameters that can be control by the user wish:
 | windGustDirectionVariance | The direction variance of the wind gust|  world |
 
 ## CITROS Initialization
-Make sure to install and initialize CITROS by following the [Getting Started](https://citros.io/doc/docs_tutorials/getting_started/) tutorial.
+1. [Install CITROS](../getting_started/getting_started.md#installation).
+2. Follow [these steps](/docs_tutorials/getting_started/getting_started.md#initialization) to Initialize CITROS.
 
 ## Scenario
 We assign four points: `p1`, `p2`, `p3`, and `p4` to the drone. The drone starts hovering at each point in order of 1-2-3-4. When it reaches point 4, it goes back to point 1 and repeats the process as many times as the value of the `repeats` parameter that we have provided.
@@ -107,25 +113,25 @@ You can see the parameters file for that simulation under the code section insid
 
 After completing the configuration of the parameters file, we proceeded to execute it with CITROS.
 
-- First, we save our work and upload it to CITROS server:
-```bash 
-citros commit
-citros push
-```
+1. First ensure that the project has been [built and sourced](../getting_started/getting_started.md#build-the-project)
+2. [Upload project to CITROS Server](../getting_started/getting_started.md#upload-to-citros-server)
+3. Open the [drone](https://citros.io/drone) project.
+4. Navigate to the [`Runs` tab](https://citros.io/drone/batch).
+5. Click on the `Run simulation` button on the right.
+6. Configure your simulation. In this example we will run the [scenario](#scenario) 50 times:
+    1. Simulation: simulation_offboard_position_control.json
+    2. Repeats: 50
+    3. Parallelism: 10
+    4. name: Tutorial-scenario-simulation
+7. Press red `Run Simulation` button.
 
-- Then, we need to build and push Docker container image to the CITROS server:
-```bash 
-citros docker-build-push
-```
+![Alt text](img/drone_simulation.png)  
 
-- Finally, we run the simulation at the web:
-1. Open the [drone](https://citros.io/drone) project.
-2. Navigate to the `Runs` tab.
-3. Click on the `Run Simulation` button on the right.
-
-For our example, we will run the [scenario](#scenario) 50 times. Once the simulations are complete, we can create a notebook file located [here](https://citros.io/drone/blob/main/notebooks/wind_analysis.ipynb).  
+Once the simulations are complete, we can execute the [notebook](https://citros.io/drone/blob/main/notebooks/wind_analysis.ipynb).  
 
 ## Results
+
+These are part of the results you will receive in the notebook:
 
 ![Alt text](img/wind_sim_result.png)  
 
