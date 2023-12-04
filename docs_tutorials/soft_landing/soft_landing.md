@@ -38,20 +38,11 @@ With CITROS, you can easily run multiple simulations and compare the results to 
 ## Installation
    
 1. Clone the repository:
+
  ```sh
  git clone git@github.com:citros-garden/soft_landing.git
    ```
-2. Open the repository in the VScode:
- ```sh
- cd ~/soft_landing
- code .
- ```
-3. Open the repository in the container from VScode with `reopen in container` [option](../getting_started/getting_started.md#reopen-in-container).
-4. Build the project:
- ```bash
- $ colcon build
- $ source install/local_setup.bash
- ```
+2. Open the repository in the [VScode Dec Container](../getting_started/getting_started.md#open-project-in-vscode-dev-container):
 
 ## Workspace Overview
 After all the prerequisites done, we can start configuring our project.  
@@ -103,12 +94,7 @@ By configuring the velocity parameters using $\mu$ and $\sigma$, we can identify
 To configure the scenario described [above](#scenario), I created a `default_param_setup.json` file located in `.citros/parameter_setups` and a `function object` located in `.citros/parameter_setups/functions` to randomize the initial velocity with $\mu$ and $\sigma$ for each parameter.  
 For the initial validation of the controller, I chose random values of $\mu$ and $\sigma$.
 
-First ensure that the project has been built and sourced:
-
-```bash
-$ colcon build
-$ source install/local_setup.bash
-```
+First ensure that the project has been [built and sourced](../getting_started/getting_started.md#build-the-project)
 
 you're now ready to run a CITROS simulation, by using the run command:
 ```sh
@@ -122,17 +108,9 @@ The `simulation_dynamics_controller` launches the `dynamics_controller.launch.py
 To execute, select the launch file and press the `Enter` button.  
 Wait for the output in the terminal.  
 
-### Upload to CITROS Server
-
-1. The working directory of your ROS project must be clean. So if you made any changes, simply commit your changes first.
-```sh
- citros commit
- citros push
- ```
-
-2. [Build and push](../getting_started/getting_started.md#build-and-push-a-docker-image) to sync your project into CITROS server.
-
 ### Running on The Cloud
+
+[Upload project to CITROS Server](../getting_started/getting_started.md#upload-to-citros-server)
 
 Finally, we can run it in the cloud, simply add ```-r``` to the terminal command: 
 ```bash 

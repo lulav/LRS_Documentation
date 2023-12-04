@@ -1,9 +1,28 @@
 ---
 sidebar_position: 1
 sidebar_label: 'Getting Started'
+
+
+# Install softwares
+# install citros
+# clone 
+# open in container
+# build + source
+
+# ??install citros
+# init citros
+# run local
+# run remote
+
+# build + source
+# commit
+# push
+# run
+
+
 ---
 
-# Know the Basic
+# Getting Started
 
 ## Prerequisites for Working With CITROS
 
@@ -32,6 +51,47 @@ You can verify that the installation succeeded by running
 $ citros -V
 ```
 
+## Clone CITROS Garden Project
+
+All the projects can be found [here](https://github.com/orgs/citros-garden/repositories)
+
+To clone the repository:
+ ```sh
+ git clone git@github.com:citros-garden/repository_name.git
+   ```
+
+## Run Project in VScode
+
+### Open Project in VScode Dev Container
+
+1. Open the cloned repository in VScode:
+
+ ```sh
+ cd ~/project-name
+ code .
+ ```
+2. Open and run Docker.
+3. Open the project in VScode.
+4. Press on the bottom left corner icon.
+
+![Alt text](img/container_corner.png)
+
+5. Choose **Reopen in Container**
+
+![Alt text](img/container_open_container.png)
+
+6. Open VScode terminal and make sure you are in the right location. <br />
+ ```    
+ ros@docker-desktop:/workspaces/[Project Name]$
+ ```
+
+7. [Build the project](#build-the-project)
+
+### Build the project
+ ```bash
+ $ colcon build
+ $ source install/local_setup.bash
+ ```
 ## Initialization
 
 ### Log in to CITROS
@@ -137,25 +197,6 @@ working remotely with [git@citros.io:lulav/cannon.git].
  ``` 
 :::
 
-## Work With Dev Container
-
-### Reopen in Container
-
-1. Open and run Docker.
-2. Open the project in VScode.
-3. Press on the bottom left corner icon.
-
-![Alt text](img/container_corner.png)
-
-4. Choose **Reopen in Container**
-
-![Alt text](img/container_open_container.png)
-
-5. Open VScode terminal and make sure you are in the right location
-    
- ```    
- ros@docker-desktop:/workspaces/[Project Name]$
- ```
 
 <!-- 
 
@@ -171,9 +212,12 @@ working remotely with [git@citros.io:lulav/cannon.git].
 | `CITROS_DIR` | Used by the citros cluster, do not use. | citros |
 | `CITROS_SIM_RUN_DIR` | The directory under `.citros/runs` in which all simulation data will be saved (see [runs](/docs_cli/structure/citros_structure#directory-runs)). This can be handy, if your code needs to know this location in order to access some of the files, e.g. parameter setups. | citros | -->
 
-
-## Build and Push a Docker Image
-
+## Upload to CITROS Server
+The working directory of your ROS project must be clean. So if you made any changes, simply commit your changes first.
+```sh
+ citros commit
+ citros push
+ ```
 To run a simulation on the cloud - we need to build a docker image of our ROS project, tag it with the current commit hash for the project, and upload it to CITROS.
 all this is accomplished by running a single command:
 
