@@ -45,8 +45,11 @@ $$
 you can tune the controller gains, $k_p$, $k_i$, $k_d$, configured as ROS 2 parameters.
 
 ## Prerequisites
-Make sure you complete the [Getting Started Tutorial](https://citros.io/doc/docs_tutorials/getting_started/).
-For working without dockers **(not recommended)**, please check the [.devcontainer](https://github.com/citros-garden/mass-spring-damper/tree/main/.devcontainer) folder in the project's repo for dependencies (in the `Dockerfile` and `install.sh`).
+
+1. Please make sure you have all the [necessary softwares](../getting_started/getting_started.md#softwares-to-work-with-citros) to work with CITROS installed on your computer.
+2. Install [Visual Studio code](https://code.visualstudio.com/download).
+3. [Install CITROS](../getting_started/getting_started.md#installation).
+4. We strongly recommend that you work with [dockers](..//dockerfile_overview/dockerfile_overview.md). However, if you wish to work without dockers, please refer to the [.devcontainer](https://github.com/citros-garden/mass-spring-damper/tree/main/.devcontainer) directory in project's repo, the dependencies you need are in the `Dockerfile` and `install.sh` files.
 
 ## Table of Contents
 1. [Installation](#installation)
@@ -57,13 +60,24 @@ For working without dockers **(not recommended)**, please check the [.devcontain
 6. [Results](#results)
 
 ## Installation
-Clone the repository from Github:
-```sh
-git clone git@github.com:citros-garden/mass-spring-damper.git
-```
-Then open the repository in VSCode's `devcontainer` with `reopen in container` option.  
 
-The Dockerfile contains all the necessary dependencies for the project.
+1. Clone the repository from Github:
+ ```sh
+ git clone git@github.com:citros-garden/mass_spring_damper.git
+   ```
+2. Open the repository in the VScode:
+ ```sh
+ cd ~/mass_spring_damper
+ code .
+ ```
+3. Open the repository in the container from VScode with `reopen in container` [option](../getting_started/getting_started.md#reopen-in-container).<br />
+*The Dockerfile contains all the necessary dependencies for the project.*
+
+4. Build the project:
+ ```bash
+ $ colcon build
+ $ source install/local_setup.bash
+ ```
 
 ## Workspace Overview
 
@@ -90,7 +104,8 @@ The Dockerfile contains all the necessary dependencies for the project.
 |dynamics_controller.launch.py | Launch the controlled system with PID controller
 
 ## CITROS Initialization
-Make sure to install and initialize CITROS by following the [Getting Started](https://citros.io/doc/docs_tutorials/getting_started/) tutorial.
+
+Follow [these steps](/docs_tutorials/getting_started/getting_started.md#initialization) to Initialize CITROS.
 
 ## Scenario
 
