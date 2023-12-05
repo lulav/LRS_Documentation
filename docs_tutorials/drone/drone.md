@@ -40,7 +40,7 @@ The repository contains launch file which launch:
  git clone git@github.com:citros-garden/drone.git
  ```
 
-2. Open the repository in the [VScode Dec Container](../getting_started/getting_started.md#open-project-in-vscode-dev-container).
+2. Open the repository in the [VScode Dev Container](../getting_started/getting_started.md#open-project-in-vscode-dev-container).
 
 The Dockerfile contains all the necessary dependencies for the project, and the install script will clone PX4-Autopilot and build the firmware, along with building ROS 2 workspace.
 

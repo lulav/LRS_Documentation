@@ -64,7 +64,7 @@ you can tune the controller gains, $k_p$, $k_i$, $k_d$, configured as ROS 2 para
  ```sh
  git clone git@github.com:citros-garden/mass_spring_damper.git
    ```
-2. Open the repository in the [VScode Dec Container](../getting_started/getting_started.md#open-project-in-vscode-dev-container).<br />
+2. Open the repository in the [VScode Dev Container](../getting_started/getting_started.md#open-project-in-vscode-dev-container).<br />
 *The Dockerfile contains all the necessary dependencies for the project.*
 
 ## Workspace Overview

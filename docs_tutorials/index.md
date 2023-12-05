@@ -398,7 +398,7 @@ To fully understand what's going on, we need to familiarize ourselves with three
 
 By default, when using the `run` command, you must provide a batch name (using the `-n` flag) and a message (using the `-m` flag). The name you provide will be used as the name of the directory in which all runs for this batch will be saved. If a batch by that name already exists - no worries, CITROS will simply add an underscore and an index to the name you provided, thereby keeping the batch directory names unique for each simulation. 
 
-Now that you understand what's going on, choose on of the simulations presented in the menu, press enter and see it run...
+Now that you understand what's going on, choose one of the simulations presented in the menu, press enter and see it run...
 
 ### Configuring a Simulation
 

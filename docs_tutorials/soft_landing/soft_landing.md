@@ -41,7 +41,7 @@ With CITROS, you can easily run multiple simulations and compare the results to 
  ```sh
  git clone git@github.com:citros-garden/soft_landing.git
    ```
-2. Open the repository in the [VScode Dec Container](../getting_started/getting_started.md#open-project-in-vscode-dev-container).
+2. Open the repository in the [VScode Dev Container](../getting_started/getting_started.md#open-project-in-vscode-dev-container).
 
 ## Workspace Overview
 After all the prerequisites done, we can start configuring our project.  
