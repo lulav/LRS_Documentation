@@ -24,8 +24,7 @@ With CITROS, you can easily run multiple simulations and compare the results to 
 
 1. Please make sure you have all the [necessary softwares](../getting_started/getting_started.md#softwares-to-work-with-citros) to work with CITROS installed on your computer.
 2. Install [Visual Studio code](https://code.visualstudio.com/download).
-3. [Install CITROS](../getting_started/getting_started.md#installation).
-4. We strongly recommend that you work with [dockers](..//dockerfile_overview/dockerfile_overview.md). However, if you wish to work without dockers, please refer to the [.devcontainer](https://github.com/citros-garden/soft_landing/tree/main/.devcontainer) directory in project's repo, the dependencies you need are in the `Dockerfile` and `install.sh` files.
+3. We strongly recommend that you work with [dockers](..//dockerfile_overview/dockerfile_overview.md). However, if you wish to work without dockers, please refer to the [.devcontainer](https://github.com/citros-garden/soft_landing/tree/main/.devcontainer) directory in project's repo, the dependencies you need are in the `Dockerfile` and `install.sh` files.
 
 ## Table of Contents
 1. [Installation](#installation)
@@ -42,7 +41,7 @@ With CITROS, you can easily run multiple simulations and compare the results to 
  ```sh
  git clone git@github.com:citros-garden/soft_landing.git
    ```
-2. Open the repository in the [VScode Dec Container](../getting_started/getting_started.md#open-project-in-vscode-dev-container):
+2. Open the repository in the [VScode Dev Container](../getting_started/getting_started.md#open-project-in-vscode-dev-container).
 
 ## Workspace Overview
 After all the prerequisites done, we can start configuring our project.  
@@ -71,7 +70,8 @@ The launch files:
 
 ## CITROS Initialization
 
-Follow [these steps](/docs_tutorials/getting_started/getting_started.md#initialization) to Initialize CITROS.
+1. [Install CITROS](../getting_started/getting_started.md#installation).
+2. Follow [these steps](/docs_tutorials/getting_started/getting_started.md#initialization) to Initialize CITROS.
 
 Now you can see ```.CITROS``` directory in the explorer. 
 
