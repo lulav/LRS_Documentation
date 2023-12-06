@@ -93,7 +93,6 @@ Option|Description
   <summary>Examples</summary>
 
     $ citros setup-ssh
-      
 </details>
 
 ## Command `status`
@@ -544,6 +543,8 @@ Option|Description
 
 <details>
   <summary>Examples</summary>
+
+    $ citros logout
 </details>
 
 
