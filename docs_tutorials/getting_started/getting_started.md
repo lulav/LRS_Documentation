@@ -32,7 +32,7 @@ Download and install the following to work with CITROS
 
 - [Python3](https://www.python.org/downloads/)
 - [git](https://git-scm.com/)
-- [Docker](https://docs.docker.com/get-docker/)
+- [Docker](https://docs.docker.com/get-docker/) - To understand why CITROS uses Docker, read [CITROS usage in Dockerfile](../dockerfile_overview/dockerfile_overview.md).
 
 ### Working With CITROS on Web
 

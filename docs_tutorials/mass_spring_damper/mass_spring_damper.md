@@ -1,10 +1,10 @@
 ---
-sidebar_position: 30
+sidebar_position: 25
 sidebar_label: 'Mass Spring Damper'
 
 ---
 
-# Mass-Spring-Damper
+# Mass Spring Damper
 
 ## Overview
 

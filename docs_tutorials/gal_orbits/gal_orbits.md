@@ -1,9 +1,9 @@
 ---
-sidebar_position: 150
+sidebar_position: 30
 sidebar_label: 'Galactic Orbits'
 ---
 
-# Globular Star Cluster Orbit Simulations
+# Galactic Orbits
 
 ## Overview
 
