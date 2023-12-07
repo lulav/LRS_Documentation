@@ -49,53 +49,53 @@ If you are working with devcontainer, make sure you installed [Visual Studio cod
 ## Workspace Overview
 ### Input Parameters
 
-#### Double pendulum
+#### Double Pendulum
 
 ![double_pendulum_schema](img/double_pendulum_schema.png)
 
 Parameters of the simulation with their default values are listed in `src/double_pendulum/config/params.yaml` file:
 
-Parameter | Description | Default
+Parameter | Default | Description
 |--|--|--
-publish_freq| frequency of publishing | 10
-l1 | Length of the first pendulum, m | 0.08
-l2 | Length of the second pendulum, m | 0.2
-m1 | Mass of the first pendulum, kg | 5.0
-m2 | Mass of the second pendulum, kg | 3.0
-a1_0| Initial angle of the first pendulum, counted counterclockwise, degrees | 30.0
-a2_0| Initial angle of the second pendulum, counted counterclockwise, degrees | 10.0
-v1_0| Initial angular velocity of the first pendulum, counted counterclockwise, degrees per second | 0.0
-v2_0| Initial angular velocity of the second pendulum, counted counterclockwise, degrees per second | 0.0 
-T | Time of the simulation, seconds | 10.0
-h | Step of the simulation, seconds | 0.01
+publish_freq | 10| frequency of publishing
+l1 | 0.08 | Length of the first pendulum, m
+l2 | 0.2 | Length of the second pendulum, m
+m1 | 5.0 | Mass of the first pendulum, kg
+m2 | 3.0 | Mass of the second pendulum, kg
+a1_0 | 30.0| Initial angle of the first pendulum, counted counterclockwise, degrees
+a2_0 | 10.0| Initial angle of the second pendulum, counted counterclockwise, degrees
+v1_0 | 0.0| Initial angular velocity of the first pendulum, counted counterclockwise, degrees per second
+v2_0 | 0.0| Initial angular velocity of the second pendulum, counted counterclockwise, degrees per second 
+T | 10.0 | Time of the simulation, seconds
+h | 0.01 | Step of the simulation, seconds
 
-#### System with spring
+#### System with Spring
 
 ![system_with_spring_schema](img/system_with_spring_schema.png)
 
 Parameters of the simulation with their default values are listed in `src/system_with_spring/config/params.yaml` file:
 
-Parameter | Description | Default
+Parameter| Default | Description 
 |--|--|--
-publish_freq| frequency of publishing | 10
-l1 | Length of the first pendulum, m | 0.08
-l2 | Length of the second pendulum, m | 0.2
-l3 | Length of the third pendulum, m | 0.32
-lk | Spring attachment point, m. The spring is attached at a point lk meters from the beginning of the rod of the third pendulum at one end and at a point (lk - l1) meters from the beginning of the rod of the second pendulum at the other end. lk > l1, (l1+l2) > lk and l3 > lk | 0.14
-m1 | Mass of the first pendulum, kg | 5.0
-m2 | Mass of the second pendulum, kg | 3.0
-m3 | Mass of the second pendulum, kg | 1.0
-a1_0| Initial angle of the first pendulum, counted counterclockwise, degrees | 30.0
-a2_0| Initial angle of the second pendulum, counted counterclockwise, degrees | 10.0
-a2_0| Initial angle of the third pendulum, counted counterclockwise, degrees | -30.0
-v1_0| Initial angular velocity of the first pendulum, counted counterclockwise, degrees per second | 0.0
-v2_0| Initial angular velocity of the second pendulum, counted counterclockwise, degrees per second | 0.0
-v3_0| Initial angular velocity of the third pendulum, counted counterclockwise, degrees per second | 0.0
-x0 | Horizontal distance between attachment points of the first and third pendulums, m | 0.1
-k | Spring constant, kg/s^2 | 100.0
-l0 | Unstretched spring length, m | 0.05
-T | Time of the simulation, seconds | 10.0
-h | Step of the simulation, seconds | 0.01
+publish_freq | 10| frequency of publishing
+l1 | 0.08 | Length of the first pendulum, m
+l2 | 0.2 | Length of the second pendulum, m
+l3| 0.32 | Length of the third pendulum, m 
+lk | 0.14 | Spring attachment point, m. The spring is attached at a point lk meters from the beginning of the rod of the third pendulum at one end and at a point (lk - l1) meters from the beginning of the rod of the second pendulum at the other end. lk > l1, (l1+l2) > lk and l3 > lk
+m1 | 5.0 | Mass of the first pendulum, kg
+m2 | 3.0 | Mass of the second pendulum, kg
+m3 | 1.0 | Mass of the second pendulum, kg
+a1_0 | 30.0| Initial angle of the first pendulum, counted counterclockwise, degrees
+a2_0 | 10.0| Initial angle of the second pendulum, counted counterclockwise, degrees
+a2_0 | -30.0| Initial angle of the third pendulum, counted counterclockwise, degrees
+v1_0 | 0.0| Initial angular velocity of the first pendulum, counted counterclockwise, degrees per second
+v2_0 | 0.0| Initial angular velocity of the second pendulum, counted counterclockwise, degrees per second
+v3_0 | 0.0| Initial angular velocity of the third pendulum, counted counterclockwise, degrees per second
+x0 | 0.1 | Horizontal distance between attachment points of the first and third pendulums, m
+k | 100.0 | Spring constant, kg/s^2
+l0 | 0.05 | Unstretched spring length, m
+T | 10.0 | Time of the simulation, seconds
+h | 0.01 | Step of the simulation, seconds
 
 ### Source Code and Launch File
 
@@ -310,8 +310,7 @@ sid	|a1_0
 
 As we can see, the trajectories differ significantly and unpredictably although the initial parameters have quite close values.
 
-Refer to the notebook [notebooks/double_pendulum.ipynb](https://citros.io/pendulum/blob/main/notebooks/double_pendulum.ipynb) for more detailed information about batches and additional ideas on visualization, such as plotting the animation of the pendulum's motion.
-
+Refer to the notebook [notebooks/double_pendulum.ipynb](https://citros.io/pendulum/blob/main/notebooks/double_pendulum.ipynb) for more detailed information about batches and additional ideas on visualization, such as plotting the animation of the pendulum's motion.<br/>
 Additionally, examine [notebooks/system_with_spring.ipynb](https://citros.io/pendulum/blob/main/notebooks/system_with_spring.ipynb) for a detailed view of the spring system behavior.
 
 Feel free to set up your own simulations varying different parameters, create your own notebooks and explore pendulum systems with CITROS!
