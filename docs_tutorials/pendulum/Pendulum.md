@@ -37,14 +37,19 @@ If you are working inside the docker development container, everything is alread
 6. [Results](#results)
 
 ## Installation
+
+Clone the repository:
+
 ```bash
 git clone git@github.com:citros-garden/pendulum.git
 ```
 
+If you are working with devcontainer, make sure you installed [Visual Studio code](https://code.visualstudio.com/download) and then open the repository in the [VScode Dev Container](https://citros.io/doc/docs_tutorials/getting_started/#open-project-in-vscode-dev-container).
+
 ## Workspace Overview
 ### Input Parameters
 
-- Double pendulum
+#### Double pendulum
 
 ![double_pendulum_schema](img/double_pendulum_schema.png)
 
@@ -64,7 +69,7 @@ v2_0| Initial angular velocity of the second pendulum, counted counterclockwise,
 T | Time of the simulation, seconds | 10.0
 h | Step of the simulation, seconds | 0.01
 
-- System with spring
+#### System with spring
 
 ![system_with_spring_schema](img/system_with_spring_schema.png)
 
@@ -108,8 +113,8 @@ The launch files are located in `src/double_pendulum/launch/double_pendulum.laun
 
 ### Output of the Simulation
 
-- Double Pendulum
-The simulated data is published to a topic `'/coordinates'`. Each message has the custom message type that is defined in `src/double_pendulum_interfaces`:
+#### Double Pendulum
+The simulated data is published to a topic `'/coordinates'`. Each message has the custom message type that is defined in `src/double_pendulum_interfaces/`:
 
 ```js
 {
@@ -134,9 +139,9 @@ p1.y|y coordinate of the first pendulum, m
 p2.x|x coordinate of the second pendulum, m
 p2.y|y coordinate of the second pendulum, m
 
-- System with Spring
+#### System with Spring
 
-The simulated data is published to a topic named '/coordinates' too. Each message has the custom message type that is defined in `src/system_with_spring_interfaces/`:
+The simulated data is published to a topic named `'/coordinates'` too. Each message has the custom message type that is defined in `src/system_with_spring_interfaces/`:
 
 ```js
 {
@@ -180,7 +185,9 @@ spr.y1|x coordinate of the spring attachment to the second pendulum, m
 
 ## CITROS Initialization
 
-To start working with CITROS you need to install CITROS CLI package, log in, set ssh key and initialize the `.citros` repository. To do this please follow [Getting Started tutorial](https://citros.io/doc/docs_tutorials/getting_started/).
+To start working with CITROS you need to install CITROS CLI package, log in, set ssh key and initialize the `.citros` repository. To do this please follow:
+1. [Install CITROS](https://citros.io/doc/docs_tutorials/getting_started/#installation)
+2. [Initialize CITROS](https://citros.io/doc/docs_tutorials/getting_started/#initialization)
 
 ## Scenario
 
@@ -254,7 +261,7 @@ Check the `.citros/simulations/simulation_double_pendulum.json` and `.citros/sim
 
 ## Running the Scenario Using CITROS
 
-Next step is to commit and push all your changes and also build and push a docker image. To do this please follow the [Getting Started tutorial](https://citros.io/doc/docs_tutorials/getting_started/).
+Next step is to [Upload project to CITROS Server](https://citros.io/doc/docs_tutorials/getting_started/#upload-to-citros-server).
 
 After the following steps everything is ready to run the simulations in the cloud. Let's run two scenarios - one for the system of the double pendulum and one for the system with spring, the names of the resulting batches are set by `-n` key. Let's set 7 simulation runs for each of them by `-c` key. `-r` defines that the runs will be processed remotely. After typing the following command you will be asked to select the corresponding simulation scenario:
 
@@ -304,6 +311,7 @@ sid	|a1_0
 As we can see, the trajectories differ significantly and unpredictably although the initial parameters have quite close values.
 
 Refer to the notebook [notebooks/double_pendulum.ipynb](https://citros.io/pendulum/blob/main/notebooks/double_pendulum.ipynb) for more detailed information about batches and additional ideas on visualization, such as plotting the animation of the pendulum's motion.
-Additionally, examine [notebooks/system_with_spring.ipynb](https://citros.io/pendulum/blob/main/notebooks/system_with_spring.ipynb) for a detailed view of behavior of the spring system.
+
+Additionally, examine [notebooks/system_with_spring.ipynb](https://citros.io/pendulum/blob/main/notebooks/system_with_spring.ipynb) for a detailed view of the spring system behavior.
 
 Feel free to set up your own simulations varying different parameters, create your own notebooks and explore pendulum systems with CITROS!
