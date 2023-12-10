@@ -5,14 +5,14 @@ sidebar_label: 'Aerosandbox'
 
 # Aerosandbox
 
-# Overview
+## Overview
 The project is a simulation tool developed using ROS 2 (Robot Operating System) nodes and leverages the Aerosandbox Python library for aerodynamic calculations. Its primary objective is to simulate gliding flight scenarios for a Cessna 152 aircraft in the event of engine failure.
 
 You can find more information about this useful aerodynamics library on [Aerosandbox official website](https://github.com/peterdsharpe/AeroSandbox). All project installation, code overview and usage details are also available on the project's [GitHub page](https://github.com/citros-garden/aerosandbox_cessna).
 
 ![jpg](img/cessna152.jpg "https://en.wikipedia.org/wiki/File:Cessna_152_PR-EJQ_(8476096843).jpg")
 
-# Prerequisites
+## Prerequisites
 
 1. Please make sure you have all the [necessary softwares](https://citros.io/doc/docs_tutorials/getting_started/#softwares-to-work-with-citros) to work with CITROS installed on your computer.
 2. Install [Visual Studio code](https://code.visualstudio.com/download).
@@ -24,22 +24,26 @@ If you use the provided docker file (or devcontainer) all packages are preinstal
 :::
 
 
-# Table of Contents
-- [Installation](#installation)
-- [Workspace Overview](#workspace-overview)
-- [CITROS Initialization](#citros-initialization)
-- [Scenario](#scenario)
-- [Running the Scenario Using CITROS](#running-the-scenario-using-citros)
-- [Results](#results)
+## Table of Contents
+1. [Installation](#installation)
+2. [Workspace Overview](#workspace-overview)
+3. [CITROS Initialization](#citros-initialization)
+4. [Scenario](#scenario)
+5. [Running the Scenario Using CITROS](#running-the-scenario-using-citros)
+6. [Results](#results)
 
-# Installation
+## Installation
+1. Clone the repository:
+
 ```bash
 git clone git@github.com:citros-garden/aerosandbox_cessna.git
 ```
 
-# Workspace Overview
+2. Open the repository in the [VScode Dev Container](https://citros.io/doc/docs_tutorials/getting_started/#open-project-in-vscode-dev-container).
 
-The Aerosandbox simulation has the following ROS parameters:
+## Workspace Overview
+
+The Aerosandbox simulation has the following ROS 2 parameters:
 
 |Parameter	|Description	|Package
 |--|--|--
@@ -54,35 +58,44 @@ This project contains only one launch file ```aerosandbox_cessna.launch.py```. T
 aerosandbox_cessna.launch.py	|Aerosandbox simulation launch file  |aerosandbox_cessna
 
 
-# CITROS Initialization
+## CITROS Initialization
 
 1. [Install CITROS](https://citros.io/doc/docs_tutorials/getting_started/#installation).
 2. Follow [these steps](https://citros.io/doc/docs_tutorials/getting_started/#initialization) to Initialize CITROS.
 
-Now you can see .CITROS directory in the explorer.
-
-Check our [Getting Started](https://citros.io/doc/docs_tutorials/getting_started/) guide for additional information.
+Now you can see .citros directory in the explorer.
 
 
-# Scenario
+## Scenario
+For this tutorial, let's check how far the Cessna can glide with engine failure depending on initial altitude. To find it out, we need to set up parameters and launch CITROS simulation.
+
 The user provides flight parameters as input parameters to configure the simulation. These parameters are essential for defining the initial conditions of the simulated flight.
 
-Once the simulation is initiated, the ROS nodes orchestrate the execution. The simulation takes into account various flight dynamics and aerodynamic factors to model the gliding behavior of the Cessna 152. The maximum gliding distance depends on plane's aerodynamic parameters, initial altitude and initial velocity. To find it this code uses iPOPT optimal problem solver under the hood (iPOPT included into AeroSandbox).
+The simulation takes into account various flight dynamics and aerodynamic factors to model the gliding behavior of the Cessna 152. The maximum gliding distance depends on plane's aerodynamic parameters, initial altitude and initial velocity.
 
-The output of the simulation comprises critical flight data, such as altitude, velocity, and other relevant parameters, recorded over time intervals. These results are published via ROS topics, allowing for real-time data visualization, analysis, and integration with other ROS-based systems.
+We will be using [iPOPT](https://en.wikipedia.org/wiki/IPOPT#:~:text=IPOPT%2C%20short%20for%20%22Interior%20Point,the%20EPL%20(formerly%20CPL).) - optimal under the hood problem solver (iPOPT is also installed as part of the AeroSandbox package).
 
-For this example, let's check how far the Cessna can glide with engine failure depending on initial altitude. To find it out, we need to set up parameters and launch CITROS simulation.
+After CITROS initialization we can start configuring simulation setup. For remote launch we can set up the maximum performance available: timeout, CPU, GPU and Memory. To perform it, we need to define them in ```.citros/simulations/simulation_aerosandbox_cessna.json```. The recommended setup is minimum 180 seconds timeout, 4 CPU, 4 GPU and 4096 MB of Memory.
 
-
-After CITROS initialization we can start configuring simulation setup. For remote launch we can set up the maximum performance available: timeout, CPU, GPU and Memory. To perform it, we need to define them in ```.citros/simulations/simulation_aerosandbox_cessna.json```. The recommended setup is minimum 180 seconds timeout, 2 CPU, 2 GPU and 1024 MB of Memory. Don't forget to save the file!
-
-You can find the default parameter setup in ```.citros/parameter_setups/default_param_setup.json```. [CITROS CLI](https://citros.io/doc/docs_cli) provides an opportunity to use basic NumPy functions (such as distributions) and even user-defined functions. In case we want to find out how far the Cessna can glide with engine failure, we need to launch a batch with several simulations and a distribution for one of the ROS parameters (initial altitude, in this case). This parameter will be different for each simulation:
+The parameter setup is listed in ```.citros/parameter_setups/default_param_setup.json```. [CITROS CLI](https://citros.io/doc/docs_cli) provides an opportunity to use basic NumPy functions (such as distributions) and even user-defined functions. In case we want to find out how far the Cessna can glide with engine failure, we need to launch a batch with several simulations and a distribution for initial altitude, from 1000 m up to 10000 m:
 
 ```json
-"h_0": {
-    "function": "my_func.py:func_with_context",
-    "args": [1000.0]
-},
+{
+    "packages": {
+        "aerosandbox_cessna": {
+            "aerosandbox_cessna": {
+                "ros__parameters": {
+                    "h_0": {
+                        "function": "my_func.py:func_with_context",
+                        "args": [1000.0]
+                    },
+                    "v_0": 107.0,
+                    "publish_freq": 10.0
+                }
+            }
+        }
+    }
+}
 ```
 
 The ```my_func.py``` file should contain:
@@ -93,20 +106,20 @@ def func_with_context(num, citros_context):
 
 This function will set the ```h_0``` parameter in range from 1000 to 1000+1000*n, where n = number of runs.
 
-# Running the Scenario Using CITROS
+:::tip
+Learn more about parameter setup and defining custom functions in [Directory parameter_setups](https://citros.io/doc/docs_cli/structure/citros_structure/#directory-parameter_setups) and [Adding Functions to Parameter Setup](https://citros.io/doc/docs_cli/configuration/config_params) pages.
+:::
+## Running the Scenario Using CITROS
 
-<Tabs>
-
-<TabItem value="local" label="Running Locally">
-
-## Running Locally
-Since all [the preparations](https://citros.io/doc/docs_tutorials/getting_started/) done, we can launch it locally (your project should be built and sourced before that):
+### Running Locally
+First ensure that the project has been [built and sourced](https://citros.io/doc/docs_tutorials/getting_started/#build-the-project).
+Now we can launch it locally:
 ```bash 
 >>> citros run -n 'aerosandbox_cessna' -m 'local test run'
 ? Please choose the simulation you wish to run:
 ❯ aerosandbox_cessna
 ```
-Select the launch file (should be the only one here) by pressing ```Enter``` button and wait for the output in the terminal. To plot the local run results you can use [FoxGlove](https://docs.foxglove.dev/docs/introduction). Check [this guide](https://citros.io/doc/docs_tutorials/#visualization-with-foxglove) for additional info.
+Select the launch file (should be the only one here) by pressing ```Enter``` button and wait for the output in the terminal. 
 
 ```bash
 created new batch_id: <batch_run / batch name>. Running locally.
@@ -115,16 +128,14 @@ created new batch_id: <batch_run / batch name>. Running locally.
 ...
 ```
 
+To plot the local run results you can use FoxGlove. Check [this guide](https://citros.io/doc/docs_tutorials/#visualization-with-foxglove) for additional info.
+
 ![gif](img/gif0.gif "FoxGlove example")
 
-</TabItem>
-<TabItem value="cloud" label="Running in Cloud">
+### Running in Cloud
 
-## Preparations
-To prepare the project for the Cloud Run, follow [our guide](https://citros.io/doc/docs_tutorials/getting_started/#upload-to-citros-server).
+[Upload project to CITROS Server](https://citros.io/doc/docs_tutorials/getting_started/#upload-to-citros-server).
 
-
-## Running 
 Finally, we can run it in the cloud! Simply add `-r` to the terminal command: 
 ```bash 
 citros run -n 'aerosandbox_cessna' -m 'cloud test run' -r
@@ -138,19 +149,8 @@ Select the launch file (should be the only one here) by pressing `Enter` button.
 created new batch_id: <batch_id / batch name>. Running on Citros cluster. See https://citros.io/batch/<batch_id / batch name>.
 ```
 
-:::tip
-The best way to use all the innovative capabilities of CITROS is through it's Web interface. Follow [this manual](https://citros.io/doc/docs/simulations/sim_overview) to easily launch a simulation on CITROS Web platform.
-:::
+## Results
 
-</TabItem>
-
-</Tabs>
-
-# Results
-
-To get and process the simulation results, we can use built-in Jupiter Notebook support. Navigate to our ```Code``` project page, open the Notebooks folder and click on the notebook file. 
+To get and process the simulation results, execute [built-in Jupiter Notebook](https://citros.io/aerosandbox_cessna/blob/main/notebooks/aerosandbox_notebook_example.ipynb).
 
 ![png](img/citros3.png "CITROS example")
-
-import Tabs from '@theme/Tabs';
-import TabItem from '@theme/TabItem';
