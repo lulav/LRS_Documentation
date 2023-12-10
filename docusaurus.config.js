@@ -135,7 +135,7 @@ const config = {
       },
 
       // Replace with your project's social card
-      image: "img/docusaurus-social-card.jpg",
+      image: "img/citros-link.png",
 
       navbar: {
         // title: 'CITROS',
@@ -143,6 +143,7 @@ const config = {
           alt: "CITROS Logo",
           // src: 'img/logo.svg',
           src: "img/citros.png",
+          href: "https://citros.io",
         },
         items: [
           {

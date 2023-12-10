@@ -1,9 +1,10 @@
 ---
-sidebar_position: 80
+sidebar_position: 10
 sidebar_label: 'Soft Landing'
 ---
 
 # Soft Landing Tutorial
+## Overview
 
 This is a ROS 2 simulation of soft landing of an object.  
 In the ROS 2 system we have two nodes: the first represents the `dynamics` and the second one is the `controller`.
@@ -15,102 +16,40 @@ for more information see [Soft Landing](https://github.com/CITROS-garden/soft_la
 
 ![jpg](img/soft_landing_control.jpg "soft landing")
 
-## Table of Contents
+With CITROS, you can easily run multiple simulations and compare the results to find the optimal solution. It's a powerful tool that saves time and effort, allowing you to focus on improving your designs and achieving your goals.  
 
-3. [Installation](#installation)
-    1. [Prerequisites](#prerequisites)
-    2. [Install & Build](#install--build)
-4. [CITROS Integration](#citros-integration)
-    1. [Configuring The Project](#configuring-the-project)
-5. [Run the Example](#run-the-example)
-    1. [The Scenario](#the-scenario)
-    2. [Run a Test Simulation Locally with CITROS](#run-a-test-simulation-locally-with-citros)
-    3. [Run a Test Simulation In The Web with CITROS](#run-a-test-simulation-in-the-web-with-citros)
+![jpg](img/soft-landing-of-a-spacecraft-on-the-moon.png)
+
+## Prerequisites
+
+1. Please make sure you have all the [necessary softwares](../getting_started/getting_started.md#softwares-to-work-with-citros) to work with CITROS installed on your computer.
+2. Install [Visual Studio code](https://code.visualstudio.com/download).
+3. We strongly recommend that you work with [dockers](..//dockerfile_overview/dockerfile_overview.md). However, if you wish to work without dockers, please refer to the [.devcontainer](https://github.com/citros-garden/soft_landing/tree/main/.devcontainer) directory in project's repo, the dependencies you need are in the `Dockerfile` and `install.sh` files.
+
+## Table of Contents
+1. [Installation](#installation)
+2. [Workspace Overview](#workspace-overview)
+3. [CITROS Initialization](#citros-initialization)
+4. [Scenario](#scenario)
+5. [Running the Scenario Using CITROS](#running-the-scenario-using-citros)
+6. [Results](#results)
 
 ## Installation
-
-### Prerequisites
- - [Python 3.8+](https://www.python.org/downloads/)  
- - [VSCode](https://code.visualstudio.com/download) 
- - [Docker](https://www.docker.com/get-started/)  
- 
    
-### Install & Build 
 1. Clone the repository:
-   ```sh
-    git clone git@github.com:citros-garden/soft_landing.git
+
+ ```sh
+ git clone git@github.com:citros-garden/soft_landing.git
    ```
+2. Open the repository in the [VScode Dev Container](../getting_started/getting_started.md#open-project-in-vscode-dev-container).
 
-2. open the repository in the VScode:
-	```sh
-	cd ~/soft_landing
-	code .
-	```
-3. open the repository in the container from VScode with `reopen in container` option.
-
-
-## CITROS Integration
-To use all the powerful CITROS features usage requires CITROS installation:  
-(from the instructions on the CITROS CLI [GitHub page](https://github.com/lulav/CITROS_cli))
-
-
-**First,reopen the folder locally** then follow the instructions:
-```
-pip install citros
-```  
-
-
-then login:
-```
-citros login 
-```
-
-enter your email and password, you suppose to see:    
-
-![Alt text](img/image-5.png)
-
-then:
-
-```
- citros init
-```
-![Alt text](img/image-4.png)
+## Workspace Overview
+After all the prerequisites done, we can start configuring our project.  
+This is a list of all the ROS 2 parameters that can be control by the user wish:
 
 
 
-and finally:
-
-```
-citros setup-ssh
-citros add-remote
-```
-then check that we all set with the cli command: `CITROS status`
-
-### Configuring The Project
-After all the prerequisites done, we can start configuring our project. The starting point is the soft_landing devcontainer loaded and running, CITROS CLI is installed and ready.
-1. Initialize CITROS:
-```bash 
-citros init
-```
-Now you can see ```.CITROS``` folder in the explorer and at the terminal you can see that:  
-![Alt text](img/image-2.png)  
-
-4. Reopen in container
-5. source and build:
-	```sh
-	colcon build
-	source install/local_setup.bash
-	```
-
-## Run the Example
-
-### The Scenario
-Run the example of an object with the initial condition that suppose to land on an ending point.  
-The parameters are:  
-
-
-
-|     Variable     | Description | package |
+|     Parameter | Description | Package |
 | -------- |    ------- |  ------- | 
 | r_x0 , r_y0, r_z0 | initial position| dynamics |
 | v_x0 ,v_y0,v_z0 | initial velocity |  dynamics |
@@ -123,73 +62,92 @@ The parameters are:
 | e | stoping condition value | controller |
 | dt | time interval | controller |
 
-**All of the above are ROS 2 parameters that could easily change by the user as wish.**  
+[citros_cli](/docs_cli/configuration/config_params) provides more information about how to change the parameters by the user.
+
+The launch files:  
+ `dynamics_controller.launch.py` launch the dynamics with the controller and `dynamics.launch.py` launch only the dynamics.  
+ You can view the launch files [here](https://github.com/citros-garden/soft_landing/tree/main/src/dynamics/launch).
+
+## CITROS Initialization
+
+1. [Install CITROS](../getting_started/getting_started.md#installation).
+2. Follow [these steps](/docs_tutorials/getting_started/getting_started.md#initialization) to Initialize CITROS.
+
+Now you can see ```.CITROS``` directory in the explorer. 
+
+## Scenario
+Let's say we wish to land safely at some point on the moon's surface. To do that, we need a controller that can manage our velocity and guide us to the landing point while minimizing our speed.  
+There are many controller ideas but we need to determine their effectiveness and limitations.  
+Here we will try to find the limitations of the controller that based on the paper above by using CITROS.
+
+The control guidance is a time-to-go dependent affine function. Time-to-go is obtained by solving a quartic polynomial equation for the initial conditions.  
+So by giving the initial velocity value, we could check the validation of that controller.
+Instead of giving some random values to the initial velocity of the simulation until we can find the limits, CITROS allows us to run multiple simulations parallel at a short time and also provide random values of the initial velocity.  
+In this scenario,let's say that each initial velocity parameter (v_x0, v_y0, v_z0) will be distributed normally: N($\mu$, $\sigma$).  
+
+By configuring the velocity parameters using $\mu$ and $\sigma$, we can identify the conditions under which the controller is most likely to fail.
 
 
-After completing the CITROS integration setup we can check CITROS by running a test simulation.  
 
-First, set up the parameter of the simulation in the file   `default_param_setup.json` in `.CITROS/parameter_setups` folder.  
-Don't forget to save the file!  
+## Running the Scenario Using CITROS
 
+To configure the scenario described [above](#scenario), I created a `default_param_setup.json` file located in `.citros/parameter_setups` and a `function object` located in `.citros/parameter_setups/functions` to randomize the initial velocity with $\mu$ and $\sigma$ for each parameter.  
+For the initial validation of the controller, I chose random values of $\mu$ and $\sigma$.
 
-``` 
-you can read more about changing parameters in  `parameter setups` section in `CITROS_cli` readme.
-```  
+First ensure that the project has been [built and sourced](../getting_started/getting_started.md#build-the-project)
 
-
-### Run a Test Simulation Locally with CITROS
-#### Syncing Project's Setup
-Now we can sync our project settings with CITROS server:
-```bash 
-citros commit
-citros push
-```
-when everything is setup you can do a test run buy the following command:  
-```
+you're now ready to run a CITROS simulation, by using the run command:
+```sh
 citros run -n 'test' -m 'testytest'
+? Please choose the simulation you wish to run:  
+simulation_dynamics
+❯ simulation_dynamics_controller
 ```
-Then you will ask to choose the launch file you want to run.  
-There are two option:
 
-![Alt text](img/image-3.png)
+The `simulation_dynamics_controller` launches the `dynamics_controller.launch.py` file and `simulation_dynamics` launches the `dynamics.launch.py` file.  
+To execute, select the launch file and press the `Enter` button.  
+Wait for the output in the terminal.  
 
-The `simulation_dynamics_controller` launch the dynamics with the controller and `simulation_dynamics` launch only the dynamics.  
-Select the launch file by pressing ```Enter``` button and wait for the output in the terminal.  
-If the simulation ran perfectly you can run the simulation in the cloud.
+### Running on The Cloud
 
-### Run a Test Simulation in The Web with CITROS
-Before uploading the simulation to the cloud check that the parameter file, `default_param_setup.json`  in `.CITROS/parameter_setups` folder is set as you wish and saved.  
-That you have build and sourced the project.  
-And you have sync the project settings with CITROS server (CITROS commit , CITROS push).  
+[Upload project to CITROS Server](../getting_started/getting_started.md#upload-to-citros-server)
 
-Then,run the following:
-1. We need to build and push Docker container image to the CITROS server:
+Finally, we can run it in the cloud, simply add ```-r``` to the terminal command: 
 ```bash 
-citros docker-build-push
+ros@docker-desktop:/workspaces/soft_landing$ citros run -n 'test' -m 'testytest' -r
+? Please choose the simulation you wish to run:   
+simulation_dynamics
+❯ simulation_dynamics_controller
 ```
- Finally, we can run it in the cloud! Simply add ```-r``` to the terminal command: 
-```bash 
-citros run -n 'test' -m 'testytest' -r
-```
-Select the launch file you want by pressing ```Enter``` button. Now the simulation is running in the CITROS server, and it will upload results to the CITROS database automatically.
 
-Now we all set to run simulations from the web itself.  
-At the web,go to the soft landing repo and then to the `Runs` tab.  
+The simulation will now commence on the CITROS server, and the results will be uploaded automatically to the CITROS database.
 
-start a new simulation by clicking the ![Alt text](img/image-1.png) button.  
-then a window will pop:
+For more run options check [cli commands documentation](/docs_cli/commands/cli_commands#command-run). 
 
-![Alt text](img/image-6.png)  
+You can also [run simulations](/docs/simulations/sim_step_by_step) directly from [Runs tab](https://citros.io/soft_landing/batch) in your soft landing repository.
 
-As you can see I chose to fill the soft landing repository, the main branch, and run the simulations with the controller.  
-Then I chose to repeat 100 times such that CITROS run 10 simulations in parallel.  
-Then i clicked on *Run Simulation*.  
-The results were:  
+## Results
+
+The results were:
+
 ![Alt text](img/image-7.png)
 
-And by getting the miss distance and miss velocity i could show a figure of all the runs.  
+And by getting the miss distance and miss velocity we could show a figure of all the runs.  
+
 ![Alt text](img/image-8.png)  
-The full report with the data access and error analysis you can watch it [here](https://CITROS.io/soft_landing/blob/main/notebooks/Soft_landing_analysis.ipynb).
+
+
+![Alt text](img/image.png)
+
+The full report with the data access and error analysis was generated using the data analysis package, can be found [here](https://CITROS.io/soft_landing/blob/main/notebooks/Soft_landing_analysis.ipynb).
+
+After obtaining the results from CITROS and analyzing the data through visual graphs, we can confirm that the controller has met our demands. Most of the runs indicate that the miss distance and miss velocity are within our desired range.  
+
+*In summary, for 100 simulations with different starting velocities*<br />
+*we have 8 runs that miss the target (not within the radius 0.01[m] from the target).*<br />
+*And we have 6 fail runs that land with a miss distance greater than 0.01[m] and miss velocity greater than 1[m/s]*
+
+However, it's important to note that this is just the initial validation of the controller. We will need to conduct additional simulations to further validate our findings. Additionally, we can experiment with different values of $\mu$ and $\sigma$ for each parameter.   
 
 
 

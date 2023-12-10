@@ -12,7 +12,7 @@ export default function CopyButton({code, className}) {
   const handleCopyCode = useCallback(() => {
     const modifiedCode = code
       .split('\n')
-      .map(line => (line.startsWith('>>> ') ? line.substring(4) : line))
+      .map(line => (line.startsWith('>>> ') ? line.substring(4) : (line.startsWith('$ ') ? line.substring(2) : line)))
       .join('\n');
     copy(modifiedCode);
     setIsCopied(true);
