@@ -66,10 +66,10 @@ robot_state_publisher.launch.py		|Utility launch file for state publishing
 Now you can see .citros directory in the explorer.
 
 # Scenario
-For this example, let's check how the powerfull CITROS Error analisys (a part of Data Analisys) package works. To do it out, we need to set up parameters and launch CITROS simulation.<br/>
+For this example, let's check how the powerfull CITROS Error Analysis (a part of Data Analysis) package works. To do it out, we need to set up parameters and launch CITROS simulation.<br/>
 The ROS 2 node interfaces with the official TurtleBot3 simulation example, leveraging the TurtleBot3 robot model and simulated environment. This integration allows users to observe how the robot behaves in a controlled environment. The node includes a simple Autonomous Collision Avoidance module. This module is responsible for ensuring that the TurtleBot3 avoids collisions with obstacles in its path. It utilizes sensor data, such as simulated lidar readings, to detect obstacles and adjust the robot's trajectory accordingly.<br/>
 The ROS 2 parameters provided by this node give users the flexibility to modify various TurtleBot3 specifications. These parameters may include attributes like the robot's size, speed, sensor range, or collision avoidance algorithms. Users can experiment with different parameter values to observe their impact on collision avoidance behavior. The TurtleBot3 robot is capable of orienting itself effectively within a prepared TurtleBot3 world. It utilizes the simulated lidar module to gather environmental data, allowing it to make informed decisions about its navigation path.<br/>
-For this example, let's check how the powerfull CITROS Error analisys (a part of Data Analisys) package works. To do it out, we need to set up parameters and launch CITROS simulation.<br/>
+For this example, let's check how the powerfull CITROS Error Analysis (a part of Data Analysis) package works. To do it out, we need to set up parameters and launch CITROS simulation.<br/>
 The parameter setup is listed in ```.citros/parameter_setups/default_param_setup.json```:
 ```json
 {
