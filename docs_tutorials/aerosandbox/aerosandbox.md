@@ -67,18 +67,11 @@ Now you can see .citros directory in the explorer.
 
 
 ## Scenario
-For this tutorial, let's check how far the Cessna can glide with engine failure depending on initial altitude. To find it out, we need to set up parameters and launch CITROS simulation.
-
-The user provides flight parameters as input parameters to configure the simulation. These parameters are essential for defining the initial conditions of the simulated flight.
-
-The simulation takes into account various flight dynamics and aerodynamic factors to model the gliding behavior of the Cessna 152. The maximum gliding distance depends on plane's aerodynamic parameters, initial altitude and initial velocity.
-
-We will be using [iPOPT](https://en.wikipedia.org/wiki/IPOPT#:~:text=IPOPT%2C%20short%20for%20%22Interior%20Point,the%20EPL%20(formerly%20CPL).) - optimal under the hood problem solver (iPOPT is also installed as part of the AeroSandbox package).
-
-After CITROS initialization we can start configuring simulation setup. For remote launch we can set up the maximum performance available: timeout, CPU, GPU and Memory. To perform it, we need to define them in ```.citros/simulations/simulation_aerosandbox_cessna.json```. The recommended setup is minimum 180 seconds timeout, 4 CPU, 4 GPU and 4096 MB of Memory.
-
-The parameter setup is listed in ```.citros/parameter_setups/default_param_setup.json```. [CITROS CLI](https://citros.io/doc/docs_cli) provides an opportunity to use basic NumPy functions (such as distributions) and even user-defined functions. In case we want to find out how far the Cessna can glide with engine failure, we need to launch a batch with several simulations and a distribution for initial altitude, from 1000 m up to 10000 m:
-
+For this tutorial, let's check how far the Cessna can glide with engine failure depending on initial altitude. To find it out, we need to set up parameters and launch CITROS simulation. <br/>
+The user provides flight parameters as input parameters to configure the simulation. These parameters are essential for defining the initial conditions of the simulated flight.<br/>
+The simulation takes into account various flight dynamics and aerodynamic factors to model the gliding behavior of the Cessna 152. The maximum gliding distance depends on plane's aerodynamic parameters, initial altitude and initial velocity.<br/>
+We will be using [iPOPT](https://en.wikipedia.org/wiki/IPOPT#:~:text=IPOPT%2C%20short%20for%20%22Interior%20Point,the%20EPL%20(formerly%20CPL).) - optimal under the hood problem solver (iPOPT is also installed as part of the AeroSandbox package).<br/>
+The parameter setup is listed in ```.citros/parameter_setups/default_param_setup.json```. To find out how far the Cessna can glide with engine failure, we will examine the initial altitude, starting from 1000m and up to 10000m.
 ```json
 {
     "packages": {
@@ -109,6 +102,12 @@ This function will set the ```h_0``` parameter in range from 1000 to 1000+1000*n
 :::tip
 Learn more about parameter setup and defining custom functions in [Directory parameter_setups](https://citros.io/doc/docs_cli/structure/citros_structure/#directory-parameter_setups) and [Adding Functions to Parameter Setup](https://citros.io/doc/docs_cli/configuration/config_params) pages.
 :::
+
+In addition to parameter setup, you can configure the simulation perfomance setup (timeout, CPU, GPU and Memory) as well.
+This parameters can be found in ```.citros/simulations/simulation_aerosandbox_cessna.json```. The default setup is 180 seconds timeout, 4 CPU, 4 GPU and 4096 MB of Memory.
+
+Look in [Directory simulations page](https://citros.io/doc/docs_cli/structure/citros_structure#directory-simulations) for more information.
+
 ## Running the Scenario Using CITROS
 
 ### Running Locally
@@ -128,7 +127,9 @@ created new batch_id: <batch_run / batch name>. Running locally.
 ...
 ```
 
-To plot the local run results you can use FoxGlove. Check [this guide](https://citros.io/doc/docs_tutorials/#visualization-with-foxglove) for additional info.
+All the results will be saved under .citros/runs/simulation_aerosandbox_cessna/[simulation_name].
+
+To plot the local run results you can use [FoxGlove](https://citros.io/doc/docs_tutorials/#visualization-with-foxglove) for additional info.
 
 ![gif](img/gif0.gif "FoxGlove example")
 
