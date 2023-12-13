@@ -19,10 +19,6 @@ You can find more information about SpiceyPy library on [SpiceyPy official websi
 3. We strongly recommend that you work with [dockers](https://citros.io/doc/docs_tutorials/dockerfile_overview/). However, if you wish to work without dockers, please refer to the .devcontainer [directory](https://github.com/citros-garden/spiceypy/tree/main/.devcontainer) in project's repo, the dependencies you need are in the ```Dockerfile``` file.
 4. (Optional) Install [FoxGlove](https://docs.foxglove.dev/docs/introduction).
 
-:::note
-If you use the provided docker file (or devcontainer) all packages are preinstalled so no action is needed. 
-:::
-
 ## Table of Contents
 1. [Installation](#installation)
 2. [Workspace Overview](#workspace-overview)
@@ -86,12 +82,11 @@ The parameter setup is listed in ```.citros/parameter_setups/default_param_setup
 }
 ```
 
-:::tip
 Learn more about parameter setup and defining custom functions in [Directory parameter_setups](https://citros.io/doc/docs_cli/structure/citros_structure/#directory-parameter_setups) and [Adding Functions to Parameter Setup](https://citros.io/doc/docs_cli/configuration/config_params) pages.
-:::
 
 In addition to parameter setup, you can configure the simulation perfomance setup (timeout, CPU, GPU and Memory) as well.
-This parameters can be found in ```.citros/simulations/simulation_spiceypy_cassini.json```. The default setup is 180 seconds timeout, 2 CPU, 2 GPU and 1024 MB of Memory.
+This parameters can be found in ```.citros/simulations/simulation_spiceypy_cassini.json```. <br/>
+The default setup is 180 seconds timeout, 2 CPU, 2 GPU and 1024 MB of Memory.
 
 Look in [Directory simulations page](https://citros.io/doc/docs_cli/structure/citros_structure#directory-simulations) for more information.
 
@@ -114,9 +109,9 @@ created new batch_id: <batch_run / batch name>. Running locally.
 ...
 ```
 
-All the results will be saved under .citros/runs/simulation_spiceypy_cassini/[simulation_name].
+All the results will be saved under .citros/runs/[simulation_name] [folder].
 
-To plot the local run results you can use [FoxGlove](https://citros.io/doc/docs_tutorials/#visualization-with-foxglove) for additional info.
+To plot the local run results you can use [FoxGlove](https://citros.io/doc/docs_tutorials/#visualization-with-foxglove).
 
 ![png](img/Example1.png "FoxGlove example")
 

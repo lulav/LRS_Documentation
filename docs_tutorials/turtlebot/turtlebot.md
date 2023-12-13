@@ -19,10 +19,6 @@ All project installation, code overview and usage details are also available on 
 3. We strongly recommend that you work with [dockers](https://citros.io/doc/docs_tutorials/dockerfile_overview/). However, if you wish to work without dockers, please refer to the .devcontainer [directory](https://github.com/citros-garden/turtlebot3/tree/main/.devcontainer) in project's repo, the dependencies you need are in the ```Dockerfile``` file.
 4. (Optional) Install [FoxGlove](https://docs.foxglove.dev/docs/introduction).
 
-:::note
-If you use the provided docker file (or devcontainer) all packages are preinstalled so no action is needed. 
-:::
-
 ## Table of Contents
 1. [Installation](#installation)
 2. [Workspace Overview](#workspace-overview)
@@ -65,7 +61,7 @@ robot_state_publisher.launch.py		|Utility launch file for state publishing
 
 Now you can see .citros directory in the explorer.
 
-# Scenario
+## Scenario
 For this example, let's check how the powerfull CITROS Error Analysis (a part of Data Analysis) package works. To do it out, we need to set up parameters and launch CITROS simulation.<br/>
 The ROS 2 node interfaces with the official TurtleBot3 simulation example, leveraging the TurtleBot3 robot model and simulated environment. This integration allows users to observe how the robot behaves in a controlled environment. The node includes a simple Autonomous Collision Avoidance module. This module is responsible for ensuring that the TurtleBot3 avoids collisions with obstacles in its path. It utilizes sensor data, such as simulated lidar readings, to detect obstacles and adjust the robot's trajectory accordingly.<br/>
 The ROS 2 parameters provided by this node give users the flexibility to modify various TurtleBot3 specifications. These parameters may include attributes like the robot's size, speed, sensor range, or collision avoidance algorithms. Users can experiment with different parameter values to observe their impact on collision avoidance behavior. The TurtleBot3 robot is capable of orienting itself effectively within a prepared TurtleBot3 world. It utilizes the simulated lidar module to gather environmental data, allowing it to make informed decisions about its navigation path.<br/>
@@ -92,12 +88,12 @@ The parameter setup is listed in ```.citros/parameter_setups/default_param_setup
     }
 }
 ```
-:::tip
+
 Learn more about parameter setup and defining custom functions in [Directory parameter_setups](https://citros.io/doc/docs_cli/structure/citros_structure/#directory-parameter_setups) and [Adding Functions to Parameter Setup](https://citros.io/doc/docs_cli/configuration/config_params) pages.
-:::
 
 In addition to parameter setup, you can configure the simulation perfomance setup (timeout, CPU, GPU and Memory) as well.
-This parameters can be found in ```.citros/simulations/simulation_turtlebot3.json```. The default setup is 600 seconds timeout, 4 CPU, 4 GPU and 4096 MB of Memory.
+This parameters can be found in ```.citros/simulations/simulation_turtlebot3.json```. <br/>
+The default setup is 600 seconds timeout, 4 CPU, 4 GPU and 4096 MB of Memory.
 
 Look in [Directory simulations page](https://citros.io/doc/docs_cli/structure/citros_structure#directory-simulations) for more information.
 
@@ -121,9 +117,9 @@ created new batch_id: <batch_run / batch name>. Running locally.
 ...
 ```
 
-All the results will be saved under .citros/runs/simulation_turtlebot3_sim_cont/[simulation_name].
+All the results will be saved under .citros/runs/[simulation_name] [folder].
 
-To plot the local run results you can use [FoxGlove](https://citros.io/doc/docs_tutorials/#visualization-with-foxglove) for additional info.
+To plot the local run results you can use [FoxGlove](https://citros.io/doc/docs_tutorials/#visualization-with-foxglove).
 
 ![gif](img/foxglove1.gif "FoxGlove example")
 ![gif](img/foxglove2.gif "FoxGlove example")

@@ -18,11 +18,6 @@ This project is designed to wrap the [Robotic Arm Simulation project](https://gi
 3. We strongly recommend that you work with [dockers](https://citros.io/doc/docs_tutorials/dockerfile_overview/). However, if you wish to work without dockers, please refer to the .devcontainer [directory](https://github.com/citros-garden/robotic_arm/tree/main/.devcontainer) in project's repo, the dependencies you need are in the ```Dockerfile``` file.
 4. (Optional) Install [FoxGlove](https://docs.foxglove.dev/docs/introduction).
 
-:::note
-If you use the provided docker file (or devcontainer) all packages are preinstalled so no action is needed. 
-:::
-
-
 ## Table of Contents
 1. [Installation](#installation)
 2. [Workspace Overview](#workspace-overview)
@@ -88,7 +83,8 @@ User provides target position and target rotation of arm by three axes as input 
 ### Forward kinematics
 For this example, let's check how the robotic arm's behavior changes depending on target position. To find it out, we need to set up parameters and launch CITROS simulation.<br/>
 In this example user provides joints target positions as input parameters to configure the simulation. The robotic arm will change its position trying to meet the target conditions. <br/>
-The parameter setup is listed in ```.citros/parameter_setups/default_param_setup.json```. To find out how the robotic arm's behavior changes, we need to launch a batch with several simulations and a distribution for the last joint position parameter, it will be set by a NumPy random function:
+The parameter setup is listed in ```.citros/parameter_setups/default_param_setup.json```. <br/>
+To find out how the robotic arm's behavior changes, we need to launch a batch with several simulations and a distribution for the last joint position parameter, it will be set by a NumPy random function:
 
 ```json
 {
@@ -114,12 +110,11 @@ The parameter setup is listed in ```.citros/parameter_setups/default_param_setup
 
 This function will set the ```j5``` parameter in random range from 0.0 to 0.5.
 
-:::tip
 Learn more about parameter setup and defining custom functions in [Directory parameter_setups](https://citros.io/doc/docs_cli/structure/citros_structure/#directory-parameter_setups) and [Adding Functions to Parameter Setup](https://citros.io/doc/docs_cli/configuration/config_params) pages.
-:::
 
 In addition to parameter setup, you can configure the simulation perfomance setup (timeout, CPU, GPU and Memory) as well.
-This parameters can be found in ```.citros/simulations/simulation_my_doosan_gazebo_controller.json``` (for Forward Kinematic) or ```.citros/simulations/simulation_inverse_kinematic_pkg.json``` (for Inverse Kinematic). The default setup is 600 seconds timeout, 4 CPU, 4 GPU and 4096 MB of Memory.
+This parameters can be found in ```.citros/simulations/simulation_my_doosan_gazebo_controller.json``` (for Forward Kinematic) or ```.citros/simulations/simulation_inverse_kinematic_pkg.json``` (for Inverse Kinematic). <br/>
+The default setup is 600 seconds timeout, 4 CPU, 4 GPU and 4096 MB of Memory.
 
 Look in [Directory simulations page](https://citros.io/doc/docs_cli/structure/citros_structure#directory-simulations) for more information.
 
@@ -143,9 +138,9 @@ created new batch_id: <batch_run / batch name>. Running locally.
 ...
 ```
 
-All the results will be saved under .citros/runs/simulation_inverse_kinematic_pkg/[simulation_name].
+All the results will be saved under .citros/runs/[simulation_name] [folder].
 
-To plot the local run results you can use [FoxGlove](https://citros.io/doc/docs_tutorials/#visualization-with-foxglove) for additional info.
+To plot the local run results you can use [FoxGlove](https://citros.io/doc/docs_tutorials/#visualization-with-foxglove).
 
 ![gif](img/foxglove1.gif "FoxGlove example")
 

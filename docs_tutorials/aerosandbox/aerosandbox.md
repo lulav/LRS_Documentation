@@ -19,10 +19,6 @@ You can find more information about this useful aerodynamics library on [Aerosan
 3. We strongly recommend that you work with [dockers](https://citros.io/doc/docs_tutorials/dockerfile_overview/). However, if you wish to work without dockers, please refer to the .devcontainer [directory](https://github.com/citros-garden/aerosandbox_cessna/tree/main/.devcontainer) in project's repo, the dependencies you need are in the ```Dockerfile``` file.
 4. (Optional) Install [FoxGlove](https://docs.foxglove.dev/docs/introduction).
 
-:::note
-If you use the provided docker file (or devcontainer) all packages are preinstalled so no action is needed. 
-:::
-
 
 ## Table of Contents
 1. [Installation](#installation)
@@ -71,7 +67,8 @@ For this tutorial, let's check how far the Cessna can glide with engine failure 
 The user provides flight parameters as input parameters to configure the simulation. These parameters are essential for defining the initial conditions of the simulated flight.<br/>
 The simulation takes into account various flight dynamics and aerodynamic factors to model the gliding behavior of the Cessna 152. The maximum gliding distance depends on plane's aerodynamic parameters, initial altitude and initial velocity.<br/>
 We will be using [iPOPT](https://en.wikipedia.org/wiki/IPOPT#:~:text=IPOPT%2C%20short%20for%20%22Interior%20Point,the%20EPL%20(formerly%20CPL).) - optimal under the hood problem solver (iPOPT is also installed as part of the AeroSandbox package).<br/>
-The parameter setup is listed in ```.citros/parameter_setups/default_param_setup.json```. To find out how far the Cessna can glide with engine failure, we will examine the initial altitude, starting from 1000m and up to 10000m.
+The parameter setup is listed in ```.citros/parameter_setups/default_param_setup.json```. <br/>
+To find out how far the Cessna can glide with engine failure, we will examine the initial altitude, starting from 1000m and up to 10000m.
 ```json
 {
     "packages": {
@@ -99,12 +96,11 @@ def func_with_context(num, citros_context):
 
 This function will set the ```h_0``` parameter in range from 1000 to 1000+1000*n, where n = number of runs.
 
-:::tip
 Learn more about parameter setup and defining custom functions in [Directory parameter_setups](https://citros.io/doc/docs_cli/structure/citros_structure/#directory-parameter_setups) and [Adding Functions to Parameter Setup](https://citros.io/doc/docs_cli/configuration/config_params) pages.
-:::
 
 In addition to parameter setup, you can configure the simulation perfomance setup (timeout, CPU, GPU and Memory) as well.
-This parameters can be found in ```.citros/simulations/simulation_aerosandbox_cessna.json```. The default setup is 180 seconds timeout, 4 CPU, 4 GPU and 4096 MB of Memory.
+This parameters can be found in ```.citros/simulations/simulation_aerosandbox_cessna.json```. <br/>
+The default setup is 180 seconds timeout, 4 CPU, 4 GPU and 4096 MB of Memory.
 
 Look in [Directory simulations page](https://citros.io/doc/docs_cli/structure/citros_structure#directory-simulations) for more information.
 
@@ -127,9 +123,9 @@ created new batch_id: <batch_run / batch name>. Running locally.
 ...
 ```
 
-All the results will be saved under .citros/runs/simulation_aerosandbox_cessna/[simulation_name].
+All the results will be saved under .citros/runs/[simulation_name] [folder].
 
-To plot the local run results you can use [FoxGlove](https://citros.io/doc/docs_tutorials/#visualization-with-foxglove) for additional info.
+To plot the local run results you can use [FoxGlove](https://citros.io/doc/docs_tutorials/#visualization-with-foxglove).
 
 ![gif](img/gif0.gif "FoxGlove example")
 

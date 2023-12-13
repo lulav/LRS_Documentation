@@ -19,10 +19,6 @@ You can find all information about used functions and mathematical explanation o
 3. We strongly recommend that you work with [dockers](https://citros.io/doc/docs_tutorials/dockerfile_overview/). However, if you wish to work without dockers, please refer to the .devcontainer [directory](https://github.com/citros-garden/poliastro/tree/main/.devcontainer) in project's repo, the dependencies you need are in the ```Dockerfile``` file.
 4. (Optional) Install [FoxGlove](https://docs.foxglove.dev/docs/introduction).
 
-:::note
-If you use the provided docker file (or devcontainer) all packages are preinstalled so no action is needed. 
-:::
-
 ## Table of Contents
 1. [Installation](#installation)
 2. [Workspace Overview](#workspace-overview)
@@ -98,7 +94,8 @@ Now you can see .citros directory in the explorer.
 3. `Poliastro_atmo_drag`. A simple example showing the effect of aerodynamic drag forces on an artificial satellite in low Earth orbit. Takes Earth diameter, drag coefficient, Keppler orbit parameters and maximum simulation time as inputs. The result is a plot of altitude versus time and flight time before hitting the surface.<br/>
 The output of the simulations comprises critical flight data, such as altitude, velocity, and other relevant parameters, recorded over time intervals. These results are published via ROS 2 topics, allowing for real-time data visualization, analysis, and integration with other ROS-based systems. <br/>
 For this example, we will use the Atmospheric Drag simulation scenario (as one of the most interesting :) ). Let's check how the exact orbit duration reduces depending on Drag coefficient. To find it out, we need to set up parameters and launch CITROS simulation. <br/>
-The parameter setup is listed in ```.citros/parameter_setups/default_param_setup.json```. To find out how the exact orbit duration will reduce, we need to launch a batch with several simulations and a distribution Drag Coefficient parameter, it will be set by a NumPy random function:
+The parameter setup is listed in ```.citros/parameter_setups/default_param_setup.json```. <br/>
+To find out how the exact orbit duration will reduce, we need to launch a batch with several simulations and a distribution Drag Coefficient parameter, it will be set by a NumPy random function:
 
 ```json
     "packages": {
@@ -125,16 +122,15 @@ The parameter setup is listed in ```.citros/parameter_setups/default_param_setup
 
 This function will set the ```c_d``` parameter randomly in range from 2 to 4.
 
-:::tip
 Learn more about parameter setup and defining custom functions in [Directory parameter_setups](https://citros.io/doc/docs_cli/structure/citros_structure/#directory-parameter_setups) and [Adding Functions to Parameter Setup](https://citros.io/doc/docs_cli/configuration/config_params) pages.
-:::
 
 In addition to parameter setup, you can configure the simulation perfomance setup (timeout, CPU, GPU and Memory) as well.
-This parameters can be found in ```.citros/simulations/simulation_poliastro.json```. The default setup is 180 seconds timeout, 2 CPU, 2 GPU and 2048 MB of Memory.
+This parameters can be found in ```.citros/simulations/simulation_poliastro.json```. <br/>
+The default setup is 180 seconds timeout, 2 CPU, 2 GPU and 2048 MB of Memory.
 
 Look in [Directory simulations page](https://citros.io/doc/docs_cli/structure/citros_structure#directory-simulations) for more information.
 
-# Running the Scenario Using CITROS
+## Running the Scenario Using CITROS
 
 ### Running Locally
 First ensure that the project has been [built and sourced](https://citros.io/doc/docs_tutorials/getting_started/#build-the-project).
@@ -155,9 +151,9 @@ created new batch_id: <batch_run / batch name>. Running locally.
 ...
 ```
 
-All the results will be saved under .citros/runs/simulation_aerosandbox_cessna/[simulation_name].
+All the results will be saved under .citros/runs/[simulation_name] [folder].
 
-To plot the local run results you can use [FoxGlove](https://citros.io/doc/docs_tutorials/#visualization-with-foxglove) for additional info.
+To plot the local run results you can use [FoxGlove](https://citros.io/doc/docs_tutorials/#visualization-with-foxglove).
 
 ![gif](img/main.gif "FoxGlove example")
 
@@ -181,7 +177,7 @@ created new batch_id: <batch_id / batch name>. Running on Citros cluster. See ht
 
 ## Results
 To get and process the simulation results, execute [built-in Jupiter Notebook](https://citros.io/poliastro/blob/updates/notebooks/poliastro_notebook_example.ipynb).
-```
+
 This graph shows us the exact orbit duration depending of Drag coefficient:
 
 ![png](img/citros3.png "CITROS example")
