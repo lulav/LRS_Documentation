@@ -6,9 +6,13 @@ sidebar_label: 'Poliastro'
 # Poliastro
 
 ## Overview
-This project contains three simple examples using Poliastro lib for Python 3: Simple orbit example, Orbital maneuver example and atmospheric drag simulation.  
+This project contains three simple examples using Poliastro lib for Python 3: 
+1. Simple orbit example
+2. Orbital maneuver example 
+3. Atmospheric drag simulation.  
 
-You can find all information about used functions and mathematical explanation on the [Poliastro Website](https://docs.poliastro.space/en/stable/). All project installation, code overview and usage details are also available on the project's [GitHub page](https://github.com/citros-garden/poliastro).
+You can find all information about used functions and mathematical explanation on the [Poliastro Website](https://docs.poliastro.space/en/stable/). <br/>
+All project installation, code overview and usage details are also available on the project's [GitHub page](https://github.com/citros-garden/poliastro).
 
 ![jpg](img/img0.jpg)
 
@@ -17,7 +21,7 @@ You can find all information about used functions and mathematical explanation o
 1. Please make sure you have all the [necessary softwares](https://citros.io/doc/docs_tutorials/getting_started/#softwares-to-work-with-citros) to work with CITROS installed on your computer.
 2. Install [Visual Studio code](https://code.visualstudio.com/download).
 3. We strongly recommend that you work with [dockers](https://citros.io/doc/docs_tutorials/dockerfile_overview/). However, if you wish to work without dockers, please refer to the .devcontainer [directory](https://github.com/citros-garden/poliastro/tree/main/.devcontainer) in project's repo, the dependencies you need are in the ```Dockerfile``` file.
-4. (Optional) Install [FoxGlove](https://docs.foxglove.dev/docs/introduction).
+4. (Optional) Install [Foxglove](https://docs.Foxglove.dev/docs/introduction).
 
 ## Table of Contents
 1. [Installation](#installation)
@@ -38,39 +42,38 @@ git clone git@github.com:citros-garden/poliastro.git
 
 The examples have the following parameters:
 
-Poliastro Atmospheric Drag simulation:
+* Poliastro Atmospheric Drag simulation parameters:
 
-|Parameter	|Description	|Package
-|--|--|--
-earth_r		|Earth radius	|poliastro_atmo_drag
-a		|Semi-Major axis	|poliastro_atmo_drag
-ecc		|Eccentricity	|poliastro_atmo_drag
-inc		|Inclination	|poliastro_atmo_drag
-raan		|Right Ascension of the Ascending Node	|poliastro_atmo_drag
-argp		|Argument of periapsis	|poliastro_atmo_drag
-nu		|True anomaly	|poliastro_atmo_drag
-c_d		|Drag coefficient	|poliastro_atmo_drag
-t_limit		|Maximum simulation duration	|poliastro_atmo_drag
-publish_freq		|Frequency of publishing |poliastro_atmo_drag
+    |Parameter	|Description	|Package
+    |--|--|--
+    earth_r		|Earth radius	|poliastro_atmo_drag
+    a		|Semi-Major axis	|poliastro_atmo_drag
+    ecc		|Eccentricity	|poliastro_atmo_drag
+    inc		|Inclination	|poliastro_atmo_drag
+    raan		|Right Ascension of the Ascending Node	|poliastro_atmo_drag
+    argp		|Argument of periapsis	|poliastro_atmo_drag
+    nu		|True anomaly	|poliastro_atmo_drag
+    c_d		|Drag coefficient	|poliastro_atmo_drag
+    t_limit		|Maximum simulation duration	|poliastro_atmo_drag
+    publish_freq		|Frequency of publishing |poliastro_atmo_drag 
 
-    
-Poliastro Simple Orbit simulation:
+* Poliastro Simple Orbit simulation parameters:
 
-|Parameter	|Description	|Package
-|--|--|--
-apo_r		|Apoapsis altitude	|poliastro_simple_orbit
-peri_r		|Periapsis altitude	 |poliastro_simple_orbit
-start_t		|Start date and time	|poliastro_simple_orbit
-finish_t		|Final date and time	|poliastro_simple_orbit
-publish_freq		|Frequency of publishing |poliastro_simple_orbit
+    |Parameter	|Description	|Package
+    |--|--|--
+    apo_r		|Apoapsis altitude	|poliastro_simple_orbit
+    peri_r		|Periapsis altitude	 |poliastro_simple_orbit
+    start_t		|Start date and time	|poliastro_simple_orbit
+    finish_t		|Final date and time	|poliastro_simple_orbit
+    publish_freq		|Frequency of publishing |poliastro_simple_orbit
 
-Poliastro Maneuver simulation has only 3 ROS 2 parameters:
+* Poliastro Maneuver simulation parameters:
 
-|Parameter	|Description	|Package
-|--|--|--
-r_init		|Initial orbital altitude	|poliastro_maneuver
-r_final		|Final orbital altitude	|poliastro_maneuver
-publish_freq		|Frequency of publishing |poliastro_maneuver
+    |Parameter	|Description	|Package
+    |--|--|--
+    r_init		|Initial orbital altitude	|poliastro_maneuver
+    r_final		|Final orbital altitude	|poliastro_maneuver
+    publish_freq		|Frequency of publishing |poliastro_maneuver
 
 
 There are three launch files in this project: these files will be used for CITROS launch. 
@@ -89,11 +92,11 @@ poliastro_simple_orbit.launch.py		|Poliastro Maneuver simulation launch file |po
 Now you can see .citros directory in the explorer.
 
 ## Scenario
-1. `Poliastro_simple_orbit`. It returns vessel orbital coordinates around the Earth between time bounds from given apoapsis and periapsis altitudes. The result is an ephemerides of orbit (actually a part of it between given time bounds) with zero right ascension of the ascending node, argument of the pericenter and true anomaly for simplicity. <br/>
-2. `Poliastro_maneuver`. This package provides three orbits for the Hohmann transition: an initial orbit, an intermediate orbit, and a final orbit. Takes the radius of the initial orbit and the radius of the final orbit as input. You will get the ephemerides of these orbits, not the trajectory! <br/>
-3. `Poliastro_atmo_drag`. A simple example showing the effect of aerodynamic drag forces on an artificial satellite in low Earth orbit. Takes Earth diameter, drag coefficient, Keppler orbit parameters and maximum simulation time as inputs. The result is a plot of altitude versus time and flight time before hitting the surface.<br/>
-The output of the simulations comprises critical flight data, such as altitude, velocity, and other relevant parameters, recorded over time intervals. These results are published via ROS 2 topics, allowing for real-time data visualization, analysis, and integration with other ROS-based systems. <br/>
-For this example, we will use the Atmospheric Drag simulation scenario (as one of the most interesting :) ). Let's check how the exact orbit duration reduces depending on Drag coefficient. To find it out, we need to set up parameters and launch CITROS simulation. <br/>
+The Poliastro project consists of three packages suitable for orbital mechanics calculations:
+* `Poliastro_simple_orbit`. This package is used to calculate vessel orbital coordinates around the Earth between time bounds from given apoapsis and periapsis altitudes. The result is an ephemerides of orbit (actually a part of it between given time bounds) with zero right ascension of the ascending node, argument of the pericenter and true anomaly for simplicity. <br/>
+* `Poliastro_maneuver`. Calculates three orbits for the Hohmann transition: an initial orbit, an intermediate orbit, and a final orbit. Takes the radius of the initial orbit and the radius of the final orbit as input. You will get the ephemerides of these orbits, not the trajectory! <br/>
+* `Poliastro_atmo_drag`. This package shows the effect of aerodynamic drag forces on an artificial satellite in low Earth orbit. Takes Earth diameter, drag coefficient, Keppler orbit parameters and maximum simulation time as inputs. The result is a plot of altitude versus time and flight time before hitting the surface.<br/>
+For this example, we will use the Atmospheric Drag simulation scenario (as one of the most interesting :). Let's check how the exact orbit duration reduces depending on Drag coefficient. To find it out, we need to set up parameters and launch CITROS simulation. <br/>
 The parameter setup is listed in ```.citros/parameter_setups/default_param_setup.json```. <br/>
 To find out how the exact orbit duration will reduce, we need to launch a batch with several simulations and a distribution Drag Coefficient parameter, it will be set by a NumPy random function:
 
@@ -134,15 +137,15 @@ Look in [Directory simulations page](https://citros.io/doc/docs_cli/structure/ci
 
 ### Running Locally
 First ensure that the project has been [built and sourced](https://citros.io/doc/docs_tutorials/getting_started/#build-the-project).
-Now we can launch it locally:
+Now we can launch the project locally with ```-c 10``` flag to run 10 simulations:
 ```bash 
->>> citros run -n 'poliastro' -m 'local test run'
+>>> citros run -n 'poliastro' -m 'local test run' -c 10
 ? Please choose the simulation you wish to run:
 ❯ poliastro_atmo_drag
 poliastro_maneuver
 poliastro_simple_orbit
 ```
-Select the launch file by pressing ```Enter``` button and wait for the output in the terminal. To plot the local run results you can use FoxGlove.
+Select the ```poliastro_atmo_drag``` launch file by pressing ```Enter``` button and wait for the output in the terminal.
 
 ```bash
 created new batch_id: <batch_run / batch name>. Running locally.
@@ -151,25 +154,26 @@ created new batch_id: <batch_run / batch name>. Running locally.
 ...
 ```
 
-All the results will be saved under .citros/runs/[simulation_name] [folder].
+All the results will be saved under ```.citros/runs/[simulation_name] [folder]```.
 
-To plot the local run results you can use [FoxGlove](https://citros.io/doc/docs_tutorials/#visualization-with-foxglove).
+To plot the local run results you can use [Foxglove](https://citros.io/doc/docs_tutorials/#visualization-with-Foxglove) with the ```atmo_drag_layout.json``` layout that exists in the ```Foxglove_layouts``` directory.
 
-![gif](img/main.gif "FoxGlove example")
+![gif](img/main.gif "Foxglove example")
 
 ### Running in Cloud
 
-[Upload project to CITROS Server](https://citros.io/doc/docs_tutorials/getting_started/#upload-to-citros-server).
-Finally, we can run it in the cloud! Simply add `-r` to the terminal command: 
+[Upload project to CITROS Server](https://citros.io/doc/docs_tutorials/getting_started/#upload-to-citros-server). <br/>
+Finally, we can run the simulation in the cloud! Simply add `-r` to the terminal command: 
 ```bash 
-citros run -n 'poliastro' -m 'cloud test run' -r
+citros run -n 'poliastro' -m 'cloud test run' -c 10 -r
 ? Please choose the simulation you wish to run:
 ❯ poliastro_atmo_drag
 poliastro_maneuver
 poliastro_simple_orbit
 ```
 
-Select the launch file by pressing `Enter` button. Now the simulation is running in the CITROS server, and the results will be automatically uploaded to the CITROS database.
+Select the ```poliastro_atmo_drag``` launch file by pressing `Enter` button.  <br/>
+Now the simulation is running in the CITROS server, and the results will be automatically uploaded to the CITROS database.
 
 ```bash
 created new batch_id: <batch_id / batch name>. Running on Citros cluster. See https://citros.io/batch/<batch_id / batch name>.

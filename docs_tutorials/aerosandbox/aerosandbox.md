@@ -17,7 +17,7 @@ You can find more information about this useful aerodynamics library on [Aerosan
 1. Please make sure you have all the [necessary softwares](https://citros.io/doc/docs_tutorials/getting_started/#softwares-to-work-with-citros) to work with CITROS installed on your computer.
 2. Install [Visual Studio code](https://code.visualstudio.com/download).
 3. We strongly recommend that you work with [dockers](https://citros.io/doc/docs_tutorials/dockerfile_overview/). However, if you wish to work without dockers, please refer to the .devcontainer [directory](https://github.com/citros-garden/aerosandbox_cessna/tree/main/.devcontainer) in project's repo, the dependencies you need are in the ```Dockerfile``` file.
-4. (Optional) Install [FoxGlove](https://docs.foxglove.dev/docs/introduction).
+4. (Optional) Install [Foxglove](https://docs.Foxglove.dev/docs/introduction).
 
 
 ## Table of Contents
@@ -123,11 +123,11 @@ created new batch_id: <batch_run / batch name>. Running locally.
 ...
 ```
 
-All the results will be saved under .citros/runs/[simulation_name] [folder].
+All the results will be saved under ```.citros/runs/[simulation_name] [folder]```.
 
-To plot the local run results you can use [FoxGlove](https://citros.io/doc/docs_tutorials/#visualization-with-foxglove).
+To plot the local run results you can use [Foxglove](https://citros.io/doc/docs_tutorials/#visualization-with-Foxglove).
 
-![gif](img/gif0.gif "FoxGlove example")
+![gif](img/gif0.gif "Foxglove example")
 
 ### Running in Cloud
 
