@@ -11,7 +11,7 @@ This project contains three simple examples using Poliastro lib for Python 3:
 2. Orbital maneuver example 
 3. Atmospheric drag simulation.  
 
-You can find all information about used functions and mathematical explanation on the [Poliastro Website](https://docs.poliastro.space/en/stable/). <br/>
+You can find all the information about the used functions and the mathematical explanation on the [Poliastro Website](https://docs.poliastro.space/en/stable/). <br/>
 All project installation, code overview and usage details are also available on the project's [GitHub page](https://github.com/citros-garden/poliastro).
 
 ![jpg](img/img0.jpg)
@@ -76,7 +76,7 @@ The examples have the following parameters:
     publish_freq		|Frequency of publishing |poliastro_maneuver
 
 
-There are three launch files in this project: these files will be used for CITROS launch. 
+There are three launch files in this project, these files will be used for CITROS launch:
 
 |Launch File	|Description	|Package
 |--|--|--
@@ -93,10 +93,22 @@ Now you can see .citros directory in the explorer.
 
 ## Scenario
 The Poliastro project consists of three packages suitable for orbital mechanics calculations:
-* `Poliastro_simple_orbit`. This package is used to calculate vessel orbital coordinates around the Earth between time bounds from given apoapsis and periapsis altitudes. The result is an ephemerides of orbit (actually a part of it between given time bounds) with zero right ascension of the ascending node, argument of the pericenter and true anomaly for simplicity. <br/>
-* `Poliastro_maneuver`. Calculates three orbits for the Hohmann transition: an initial orbit, an intermediate orbit, and a final orbit. Takes the radius of the initial orbit and the radius of the final orbit as input. You will get the ephemerides of these orbits, not the trajectory! <br/>
-* `Poliastro_atmo_drag`. This package shows the effect of aerodynamic drag forces on an artificial satellite in low Earth orbit. Takes Earth diameter, drag coefficient, Keppler orbit parameters and maximum simulation time as inputs. The result is a plot of altitude versus time and flight time before hitting the surface.<br/>
-For this example, we will use the Atmospheric Drag simulation scenario (as one of the most interesting :). Let's check how the exact orbit duration reduces depending on Drag coefficient. To find it out, we need to set up parameters and launch CITROS simulation. <br/>
+* `Poliastro_simple_orbit`.<br/>
+This package is used to calculate vessel orbital coordinates around the Earth between time bounds from given apoapsis and periapsis altitudes. <br/>
+The result is an ephemerides of orbit (actually a part of it between given time bounds) with zero right ascension of the ascending node, argument of the pericenter and true anomaly for simplicity. <br/>
+* `Poliastro_maneuver`.<br/>
+This package calculates three orbits for the Hohmann transition: an initial orbit, an intermediate orbit, and a final orbit. <br/>
+The simulation takes the radius of the initial orbit and the radius of the final orbit as input. <br/>
+The result is the ephemerides of these orbits, not the trajectory! <br/>
+* `Poliastro_atmo_drag`. <br/>
+This package shows the effect of aerodynamic drag forces on an artificial satellite in low Earth orbit. <br/>
+The simulation takes Earth diameter, drag coefficient, Keppler orbit parameters and maximum simulation time as inputs. <br/>
+The result is a plot of altitude versus time and flight time before hitting the surface.<br/>
+
+
+In this tutorial we will use the Atmospheric Drag simulation scenario (as one of the most interesting :).<br/>
+Let's check how the exact orbit duration reduces depending on Drag coefficient. <br/>
+To find it out, we need to set up Drag Coefficient (```c_d```) parameter and launch CITROS simulation. <br/>
 The parameter setup is listed in ```.citros/parameter_setups/default_param_setup.json```. <br/>
 To find out how the exact orbit duration will reduce, we need to launch a batch with several simulations and a distribution Drag Coefficient parameter, it will be set by a NumPy random function:
 
@@ -154,7 +166,7 @@ created new batch_id: <batch_run / batch name>. Running locally.
 ...
 ```
 
-All the results will be saved under ```.citros/runs/[simulation_name] [folder]```.
+All the results will be saved under .citros/runs/[simulation_name] folder.
 
 To plot the local run results you can use [Foxglove](https://citros.io/doc/docs_tutorials/#visualization-with-Foxglove) with the ```atmo_drag_layout.json``` layout that exists in the ```Foxglove_layouts``` directory.
 
