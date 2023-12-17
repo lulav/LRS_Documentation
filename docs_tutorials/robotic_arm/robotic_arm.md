@@ -16,7 +16,7 @@ This project is designed to wrap the [Robotic Arm Simulation project](https://gi
 1. Please make sure you have all the [necessary softwares](https://citros.io/doc/docs_tutorials/getting_started/#softwares-to-work-with-citros) to work with CITROS installed on your computer.
 2. Install [Visual Studio code](https://code.visualstudio.com/download).
 3. We strongly recommend that you work with [dockers](https://citros.io/doc/docs_tutorials/dockerfile_overview/). However, if you wish to work without dockers, please refer to the .devcontainer [directory](https://github.com/citros-garden/robotic_arm/tree/main/.devcontainer) in project's repo, the dependencies you need are in the ```Dockerfile``` file.
-4. (Optional) Install [FoxGlove](https://docs.foxglove.dev/docs/introduction).
+4. (Optional) Install [Foxglove](https://docs.foxglove.dev/docs/introduction).
 
 ## Table of Contents
 1. [Installation](#installation)
@@ -37,30 +37,30 @@ git clone git@github.com:citros-garden/robotic_arm.git
 
 The Robotic Arm simulation has the following ROS 2 parameters:
 
-For Forward Kinematic:
+* Forward Kinematic simulation parameters:
 
-|Parameter	|Description |Package
-|--|--|--
-j0		|First joint target position 	|my_doosan_pkg
-j1		|Second joint target position  	|my_doosan_pkg
-j2		|Third joint target position  |my_doosan_pkg
-j3		|Fourth joint target position  |my_doosan_pkg
-j4		|Fifth joint target position  |my_doosan_pkg
-j5		|Sixth joint target position  |my_doosan_pkg
+    |Parameter	|Description |Package
+    |--|--|--
+    j0		|First joint target position 	|my_doosan_pkg
+    j1		|Second joint target position  	|my_doosan_pkg
+    j2		|Third joint target position  |my_doosan_pkg
+    j3		|Fourth joint target position  |my_doosan_pkg
+    j4		|Fifth joint target position  |my_doosan_pkg
+    j5		|Sixth joint target position  |my_doosan_pkg
 
-For Inverse Kinematic:
+* Inverse Kinematic simulation parameters:
 
-|Parameter	|Description |Package
-|--|--|--
-pos0		|Arm target position by first axis	|inverse_kinematic_pkg
-pos1		|Arm target position by second axis |inverse_kinematic_pkg
-pos2		|Arm target position by third axis |inverse_kinematic_pkg
-ori0		|Arm target orientation by first axis |inverse_kinematic_pkg
-ori1		|Arm target orientation by second axis  |inverse_kinematic_pkg
-ori3		|Arm target orientation by third axis |inverse_kinematic_pkg
+    |Parameter	|Description |Package
+    |--|--|--
+    pos0		|Arm target position by first axis	|inverse_kinematic_pkg
+    pos1		|Arm target position by second axis |inverse_kinematic_pkg
+    pos2		|Arm target position by third axis |inverse_kinematic_pkg
+    ori0		|Arm target orientation by first axis |inverse_kinematic_pkg
+    ori1		|Arm target orientation by second axis  |inverse_kinematic_pkg
+    ori3		|Arm target orientation by third axis |inverse_kinematic_pkg
 
 
-This project contains two launch files: ```simulation_my_doosan_gazebo_controller``` for Forward Kinematic or ```simulation_inverse_kinematic_pkg``` for Inverse Kinematic. These files will be used for CITROS launch. 
+This project contains two launch files: ```simulation_my_doosan_gazebo_controller``` for Forward Kinematic and ```simulation_inverse_kinematic_pkg``` for Inverse Kinematic. These files will be used for CITROS launch. 
 
 |Launch File	|Description |Package
 |--|--|--
@@ -76,15 +76,15 @@ simulation_inverse_kinematic_pkg.launch.py	|Gazebo Robotic Arm launch file for I
 Now you can see .citros directory in the explorer.
 
 ## Scenario
-### Inverse kinematics
-The Inverse Kinematic calculations are used to show more useful way to interract with robotic arm.  <br/>
-User provides target position and target rotation of arm by three axes as input parameters to configure the simulation. The robotic arm will change its position trying to meet the target conditions. <br/>
+* Inverse kinematics
+    The Inverse Kinematic calculations are used to show more useful way to interract with robotic arm.  <br/>
+    User provides target position and target rotation of arm by three axes as input parameters to configure the simulation. The robotic arm will change its position trying to meet the target conditions. <br/>
 
-### Forward kinematics
-For this example, let's check how the robotic arm's behavior changes depending on target position. To find it out, we need to set up parameters and launch CITROS simulation.<br/>
-In this example user provides joints target positions as input parameters to configure the simulation. The robotic arm will change its position trying to meet the target conditions. <br/>
-The parameter setup is listed in ```.citros/parameter_setups/default_param_setup.json```. <br/>
-To find out how the robotic arm's behavior changes, we need to launch a batch with several simulations and a distribution for the last joint position parameter, it will be set by a NumPy random function:
+* Forward kinematics
+    Forward Kinematic calculation is the simplest way to control the robotic arm behaviour. User provides joints target positions as input parameters to configure the simulation. The robotic arm will change its position trying to meet the target conditions, and the simulation publishes the current positions of joints as a result.<br/>
+    For this example, let's check how the robotic arm's behavior changes depending on target position. To find it out, we need to set up parameters and launch CITROS simulation.<br/>
+    The parameter setup is listed in ```.citros/parameter_setups/default_param_setup.json```. <br/>
+    To find out how the robotic arm's behavior changes, we need to launch a batch with several simulations and a distribution for the last joint position parameter, it will be set by a NumPy random function:
 
 ```json
 {
@@ -113,7 +113,7 @@ This function will set the ```j5``` parameter in random range from 0.0 to 0.5.
 Learn more about parameter setup and defining custom functions in [Directory parameter_setups](https://citros.io/doc/docs_cli/structure/citros_structure/#directory-parameter_setups) and [Adding Functions to Parameter Setup](https://citros.io/doc/docs_cli/configuration/config_params) pages.
 
 In addition to parameter setup, you can configure the simulation perfomance setup (timeout, CPU, GPU and Memory) as well.
-This parameters can be found in ```.citros/simulations/simulation_my_doosan_gazebo_controller.json``` (for Forward Kinematic) or ```.citros/simulations/simulation_inverse_kinematic_pkg.json``` (for Inverse Kinematic). <br/>
+This parameters can be found in ```.citros/simulations/simulation_my_doosan_gazebo_controller.json``` for Forward Kinematic or ```.citros/simulations/simulation_inverse_kinematic_pkg.json``` for Inverse Kinematic. <br/>
 The default setup is 600 seconds timeout, 4 CPU, 4 GPU and 4096 MB of Memory.
 
 Look in [Directory simulations page](https://citros.io/doc/docs_cli/structure/citros_structure#directory-simulations) for more information.
@@ -129,7 +129,7 @@ Now we can launch it locally:
 ❯ simulation_my_doosan_gazebo_controller
   simulation_inverse_kinematic_pkg
 ```
-Select the launch file by pressing ```Enter``` button and wait for the output in the terminal. To plot the local run results you can use FoxGlove.
+Select the ```simulation_my_doosan_gazebo_controller``` launch file by pressing ```Enter``` button and wait for the output in the terminal.
 
 ```bash
 created new batch_id: <batch_run / batch name>. Running locally.
@@ -138,11 +138,11 @@ created new batch_id: <batch_run / batch name>. Running locally.
 ...
 ```
 
-All the results will be saved under .citros/runs/[simulation_name] [folder].
+All the results will be saved in .citros/runs/[simulation_name] folder.
 
-To plot the local run results you can use [FoxGlove](https://citros.io/doc/docs_tutorials/#visualization-with-foxglove).
+To plot the local run results you can use [Foxglove](https://citros.io/doc/docs_tutorials/#visualization-with-foxglove) with the ```layout.json``` layout that exists in the Foxglove_layouts directory.
 
-![gif](img/foxglove1.gif "FoxGlove example")
+![gif](img/foxglove1.gif "Foxglove example")
 
 ### Running in Cloud
 
@@ -156,7 +156,7 @@ citros run -n 'robotic_arm' -m 'cloud test run' -r
   simulation_inverse_kinematic_pkg
 ```
 
-Select the launch file by pressing `Enter` button. Now the simulation is running in the CITROS server, and the results will be automatically uploaded to the CITROS database.
+Select the ```simulation_my_doosan_gazebo_controller``` launch file by pressing `Enter` button. Now the simulation is running in the CITROS server, and the results will be automatically uploaded to the CITROS database.
 
 ```bash
 created new batch_id: <batch_id / batch name>. Running on Citros cluster. See https://citros.io/batch/<batch_id / batch name>.
