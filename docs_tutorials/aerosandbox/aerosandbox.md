@@ -123,7 +123,7 @@ created new batch_id: <batch_run / batch name>. Running locally.
 ...
 ```
 
-All the results will be saved under ```.citros/runs/[simulation_name] [folder]```.
+All the results will be saved under `.citros/runs/[simulation_name]` folder.
 
 To plot the local run results you can use [Foxglove](https://citros.io/doc/docs_tutorials/#visualization-with-Foxglove).
 
