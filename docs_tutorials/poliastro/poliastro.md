@@ -6,7 +6,7 @@ sidebar_label: 'Poliastro'
 # Poliastro
 
 ## Overview
-This project contains three simple examples using Poliastro lib for Python 3: 
+This project contains three simple examples using Poliastro lib for Python3: 
 1. Simple orbit example
 2. Orbital maneuver example 
 3. Atmospheric drag simulation.  
@@ -95,11 +95,11 @@ Now you can see .citros directory in the explorer.
 The Poliastro project consists of three packages suitable for orbital mechanics calculations:
 * `Poliastro_simple_orbit`.<br/>
 This package is used to calculate vessel orbital coordinates around the Earth between time bounds from given apoapsis and periapsis altitudes. <br/>
-The result is an ephemerides of orbit (actually a part of it between given time bounds) with zero right ascension of the ascending node, argument of the pericenter and true anomaly for simplicity. <br/>
+The result is an ephemerids of orbit (actually a part of it between given time bounds) with zero right ascension of the ascending node, argument of the pericenter and true anomaly for simplicity. <br/>
 * `Poliastro_maneuver`.<br/>
 This package calculates three orbits for the Hohmann transition: an initial orbit, an intermediate orbit, and a final orbit. <br/>
 The simulation takes the radius of the initial orbit and the radius of the final orbit as input. <br/>
-The result is the ephemerides of these orbits, not the trajectory! <br/>
+The result is the ephemerids of these orbits, not the trajectory! <br/>
 * `Poliastro_atmo_drag`. <br/>
 This package shows the effect of aerodynamic drag forces on an artificial satellite in low Earth orbit. <br/>
 The simulation takes Earth diameter, drag coefficient, Keppler orbit parameters and maximum simulation time as inputs. <br/>
@@ -139,7 +139,7 @@ This function will set the ```c_d``` parameter randomly in range from 2 to 4.
 
 Learn more about parameter setup and defining custom functions in [Directory parameter_setups](https://citros.io/doc/docs_cli/structure/citros_structure/#directory-parameter_setups) and [Adding Functions to Parameter Setup](https://citros.io/doc/docs_cli/configuration/config_params) pages.
 
-In addition to parameter setup, you can configure the simulation perfomance setup (timeout, CPU, GPU and Memory) as well.
+In addition to parameter setup, you can configure the simulation performance setup (timeout, CPU, GPU and Memory) as well.
 This parameters can be found in ```.citros/simulations/simulation_poliastro.json```. <br/>
 The default setup is 180 seconds timeout, 2 CPU, 2 GPU and 2048 MB of Memory.
 
@@ -194,6 +194,6 @@ created new batch_id: <batch_id / batch name>. Running on Citros cluster. See ht
 ## Results
 To get and process the simulation results, execute [built-in Jupiter Notebook](https://citros.io/poliastro/blob/updates/notebooks/poliastro_notebook_example.ipynb).
 
-This graph shows us the exact orbit duration depending of Drag coefficient:
+The graph shows us the exact orbit duration depending of Drag coefficient:
 
 ![png](img/citros3.png "CITROS example")
