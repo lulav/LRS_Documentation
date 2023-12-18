@@ -1,14 +1,15 @@
 ---
 sidebar_position: 80
-sidebar_label: 'SpiceyPy Using CITROS'
+sidebar_label: 'SpiceyPy'
 ---
 
-# SpiceyPy Using CITROS
+# SpiceyPy
 
 ## Overview
-This project is developed using ROS 2 nodes and leverages the SpiceyPy library, a Python implementation of [NASA's NAIF Spice](https://naif.jpl.nasa.gov/naif/) toolkit. Its primary purpose is to provide the orbital trajectory information of the Cassini spacecraft relative to Saturn's barycenter within specified time intervals.
+This project is developed using ROS 2 nodes and leverages the SpiceyPy library - a Python implementation of [NASA's NAIF Spice](https://naif.jpl.nasa.gov/naif/) toolkit. Its primary purpose is to provide the orbital trajectory information of the Cassini spacecraft relative to Saturn's barycenter within specified time intervals.
 
-You can find more information about SpiceyPy library on [SpiceyPy official website](https://spiceypy.readthedocs.io/en/v2.0.0/index.html). All project installation, code overview and usage details are also available on the project's [GitHub page](https://github.com/citros-garden/spiceypy).
+You can find more information about SpiceyPy library on [SpiceyPy official website](https://spiceypy.readthedocs.io/en/v2.0.0/index.html). <br />
+All project installation, code overview and usage details are also available on the project's [GitHub page](https://github.com/citros-garden/spiceypy).
 
 ![png](img/Example0.png "Plot")
 
@@ -17,7 +18,7 @@ You can find more information about SpiceyPy library on [SpiceyPy official websi
 1. Please make sure you have all the [necessary softwares](https://citros.io/doc/docs_tutorials/getting_started/#softwares-to-work-with-citros) to work with CITROS installed on your computer.
 2. Install [Visual Studio code](https://code.visualstudio.com/download).
 3. We strongly recommend that you work with [dockers](https://citros.io/doc/docs_tutorials/dockerfile_overview/). However, if you wish to work without dockers, please refer to the .devcontainer [directory](https://github.com/citros-garden/spiceypy/tree/main/.devcontainer) in project's repo, the dependencies you need are in the ```Dockerfile``` file.
-4. (Optional) Install [FoxGlove](https://docs.foxglove.dev/docs/introduction).
+4. (Optional) Install [Foxglove](https://docs.foxglove.dev/docs/introduction).
 
 ## Table of Contents
 1. [Installation](#installation)
@@ -46,7 +47,7 @@ finish_t		|Final date	 |spiceypy_cassini
 publish_freq		|Frequency of publishing |spiceypy_cassini
 
 
-This project contains only one launch file ```spiceypy.launch.py```. This file will be used for CITROS launch. 
+This project contains only one launch file which will be used for CITROS launch. 
 
 |Launch File	|Description	|Package
 |--|--|--
@@ -60,10 +61,10 @@ spiceypy_cassini.launch.py		|SpiceyPy Cassini simulation launch file 	|spiceypy_
 Now you can see .citros directory in the explorer.
 
 ## Scenario
-This simple scenatio can be used to find the Cassini Spacecraft trajectory relative to Saturn's barycenter within specified time intervals. <br/>
+This simple scenario can be used to find the Cassini Spacecraft trajectory relative to Saturn's barycenter within specified time intervals. <br/>
 Users can input the desired time bounds, and the project utilizes SpiceyPy's powerful capabilities to retrieve accurate and precise orbital data for the Cassini spacecraft during the specified period.<br/>
 The output of the simulation comprises critical flight data, such as altitude, velocity, and other relevant parameters, recorded over time intervals. These results are published via ROS 2 topics, allowing for real-time data visualization, analysis, and integration with other ROS-based systems.<br/>
-This example is used to show the CITROS ability to implement any useful library, such as popular SpiceyPy NASA lib for spacecraft tracking. The project's setup is also showing how user can save all the simualtion results in one place for any number of simulations, and share these results with coworkers. <br/>
+This example is used to show the CITROS ability to implement any useful library, such as popular SpiceyPy NASA lib for spacecraft tracking. The project's setup is also showing how user can save all the simulation results in one place for any number of simulations, and share these results with coworkers. <br/>
 The parameter setup is listed in ```.citros/parameter_setups/default_param_setup.json```:
 ```json
 {
@@ -84,11 +85,11 @@ The parameter setup is listed in ```.citros/parameter_setups/default_param_setup
 
 Learn more about parameter setup and defining custom functions in [Directory parameter_setups](https://citros.io/doc/docs_cli/structure/citros_structure/#directory-parameter_setups) and [Adding Functions to Parameter Setup](https://citros.io/doc/docs_cli/configuration/config_params) pages.
 
-In addition to parameter setup, you can configure the simulation perfomance setup (timeout, CPU, GPU and Memory) as well.
+In addition to parameter setup, you can configure the simulation performance setup (timeout, CPU, GPU and Memory) as well.
 This parameters can be found in ```.citros/simulations/simulation_spiceypy_cassini.json```. <br/>
 The default setup is 180 seconds timeout, 2 CPU, 2 GPU and 1024 MB of Memory.
 
-Look in [Directory simulations page](https://citros.io/doc/docs_cli/structure/citros_structure#directory-simulations) for more information.
+Check [Directory simulations page](https://citros.io/doc/docs_cli/structure/citros_structure#directory-simulations) for more information.
 
 ## Running the Scenario Using CITROS
 
@@ -100,7 +101,7 @@ Now we can launch it locally:
 ? Please choose the simulation you wish to run:
 ❯ spiceypy_cassini
 ```
-Select the launch file (should be the only one here) by pressing ```Enter``` button and wait for the output in the terminal. To plot the local run results you can use FoxGlove.
+Select the launch file (should be the only one here) by pressing ```Enter``` button and wait for the output in the terminal. 
 
 ```bash
 created new batch_id: <batch_run / batch name>. Running locally.
@@ -109,9 +110,9 @@ created new batch_id: <batch_run / batch name>. Running locally.
 ...
 ```
 
-All the results will be saved under .citros/runs/[simulation_name] [folder].
+All the results will be saved under `.citros/runs/[simulation_name]` folder.
 
-To plot the local run results you can use [FoxGlove](https://citros.io/doc/docs_tutorials/#visualization-with-foxglove).
+To plot the local run results you can use [Foxglove](https://citros.io/doc/docs_tutorials/#visualization-with-foxglove).
 
 ![png](img/Example1.png "FoxGlove example")
 
@@ -133,7 +134,7 @@ created new batch_id: <batch_id / batch name>. Running on Citros cluster. See ht
 ```
 
 ## Results
-To get and process the simulation results, execute [built-in Jupiter Notebook](https://citros.io/aerosandbox_cessna/blob/main/notebooks/aerosandbox_notebook_example.ipynb).
-This graph shows us the Cassini altitude:
+To get and process the simulation results, execute [built-in Jupiter Notebook](https://citros.io/aerosandbox_cessna/blob/main/notebooks/aerosandbox_notebook_example.ipynb).<br />
+The graph below shows us the Cassini altitude:
 
 ![png](img/citros3.png "CITROS example")
