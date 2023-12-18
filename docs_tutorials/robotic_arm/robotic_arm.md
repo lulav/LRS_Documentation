@@ -60,7 +60,7 @@ The Robotic Arm simulation has the following ROS 2 parameters:
     ori3		|Arm target orientation by third axis |inverse_kinematic_pkg
 
 
-This project contains two launch files: ```simulation_my_doosan_gazebo_controller``` for Forward Kinematic and ```simulation_inverse_kinematic_pkg``` for Inverse Kinematic. These files will be used for CITROS launch. 
+This project contains two launch files: 
 
 |Launch File	|Description |Package
 |--|--|--
@@ -76,15 +76,15 @@ simulation_inverse_kinematic_pkg.launch.py	|Gazebo Robotic Arm launch file for I
 Now you can see .citros directory in the explorer.
 
 ## Scenario
-* Inverse kinematics
+* Inverse kinematics <br/>
     The Inverse Kinematic calculations are used to show more useful way to interract with robotic arm.  <br/>
     User provides target position and target rotation of arm by three axes as input parameters to configure the simulation. The robotic arm will change its position trying to meet the target conditions. <br/>
 
-* Forward kinematics
-    Forward Kinematic calculation is the simplest way to control the robotic arm behaviour. User provides joints target positions as input parameters to configure the simulation. The robotic arm will change its position trying to meet the target conditions, and the simulation publishes the current positions of joints as a result.<br/>
-    For this example, let's check how the robotic arm's behavior changes depending on target position. To find it out, we need to set up parameters and launch CITROS simulation.<br/>
-    The parameter setup is listed in ```.citros/parameter_setups/default_param_setup.json```. <br/>
-    To find out how the robotic arm's behavior changes, we need to launch a batch with several simulations and a distribution for the last joint position parameter, it will be set by a NumPy random function:
+* Forward kinematics <br/>
+    Forward Kinematic calculation is the simplest way to control the robotic arm behaviour. <br/> 
+    User provides joints target positions as input parameters to configure the simulation. The robotic arm will change its position trying to meet the target conditions, and the simulation publishes the current positions of joints as a result.<br/>
+    For this example, let's check how the robotic arm's behavior changes depending on target position. To find it out, we need to launch a batch with several simulations and a distribution for the last joint position parameter, it will be set by a NumPy random function. <br/>
+    The parameter setup is listed in ```.citros/parameter_setups/default_param_setup.json```: <br/>
 
 ```json
 {
@@ -129,7 +129,7 @@ Now we can launch it locally:
 ❯ simulation_my_doosan_gazebo_controller
   simulation_inverse_kinematic_pkg
 ```
-Select the ```simulation_my_doosan_gazebo_controller``` launch file by pressing ```Enter``` button and wait for the output in the terminal.
+Select the ```simulation_my_doosan_gazebo_controller``` launch file and press ```Enter``` button and wait for the output in the terminal.
 
 ```bash
 created new batch_id: <batch_run / batch name>. Running locally.
@@ -138,7 +138,7 @@ created new batch_id: <batch_run / batch name>. Running locally.
 ...
 ```
 
-All the results will be saved in .citros/runs/[simulation_name] folder.
+All the results will be saved in ```.citros/runs/[simulation_name]``` folder.
 
 To plot the local run results you can use [Foxglove](https://citros.io/doc/docs_tutorials/#visualization-with-foxglove) with the ```layout.json``` layout that exists in the Foxglove_layouts directory.
 
@@ -156,7 +156,7 @@ citros run -n 'robotic_arm' -m 'cloud test run' -r
   simulation_inverse_kinematic_pkg
 ```
 
-Select the ```simulation_my_doosan_gazebo_controller``` launch file by pressing `Enter` button. Now the simulation is running in the CITROS server, and the results will be automatically uploaded to the CITROS database.
+Select the ```simulation_my_doosan_gazebo_controller``` launch file and press `Enter` button. Now the simulation is running in the CITROS server, and the results will be automatically uploaded to the CITROS database.
 
 ```bash
 created new batch_id: <batch_id / batch name>. Running on Citros cluster. See https://citros.io/batch/<batch_id / batch name>.
