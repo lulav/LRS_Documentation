@@ -7,7 +7,7 @@ sidebar_label: 'Lunar Starship'
 # Lunar Starship
 
 ## Overview
-This Lunar Starship mission project addresses the lunar hopper challenge by optimizing the ascent, ballistic flight and landing process on the Moon's surface, aiming to minimize fuel consumption, time, or other relevant parameters. It empowers users to define both theoretical and real dynamic functions, enhancing prediction accuracy and enabling real-time corrections during lunar mission. 
+This Lunar Starship mission project addresses the lunar hopper challenge by optimizing the ascent, ballistic flight and landing process on the Moon's surface, aiming to minimize fuel consumption, time, etc. It empowers users to define both theoretical and real dynamic functions, enhancing prediction accuracy and enabling real-time corrections during lunar mission. 
 
 Through the Lunar Starship project, researchers are paving the way for sustainable lunar exploration, as it not only optimizes missions but also conserves valuable resources for extended stays on the Moon. By allowing for the integration of real dynamic functions, it fosters adaptability and resilience in lunar operations, making it a cornerstone of future lunar exploration endeavors.
 
@@ -18,7 +18,7 @@ Through the Lunar Starship project, researchers are paving the way for sustainab
 1. Please make sure you have all the [necessary softwares](https://citros.io/doc/docs_tutorials/getting_started/#softwares-to-work-with-citros) to work with CITROS installed on your computer.
 2. Install [Visual Studio code](https://code.visualstudio.com/download).
 3. We strongly recommend that you work with [dockers](https://citros.io/doc/docs_tutorials/dockerfile_overview/). However, if you wish to work without dockers, please refer to the .devcontainer [directory](https://github.com/citros-garden/lunar_starship/tree/main/.devcontainer) in project's repo, the dependencies you need are in the ```Dockerfile``` file.
-4. (Optional) Install [FoxGlove](https://docs.foxglove.dev/docs/introduction).
+4. (Optional) Install [Foxglove](https://docs.foxglove.dev/docs/introduction).
 
 ## Table of Contents
 1. [Installation](#installation)
@@ -37,7 +37,7 @@ git clone git@github.com:citros-garden/lunar_starship.git
 
 ## Workspace Overview
 
-The Lunar Starship simulation has the following ROS 2 parameters. Variables with '_0' are initial conditions, and variables with '_f' are final conditions respectively:
+The Lunar Starship simulation has the following ROS 2 parameters: 
 
 |Parameter	|Description	|Package
 |--|--|--
@@ -60,8 +60,12 @@ Isp		|Specific impulse |lunar_starship
 simulation_step		|step of simulation	|lunar_starship
 publish_freq		|Frequency of publishing |lunar_starship
 
+:::note
+- Variables with '_0' are initial conditions.
+- variables with '_f' are final conditions.
+:::
 
-This project contains only one launch file ```lunar_starship.launch.py```. This file will be used for CITROS launch. 
+This project contains only one launch file which will be used for CITROS launch. 
 
 |Launch File	|Description	|Package
 |--|--|--
@@ -74,12 +78,12 @@ lunar_starship.launch.py	|Lunar Starship simulation launch file |lunar_starship
 
 Now you can see .citros directory in the explorer.
 
-# Scenario
+## Scenario
 For this tutorial, let's check how far the Starship can fly depending on Specific Impulse.<br/>
 This example provides an array of time dependent values of states computed by solving non-linear optimal control problems(OCP) in the standard Bolza form using pseudo-spectral collocation methods and adjusted using an additional real dynamic function. The OCP solver used in this example is [MPOPT](https://mpopt.readthedocs.io/en/latest/) (based on [IPOPT](https://en.wikipedia.org/wiki/IPOPT#:~:text=IPOPT%2C%20short%20for%20%22Interior%20Point,the%20EPL%20(formerly%20CPL).)) library modified by Lulav Space team. You can define a "real" dynamic function to test the control values computed by solving non-linear optimal control problems(OCP). This function should have the same number of outputs.<br/>
 The output of the simulation comprises critical flight data, such as altitude, velocity, and other relevant parameters, recorded over time intervals. These results are published via ROS 2 topics, allowing for real-time data visualization, analysis, and integration with other ROS-based systems.<br/>
 The parameter setup is listed in ```.citros/parameter_setups/default_param_setup.json```.<br/>
- To find out how the travelled distance will change, we need to launch a batch with several simulations and a distribution for Specific impulse parameter, starting from 200 and up to 300.
+ To find out how the traveled distance will change, we need to launch a batch with several simulations and a distribution for Specific impulse parameter, starting from 200 and up to 300.
 
 ```json
 {
@@ -126,7 +130,7 @@ This function will set the ```Isp``` parameter in range from 200 to 200+10*n, wh
 
 Learn more about parameter setup and defining custom functions in [Directory parameter_setups](https://citros.io/doc/docs_cli/structure/citros_structure/#directory-parameter_setups) and [Adding Functions to Parameter Setup](https://citros.io/doc/docs_cli/configuration/config_params) pages.
 
-In addition to parameter setup, you can configure the simulation perfomance setup (timeout, CPU, GPU and Memory) as well.
+In addition to parameter setup, you can configure the simulation performance setup (timeout, CPU, GPU and Memory) as well.
 This parameters can be found in ```.citros/simulations/simulation_lunar_starship.json```. <br/>
 The default setup is 600 seconds timeout, 4 CPU, 4 GPU and 4096 MB of Memory.
 
@@ -140,7 +144,7 @@ Now we can launch it locally:
 ? Please choose the simulation you wish to run:
 ❯ lunar_starship
 ```
-Select the launch file (should be the only one here) by pressing ```Enter``` button and wait for the output in the terminal. To plot the local run results you can use FoxGlove.
+Select the launch file (should be the only one here) by pressing ```Enter``` button and wait for the output in the terminal. 
 
 ```bash
 created new batch_id: <batch_run / batch name>. Running locally.
@@ -149,9 +153,9 @@ created new batch_id: <batch_run / batch name>. Running locally.
 ...
 ```
 
-All the results will be saved under .citros/runs/[simulation_name] [folder].
+All the results will be saved under `.citros/runs/[simulation_name]` folder.
 
-To plot the local run results you can use [FoxGlove](https://citros.io/doc/docs_tutorials/#visualization-with-foxglove).
+To plot the local run results you can use [Foxglove](https://citros.io/doc/docs_tutorials/#visualization-with-foxglove).
 
 ![png](img/img0.png "FoxGlove example")
 
@@ -175,6 +179,6 @@ created new batch_id: <batch_id / batch name>. Running on Citros cluster. See ht
 ## Results
 To get and process the simulation results, execute [built-in Jupiter Notebook](https://citros.io/lunar_starship/blob/main/notebooks/Lunar_Starship.ipynb).
 
-This graph shows us the travelled distance depending of Specific impulse:
+The graph below shows us the traveled distance depending of Specific impulse:
 
 ![png](img/citros3.png "CITROS example")
