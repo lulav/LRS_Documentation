@@ -79,12 +79,13 @@ lunar_starship.launch.py	|Lunar Starship simulation launch file |lunar_starship
 Now you can see .citros directory in the explorer.
 
 ## Scenario
-For this tutorial, let's check how far the Starship can fly depending on Specific Impulse.<br/>
-This example provides an array of time dependent values of states computed by solving non-linear optimal control problems(OCP) in the standard Bolza form using pseudo-spectral collocation methods and adjusted using an additional real dynamic function. The OCP solver used in this example is [MPOPT](https://mpopt.readthedocs.io/en/latest/) (based on [IPOPT](https://en.wikipedia.org/wiki/IPOPT#:~:text=IPOPT%2C%20short%20for%20%22Interior%20Point,the%20EPL%20(formerly%20CPL).)) library modified by Lulav Space team. You can define a "real" dynamic function to test the control values computed by solving non-linear optimal control problems(OCP). This function should have the same number of outputs.<br/>
+This example provides an array of time dependent values of states, which are computed by solving non-linear OCP (optimal control problems) in the standard Bolza form, by using pseudo-spectral collocation methods and adjusted by using an additional real dynamic function. <br/>
+The OCP solver used in this example is [MPOPT](https://mpopt.readthedocs.io/en/latest/) (based on [IPOPT](https://en.wikipedia.org/wiki/IPOPT#:~:text=IPOPT%2C%20short%20for%20%22Interior%20Point,the%20EPL%20(formerly%20CPL).)) library modified by Lulav Space team. You can define a "theoretical" and a "real" dynamic function to test the control values computed by solving non-linear optimal control problems(OCP). These functions should have the same number of outputs (7 variables, in this case).<br/>
 
 The output of the simulation comprises critical flight data, such as altitude, velocity, and other relevant parameters, recorded over time intervals. These results are published via ROS 2 topics, allowing for real-time data visualization, analysis, and integration with other ROS-based systems.<br/>
+
+In this tutorial, we will check how far the Starship can fly depending on Specific Impulse. For that, we will launch a simulation batch with a distribution of Specific impulse parameter, starting from 200 and up to 300.
 The parameter setup is listed in ```.citros/parameter_setups/default_param_setup.json```.<br/>
- To find out how the traveled distance will change, we need to launch a batch with several simulations and a distribution for Specific impulse parameter, starting from 200 and up to 300.
 
 ```json
 {
