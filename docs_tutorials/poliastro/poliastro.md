@@ -93,18 +93,17 @@ Now you can see .citros directory in the explorer.
 
 ## Scenario
 The Poliastro project consists of three packages suitable for orbital mechanics calculations:
-* `Poliastro_simple_orbit`.<br/>
+* `Poliastro_simple_orbit`<br/>
 This package is used to calculate vessel orbital coordinates around the Earth between time bounds from given apoapsis and periapsis altitudes. <br/>
 The result is an ephemerids of orbit (actually a part of it between given time bounds) with zero right ascension of the ascending node, argument of the pericenter and true anomaly for simplicity. <br/>
-* `Poliastro_maneuver`.<br/>
+* `Poliastro_maneuver`<br/>
 This package calculates three orbits for the Hohmann transition: an initial orbit, an intermediate orbit, and a final orbit. <br/>
 The simulation takes the radius of the initial orbit and the radius of the final orbit as input. <br/>
 The result is the ephemerids of these orbits, not the trajectory! <br/>
-* `Poliastro_atmo_drag`. <br/>
+* `Poliastro_atmo_drag`<br/>
 This package shows the effect of aerodynamic drag forces on an artificial satellite in low Earth orbit. <br/>
 The simulation takes Earth diameter, drag coefficient, Keppler orbit parameters and maximum simulation time as inputs. <br/>
 The result is a plot of altitude versus time and flight time before hitting the surface.<br/>
-
 
 In this tutorial we will use the Atmospheric Drag simulation scenario (as one of the most interesting :).<br/>
 Let's check how the exact orbit duration reduces depending on Drag coefficient. <br/>
@@ -157,7 +156,7 @@ Now we can launch the project locally:
 poliastro_maneuver
 poliastro_simple_orbit
 ```
-Select the ```poliastro_atmo_drag``` launch file by pressing ```Enter``` button and wait for the output in the terminal.
+Select the ```poliastro_atmo_drag``` launch file, press ```Enter``` button and wait for the output in the terminal.
 
 ```bash
 created new batch_id: <batch_run / batch name>. Running locally.
@@ -184,7 +183,7 @@ poliastro_maneuver
 poliastro_simple_orbit
 ```
 
-Select the ```poliastro_atmo_drag``` launch file by pressing `Enter` button.  <br/>
+Select the ```poliastro_atmo_drag``` launch file and press `Enter` button.  <br/>
 Now the simulation is running in the CITROS server, and the results will be automatically uploaded to the CITROS database.
 
 ```bash
@@ -194,6 +193,6 @@ created new batch_id: <batch_id / batch name>. Running on Citros cluster. See ht
 ## Results
 To get and process the simulation results, execute [built-in Jupiter Notebook](https://citros.io/poliastro/blob/updates/notebooks/poliastro_notebook_example.ipynb).
 
-The graph shows us the exact orbit duration depending of Drag coefficient:
+The below graph shows us the exact orbit duration depending of Drag coefficient:
 
 ![png](img/citros3.png "CITROS example")
