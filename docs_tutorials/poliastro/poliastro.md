@@ -105,10 +105,9 @@ This package shows the effect of aerodynamic drag forces on an artificial satell
 The simulation takes Earth diameter, drag coefficient, Keppler orbit parameters and maximum simulation time as inputs. <br/>
 The result is a plot of altitude versus time and flight time before hitting the surface.<br/>
 
-In this tutorial we will use the Atmospheric Drag simulation scenario (as one of the most interesting :).<br/>
-Let's check how the exact orbit duration reduces depending on Drag coefficient. <br/>
-To find it out, we need to set up Drag Coefficient (```c_d```) parameter and launch CITROS simulation. <br/>
-The parameter setup is listed in ```.citros/parameter_setups/default_param_setup.json```. <br/>
+Drag forces calculations are more difficult and more rare than the others, hence, in this tutorial we will use the Atmospheric Drag simulation scenario. <br />
+Let's check how the exact orbit duration reduces depending on Drag coefficient. For that, we will set up Drag Coefficient (```c_d```) parameter random distribution in range from 2 to 4. <br />
+The parameter setup is listed in `.citros/parameter_setups/default_param_setup.json`.
 To find out how the exact orbit duration will reduce, we need to launch a batch with several simulations and a distribution Drag Coefficient parameter, it will be set by a NumPy random function:
 
 ```json
@@ -134,13 +133,11 @@ To find out how the exact orbit duration will reduce, we need to launch a batch 
         },
 ```
 
-This function will set the ```c_d``` parameter randomly in range from 2 to 4.
-
 Learn more about parameter setup and defining custom functions in [Directory parameter_setups](https://citros.io/doc/docs_cli/structure/citros_structure/#directory-parameter_setups) and [Adding Functions to Parameter Setup](https://citros.io/doc/docs_cli/configuration/config_params) pages.
 
 In addition to parameter setup, you can configure the simulation performance setup (timeout, CPU, GPU and Memory) as well.
-This parameters can be found in ```.citros/simulations/simulation_poliastro.json```. <br/>
-The default setup is 180 seconds timeout, 2 CPU, 2 GPU and 2048 MB of Memory.
+This parameters can be found in ```.citros/simulations/simulation_poliastro_atmo_drag.json```. <br/>
+The default setup is 360 seconds timeout, 4 CPU, 4 GPU and 2048 MB of Memory.
 
 Look in [Directory simulations page](https://citros.io/doc/docs_cli/structure/citros_structure#directory-simulations) for more information.
 
@@ -174,7 +171,9 @@ To plot the local run results you can use [Foxglove](https://citros.io/doc/docs_
 ### Running in Cloud
 
 [Upload project to CITROS Server](https://citros.io/doc/docs_tutorials/getting_started/#upload-to-citros-server). <br/>
-Finally, we can run the simulation in the cloud! Simply add `-r` to the terminal command: 
+Finally, we can run the simulation in the cloud.<br />
+We will run the simulation 10 times by adding `-c 10` to the command and run it in the CITROS server by adding `-r` to the command:
+
 ```bash 
 citros run -n 'poliastro' -m 'cloud test run' -c 10 -r
 ? Please choose the simulation you wish to run:
