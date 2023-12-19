@@ -66,9 +66,8 @@ lunar_hopper.launch.py	|Lunar Hopper simulation launch file 	|lunar_hopper
 Now you can see .citros directory in the explorer.
 
 ## Scenario
-The optimal trajectory computes by solving non-linear optimal control problems (OCP) in the standard Bolza form, by using pseudo-spectral collocation methods and adjusted, using an additional real dynamic function. <br/> 
-The OCP solver used in this example is MPOPT (based on IPOPT) library modified by Lulav Space team. You can find more information about MPOPT optimal control solving library on the MPOPT [GitHub](https://github.com/mpopt/mpopt) or [website](https://mpopt.readthedocs.io/en/latest/).<br/>
-
+The optimal trajectory computes by solving non-linear OCP (optimal control problems) in the standard Bolza form, by using pseudo-spectral collocation methods and adjusted, using an additional real dynamic function. <br/> 
+The OCP solver used in this example is [MPOPT]((https://mpopt.readthedocs.io/en/latest/)) (based on [IPOPT](https://en.wikipedia.org/wiki/IPOPT#:~:text=IPOPT%2C%20short%20for%20%22Interior%20Point,the%20EPL%20(formerly%20CPL).)) library modified by Lulav Space team. <br />
 The main goal of the project is to find the optimal way to "hop" on the Moon as far as possible with given vessel parameters.<br/>
 
 For this tutorial, let's check how far the Hopper can hop on the Moon depending on Specific Impulse.
