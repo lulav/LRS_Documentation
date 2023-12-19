@@ -45,13 +45,12 @@ check_forward_dist_param		|forward checking distance for Autonomous Collision Av
 check_side_dist_param		|side checking distance for Autonomous Collision Avoidance	|turtlebot3_gazebo
 
 
-This project contains two launch files, but we will use only ```turtlebot3_sim_cont.launch.py```, and the second one launches automatically (it's necessary for publishing states).
+This project contains two launch files, we use ```turtlebot3_sim_cont.launch.py``` to run a simulation, while the second file launches automatically.
 
 |Launch File	|Description	|Package
 |--|--|--
 turtlebot3_sim_cont.launch.py		|Gazebo headless TurtleBot world launch file 	|turtlebot3_gazebo
-robot_state_publisher.launch.py		|Utility launch file for state publishing
- |turtlebot3_gazebo
+robot_state_publisher.launch.py		|Utility launch file for state publishing  |turtlebot3_gazebo
 
 
 ## CITROS Initialization
@@ -61,9 +60,11 @@ robot_state_publisher.launch.py		|Utility launch file for state publishing
 Now you can see .citros directory in the explorer.
 
 ## Scenario
-The ROS 2 node interfaces with the official TurtleBot3 simulation example, leveraging the TurtleBot3 robot model and simulated environment. This integration allows users to observe how the robot behaves in a controlled environment. The node includes a simple Autonomous Collision Avoidance module. This module is responsible for ensuring that the TurtleBot3 avoids collisions with obstacles in its path. It utilizes sensor data, such as simulated lidar readings, to detect obstacles and adjust the robot's trajectory accordingly.<br/>
-The ROS 2 parameters provided by this node give users the flexibility to modify various TurtleBot3 specifications. These parameters may include attributes like the robot's size, speed, sensor range, or collision avoidance algorithms. Users can experiment with different parameter values to observe their impact on collision avoidance behavior. The TurtleBot3 robot is capable of orienting itself effectively within a prepared TurtleBot3 world. It utilizes the simulated lidar module to gather environmental data, allowing it to make informed decisions about its navigation path.<br/>
-For this example, let's check how the powerful CITROS Error Analysis (a part of Data Analysis) package works. To do it out, we need to set up parameters and launch CITROS simulation.<br/>
+In this scenario the ROS 2 node interfaces with the official TurtleBot3 simulation example, leveraging the TurtleBot3 robot model and simulated environment. <br/>
+This integration allows users to observe how the robot behaves in a controlled environment.<br/>
+The node includes a simple Autonomous Collision Avoidance module which ensures the TurtleBot3 avoids collisions with obstacles in its path, it utilizes sensor data, such as simulated lidar readings, to detect obstacles and adjust the robot's trajectory accordingly. The output of the simulation is a robot's trajectory, sensors outputs and other [standart TurtleBot3 ROS 2 topics](https://emanual.robotis.com/docs/en/software/robotis_framework_packages/).<br/>
+The project gives users the flexibility to modify various TurtleBot3 specifications by changing ROS 2 parameters. These parameters may include attributes like the robot's size, speed, sensor range, or collision avoidance algorithms. Users can experiment with different parameter values to observe their impact on collision avoidance behavior. The TurtleBot3 robot is capable of orienting itself effectively within a prepared TurtleBot3 world. It utilizes the simulated lidar module to gather environmental data, allowing it to make informed decisions about its navigation path.<br/>
+For this example, let's check how the powerful CITROS Error Analysis (a part of Data Analysis) package works. We will analyse data from IMU (Inertial Measurement Unit), Odometer and position information. To do it out, we need to set up parameters and launch CITROS simulation.<br/>
 The parameter setup is listed in ```.citros/parameter_setups/default_param_setup.json```:
 ```json
 {
@@ -90,7 +91,7 @@ The parameter setup is listed in ```.citros/parameter_setups/default_param_setup
 Learn more about parameter setup and defining custom functions in [Directory parameter_setups](https://citros.io/doc/docs_cli/structure/citros_structure/#directory-parameter_setups) and [Adding Functions to Parameter Setup](https://citros.io/doc/docs_cli/configuration/config_params) pages.
 
 In addition to parameter setup, you can configure the simulation performance setup (timeout, CPU, GPU and Memory) as well.
-This parameters can be found in ```.citros/simulations/simulation_turtlebot3.json```. <br/>
+This parameters can be found in ```.citros/simulations/simulation_turtlebot3_sim_cont.json```. <br/>
 The default setup is 600 seconds timeout, 4 CPU, 4 GPU and 4096 MB of Memory. <br/>
 Check [Directory simulations page](https://citros.io/doc/docs_cli/structure/citros_structure#directory-simulations) for more information.
 
