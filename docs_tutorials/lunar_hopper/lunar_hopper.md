@@ -66,12 +66,14 @@ lunar_hopper.launch.py	|Lunar Hopper simulation launch file 	|lunar_hopper
 Now you can see .citros directory in the explorer.
 
 ## Scenario
-For this tutorial, let's check how far the Hopper can hop depending on Specific Impulse. <br />
-The optimal trajectory computes by solving non-linear optimal control problems(OCP) in the standard Bolza form using pseudo-spectral collocation methods and adjusted using an additional real dynamic function. The OCP solver used in this example is MPOPT (based on IPOPT) library modified by Lulav Space team. You can find more information about MPOPT optimal control solving library on the MPOPT GitHub or website.<br/>
+The optimal trajectory computes by solving non-linear optimal control problems (OCP) in the standard Bolza form, by using pseudo-spectral collocation methods and adjusted, using an additional real dynamic function. <br/> 
+The OCP solver used in this example is MPOPT (based on IPOPT) library modified by Lulav Space team. You can find more information about MPOPT optimal control solving library on the MPOPT [GitHub](https://github.com/mpopt/mpopt) or [website](https://mpopt.readthedocs.io/en/latest/).<br/>
 
 The main goal of the project is to find the optimal way to "hop" on the Moon as far as possible with given vessel parameters.<br/>
+
+For this tutorial, let's check how far the Hopper can hop on the Moon depending on Specific Impulse.
+For that, we will launch a simulation batch with a distribution of Specific impulse parameter, starting from 200 and up to 300.
 The parameter setup is listed in ```.citros/parameter_setups/default_param_setup.json```. <br/>
-To find out how far the Hopper can hop, we need to launch a batch with several simulations and a distribution for Specific Impulse parameter, starting from 200 and up to 300:
 
 ```json
 {
