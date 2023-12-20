@@ -106,11 +106,27 @@ This function will set the ```Isp``` parameter in range from 200 to 200+10*n, wh
 
 Learn more about parameter setup and defining custom functions in [Directory parameter_setups](https://citros.io/doc/docs_cli/structure/citros_structure/#directory-parameter_setups) and [Adding Functions to Parameter Setup](https://citros.io/doc/docs_cli/configuration/config_params) pages.
 
+In addition to parameter setup, you can configure the simulation performance setup (timeout, CPU, GPU and Memory) as well.
+These parameters can be found in ```.citros/simulations/simulation_lunar_hopper.json```. <br/>
+Look in [Directory simulations page](https://citros.io/doc/docs_cli/structure/citros_structure#directory-simulations) for more information.
+
 ## Running the Scenario Using CITROS
 
 ### Running Locally
-First ensure that the project has been [built and sourced](https://citros.io/doc/docs_tutorials/getting_started/#build-the-project). <br/>
-Set up the performance setup listed in ```.citros/simulations/simulation_lunar_hopper.json```: for local run the recommended timeout value is 600 seconds. <br/>
+
+First, we recommended to update the simulation performance timeout to 600 seconds:
+
+ ```json 
+{
+    ...
+    "parameter_setup": "default_param_setup.json",
+    "storage_type": "MCAP",
+    "timeout": 600
+}
+ ```
+
+Then, ensure that the project has been [built and sourced](https://citros.io/doc/docs_tutorials/getting_started/#build-the-project).<br/>
+
 Now we can launch it locally:
 ```bash 
 >>> citros run -n 'Lunar_hopper' -m 'local test run'
@@ -132,8 +148,25 @@ To plot the local run results you can use [Foxglove](https://citros.io/doc/docs_
 
 ### Running in Cloud
 
-[Upload project to CITROS Server](https://citros.io/doc/docs_tutorials/getting_started/#upload-to-citros-server).<br />
-Set up the performance setup listed in ```.citros/simulations/simulation_lunar_hopper.json```: for cloud run the recommended timeout value is 600 seconds, 4 CPU, 4 GPU and 4096 MB of Memory.<br />
+First, we recommended to update the simulation performance parameters:
+- CPU: 4
+- GPU: 4  
+- Memory: 4096 MB
+- Timeout: 600 seconds
+
+
+```json
+{
+    "CPU": 4,
+    "GPU": 4,
+    "MEM": 4096,
+    ...
+    "timeout": 600
+}
+```
+
+Then, [Upload project to CITROS Server](https://citros.io/doc/docs_tutorials/getting_started/#upload-to-citros-server). 
+
 Finally, we can run it in the cloud! Simply add `-r` to the terminal command: 
 ```bash 
 citros run -n 'Lunar_hopper' -m 'cloud test run' -r
