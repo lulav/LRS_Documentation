@@ -122,7 +122,8 @@ Look in [Directory simulations page](https://citros.io/doc/docs_cli/structure/ci
 ## Running the Scenario Using CITROS
 
 ### Running Locally
-First ensure that the project has been [built and sourced](https://citros.io/doc/docs_tutorials/getting_started/#build-the-project).
+First ensure that the project has been [built and sourced](https://citros.io/doc/docs_tutorials/getting_started/#build-the-project).<br/>
+Set up the performance setup listed in ```.citros/simulations/simulation_my_doosan_gazebo_controller.json```: for local run the recommended timeout value is 600 seconds. <br/>
 Now we can launch it locally:
 ```bash 
 >>> citros run -n 'robotic_arm' -m 'local test run'
@@ -147,8 +148,8 @@ To plot the local run results you can use [Foxglove](https://citros.io/doc/docs_
 
 ### Running in Cloud
 
-[Upload project to CITROS Server](https://citros.io/doc/docs_tutorials/getting_started/#upload-to-citros-server).
-
+[Upload project to CITROS Server](https://citros.io/doc/docs_tutorials/getting_started/#upload-to-citros-server).<br />
+Set up the performance setup listed in ```.citros/simulations/simulation_my_doosan_gazebo_controller.json```: for cloud run the recommended timeout value is 600 seconds, 4 CPU, 4 GPU and 4096 MB of Memory<br />
 Finally, we can run it in the cloud! Simply add `-r` to the terminal command: 
 ```bash 
 citros run -n 'robotic_arm' -m 'cloud test run' -r
