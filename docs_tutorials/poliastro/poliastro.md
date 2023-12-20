@@ -105,10 +105,9 @@ This package shows the effect of aerodynamic drag forces on an artificial satell
 The simulation takes Earth diameter, drag coefficient, Keppler orbit parameters and maximum simulation time as inputs. <br/>
 The result is a plot of altitude versus time and flight time before hitting the surface.<br/>
 
-Drag forces calculations are more difficult and more rare than the others, hence, in this tutorial we will use the Atmospheric Drag simulation scenario. <br />
+Drag forces calculations are more difficult and more rare than the others, hence, in this tutorial we will use the Atmospheric Drag simulation scenario. <br/>
 Let's check how the exact orbit duration reduces depending on Drag coefficient. For that, we will set up Drag Coefficient (```c_d```) parameter random distribution in range from 2 to 4. <br />
-The parameter setup is listed in `.citros/parameter_setups/default_param_setup.json`.
-To find out how the exact orbit duration will reduce, we need to launch a batch with several simulations and a distribution Drag Coefficient parameter, it will be set by a NumPy random function:
+The parameter will be set by a NumPy random function and its setup is listed in `.citros/parameter_setups/default_param_setup.json`:
 
 ```json
     "packages": {
@@ -144,7 +143,7 @@ Look in [Directory simulations page](https://citros.io/doc/docs_cli/structure/ci
 ## Running the Scenario Using CITROS
 
 ### Running Locally
-First ensure that the project has been [built and sourced](https://citros.io/doc/docs_tutorials/getting_started/#build-the-project).
+First ensure that the project has been [built and sourced](https://citros.io/doc/docs_tutorials/getting_started/#build-the-project). Set up the performance setup listed in ```.citros/simulations/simulation_poliastro_atmo_drag.json```: for local run the recommended timeout value is 360 seconds. <br/>
 Now we can launch the project locally:
 ```bash 
 >>> citros run -n 'poliastro' -m 'local test run'
@@ -171,6 +170,7 @@ To plot the local run results you can use [Foxglove](https://citros.io/doc/docs_
 ### Running in Cloud
 
 [Upload project to CITROS Server](https://citros.io/doc/docs_tutorials/getting_started/#upload-to-citros-server). <br/>
+Set up the performance setup listed in ```.citros/simulations/simulation_poliastro_atmo_drag.json```: for cloud run the recommended timeout value is 360 seconds, 4 CPU, 4 GPU and 2048 MB of Memory.<br />
 Finally, we can run the simulation in the cloud.<br />
 We will run the simulation 10 times by adding `-c 10` to the command and run it in the CITROS server by adding `-r` to the command:
 
