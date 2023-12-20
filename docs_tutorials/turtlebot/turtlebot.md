@@ -16,7 +16,6 @@ All project installation, code overview and usage details are also available on 
 1. Please make sure you have all the [necessary softwares](https://citros.io/doc/docs_tutorials/getting_started/#softwares-to-work-with-citros) to work with CITROS installed on your computer.
 2. Install [Visual Studio code](https://code.visualstudio.com/download).
 3. We strongly recommend that you work with [dockers](https://citros.io/doc/docs_tutorials/dockerfile_overview/). However, if you wish to work without dockers, please refer to the .devcontainer [directory](https://github.com/citros-garden/turtlebot3/tree/main/.devcontainer) in project's repo, the dependencies you need are in the ```Dockerfile``` file.
-4. (Optional) Install [Foxglove](https://docs.foxglove.dev/docs/introduction).
 
 ## Table of Contents
 1. [Installation](#installation)
@@ -62,9 +61,9 @@ Now you can see .citros directory in the explorer.
 ## Scenario
 In this scenario the ROS 2 node interfaces with the official TurtleBot3 simulation example, leveraging the TurtleBot3 robot model and simulated environment. <br/>
 This integration allows users to observe how the robot behaves in a controlled environment.<br/>
-The node includes a simple Autonomous Collision Avoidance module which ensures the TurtleBot3 avoids collisions with obstacles in its path, it utilizes sensor data, such as simulated lidar readings, to detect obstacles and adjust the robot's trajectory accordingly. The output of the simulation is a robot's trajectory, sensors outputs and other [standart TurtleBot3 ROS 2 topics](https://emanual.robotis.com/docs/en/software/robotis_framework_packages/).<br/>
+The node includes a simple Autonomous Collision Avoidance module which ensures the TurtleBot3 avoids collisions with obstacles in its path, it utilizes sensor data, such as simulated lidar readings, to detect obstacles and adjust the robot's trajectory accordingly. The output of the simulation is a robot's trajectory, sensors outputs and other [standard TurtleBot3 ROS 2 topics](https://emanual.robotis.com/docs/en/software/robotis_framework_packages/).<br/>
 The project gives users the flexibility to modify various TurtleBot3 specifications by changing ROS 2 parameters. These parameters may include attributes like the robot's size, speed, sensor range, or collision avoidance algorithms. Users can experiment with different parameter values to observe their impact on collision avoidance behavior. The TurtleBot3 robot is capable of orienting itself effectively within a prepared TurtleBot3 world. It utilizes the simulated lidar module to gather environmental data, allowing it to make informed decisions about its navigation path.<br/>
-For this example, let's check how the powerful CITROS Error Analysis (a part of Data Analysis) package works. We will analyse data from IMU (Inertial Measurement Unit), Odometer and position information. To do it out, we need to set up parameters and launch CITROS simulation.<br/>
+For this example, let's check how the powerful CITROS Error Analysis (a part of Data Analysis) package works. We will analyze data from IMU (Inertial Measurement Unit), Odometer and position information. To do it out, we need to set up parameters and launch CITROS simulation.<br/>
 The parameter setup is listed in ```.citros/parameter_setups/default_param_setup.json```:
 ```json
 {
@@ -98,7 +97,7 @@ Look in [Directory simulations page](https://citros.io/doc/docs_cli/structure/ci
 
 ### Running in Cloud
 
-First, we recommended to update the simulation performance parameters:
+First, we recommend to update the simulation performance parameters:
 - CPU: 4
 - GPU: 4  
 - Memory: 4096 MB
@@ -137,6 +136,6 @@ To get and process the simulation results, execute [built-in Jupiter Notebook](h
 As you can see, the traveled trajectory varies for different simulations:
 ![png](img/citros2.png "CITROS example")
 
-This graph shows values from data attribute vs. independent parameter for each of the simulation, the mean value over all the simulations and 3 σ interval.
+The graph below shows values from data attribute vs. independent parameter for each of the simulation, the mean value over all the simulations and 3 σ interval.
 
 ![png](img/citros3.png "CITROS example")
