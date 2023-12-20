@@ -80,7 +80,7 @@ Now you can see .citros directory in the explorer.
 
 ## Scenario
 This example provides an array of time dependent values of states, which are computed by solving non-linear OCP (optimal control problems) in the standard Bolza form, by using pseudo-spectral collocation methods and adjusted by using an additional real dynamic function. <br/>
-The OCP solver used in this example is [MPOPT](https://mpopt.readthedocs.io/en/latest/) (based on [IPOPT](https://en.wikipedia.org/wiki/IPOPT#:~:text=IPOPT%2C%20short%20for%20%22Interior%20Point,the%20EPL%20(formerly%20CPL).)) library modified by Lulav Space team. You can define a "theoretical" and a "real" dynamic function to test the control values computed by solving non-linear optimal control problems(OCP). These functions should have the same number of outputs (7 variables, in this case).<br/>
+The OCP solver used in this example is [MPOPT](https://mpopt.readthedocs.io/en/latest/) (based on [IPOPT](https://en.wikipedia.org/wiki/IPOPT#:~:text=IPOPT%2C%20short%20for%20%22Interior%20Point,the%20EPL%20(formerly%20CPL).)) library modified by Lulav Space team. <br/>
 
 The output of the simulation comprises critical flight data, such as altitude, velocity, and other relevant parameters, recorded over time intervals. These results are published via ROS 2 topics, allowing for real-time data visualization, analysis, and integration with other ROS-based systems.<br/>
 
@@ -132,14 +132,10 @@ This function will set the ```Isp``` parameter in range from 200 to 200+10*n, wh
 
 Learn more about parameter setup and defining custom functions in [Directory parameter_setups](https://citros.io/doc/docs_cli/structure/citros_structure/#directory-parameter_setups) and [Adding Functions to Parameter Setup](https://citros.io/doc/docs_cli/configuration/config_params) pages.
 
-In addition to parameter setup, you can configure the simulation performance setup (timeout, CPU, GPU and Memory) as well.
-This parameters can be found in ```.citros/simulations/simulation_lunar_starship.json```. <br/>
-The default setup is 600 seconds timeout, 4 CPU, 4 GPU and 4096 MB of Memory.
-
 ## Running the Scenario Using CITROS
 
 ### Running Locally
-First ensure that the project has been [built and sourced](https://citros.io/doc/docs_tutorials/getting_started/#build-the-project).
+First ensure that the project has been [built and sourced](https://citros.io/doc/docs_tutorials/getting_started/#build-the-project). Set up the performance setup listed in ```.citros/simulations/simulation_lunar_starship.json```: for local run the recommended timeout value is 600 seconds.
 Now we can launch it locally:
 ```bash 
 >>> citros run -n 'Lunar_Starship' -m 'local test run'
@@ -163,7 +159,7 @@ To plot the local run results you can use [Foxglove](https://citros.io/doc/docs_
 
 ### Running in Cloud
 
-[Upload project to CITROS Server](https://citros.io/doc/docs_tutorials/getting_started/#upload-to-citros-server).
+[Upload project to CITROS Server](https://citros.io/doc/docs_tutorials/getting_started/#upload-to-citros-server). Set up the performance setup listed in ```.citros/simulations/simulation_lunar_starship.json```: for cloud run the recommended timeout value is 600 seconds, 4 CPU, 4 GPU and 4096 MB of Memory.
 
 Finally, we can run it in the cloud! Simply add `-r` to the terminal command: 
 ```bash 
