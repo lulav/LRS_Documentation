@@ -77,12 +77,13 @@ Now you can see .citros directory in the explorer.
 
 ## Scenario
 * Inverse kinematics <br/>
-    The Inverse Kinematic calculations are used to show more useful way to interract with robotic arm.  <br/>
-    User provides target position and target rotation of arm by three axes as input parameters to configure the simulation. The robotic arm will change its position trying to meet the target conditions. <br/>
+    The Inverse Kinematic calculations are used to show more useful way to interact with robotic arm.  <br/>
+    User provides target position and target rotation of arm by three axes as input parameters to configure the simulation. The robotic arm will change its position trying to meet the target conditions. 
 
 * Forward kinematics <br/>
-    Forward Kinematic calculation is the simplest way to control the robotic arm behaviour. <br/> 
+    Forward Kinematic calculation is the simplest way to control the robotic arm behavior. <br/> 
     User provides joints target positions as input parameters to configure the simulation. The robotic arm will change its position trying to meet the target conditions, and the simulation publishes the current positions of joints as a result.<br/>
+    
     For this example, let's check how the robotic arm's behavior changes depending on target position. To find it out, we need to launch a batch with several simulations and a distribution for the last joint position parameter, it will be set by a NumPy random function. <br/>
     The parameter setup is listed in ```.citros/parameter_setups/default_param_setup.json```: <br/>
 
@@ -112,7 +113,7 @@ This function will set the ```j5``` parameter in random range from 0.0 to 0.5.
 
 Learn more about parameter setup and defining custom functions in [Directory parameter_setups](https://citros.io/doc/docs_cli/structure/citros_structure/#directory-parameter_setups) and [Adding Functions to Parameter Setup](https://citros.io/doc/docs_cli/configuration/config_params) pages.
 
-In addition to parameter setup, you can configure the simulation perfomance setup (timeout, CPU, GPU and Memory) as well.
+In addition to parameter setup, you can configure the simulation performance setup (timeout, CPU, GPU and Memory) as well.
 This parameters can be found in ```.citros/simulations/simulation_my_doosan_gazebo_controller.json``` for Forward Kinematic or ```.citros/simulations/simulation_inverse_kinematic_pkg.json``` for Inverse Kinematic. <br/>
 The default setup is 600 seconds timeout, 4 CPU, 4 GPU and 4096 MB of Memory.
 
