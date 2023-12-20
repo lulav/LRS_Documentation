@@ -85,12 +85,33 @@ The parameter setup is listed in ```.citros/parameter_setups/default_param_setup
 
 Learn more about parameter setup and defining custom functions in [Directory parameter_setups](https://citros.io/doc/docs_cli/structure/citros_structure/#directory-parameter_setups) and [Adding Functions to Parameter Setup](https://citros.io/doc/docs_cli/configuration/config_params) pages.
 
+In addition to parameter setup, you can configure the simulation performance setup (timeout, CPU, GPU and Memory) as well.
+This parameters can be found in ```.citros/simulations/simulation_spiceypy_cassini.json```. <br/>
+Look in [Directory simulations page](https://citros.io/doc/docs_cli/structure/citros_structure#directory-simulations) for more information.
+
 ## Running the Scenario Using CITROS
 
 ### Running in Cloud
 
-[Upload project to CITROS Server](https://citros.io/doc/docs_tutorials/getting_started/#upload-to-citros-server).
-Set up the performance setup listed in ```.citros/simulations/simulation_spiceypy_cassini.json```: for cloud run the recommended timeout value is 180 seconds, 2 CPU, 2 GPU and 1024 MB of Memory.<br />
+First, we recommended to update the simulation performance parameters:
+- CPU: 2
+- GPU: 2  
+- Memory: 1024 MB
+- Timeout: 180 seconds
+
+
+```json
+{
+    "CPU": 2,
+    "GPU": 2,
+    "MEM": 1024,
+    ...
+    "timeout": 180
+}
+```
+
+Then, [Upload project to CITROS Server](https://citros.io/doc/docs_tutorials/getting_started/#upload-to-citros-server). 
+
 Finally, we can run it in the cloud! Simply add `-r` to the terminal command: 
 ```bash 
 citros run -n 'spiceypy_cassini' -m 'cloud test run' -r
