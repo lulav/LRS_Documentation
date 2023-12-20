@@ -85,41 +85,12 @@ The parameter setup is listed in ```.citros/parameter_setups/default_param_setup
 
 Learn more about parameter setup and defining custom functions in [Directory parameter_setups](https://citros.io/doc/docs_cli/structure/citros_structure/#directory-parameter_setups) and [Adding Functions to Parameter Setup](https://citros.io/doc/docs_cli/configuration/config_params) pages.
 
-In addition to parameter setup, you can configure the simulation performance setup (timeout, CPU, GPU and Memory) as well.
-This parameters can be found in ```.citros/simulations/simulation_spiceypy_cassini.json```. <br/>
-The default setup is 180 seconds timeout, 2 CPU, 2 GPU and 1024 MB of Memory.
-
-Check [Directory simulations page](https://citros.io/doc/docs_cli/structure/citros_structure#directory-simulations) for more information.
-
 ## Running the Scenario Using CITROS
-
-### Running Locally
-First ensure that the project has been [built and sourced](https://citros.io/doc/docs_tutorials/getting_started/#build-the-project).
-Now we can launch it locally:
-```bash 
->>> citros run -n 'spiceypy_cassini' -m 'local test run'
-? Please choose the simulation you wish to run:
-❯ spiceypy_cassini
-```
-Select the launch file (should be the only one here) by pressing ```Enter``` button and wait for the output in the terminal. 
-
-```bash
-created new batch_id: <batch_run / batch name>. Running locally.
-+ running batch [<batch_run / batch name>], description: local test run, repeating simulations: [1]
-+ + running simulation [0]
-...
-```
-
-All the results will be saved under `.citros/runs/[simulation_name]` folder.
-
-To plot the local run results you can use [Foxglove](https://citros.io/doc/docs_tutorials/#visualization-with-foxglove).
-
-![png](img/Example1.png "FoxGlove example")
 
 ### Running in Cloud
 
 [Upload project to CITROS Server](https://citros.io/doc/docs_tutorials/getting_started/#upload-to-citros-server).
-
+Set up the performance setup listed in ```.citros/simulations/simulation_spiceypy_cassini.json```: for cloud run the recommended timeout value is 180 seconds, 2 CPU, 2 GPU and 1024 MB of Memory.<br />
 Finally, we can run it in the cloud! Simply add `-r` to the terminal command: 
 ```bash 
 citros run -n 'spiceypy_cassini' -m 'cloud test run' -r
