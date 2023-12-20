@@ -120,7 +120,7 @@ Look in [Directory simulations page](https://citros.io/doc/docs_cli/structure/ci
 
 ### Running Locally
 
-First, we recommended to update the simulation performance timeout to 300 seconds:
+First, we recommend to update the simulation performance timeout to 300 seconds:
 
  ```json 
 {
@@ -157,7 +157,7 @@ To plot the local run results you can use [Foxglove](https://citros.io/doc/docs_
 
 ### Running in Cloud
 
-First, we recommended to update the simulation performance parameters:
+First, we recommend to update the simulation performance parameters:
 - CPU: 4
 - GPU: 4  
 - Memory: 4096 MB
