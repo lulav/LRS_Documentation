@@ -90,41 +90,11 @@ The parameter setup is listed in ```.citros/parameter_setups/default_param_setup
 
 Learn more about parameter setup and defining custom functions in [Directory parameter_setups](https://citros.io/doc/docs_cli/structure/citros_structure/#directory-parameter_setups) and [Adding Functions to Parameter Setup](https://citros.io/doc/docs_cli/configuration/config_params) pages.
 
-In addition to parameter setup, you can configure the simulation performance setup (timeout, CPU, GPU and Memory) as well.
-This parameters can be found in ```.citros/simulations/simulation_turtlebot3_sim_cont.json```. <br/>
-The default setup is 600 seconds timeout, 4 CPU, 4 GPU and 4096 MB of Memory. <br/>
-Check [Directory simulations page](https://citros.io/doc/docs_cli/structure/citros_structure#directory-simulations) for more information.
-
 ## Running the Scenario Using CITROS
 
-### Running Locally
-First ensure that the project has been [built and sourced](https://citros.io/doc/docs_tutorials/getting_started/#build-the-project).
-Now we can launch it locally:
-```bash 
->>> citros run -n 'turtlebot3' -m 'local test run'
-? Please choose the simulation you wish to run:
-  simulation_robot_state_publisher
-❯ simulation_turtlebot3_sim_cont
-```
-Select the launch file `simulation_turtlebot3_sim_cont` and press `Enter` button and wait for the output in the terminal. 
-
-```bash
-created new batch_id: <batch_run / batch name>. Running locally.
-+ running batch [<batch_run / batch name>], description: local test run, repeating simulations: [1]
-+ + running simulation [0]
-...
-```
-
-All the results will be saved under `.citros/runs/[simulation_name]` folder.
-
-To plot the local run results you can use [Foxglove](https://citros.io/doc/docs_tutorials/#visualization-with-foxglove) with the ```layout.json``` layout that exists in the ```Foxglove_layouts``` directory.
-
-![gif](img/foxglove1.gif "Foxglove example")
-![gif](img/foxglove2.gif "Foxglove example")
-
 ### Running in Cloud
-
-[Upload project to CITROS Server](https://citros.io/doc/docs_tutorials/getting_started/#upload-to-citros-server).
+First ensure that the project has been [built and sourced](https://citros.io/doc/docs_tutorials/getting_started/#build-the-project).
+[Upload project to CITROS Server](https://citros.io/doc/docs_tutorials/getting_started/#upload-to-citros-server). Set up the performance setup listed in ```.citros/simulations/simulation_lunar_starship.json```: for cloud run the recommended timeout value is 600 seconds, 4 CPU, 4 GPU and 4096 MB of Memory.
 
 Finally, we can run it in the cloud! Simply add `-r` to the terminal command: 
 ```bash 
