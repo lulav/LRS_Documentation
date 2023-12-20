@@ -84,8 +84,9 @@ Now you can see .citros directory in the explorer.
     Forward Kinematic calculation is the simplest way to control the robotic arm behavior. <br/> 
     User provides joints target positions as input parameters to configure the simulation. The robotic arm will change its position trying to meet the target conditions, and the simulation publishes the current positions of joints as a result.<br/>
     
-    For this example, let's check how the robotic arm's behavior changes depending on target position. To find it out, we need to launch a batch with several simulations and a distribution for the last joint position parameter, it will be set by a NumPy random function. <br/>
-    The parameter setup is listed in ```.citros/parameter_setups/default_param_setup.json```: <br/>
+    In this tutorial, let's check how the robotic arm's behavior changes depending on target position. <br />
+    For that, we will launch a batch simulation with a random distribution ranging between 0.0 and 0.5, for the last joint position parameter  (`j5`).
+    The parameter will be set by a NumPy random function and its  setup is listed in ```.citros/parameter_setups/default_param_setup.json```: <br/>
 
 ```json
 {
@@ -108,8 +109,6 @@ Now you can see .citros directory in the explorer.
     }
 }
 ```
-
-This function will set the ```j5``` parameter in random range from 0.0 to 0.5.
 
 Learn more about parameter setup and defining custom functions in [Directory parameter_setups](https://citros.io/doc/docs_cli/structure/citros_structure/#directory-parameter_setups) and [Adding Functions to Parameter Setup](https://citros.io/doc/docs_cli/configuration/config_params) pages.
 
