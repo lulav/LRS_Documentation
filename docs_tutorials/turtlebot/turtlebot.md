@@ -94,7 +94,7 @@ Learn more about parameter setup and defining custom functions in [Directory par
 
 ### Running in Cloud
 First ensure that the project has been [built and sourced](https://citros.io/doc/docs_tutorials/getting_started/#build-the-project).
-[Upload project to CITROS Server](https://citros.io/doc/docs_tutorials/getting_started/#upload-to-citros-server). Set up the performance setup listed in ```.citros/simulations/simulation_lunar_starship.json```: for cloud run the recommended timeout value is 600 seconds, 4 CPU, 4 GPU and 4096 MB of Memory.
+[Upload project to CITROS Server](https://citros.io/doc/docs_tutorials/getting_started/#upload-to-citros-server). Set up the performance setup listed in ```.citros/simulations/simulation_turtlebot3_sim_cont.json```: for cloud run the recommended timeout value is 600 seconds, 4 CPU, 4 GPU and 4096 MB of Memory.
 
 Finally, we can run it in the cloud! Simply add `-r` to the terminal command: 
 ```bash 
