@@ -136,14 +136,25 @@ Learn more about parameter setup and defining custom functions in [Directory par
 
 In addition to parameter setup, you can configure the simulation performance setup (timeout, CPU, GPU and Memory) as well.
 This parameters can be found in ```.citros/simulations/simulation_poliastro_atmo_drag.json```. <br/>
-The default setup is 360 seconds timeout, 4 CPU, 4 GPU and 2048 MB of Memory.
-
 Look in [Directory simulations page](https://citros.io/doc/docs_cli/structure/citros_structure#directory-simulations) for more information.
 
 ## Running the Scenario Using CITROS
 
 ### Running Locally
-First ensure that the project has been [built and sourced](https://citros.io/doc/docs_tutorials/getting_started/#build-the-project). Set up the performance setup listed in ```.citros/simulations/simulation_poliastro_atmo_drag.json```: for local run the recommended timeout value is 360 seconds. <br/>
+
+First, we recommended to update the simulation performance timeout to 360 seconds:
+
+ ```json 
+{
+    ...
+    "parameter_setup": "default_param_setup.json",
+    "storage_type": "MCAP",
+    "timeout": 360
+}
+ ```
+
+Then, ensure that the project has been [built and sourced](https://citros.io/doc/docs_tutorials/getting_started/#build-the-project).<br/>
+
 Now we can launch the project locally:
 ```bash 
 >>> citros run -n 'poliastro' -m 'local test run'
@@ -169,9 +180,25 @@ To plot the local run results you can use [Foxglove](https://citros.io/doc/docs_
 
 ### Running in Cloud
 
-[Upload project to CITROS Server](https://citros.io/doc/docs_tutorials/getting_started/#upload-to-citros-server). <br/>
-Set up the performance setup listed in ```.citros/simulations/simulation_poliastro_atmo_drag.json```: for cloud run the recommended timeout value is 360 seconds, 4 CPU, 4 GPU and 2048 MB of Memory.<br />
-Finally, we can run the simulation in the cloud.<br />
+First, we recommended to update the simulation performance parameters:
+- CPU: 4
+- GPU: 4  
+- Memory: 2048 MB
+- Timeout: 360 seconds
+
+
+```json
+{
+    "CPU": 4,
+    "GPU": 4,
+    "MEM": 2048,
+    ...
+    "timeout": 360
+}
+```
+
+Then, [Upload project to CITROS Server](https://citros.io/doc/docs_tutorials/getting_started/#upload-to-citros-server). 
+
 We will run the simulation 10 times by adding `-c 10` to the command and run it in the CITROS server by adding `-r` to the command:
 
 ```bash 
