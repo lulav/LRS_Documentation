@@ -63,7 +63,7 @@ Now you can see .citros directory in the explorer.
 ## Scenario
 This simple scenario can be used to find the Cassini Spacecraft trajectory relative to Saturn's barycenter within specified time intervals. <br/>
 Users can input the desired time bounds, and the output of the simulation will contain critical flight data, such as altitude, velocity, and other relevant parameters, recorded over time intervals. <br/>
-This example is used to show the CITROS ability to implement any useful library, such as the popular SpiceyPy NASA lib for spacecraft tracking. The project's setup is also showing how user can save all the simulation results in one place for any number of simulations and share these results with coworkers. <br/>
+This tutorial is used to show the CITROS ability to implement any useful library, in this case, the popular SpiceyPy NASA lib for spacecraft tracking. The project's setup is also showing how user can save all the simulation results in one place for any number of simulations and share these results with coworkers. <br/>
 The parameter setup is listed in ```.citros/parameter_setups/default_param_setup.json```:
 ```json
 {
