@@ -100,7 +100,7 @@ Now you can see .citros directory in the explorer.
                     "j3": -0.102,
                     "j4": 1.57,
                     "j5": {
-                        "function": "numpy.random.random",
+                        "function": "numpy.random.uniform",
                         "args": [0.0, 0.5]
                     }
                 }
