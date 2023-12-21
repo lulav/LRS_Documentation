@@ -3,7 +3,7 @@ sidebar_position: 60
 sidebar_label: 'Lunar Hopper'
 ---
 
-# Lunar Hopper
+# Lunar Hopper Optimal Control Example Using CITROS
 
 ## Overview
 The Lunar Hopper project is a lunar exploration planning project aimed at solving the intricate problem of lunar hopper missions. It focuses on optimizing the spacecraft's trajectory across the whole flight. Leveraging state-of-the-art optimal problem-solving algorithms, specifically the [MPOPT Python library](https://mpopt.readthedocs.io/en/latest/), this project seeks to determine the most efficient path for maximizing the distance traveled during the mission. It empowers users to customize essential parameters such as spacecraft mass, fuel quantity, thrust, and specific impulse. 
@@ -15,7 +15,7 @@ The Lunar Hopper project is a lunar exploration planning project aimed at solvin
 1. Please make sure you have all the [necessary softwares](https://citros.io/doc/docs_tutorials/getting_started/#softwares-to-work-with-citros) to work with CITROS installed on your computer.
 2. Install [Visual Studio code](https://code.visualstudio.com/download).
 3. We strongly recommend that you work with [dockers](https://citros.io/doc/docs_tutorials/dockerfile_overview/). However, if you wish to work without dockers, please refer to the .devcontainer [directory](https://github.com/citros-garden/lunar_hopper/tree/main/.devcontainer) in project's repo, the dependencies you need are in the ```Dockerfile``` file.
-4. (Optional) Install [Foxglove](https://docs.foxglove.dev/docs/introduction).
+4. (Optional) Install [FoxGlove](https://docs.foxglove.dev/docs/introduction).
 
 ## Table of Contents
 1. [Installation](#installation)
@@ -35,7 +35,7 @@ git clone git@github.com:citros-garden/lunar_hopper.git
 
 ## Workspace Overview
 
-The Lunar Hopper simulation has the following ROS 2 parameters:
+The Lunar Hopper simulation has the following ROS 2 parameters. Variables with '_0' are initial conditions, and variables with '_f' are final conditions respectively:
 
 |Parameter	|Description	|Package
 |--|--|--
@@ -46,12 +46,8 @@ F_thrustmax	|The maximum amount of thrust	|lunar_hopper
 Isp	|Specific impulse		|lunar_hopper	
 publish_freq	|Frequency of publishing	|lunar_hopper
 
-:::note
-- Variables with '_0' are initial conditions.
-- Variables with '_f' are final conditions.
-:::
 
-This project contains only one launch file which will be used for CITROS launch. 
+This project contains only one launch file ```lunar_hopper.launch.py```. This file will be used for CITROS launch. 
 
 |Launch File	|Description	|Package
 |--|--|--
@@ -66,13 +62,10 @@ lunar_hopper.launch.py	|Lunar Hopper simulation launch file 	|lunar_hopper
 Now you can see .citros directory in the explorer.
 
 ## Scenario
-The optimal trajectory computes by solving non-linear OCP (optimal control problems) in the standard Bolza form, by using pseudo-spectral collocation methods and adjusted, using an additional real dynamic function. <br/> 
-The OCP solver used in this example is [MPOPT]((https://mpopt.readthedocs.io/en/latest/)) (based on [IPOPT](https://en.wikipedia.org/wiki/IPOPT#:~:text=IPOPT%2C%20short%20for%20%22Interior%20Point,the%20EPL%20(formerly%20CPL).)) library modified by Lulav Space team. <br />
+For this tutorial, let's check how far the Hopper can hop depending on Specific Impulse. The optimal trajectory computes by solving non-linear optimal control problems(OCP) in the standard Bolza form using pseudo-spectral collocation methods and adjusted using an additional real dynamic function. The OCP solver used in this example is MPOPT (based on IPOPT) library modified by Lulav Space team. You can find more information about MPOPT optimal control solving library on the MPOPT GitHub or website.<br/>
 The main goal of the project is to find the optimal way to "hop" on the Moon as far as possible with given vessel parameters.<br/>
-
-For this tutorial, let's check how far the Hopper can hop on the Moon depending on Specific Impulse.
-For that, we will launch a simulation batch with a distribution of Specific impulse parameter, starting from 200 and up to 300.
 The parameter setup is listed in ```.citros/parameter_setups/default_param_setup.json```. <br/>
+To find out how far the Hopper can hop, we need to launch a batch with several simulations and a distribution for Specific Impulse parameter, starting from 200 and up to 300:
 
 ```json
 {
@@ -106,27 +99,16 @@ This function will set the ```Isp``` parameter in range from 200 to 200+10*n, wh
 
 Learn more about parameter setup and defining custom functions in [Directory parameter_setups](https://citros.io/doc/docs_cli/structure/citros_structure/#directory-parameter_setups) and [Adding Functions to Parameter Setup](https://citros.io/doc/docs_cli/configuration/config_params) pages.
 
-In addition to parameter setup, you can configure the simulation performance setup (timeout, CPU, GPU and Memory) as well.
-These parameters can be found in ```.citros/simulations/simulation_lunar_hopper.json```. <br/>
+In addition to parameter setup, you can configure the simulation perfomance setup (timeout, CPU, GPU and Memory) as well.
+This parameters can be found in ```..citros/simulations/simulation_lunar_hopper.json```. <br/>
+The default setup is 600 seconds timeout, 4 CPU, 4 GPU and 4096 MB of Memory.
+
 Look in [Directory simulations page](https://citros.io/doc/docs_cli/structure/citros_structure#directory-simulations) for more information.
 
 ## Running the Scenario Using CITROS
 
 ### Running Locally
-
-First, we recommended to update the simulation performance timeout to 600 seconds:
-
- ```json 
-{
-    ...
-    "parameter_setup": "default_param_setup.json",
-    "storage_type": "MCAP",
-    "timeout": 600
-}
- ```
-
-Then, ensure that the project has been [built and sourced](https://citros.io/doc/docs_tutorials/getting_started/#build-the-project).<br/>
-
+First ensure that the project has been [built and sourced](https://citros.io/doc/docs_tutorials/getting_started/#build-the-project).
 Now we can launch it locally:
 ```bash 
 >>> citros run -n 'Lunar_hopper' -m 'local test run'
@@ -142,30 +124,19 @@ created new batch_id: <batch_run / batch name>. Running locally.
 ...
 ```
 
-All the results will be saved under `.citros/runs/[simulation_name]` folder.
+All the results will be saved under .citros/runs/[simulation_name] [folder].
 
-To plot the local run results you can use [Foxglove](https://citros.io/doc/docs_tutorials/#visualization-with-foxglove).
+To plot the local run results you can use [FoxGlove](https://citros.io/doc/docs_tutorials/#visualization-with-foxglove). <br/>
+You can use prepared Foxglove layouts from ```/foxglove_layouts``` folder.<br/>
+Use ```layout_states.json``` for states plots:
+![png](img/foxglove0.png "Foxglove Expample 1")
+
+And ```layout_controls.json``` for controls plots:
+![png](img/foxglove1.png "Foxglove Expample 2")
 
 ### Running in Cloud
 
-First, we recommended to update the simulation performance parameters:
-- CPU: 4
-- GPU: 4  
-- Memory: 4096 MB
-- Timeout: 600 seconds
-
-
-```json
-{
-    "CPU": 4,
-    "GPU": 4,
-    "MEM": 4096,
-    ...
-    "timeout": 600
-}
-```
-
-Then, [Upload project to CITROS Server](https://citros.io/doc/docs_tutorials/getting_started/#upload-to-citros-server). 
+[Upload project to CITROS Server](https://citros.io/doc/docs_tutorials/getting_started/#upload-to-citros-server).
 
 Finally, we can run it in the cloud! Simply add `-r` to the terminal command: 
 ```bash 
@@ -183,6 +154,6 @@ created new batch_id: <batch_id / batch name>. Running on Citros cluster. See ht
 ## Results
 To get and process the simulation results, execute [built-in Jupiter Notebook](https://citros.io/lunar_hopper/blob/main/notebooks/lunar_hopper_notebook_example.ipynb). 
 
-The graph below shows us the hopping distance depending on Specific impulse:
+This graph shows us the hopping distance depending of Specific impulse:
 
 ![png](img/citros3.png "CITROS example")
