@@ -7,6 +7,7 @@ sidebar_label: 'TurtleBot'
 
 ## Overview
 This project is designed to wrap the official [TurtleBot3 simulation example](https://emanual.robotis.com/docs/en/platform/turtlebot3/simulation/#gazebo-simulation) and integrate it with a simple Autonomous Collision Avoidance node. The node provides ROS 2 parameters that allow users to adjust various TurtleBot3 specifications, enabling the analysis of how these changes affect collision avoidance behavior. <br />
+The project gives users the flexibility to modify various TurtleBot3 specifications by changing ROS 2 parameters. These parameters may include attributes like the robot's size, speed, sensor range, or collision avoidance algorithms. Users can experiment with different parameter values to observe their impact on collision avoidance behavior. The TurtleBot3 robot is capable of orienting itself effectively within a prepared TurtleBot3 world. It utilizes the simulated lidar module to gather environmental data, allowing it to make informed decisions about its navigation path.<br/>
 All project installation, code overview and usage details are also available on the project's [GitHub page](https://github.com/citros-garden/turtlebot3).
 
 ![jpg](img/turtlebot3_0.jpg "TurtleBot3")
@@ -63,9 +64,9 @@ Now you can see .citros directory in the explorer.
 In this scenario the ROS 2 node interfaces with the official TurtleBot3 simulation example, leveraging the TurtleBot3 robot model and simulated environment. <br/>
 This integration allows users to observe how the robot behaves in a controlled environment.<br/>
 The node includes a simple Autonomous Collision Avoidance module which ensures the TurtleBot3 avoids collisions with obstacles in its path, it utilizes sensor data, such as simulated lidar readings, to detect obstacles and adjust the robot's trajectory accordingly. The output of the simulation is a robot's trajectory, sensors outputs and other [standart TurtleBot3 ROS 2 topics](https://emanual.robotis.com/docs/en/software/robotis_framework_packages/).<br/>
-The project gives users the flexibility to modify various TurtleBot3 specifications by changing ROS 2 parameters. These parameters may include attributes like the robot's size, speed, sensor range, or collision avoidance algorithms. Users can experiment with different parameter values to observe their impact on collision avoidance behavior. The TurtleBot3 robot is capable of orienting itself effectively within a prepared TurtleBot3 world. It utilizes the simulated lidar module to gather environmental data, allowing it to make informed decisions about its navigation path.<br/>
-For this example, let's check how the powerful CITROS Error Analysis (a part of Data Analysis) package works. We will analyse data from IMU (Inertial Measurement Unit), Odometer and position information. To do it out, we need to set up parameters and launch CITROS simulation.<br/>
-The parameter setup is listed in ```.citros/parameter_setups/default_param_setup.json```:
+
+In this tutorial, we will examine the powerful CITROS Error Analysis (a part of Data Analysis) package. We will analyze data from IMU (Inertial Measurement Unit), Odometer and position information. <br/>
+For that, we need to set up parameters and launch CITROS simulation. The parameter setup is listed in ```.citros/parameter_setups/default_param_setup.json```:
 ```json
 {
     "packages": {
