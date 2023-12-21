@@ -5,264 +5,177 @@ sidebar_label: 'Aerosandbox'
 
 # Aerosandbox
 
-The project is a simulation tool developed using ROS (Robot Operating System) nodes and leverages the Aerosandbox Python library for aerodynamic calculations. Its primary objective is to simulate gliding flight scenarios for a Cessna 152 aircraft in the event of engine failure.
-
-The user provides flight parameters as input parameters to configure the simulation. These parameters are essential for defining the initial conditions of the simulated flight.
-
-Once the simulation is initiated, the ROS nodes orchestrate the execution. The simulation takes into account various flight dynamics and aerodynamic factors to model the gliding behavior of the Cessna 152. The maximum gliding distance depends on plane's aerodynamic parameters, initial altitude and initial velocity. To find it this code uses iPOPT optimal problem solver under the hood (iPOPT included into AeroSandbox).
-
-The output of the simulation comprises critical flight data, such as altitude, velocity, and other relevant parameters, recorded over time intervals. These results are published via ROS topics, allowing for real-time data visualization, analysis, and integration with other ROS-based systems.
+## Overview
+The project is a simulation tool developed using ROS 2 (Robot Operating System) nodes and leverages the Aerosandbox Python library for aerodynamic calculations. Its primary objective is to simulate gliding flight scenarios for a Cessna 152 aircraft in the event of engine failure.
 
 You can find more information about this useful aerodynamics library on [Aerosandbox official website](https://github.com/peterdsharpe/AeroSandbox). All project installation, code overview and usage details are also available on the project's [GitHub page](https://github.com/citros-garden/aerosandbox_cessna).
 
 ![jpg](img/cessna152.jpg "https://en.wikipedia.org/wiki/File:Cessna_152_PR-EJQ_(8476096843).jpg")
 
+## Prerequisites
+
+1. Please make sure you have all the [necessary softwares](https://citros.io/doc/docs_tutorials/getting_started/#softwares-to-work-with-citros) to work with CITROS installed on your computer.
+2. Install [Visual Studio code](https://code.visualstudio.com/download).
+3. We strongly recommend that you work with [dockers](https://citros.io/doc/docs_tutorials/dockerfile_overview/). However, if you wish to work without dockers, please refer to the .devcontainer [directory](https://github.com/citros-garden/aerosandbox_cessna/tree/main/.devcontainer) in project's repo, the dependencies you need are in the ```Dockerfile``` file.
+4. (Optional) Install [Foxglove](https://docs.Foxglove.dev/docs/introduction).
+
+
 ## Table of Contents
+1. [Installation](#installation)
+2. [Workspace Overview](#workspace-overview)
+3. [CITROS Initialization](#citros-initialization)
+4. [Scenario](#scenario)
+5. [Running the Scenario Using CITROS](#running-the-scenario-using-citros)
+6. [Results](#results)
 
-1. [CITROS Usage](#citros-usage)
-    1. [CITROS Installation](#citros-installation)
-    2. [Configuring The Project](#configuring-the-project)
-    3. [Running Locally](#running-locally)
-    4. [Syncing Project's Setup](#syncing-projects-setup)
-    5. [Uploading Docker Image to CITROS Cloud](#uploading-docker-image-to-citros-cloud)
-    6. [Running in The Cloud](#running-in-the-cloud)
-    7. [CITROS Web Usage](#citros-web-usage)
-2. [Extras](#extras)
-    1. [Foxglove Examples](#foxglove-examples)
+## Installation
+1. Clone the repository:
 
-## CITROS Usage
-The best way to work with such simulations and process the results is CITROS! With its power, it is possible to create complex data processing scenarios, including the construction of more complex graphs, mathematical analysis and other high-level processing methods.
-
-One of the main CITROS features is an ability to launch a number of simulations in parallel. For the projects like Aerosandbox example this feature allows user to simulate many different behaviours of the model regardless of the complexity of it and without restrictions on computing power. Moreover, the amazing Data Analysis tool from CITROS allows user to process the simulation results with such useful packages as Error Analysis and Validation module!
-
-### CITROS Installation
-
-First of all, to use all the powerful CITROS features the CLI installation is required: follow the instructions on the CITROS CLI [documentation page](https://citros.io/doc/docs_cli).
-
-### Configuring The Project
-After all the prerequisites are met, we can start configuring our project. The starting point is the Poliastro devcontainer loaded and running, CITROS CLI is installed and ready.
-1. Initialize CITROS:
-```bash 
->>> citros init
-Checking internet connection...
-Checking ssh...
-Updating Citros...
-Waiting for repo to be ready...
-Citros repo successfully cloned from remote.
-Creating new citros branch `master`.
-Creating an initial commit.
-Default branch of remote 'origin' set to: master
-Citros successfully synched with local project.
-You may review your changes via `citros status` and commit them via `citros commit`.
-Initialized Citros repository.
+```bash
+git clone git@github.com:citros-garden/aerosandbox_cessna.git
 ```
-Now you can see ```.citros``` folder in the explorer.
 
-2. Configuring the setup. We need to set up the maximum performance available: timeout, CPU, GPU and Memory. To perform it, we need to define them in ```.citros/simulations/simulation_aerosandbox_cessna.json```. The recommended setup is minimum 180 seconds timeout, 2 CPU, 2 GPU and 1024 MB of Memory. Don't forget to save the file!
+2. Open the repository in the [VScode Dev Container](https://citros.io/doc/docs_tutorials/getting_started/#open-project-in-vscode-dev-container).
 
-3. Configuring the params setup. You can find the default setup in ```.citros/parameter_setups/default_param_setup.json```. [CITROS CLI](https://citros.io/doc/docs_cli) provides an opportunity to use basic NumPy functions (such as distributions) and even user-defined functions, but let's keep it default for now. The Aerosandbox simulation has the following ROS parameters:
+## Workspace Overview
 
-    |Parameter	|Package	|Description
-    |--|--|--
-    h_0	|aerosandbox_cessna	|Initial altitude (m)	
-    v_0	|aerosandbox_cessna	|Initial velocity (knots)
-    publish_freq	|aerosandbox_cessna	|Frequency of publishing
+The Aerosandbox simulation has the following ROS 2 parameters:
+
+|Parameter	|Description	|Package
+|--|--|--
+h_0	|Initial altitude (m)	|aerosandbox_cessna		
+v_0	|Initial velocity (knots)	|aerosandbox_cessna	
+publish_freq	|Frequency of publishing	|aerosandbox_cessna	
+
+This project contains only one launch file ```aerosandbox_cessna.launch.py```. This file will be used for CITROS launch. 
+
+|Launch File	|Description	|Package
+|--|--|--
+aerosandbox_cessna.launch.py	|Aerosandbox simulation launch file  |aerosandbox_cessna
 
 
-Don't forget to save the file!
-4. Launch files. This project contains only one launch file ```aerosandbox_cessna.launch.py```. This file will be used for CITROS launch. 
+## CITROS Initialization
 
-    |Launch File	|Package	|Description
-    |--|--|--
-    aerosandbox_cessna.launch.py	|aerosandbox_cessna	|Aerosandbox simulation launch file 
+1. [Install CITROS](https://citros.io/doc/docs_tutorials/getting_started/#installation).
+2. Follow [these steps](https://citros.io/doc/docs_tutorials/getting_started/#initialization) to Initialize CITROS.
+
+Now you can see .citros directory in the explorer.
 
 
-:::tip
+## Scenario
+For this tutorial, let's check how far the Cessna can glide with engine failure depending on initial altitude. To find it out, we need to set up parameters and launch CITROS simulation. <br/>
+The user provides flight parameters as input parameters to configure the simulation. These parameters are essential for defining the initial conditions of the simulated flight.<br/>
+The simulation takes into account various flight dynamics and aerodynamic factors to model the gliding behavior of the Cessna 152. The maximum gliding distance depends on plane's aerodynamic parameters, initial altitude and initial velocity.<br/>
+We will be using [iPOPT](https://en.wikipedia.org/wiki/IPOPT#:~:text=IPOPT%2C%20short%20for%20%22Interior%20Point,the%20EPL%20(formerly%20CPL).) - optimal under the hood problem solver (iPOPT is also installed as part of the AeroSandbox package).<br/>
+The parameter setup is listed in ```.citros/parameter_setups/default_param_setup.json```. <br/>
+To find out how far the Cessna can glide with engine failure, we will examine the initial altitude, starting from 1000m and up to 10000m.
+```json
+{
+    "packages": {
+        "aerosandbox_cessna": {
+            "aerosandbox_cessna": {
+                "ros__parameters": {
+                    "h_0": {
+                        "function": "my_func.py:func_with_context",
+                        "args": [1000.0]
+                    },
+                    "v_0": 107.0,
+                    "publish_freq": 10.0
+                }
+            }
+        }
+    }
+}
+```
 
-CITROS CLI, in addition to other benefits, also provides an automatic ROS bag recording option, which allows user to use saved simulation results and export them! :)
+The ```my_func.py``` file should contain:
+```python
+def func_with_context(num, context):
+    return num + float(context['sid'])*1000
+```
 
-:::
+This function will set the ```h_0``` parameter in range from 1000 to 1000+1000*n, where n = number of runs.
+
+Learn more about parameter setup and defining custom functions in [Directory parameter_setups](https://citros.io/doc/docs_cli/structure/citros_structure/#directory-parameter_setups) and [Adding Functions to Parameter Setup](https://citros.io/doc/docs_cli/configuration/config_params) pages.
+
+In addition to parameter setup, you can configure the simulation performance setup (timeout, CPU, GPU and Memory) as well.
+This parameters can be found in ```.citros/simulations/simulation_aerosandbox_cessna.json```. <br/>
+Look in [Directory simulations page](https://citros.io/doc/docs_cli/structure/citros_structure#directory-simulations) for more information.
+
+## Running the Scenario Using CITROS
 
 ### Running Locally
-Since all the preparations done, we can launch it locally (your project should be built and sourced before that):
+
+First, we recommended to update the simulation performance timeout to 180 seconds:
+
+ ```json 
+{
+    ...
+    "parameter_setup": "default_param_setup.json",
+    "storage_type": "MCAP",
+    "timeout": 180
+}
+ ```
+
+Then, ensure that the project has been [built and sourced](https://citros.io/doc/docs_tutorials/getting_started/#build-the-project).<br/>
+
+Now we can launch it locally:
 ```bash 
 >>> citros run -n 'aerosandbox_cessna' -m 'local test run'
 ? Please choose the simulation you wish to run:
 ❯ aerosandbox_cessna
 ```
-Select the launch file (should be the only one here) by pressing ```Enter``` button and wait for the output in the terminal. To plot the local run results you can use FoxGlove.
+Select the launch file (should be the only one here) by pressing ```Enter``` button and wait for the output in the terminal. 
 
 ```bash
-created new batch_id: <your-batch-id-here>. Running locally.
-+ running batch [<your-batch-id-here>], description: local test run, repeating simulations: [1]
+created new batch_id: <batch_run / batch name>. Running locally.
++ running batch [<batch_run / batch name>], description: local test run, repeating simulations: [1]
 + + running simulation [0]
 ...
 ```
 
-![gif](img/gif0.gif "FoxGlove example")
+All the results will be saved under `.citros/runs/[simulation_name]` folder.
 
-### Syncing Project's Setup
-CITROS account is required for cloud usage. Follow the instructions on [CITROS Website](https://citros.io/auth/login) to register a new one, or check the [CLI documentation](https://citros.io/doc/docs_cli) for logging in. To complete the following steps, it is assumed that the user is registered, logged in and has met all requirements for Web Usage.
-Now we can synchronize our project settings with CITROS server:
-```bash 
->>> citros commit
->>> citros push
+To plot the local run results you can use [Foxglove](https://citros.io/doc/docs_tutorials/#visualization-with-Foxglove).
+
+![gif](img/gif0.gif "Foxglove example")
+
+### Running in Cloud
+
+First, we recommended to update the simulation performance parameters:
+- CPU: 4
+- GPU: 4  
+- Memory: 4096 MB
+- Timeout: 180 seconds
+
+
+```json
+{
+    "CPU": 4,
+    "GPU": 4,
+    "MEM": 4096,
+    ...
+    "timeout": 180
+}
 ```
 
-### Uploading Docker Image to CITROS Cloud
-We need to build and push a Docker container image to the CITROS server:
-```bash 
->>> citros docker-build-push
-Logging in to docker...
-...
-```
+Then, [Upload project to CITROS Server](https://citros.io/doc/docs_tutorials/getting_started/#upload-to-citros-server). 
 
-### Running in The Cloud
-Finally, we can run it in the cloud! Simply add ```-r``` to the terminal command: 
+Finally, we can run it in the cloud! Simply add `-r` to the terminal command: 
 ```bash 
 citros run -n 'aerosandbox_cessna' -m 'cloud test run' -r
 ? Please choose the simulation you wish to run:
 ❯ aerosandbox_cessna
 ```
 
-Select the launch file (should be the only one here) by pressing ```Enter``` button. Now the simulation is running in the CITROS server, and the results will be automatically uploaded to the CITROS database.
+Select the launch file (should be the only one here) by pressing `Enter` button. Now the simulation is running in the CITROS server, and the results will be automatically uploaded to the CITROS database.
 
 ```bash
-created new batch_id: <your-batch-id-here>. Running on Citros cluster. See https://citros.io/batch/<your-batch-id-here>.
+created new batch_id: <batch_id / batch name>. Running on Citros cluster. See https://citros.io/batch/<batch_id / batch name>.
 ```
 
-### CITROS Web Usage
-#### Launching Project via CITROS Web
-The best way to use all the innovative capabilities of CITROS is through it's Web interface. Follow [this manual](https://citros.io/doc/docs/simulations/sim_overview) to easily launch a simulation on CITROS Web platform.
+## Results
 
-
-#### Working with Integrated Jupiter Notebooks and Data Analysis
-CITROS Web provides a powerful data analysis package, which is a comprehensive solution for data query, analysis and visualization. With its extensive features, you can quickly and easily extract valuable insights from your data. To use it, Jupiter Notebook support is built-in. 
-Navigate to our ```Code``` project page, open the Notebooks folder and click on the notebook file. Here you can see the usual Jupiter editor interface: you can add blocks of code or built-in Markdown engine, run and save notebook and control the Python kernel.
-
-You can find all the data analysis package guides and API reference [here](https://citros.io/doc/docs_data_analysis).
-
-
-Let's quickly go through the key points of using a Jupiter Notebook and fetching data from a database. But to try some brief examples of data analysis using the built-in package, we need to launch a batch with several simulations and a distribution for one of the ROS parameters (initial altitude, in our case). This parameter will be different for each simulation:
-
-```json
-"h_0": {
-    "function": "my_func.py:func_with_context",
-    "args": [1000.0]
-},
-```
-
-All necessary things are already configured (we used a NumPy distribution function, you can read more about its usage in the [CITROS CLI](https://citros.io/doc/docs_cli) manual), so you can start the simulation from [CLI](#citros-usage-🛸) with the ```-c 10``` flag: 
-
-```
-citros run -n 'aerosandbox_cessna' -m 'cloud test run' -r -c 10
-? Please choose the simulation you wish to run:
-❯ aerosandbox_cessna
-```
-
-Or from [Web](#running-in-the-cloud-🛰️):
-
-![png](img/web0.png "CITROS example")
-
-Run the ```aerosandbox_cessna``` simulation and copy your batch id (we will need it later).
-
-Let's return to our Notebook and check the code: to start with, we need to import all the necessary modules:
-
-```python
-import numpy as np
-import matplotlib.pyplot as plt
-from citros_data_analysis import data_access as da
-from prettytable import PrettyTable, ALL
-import json
-from platform import python_version
-```
-
-Now we can connect to the simulation database:
-```python
-batch_id = '<your-batch-id-here>'
-citros = da.CitrosDB(batch = batch_id)
-citros.info().print()
-```
-
-The last command returns general batch info:
-```python
-{
- 'size': '261 kB',
- 'sid_count': 10,
- 'sid_list': [0, 1, 2, 3, 4, 5, 6, 7, 8, 9],
- 'topic_count': 2,
- 'topic_list': ['/aerosandbox_cessna/state', '/config'],
- 'message_count': 1010
-}
-```
-As you can see in the output above, we've got some information about our simulation run (batch): data size, sid information and a list of topics. 
-
-Now we are ready to do some simple research and draw some plots. All MatPlotLib capabilities available here, but the [CITROS Data Analysis](https://citros.io/doc/docs_data_analysis) package provides it's own powerful plotting functions (also based on MatPlotLib):
-
-```python
-fig1, ax1 = plt.subplots()
-citros.time_plot(ax1, 
-                 topic_name = '/aerosandbox_cessna/state', 
-                 var_name = 'data.data[0]', 
-                 time_step = 1, 
-                 sids = [0], 
-                 y_label = 'X coords', title_text = 'X coords vs. Time')
-```
-As you can see, the gliding duration varies for different sids:
-![png](img/citros2.png "CITROS example")
-
-
-Let's go further:
-```python
-# Defining the list of altitudes
-
-h_0 = [i for i in range(1000,11000, 1000)]
-
-
-# Setting Dataframe
-
-df = citros.topic('/aerosandbox_cessna/state').set_order({'sid':'asc'}).data('data.data[0]')
-sid_list = list(set(df['sid']))
-data0_list = []
-for s in sid_list:
-    id_max = df[df['sid'] == s]['rid'].idxmax()
-    data0_list.append(df['data.data[0]'].loc[id_max])
-
-fig, ax = plt.subplots()
-
-#Adjusting colors
-c = np.random.choice(50, 10, replace=False)
-scatter = ax.scatter(h_0, data0_list,c=c)
-6
-# Create legend entries for each point
-legend_labels = [str(i) for i in range(10)]
-
-# Initialize a list to store legend handles
-legend_handles = []
-
-# Loop through the points and create legend entries with matching colors
-for i, label in enumerate(legend_labels):
-    color = scatter.to_rgba(c[i])  # Get the color of the corresponding point
-    legend_handles.append(plt.Line2D([0], [0], marker='o', color='w', label=label, markerfacecolor=color, markersize=10))
-
-# Add the legend with custom handles
-legend1 = ax.legend(handles=legend_handles, loc="upper left", title="sid")
-ax.add_artist(legend1)
-ax.grid()
-# plt.scatter(h_0, data0_list, cmap='plasma')
-# # plt.plot(h_0, data0_list)
-ax.set_ylabel('Gliding distance, m')
-ax.set_xlabel('Initial altitude, m')
-ax.set_title('Maximum gliding distance vs Initial altitude')
-# plt.legend()
-
-```
-This graph shows us Maximum gliding distance depending of Initial altitude:  
+To get and process the simulation results, execute [built-in Jupiter Notebook](https://citros.io/aerosandbox_cessna/blob/main/notebooks/aerosandbox_notebook_example.ipynb).
 
 ![png](img/citros3.png "CITROS example")
-
-## Extras
-### Foxglove Examples
-
-![png](img/img0.png "FoxGlove example")
-![png](img/img1.png "FoxGlove example")
