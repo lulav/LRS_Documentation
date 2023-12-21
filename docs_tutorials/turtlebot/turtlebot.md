@@ -62,7 +62,7 @@ Now you can see .citros directory in the explorer.
 ## Scenario
 In this scenario the ROS 2 node interfaces with the official TurtleBot3 simulation example, leveraging the TurtleBot3 robot model and simulated environment. <br/>
 This integration allows users to observe how the robot behaves in a controlled environment.<br/>
-The node includes a simple Autonomous Collision Avoidance module which ensures the TurtleBot3 avoids collisions with obstacles in its path, it utilizes sensor data, such as simulated lidar readings, to detect obstacles and adjust the robot's trajectory accordingly. The output of the simulation is a robot's trajectory, sensors outputs and other [standart TurtleBot3 ROS 2 topics](https://emanual.robotis.com/docs/en/software/robotis_framework_packages/).<br/>
+The node includes a simple Autonomous Collision Avoidance module which ensures the TurtleBot3 avoids collisions with obstacles in its path, it utilizes sensor data, such as simulated lidar readings, to detect obstacles and adjust the robot's trajectory accordingly. The output of the simulation is a robot's trajectory, sensors outputs and other [standard TurtleBot3 ROS 2 topics](https://emanual.robotis.com/docs/en/software/robotis_framework_packages/).<br/>
 
 In this tutorial, we will examine the powerful CITROS Error Analysis (a part of Data Analysis) package. We will analyze data from IMU (Inertial Measurement Unit), Odometer and position information. <br/>
 For that, we need to set up parameters and launch CITROS simulation. The parameter setup is listed in ```.citros/parameter_setups/default_param_setup.json```:
@@ -96,8 +96,6 @@ Look in [Directory simulations page](https://citros.io/doc/docs_cli/structure/ci
 
 ## Running the Scenario Using CITROS
 
-### Running in Cloud
-
 First, we recommend to update the simulation performance parameters:
 - CPU: 4
 - GPU: 4  
@@ -125,7 +123,7 @@ citros run -n 'turtlebot3' -m 'cloud test run' -r
 ❯ simulation_turtlebot3_sim_cont
 ```
 
-Select the launch file ```simulation_turtlebot3_sim_cont``` by pressing `Enter` button. Now the simulation is running in the CITROS server, and the results will be automatically uploaded to the CITROS database.
+Select the launch file ```simulation_turtlebot3_sim_cont``` and press `Enter` button. Now the simulation is running in the CITROS server, and the results will be automatically uploaded to the CITROS database.
 
 ```bash
 created new batch_id: <batch_id / batch name>. Running on Citros cluster. See https://citros.io/batch/<batch_id / batch name>.
