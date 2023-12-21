@@ -2,6 +2,7 @@
     "files.eol": "\r\n",
     "cSpell.words": [
         "Aerosandbox",
+        "cassini",
         "CITROS",
         "colcon",
         "devcontainer",
@@ -10,7 +11,7 @@
         "numpy",
         "Poliastro",
         "POPT",
-        "Turtlebot",
+        "spiceypy",
         "WORKDIR"
     ],
 }
