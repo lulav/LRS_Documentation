@@ -90,8 +90,8 @@ To find out how far the Cessna can glide with engine failure, we will examine th
 
 The ```my_func.py``` file should contain:
 ```python
-def func_with_context(num, citros_context):
-    return num + float(citros_context['run_id'])*1000
+def func_with_context(num, context):
+    return num + float(context['sid'])*1000
 ```
 
 This function will set the ```h_0``` parameter in range from 1000 to 1000+1000*n, where n = number of runs.
