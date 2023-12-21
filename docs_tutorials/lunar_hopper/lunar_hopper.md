@@ -142,15 +142,15 @@ created new batch_id: <batch_run / batch name>. Running locally.
 ...
 ```
 
-All the results will be saved under `.citros/runs/[simulation_name]` folder.
+All the results will be saved in `.citros/runs/[simulation_name]` folder.
 
-To plot the local run results you can use [Foxglove](https://citros.io/doc/docs_tutorials/#visualization-with-foxglove).
-You can use prepared Foxglove layouts from ```/foxglove_layouts``` folder.<br/>
+To plot the local run results you can use [Foxglove](https://citros.io/doc/docs_tutorials/#visualization-with-foxglove) with the layout that exists in the Foxglove_layouts directory.
+
 Use ```layout_states.json``` for states plots:
-![png](img/foxglove0.png "Foxglove Expample 1")
+![png](img/foxglove0.png "Foxglove Example 1")
 
 And ```layout_controls.json``` for controls plots:
-![png](img/foxglove1.png "Foxglove Expample 2")
+![png](img/foxglove1.png "Foxglove Example 2")
 ### Running in Cloud
 
 First, we recommended to update the simulation performance parameters:
