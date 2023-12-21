@@ -124,8 +124,8 @@ The parameter setup is listed in ```.citros/parameter_setups/default_param_setup
 
 The ```my_func.py``` file should contain:
 ```python
-def func_with_context(num, citros_context):
-    return num + float(citros_context['run_id'])*10
+def func_with_context(num, context):
+    return num + float(context['sid'])*10
 ```
 
 This function will set the ```Isp``` parameter in range from 200 to 200+10*n, where n = number of runs.
