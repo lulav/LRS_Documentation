@@ -17,7 +17,6 @@ All project installation, code overview and usage details are also available on 
 1. Please make sure you have all the [necessary softwares](https://citros.io/doc/docs_tutorials/getting_started/#softwares-to-work-with-citros) to work with CITROS installed on your computer.
 2. Install [Visual Studio code](https://code.visualstudio.com/download).
 3. We strongly recommend that you work with [dockers](https://citros.io/doc/docs_tutorials/dockerfile_overview/). However, if you wish to work without dockers, please refer to the .devcontainer [directory](https://github.com/citros-garden/turtlebot3/tree/main/.devcontainer) in project's repo, the dependencies you need are in the ```Dockerfile``` file.
-4. (Optional) Install [Foxglove](https://docs.foxglove.dev/docs/introduction).
 
 ## Table of Contents
 1. [Installation](#installation)
@@ -99,7 +98,7 @@ Look in [Directory simulations page](https://citros.io/doc/docs_cli/structure/ci
 
 ### Running in Cloud
 
-First, we recommended to update the simulation performance parameters:
+First, we recommend to update the simulation performance parameters:
 - CPU: 4
 - GPU: 4  
 - Memory: 4096 MB
@@ -138,6 +137,6 @@ To get and process the simulation results, execute [built-in Jupiter Notebook](h
 As you can see, the traveled trajectory varies for different simulations:
 ![png](img/citros2.png "CITROS example")
 
-This graph shows values from data attribute vs. independent parameter for each of the simulation, the mean value over all the simulations and 3 σ interval.
+The graph below shows values from data attribute vs. independent parameter for each of the simulation, the mean value over all the simulations and 3 σ interval.
 
 ![png](img/citros3.png "CITROS example")
