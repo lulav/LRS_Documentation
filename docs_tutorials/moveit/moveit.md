@@ -1,10 +1,10 @@
 ---
-sidebar_position: 40
-sidebar_label: 'Robotic Arm'
+sidebar_position: 120
+sidebar_label: 'MoveIT'
 ---
 
 
-# Robotic Arm
+# MoveIT
 
 ## Overview
 This project is designed to wrap the [MoveIT Robotic Arm Simulation project](https://moveit.picknik.ai/main/doc/tutorials/quickstart_in_rviz/quickstart_in_rviz_tutorial.html) and integrate it with CITROS platform. The node provides ROS 2 parameters that allow users to adjust target arm joints position. In addition, the Inverse Kinematic ROS 2 node was added.
