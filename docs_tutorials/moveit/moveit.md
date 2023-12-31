@@ -64,7 +64,7 @@ This scenario is used to show the most useful way to interact with robotic arm u
 User provides target position and target rotation of arm by three axes as input parameters to configure the simulation. The robotic arm will change its position trying to meet the target conditions. 
 
 In this tutorial, let's check how the robotic arm's behavior changes depending on target position. <br />
-For that, we will launch a batch simulation with a random distribution ranging between 0.0 and 0.5, for the one of the position parameters  (`pos_z`).
+For that, we will launch a batch simulation with a random distribution ranging between 0.0 and 0.5, for one of the position parameters  (`pos_z`).
 The parameter will be set by a NumPy random function and its  setup is listed in ```.citros/parameter_setups/default_param_setup.json```: <br/>
 
 ```json
